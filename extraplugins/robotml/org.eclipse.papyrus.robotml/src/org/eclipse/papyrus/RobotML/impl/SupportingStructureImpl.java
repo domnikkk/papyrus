@@ -20,6 +20,7 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SupportingStructureImpl() {
@@ -29,6 +30,7 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class SupportingStructureImpl extends HardwareImpl implements SupportingS
 		return RobotMLPackage.Literals.SUPPORTING_STRUCTURE;
 	}
 
-} //SupportingStructureImpl
+} // SupportingStructureImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getPatternShape <em>Pattern Shape</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getRepetitionSpace <em>Repetition Space</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getFromTiler <em>From Tiler</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getToTiler <em>To Tiler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getPatternShape <em>Pattern Shape</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getRepetitionSpace <em>Repetition Space</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getFromTiler <em>From Tiler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl#getToTiler <em>To Tiler</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getPatternShape() <em>Pattern Shape</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPatternShape()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getRepetitionSpace() <em>Repetition Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepetitionSpace()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getRepetitionSpace() <em>Repetition Space</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepetitionSpace()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getFromTiler() <em>From Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFromTiler()
 	 * @generated
 	 * @ordered
@@ -91,6 +96,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getFromTiler() <em>From Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFromTiler()
 	 * @generated
 	 * @ordered
@@ -101,6 +107,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The default value of the '{@link #getToTiler() <em>To Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getToTiler()
 	 * @generated
 	 * @ordered
@@ -111,6 +118,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	 * The cached value of the '{@link #getToTiler() <em>To Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getToTiler()
 	 * @generated
 	 * @ordered
@@ -120,6 +128,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DistributeImpl() {
@@ -129,6 +138,7 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,8 +149,10 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPatternShape() {
 		return patternShape;
 	}
@@ -148,20 +160,25 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPatternShape(String newPatternShape) {
 		String oldPatternShape = patternShape;
 		patternShape = newPatternShape;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.DISTRIBUTE__PATTERN_SHAPE, oldPatternShape, patternShape));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getRepetitionSpace() {
 		return repetitionSpace;
 	}
@@ -169,20 +186,25 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setRepetitionSpace(String newRepetitionSpace) {
 		String oldRepetitionSpace = repetitionSpace;
 		repetitionSpace = newRepetitionSpace;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.DISTRIBUTE__REPETITION_SPACE, oldRepetitionSpace, repetitionSpace));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getFromTiler() {
 		return fromTiler;
 	}
@@ -190,20 +212,25 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFromTiler(String newFromTiler) {
 		String oldFromTiler = fromTiler;
 		fromTiler = newFromTiler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.DISTRIBUTE__FROM_TILER, oldFromTiler, fromTiler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getToTiler() {
 		return toTiler;
 	}
@@ -211,31 +238,35 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setToTiler(String newToTiler) {
 		String oldToTiler = toTiler;
 		toTiler = newToTiler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.DISTRIBUTE__TO_TILER, oldToTiler, toTiler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
-				return getPatternShape();
-			case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
-				return getRepetitionSpace();
-			case RSMPackage.DISTRIBUTE__FROM_TILER:
-				return getFromTiler();
-			case RSMPackage.DISTRIBUTE__TO_TILER:
-				return getToTiler();
+		case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
+			return getPatternShape();
+		case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
+			return getRepetitionSpace();
+		case RSMPackage.DISTRIBUTE__FROM_TILER:
+			return getFromTiler();
+		case RSMPackage.DISTRIBUTE__TO_TILER:
+			return getToTiler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,23 +274,24 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
-				setPatternShape((String)newValue);
-				return;
-			case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
-				setRepetitionSpace((String)newValue);
-				return;
-			case RSMPackage.DISTRIBUTE__FROM_TILER:
-				setFromTiler((String)newValue);
-				return;
-			case RSMPackage.DISTRIBUTE__TO_TILER:
-				setToTiler((String)newValue);
-				return;
+		case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
+			setPatternShape((String) newValue);
+			return;
+		case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
+			setRepetitionSpace((String) newValue);
+			return;
+		case RSMPackage.DISTRIBUTE__FROM_TILER:
+			setFromTiler((String) newValue);
+			return;
+		case RSMPackage.DISTRIBUTE__TO_TILER:
+			setToTiler((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,23 +299,24 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
-				setPatternShape(PATTERN_SHAPE_EDEFAULT);
-				return;
-			case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
-				setRepetitionSpace(REPETITION_SPACE_EDEFAULT);
-				return;
-			case RSMPackage.DISTRIBUTE__FROM_TILER:
-				setFromTiler(FROM_TILER_EDEFAULT);
-				return;
-			case RSMPackage.DISTRIBUTE__TO_TILER:
-				setToTiler(TO_TILER_EDEFAULT);
-				return;
+		case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
+			setPatternShape(PATTERN_SHAPE_EDEFAULT);
+			return;
+		case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
+			setRepetitionSpace(REPETITION_SPACE_EDEFAULT);
+			return;
+		case RSMPackage.DISTRIBUTE__FROM_TILER:
+			setFromTiler(FROM_TILER_EDEFAULT);
+			return;
+		case RSMPackage.DISTRIBUTE__TO_TILER:
+			setToTiler(TO_TILER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,19 +324,20 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
-				return PATTERN_SHAPE_EDEFAULT == null ? patternShape != null : !PATTERN_SHAPE_EDEFAULT.equals(patternShape);
-			case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
-				return REPETITION_SPACE_EDEFAULT == null ? repetitionSpace != null : !REPETITION_SPACE_EDEFAULT.equals(repetitionSpace);
-			case RSMPackage.DISTRIBUTE__FROM_TILER:
-				return FROM_TILER_EDEFAULT == null ? fromTiler != null : !FROM_TILER_EDEFAULT.equals(fromTiler);
-			case RSMPackage.DISTRIBUTE__TO_TILER:
-				return TO_TILER_EDEFAULT == null ? toTiler != null : !TO_TILER_EDEFAULT.equals(toTiler);
+		case RSMPackage.DISTRIBUTE__PATTERN_SHAPE:
+			return PATTERN_SHAPE_EDEFAULT == null ? patternShape != null : !PATTERN_SHAPE_EDEFAULT.equals(patternShape);
+		case RSMPackage.DISTRIBUTE__REPETITION_SPACE:
+			return REPETITION_SPACE_EDEFAULT == null ? repetitionSpace != null : !REPETITION_SPACE_EDEFAULT.equals(repetitionSpace);
+		case RSMPackage.DISTRIBUTE__FROM_TILER:
+			return FROM_TILER_EDEFAULT == null ? fromTiler != null : !FROM_TILER_EDEFAULT.equals(fromTiler);
+		case RSMPackage.DISTRIBUTE__TO_TILER:
+			return TO_TILER_EDEFAULT == null ? toTiler != null : !TO_TILER_EDEFAULT.equals(toTiler);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -311,11 +345,14 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (patternShape: ");
@@ -330,4 +367,4 @@ public class DistributeImpl extends AllocateImpl implements Distribute {
 		return result.toString();
 	}
 
-} //DistributeImpl
+} // DistributeImpl

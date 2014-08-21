@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,11 @@ import org.eclipse.uml2.uml.ConnectorEnd;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getOrigin <em>Origin</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getPaving <em>Paving</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getFitting <em>Fitting</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getTiler <em>Tiler</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getBase_ConnectorEnd <em>Base Connector End</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getOrigin <em>Origin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getPaving <em>Paving</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getFitting <em>Fitting</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getTiler <em>Tiler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getBase_ConnectorEnd <em>Base Connector End</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface Tiler extends LinkTopology {
 	 * Returns the value of the '<em><b>Origin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Origin</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Origin</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Origin</em>' attribute.
 	 * @see #setOrigin(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getTiler_Origin()
@@ -56,7 +56,9 @@ public interface Tiler extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getOrigin <em>Origin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Origin</em>' attribute.
 	 * @see #getOrigin()
 	 * @generated
 	 */
@@ -66,10 +68,10 @@ public interface Tiler extends LinkTopology {
 	 * Returns the value of the '<em><b>Paving</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Paving</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Paving</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Paving</em>' attribute.
 	 * @see #setPaving(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getTiler_Paving()
@@ -82,7 +84,9 @@ public interface Tiler extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getPaving <em>Paving</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Paving</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Paving</em>' attribute.
 	 * @see #getPaving()
 	 * @generated
 	 */
@@ -92,10 +96,10 @@ public interface Tiler extends LinkTopology {
 	 * Returns the value of the '<em><b>Fitting</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Fitting</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Fitting</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Fitting</em>' attribute.
 	 * @see #setFitting(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getTiler_Fitting()
@@ -108,7 +112,9 @@ public interface Tiler extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getFitting <em>Fitting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fitting</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Fitting</em>' attribute.
 	 * @see #getFitting()
 	 * @generated
 	 */
@@ -118,10 +124,10 @@ public interface Tiler extends LinkTopology {
 	 * Returns the value of the '<em><b>Tiler</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tiler</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Tiler</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Tiler</em>' attribute.
 	 * @see #setTiler(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getTiler_Tiler()
@@ -134,7 +140,9 @@ public interface Tiler extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getTiler <em>Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tiler</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Tiler</em>' attribute.
 	 * @see #getTiler()
 	 * @generated
 	 */
@@ -144,10 +152,10 @@ public interface Tiler extends LinkTopology {
 	 * Returns the value of the '<em><b>Base Connector End</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Connector End</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Connector End</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Connector End</em>' reference.
 	 * @see #setBase_ConnectorEnd(ConnectorEnd)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMPackage#getTiler_Base_ConnectorEnd()
@@ -160,7 +168,9 @@ public interface Tiler extends LinkTopology {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getBase_ConnectorEnd <em>Base Connector End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Connector End</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Connector End</em>' reference.
 	 * @see #getBase_ConnectorEnd()
 	 * @generated
 	 */

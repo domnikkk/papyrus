@@ -30,14 +30,14 @@ public class SaveCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Instantiates a new save command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param editor
-	 *        the editor
+	 *            the editor
 	 */
 	public SaveCommand(TransactionalEditingDomain domain, ISaveablePart editor) {
-		//Set list command to null the save command is secure with read only
+		// Set list command to null the save command is secure with read only
 		super(domain, "Save command", null);
 		this.editor = editor;
 	}

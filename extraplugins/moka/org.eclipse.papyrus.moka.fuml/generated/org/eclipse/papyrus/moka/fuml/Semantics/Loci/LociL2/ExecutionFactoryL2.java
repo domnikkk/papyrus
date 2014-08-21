@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,63 +77,64 @@ public class ExecutionFactoryL2 extends ExecutionFactoryL1 {
 		super();
 	}
 
+	@Override
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 2)
 		SemanticVisitor visitor = null;
-		if(element instanceof Activity) {
+		if (element instanceof Activity) {
 			visitor = new ActivityExecution();
-		} else if(element instanceof ActivityParameterNode) {
+		} else if (element instanceof ActivityParameterNode) {
 			visitor = new ActivityParameterNodeActivation();
-		} else if(element instanceof InitialNode) {
+		} else if (element instanceof InitialNode) {
 			visitor = new InitialNodeActivation();
-		} else if(element instanceof ActivityFinalNode) {
+		} else if (element instanceof ActivityFinalNode) {
 			visitor = new ActivityFinalNodeActivation();
-		} else if(element instanceof FlowFinalNode) {
+		} else if (element instanceof FlowFinalNode) {
 			visitor = new FlowFinalNodeActivation();
-		} else if(element instanceof JoinNode) {
+		} else if (element instanceof JoinNode) {
 			visitor = new JoinNodeActivation();
-		} else if(element instanceof MergeNode) {
+		} else if (element instanceof MergeNode) {
 			visitor = new MergeNodeActivation();
-		} else if(element instanceof ForkNode) {
+		} else if (element instanceof ForkNode) {
 			visitor = new ForkNodeActivation();
-		} else if(element instanceof DecisionNode) {
+		} else if (element instanceof DecisionNode) {
 			visitor = new DecisionNodeActivation();
-		} else if(element instanceof InputPin) {
+		} else if (element instanceof InputPin) {
 			visitor = new InputPinActivation();
-		} else if(element instanceof OutputPin) {
+		} else if (element instanceof OutputPin) {
 			visitor = new OutputPinActivation();
-		} else if(element instanceof CallBehaviorAction) {
+		} else if (element instanceof CallBehaviorAction) {
 			visitor = new CallBehaviorActionActivation();
-		} else if(element instanceof CallOperationAction) {
+		} else if (element instanceof CallOperationAction) {
 			visitor = new CallOperationActionActivation();
-		} else if(element instanceof SendSignalAction) {
+		} else if (element instanceof SendSignalAction) {
 			visitor = new SendSignalActionActivation();
-		} else if(element instanceof ReadSelfAction) {
+		} else if (element instanceof ReadSelfAction) {
 			visitor = new ReadSelfActionActivation();
-		} else if(element instanceof TestIdentityAction) {
+		} else if (element instanceof TestIdentityAction) {
 			visitor = new TestIdentityActionActivation();
-		} else if(element instanceof ValueSpecificationAction) {
+		} else if (element instanceof ValueSpecificationAction) {
 			visitor = new ValueSpecificationActionActivation();
-		} else if(element instanceof CreateObjectAction) {
+		} else if (element instanceof CreateObjectAction) {
 			visitor = new CreateObjectActionActivation();
-		} else if(element instanceof DestroyObjectAction) {
+		} else if (element instanceof DestroyObjectAction) {
 			visitor = new DestroyObjectActionActivation();
-		} else if(element instanceof ReadStructuralFeatureAction) {
+		} else if (element instanceof ReadStructuralFeatureAction) {
 			visitor = new ReadStructuralFeatureActionActivation();
-		} else if(element instanceof ClearStructuralFeatureAction) {
+		} else if (element instanceof ClearStructuralFeatureAction) {
 			visitor = new ClearStructuralFeatureActionActivation();
-		} else if(element instanceof AddStructuralFeatureValueAction) {
+		} else if (element instanceof AddStructuralFeatureValueAction) {
 			visitor = new AddStructuralFeatureValueActionActivation();
-		} else if(element instanceof RemoveStructuralFeatureValueAction) {
+		} else if (element instanceof RemoveStructuralFeatureValueAction) {
 			visitor = new RemoveStructuralFeatureValueActionActivation();
-		} else if(element instanceof ReadLinkAction) {
+		} else if (element instanceof ReadLinkAction) {
 			visitor = new ReadLinkActionActivation();
-		} else if(element instanceof ClearAssociationAction) {
+		} else if (element instanceof ClearAssociationAction) {
 			visitor = new ClearAssociationActionActivation();
-		} else if(element instanceof CreateLinkAction) {
+		} else if (element instanceof CreateLinkAction) {
 			visitor = new CreateLinkActionActivation();
-		} else if(element instanceof DestroyLinkAction) {
+		} else if (element instanceof DestroyLinkAction) {
 			visitor = new DestroyLinkActionActivation();
 		} else {
 			visitor = super.instantiateVisitor(element);

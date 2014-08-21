@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.facade.FacadePackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FacadeXMLProcessor extends XMLProcessor {
@@ -35,17 +36,19 @@ public class FacadeXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FacadeXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		FacadePackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the FacadeResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,4 +61,4 @@ public class FacadeXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //FacadeXMLProcessor
+} // FacadeXMLProcessor

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,21 +40,23 @@ import org.eclipse.ui.statushandlers.StatusManager;
  */
 public class CDOContextEditAction extends AbstractCDOContextAction implements IContextEditAction {
 
+	@Override
 	public String getToolTip() {
 		return Messages.CDOContextEditAction_0;
 	}
 
+	@Override
 	public void openEditor(Context context, IProgressMonitor monitor) throws CoreException {
 		SubMonitor sub = SubMonitor.convert(monitor, NLS.bind(Messages.CDOContextEditAction_1, context.getName()), IProgressMonitor.UNKNOWN);
 
 		CDOTransaction transaction = createTransaction(context);
 		try {
 			IEditorPart editor = openEditor(getDoppelganger(context, transaction));
-			if(editor != null) { // will be null if an editor was already open
+			if (editor != null) { // will be null if an editor was already open
 				hookCloseListener(editor, transaction);
 				hookSaveListener(editor, transaction);
 			} else {
-				// we didn't open the editor?  Then we don't need the transaction
+				// we didn't open the editor? Then we don't need the transaction
 				transaction.close();
 			}
 		} finally {
@@ -69,7 +71,7 @@ public class CDOContextEditAction extends AbstractCDOContextAction implements IC
 		IEditorInput input = new CDOResourceEditorInput(context.eResource(), context.getName());
 
 		IEditorPart existing = page.findEditor(input);
-		if(existing == null) { // don't return the editor if already open
+		if (existing == null) { // don't return the editor if already open
 			result = page.openEditor(input, "org.eclipse.papyrus.customization.properties.UIEditor", true); //$NON-NLS-1$;
 		}
 
@@ -81,8 +83,9 @@ public class CDOContextEditAction extends AbstractCDOContextAction implements IC
 
 		page.addPartListener(new IPartListener() {
 
+			@Override
 			public void partClosed(IWorkbenchPart part) {
-				if(part == editor) {
+				if (part == editor) {
 					try {
 						view.close();
 					} finally {
@@ -91,18 +94,22 @@ public class CDOContextEditAction extends AbstractCDOContextAction implements IC
 				}
 			}
 
+			@Override
 			public void partOpened(IWorkbenchPart part) {
 				// pass
 			}
 
+			@Override
 			public void partDeactivated(IWorkbenchPart part) {
 				// pass
 			}
 
+			@Override
 			public void partBroughtToTop(IWorkbenchPart part) {
 				// pass
 			}
 
+			@Override
 			public void partActivated(IWorkbenchPart part) {
 				// pass
 			}
@@ -112,11 +119,12 @@ public class CDOContextEditAction extends AbstractCDOContextAction implements IC
 	private void hookSaveListener(final IEditorPart editor, final CDOTransaction transaction) {
 		editor.addPropertyListener(new IPropertyListener() {
 
+			@Override
 			public void propertyChanged(Object source, int property) {
-				if(property == IEditorPart.PROP_DIRTY) {
-					if(!editor.isDirty()) {
+				if (property == IEditorPart.PROP_DIRTY) {
+					if (!editor.isDirty()) {
 						// it's not enough for the editor to save, because that only updates
-						// the CLOB content of the CDOTextResources that are changed.  We
+						// the CLOB content of the CDOTextResources that are changed. We
 						// need to commit the changes to the repository
 						try {
 							transaction.commit();

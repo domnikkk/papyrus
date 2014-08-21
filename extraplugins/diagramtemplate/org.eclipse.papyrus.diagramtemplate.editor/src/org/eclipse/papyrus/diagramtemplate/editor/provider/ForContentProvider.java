@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.diagramtemplate.Selection;
 import org.eclipse.papyrus.diagramtemplate.SelectionRef;
 
 /**
- * 
+ *
  * Content provider for the For selection
- * 
+ *
  */
 public class ForContentProvider implements ITreeContentProvider {
 
@@ -39,17 +39,17 @@ public class ForContentProvider implements ITreeContentProvider {
 	}
 
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof List<?>) {
-			return ((List<Selection>)inputElement).toArray();
+		if (inputElement instanceof List<?>) {
+			return ((List<Selection>) inputElement).toArray();
 		}
 
 		return null;
 	}
 
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof AbstractSelection) {
-			List<SelectionRef> itemRefList = ((AbstractSelection)parentElement).getSelectionRef();
-			if(!itemRefList.isEmpty()) {
+		if (parentElement instanceof AbstractSelection) {
+			List<SelectionRef> itemRefList = ((AbstractSelection) parentElement).getSelectionRef();
+			if (!itemRefList.isEmpty()) {
 				return itemRefList.toArray();
 			}
 		}
@@ -63,8 +63,8 @@ public class ForContentProvider implements ITreeContentProvider {
 	}
 
 	public boolean hasChildren(Object element) {
-		if(element instanceof AbstractSelection) {
-			List<SelectionRef> itemRefList = ((AbstractSelection)element).getSelectionRef();
+		if (element instanceof AbstractSelection) {
+			List<SelectionRef> itemRefList = ((AbstractSelection) element).getSelectionRef();
 			return !itemRefList.isEmpty();
 		}
 

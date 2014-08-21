@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -45,10 +45,9 @@ import org.junit.Test;
 
 
 /**
- * Test the {@link LayerStackSynchronizer} by initializing it from the {@link LayersStackApplication}
- * class.
- * 
- * 
+ * Test the {@link LayerStackSynchronizer} by initializing it from the {@link LayersStackApplication} class.
+ *
+ *
  * @author cedric dumoulin
  *
  */
@@ -63,24 +62,25 @@ public class LayerStackSynchronizerWithApplicationTest {
 	 * ModelSet created for each test
 	 */
 	protected ModelSet modelSet;
+
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-//		// Create ModelSet and Model
-//		ModelSet mngr = new ModelSet();
-//		// LayersModel
-//		LayersModel layersModel = new LayersModel();
-//		mngr.registerModel(layersModel);
-//		// Notation model
-//		NotationModel notationModel = new NotationModel();
-//		mngr.registerModel(notationModel);
-//		// Do create resources
-//		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
-//		mngr.createModels(uri);
-//		
-//		modelSet = mngr;
+		// // Create ModelSet and Model
+		// ModelSet mngr = new ModelSet();
+		// // LayersModel
+		// LayersModel layersModel = new LayersModel();
+		// mngr.registerModel(layersModel);
+		// // Notation model
+		// NotationModel notationModel = new NotationModel();
+		// mngr.registerModel(notationModel);
+		// // Do create resources
+		// URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
+		// mngr.createModels(uri);
+		//
+		// modelSet = mngr;
 	}
 
 	/**
@@ -88,13 +88,14 @@ public class LayerStackSynchronizerWithApplicationTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-//		modelSet.unload();
-		
+		// modelSet.unload();
+
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#LayerStackSynchronizer(org.eclipse.papyrus.layers.stackmodel.layers.LayersStack)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testLayerStackSynchronizer() throws LayersException {
@@ -105,42 +106,42 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create synchronizer
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
+
 		// Check creation
 		assertNotNull("object created", synchronizer);
 
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
 		View view3 = NotationFactory.eINSTANCE.createShape();
 		View view4 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
 		Property property3 = propertyRegistry.getProperties().get(index++);
 		Property property4 = propertyRegistry.getProperties().get(index++);
-		
-		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1), Arrays.asList(property1));
-		
-		// Create layer2: views ={} propInstances={}
-		Layer layer2 = createLayer( layer, Arrays.asList(view1, view2), Arrays.asList(property1, property2));
-		
-		// Create layer3: views ={} propInstances={}
-		Layer layer3 = createLayer( layer, Arrays.asList(view3), Arrays.asList(property3));
-		
-		
 
-		
+		// Create layer1: views ={} propInstances={}
+		Layer layer1 = createLayer(layer, Arrays.asList(view1), Arrays.asList(property1));
+
+		// Create layer2: views ={} propInstances={}
+		Layer layer2 = createLayer(layer, Arrays.asList(view1, view2), Arrays.asList(property1, property2));
+
+		// Create layer3: views ={} propInstances={}
+		Layer layer3 = createLayer(layer, Arrays.asList(view3), Arrays.asList(property3));
+
+
+
+
 	}
 
 	/**
@@ -155,11 +156,11 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create synchronizer
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
-		
+
+
 		// Check creation
 		assertNotNull("getDiagram", synchronizer.getDiagram());
 		assertSame("getDiagram", diagram, synchronizer.getDiagram());
@@ -177,11 +178,11 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create synchronizer
 		LayerStackSynchronizer synchronizer = new LayerStackSynchronizer(stack);
-		
-		
+
+
 		// Check creation
 		assertNotNull("getLayersStack", synchronizer.getLayersStack());
 		assertSame("getLayersStack", stack, synchronizer.getLayersStack());
@@ -207,7 +208,8 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueAdded(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testPropertyValueAdded() throws LayersException {
@@ -218,7 +220,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -227,31 +229,32 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1), Arrays.asList(property1));
-		
+		Layer layer1 = createLayer(layer, Arrays.asList(view1), Arrays.asList(property1));
+
 		// Checks
 		traces.clear();
 		// add a property
 		layer1.addPropertyInstance(property2);
-		
-		assertTrue("event sent", traces.size()>0);
+
+		assertTrue("event sent", traces.size() > 0);
 		assertSame("event sent", "propertyValueAdded", traces.get(0).name);
-		
+
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueRemoved(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testPropertyValueRemoved() throws LayersException {
@@ -262,7 +265,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -271,30 +274,31 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1), Arrays.asList(property1, property2));
-		
+		Layer layer1 = createLayer(layer, Arrays.asList(view1), Arrays.asList(property1, property2));
+
 		// Checks
 		traces.clear();
 		// remove a property
 		layer1.removePropertyInstance(property2);
-		
-		assertTrue("event sent", traces.size()>0);
+
+		assertTrue("event sent", traces.size() > 0);
 		assertSame("event sent", "propertyValueRemoved", traces.get(0).name);
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#propertyValueChanged(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testPropertyValueChanged() throws LayersException {
@@ -305,7 +309,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -314,38 +318,38 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1), Arrays.asList(property1, property2));
-		
+		Layer layer1 = createLayer(layer, Arrays.asList(view1), Arrays.asList(property1, property2));
+
 		// Checks
 		traces.clear();
 		// change a property value
 		TypeInstance value = layer1.getPropertyInstance(property1);
 		// Check the type of the instance
 		// We don't know the type as it is set externally in the Property registry.
-		if( value instanceof StringInstance)   {
+		if (value instanceof StringInstance) {
 			assertTrue("value is instance of String", value instanceof StringInstance);
-			StringInstance stringValue = (StringInstance)value;
+			StringInstance stringValue = (StringInstance) value;
 			stringValue.setValue("newValue");
 		}
-		else if( value instanceof BooleanInstance)   {
-			BooleanInstance realValue = (BooleanInstance)value;
+		else if (value instanceof BooleanInstance) {
+			BooleanInstance realValue = (BooleanInstance) value;
 			realValue.setValue(true);
 		}
-		
+
 		// What for ?
 		layer1.removePropertyInstance(property2);
-		
-		assertTrue("event sent", traces.size()>0);
+
+		assertTrue("event sent", traces.size() > 0);
 		assertSame("event sent", "propertyValueChanged", traces.get(0).name);
 	}
 
@@ -387,7 +391,8 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewAddedToLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testViewAddedToLayer() throws LayersException {
@@ -398,7 +403,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -407,32 +412,33 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1), Arrays.asList(property1));
-		
+		Layer layer1 = createLayer(layer, Arrays.asList(view1), Arrays.asList(property1));
+
 		// action
 		traces.clear();
 		// remove a view
 		layer1.getViews().add(view2);
-		
+
 		// assert
-		assertTrue("event sent", traces.size()>0);
+		assertTrue("event sent", traces.size() > 0);
 		TriggeredEvent event = traces.get(0);
 		assertSame("event sent", "viewAddedToLayer", event.name);
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewAddedToLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testNViewAddedToLayer() throws LayersException {
@@ -443,7 +449,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -452,44 +458,45 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
 		View view3 = NotationFactory.eINSTANCE.createShape();
-		
+
 		List<View> viewsToAttach = Arrays.asList(view1);
 		List<View> viewsToAdd = Arrays.asList(view2, view3);
 
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, viewsToAttach, Arrays.asList(property1));
-		
+		Layer layer1 = createLayer(layer, viewsToAttach, Arrays.asList(property1));
+
 		// action
 		traces.clear();
 		// remove a view
-		layer1.getViews().addAll(viewsToAdd );
-		
+		layer1.getViews().addAll(viewsToAdd);
+
 		// assert
-		assertTrue("event sent", traces.size()>0);
+		assertTrue("event sent", traces.size() > 0);
 		TriggeredEvent event = traces.get(0);
 		assertSame("event sent", "multiViewsAddedToLayer", event.name);
-		
+
 		// Check the collection
 		Notification notification = event.notifier;
 		assertNotNull("notification is set", notification);
-		
+
 		List<View> addedViews = LayersModelEventUtils.ViewEvents.getViewsAdded(notification);
-		assertEquals( "both removed list have the same size", viewsToAdd.size(), addedViews.size());
-		assertTrue( "notification contains removed views", addedViews.containsAll(viewsToAdd));
+		assertEquals("both removed list have the same size", viewsToAdd.size(), addedViews.size());
+		assertTrue("notification contains removed views", addedViews.containsAll(viewsToAdd));
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewRemovedFromLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testViewRemovedFromLayer() throws LayersException {
@@ -500,7 +507,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -509,32 +516,33 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, Arrays.asList(view1, view2), Arrays.asList(property1));
-		
+		Layer layer1 = createLayer(layer, Arrays.asList(view1, view2), Arrays.asList(property1));
+
 		// action
 		traces.clear();
 		// remove a view
 		layer1.getViews().remove(view2);
-		
+
 		// assert
-		assertTrue("event sent", traces.size()>0);
+		assertTrue("event sent", traces.size() > 0);
 		TriggeredEvent event = traces.get(0);
 		assertSame("event sent", "viewRemovedFromLayer", event.name);
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.LayerStackSynchronizer#viewRemovedFromLayer(org.eclipse.emf.common.notify.Notification)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testNViewRemovedFromLayer() throws LayersException {
@@ -545,7 +553,7 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 		// Create stack
 		LayersStack stack = application.getLayersStackFor(diagram);
-		
+
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
@@ -554,39 +562,39 @@ public class LayerStackSynchronizerWithApplicationTest {
 		// Create synchronizer
 		LayerStackSynchronizerSubclass synchronizer = new LayerStackSynchronizerSubclass(stack);
 		TriggeredEventTraces traces = synchronizer.traces;
-		
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
 		View view3 = NotationFactory.eINSTANCE.createShape();
-		
+
 		List<View> viewsToAttach = Arrays.asList(view1, view2, view3);
 		List<View> viewsToRemove = Arrays.asList(view2, view3);
-		
-		
+
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer1 = createLayer( layer, viewsToAttach, Arrays.asList(property1));
-		
+		Layer layer1 = createLayer(layer, viewsToAttach, Arrays.asList(property1));
+
 		// action
 		traces.clear();
 		// remove a view
 		layer1.getViews().removeAll(viewsToRemove);
-		
+
 		// assert
-		assertTrue("event sent", traces.size()>0);
+		assertTrue("event sent", traces.size() > 0);
 		TriggeredEvent event = traces.get(0);
 		assertSame("event sent", "multiViewsRemovedFromLayer", event.name);
 		// Check the collection
 		Notification notification = event.notifier;
 		assertNotNull("notification is set", notification);
-		
+
 		List<View> removedViews = LayersModelEventUtils.ViewEvents.getViewsRemoved(notification);
-		assertEquals( "both removed list have the same size", removedViews.size(), viewsToRemove.size());
-		assertTrue( "notification contains removed views", removedViews.containsAll(viewsToRemove));
+		assertEquals("both removed list have the same size", removedViews.size(), viewsToRemove.size());
+		assertTrue("notification contains removed views", removedViews.containsAll(viewsToRemove));
 	}
 
 	/**
@@ -618,29 +626,29 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Create a layer with the specified view and property set
-	 * 
+	 *
 	 * @param asList
 	 * @param asList2
 	 * @return
-	 * @throws LayersException 
+	 * @throws LayersException
 	 */
 	protected Layer createLayer(LayerOperator parent, List<View> views, List<Property> properties) throws LayersException {
-	
+
 		// Create the layer
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
 		// Set the application (needed ?)
 		layer.setApplication(parent.getApplication());
 		// Attach it to its parent
 		parent.getLayers().add(layer);
-		
-		
+
+
 		// Add views
-		for( View view : views) {
+		for (View view : views) {
 			layer.getViews().add(view);
 		}
-		
+
 		// Add property instances
-		for(Property property : properties) {
+		for (Property property : properties) {
 			layer.addPropertyInstance(property);
 		}
 		return layer;
@@ -648,35 +656,36 @@ public class LayerStackSynchronizerWithApplicationTest {
 
 	/**
 	 * Test method for {@link #createLayer(List, List)}
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testCreateLayer() throws LayersException {
-		
+
 		// Create requested objects
 		TopLayerOperator layerParent = LayersFactory.eINSTANCE.createTopLayerOperator();
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		layerParent.setApplication(application);
 		PropertyRegistry propertyRegistry = application.getPropertyRegistry();
-	
+
 		// Create Views
 		View view1 = NotationFactory.eINSTANCE.createShape();
 		View view2 = NotationFactory.eINSTANCE.createShape();
 		View view3 = NotationFactory.eINSTANCE.createShape();
-		
+
 		// Create Properties
 		int index = 0;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
 		Property property3 = propertyRegistry.getProperties().get(index++);
-		
+
 		// Create layer1: views ={} propInstances={}
-		Layer layer = createLayer( layerParent, Arrays.asList(view1, view2), Arrays.asList(property1, property2));
-		
+		Layer layer = createLayer(layerParent, Arrays.asList(view1, view2), Arrays.asList(property1, property2));
+
 		// Checks
 		assertNotNull("layer created", layer);
 		assertSame("views added", 2, layer.getViews().size());
-		
+
 		assertSame("property instance added", 2, layer.getPropertyValueMap().values().size());
 		assertSame("property instance is correctly set", layer.getPropertyValueMap().get(property1.getName()), layer.getPropertyInstance(property1));
 		assertSame("property instance is correctly set", layer.getPropertyValueMap().get(property2.getName()), layer.getPropertyInstance(property2));

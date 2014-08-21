@@ -15,8 +15,8 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongSynchronizationConstraint#getEvent <em>Event</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongSynchronizationConstraint#getTolerance <em>Tolerance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongSynchronizationConstraint#getEvent <em>Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.StrongSynchronizationConstraint#getTolerance <em>Tolerance</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,10 +30,10 @@ public interface StrongSynchronizationConstraint extends TimingConstraint {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.timing.Event}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Event</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Event</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongSynchronizationConstraint_Event()
 	 * @model lower="2" ordered="false"
@@ -45,10 +45,10 @@ public interface StrongSynchronizationConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Tolerance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tolerance</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Tolerance</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Tolerance</em>' reference.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getStrongSynchronizationConstraint_Tolerance()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

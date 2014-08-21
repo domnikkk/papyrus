@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.facademapping.Mapping;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl#getMappings <em>Mappings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.impl.FacadeMapppingImpl#getMappings <em>Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getMappings() <em>Mappings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMappings()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FacadeMapppingImpl() {
@@ -67,6 +69,7 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,8 +80,10 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Mapping> getMappings() {
 		if (mappings == null) {
 			mappings = new EObjectContainmentEList<Mapping>(Mapping.class, this, FacademappingPackage.FACADE_MAPPPING__MAPPINGS);
@@ -89,13 +94,14 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
-				return ((InternalEList<?>)getMappings()).basicRemove(otherEnd, msgs);
+		case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
+			return ((InternalEList<?>) getMappings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -103,13 +109,14 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
-				return getMappings();
+		case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
+			return getMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,16 +124,17 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
-				getMappings().clear();
-				getMappings().addAll((Collection<? extends Mapping>)newValue);
-				return;
+		case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
+			getMappings().clear();
+			getMappings().addAll((Collection<? extends Mapping>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,14 +142,15 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
-				getMappings().clear();
-				return;
+		case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
+			getMappings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,15 +158,16 @@ public class FacadeMapppingImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
-				return mappings != null && !mappings.isEmpty();
+		case FacademappingPackage.FACADE_MAPPPING__MAPPINGS:
+			return mappings != null && !mappings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FacadeMapppingImpl
+} // FacadeMapppingImpl

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -48,7 +48,7 @@ public class StackedLayerOperatorDescriptorImplTest {
 	public void testStackedLayerOperatorDescriptorImpl() {
 		// Create an instance of the class
 		StackedLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createStackedLayerOperatorDescriptor();
-		
+
 		assertNotNull("object created", descriptor);
 	}
 
@@ -59,10 +59,10 @@ public class StackedLayerOperatorDescriptorImplTest {
 	public void testGetName() {
 		// Create an instance of the class
 		StackedLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createStackedLayerOperatorDescriptor();
-		
+
 		// Do test
 		assertSame("name correctly set", "StackedLayerOperator", descriptor.getName());
-		
+
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class StackedLayerOperatorDescriptorImplTest {
 	public void testCreateLayerOperator() {
 		// Create an instance of the class
 		StackedLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createStackedLayerOperatorDescriptor();
-		
+
 		AbstractLayerOperator layerOperator = descriptor.createLayerOperator();
 		assertNotNull("layer created", layerOperator);
 		assertTrue("right type", layerOperator instanceof StackedLayerOperator);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.papyrus.facade.extensiondefinition.util.ExtensiondefinitionAd
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExtensiondefinitionItemProviderAdapterFactory extends ExtensiondefinitionAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -48,6 +49,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -56,6 +58,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -64,6 +67,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -72,6 +76,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ExtensiondefinitionItemProviderAdapterFactory() {
@@ -86,6 +91,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExtensionDefinitionItemProvider extensionDefinitionItemProvider;
@@ -94,6 +100,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,6 +116,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BaseMetaclassItemProvider baseMetaclassItemProvider;
@@ -117,6 +125,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,6 +141,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facade.extensiondefinition.Combination} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CombinationItemProvider combinationItemProvider;
@@ -140,6 +150,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facade.extensiondefinition.Combination}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,8 +166,10 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -165,8 +178,10 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -174,6 +189,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,6 +201,7 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,13 +212,14 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -213,8 +231,10 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -223,8 +243,10 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -233,8 +255,10 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -244,15 +268,23 @@ public class ExtensiondefinitionItemProviderAdapterFactory extends Extensiondefi
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (extensionDefinitionItemProvider != null) extensionDefinitionItemProvider.dispose();
-		if (baseMetaclassItemProvider != null) baseMetaclassItemProvider.dispose();
-		if (combinationItemProvider != null) combinationItemProvider.dispose();
+		if (extensionDefinitionItemProvider != null) {
+			extensionDefinitionItemProvider.dispose();
+		}
+		if (baseMetaclassItemProvider != null) {
+			baseMetaclassItemProvider.dispose();
+		}
+		if (combinationItemProvider != null) {
+			combinationItemProvider.dispose();
+		}
 	}
 
 }

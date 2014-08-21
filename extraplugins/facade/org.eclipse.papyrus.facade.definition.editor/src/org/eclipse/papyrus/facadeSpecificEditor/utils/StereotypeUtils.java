@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class StereotypeUtils {
 
 	/**
 	 * Compute all the ecore UML metaclasses on which the stereotype can be applied
-	 * 
+	 *
 	 * @param stereotype
 	 * @param concreteClassesOnly
 	 * @return
@@ -49,10 +49,10 @@ public class StereotypeUtils {
 	public static List<EClass> getAllExtendableMetaclasses(Stereotype stereotype, boolean concreteClassesOnly) {
 		EList<Class> extendedMetaclasses = stereotype.getAllExtendedMetaclasses();
 		Set<EClass> allMetaclasses = new LinkedHashSet<EClass>();
-		for(Class extendedMetaclass : extendedMetaclasses) {
+		for (Class extendedMetaclass : extendedMetaclasses) {
 			EClassifier UMLEClass = findEClass(extendedMetaclass);
-			if(UMLEClass instanceof EClass) {
-				allMetaclasses.addAll(getSubclassesOf((EClass)UMLEClass, concreteClassesOnly));
+			if (UMLEClass instanceof EClass) {
+				allMetaclasses.addAll(getSubclassesOf((EClass) UMLEClass, concreteClassesOnly));
 			}
 		}
 
@@ -61,14 +61,14 @@ public class StereotypeUtils {
 
 	/**
 	 * Get the ecore UML metaclass corresponding to an {@link ExtensionDefinition}
-	 * 
+	 *
 	 * @param extension
 	 * @return
 	 */
 	public static EClassifier findBase(ExtensionDefinition extension) {
-		for(Property member : extension.getExtension().getMemberEnds()) {
-			if(!(member instanceof ExtensionEnd)) {
-				return findEClass((Classifier)member.getType());
+		for (Property member : extension.getExtension().getMemberEnds()) {
+			if (!(member instanceof ExtensionEnd)) {
+				return findEClass((Classifier) member.getType());
 			}
 		}
 		return null;
@@ -76,7 +76,7 @@ public class StereotypeUtils {
 
 	/**
 	 * Compute all the ecore UML metaclasses on which the extension applies
-	 * 
+	 *
 	 * @param extension
 	 * @param concreteClassesOnly
 	 * @return
@@ -86,8 +86,8 @@ public class StereotypeUtils {
 		Set<EClass> allMetaclasses = new LinkedHashSet<EClass>();
 
 		EClassifier UMLEClass = findEClass(extendedMetaclass);
-		if(UMLEClass instanceof EClass) {
-			allMetaclasses.addAll(getSubclassesOf((EClass)UMLEClass, concreteClassesOnly));
+		if (UMLEClass instanceof EClass) {
+			allMetaclasses.addAll(getSubclassesOf((EClass) UMLEClass, concreteClassesOnly));
 		}
 
 		return new LinkedList<EClass>(allMetaclasses);
@@ -95,7 +95,7 @@ public class StereotypeUtils {
 
 	/**
 	 * Get all the ecore subclasses of a UML metaclass
-	 * 
+	 *
 	 * @param UMLEClass
 	 * @param concreteClassesOnly
 	 * @return
@@ -103,19 +103,19 @@ public class StereotypeUtils {
 	protected static Collection<? extends EClass> getSubclassesOf(EClass UMLEClass, boolean concreteClassesOnly) {
 		Set<EClass> subs = new LinkedHashSet<EClass>();
 
-		if(UMLEClass != null) {
-			if((concreteClassesOnly && !UMLEClass.isAbstract()) || !concreteClassesOnly) {
+		if (UMLEClass != null) {
+			if ((concreteClassesOnly && !UMLEClass.isAbstract()) || !concreteClassesOnly) {
 				subs.add(UMLEClass);
 			}
 
-			for(EClassifier classifier : umlMetamodel.getEClassifiers()) {
-				if(classifier instanceof EClass) {
-					EClass clazz = (EClass)classifier;
+			for (EClassifier classifier : umlMetamodel.getEClassifiers()) {
+				if (classifier instanceof EClass) {
+					EClass clazz = (EClass) classifier;
 
-					if((concreteClassesOnly && !clazz.isAbstract()) || !concreteClassesOnly) {
+					if ((concreteClassesOnly && !clazz.isAbstract()) || !concreteClassesOnly) {
 
 						EList<EClass> supers = clazz.getEAllSuperTypes();
-						if(supers.contains(UMLEClass)) {
+						if (supers.contains(UMLEClass)) {
 							subs.add(clazz);
 						}
 					}
@@ -127,19 +127,19 @@ public class StereotypeUtils {
 
 	/**
 	 * Get the eClass in the UML metamodel from a UML classifier
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */
 	public static EClassifier findEClass(Classifier type) {
-		for(EClassifier classifier : umlMetamodel.getEClassifiers()) {
-			if(classifier.getName().equals(type.getName())) {
+		for (EClassifier classifier : umlMetamodel.getEClassifiers()) {
+			if (classifier.getName().equals(type.getName())) {
 				return classifier;
 			}
 		}
 
-		for(EClassifier classifier : typesPackage.getEClassifiers()) {
-			if(classifier.getName().equals(type.getName())) {
+		for (EClassifier classifier : typesPackage.getEClassifiers()) {
+			if (classifier.getName().equals(type.getName())) {
 				return classifier;
 			}
 		}

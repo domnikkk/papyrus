@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,6 +40,7 @@ public class CollaborationUseConfigurationForUML extends DefaultDirectEditorConf
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public SourceViewerConfiguration getSourceViewerConfiguration() {
 		return configuration;
 	}
@@ -47,9 +48,10 @@ public class CollaborationUseConfigurationForUML extends DefaultDirectEditorConf
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof CollaborationUse) {
-			return CollaborationUseUtil.getLabel((CollaborationUse)editedObject);
+		if (editedObject instanceof CollaborationUse) {
+			return CollaborationUseUtil.getLabel((CollaborationUse) editedObject);
 		}
 		return "not a CollaborationUse";
 	}
@@ -59,8 +61,8 @@ public class CollaborationUseConfigurationForUML extends DefaultDirectEditorConf
 	 */
 	@Override
 	public Object preEditAction(Object objectToEdit) {
-		if(objectToEdit instanceof CollaborationUse) {
-			configuration.setCollaborationUse((CollaborationUse)objectToEdit);
+		if (objectToEdit instanceof CollaborationUse) {
+			configuration.setCollaborationUse((CollaborationUse) objectToEdit);
 		}
 		return super.preEditAction(objectToEdit);
 	}
@@ -68,11 +70,12 @@ public class CollaborationUseConfigurationForUML extends DefaultDirectEditorConf
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object postEditAction(Object editedObject, String text) {
 		// Should undo the various creations done in the property edition
 		// (template binding, etc...)
-		if(editedObject instanceof CollaborationUse) {
-			CollaborationUseGenerator generator = new CollaborationUseGenerator(((CollaborationUse)editedObject));
+		if (editedObject instanceof CollaborationUse) {
+			CollaborationUseGenerator generator = new CollaborationUseGenerator(((CollaborationUse) editedObject));
 			generator.parseAndModifyCollaborationUse(text);
 		}
 		return null;
@@ -86,9 +89,9 @@ public class CollaborationUseConfigurationForUML extends DefaultDirectEditorConf
 		return new IInputValidator() {
 
 			public String isValid(String newText) {
-				if(getObjectToEdit() instanceof CollaborationUse) {
+				if (getObjectToEdit() instanceof CollaborationUse) {
 					CollaborationUseGenerator generator = new CollaborationUseGenerator(
-							((CollaborationUse)getObjectToEdit()));
+							((CollaborationUse) getObjectToEdit()));
 					return generator.parseAndValidateCollaborationUse(newText);
 				}
 				return null;

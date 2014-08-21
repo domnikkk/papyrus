@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,6 +34,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected FillPropertySetterImpl() {
@@ -45,6 +46,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -54,6 +56,7 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 
 	/**
 	 * Set the property of the specified view.
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view
@@ -64,23 +67,23 @@ public class FillPropertySetterImpl extends PropertySetterImpl implements FillPr
 
 		// Try to get the FontStyle object to modify
 		FillStyle style;
-		if(view instanceof FillStyle) {
+		if (view instanceof FillStyle) {
 			// Try directly (case of Shape ...)
-			style = (FillStyle)view;
-		} 
+			style = (FillStyle) view;
+		}
 		else {
 			// Try as additionnal style
-			style = (FillStyle)view.getStyle(NotationPackage.eINSTANCE.getFillStyle() );
+			style = (FillStyle) view.getStyle(NotationPackage.eINSTANCE.getFillStyle());
 		}
 
 		// Set values
-		if( style != null ) {
+		if (style != null) {
 
-			FillInstance fillValue = (FillInstance)value;
+			FillInstance fillValue = (FillInstance) value;
 
 			style.setFillColor(fillValue.getFillColor().getValue());
 			style.setTransparency(fillValue.getTransparency());
 		}
-		
+
 	}
-} //FillPropertySetterImpl
+} // FillPropertySetterImpl

@@ -24,13 +24,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage
  * @generated
  */
@@ -39,6 +39,7 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static BehaviordescriptionPackage modelPackage;
@@ -47,6 +48,7 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BehaviordescriptionSwitch() {
@@ -59,6 +61,7 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -72,71 +75,119 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_ATTRIBUTE: {
-				BehaviorConstraintBindingAttribute behaviorConstraintBindingAttribute = (BehaviorConstraintBindingAttribute)theEObject;
-				T result = caseBehaviorConstraintBindingAttribute(behaviorConstraintBindingAttribute);
-				if (result == null) result = caseAttribute(behaviorConstraintBindingAttribute);
-				if (result == null) result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingAttribute);
-				if (result == null) result = caseEAElement(behaviorConstraintBindingAttribute);
-				if (result == null) result = caseBehaviorConstraintParameter(behaviorConstraintBindingAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_ATTRIBUTE: {
+			BehaviorConstraintBindingAttribute behaviorConstraintBindingAttribute = (BehaviorConstraintBindingAttribute) theEObject;
+			T result = caseBehaviorConstraintBindingAttribute(behaviorConstraintBindingAttribute);
+			if (result == null) {
+				result = caseAttribute(behaviorConstraintBindingAttribute);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PARAMETER: {
-				BehaviorConstraintParameter behaviorConstraintParameter = (BehaviorConstraintParameter)theEObject;
-				T result = caseBehaviorConstraintParameter(behaviorConstraintParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingAttribute);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING: {
-				BehaviorConstraintInternalBinding behaviorConstraintInternalBinding = (BehaviorConstraintInternalBinding)theEObject;
-				T result = caseBehaviorConstraintInternalBinding(behaviorConstraintInternalBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAElement(behaviorConstraintBindingAttribute);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_EVENT: {
-				BehaviorConstraintBindingEvent behaviorConstraintBindingEvent = (BehaviorConstraintBindingEvent)theEObject;
-				T result = caseBehaviorConstraintBindingEvent(behaviorConstraintBindingEvent);
-				if (result == null) result = caseTransitionEvent(behaviorConstraintBindingEvent);
-				if (result == null) result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingEvent);
-				if (result == null) result = caseEAElement(behaviorConstraintBindingEvent);
-				if (result == null) result = caseBehaviorConstraintParameter(behaviorConstraintBindingEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseBehaviorConstraintParameter(behaviorConstraintBindingAttribute);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE: {
-				BehaviorConstraintPrototype behaviorConstraintPrototype = (BehaviorConstraintPrototype)theEObject;
-				T result = caseBehaviorConstraintPrototype(behaviorConstraintPrototype);
-				if (result == null) result = caseTraceableSpecification(behaviorConstraintPrototype);
-				if (result == null) result = caseEAPackageableElement(behaviorConstraintPrototype);
-				if (result == null) result = caseEAElement(behaviorConstraintPrototype);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TYPE: {
-				BehaviorConstraintType behaviorConstraintType = (BehaviorConstraintType)theEObject;
-				T result = caseBehaviorConstraintType(behaviorConstraintType);
-				if (result == null) result = caseContext(behaviorConstraintType);
-				if (result == null) result = caseEAPackageableElement(behaviorConstraintType);
-				if (result == null) result = caseEAElement(behaviorConstraintType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PARAMETER: {
+			BehaviorConstraintParameter behaviorConstraintParameter = (BehaviorConstraintParameter) theEObject;
+			T result = caseBehaviorConstraintParameter(behaviorConstraintParameter);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING: {
-				BehaviorConstraintTargetBinding behaviorConstraintTargetBinding = (BehaviorConstraintTargetBinding)theEObject;
-				T result = caseBehaviorConstraintTargetBinding(behaviorConstraintTargetBinding);
-				if (result == null) result = caseRelationship(behaviorConstraintTargetBinding);
-				if (result == null) result = caseEAElement(behaviorConstraintTargetBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_INTERNAL_BINDING: {
+			BehaviorConstraintInternalBinding behaviorConstraintInternalBinding = (BehaviorConstraintInternalBinding) theEObject;
+			T result = caseBehaviorConstraintInternalBinding(behaviorConstraintInternalBinding);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			default: return defaultCase(theEObject);
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_EVENT: {
+			BehaviorConstraintBindingEvent behaviorConstraintBindingEvent = (BehaviorConstraintBindingEvent) theEObject;
+			T result = caseBehaviorConstraintBindingEvent(behaviorConstraintBindingEvent);
+			if (result == null) {
+				result = caseTransitionEvent(behaviorConstraintBindingEvent);
+			}
+			if (result == null) {
+				result = caseBehaviorConstraintInternalBinding(behaviorConstraintBindingEvent);
+			}
+			if (result == null) {
+				result = caseEAElement(behaviorConstraintBindingEvent);
+			}
+			if (result == null) {
+				result = caseBehaviorConstraintParameter(behaviorConstraintBindingEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE: {
+			BehaviorConstraintPrototype behaviorConstraintPrototype = (BehaviorConstraintPrototype) theEObject;
+			T result = caseBehaviorConstraintPrototype(behaviorConstraintPrototype);
+			if (result == null) {
+				result = caseTraceableSpecification(behaviorConstraintPrototype);
+			}
+			if (result == null) {
+				result = caseEAPackageableElement(behaviorConstraintPrototype);
+			}
+			if (result == null) {
+				result = caseEAElement(behaviorConstraintPrototype);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TYPE: {
+			BehaviorConstraintType behaviorConstraintType = (BehaviorConstraintType) theEObject;
+			T result = caseBehaviorConstraintType(behaviorConstraintType);
+			if (result == null) {
+				result = caseContext(behaviorConstraintType);
+			}
+			if (result == null) {
+				result = caseEAPackageableElement(behaviorConstraintType);
+			}
+			if (result == null) {
+				result = caseEAElement(behaviorConstraintType);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING: {
+			BehaviorConstraintTargetBinding behaviorConstraintTargetBinding = (BehaviorConstraintTargetBinding) theEObject;
+			T result = caseBehaviorConstraintTargetBinding(behaviorConstraintTargetBinding);
+			if (result == null) {
+				result = caseRelationship(behaviorConstraintTargetBinding);
+			}
+			if (result == null) {
+				result = caseEAElement(behaviorConstraintTargetBinding);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -146,7 +197,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Binding Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -161,7 +214,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -176,7 +231,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Internal Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -191,7 +248,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Binding Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -206,7 +265,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Prototype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -221,7 +282,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -236,7 +299,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Target Binding</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -251,7 +316,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -266,7 +333,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -281,7 +350,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Transition Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -296,7 +367,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -311,7 +384,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Traceable Specification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -326,7 +401,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -341,7 +418,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -356,7 +435,9 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -366,4 +447,4 @@ public class BehaviordescriptionSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //BehaviordescriptionSwitch
+} // BehaviordescriptionSwitch

@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getFromRoot <em>From Root</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getSelection <em>Selection</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDiagramKind <em>Diagram Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getLayoutToApply <em>Layout To Apply</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getPrefix <em>Prefix</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getFromRoot <em>From Root</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getSelection <em>Selection</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDiagramKind <em>Diagram Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getLayoutToApply <em>Layout To Apply</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getPrefix <em>Prefix</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +36,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_Description()
@@ -52,7 +52,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -62,10 +64,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>From Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From Root</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>From Root</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>From Root</em>' reference.
 	 * @see #setFromRoot(EObject)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_FromRoot()
@@ -78,7 +80,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getFromRoot <em>From Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From Root</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>From Root</em>' reference.
 	 * @see #getFromRoot()
 	 * @generated
 	 */
@@ -89,10 +93,10 @@ public interface DiagramDefinition extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.diagramtemplate.Selection}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selection</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Selection</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Selection</em>' containment reference list.
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_Selection()
 	 * @model containment="true"
@@ -104,10 +108,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>Diagram Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Diagram Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Diagram Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Diagram Kind</em>' attribute.
 	 * @see #setDiagramKind(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_DiagramKind()
@@ -120,7 +124,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getDiagramKind <em>Diagram Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diagram Kind</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Diagram Kind</em>' attribute.
 	 * @see #getDiagramKind()
 	 * @generated
 	 */
@@ -130,10 +136,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>Layout To Apply</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout To Apply</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layout To Apply</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layout To Apply</em>' attribute.
 	 * @see #setLayoutToApply(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_LayoutToApply()
@@ -146,7 +152,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getLayoutToApply <em>Layout To Apply</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout To Apply</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Layout To Apply</em>' attribute.
 	 * @see #getLayoutToApply()
 	 * @generated
 	 */
@@ -156,10 +164,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_Name()
@@ -172,7 +180,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -182,10 +192,10 @@ public interface DiagramDefinition extends EObject {
 	 * Returns the value of the '<em><b>Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Prefix</em>' attribute.
 	 * @see #setPrefix(String)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getDiagramDefinition_Prefix()
@@ -198,7 +208,9 @@ public interface DiagramDefinition extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.DiagramDefinition#getPrefix <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prefix</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Prefix</em>' attribute.
 	 * @see #getPrefix()
 	 * @generated
 	 */

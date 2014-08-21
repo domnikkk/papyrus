@@ -34,9 +34,9 @@ public class ExtendedURI implements IExtendedURI {
 
 	/**
 	 * Instantiates a new extended uri.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 */
 	public ExtendedURI(URI uri) {
 		super();
@@ -46,28 +46,32 @@ public class ExtendedURI implements IExtendedURI {
 
 	/**
 	 * Sets the containment.
-	 * 
+	 *
 	 * @param containment
-	 *        the containment
+	 *            the containment
 	 * @return the extended uri
 	 */
 	public ExtendedURI setContainment(boolean containment) {
 		return setParameter(CONTAINMENT_PARAMETER_KEY, containment);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.IExtendedURI#isContainment()
 	 */
 	@Override
 	public boolean isContainment() {
 		Object containment = getParameter(CONTAINMENT_PARAMETER_KEY);
-		if(containment != null) {
-			return (Boolean)containment;
+		if (containment != null) {
+			return (Boolean) containment;
 		}
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.IExtendedURI#setParameter(java.lang.String, java.lang.Object)
 	 */
 	@Override
@@ -81,9 +85,9 @@ public class ExtendedURI implements IExtendedURI {
 
 	/**
 	 * Sets the uri.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @return the extended uri
 	 */
 	public IExtendedURI setUri(URI uri) {
@@ -92,7 +96,9 @@ public class ExtendedURI implements IExtendedURI {
 	}
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.IExtendedURI#getParameter(java.lang.String)
 	 */
 	@Override
@@ -101,7 +107,9 @@ public class ExtendedURI implements IExtendedURI {
 	}
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.IExtendedURI#getUri()
 	 */
 	@Override
@@ -132,23 +140,30 @@ public class ExtendedURI implements IExtendedURI {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if(this == obj)
+		if (this == obj) {
 			return true;
-		if(obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if(getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
-		ExtendedURI other = (ExtendedURI)obj;
-		if(parameters == null) {
-			if(other.parameters != null)
+		}
+		ExtendedURI other = (ExtendedURI) obj;
+		if (parameters == null) {
+			if (other.parameters != null) {
 				return false;
-		} else if(!parameters.equals(other.parameters))
+			}
+		} else if (!parameters.equals(other.parameters)) {
 			return false;
-		if(uri == null) {
-			if(other.uri != null)
+		}
+		if (uri == null) {
+			if (other.uri != null) {
 				return false;
-		} else if(!uri.equals(other.uri))
+			}
+		} else if (!uri.equals(other.uri)) {
 			return false;
+		}
 		return true;
 	}
 

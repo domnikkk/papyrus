@@ -20,6 +20,7 @@ public abstract class GroundImpl extends SurfaceImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GroundImpl() {
@@ -29,6 +30,7 @@ public abstract class GroundImpl extends SurfaceImpl implements Ground {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public abstract class GroundImpl extends SurfaceImpl implements Ground {
 		return RobotMLPackage.Literals.GROUND;
 	}
 
-} //GroundImpl
+} // GroundImpl

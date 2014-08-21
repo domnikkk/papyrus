@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp.impl;
 
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getBase_parameter <em>Base parameter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getBase_property <em>Base property</em>}</li>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getDeclaration <em>Declaration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getBase_parameter <em>Base parameter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getBase_property <em>Base property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl#getDeclaration <em>Declaration</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getBase_parameter() <em>Base parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_parameter()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getBase_property() <em>Base property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_property()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The default value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -72,6 +75,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	 * The cached value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PtrImpl() {
@@ -90,6 +95,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,15 +106,18 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Parameter getBase_parameter() {
 		if (base_parameter != null && base_parameter.eIsProxy()) {
-			InternalEObject oldBase_parameter = (InternalEObject)base_parameter;
-			base_parameter = (Parameter)eResolveProxy(oldBase_parameter);
+			InternalEObject oldBase_parameter = (InternalEObject) base_parameter;
+			base_parameter = (Parameter) eResolveProxy(oldBase_parameter);
 			if (base_parameter != oldBase_parameter) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.PTR__BASE_PARAMETER, oldBase_parameter, base_parameter));
+				}
 			}
 		}
 		return base_parameter;
@@ -117,6 +126,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Parameter basicGetBase_parameter() {
@@ -126,27 +136,33 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_parameter(Parameter newBase_parameter) {
 		Parameter oldBase_parameter = base_parameter;
 		base_parameter = newBase_parameter;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.PTR__BASE_PARAMETER, oldBase_parameter, base_parameter));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getBase_property() {
 		if (base_property != null && base_property.eIsProxy()) {
-			InternalEObject oldBase_property = (InternalEObject)base_property;
-			base_property = (Property)eResolveProxy(oldBase_property);
+			InternalEObject oldBase_property = (InternalEObject) base_property;
+			base_property = (Property) eResolveProxy(oldBase_property);
 			if (base_property != oldBase_property) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.PTR__BASE_PROPERTY, oldBase_property, base_property));
+				}
 			}
 		}
 		return base_property;
@@ -155,6 +171,7 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_property() {
@@ -164,20 +181,25 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_property(Property newBase_property) {
 		Property oldBase_property = base_property;
 		base_property = newBase_property;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.PTR__BASE_PROPERTY, oldBase_property, base_property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDeclaration() {
 		return declaration;
 	}
@@ -185,31 +207,39 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDeclaration(String newDeclaration) {
 		String oldDeclaration = declaration;
 		declaration = newDeclaration;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.PTR__DECLARATION, oldDeclaration, declaration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case C_CppPackage.PTR__BASE_PARAMETER:
-				if (resolve) return getBase_parameter();
-				return basicGetBase_parameter();
-			case C_CppPackage.PTR__BASE_PROPERTY:
-				if (resolve) return getBase_property();
-				return basicGetBase_property();
-			case C_CppPackage.PTR__DECLARATION:
-				return getDeclaration();
+		case C_CppPackage.PTR__BASE_PARAMETER:
+			if (resolve) {
+				return getBase_parameter();
+			}
+			return basicGetBase_parameter();
+		case C_CppPackage.PTR__BASE_PROPERTY:
+			if (resolve) {
+				return getBase_property();
+			}
+			return basicGetBase_property();
+		case C_CppPackage.PTR__DECLARATION:
+			return getDeclaration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,20 +247,21 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case C_CppPackage.PTR__BASE_PARAMETER:
-				setBase_parameter((Parameter)newValue);
-				return;
-			case C_CppPackage.PTR__BASE_PROPERTY:
-				setBase_property((Property)newValue);
-				return;
-			case C_CppPackage.PTR__DECLARATION:
-				setDeclaration((String)newValue);
-				return;
+		case C_CppPackage.PTR__BASE_PARAMETER:
+			setBase_parameter((Parameter) newValue);
+			return;
+		case C_CppPackage.PTR__BASE_PROPERTY:
+			setBase_property((Property) newValue);
+			return;
+		case C_CppPackage.PTR__DECLARATION:
+			setDeclaration((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -238,20 +269,21 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.PTR__BASE_PARAMETER:
-				setBase_parameter((Parameter)null);
-				return;
-			case C_CppPackage.PTR__BASE_PROPERTY:
-				setBase_property((Property)null);
-				return;
-			case C_CppPackage.PTR__DECLARATION:
-				setDeclaration(DECLARATION_EDEFAULT);
-				return;
+		case C_CppPackage.PTR__BASE_PARAMETER:
+			setBase_parameter((Parameter) null);
+			return;
+		case C_CppPackage.PTR__BASE_PROPERTY:
+			setBase_property((Property) null);
+			return;
+		case C_CppPackage.PTR__DECLARATION:
+			setDeclaration(DECLARATION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -259,17 +291,18 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.PTR__BASE_PARAMETER:
-				return base_parameter != null;
-			case C_CppPackage.PTR__BASE_PROPERTY:
-				return base_property != null;
-			case C_CppPackage.PTR__DECLARATION:
-				return DECLARATION_EDEFAULT == null ? declaration != null : !DECLARATION_EDEFAULT.equals(declaration);
+		case C_CppPackage.PTR__BASE_PARAMETER:
+			return base_parameter != null;
+		case C_CppPackage.PTR__BASE_PROPERTY:
+			return base_property != null;
+		case C_CppPackage.PTR__DECLARATION:
+			return DECLARATION_EDEFAULT == null ? declaration != null : !DECLARATION_EDEFAULT.equals(declaration);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,11 +310,14 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaration: "); //$NON-NLS-1$
@@ -290,4 +326,4 @@ public class PtrImpl extends MinimalEObjectImpl.Container implements Ptr {
 		return result.toString();
 	}
 
-} //PtrImpl
+} // PtrImpl

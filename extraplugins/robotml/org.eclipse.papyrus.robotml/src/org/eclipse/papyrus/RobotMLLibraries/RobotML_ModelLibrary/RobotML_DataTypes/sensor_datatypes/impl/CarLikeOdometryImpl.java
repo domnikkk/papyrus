@@ -23,12 +23,12 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getSteering_angle <em>Steering angle</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getLeft_rear_wheel_distance <em>Left rear wheel distance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getRight_rear_wheel_distance <em>Right rear wheel distance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getRight_rear_wheel_velocity <em>Right rear wheel velocity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getLeft_rear_wheel_velocity <em>Left rear wheel velocity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getHeader <em>Header</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getSteering_angle <em>Steering angle</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getLeft_rear_wheel_distance <em>Left rear wheel distance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getRight_rear_wheel_distance <em>Right rear wheel distance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getRight_rear_wheel_velocity <em>Right rear wheel velocity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl#getLeft_rear_wheel_velocity <em>Left rear wheel velocity</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getSteering_angle() <em>Steering angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSteering_angle()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getSteering_angle() <em>Steering angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSteering_angle()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getLeft_rear_wheel_distance() <em>Left rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLeft_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getLeft_rear_wheel_distance() <em>Left rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLeft_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getRight_rear_wheel_distance() <em>Right rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRight_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getRight_rear_wheel_distance() <em>Right rear wheel distance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRight_rear_wheel_distance()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getRight_rear_wheel_velocity() <em>Right rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRight_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -119,6 +127,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getRight_rear_wheel_velocity() <em>Right rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRight_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -129,6 +138,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getLeft_rear_wheel_velocity() <em>Left rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLeft_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -139,6 +149,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getLeft_rear_wheel_velocity() <em>Left rear wheel velocity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLeft_rear_wheel_velocity()
 	 * @generated
 	 * @ordered
@@ -148,6 +159,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CarLikeOdometryImpl() {
@@ -157,6 +169,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,6 +180,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -176,6 +190,7 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -183,7 +198,11 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -191,25 +210,32 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER, newHeader, newHeader));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getSteering_angle() {
@@ -219,18 +245,21 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSteering_angle(double newSteering_angle) {
 		double oldSteering_angle = steering_angle;
 		steering_angle = newSteering_angle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE, oldSteering_angle, steering_angle));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getLeft_rear_wheel_distance() {
@@ -240,18 +269,21 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLeft_rear_wheel_distance(double newLeft_rear_wheel_distance) {
 		double oldLeft_rear_wheel_distance = left_rear_wheel_distance;
 		left_rear_wheel_distance = newLeft_rear_wheel_distance;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE, oldLeft_rear_wheel_distance, left_rear_wheel_distance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getRight_rear_wheel_distance() {
@@ -261,18 +293,21 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRight_rear_wheel_distance(double newRight_rear_wheel_distance) {
 		double oldRight_rear_wheel_distance = right_rear_wheel_distance;
 		right_rear_wheel_distance = newRight_rear_wheel_distance;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE, oldRight_rear_wheel_distance, right_rear_wheel_distance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getRight_rear_wheel_velocity() {
@@ -282,18 +317,21 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRight_rear_wheel_velocity(double newRight_rear_wheel_velocity) {
 		double oldRight_rear_wheel_velocity = right_rear_wheel_velocity;
 		right_rear_wheel_velocity = newRight_rear_wheel_velocity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY, oldRight_rear_wheel_velocity, right_rear_wheel_velocity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getLeft_rear_wheel_velocity() {
@@ -303,25 +341,28 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLeft_rear_wheel_velocity(double newLeft_rear_wheel_velocity) {
 		double oldLeft_rear_wheel_velocity = left_rear_wheel_velocity;
 		left_rear_wheel_velocity = newLeft_rear_wheel_velocity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY, oldLeft_rear_wheel_velocity, left_rear_wheel_velocity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
-				return basicSetHeader(null, msgs);
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
+			return basicSetHeader(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,23 +370,24 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
-				return getHeader();
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
-				return getSteering_angle();
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
-				return getLeft_rear_wheel_distance();
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
-				return getRight_rear_wheel_distance();
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
-				return getRight_rear_wheel_velocity();
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
-				return getLeft_rear_wheel_velocity();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
+			return getHeader();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
+			return getSteering_angle();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
+			return getLeft_rear_wheel_distance();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
+			return getRight_rear_wheel_distance();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
+			return getRight_rear_wheel_velocity();
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
+			return getLeft_rear_wheel_velocity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,29 +395,30 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
-				setHeader((Header)newValue);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
-				setSteering_angle((Double)newValue);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
-				setLeft_rear_wheel_distance((Double)newValue);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
-				setRight_rear_wheel_distance((Double)newValue);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
-				setRight_rear_wheel_velocity((Double)newValue);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
-				setLeft_rear_wheel_velocity((Double)newValue);
-				return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
+			setHeader((Header) newValue);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
+			setSteering_angle((Double) newValue);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
+			setLeft_rear_wheel_distance((Double) newValue);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
+			setRight_rear_wheel_distance((Double) newValue);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
+			setRight_rear_wheel_velocity((Double) newValue);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
+			setLeft_rear_wheel_velocity((Double) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -383,29 +426,30 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
-				setHeader((Header)null);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
-				setSteering_angle(STEERING_ANGLE_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
-				setLeft_rear_wheel_distance(LEFT_REAR_WHEEL_DISTANCE_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
-				setRight_rear_wheel_distance(RIGHT_REAR_WHEEL_DISTANCE_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
-				setRight_rear_wheel_velocity(RIGHT_REAR_WHEEL_VELOCITY_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
-				setLeft_rear_wheel_velocity(LEFT_REAR_WHEEL_VELOCITY_EDEFAULT);
-				return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
+			setHeader((Header) null);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
+			setSteering_angle(STEERING_ANGLE_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
+			setLeft_rear_wheel_distance(LEFT_REAR_WHEEL_DISTANCE_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
+			setRight_rear_wheel_distance(RIGHT_REAR_WHEEL_DISTANCE_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
+			setRight_rear_wheel_velocity(RIGHT_REAR_WHEEL_VELOCITY_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
+			setLeft_rear_wheel_velocity(LEFT_REAR_WHEEL_VELOCITY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,23 +457,24 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
-				return header != null;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
-				return steering_angle != STEERING_ANGLE_EDEFAULT;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
-				return left_rear_wheel_distance != LEFT_REAR_WHEEL_DISTANCE_EDEFAULT;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
-				return right_rear_wheel_distance != RIGHT_REAR_WHEEL_DISTANCE_EDEFAULT;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
-				return right_rear_wheel_velocity != RIGHT_REAR_WHEEL_VELOCITY_EDEFAULT;
-			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
-				return left_rear_wheel_velocity != LEFT_REAR_WHEEL_VELOCITY_EDEFAULT;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__HEADER:
+			return header != null;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__STEERING_ANGLE:
+			return steering_angle != STEERING_ANGLE_EDEFAULT;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE:
+			return left_rear_wheel_distance != LEFT_REAR_WHEEL_DISTANCE_EDEFAULT;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE:
+			return right_rear_wheel_distance != RIGHT_REAR_WHEEL_DISTANCE_EDEFAULT;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY:
+			return right_rear_wheel_velocity != RIGHT_REAR_WHEEL_VELOCITY_EDEFAULT;
+		case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY:
+			return left_rear_wheel_velocity != LEFT_REAR_WHEEL_VELOCITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -437,11 +482,14 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (steering_angle: ");
@@ -458,4 +506,4 @@ public class CarLikeOdometryImpl extends MinimalEObjectImpl.Container implements
 		return result.toString();
 	}
 
-} //CarLikeOdometryImpl
+} // CarLikeOdometryImpl

@@ -13,6 +13,7 @@ package org.eclipse.papyrus.cpp.codegen;
 
 import org.eclipse.papyrus.acceleo.GenUtils;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
 
 public class StdStereo {
@@ -26,25 +27,24 @@ public class StdStereo {
 	 * In the UML 2.4 plugin, the Standard profile is split into an L2 and an L3 profile
 	 * (in earlier and later plugins, this is not the case)
 	 */
-	public final static String[] namespaces = {
-		"Standard", //$NON-NLS-1$
-		"StandardProfileL2", //$NON-NLS-1$
-		"StandardProfile" //$NON-NLS-1$
+	public final static String[] namespaces = { "Standard", //$NON-NLS-1$
+			"StandardProfileL2", //$NON-NLS-1$
+			"StandardProfile" //$NON-NLS-1$
 	};
 
 	/**
 	 * Check whether a stereotype of the standard profile is applied
-	 * 
+	 *
 	 * @param element
-	 *        The element to check
+	 *            The element to check
 	 * @param stdName
-	 *        the non qualified name of a stereotype within the standard
-	 *        profile
+	 *            the non qualified name of a stereotype within the standard
+	 *            profile
 	 * @return
 	 */
 	public static boolean isApplied(Element element, String stdName) {
-		for(String namespace : namespaces) {
-			if(GenUtils.hasStereotype(element, namespace + Namespace.SEPARATOR + stdName)) {
+		for (String namespace : namespaces) {
+			if (GenUtils.hasStereotype(element, namespace + NamedElement.SEPARATOR + stdName)) {
 				return true;
 			}
 		}

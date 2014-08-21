@@ -20,6 +20,7 @@ public class LocomotionSystemImpl extends ActuatorSystemImpl implements Locomoti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LocomotionSystemImpl() {
@@ -29,6 +30,7 @@ public class LocomotionSystemImpl extends ActuatorSystemImpl implements Locomoti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class LocomotionSystemImpl extends ActuatorSystemImpl implements Locomoti
 		return RobotMLPackage.Literals.LOCOMOTION_SYSTEM;
 	}
 
-} //LocomotionSystemImpl
+} // LocomotionSystemImpl

@@ -9,7 +9,7 @@ s distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -32,7 +32,7 @@ public abstract class AbstractContainerTrafo {
 
 	/**
 	 * return the container trafo associated with the tmComponent
-	 * 
+	 *
 	 * @param tmComponent
 	 * @return Container-trafo instance of null
 	 */
@@ -50,32 +50,32 @@ public abstract class AbstractContainerTrafo {
 
 	/**
 	 * Create an instance of the container (UML instance specification)
-	 * 
+	 *
 	 * @param tmComponent
-	 *        the component within the target model for which we want to create an instance
-	 * 
+	 *            the component within the target model for which we want to create an instance
+	 *
 	 * @param tmIS
-	 *        the existing instance specification for the component before container expansion.
+	 *            the existing instance specification for the component before container expansion.
 	 * @param context
-	 *        Additional information about the container that is used by instance configurators
+	 *            Additional information about the container that is used by instance configurators
 	 */
 	public abstract InstanceSpecification createContainerInstance(Class tmComponent, InstanceSpecification tmIS)
-		throws TransformationException;
+			throws TransformationException;
 
 	/**
 	 * apply a container rule, i.e. add either a container extension or an
 	 * interceptor to the container
-	 * 
+	 *
 	 * @param smContainerRule
-	 *        An container rule
+	 *            An container rule
 	 * @param smComponent
-	 *        the application component in the source model
+	 *            the application component in the source model
 	 * @param tmComponent
-	 *        the application component in the target model
+	 *            the application component in the target model
 	 * @throws TransformationException
 	 */
 	public abstract void applyRule(ContainerRule smContainerRule, Class smComponent, Class tmComponent)
-		throws TransformationException;
+			throws TransformationException;
 
 	/**
 	 * The instance specification of the created container
@@ -92,6 +92,7 @@ public abstract class AbstractContainerTrafo {
 	 * Is called after a set of rule applications.
 	 * Does nothing by default
 	 */
+	@Override
 	public void finalize() {
 	}
 
@@ -105,7 +106,7 @@ public abstract class AbstractContainerTrafo {
 	 * deployment plan within source model
 	 */
 	protected Package smCDP;
-	
+
 	/**
 	 * deployment plan within target model
 	 */

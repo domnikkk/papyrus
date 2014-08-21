@@ -39,7 +39,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 		// Nevertheless, this code is kept there since the MokaSourceLookupParticipant could be used to account for additional information in the launch configuration.
 		// For example, these information may include a list of di files where graphical representations have to be taken from a given semantic element.
 		// This may be removed if we confirm that this mechanism only makes sense for text file resources.
-		ISourceLookupParticipant[] participants = new ISourceLookupParticipant[]{ new MokaSourceLookupParticipant() };
+		ISourceLookupParticipant[] participants = new ISourceLookupParticipant[] { new MokaSourceLookupParticipant() };
 		this.addParticipants(participants);
 	}
 
@@ -51,7 +51,7 @@ public class MokaSourceLocator extends AbstractSourceLookupDirector implements I
 	@Override
 	public Object getSourceElement(Object element) {
 		EObject sourceElement = null;
-		MokaStackFrame stackFrame = (MokaStackFrame)element;
+		MokaStackFrame stackFrame = (MokaStackFrame) element;
 		sourceElement = stackFrame.getModelElement();
 		return sourceElement;
 	}

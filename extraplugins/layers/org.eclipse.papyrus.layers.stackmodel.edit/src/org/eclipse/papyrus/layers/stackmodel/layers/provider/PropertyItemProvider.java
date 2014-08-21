@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -39,11 +39,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Property;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Property} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertyItemProvider
-	extends FolderElementItemProvider
-	implements
+		extends FolderElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +54,7 @@ public class PropertyItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +65,7 @@ public class PropertyItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,96 +85,100 @@ public class PropertyItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_type_feature", "_UI_Property_type"),
-				 LayersPackage.Literals.PROPERTY__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Property_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Property_type_feature", "_UI_Property_type"),
+						LayersPackage.Literals.PROPERTY__TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_name_feature", "_UI_Property_type"),
-				 LayersPackage.Literals.PROPERTY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Property_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Property_name_feature", "_UI_Property_type"),
+						LayersPackage.Literals.PROPERTY__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_description_feature", "_UI_Property_type"),
-				 LayersPackage.Literals.PROPERTY__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Property_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Property_description_feature", "_UI_Property_type"),
+						LayersPackage.Literals.PROPERTY__DESCRIPTION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Index feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addIndexPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_index_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_index_feature", "_UI_Property_type"),
-				 LayersPackage.Literals.PROPERTY__INDEX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Property_index_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Property_index_feature", "_UI_Property_type"),
+						LayersPackage.Literals.PROPERTY__INDEX,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,6 +193,7 @@ public class PropertyItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -200,6 +208,7 @@ public class PropertyItemProvider
 	 * This returns Property.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,14 +220,15 @@ public class PropertyItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Property)object).getName();
+		String label = ((Property) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Property_type") :
-			getString("_UI_Property_type") + " " + label;
+				getString("_UI_Property_type") :
+				getString("_UI_Property_type") + " " + label;
 	}
 
 	/**
@@ -226,6 +236,7 @@ public class PropertyItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,14 +244,14 @@ public class PropertyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Property.class)) {
-			case LayersPackage.PROPERTY__NAME:
-			case LayersPackage.PROPERTY__DESCRIPTION:
-			case LayersPackage.PROPERTY__INDEX:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case LayersPackage.PROPERTY__DEFAULT_VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.PROPERTY__NAME:
+		case LayersPackage.PROPERTY__DESCRIPTION:
+		case LayersPackage.PROPERTY__INDEX:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case LayersPackage.PROPERTY__DEFAULT_VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -250,6 +261,7 @@ public class PropertyItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -257,44 +269,44 @@ public class PropertyItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createIntInstance()));
+						LayersFactory.eINSTANCE.createIntInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createBooleanInstance()));
+						LayersFactory.eINSTANCE.createBooleanInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createStringInstance()));
+						LayersFactory.eINSTANCE.createStringInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createNullInstance()));
+						LayersFactory.eINSTANCE.createNullInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createColorInstance()));
+						LayersFactory.eINSTANCE.createColorInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createFillInstance()));
+						LayersFactory.eINSTANCE.createFillInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createLineInstance()));
+						LayersFactory.eINSTANCE.createLineInstance()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY__DEFAULT_VALUE,
-				 LayersFactory.eINSTANCE.createFontInstance()));
+						LayersFactory.eINSTANCE.createFontInstance()));
 	}
 
 }

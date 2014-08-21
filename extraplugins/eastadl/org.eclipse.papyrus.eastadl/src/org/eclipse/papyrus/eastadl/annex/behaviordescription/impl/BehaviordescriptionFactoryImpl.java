@@ -19,6 +19,7 @@ import org.eclipse.papyrus.eastadl.annex.behaviordescription.Behaviordescription
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements BehaviordescriptionFactory {
@@ -26,16 +27,16 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static BehaviordescriptionFactory init() {
 		try {
-			BehaviordescriptionFactory theBehaviordescriptionFactory = (BehaviordescriptionFactory)EPackage.Registry.INSTANCE.getEFactory(BehaviordescriptionPackage.eNS_URI);
+			BehaviordescriptionFactory theBehaviordescriptionFactory = (BehaviordescriptionFactory) EPackage.Registry.INSTANCE.getEFactory(BehaviordescriptionPackage.eNS_URI);
 			if (theBehaviordescriptionFactory != null) {
 				return theBehaviordescriptionFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new BehaviordescriptionFactoryImpl();
@@ -45,6 +46,7 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BehaviordescriptionFactoryImpl() {
@@ -54,26 +56,34 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_ATTRIBUTE: return createBehaviorConstraintBindingAttribute();
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_EVENT: return createBehaviorConstraintBindingEvent();
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE: return createBehaviorConstraintPrototype();
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TYPE: return createBehaviorConstraintType();
-			case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING: return createBehaviorConstraintTargetBinding();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_ATTRIBUTE:
+			return createBehaviorConstraintBindingAttribute();
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_BINDING_EVENT:
+			return createBehaviorConstraintBindingEvent();
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_PROTOTYPE:
+			return createBehaviorConstraintPrototype();
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TYPE:
+			return createBehaviorConstraintType();
+		case BehaviordescriptionPackage.BEHAVIOR_CONSTRAINT_TARGET_BINDING:
+			return createBehaviorConstraintTargetBinding();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviorConstraintBindingAttribute createBehaviorConstraintBindingAttribute() {
 		BehaviorConstraintBindingAttributeImpl behaviorConstraintBindingAttribute = new BehaviorConstraintBindingAttributeImpl();
 		return behaviorConstraintBindingAttribute;
@@ -82,8 +92,10 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviorConstraintBindingEvent createBehaviorConstraintBindingEvent() {
 		BehaviorConstraintBindingEventImpl behaviorConstraintBindingEvent = new BehaviorConstraintBindingEventImpl();
 		return behaviorConstraintBindingEvent;
@@ -92,8 +104,10 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviorConstraintPrototype createBehaviorConstraintPrototype() {
 		BehaviorConstraintPrototypeImpl behaviorConstraintPrototype = new BehaviorConstraintPrototypeImpl();
 		return behaviorConstraintPrototype;
@@ -102,8 +116,10 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviorConstraintType createBehaviorConstraintType() {
 		BehaviorConstraintTypeImpl behaviorConstraintType = new BehaviorConstraintTypeImpl();
 		return behaviorConstraintType;
@@ -112,8 +128,10 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviorConstraintTargetBinding createBehaviorConstraintTargetBinding() {
 		BehaviorConstraintTargetBindingImpl behaviorConstraintTargetBinding = new BehaviorConstraintTargetBindingImpl();
 		return behaviorConstraintTargetBinding;
@@ -122,15 +140,18 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviordescriptionPackage getBehaviordescriptionPackage() {
-		return (BehaviordescriptionPackage)getEPackage();
+		return (BehaviordescriptionPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -139,4 +160,4 @@ public class BehaviordescriptionFactoryImpl extends EFactoryImpl implements Beha
 		return BehaviordescriptionPackage.eINSTANCE;
 	}
 
-} //BehaviordescriptionFactoryImpl
+} // BehaviordescriptionFactoryImpl

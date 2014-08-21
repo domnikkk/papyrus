@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualOperationItemProvider
-	extends VirtualTypedElementItemProvider
-	implements
+		extends VirtualTypedElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -52,6 +53,7 @@ public class VirtualOperationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualOperationItemProvider(AdapterFactory adapterFactory) {
@@ -62,6 +64,7 @@ public class VirtualOperationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,11 +77,11 @@ public class VirtualOperationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,6 +96,7 @@ public class VirtualOperationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,6 +111,7 @@ public class VirtualOperationItemProvider
 	 * This returns VirtualOperation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,22 +123,24 @@ public class VirtualOperationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualOperation)object).getAliasName();
+		String label = ((VirtualOperation) object).getAliasName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualOperation_type") :
-			getString("_UI_VirtualOperation_type") + " " + label;
+				getString("_UI_VirtualOperation_type") :
+				getString("_UI_VirtualOperation_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -141,9 +148,9 @@ public class VirtualOperationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(VirtualOperation.class)) {
-			case VirtualmetamodelPackage.VIRTUAL_OPERATION__PARAMETERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_OPERATION__PARAMETERS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -153,6 +160,7 @@ public class VirtualOperationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -160,9 +168,9 @@ public class VirtualOperationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_OPERATION__PARAMETERS,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualParameter()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualParameter()));
 	}
 
 }

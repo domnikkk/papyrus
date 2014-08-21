@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -24,7 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * Custom Diagram Item provider
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -32,12 +32,12 @@ public class DiagramItemProvider extends org.eclipse.gmf.runtime.notation.provid
 
 
 	protected AdapterFactory domainAdapterFactory;
-	
+
 	/**
 	 * Constructor.
 	 *
 	 * @param adapterFactory
-	 * @param domainAdapterFactory 
+	 * @param domainAdapterFactory
 	 */
 	public DiagramItemProvider(AdapterFactory adapterFactory, AdapterFactory domainAdapterFactory) {
 		super(adapterFactory);
@@ -48,33 +48,32 @@ public class DiagramItemProvider extends org.eclipse.gmf.runtime.notation.provid
 	public Collection<?> getChildren(Object object) {
 		return getChildren(object);
 	}
-	
+
 	@Override
 	public Collection<?> getElements(Object object) {
-		
-		Diagram diagram = (Diagram)object;
-		if(diagram.getChildren().size() == 0) {
+
+		Diagram diagram = (Diagram) object;
+		if (diagram.getChildren().size() == 0) {
 			return Collections.emptyList();
 		}
-		
+
 		// TODO: improve the implementation by using a view list or
 		// by having an internal shadow list
 		List<View> children = diagram.getChildren();
-		List<View> res = new ArrayList<View>()
-				;
-		for( View v : children) {
-			if( v instanceof Shape || v instanceof Connector) {
+		List<View> res = new ArrayList<View>();
+		for (View v : children) {
+			if (v instanceof Shape || v instanceof Connector) {
 				res.add(v);
 			}
-			
+
 		}
-		
+
 		List<View> edges = diagram.getEdges();
-		for( View v : edges) {
-			if( v instanceof Shape || v instanceof Connector) {
+		for (View v : edges) {
+			if (v instanceof Shape || v instanceof Connector) {
 				res.add(v);
 			}
-			
+
 		}
 		return res;
 	}

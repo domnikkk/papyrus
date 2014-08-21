@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - Initial API and implementation
  *
-  *****************************************************************************/
+ *****************************************************************************/
 package org.eclipse.papyrus.parsers.texteditor;
 
 import org.eclipse.emf.ecore.EObject;
@@ -32,8 +32,9 @@ public class CompletionFilterSourceViewerConfiguration extends SourceViewerConfi
 
 	/**
 	 * Instantiates a new completion filter source viewer configuration with active filter
-	 * 
-	 * @param filter the filter
+	 *
+	 * @param filter
+	 *            the filter
 	 */
 	public CompletionFilterSourceViewerConfiguration(ICompletionFilter filter) {
 		this.filter = filter;
@@ -46,10 +47,10 @@ public class CompletionFilterSourceViewerConfiguration extends SourceViewerConfi
 
 		/**
 		 * Filter.
-		 * 
+		 *
 		 * @param context
 		 * @param e
-		 * 
+		 *
 		 * @return true if object is filtered, false if it is not
 		 */
 		public boolean filter(int context, EObject e);
@@ -70,7 +71,7 @@ public class CompletionFilterSourceViewerConfiguration extends SourceViewerConfi
 
 	/**
 	 * Gets the filter.
-	 * 
+	 *
 	 * @return the filter
 	 */
 	protected ICompletionFilter getFilter() {

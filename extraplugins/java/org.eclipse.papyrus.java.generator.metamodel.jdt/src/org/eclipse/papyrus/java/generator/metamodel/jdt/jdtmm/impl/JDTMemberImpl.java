@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -47,10 +47,10 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.VisibilityKind;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getTypeParameters <em>Type Parameters</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getVisibility <em>Visibility</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getTypeParameters <em>Type Parameters</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getVisibility <em>Visibility</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTMemberImpl#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +62,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeParameters()
 	 * @generated
 	 * @ordered
@@ -72,6 +73,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVisibility()
 	 * @generated
 	 * @ordered
@@ -82,6 +84,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getExplicitRequiredImports() <em>Explicit Required Imports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExplicitRequiredImports()
 	 * @generated
 	 * @ordered
@@ -92,6 +95,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	 * The cached value of the '{@link #getExplicitPlainTextRequiredImports() <em>Explicit Plain Text Required Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExplicitPlainTextRequiredImports()
 	 * @generated
 	 * @ordered
@@ -101,6 +105,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JDTMemberImpl() {
@@ -110,6 +115,7 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,8 +126,10 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<JDTTypeParameter> getTypeParameters() {
 		if (typeParameters == null) {
 			typeParameters = new EObjectContainmentWithInverseEList<JDTTypeParameter>(JDTTypeParameter.class, this, JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS, JdtmmPackage.JDT_TYPE_PARAMETER__DECLARING_MEMBER);
@@ -132,17 +140,19 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public VisibilityKind getVisibility() {
 
-		if(Flags.isPublic(flags))
+		if (Flags.isPublic(flags)) {
 			return VisibilityKind.PUBLIC;
-		else if(Flags.isProtected(flags))
+		} else if (Flags.isProtected(flags)) {
 			return VisibilityKind.PROTECTED;
-		else if(Flags.isPrivate(flags))
+		} else if (Flags.isPrivate(flags)) {
 			return VisibilityKind.PRIVATE;
+		}
 
 		// default
 		return VisibilityKind.PUBLIC;
@@ -151,12 +161,13 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setVisibility(VisibilityKind newVisibility) {
 
-		switch(newVisibility) {
+		switch (newVisibility) {
 		case PUBLIC:
 			setFlag(Flags.AccPublic, true);
 			setFlag(Flags.AccProtected, false);
@@ -178,8 +189,10 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<JDTType> getExplicitRequiredImports() {
 		if (explicitRequiredImports == null) {
 			explicitRequiredImports = new EObjectResolvingEList<JDTType>(JDTType.class, this, JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS);
@@ -190,8 +203,10 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getExplicitPlainTextRequiredImports() {
 		if (explicitPlainTextRequiredImports == null) {
 			explicitPlainTextRequiredImports = new EDataTypeUniqueEList<String>(String.class, this, JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS);
@@ -202,14 +217,15 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTypeParameters()).basicAdd(otherEnd, msgs);
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTypeParameters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -217,13 +233,14 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				return ((InternalEList<?>)getTypeParameters()).basicRemove(otherEnd, msgs);
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			return ((InternalEList<?>) getTypeParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -231,19 +248,20 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				return getTypeParameters();
-			case JdtmmPackage.JDT_MEMBER__VISIBILITY:
-				return getVisibility();
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
-				return getExplicitRequiredImports();
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				return getExplicitPlainTextRequiredImports();
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			return getTypeParameters();
+		case JdtmmPackage.JDT_MEMBER__VISIBILITY:
+			return getVisibility();
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
+			return getExplicitRequiredImports();
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			return getExplicitPlainTextRequiredImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,27 +269,28 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				getTypeParameters().clear();
-				getTypeParameters().addAll((Collection<? extends JDTTypeParameter>)newValue);
-				return;
-			case JdtmmPackage.JDT_MEMBER__VISIBILITY:
-				setVisibility((VisibilityKind)newValue);
-				return;
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
-				getExplicitRequiredImports().clear();
-				getExplicitRequiredImports().addAll((Collection<? extends JDTType>)newValue);
-				return;
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				getExplicitPlainTextRequiredImports().clear();
-				getExplicitPlainTextRequiredImports().addAll((Collection<? extends String>)newValue);
-				return;
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			getTypeParameters().clear();
+			getTypeParameters().addAll((Collection<? extends JDTTypeParameter>) newValue);
+			return;
+		case JdtmmPackage.JDT_MEMBER__VISIBILITY:
+			setVisibility((VisibilityKind) newValue);
+			return;
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
+			getExplicitRequiredImports().clear();
+			getExplicitRequiredImports().addAll((Collection<? extends JDTType>) newValue);
+			return;
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			getExplicitPlainTextRequiredImports().clear();
+			getExplicitPlainTextRequiredImports().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -279,23 +298,24 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				getTypeParameters().clear();
-				return;
-			case JdtmmPackage.JDT_MEMBER__VISIBILITY:
-				setVisibility(VISIBILITY_EDEFAULT);
-				return;
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
-				getExplicitRequiredImports().clear();
-				return;
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				getExplicitPlainTextRequiredImports().clear();
-				return;
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			getTypeParameters().clear();
+			return;
+		case JdtmmPackage.JDT_MEMBER__VISIBILITY:
+			setVisibility(VISIBILITY_EDEFAULT);
+			return;
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
+			getExplicitRequiredImports().clear();
+			return;
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			getExplicitPlainTextRequiredImports().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,19 +323,20 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
-				return typeParameters != null && !typeParameters.isEmpty();
-			case JdtmmPackage.JDT_MEMBER__VISIBILITY:
-				return getVisibility() != VISIBILITY_EDEFAULT;
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
-				return explicitRequiredImports != null && !explicitRequiredImports.isEmpty();
-			case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				return explicitPlainTextRequiredImports != null && !explicitPlainTextRequiredImports.isEmpty();
+		case JdtmmPackage.JDT_MEMBER__TYPE_PARAMETERS:
+			return typeParameters != null && !typeParameters.isEmpty();
+		case JdtmmPackage.JDT_MEMBER__VISIBILITY:
+			return getVisibility() != VISIBILITY_EDEFAULT;
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_REQUIRED_IMPORTS:
+			return explicitRequiredImports != null && !explicitRequiredImports.isEmpty();
+		case JdtmmPackage.JDT_MEMBER__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			return explicitPlainTextRequiredImports != null && !explicitPlainTextRequiredImports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,11 +344,14 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (explicitPlainTextRequiredImports: ");
@@ -337,4 +361,4 @@ public abstract class JDTMemberImpl extends JDTParentJavaElementImpl implements 
 	}
 
 
-} //JDTMemberImpl
+} // JDTMemberImpl

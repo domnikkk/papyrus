@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getLayers <em>Layers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getNbLayer <em>Nb Layer</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getLayers <em>Layers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getNbLayer <em>Nb Layer</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface MultiLayerLidarScan extends EObject {
 	 * Returns the value of the '<em><b>Layers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layers</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layers</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layers</em>' containment reference.
 	 * @see #setLayers(ExtentedLidarScan)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage#getMultiLayerLidarScan_Layers()
@@ -42,7 +42,9 @@ public interface MultiLayerLidarScan extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getLayers <em>Layers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layers</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Layers</em>' containment reference.
 	 * @see #getLayers()
 	 * @generated
 	 */
@@ -52,10 +54,10 @@ public interface MultiLayerLidarScan extends EObject {
 	 * Returns the value of the '<em><b>Nb Layer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nb Layer</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nb Layer</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Nb Layer</em>' attribute.
 	 * @see #setNbLayer(char)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage#getMultiLayerLidarScan_NbLayer()
@@ -68,7 +70,9 @@ public interface MultiLayerLidarScan extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan#getNbLayer <em>Nb Layer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nb Layer</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nb Layer</em>' attribute.
 	 * @see #getNbLayer()
 	 * @generated
 	 */

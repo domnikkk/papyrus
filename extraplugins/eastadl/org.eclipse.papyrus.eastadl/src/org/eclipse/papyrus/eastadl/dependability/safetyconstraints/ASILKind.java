@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,14 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * The ASILKind is an enumeration metaclass with enumeration literals indicating the level of safety integrity in accordance with ISO26262.
- * 
+ *
  * Semantics:
  * The semantics is defined at each enumeration literal and fully defined in the ISO26262 standard.
- * 
- * Extension: 
+ *
+ * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.safetyconstraints.SafetyconstraintsPackage#getASILKind()
  * @model
  * @generated
@@ -44,6 +45,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASIL_A_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL D</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASIL_D_VALUE
 	 * @generated
 	 * @ordered
@@ -60,6 +63,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASIL_C_VALUE
 	 * @generated
 	 * @ordered
@@ -68,6 +72,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>ASIL B</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASIL_B_VALUE
 	 * @generated
 	 * @ordered
@@ -76,6 +81,7 @@ public enum ASILKind implements Enumerator {
 	 * The '<em><b>QM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #QM_VALUE
 	 * @generated
 	 * @ordered
@@ -89,6 +95,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL A, Lowest Safety Integrity Level.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #ASIL_A
 	 * @model
 	 * @generated
@@ -103,6 +110,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL D, Highest Safety Integrity Level.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #ASIL_D
 	 * @model
 	 * @generated
@@ -117,6 +125,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL C, second highest Safety Integrity Level.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #ASIL_C
 	 * @model
 	 * @generated
@@ -131,6 +140,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * ASIL B, second lowest Safety Integrity Level.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #ASIL_B
 	 * @model
 	 * @generated
@@ -145,6 +155,7 @@ public enum ASILKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Quality Management only, no requirement according to ISO 26262.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #QM
 	 * @model
 	 * @generated
@@ -156,21 +167,23 @@ public enum ASILKind implements Enumerator {
 	 * An array of all the '<em><b>ASIL Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final ASILKind[] VALUES_ARRAY =
-		new ASILKind[] {
-			ASIL_A,
-			ASIL_D,
-			ASIL_C,
-			ASIL_B,
-			QM,
-		};
+			new ASILKind[] {
+					ASIL_A,
+					ASIL_D,
+					ASIL_C,
+					ASIL_B,
+					QM,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>ASIL Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ASILKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -179,15 +192,21 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ASILKind get(int value) {
 		switch (value) {
-			case ASIL_A_VALUE: return ASIL_A;
-			case ASIL_D_VALUE: return ASIL_D;
-			case ASIL_C_VALUE: return ASIL_C;
-			case ASIL_B_VALUE: return ASIL_B;
-			case QM_VALUE: return QM;
+		case ASIL_A_VALUE:
+			return ASIL_A;
+		case ASIL_D_VALUE:
+			return ASIL_D;
+		case ASIL_C_VALUE:
+			return ASIL_C;
+		case ASIL_B_VALUE:
+			return ASIL_B;
+		case QM_VALUE:
+			return QM;
 		}
 		return null;
 	}
@@ -196,6 +215,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ASILKind get(String literal) {
@@ -212,6 +232,7 @@ public enum ASILKind implements Enumerator {
 	 * Returns the '<em><b>ASIL Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ASILKind getByName(String name) {
@@ -227,6 +248,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -234,6 +256,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -241,6 +264,7 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -249,6 +273,7 @@ public enum ASILKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ASILKind(int value, String name, String literal) {
@@ -260,39 +285,46 @@ public enum ASILKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ASILKind
+
+} // ASILKind

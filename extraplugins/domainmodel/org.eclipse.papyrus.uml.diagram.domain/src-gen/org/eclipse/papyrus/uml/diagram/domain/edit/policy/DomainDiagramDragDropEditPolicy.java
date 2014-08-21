@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ public class DomainDiagramDragDropEditPolicy extends ClassDiagramDragDropEditPol
 	@Override
 	public int getNodeVisualID(View containerView, EObject domainElement) {
 		String domainType = registry.getNodeGraphicalType(domainElement, containerView.getType());
-		if(IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
+		if (IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
 			return -1; // undefined
 		}
 		return new Integer(domainType);
@@ -43,7 +43,7 @@ public class DomainDiagramDragDropEditPolicy extends ClassDiagramDragDropEditPol
 	@Override
 	public int getLinkWithClassVisualID(EObject domainElement) {
 		String domainType = registry.getEdgeGraphicalType(domainElement);
-		if(IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
+		if (IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
 			return -1; // undefined
 		}
 		return new Integer(domainType);

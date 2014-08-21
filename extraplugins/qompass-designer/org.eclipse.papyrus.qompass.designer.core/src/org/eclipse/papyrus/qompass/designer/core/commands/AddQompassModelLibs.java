@@ -47,26 +47,26 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 	public static final String EC3M_MARTE_CALLS_URI = "pathmap://QML_MARTE/marte.uml"; //$NON-NLS-1$
 
 	protected EList<PackageImport> importList;
-	
+
 	protected EList<PackageImport> availableImportPackages;
-	
+
 	protected Package selectedPkg;
-	
+
 	/**
 	 * Retrieve a model library from the repository
-	 * 
+	 *
 	 * @param uri
-	 *        the URI of the repository
-	 * 
+	 *            the URI of the repository
+	 *
 	 * @return
 	 */
 	public PackageImport getModelLibraryImportFromURI(URI uri, ResourceSet resourceSet) {
 		// Try to reach model
 		Element root = getContent(uri, resourceSet);
-		if(root instanceof Package) {
+		if (root instanceof Package) {
 
 			// Import model library
-			Package libToImport = (Package)root;
+			Package libToImport = (Package) root;
 			// create import package
 			PackageImport modelLibImport = UMLFactory.eINSTANCE.createPackageImport();
 			modelLibImport.setImportedPackage(libToImport);
@@ -84,31 +84,31 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 
 	public static Element getContent(Resource resource) {
 		EList<EObject> contentObj = resource.getContents();
-		if((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
-			return (Element)contentObj.get(0);
+		if ((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
+			return (Element) contentObj.get(0);
 		}
 		return null;
 	}
 
 	/**
 	 * Check whether a package import is already done
-	 * 
+	 *
 	 * @param selectedPkg
 	 * @param pi
 	 * @return
 	 */
 	boolean isAlreadyImported(Package selectedPkg, PackageImport pi) {
-		for(PackageImport existingPI : selectedPkg.getPackageImports()) {
-			if((existingPI.getImportedPackage() == null) ||
-				(pi.getImportedPackage() == null)) {
+		for (PackageImport existingPI : selectedPkg.getPackageImports()) {
+			if ((existingPI.getImportedPackage() == null) ||
+					(pi.getImportedPackage() == null)) {
 				// import package are null (should not happen?!)
 				continue;
 			}
-			if((existingPI.getImportedPackage().getName() == null) ||
-				(pi.getImportedPackage().getName() == null)) {
+			if ((existingPI.getImportedPackage().getName() == null) ||
+					(pi.getImportedPackage().getName() == null)) {
 				// import package name not set (should not happen?!)
 				continue;
-			} else if(existingPI.getImportedPackage().getName().equals(pi.getImportedPackage().getName())) {
+			} else if (existingPI.getImportedPackage().getName().equals(pi.getImportedPackage().getName())) {
 				return true;
 			}
 		}
@@ -123,6 +123,7 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 
 	/**
 	 * Return a list of package-imports for standard Qompass model libraries
+	 * 
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -134,16 +135,16 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 		availableImportPackages = new BasicEList<PackageImport>();
 
 		PackageImport pi = getModelLibraryImportFromURI(URI.createURI(EC3M_BASIC_CALLS_URI), resourceSet);
-		if(pi != null) {
+		if (pi != null) {
 			availableImportPackages.add(pi);
 		}
 		pi = getModelLibraryImportFromURI(URI.createURI(EC3M_MARTE_CALLS_URI), resourceSet);
-		if(pi != null) {
+		if (pi != null) {
 			availableImportPackages.add(pi);
 		}
 		return availableImportPackages;
 	}
-	
+
 	/**
 	 * @return a list of package-imports that are already imported (within the selected pkg).
 	 */
@@ -151,29 +152,32 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 		EList<PackageImport> availablePackages = getAvailableImportPackages();
 		EList<PackageImport> selection = new BasicEList<PackageImport>();
 		for (PackageImport pi : availablePackages) {
-			if(isAlreadyImported(selectedPkg, pi)) {
+			if (isAlreadyImported(selectedPkg, pi)) {
 				selection.add(pi);
 			}
-		}	
+		}
 		return selection;
 	}
 
 	/**
 	 * Initialize import list. Must be called, before the command gets executed.
-	 * @param importList a list of package-imports that will be added to the selectedPkg when
-	 *        the command gets executed.
+	 * 
+	 * @param importList
+	 *            a list of package-imports that will be added to the selectedPkg when
+	 *            the command gets executed.
 	 */
 	public void setImportList(EList<PackageImport> importList) {
 		this.importList = importList;
 	}
-	
-	
+
+
 	/**
 	 * Initialize import list. Must be called, before the command gets executed.
 	 * Convenience method for dialogs that return an array.
-	 * 
-	 * @param importArray an array of objects (which must contain package-imports)  that will
-	 * 		be added to the selectedPkg when the command gets executed.
+	 *
+	 * @param importArray
+	 *            an array of objects (which must contain package-imports) that will
+	 *            be added to the selectedPkg when the command gets executed.
 	 */
 	public void setImportList(Object importArray[]) {
 		importList = new BasicEList<PackageImport>();
@@ -183,13 +187,13 @@ public class AddQompassModelLibs extends AbstractEMFOperation {
 			}
 		}
 	}
-	
+
 	@Override
 	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-	
-		for(PackageImport pi : importList) {
-			if(!isAlreadyImported(selectedPkg, pi)) {
+
+		for (PackageImport pi : importList) {
+			if (!isAlreadyImported(selectedPkg, pi)) {
 				selectedPkg.getPackageImports().add(pi);
 			}
 		}

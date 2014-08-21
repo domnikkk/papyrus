@@ -49,9 +49,9 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Gets the {@link ExtendedURI} to {@link IResource}.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the extended uri to i resource
 	 */
 	public static Function<IExtendedURI, IResource> getExtendedURIToIResource(ResourceSet resourceSet) {
@@ -60,7 +60,7 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Gets the {@link Resource} to {@link IFile}.
-	 * 
+	 *
 	 * @return the resource to i file
 	 */
 	public static Function<Resource, IFile> getResourceToIFile() {
@@ -69,7 +69,7 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Gets the {@link Resource} to {@link ExtendedURI} with containment.
-	 * 
+	 *
 	 * @return the resource to extended uri with containment
 	 */
 	public static Function<Resource, IExtendedURI> getResourceToExtendedURIWithContainment() {
@@ -78,7 +78,7 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Gets the {@link URI} to {@link ExtendedURI} with containment.
-	 * 
+	 *
 	 * @return the uRI to extended uri with containment
 	 */
 	public static Function<URI, IExtendedURI> getURIToExtendedURIWithContainment() {
@@ -91,9 +91,9 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Gets the {@link ExtendedURI} to Collection of {@link EObject}.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the extended uri to e objects
 	 */
 	public static Function<IExtendedURI, Collection<EObject>> getExtendedURIToEObjects(ResourceSet resourceSet) {
@@ -102,7 +102,7 @@ public class CollabFunctionsFactory {
 
 	/**
 	 * Get the {@link IExtendedURI} from an {@link EObject}
-	 * 
+	 *
 	 * @return
 	 */
 	public static Function<EObject, IExtendedURI> getEObjectToExtendedURI() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,16 +29,16 @@ public class Substring extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			String x = ((StringValue)inputParameters.get(0).values.get(0)).value;
-			Integer lower = ((IntegerValue)inputParameters.get(1).values.get(0)).value;
-			Integer upper = ((IntegerValue)inputParameters.get(2).values.get(0)).value;
+			String x = ((StringValue) inputParameters.get(0).values.get(0)).value;
+			Integer lower = ((IntegerValue) inputParameters.get(1).values.get(0)).value;
+			Integer upper = ((IntegerValue) inputParameters.get(2).values.get(0)).value;
 
 			// ADDED if statement
 			List<Value> outputs = new ArrayList<Value>();
-			if(lower >= 1 && lower <= x.length() && upper >= 1 && upper <= x.length() && lower <= upper) {
+			if (lower >= 1 && lower <= x.length() && upper >= 1 && upper <= x.length() && lower <= upper) {
 				StringValue result = new StringValue();
 				result.value = x.substring(lower - 1, upper); // CHANGED "lower" to "lower-1"
-				result.type = (PrimitiveType)this.locus.factory.getBuiltInType("String"); // ADDED
+				result.type = (PrimitiveType) this.locus.factory.getBuiltInType("String"); // ADDED
 				outputs.add(result);
 			}
 

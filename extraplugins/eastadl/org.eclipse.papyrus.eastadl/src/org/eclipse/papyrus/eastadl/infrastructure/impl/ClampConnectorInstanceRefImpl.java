@@ -22,8 +22,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ClampConnectorInstanceRefImpl#getFunctionPort <em>Function Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ClampConnectorInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ClampConnectorInstanceRefImpl#getFunctionPort <em>Function Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ClampConnectorInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	 * The cached value of the '{@link #getFunctionPort() <em>Function Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFunctionPort()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ClampConnectorInstanceRefImpl() {
@@ -62,6 +65,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,15 +76,18 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public FunctionPort getFunctionPort() {
 		if (functionPort != null && functionPort.eIsProxy()) {
-			InternalEObject oldFunctionPort = (InternalEObject)functionPort;
-			functionPort = (FunctionPort)eResolveProxy(oldFunctionPort);
+			InternalEObject oldFunctionPort = (InternalEObject) functionPort;
+			functionPort = (FunctionPort) eResolveProxy(oldFunctionPort);
 			if (functionPort != oldFunctionPort) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
+				}
 			}
 		}
 		return functionPort;
@@ -89,6 +96,7 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FunctionPort basicGetFunctionPort() {
@@ -98,20 +106,25 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFunctionPort(FunctionPort newFunctionPort) {
 		FunctionPort oldFunctionPort = functionPort;
 		functionPort = newFunctionPort;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT, oldFunctionPort, functionPort));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionPrototype> getFunctionPrototype() {
 		if (functionPrototype == null) {
 			functionPrototype = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE);
@@ -122,16 +135,19 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
-				if (resolve) return getFunctionPort();
-				return basicGetFunctionPort();
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return getFunctionPrototype();
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
+			if (resolve) {
+				return getFunctionPort();
+			}
+			return basicGetFunctionPort();
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return getFunctionPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +155,20 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
-				setFunctionPort((FunctionPort)newValue);
-				return;
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>)newValue);
-				return;
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
+			setFunctionPort((FunctionPort) newValue);
+			return;
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			getFunctionPrototype().addAll((Collection<? extends FunctionPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +176,18 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
-				setFunctionPort((FunctionPort)null);
-				return;
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				getFunctionPrototype().clear();
-				return;
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
+			setFunctionPort((FunctionPort) null);
+			return;
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			getFunctionPrototype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,17 +195,18 @@ public class ClampConnectorInstanceRefImpl extends InstanceRefImpl implements Cl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
-				return functionPort != null;
-			case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return functionPrototype != null && !functionPrototype.isEmpty();
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PORT:
+			return functionPort != null;
+		case InfrastructurePackage.CLAMP_CONNECTOR_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return functionPrototype != null && !functionPrototype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ClampConnectorInstanceRefImpl
+} // ClampConnectorInstanceRefImpl

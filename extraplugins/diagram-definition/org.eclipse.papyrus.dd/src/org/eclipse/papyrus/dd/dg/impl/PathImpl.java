@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.PathImpl#getCommands <em>Command</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PathImpl extends MarkedElementImpl implements Path {
@@ -48,7 +48,7 @@ public class PathImpl extends MarkedElementImpl implements Path {
 	/**
 	 * The cached value of the '{@link #getCommands() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommands()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PathImpl() {
@@ -66,7 +66,7 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,11 +76,12 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<PathCommand> getCommands() {
-		if(commands == null) {
+		if (commands == null) {
 			commands = new EObjectContainmentEList<PathCommand>(PathCommand.class, this, DGPackage.PATH__COMMAND);
 		}
 		return commands;
@@ -90,7 +91,7 @@ public class PathImpl extends MarkedElementImpl implements Path {
 	 * The cached validation expression for the ' {@link #firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>First Command Must Be Move</em>}' invariant operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #firstCommandMustBeMove(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -99,35 +100,37 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean firstCommandMustBeMove(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.PATH, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP, FIRST_COMMAND_MUST_BE_MOVE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.PATH__FIRST_COMMAND_MUST_BE_MOVE);
+		return DGValidator.validate(DGPackage.Literals.PATH, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP,
+				FIRST_COMMAND_MUST_BE_MOVE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.PATH__FIRST_COMMAND_MUST_BE_MOVE);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH__COMMAND:
-			return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getCommands()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH__COMMAND:
 			return getCommands();
 		}
@@ -136,16 +139,16 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH__COMMAND:
 			getCommands().clear();
-			getCommands().addAll((Collection<? extends PathCommand>)newValue);
+			getCommands().addAll((Collection<? extends PathCommand>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,12 +156,12 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH__COMMAND:
 			getCommands().clear();
 			return;
@@ -168,12 +171,12 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH__COMMAND:
 			return commands != null && !commands.isEmpty();
 		}
@@ -182,15 +185,15 @@ public class PathImpl extends MarkedElementImpl implements Path {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case DGPackage.PATH___FIRST_COMMAND_MUST_BE_MOVE__DIAGNOSTICCHAIN_MAP:
-			return firstCommandMustBeMove((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return firstCommandMustBeMove((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

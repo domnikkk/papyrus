@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the CeCILL-C Free Software License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public class RobotmlPerspective extends PapyrusPerspective {
 	@Override
 	public void defineActions(IPageLayout layout) {
 		// TODO Auto-generated method stub
-		//super.defineActions(layout);
+		// super.defineActions(layout);
 		layout.addNewWizardShortcut("org.eclipse.papyrus.wizards.createrobotmlwizard");
 		layout.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder");
 		layout.addNewWizardShortcut("org.eclipse.papyrus.wizards.createrobotmlmodel");
@@ -67,7 +67,7 @@ public class RobotmlPerspective extends PapyrusPerspective {
 		layout.addView(IPageLayout.ID_OUTLINE, IPageLayout.BOTTOM, 0.5f, IPageLayout.ID_PROJECT_EXPLORER);
 
 		// place properties under the editor
-		layout.addView(IPageLayout.ID_PROP_SHEET, IPageLayout.BOTTOM, (float)0.70, editorArea);
+		layout.addView(IPageLayout.ID_PROP_SHEET, IPageLayout.BOTTOM, (float) 0.70, editorArea);
 
 		// bottom.addView("org.eclipse.pde.runtime.LogView");
 	}

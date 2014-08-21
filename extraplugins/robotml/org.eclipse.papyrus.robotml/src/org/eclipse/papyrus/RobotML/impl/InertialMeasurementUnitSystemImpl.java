@@ -20,6 +20,7 @@ public class InertialMeasurementUnitSystemImpl extends SensorSystemImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected InertialMeasurementUnitSystemImpl() {
@@ -29,6 +30,7 @@ public class InertialMeasurementUnitSystemImpl extends SensorSystemImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class InertialMeasurementUnitSystemImpl extends SensorSystemImpl implemen
 		return RobotMLPackage.Literals.INERTIAL_MEASUREMENT_UNIT_SYSTEM;
 	}
 
-} //InertialMeasurementUnitSystemImpl
+} // InertialMeasurementUnitSystemImpl

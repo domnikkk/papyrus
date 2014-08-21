@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -120,12 +120,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass hwMemoryEClass = null;
@@ -133,6 +135,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass hwRAMEClass = null;
@@ -140,6 +143,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass hwROMEClass = null;
@@ -147,6 +151,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass hwDriveEClass = null;
@@ -154,6 +159,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass hwCacheEClass = null;
@@ -161,6 +167,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum repl_PolicyEEnum = null;
@@ -168,6 +175,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum writePolicyEEnum = null;
@@ -175,6 +183,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum cacheTypeEEnum = null;
@@ -182,6 +191,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum roM_TypeEEnum = null;
@@ -189,6 +199,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType timingEDataType = null;
@@ -196,6 +207,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType cacheStructureEDataType = null;
@@ -203,20 +215,17 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType memoryOrganizationEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#eNS_URI
 	 * @see #init()
@@ -229,27 +238,29 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link HwMemoryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link HwMemoryPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static HwMemoryPackage init() {
-		if (isInited) return (HwMemoryPackage)EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI);
+		if (isInited) {
+			return (HwMemoryPackage) EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		HwMemoryPackageImpl theHwMemoryPackage = (HwMemoryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof HwMemoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new HwMemoryPackageImpl());
+		HwMemoryPackageImpl theHwMemoryPackage = (HwMemoryPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof HwMemoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new HwMemoryPackageImpl());
 
 		isInited = true;
 
@@ -257,47 +268,73 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		MARTEPackageImpl theMARTEPackage = (MARTEPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) instanceof MARTEPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) : MARTEPackage.eINSTANCE);
-		NFPsPackageImpl theNFPsPackage = (NFPsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) instanceof NFPsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) : NFPsPackage.eINSTANCE);
-		CoreElementsPackageImpl theCoreElementsPackage = (CoreElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) instanceof CoreElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) : CoreElementsPackage.eINSTANCE);
-		AllocPackageImpl theAllocPackage = (AllocPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) instanceof AllocPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) : AllocPackage.eINSTANCE);
-		TimePackageImpl theTimePackage = (TimePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) instanceof TimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) : TimePackage.eINSTANCE);
-		GRMPackageImpl theGRMPackage = (GRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) instanceof GRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) : GRMPackage.eINSTANCE);
-		RSMPackageImpl theRSMPackage = (RSMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) instanceof RSMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) : RSMPackage.eINSTANCE);
-		VSLPackageImpl theVSLPackage = (VSLPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) : VSLPackage.eINSTANCE);
-		VariablesPackageImpl theVariablesPackage = (VariablesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) instanceof VariablesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) : VariablesPackage.eINSTANCE);
-		OperatorsPackageImpl theOperatorsPackage = (OperatorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) instanceof OperatorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) : OperatorsPackage.eINSTANCE);
-		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) : DataTypesPackage.eINSTANCE);
-		HLAMPackageImpl theHLAMPackage = (HLAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) instanceof HLAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) : HLAMPackage.eINSTANCE);
-		HRMPackageImpl theHRMPackage = (HRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) instanceof HRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) : HRMPackage.eINSTANCE);
-		HwLogicalPackageImpl theHwLogicalPackage = (HwLogicalPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) instanceof HwLogicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) : HwLogicalPackage.eINSTANCE);
-		HwComputingPackageImpl theHwComputingPackage = (HwComputingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) instanceof HwComputingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) : HwComputingPackage.eINSTANCE);
-		HwCommunicationPackageImpl theHwCommunicationPackage = (HwCommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) instanceof HwCommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) : HwCommunicationPackage.eINSTANCE);
-		HwStoragePackageImpl theHwStoragePackage = (HwStoragePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) instanceof HwStoragePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) : HwStoragePackage.eINSTANCE);
-		HwStorageManagerPackageImpl theHwStorageManagerPackage = (HwStorageManagerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) instanceof HwStorageManagerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) : HwStorageManagerPackage.eINSTANCE);
-		HwTimingPackageImpl theHwTimingPackage = (HwTimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) instanceof HwTimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) : HwTimingPackage.eINSTANCE);
-		HwDevicePackageImpl theHwDevicePackage = (HwDevicePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) instanceof HwDevicePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) : HwDevicePackage.eINSTANCE);
-		HwGeneralPackageImpl theHwGeneralPackage = (HwGeneralPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) instanceof HwGeneralPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) : HwGeneralPackage.eINSTANCE);
-		HwPhysicalPackageImpl theHwPhysicalPackage = (HwPhysicalPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) instanceof HwPhysicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) : HwPhysicalPackage.eINSTANCE);
-		HwLayoutPackageImpl theHwLayoutPackage = (HwLayoutPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) instanceof HwLayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) : HwLayoutPackage.eINSTANCE);
-		HwPowerPackageImpl theHwPowerPackage = (HwPowerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) instanceof HwPowerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) : HwPowerPackage.eINSTANCE);
-		SRMPackageImpl theSRMPackage = (SRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) instanceof SRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) : SRMPackage.eINSTANCE);
-		SW_ResourceCorePackageImpl theSW_ResourceCorePackage = (SW_ResourceCorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) instanceof SW_ResourceCorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) : SW_ResourceCorePackage.eINSTANCE);
-		SW_ConcurrencyPackageImpl theSW_ConcurrencyPackage = (SW_ConcurrencyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) instanceof SW_ConcurrencyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) : SW_ConcurrencyPackage.eINSTANCE);
-		SW_BrokeringPackageImpl theSW_BrokeringPackage = (SW_BrokeringPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) instanceof SW_BrokeringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) : SW_BrokeringPackage.eINSTANCE);
-		SW_InteractionPackageImpl theSW_InteractionPackage = (SW_InteractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_InteractionPackage.eNS_URI) instanceof SW_InteractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_InteractionPackage.eNS_URI) : SW_InteractionPackage.eINSTANCE);
-		GCMPackageImpl theGCMPackage = (GCMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) instanceof GCMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) : GCMPackage.eINSTANCE);
-		GQAMPackageImpl theGQAMPackage = (GQAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) instanceof GQAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) : GQAMPackage.eINSTANCE);
-		SAMPackageImpl theSAMPackage = (SAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) instanceof SAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) : SAMPackage.eINSTANCE);
-		PAMPackageImpl thePAMPackage = (PAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) instanceof PAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) : PAMPackage.eINSTANCE);
-		MeasurementUnitsPackageImpl theMeasurementUnitsPackage = (MeasurementUnitsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) instanceof MeasurementUnitsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) : MeasurementUnitsPackage.eINSTANCE);
-		GRM_BasicTypesPackageImpl theGRM_BasicTypesPackage = (GRM_BasicTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) instanceof GRM_BasicTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) : GRM_BasicTypesPackage.eINSTANCE);
-		MARTE_DataTypesPackageImpl theMARTE_DataTypesPackage = (MARTE_DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) instanceof MARTE_DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) : MARTE_DataTypesPackage.eINSTANCE);
-		BasicNFP_TypesPackageImpl theBasicNFP_TypesPackage = (BasicNFP_TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) instanceof BasicNFP_TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) : BasicNFP_TypesPackage.eINSTANCE);
-		TimeTypesLibraryPackageImpl theTimeTypesLibraryPackage = (TimeTypesLibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) instanceof TimeTypesLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) : TimeTypesLibraryPackage.eINSTANCE);
-		TimeLibraryPackageImpl theTimeLibraryPackage = (TimeLibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) instanceof TimeLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) : TimeLibraryPackage.eINSTANCE);
-		RS_LibraryPackageImpl theRS_LibraryPackage = (RS_LibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) instanceof RS_LibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) : RS_LibraryPackage.eINSTANCE);
-		MARTE_PrimitivesTypesPackageImpl theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) instanceof MARTE_PrimitivesTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) : MARTE_PrimitivesTypesPackage.eINSTANCE);
+		MARTEPackageImpl theMARTEPackage = (MARTEPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) instanceof MARTEPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) : MARTEPackage.eINSTANCE);
+		NFPsPackageImpl theNFPsPackage = (NFPsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) instanceof NFPsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) : NFPsPackage.eINSTANCE);
+		CoreElementsPackageImpl theCoreElementsPackage = (CoreElementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) instanceof CoreElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI)
+				: CoreElementsPackage.eINSTANCE);
+		AllocPackageImpl theAllocPackage = (AllocPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) instanceof AllocPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) : AllocPackage.eINSTANCE);
+		TimePackageImpl theTimePackage = (TimePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) instanceof TimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) : TimePackage.eINSTANCE);
+		GRMPackageImpl theGRMPackage = (GRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) instanceof GRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) : GRMPackage.eINSTANCE);
+		RSMPackageImpl theRSMPackage = (RSMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) instanceof RSMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) : RSMPackage.eINSTANCE);
+		VSLPackageImpl theVSLPackage = (VSLPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) : VSLPackage.eINSTANCE);
+		VariablesPackageImpl theVariablesPackage = (VariablesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) instanceof VariablesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI)
+				: VariablesPackage.eINSTANCE);
+		OperatorsPackageImpl theOperatorsPackage = (OperatorsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) instanceof OperatorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI)
+				: OperatorsPackage.eINSTANCE);
+		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI)
+				: DataTypesPackage.eINSTANCE);
+		HLAMPackageImpl theHLAMPackage = (HLAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) instanceof HLAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) : HLAMPackage.eINSTANCE);
+		HRMPackageImpl theHRMPackage = (HRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) instanceof HRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) : HRMPackage.eINSTANCE);
+		HwLogicalPackageImpl theHwLogicalPackage = (HwLogicalPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) instanceof HwLogicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI)
+				: HwLogicalPackage.eINSTANCE);
+		HwComputingPackageImpl theHwComputingPackage = (HwComputingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) instanceof HwComputingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI)
+				: HwComputingPackage.eINSTANCE);
+		HwCommunicationPackageImpl theHwCommunicationPackage = (HwCommunicationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) instanceof HwCommunicationPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HwCommunicationPackage.eNS_URI) : HwCommunicationPackage.eINSTANCE);
+		HwStoragePackageImpl theHwStoragePackage = (HwStoragePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) instanceof HwStoragePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI)
+				: HwStoragePackage.eINSTANCE);
+		HwStorageManagerPackageImpl theHwStorageManagerPackage = (HwStorageManagerPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) instanceof HwStorageManagerPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HwStorageManagerPackage.eNS_URI) : HwStorageManagerPackage.eINSTANCE);
+		HwTimingPackageImpl theHwTimingPackage = (HwTimingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) instanceof HwTimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI)
+				: HwTimingPackage.eINSTANCE);
+		HwDevicePackageImpl theHwDevicePackage = (HwDevicePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) instanceof HwDevicePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI)
+				: HwDevicePackage.eINSTANCE);
+		HwGeneralPackageImpl theHwGeneralPackage = (HwGeneralPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) instanceof HwGeneralPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI)
+				: HwGeneralPackage.eINSTANCE);
+		HwPhysicalPackageImpl theHwPhysicalPackage = (HwPhysicalPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) instanceof HwPhysicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI)
+				: HwPhysicalPackage.eINSTANCE);
+		HwLayoutPackageImpl theHwLayoutPackage = (HwLayoutPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) instanceof HwLayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI)
+				: HwLayoutPackage.eINSTANCE);
+		HwPowerPackageImpl theHwPowerPackage = (HwPowerPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) instanceof HwPowerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) : HwPowerPackage.eINSTANCE);
+		SRMPackageImpl theSRMPackage = (SRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) instanceof SRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) : SRMPackage.eINSTANCE);
+		SW_ResourceCorePackageImpl theSW_ResourceCorePackage = (SW_ResourceCorePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) instanceof SW_ResourceCorePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SW_ResourceCorePackage.eNS_URI) : SW_ResourceCorePackage.eINSTANCE);
+		SW_ConcurrencyPackageImpl theSW_ConcurrencyPackage = (SW_ConcurrencyPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) instanceof SW_ConcurrencyPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SW_ConcurrencyPackage.eNS_URI) : SW_ConcurrencyPackage.eINSTANCE);
+		SW_BrokeringPackageImpl theSW_BrokeringPackage = (SW_BrokeringPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) instanceof SW_BrokeringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI)
+				: SW_BrokeringPackage.eINSTANCE);
+		SW_InteractionPackageImpl theSW_InteractionPackage = (SW_InteractionPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_InteractionPackage.eNS_URI) instanceof SW_InteractionPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SW_InteractionPackage.eNS_URI) : SW_InteractionPackage.eINSTANCE);
+		GCMPackageImpl theGCMPackage = (GCMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) instanceof GCMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) : GCMPackage.eINSTANCE);
+		GQAMPackageImpl theGQAMPackage = (GQAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) instanceof GQAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) : GQAMPackage.eINSTANCE);
+		SAMPackageImpl theSAMPackage = (SAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) instanceof SAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) : SAMPackage.eINSTANCE);
+		PAMPackageImpl thePAMPackage = (PAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) instanceof PAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) : PAMPackage.eINSTANCE);
+		MeasurementUnitsPackageImpl theMeasurementUnitsPackage = (MeasurementUnitsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) instanceof MeasurementUnitsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MeasurementUnitsPackage.eNS_URI) : MeasurementUnitsPackage.eINSTANCE);
+		GRM_BasicTypesPackageImpl theGRM_BasicTypesPackage = (GRM_BasicTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) instanceof GRM_BasicTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(GRM_BasicTypesPackage.eNS_URI) : GRM_BasicTypesPackage.eINSTANCE);
+		MARTE_DataTypesPackageImpl theMARTE_DataTypesPackage = (MARTE_DataTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) instanceof MARTE_DataTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MARTE_DataTypesPackage.eNS_URI) : MARTE_DataTypesPackage.eINSTANCE);
+		BasicNFP_TypesPackageImpl theBasicNFP_TypesPackage = (BasicNFP_TypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) instanceof BasicNFP_TypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(BasicNFP_TypesPackage.eNS_URI) : BasicNFP_TypesPackage.eINSTANCE);
+		TimeTypesLibraryPackageImpl theTimeTypesLibraryPackage = (TimeTypesLibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) instanceof TimeTypesLibraryPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TimeTypesLibraryPackage.eNS_URI) : TimeTypesLibraryPackage.eINSTANCE);
+		TimeLibraryPackageImpl theTimeLibraryPackage = (TimeLibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) instanceof TimeLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI)
+				: TimeLibraryPackage.eINSTANCE);
+		RS_LibraryPackageImpl theRS_LibraryPackage = (RS_LibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) instanceof RS_LibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI)
+				: RS_LibraryPackage.eINSTANCE);
+		MARTE_PrimitivesTypesPackageImpl theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) instanceof MARTE_PrimitivesTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) : MARTE_PrimitivesTypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theHwMemoryPackage.createPackageContents();
@@ -390,7 +427,7 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 		// Mark meta-data to indicate it can't be changed
 		theHwMemoryPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(HwMemoryPackage.eNS_URI, theHwMemoryPackage);
 		return theHwMemoryPackage;
@@ -399,8 +436,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getHwMemory() {
 		return hwMemoryEClass;
 	}
@@ -408,44 +447,54 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwMemory_MemorySize() {
-		return (EAttribute)hwMemoryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) hwMemoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwMemory_AdressSize() {
-		return (EAttribute)hwMemoryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) hwMemoryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwMemory_Timings() {
-		return (EAttribute)hwMemoryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) hwMemoryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwMemory_Throughput() {
-		return (EAttribute)hwMemoryEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) hwMemoryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getHwRAM() {
 		return hwRAMEClass;
 	}
@@ -453,62 +502,76 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_Organization() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_IsSynchronous() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_IsStatic() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_IsNonVolatile() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_Repl_Policy() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwRAM_WritePolicy() {
-		return (EAttribute)hwRAMEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) hwRAMEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getHwROM() {
 		return hwROMEClass;
 	}
@@ -516,26 +579,32 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwROM_Type() {
-		return (EAttribute)hwROMEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) hwROMEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwROM_Organization() {
-		return (EAttribute)hwROMEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) hwROMEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getHwDrive() {
 		return hwDriveEClass;
 	}
@@ -543,26 +612,32 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDrive_SectorSize() {
-		return (EAttribute)hwDriveEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) hwDriveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getHwDrive_Buffer() {
-		return (EReference)hwDriveEClass.getEStructuralFeatures().get(1);
+		return (EReference) hwDriveEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getHwCache() {
 		return hwCacheEClass;
 	}
@@ -570,53 +645,65 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwCache_Level() {
-		return (EAttribute)hwCacheEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) hwCacheEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwCache_Type() {
-		return (EAttribute)hwCacheEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) hwCacheEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwCache_Structure() {
-		return (EAttribute)hwCacheEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) hwCacheEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwCache_Repl_Policy() {
-		return (EAttribute)hwCacheEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) hwCacheEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwCache_WritePolicy() {
-		return (EAttribute)hwCacheEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) hwCacheEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getRepl_Policy() {
 		return repl_PolicyEEnum;
 	}
@@ -624,8 +711,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getWritePolicy() {
 		return writePolicyEEnum;
 	}
@@ -633,8 +722,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getCacheType() {
 		return cacheTypeEEnum;
 	}
@@ -642,8 +733,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getROM_Type() {
 		return roM_TypeEEnum;
 	}
@@ -651,8 +744,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getTiming() {
 		return timingEDataType;
 	}
@@ -660,8 +755,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getCacheStructure() {
 		return cacheStructureEDataType;
 	}
@@ -669,8 +766,10 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getMemoryOrganization() {
 		return memoryOrganizationEDataType;
 	}
@@ -678,28 +777,34 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwMemoryFactory getHwMemoryFactory() {
-		return (HwMemoryFactory)getEFactoryInstance();
+		return (HwMemoryFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -747,19 +852,23 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -768,9 +877,9 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		HwGeneralPackage theHwGeneralPackage = (HwGeneralPackage)EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI);
-		GRMPackage theGRMPackage = (GRMPackage)EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI);
-		BasicNFP_TypesPackage theBasicNFP_TypesPackage = (BasicNFP_TypesPackage)EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI);
+		HwGeneralPackage theHwGeneralPackage = (HwGeneralPackage) EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI);
+		GRMPackage theGRMPackage = (GRMPackage) EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI);
+		BasicNFP_TypesPackage theBasicNFP_TypesPackage = (BasicNFP_TypesPackage) EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -859,18 +968,18 @@ public class HwMemoryPackageImpl extends EPackageImpl implements HwMemoryPackage
 	 * Initializes the annotations for <b>subsets</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createSubsetsAnnotations() {
-		String source = "subsets";		
-		addAnnotation
-		  (getHwDrive_Buffer(), 
-		   source, 
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(MARTEPackage.eNS_URI).appendFragment("//MARTE_DesignModel/HRM/HwGeneral/HwResource/ownedHW")
-		   });
+		String source = "subsets";
+		addAnnotation(getHwDrive_Buffer(),
+				source,
+				new String[] {
+				},
+				new URI[] {
+				URI.createURI(MARTEPackage.eNS_URI).appendFragment("//MARTE_DesignModel/HRM/HwGeneral/HwResource/ownedHW")
+				});
 	}
 
-} //HwMemoryPackageImpl
+} // HwMemoryPackageImpl

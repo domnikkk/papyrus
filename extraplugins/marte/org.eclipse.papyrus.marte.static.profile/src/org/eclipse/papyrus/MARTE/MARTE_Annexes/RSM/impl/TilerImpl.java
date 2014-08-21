@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ import org.eclipse.uml2.uml.ConnectorEnd;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getOrigin <em>Origin</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getPaving <em>Paving</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getFitting <em>Fitting</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getTiler <em>Tiler</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getBase_ConnectorEnd <em>Base Connector End</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getOrigin <em>Origin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getPaving <em>Paving</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getFitting <em>Fitting</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getTiler <em>Tiler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl#getBase_ConnectorEnd <em>Base Connector End</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getOrigin() <em>Origin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getPaving() <em>Paving</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPaving()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getPaving() <em>Paving</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPaving()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getFitting() <em>Fitting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFitting()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getFitting() <em>Fitting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFitting()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The default value of the '{@link #getTiler() <em>Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTiler()
 	 * @generated
 	 * @ordered
@@ -113,6 +120,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getTiler() <em>Tiler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTiler()
 	 * @generated
 	 * @ordered
@@ -123,6 +131,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	 * The cached value of the '{@link #getBase_ConnectorEnd() <em>Base Connector End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_ConnectorEnd()
 	 * @generated
 	 * @ordered
@@ -132,6 +141,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TilerImpl() {
@@ -141,6 +151,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,8 +162,10 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getOrigin() {
 		return origin;
 	}
@@ -160,20 +173,25 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOrigin(String newOrigin) {
 		String oldOrigin = origin;
 		origin = newOrigin;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.TILER__ORIGIN, oldOrigin, origin));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPaving() {
 		return paving;
 	}
@@ -181,20 +199,25 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPaving(String newPaving) {
 		String oldPaving = paving;
 		paving = newPaving;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.TILER__PAVING, oldPaving, paving));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getFitting() {
 		return fitting;
 	}
@@ -202,20 +225,25 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFitting(String newFitting) {
 		String oldFitting = fitting;
 		fitting = newFitting;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.TILER__FITTING, oldFitting, fitting));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getTiler() {
 		return tiler;
 	}
@@ -223,27 +251,33 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTiler(String newTiler) {
 		String oldTiler = tiler;
 		tiler = newTiler;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.TILER__TILER, oldTiler, tiler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConnectorEnd getBase_ConnectorEnd() {
 		if (base_ConnectorEnd != null && base_ConnectorEnd.eIsProxy()) {
-			InternalEObject oldBase_ConnectorEnd = (InternalEObject)base_ConnectorEnd;
-			base_ConnectorEnd = (ConnectorEnd)eResolveProxy(oldBase_ConnectorEnd);
+			InternalEObject oldBase_ConnectorEnd = (InternalEObject) base_ConnectorEnd;
+			base_ConnectorEnd = (ConnectorEnd) eResolveProxy(oldBase_ConnectorEnd);
 			if (base_ConnectorEnd != oldBase_ConnectorEnd) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RSMPackage.TILER__BASE_CONNECTOR_END, oldBase_ConnectorEnd, base_ConnectorEnd));
+				}
 			}
 		}
 		return base_ConnectorEnd;
@@ -252,6 +286,7 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConnectorEnd basicGetBase_ConnectorEnd() {
@@ -261,34 +296,40 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_ConnectorEnd(ConnectorEnd newBase_ConnectorEnd) {
 		ConnectorEnd oldBase_ConnectorEnd = base_ConnectorEnd;
 		base_ConnectorEnd = newBase_ConnectorEnd;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RSMPackage.TILER__BASE_CONNECTOR_END, oldBase_ConnectorEnd, base_ConnectorEnd));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RSMPackage.TILER__ORIGIN:
-				return getOrigin();
-			case RSMPackage.TILER__PAVING:
-				return getPaving();
-			case RSMPackage.TILER__FITTING:
-				return getFitting();
-			case RSMPackage.TILER__TILER:
-				return getTiler();
-			case RSMPackage.TILER__BASE_CONNECTOR_END:
-				if (resolve) return getBase_ConnectorEnd();
-				return basicGetBase_ConnectorEnd();
+		case RSMPackage.TILER__ORIGIN:
+			return getOrigin();
+		case RSMPackage.TILER__PAVING:
+			return getPaving();
+		case RSMPackage.TILER__FITTING:
+			return getFitting();
+		case RSMPackage.TILER__TILER:
+			return getTiler();
+		case RSMPackage.TILER__BASE_CONNECTOR_END:
+			if (resolve) {
+				return getBase_ConnectorEnd();
+			}
+			return basicGetBase_ConnectorEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,26 +337,27 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RSMPackage.TILER__ORIGIN:
-				setOrigin((String)newValue);
-				return;
-			case RSMPackage.TILER__PAVING:
-				setPaving((String)newValue);
-				return;
-			case RSMPackage.TILER__FITTING:
-				setFitting((String)newValue);
-				return;
-			case RSMPackage.TILER__TILER:
-				setTiler((String)newValue);
-				return;
-			case RSMPackage.TILER__BASE_CONNECTOR_END:
-				setBase_ConnectorEnd((ConnectorEnd)newValue);
-				return;
+		case RSMPackage.TILER__ORIGIN:
+			setOrigin((String) newValue);
+			return;
+		case RSMPackage.TILER__PAVING:
+			setPaving((String) newValue);
+			return;
+		case RSMPackage.TILER__FITTING:
+			setFitting((String) newValue);
+			return;
+		case RSMPackage.TILER__TILER:
+			setTiler((String) newValue);
+			return;
+		case RSMPackage.TILER__BASE_CONNECTOR_END:
+			setBase_ConnectorEnd((ConnectorEnd) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -323,26 +365,27 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RSMPackage.TILER__ORIGIN:
-				setOrigin(ORIGIN_EDEFAULT);
-				return;
-			case RSMPackage.TILER__PAVING:
-				setPaving(PAVING_EDEFAULT);
-				return;
-			case RSMPackage.TILER__FITTING:
-				setFitting(FITTING_EDEFAULT);
-				return;
-			case RSMPackage.TILER__TILER:
-				setTiler(TILER_EDEFAULT);
-				return;
-			case RSMPackage.TILER__BASE_CONNECTOR_END:
-				setBase_ConnectorEnd((ConnectorEnd)null);
-				return;
+		case RSMPackage.TILER__ORIGIN:
+			setOrigin(ORIGIN_EDEFAULT);
+			return;
+		case RSMPackage.TILER__PAVING:
+			setPaving(PAVING_EDEFAULT);
+			return;
+		case RSMPackage.TILER__FITTING:
+			setFitting(FITTING_EDEFAULT);
+			return;
+		case RSMPackage.TILER__TILER:
+			setTiler(TILER_EDEFAULT);
+			return;
+		case RSMPackage.TILER__BASE_CONNECTOR_END:
+			setBase_ConnectorEnd((ConnectorEnd) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -350,21 +393,22 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RSMPackage.TILER__ORIGIN:
-				return ORIGIN_EDEFAULT == null ? origin != null : !ORIGIN_EDEFAULT.equals(origin);
-			case RSMPackage.TILER__PAVING:
-				return PAVING_EDEFAULT == null ? paving != null : !PAVING_EDEFAULT.equals(paving);
-			case RSMPackage.TILER__FITTING:
-				return FITTING_EDEFAULT == null ? fitting != null : !FITTING_EDEFAULT.equals(fitting);
-			case RSMPackage.TILER__TILER:
-				return TILER_EDEFAULT == null ? tiler != null : !TILER_EDEFAULT.equals(tiler);
-			case RSMPackage.TILER__BASE_CONNECTOR_END:
-				return base_ConnectorEnd != null;
+		case RSMPackage.TILER__ORIGIN:
+			return ORIGIN_EDEFAULT == null ? origin != null : !ORIGIN_EDEFAULT.equals(origin);
+		case RSMPackage.TILER__PAVING:
+			return PAVING_EDEFAULT == null ? paving != null : !PAVING_EDEFAULT.equals(paving);
+		case RSMPackage.TILER__FITTING:
+			return FITTING_EDEFAULT == null ? fitting != null : !FITTING_EDEFAULT.equals(fitting);
+		case RSMPackage.TILER__TILER:
+			return TILER_EDEFAULT == null ? tiler != null : !TILER_EDEFAULT.equals(tiler);
+		case RSMPackage.TILER__BASE_CONNECTOR_END:
+			return base_ConnectorEnd != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,11 +416,14 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (origin: ");
@@ -391,4 +438,4 @@ public class TilerImpl extends LinkTopologyImpl implements Tiler {
 		return result.toString();
 	}
 
-} //TilerImpl
+} // TilerImpl

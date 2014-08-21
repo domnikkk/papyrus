@@ -20,6 +20,7 @@ public class ManMachineInterfaceSystemImpl extends CyberPhysicalSystemImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ManMachineInterfaceSystemImpl() {
@@ -29,6 +30,7 @@ public class ManMachineInterfaceSystemImpl extends CyberPhysicalSystemImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ManMachineInterfaceSystemImpl extends CyberPhysicalSystemImpl imple
 		return RobotMLPackage.Literals.MAN_MACHINE_INTERFACE_SYSTEM;
 	}
 
-} //ManMachineInterfaceSystemImpl
+} // ManMachineInterfaceSystemImpl

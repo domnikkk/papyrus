@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ public abstract class CompoundValue extends StructuredValue {
 
 	public List<FeatureValue> featureValues = new ArrayList<FeatureValue>();
 
+	@Override
 	public Boolean equals(Value otherValue) {
 		// Test if this data value is equal to the otherValue.
 		// To be equal, the otherValue must also be a compund value with the
@@ -32,19 +33,19 @@ public abstract class CompoundValue extends StructuredValue {
 		// Debug.println("[equals] super.equals(otherValue) = " +
 		// super.equals(otherValue));
 		boolean isEqual = otherValue instanceof CompoundValue;
-		if(isEqual) {
-			CompoundValue otherCompoundValue = (CompoundValue)otherValue;
+		if (isEqual) {
+			CompoundValue otherCompoundValue = (CompoundValue) otherValue;
 			// Debug.println("[equals] " + this.featureValues.size() +
 			// " feature(s).");
 			isEqual = super.equals(otherValue) & otherCompoundValue.featureValues.size() == this.featureValues.size();
 			int i = 1;
-			while(isEqual & i <= this.featureValues.size()) {
+			while (isEqual & i <= this.featureValues.size()) {
 				FeatureValue thisFeatureValue = this.featureValues.get(i - 1);
 				boolean matched = false;
 				int j = 1;
-				while(!matched & j <= otherCompoundValue.featureValues.size()) {
+				while (!matched & j <= otherCompoundValue.featureValues.size()) {
 					FeatureValue otherFeatureValue = otherCompoundValue.featureValues.get(j - 1);
-					if(thisFeatureValue.feature == otherFeatureValue.feature) {
+					if (thisFeatureValue.feature == otherFeatureValue.feature) {
 						matched = thisFeatureValue.hasEqualValues(otherFeatureValue);
 					}
 					j = j + 1;
@@ -56,25 +57,27 @@ public abstract class CompoundValue extends StructuredValue {
 		return isEqual;
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new data value with the same featureValues as this data
 		// value.
-		CompoundValue newValue = (CompoundValue)(super.copy());
+		CompoundValue newValue = (CompoundValue) (super.copy());
 		List<FeatureValue> featureValues = this.featureValues;
-		for(int i = 0; i < featureValues.size(); i++) {
+		for (int i = 0; i < featureValues.size(); i++) {
 			FeatureValue featureValue = featureValues.get(i);
 			newValue.featureValues.add(featureValue.copy());
 		}
 		return newValue;
 	}
 
+	@Override
 	public FeatureValue getFeatureValue(StructuralFeature feature) {
 		// Get the value(s) of the member of featureValues for the given
 		// feature.
 		FeatureValue featureValue = null;
 		int i = 1;
-		while(featureValue == null & i <= this.featureValues.size()) {
-			if(this.featureValues.get(i - 1).feature == feature) {
+		while (featureValue == null & i <= this.featureValues.size()) {
+			if (this.featureValues.get(i - 1).feature == feature) {
 				featureValue = this.featureValues.get(i - 1);
 			}
 			i = i + 1;
@@ -82,11 +85,12 @@ public abstract class CompoundValue extends StructuredValue {
 		return featureValue;
 	}
 
+	@Override
 	public void setFeatureValue(StructuralFeature feature, List<Value> values, Integer position) {
 		// Set the value(s) of the member of featureValues for the given
 		// feature.
 		FeatureValue featureValue = this.getFeatureValue(feature);
-		if(featureValue == null) {
+		if (featureValue == null) {
 			featureValue = new FeatureValue();
 			this.featureValues.add(featureValue);
 		}
@@ -95,6 +99,7 @@ public abstract class CompoundValue extends StructuredValue {
 		featureValue.position = position;
 	}
 
+	@Override
 	public List<FeatureValue> getFeatureValues() {
 		// Return the feature values for this compound value.
 		return this.featureValues;
@@ -104,8 +109,8 @@ public abstract class CompoundValue extends StructuredValue {
 		// Remove all feature values for features whose type is the given
 		// classifier.
 		int i = 1;
-		while(i <= this.featureValues.size()) {
-			if(this.featureValues.get(i - 1).feature.getType() == classifier) {
+		while (i <= this.featureValues.size()) {
+			if (this.featureValues.get(i - 1).feature.getType() == classifier) {
 				this.featureValues.remove(i - 1);
 			} else {
 				i = i + 1;
@@ -113,27 +118,28 @@ public abstract class CompoundValue extends StructuredValue {
 		}
 	}
 
+	@Override
 	public String toString() {
 		String buffer = "(" + this.objectId() + ":";
 		List<Classifier> types = this.getTypes();
 		int i = 1;
-		while(i <= types.size()) {
+		while (i <= types.size()) {
 			buffer = buffer + " " + types.get(i - 1).getName();
 			i = i + 1;
 		}
 		int k = 1;
-		while(k <= this.featureValues.size()) {
+		while (k <= this.featureValues.size()) {
 			FeatureValue featureValue = this.featureValues.get(k - 1);
 			buffer = buffer + "\n\t\t" + featureValue.feature.getName() + "[" + featureValue.position + "]  =";
 			int j = 1;
-			while(j <= featureValue.values.size()) {
+			while (j <= featureValue.values.size()) {
 				Value value = featureValue.values.get(j - 1);
-				if(value instanceof Reference) {
-					Object_ object = ((Reference)value).referent;
+				if (value instanceof Reference) {
+					Object_ object = ((Reference) value).referent;
 					buffer = buffer + " Reference to (" + object.objectId() + ":";
 					types = object.getTypes();
 					int n = 1;
-					while(n <= types.size()) {
+					while (n <= types.size()) {
 						buffer = buffer + " " + types.get(n - 1).getName();
 						n = n + 1;
 					}

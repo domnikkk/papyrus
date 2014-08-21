@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
 
@@ -106,7 +106,7 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 		pathText = new Text(result, SWT.BORDER | SWT.MULTI | SWT.WRAP | SWT.READ_ONLY);
 		pathText.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).hint(SWT.DEFAULT, convertHeightInCharsToPixels(3)).create());
 
-		if(isImport) {
+		if (isImport) {
 			stripSashModelContent = new Button(result, SWT.CHECK);
 			stripSashModelContent.setText(Messages.ModelReferencesPage_2);
 			stripSashModelContent.setToolTipText(Messages.ModelReferencesPage_6);
@@ -115,7 +115,7 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					if(getConfiguration() != null) {
+					if (getConfiguration() != null) {
 						getConfiguration().setStripSashModelContent(stripSashModelContent.getSelection());
 					}
 				}
@@ -126,8 +126,8 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				IStructuredSelection sel = (IStructuredSelection)event.getSelection();
-				if(!sel.isEmpty()) {
+				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
+				if (!sel.isEmpty()) {
 					selected(sel.getFirstElement());
 				} else {
 					selected(null);
@@ -135,8 +135,8 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 			}
 		});
 
-		((ICheckable)modelsTree).addCheckStateListener(contents);
-		((ICheckable)modelsTree).addCheckStateListener(new ICheckStateListener() {
+		((ICheckable) modelsTree).addCheckStateListener(contents);
+		((ICheckable) modelsTree).addCheckStateListener(new ICheckStateListener() {
 
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
@@ -161,8 +161,8 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 	@Subscribe
 	public void setConfiguration(IModelTransferConfiguration configuration) {
-		if(configuration != this.importConfig) {
-			if(this.importConfig != null) {
+		if (configuration != this.importConfig) {
+			if (this.importConfig != null) {
 				this.importConfig.dispose();
 			}
 
@@ -171,18 +171,18 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 		modelsTree.setInput(configuration);
 
-		if(configuration != null) {
+		if (configuration != null) {
 			// initialize the checkboxes
 			initializeCheckedNodes();
 
 			// determine enablement of strip-sash-model option
-			if(stripSashModelContent != null) {
+			if (stripSashModelContent != null) {
 				stripSashModelContent.setSelection(true);
 				stripSashModelContent.setEnabled(configuration.hasSashModelContent());
 
 				this.importConfig.setStripSashModelContent(true);
 			}
-		} else if(stripSashModelContent != null) {
+		} else if (stripSashModelContent != null) {
 			stripSashModelContent.setSelection(true);
 			stripSashModelContent.setEnabled(false);
 		}
@@ -200,28 +200,28 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 	private void initializeCheckedNodes() {
 		final Collection<IModelTransferNode> initialSet = importConfig.getModelsToTransfer();
-		final ITreeContentProvider contents = (ITreeContentProvider)modelsTree.getContentProvider();
-		final ICheckable checkable = (ICheckable)modelsTree;
+		final ITreeContentProvider contents = (ITreeContentProvider) modelsTree.getContentProvider();
+		final ICheckable checkable = (ICheckable) modelsTree;
 
 		final Set<IModelTransferNode> visited = Sets.newHashSet();
 		final Queue<Object> queue = new java.util.ArrayDeque<Object>(Arrays.asList(contents.getElements(importConfig)));
 
-		for(Object next = queue.poll(); next != null; next = queue.poll()) {
-			ITreeNode parent = (ITreeNode)next;
+		for (Object next = queue.poll(); next != null; next = queue.poll()) {
+			ITreeNode parent = (ITreeNode) next;
 
 			// we must check a parent if the user initially selected it on opening the wizard
 			// or we are importing and it is a dependent of a checked node,
 			// or we are exporting and it is a dependency of a checked node,
 			// or it is a model sub-unit (required dependency) of a checked node
 			boolean mustCheck = initialSet.contains(parent.getElement());
-			if(mustCheck) {
+			if (mustCheck) {
 				checkable.setChecked(next, true);
 			}
 
-			if(visited.add(parent.getElement())) {
+			if (visited.add(parent.getElement())) {
 				// recurse into the children
-				for(Object child : contents.getChildren(next)) {
-					ITreeNode treeNode = (ITreeNode)child;
+				for (Object child : contents.getChildren(next)) {
+					ITreeNode treeNode = (ITreeNode) child;
 					queue.add(treeNode);
 
 					// we must check a node if either the user initially selected it on opening the wizard,
@@ -229,10 +229,10 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 					// or we are exporting and it is a dependency of a checked node,
 					// or it is a model sub-unit (required dependency) of a checked node
 					mustCheck = initialSet.contains(treeNode.getElement()) //
-						|| (isImport ? treeNode.isDependent() : treeNode.isDependency()) //
-						|| (checkable.getChecked(parent) && parent.getElement().isModelSubUnit(treeNode.getElement()));
+							|| (isImport ? treeNode.isDependent() : treeNode.isDependency()) //
+							|| (checkable.getChecked(parent) && parent.getElement().isModelSubUnit(treeNode.getElement()));
 
-					if(mustCheck) {
+					if (mustCheck) {
 						checkable.setChecked(child, true);
 						importConfig.addModelToTransfer(treeNode.getElement().getPrimaryResourceURI());
 					}
@@ -243,10 +243,10 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 	}
 
 	void selected(Object treeNode) {
-		if(treeNode == null) {
+		if (treeNode == null) {
 			pathText.setText(""); //$NON-NLS-1$
 		} else {
-			IModelTransferNode node = ((ITreeNode)treeNode).getElement();
+			IModelTransferNode node = ((ITreeNode) treeNode).getElement();
 
 			pathText.setText(node.getName());
 		}
@@ -256,8 +256,8 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 	protected Diagnostic doValidatePage() {
 		Diagnostic result = Diagnostic.CANCEL_INSTANCE;
 
-		if(importConfig != null) {
-			if(importConfig.getModelsToTransfer().isEmpty()) {
+		if (importConfig != null) {
+			if (importConfig.getModelsToTransfer().isEmpty()) {
 				result = report(Diagnostic.CANCEL, NLS.bind(Messages.ModelReferencesPage_7, isImport ? Messages.ModelReferencesPage_8 : Messages.ModelReferencesPage_9));
 			} else {
 				result = importConfig.validate();
@@ -295,7 +295,7 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 			nodes.clear();
 			elements = null;
 
-			config = (IModelTransferConfiguration)newInput;
+			config = (IModelTransferConfiguration) newInput;
 
 			this.viewer = viewer;
 		}
@@ -304,17 +304,17 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 		public Object[] getElements(Object inputElement) {
 			Object[] result = elements;
 
-			if((inputElement != config) || (result == null)) {
-				IModelTransferConfiguration config = (IModelTransferConfiguration)inputElement;
+			if ((inputElement != config) || (result == null)) {
+				IModelTransferConfiguration config = (IModelTransferConfiguration) inputElement;
 				List<TreeNode> nodes = Lists.newArrayListWithCapacity(config.getModelsToTransfer().size());
 
-				for(IModelTransferNode next : config.getModelsToTransfer()) {
+				for (IModelTransferNode next : config.getModelsToTransfer()) {
 					nodes.add(new TreeNode(next));
 				}
 
 				result = nodes.toArray();
 
-				if(inputElement == config) {
+				if (inputElement == config) {
 					// cache the result
 					elements = result;
 				}
@@ -325,19 +325,19 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 		@Override
 		public boolean hasChildren(Object element) {
-			IModelTransferNode importNode = ((TreeNode)element).getElement();
+			IModelTransferNode importNode = ((TreeNode) element).getElement();
 
 			return !(importNode.getDependencies().isEmpty() && importNode.getDependents().isEmpty());
 		}
 
 		@Override
 		public Object getParent(Object element) {
-			return ((TreeNode)element).getParent();
+			return ((TreeNode) element).getParent();
 		}
 
 		@Override
 		public Object[] getChildren(Object parentElement) {
-			return ((TreeNode)parentElement).getChildren();
+			return ((TreeNode) parentElement).getChildren();
 		}
 
 		@Override
@@ -348,18 +348,18 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 		@Override
 		public void checkStateChanged(CheckStateChangedEvent event) {
-			ITreeNode node = (ITreeNode)event.getElement();
+			ITreeNode node = (ITreeNode) event.getElement();
 			IModelTransferNode model = node.getElement();
 
 			// apply the check state to the model
-			if(event.getChecked()) {
+			if (event.getChecked()) {
 				config.addModelToTransfer(model.getPrimaryResourceURI());
 			} else {
 				config.removeModelToTransfer(model);
 			}
 
 			// propagate the check state to other occurrences of the same model
-			for(ITreeNode next : nodes.get(model)) {
+			for (ITreeNode next : nodes.get(model)) {
 				event.getCheckable().setChecked(next, event.getChecked());
 			}
 		}
@@ -410,7 +410,7 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 			}
 
 			Object[] getChildren() {
-				if(children == null) {
+				if (children == null) {
 					createChildren();
 				}
 
@@ -421,22 +421,22 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 				Collection<IModelTransferNode> dependencies = element.getDependencies();
 				Collection<IModelTransferNode> dependents = element.getDependents();
 
-				if(!dependencies.isEmpty() || !dependents.isEmpty()) {
+				if (!dependencies.isEmpty() || !dependents.isEmpty()) {
 					children = Lists.newArrayListWithCapacity(dependencies.size() + dependents.size());
 
 					// the recommendation for importing dependencies vs. dependents is
-					// reversed for export as for import.  We suggest to export dependencies
+					// reversed for export as for import. We suggest to export dependencies
 					// of an exported model (those that it references) and import dependents
 					// of an imported model (those that reference it)
-					for(IModelTransferNode next : isImport ? dependents : dependencies) {
+					for (IModelTransferNode next : isImport ? dependents : dependencies) {
 						children.add(new TreeNode(this, next, isImport));
 					}
 
-					for(IModelTransferNode next : isImport ? dependencies : dependents) {
+					for (IModelTransferNode next : isImport ? dependencies : dependents) {
 						// don't show a model as both a dependent and a
 						// dependency if it both references and is
 						// referenced by the other
-						if(isImport ? !dependents.contains(next) : !dependencies.contains(next)) {
+						if (isImport ? !dependents.contains(next) : !dependencies.contains(next)) {
 							children.add(new TreeNode(this, next, false));
 						}
 					}
@@ -446,11 +446,11 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 						@Override
 						public void run() {
-							if(config != null) {
+							if (config != null) {
 								Collection<IModelTransferNode> imported = config.getModelsToTransfer();
-								ICheckable checkable = (ICheckable)viewer;
-								for(ITreeNode next : children) {
-									if(imported.contains(next.getElement())) {
+								ICheckable checkable = (ICheckable) viewer;
+								for (ITreeNode next : children) {
+									if (imported.contains(next.getElement())) {
 										checkable.setChecked(next, true);
 									}
 								}
@@ -468,12 +468,12 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 		@Override
 		public Image getImage(Object element) {
-			ITreeNode treeNode = (ITreeNode)element;
+			ITreeNode treeNode = (ITreeNode) element;
 			Image result = super.getImage(element);
 
-			if((result != null) && treeNode.isDependent()) {
+			if ((result != null) && treeNode.isDependent()) {
 				// decorate it
-				result = (Image)images.get(new DecorationOverlayIcon(result, Activator.getIcon(Activator.ICON_DEPENDENT_OVERLAY16), IDecoration.TOP_RIGHT));
+				result = (Image) images.get(new DecorationOverlayIcon(result, Activator.getIcon(Activator.ICON_DEPENDENT_OVERLAY16), IDecoration.TOP_RIGHT));
 			}
 
 			return result;
@@ -486,7 +486,7 @@ public class ModelReferencesPage extends ModelImportWizardPage {
 
 		@Override
 		protected IModelTransferNode getModelImportNode(Object element) {
-			return ((ITreeNode)element).getElement();
+			return ((ITreeNode) element).getElement();
 		}
 	}
 }

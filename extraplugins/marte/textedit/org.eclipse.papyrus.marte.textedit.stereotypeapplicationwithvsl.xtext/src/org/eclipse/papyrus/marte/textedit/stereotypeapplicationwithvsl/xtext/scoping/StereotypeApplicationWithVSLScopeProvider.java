@@ -51,8 +51,8 @@ public class StereotypeApplicationWithVSLScopeProvider extends VSLScopeProvider 
 	}
 
 	private IScope create___StereotypeApplicationRule_stereotype___Scope(StereotypeApplicationRule ctx) {
-		Element element = (Element)ContextElementUtil.getContextElement(ctx.eResource());
-		if(element == null) {
+		Element element = (Element) ContextElementUtil.getContextElement(ctx.eResource());
+		if (element == null) {
 			return null;
 		}
 		List<Stereotype> applicableStereotypes = element.getApplicableStereotypes();
@@ -69,14 +69,14 @@ public class StereotypeApplicationWithVSLScopeProvider extends VSLScopeProvider 
 
 	public IScope scope_TagSpecificationRule_property(TagSpecificationRule ctx, EReference ref) {
 		EObject context = ctx;
-		while(context != null && !(context instanceof StereotypeApplicationRule)) {
+		while (context != null && !(context instanceof StereotypeApplicationRule)) {
 			context = context.eContainer();
 		}
-		if(context == null || !(context instanceof StereotypeApplicationRule) || ((StereotypeApplicationRule)context).getStereotype() == null) {
+		if (context == null || !(context instanceof StereotypeApplicationRule) || ((StereotypeApplicationRule) context).getStereotype() == null) {
 			return null;
 		}
 
-		return create___TagSpecificationRule_property___Scope((((StereotypeApplicationRule)context).getStereotype()));
+		return create___TagSpecificationRule_property___Scope((((StereotypeApplicationRule) context).getStereotype()));
 	}
 
 	private IScope create___TagSpecificationRule_property___Scope(Stereotype stereotype) {
@@ -89,66 +89,66 @@ public class StereotypeApplicationWithVSLScopeProvider extends VSLScopeProvider 
 
 		// removes derived properties or those which name starts with "base_"
 		List<Property> filteredList = new ArrayList<Property>(stereotype.getAllAttributes());
-		for(Property p : filteredList) {
-			if(p.getName() == null || p.getName().startsWith("base_") || p.isDerived()) {
+		for (Property p : filteredList) {
+			if (p.getName() == null || p.getName().startsWith("base_") || p.isDerived()) {
 				visibleProperties.remove(p);
 			}
 		}
 
-		//		List<List<Stereotype>> inheritanceStructure = new ArrayList<List<Stereotype>>() ;
-		//		List<Stereotype> tmpList = new ArrayList<Stereotype>() ;
-		// 		tmpList.add(stereotype) ;
+		// List<List<Stereotype>> inheritanceStructure = new ArrayList<List<Stereotype>>() ;
+		// List<Stereotype> tmpList = new ArrayList<Stereotype>() ;
+		// tmpList.add(stereotype) ;
 		//
-		//		do {
-		//			inheritanceStructure.add(tmpList) ;
-		//			List<Stereotype> localStereotypeList = new ArrayList<Stereotype>() ;
-		//			for (Stereotype currentStereotype : tmpList) {
-		//				for (Classifier general : currentStereotype.getGenerals()) {
-		//					if (general instanceof Stereotype)
-		//						localStereotypeList.add((Stereotype)general) ;
-		//				}
-		//			}
-		//			tmpList = new ArrayList<Stereotype>() ;
-		//			tmpList.addAll(localStereotypeList) ;
-		//		} while (!tmpList.isEmpty());
+		// do {
+		// inheritanceStructure.add(tmpList) ;
+		// List<Stereotype> localStereotypeList = new ArrayList<Stereotype>() ;
+		// for (Stereotype currentStereotype : tmpList) {
+		// for (Classifier general : currentStereotype.getGenerals()) {
+		// if (general instanceof Stereotype)
+		// localStereotypeList.add((Stereotype)general) ;
+		// }
+		// }
+		// tmpList = new ArrayList<Stereotype>() ;
+		// tmpList.addAll(localStereotypeList) ;
+		// } while (!tmpList.isEmpty());
 		//
-		//		// builds the nested scope
+		// // builds the nested scope
 		//
-		//		if (! inheritanceStructure.isEmpty()) {
-		//			List<Property> visibleProperties = new ArrayList<Property>() ;
-		//			List<Property> filteredProperties = new ArrayList<Property>() ;
-		//			List<Stereotype> currentList = inheritanceStructure.get(inheritanceStructure.size() - 1) ;
-		//			for (Stereotype currentStereotype : currentList) {
-		//				visibleProperties.addAll(currentStereotype.getOwnedAttributes()) ;
-		//				filteredProperties.addAll(currentStereotype.getOwnedAttributes()) ;
-		//				for (Property p : filteredProperties) {
-		//					if (p.getName() == null ||
-		//						p.getName().startsWith("base_") ||
-		//						p.isDerived())
-		//						visibleProperties.remove(p) ;
-		//				}
-		//			}
+		// if (! inheritanceStructure.isEmpty()) {
+		// List<Property> visibleProperties = new ArrayList<Property>() ;
+		// List<Property> filteredProperties = new ArrayList<Property>() ;
+		// List<Stereotype> currentList = inheritanceStructure.get(inheritanceStructure.size() - 1) ;
+		// for (Stereotype currentStereotype : currentList) {
+		// visibleProperties.addAll(currentStereotype.getOwnedAttributes()) ;
+		// filteredProperties.addAll(currentStereotype.getOwnedAttributes()) ;
+		// for (Property p : filteredProperties) {
+		// if (p.getName() == null ||
+		// p.getName().startsWith("base_") ||
+		// p.isDerived())
+		// visibleProperties.remove(p) ;
+		// }
+		// }
 		Iterable<IEObjectDescription> visiblePropertiesIterable = Scopes.scopedElementsFor(visibleProperties);
 		result = new SimpleScope(visiblePropertiesIterable);
-		//			for (int i = inheritanceStructure.size() - 2 ; i >= 0 ; i--) {
-		//				visibleProperties = new ArrayList<Property>() ;
-		//				currentList = inheritanceStructure.get(i) ;
-		//				filteredProperties = new ArrayList<Property>() ;
-		//				for (Stereotype currentStereotype : currentList) {
-		//					visibleProperties.addAll(currentStereotype.getOwnedAttributes()) ;
-		//					filteredProperties.addAll(currentStereotype.getOwnedAttributes()) ;
-		//				}
-		//				for (Property p : filteredProperties) {
-		//					if (p.getName() == null ||
-		//						p.getName().startsWith("base_") ||
-		//						p.isDerived())
-		//						visibleProperties.remove(p) ;
-		//				}
-		//				visiblePropertiesIterable =
-		//					Scopes.scopedElementsFor(visibleProperties) ;
-		//				result = new SimpleScope(result, visiblePropertiesIterable) ;
-		//			}
-		//		}
+		// for (int i = inheritanceStructure.size() - 2 ; i >= 0 ; i--) {
+		// visibleProperties = new ArrayList<Property>() ;
+		// currentList = inheritanceStructure.get(i) ;
+		// filteredProperties = new ArrayList<Property>() ;
+		// for (Stereotype currentStereotype : currentList) {
+		// visibleProperties.addAll(currentStereotype.getOwnedAttributes()) ;
+		// filteredProperties.addAll(currentStereotype.getOwnedAttributes()) ;
+		// }
+		// for (Property p : filteredProperties) {
+		// if (p.getName() == null ||
+		// p.getName().startsWith("base_") ||
+		// p.isDerived())
+		// visibleProperties.remove(p) ;
+		// }
+		// visiblePropertiesIterable =
+		// Scopes.scopedElementsFor(visibleProperties) ;
+		// result = new SimpleScope(result, visiblePropertiesIterable) ;
+		// }
+		// }
 
 		return result;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,64 +53,64 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Change the interpretation to give to an extension to ExtensionDefinitionKind.ASSOCIATION
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformIntoAssociation(ExtensionDefinition element) {
-		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.ASSOCIATION); //$NON-NLS-1$
+		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.ASSOCIATION);
 		editingDomain.getCommandStack().execute(command);
 
 	}
 
 	/**
 	 * Change the interpretation to give to an extension to ExtensionDefinitionKind.GENERALIZATION
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformIntoGeneralization(ExtensionDefinition element) {
 
-		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.GENERALIZATION); //$NON-NLS-1$
+		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.GENERALIZATION);
 		editingDomain.getCommandStack().execute(command);
 
 	}
 
 	/**
 	 * Change the interpretation to give to an extension to ExtensionDefinitionKind.MULTI_GENERALIZATION
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformIntoMultiGeneralization(ExtensionDefinition element) {
 
-		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.MULTI_GENERALIZATION); //$NON-NLS-1$
+		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.MULTI_GENERALIZATION);
 		editingDomain.getCommandStack().execute(command);
 
 	}
 
 	/**
 	 * Change the interpretation to give to an extension to ExtensionDefinitionKind.FUSION
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void transformIntoFusion(ExtensionDefinition element) {
 
-		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.FUSION); //$NON-NLS-1$
+		SetCommand command = new SetCommand(editingDomain, element, ExtensiondefinitionPackage.eINSTANCE.getExtensionDefinition_Kind(), ExtensionDefinitionKind.FUSION);
 		editingDomain.getCommandStack().execute(command);
 
 	}
 
 	/**
 	 * Check if the stereotype involved in the extensionDefinition is also used to type the property of a stereotype elsewhere
-	 * 
+	 *
 	 * @param extensionDefinition
 	 * @return
 	 */
 	protected boolean stereotypeUsedElsewhere(ExtensionDefinition extensionDefinition) {
 		EList<ExtensionDefinition> allExtensionDefintion = extensionDefinition.getFacade().getExtensionDefinitions();
 
-		for(ExtensionDefinition otherExtensionDefinition : allExtensionDefintion) {
-			if(otherExtensionDefinition != extensionDefinition) {
-				for(Property property : otherExtensionDefinition.getStereotype().getAttributes()) {
-					if(property.getType() == extensionDefinition.getStereotype()) {
+		for (ExtensionDefinition otherExtensionDefinition : allExtensionDefintion) {
+			if (otherExtensionDefinition != extensionDefinition) {
+				for (Property property : otherExtensionDefinition.getStereotype().getAttributes()) {
+					if (property.getType() == extensionDefinition.getStereotype()) {
 						return true;
 					}
 				}
@@ -122,16 +122,16 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * Check if the stereotype involved in the extensionDefinition is also involved in another extensionDefinition
-	 * 
+	 *
 	 * @param extensionDefinition
 	 * @return
 	 */
 	protected boolean hasOtherExtension(ExtensionDefinition extensionDefinition) {
 		EList<ExtensionDefinition> allExtensionDefintion = extensionDefinition.getFacade().getExtensionDefinitions();
 
-		for(ExtensionDefinition otherExtensionDefinition : allExtensionDefintion) {
-			if(otherExtensionDefinition != extensionDefinition) {
-				if(extensionDefinition.getStereotype() == otherExtensionDefinition.getStereotype()) {
+		for (ExtensionDefinition otherExtensionDefinition : allExtensionDefintion) {
+			if (otherExtensionDefinition != extensionDefinition) {
+				if (extensionDefinition.getStereotype() == otherExtensionDefinition.getStereotype()) {
 					return true;
 				}
 			}
@@ -142,15 +142,15 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 
 	/**
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(final Object element, final Object value) {
-		final ExtensionDefinitionKind newValue = ExtensionDefinitionKind.get((Integer)value);
+		final ExtensionDefinitionKind newValue = ExtensionDefinitionKind.get((Integer) value);
 
-		if(element instanceof ExtensionDefinition) {
+		if (element instanceof ExtensionDefinition) {
 
 			ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
 			try {
@@ -159,43 +159,43 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 					public void run(IProgressMonitor monitor) {
 						monitor.beginTask(Messages.ExtensionKindColumnEditingSupport_0, IProgressMonitor.UNKNOWN);
 
-						Facade facade = ((ExtensionDefinition)element).getFacade();
+						Facade facade = ((ExtensionDefinition) element).getFacade();
 
-						if(newValue == ExtensionDefinitionKind.ASSOCIATION) {
+						if (newValue == ExtensionDefinitionKind.ASSOCIATION) {
 
-							transformIntoAssociation((ExtensionDefinition)element);
+							transformIntoAssociation((ExtensionDefinition) element);
 
 							// All children and generals must be set to Association as well
-							HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition)element).getStereotype());
+							HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition) element).getStereotype());
 
-							for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+							for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
 
-								if(extensionDefinition.getExtension() == ((ExtensionDefinition)element).getExtension()) {
-									if(siblings.contains(extensionDefinition.getStereotype())) {
+								if (extensionDefinition.getExtension() == ((ExtensionDefinition) element).getExtension()) {
+									if (siblings.contains(extensionDefinition.getStereotype())) {
 
 										transformIntoAssociation(extensionDefinition);
 									}
 								}
 							}
 
-						} else if(newValue == ExtensionDefinitionKind.GENERALIZATION) {
+						} else if (newValue == ExtensionDefinitionKind.GENERALIZATION) {
 
-							if(((ExtensionDefinition)element).getExtension().getMetaclass().isAbstract()) {
+							if (((ExtensionDefinition) element).getExtension().getMetaclass().isAbstract()) {
 
 								MessageDialog.openInformation(Display.getCurrent().getActiveShell(), Messages.ExtensionKindColumnEditingSupport_1, Messages.ExtensionKindColumnEditingSupport_2);
 
 							} else {
-								if(((ExtensionDefinition)element).getExtension().isRequired()) {
+								if (((ExtensionDefinition) element).getExtension().isRequired()) {
 									MessageDialog.openInformation(Display.getCurrent().getActiveShell(), Messages.ExtensionKindColumnEditingSupport_3, Messages.ExtensionKindColumnEditingSupport_4);
 								} else {
 
-									transformIntoGeneralization((ExtensionDefinition)element);
+									transformIntoGeneralization((ExtensionDefinition) element);
 									// All children and generals must be set to generalization as well
-									HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition)element).getStereotype());
+									HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition) element).getStereotype());
 
-									for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
-										if(extensionDefinition.getExtension() == ((ExtensionDefinition)element).getExtension()) {
-											if(siblings.contains(extensionDefinition.getStereotype())) {
+									for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+										if (extensionDefinition.getExtension() == ((ExtensionDefinition) element).getExtension()) {
+											if (siblings.contains(extensionDefinition.getStereotype())) {
 												transformIntoGeneralization(extensionDefinition);
 											}
 										}
@@ -203,36 +203,36 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 								}
 							}
 
-						} else if(newValue == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
+						} else if (newValue == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
 
-							if(hasOtherExtension((ExtensionDefinition)element) && stereotypeUsedElsewhere((ExtensionDefinition)element)) {
+							if (hasOtherExtension((ExtensionDefinition) element) && stereotypeUsedElsewhere((ExtensionDefinition) element)) {
 								MessageDialog.openInformation(Display.getCurrent().getActiveShell(), Messages.ExtensionKindColumnEditingSupport_5, Messages.ExtensionKindColumnEditingSupport_6);
 							} else {
-								transformIntoMultiGeneralization((ExtensionDefinition)element);
+								transformIntoMultiGeneralization((ExtensionDefinition) element);
 								// All children and generals must be set to generalization as well
-								HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition)element).getStereotype());
+								HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition) element).getStereotype());
 
-								for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
-									if(extensionDefinition.getExtension() == ((ExtensionDefinition)element).getExtension()) {
-										if(siblings.contains(extensionDefinition.getStereotype())) {
+								for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+									if (extensionDefinition.getExtension() == ((ExtensionDefinition) element).getExtension()) {
+										if (siblings.contains(extensionDefinition.getStereotype())) {
 											transformIntoMultiGeneralization(extensionDefinition);
 										}
 									}
 								}
 							}
 
-						} else if(newValue == ExtensionDefinitionKind.FUSION) {
-							if(hasOtherExtension((ExtensionDefinition)element) && stereotypeUsedElsewhere((ExtensionDefinition)element)) {
+						} else if (newValue == ExtensionDefinitionKind.FUSION) {
+							if (hasOtherExtension((ExtensionDefinition) element) && stereotypeUsedElsewhere((ExtensionDefinition) element)) {
 								MessageDialog.openInformation(Display.getCurrent().getActiveShell(), Messages.ExtensionKindColumnEditingSupport_7, Messages.ExtensionKindColumnEditingSupport_8);
 							} else {
-								transformIntoFusion((ExtensionDefinition)element);
+								transformIntoFusion((ExtensionDefinition) element);
 
 								// All children and generals must be set to generalization as well
-								HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition)element).getStereotype());
+								HashSet<Stereotype> siblings = ProfileUtils.getSiblings(((ExtensionDefinition) element).getStereotype());
 
-								for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
-									if(extensionDefinition.getExtension() == ((ExtensionDefinition)element).getExtension()) {
-										if(siblings.contains(extensionDefinition.getStereotype())) {
+								for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+									if (extensionDefinition.getExtension() == ((ExtensionDefinition) element).getExtension()) {
+										if (siblings.contains(extensionDefinition.getStereotype())) {
 											transformIntoFusion(extensionDefinition);
 										}
 									}
@@ -263,16 +263,16 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof ExtensionDefinition) {
-			int value = ((ExtensionDefinition)element).getKind().getValue();
+		if (element instanceof ExtensionDefinition) {
+			int value = ((ExtensionDefinition) element).getKind().getValue();
 			return value;
 
 		}
@@ -280,16 +280,16 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected CellEditor getCellEditor(Object element) {
 
-		if(element instanceof ExtensionDefinition) {
+		if (element instanceof ExtensionDefinition) {
 
 			String[] itemsArray = { ExtensionDefinitionKind.ASSOCIATION.getName(), ExtensionDefinitionKind.GENERALIZATION.getName(), ExtensionDefinitionKind.MULTI_GENERALIZATION.getName() };
 
@@ -302,9 +302,9 @@ public class ExtensionKindColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

@@ -29,26 +29,24 @@ import org.eclipse.uml2.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements GeneratoroptionsmmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass optionsEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmPackage#eNS_URI
 	 * @see #init()
@@ -61,27 +59,31 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link GeneratoroptionsmmPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link GeneratoroptionsmmPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static GeneratoroptionsmmPackage init() {
-		if (isInited) return (GeneratoroptionsmmPackage)EPackage.Registry.INSTANCE.getEPackage(GeneratoroptionsmmPackage.eNS_URI);
+		if (isInited) {
+			return (GeneratoroptionsmmPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratoroptionsmmPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		GeneratoroptionsmmPackageImpl theGeneratoroptionsmmPackage = (GeneratoroptionsmmPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GeneratoroptionsmmPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GeneratoroptionsmmPackageImpl());
+		GeneratoroptionsmmPackageImpl theGeneratoroptionsmmPackage = (GeneratoroptionsmmPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GeneratoroptionsmmPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new GeneratoroptionsmmPackageImpl());
 
 		isInited = true;
 
@@ -97,7 +99,7 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 		// Mark meta-data to indicate it can't be changed
 		theGeneratoroptionsmmPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(GeneratoroptionsmmPackage.eNS_URI, theGeneratoroptionsmmPackage);
 		return theGeneratoroptionsmmPackage;
@@ -106,8 +108,10 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getOptions() {
 		return optionsEClass;
 	}
@@ -115,37 +119,45 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOptions_DefaultSourceFolder() {
-		return (EAttribute)optionsEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) optionsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GeneratoroptionsmmFactory getGeneratoroptionsmmFactory() {
-		return (GeneratoroptionsmmFactory)getEFactoryInstance();
+		return (GeneratoroptionsmmFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -156,19 +168,23 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -177,7 +193,7 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -201,16 +217,16 @@ public class GeneratoroptionsmmPackageImpl extends EPackageImpl implements Gener
 	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "originalName", "GeneratorOptionsMM"
-		   });
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
+		addAnnotation(this,
+				source,
+				new String[] {
+						"originalName", "GeneratorOptionsMM"
+				});
 	}
 
-} //GeneratoroptionsmmPackageImpl
+} // GeneratoroptionsmmPackageImpl

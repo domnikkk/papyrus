@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,11 +34,12 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertyIdItemProvider
-	extends FolderElementItemProvider
-	implements
+		extends FolderElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -48,6 +49,7 @@ public class PropertyIdItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyIdItemProvider(AdapterFactory adapterFactory) {
@@ -58,6 +60,7 @@ public class PropertyIdItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,28 +77,30 @@ public class PropertyIdItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyId_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyId_type_feature", "_UI_PropertyId_type"),
-				 LayersconfigPackage.Literals.PROPERTY_ID__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PropertyId_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PropertyId_type_feature", "_UI_PropertyId_type"),
+						LayersconfigPackage.Literals.PROPERTY_ID__TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns PropertyId.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,14 +112,15 @@ public class PropertyIdItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyId)object).getName();
+		String label = ((PropertyId) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyId_type") :
-			getString("_UI_PropertyId_type") + " " + label;
+				getString("_UI_PropertyId_type") :
+				getString("_UI_PropertyId_type") + " " + label;
 	}
 
 	/**
@@ -122,6 +128,7 @@ public class PropertyIdItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,6 +142,7 @@ public class PropertyIdItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

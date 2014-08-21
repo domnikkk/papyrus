@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -42,7 +43,7 @@ public class ModelManagement {
 
 	/**
 	 * Create a resource for the model passed as parameter
-	 * 
+	 *
 	 * @param newModel
 	 */
 	public ModelManagement() {
@@ -54,18 +55,18 @@ public class ModelManagement {
 
 	/**
 	 * Save a model within the given project
-	 * 
+	 *
 	 * @param model
-	 *        a model that should be saved
+	 *            a model that should be saved
 	 * @param project
-	 *        an existing project
+	 *            an existing project
 	 */
 	public void saveModel(IProject project) {
 		saveModel(getPath(project, null, null));
 	}
 
 	public void dispose() {
-		if(model != null) {
+		if (model != null) {
 			model.destroy();
 			model = null;
 		}
@@ -75,7 +76,7 @@ public class ModelManagement {
 	public Model getModel() {
 		return model;
 	}
-	
+
 	public void saveModel(IProject project, String modelFolder, String modelPostfix) {
 		String path = this.getPath(project, modelFolder, this.getModel().getName() + modelPostfix);
 		this.saveModel(path);
@@ -84,7 +85,7 @@ public class ModelManagement {
 	/**
 	 * Save a model within a passed project and a specified folder
 	 * (TODO: use path instead a single folder?)
-	 * 
+	 *
 	 */
 	public void saveModel(String path) {
 
@@ -102,11 +103,11 @@ public class ModelManagement {
 			resource.setURI(uri);
 			EList<EObject> contents = resource.getContents();
 
-			for(Iterator<EObject> allContents = UMLUtil.getAllContents(model, true, false); allContents.hasNext();) {
+			for (Iterator<EObject> allContents = UML2Util.getAllContents(model, true, false); allContents.hasNext();) {
 				EObject eObject = allContents.next();
 
-				if(eObject instanceof Element) {
-					contents.addAll(((Element)eObject).getStereotypeApplications());
+				if (eObject instanceof Element) {
+					contents.addAll(((Element) eObject).getStereotypeApplications());
 				}
 			}
 			resource.save(null);
@@ -117,23 +118,23 @@ public class ModelManagement {
 
 	/**
 	 * @param project
-	 *        an existing project
+	 *            an existing project
 	 * @param subFolder
-	 *        a subfolder within the project (will be created, if it does not exist)
+	 *            a subfolder within the project (will be created, if it does not exist)
 	 * @param filename
-	 *        the name of the file or null (in his case, the name of the
-	 *        model with the postfix .uml is used)
-	 * 
+	 *            the name of the file or null (in his case, the name of the
+	 *            model with the postfix .uml is used)
+	 *
 	 * @return The access path to a file
 	 */
 	public String getPath(IProject project, String subFolder, String filename) {
 		IFile file;
-		if(filename == null) {
+		if (filename == null) {
 			filename = model.getName() + ".uml"; //$NON-NLS-1$
 		}
-		if(subFolder != null) {
+		if (subFolder != null) {
 			IFolder ifolder = project.getFolder(subFolder);
-			if(!ifolder.exists()) {
+			if (!ifolder.exists()) {
 				try {
 					ifolder.create(false, true, null);
 				} catch (CoreException e) {
@@ -152,7 +153,7 @@ public class ModelManagement {
 	 * return the used resource set (a singleton)
 	 */
 	public static ResourceSet getResourceSet() {
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			resourceSet = new ResourceSetImpl();
 		}
 		return resourceSet;

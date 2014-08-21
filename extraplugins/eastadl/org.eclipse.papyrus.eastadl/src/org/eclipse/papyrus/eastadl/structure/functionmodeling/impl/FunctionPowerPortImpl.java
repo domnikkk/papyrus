@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPowerPortImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FunctionPowerPortImpl() {
@@ -47,17 +48,17 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public CompositeDatatype basicGetType() {
 		CompositeDatatype dataType = null;
 
-		if(getBase_Port() != null) {
+		if (getBase_Port() != null) {
 			Type umlType = getBase_Port().getType();
-			
-			if(umlType != null) {
-				dataType = (CompositeDatatype)UMLUtil.getStereotypeApplication(umlType, CompositeDatatype.class);
+
+			if (umlType != null) {
+				dataType = UMLUtil.getStereotypeApplication(umlType, CompositeDatatype.class);
 			}
 		}
 
@@ -66,33 +67,38 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_POWER_PORT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+		case FunctionmodelingPackage.FUNCTION_POWER_PORT__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_POWER_PORT__TYPE:
-				return basicGetType() != null;
+		case FunctionmodelingPackage.FUNCTION_POWER_PORT__TYPE:
+			return basicGetType() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,11 +108,13 @@ public class FunctionPowerPortImpl extends FunctionPortImpl implements FunctionP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public CompositeDatatype getType() {
 		CompositeDatatype type = basicGetType();
-		return type != null && type.eIsProxy() ? (CompositeDatatype)eResolveProxy((InternalEObject)type) : type;
+		return type != null && type.eIsProxy() ? (CompositeDatatype) eResolveProxy((InternalEObject) type) : type;
 	}
 
 } // FunctionPowerPortImpl

@@ -41,7 +41,7 @@ public class RobotmlSelectionTester extends PropertyTester {
 	public final static String IS_ROBOTML_MODEL = "isRobotmlModel";
 
 
-	//public static String ROBOTML_ID = "RobotML";
+	// public static String ROBOTML_ID = "RobotML";
 
 	/** Default constructor */
 	public RobotmlSelectionTester() {
@@ -52,12 +52,12 @@ public class RobotmlSelectionTester extends PropertyTester {
 
 		// Ensure Papyrus is the active editor
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
+		if ((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
 			return false;
 		}
 
 		Object currentValue = null;
-		if(IS_ROBOTML_MODEL.equals(property)) {
+		if (IS_ROBOTML_MODEL.equals(property)) {
 			currentValue = testRobotmlModelNature(receiver);
 			return (currentValue == expectedValue);
 		}
@@ -73,16 +73,16 @@ public class RobotmlSelectionTester extends PropertyTester {
 
 
 		EObject root = getRoot(receiver);
-		if(root instanceof Package) {
-			return (((Package)root).getAppliedProfile("RobotML") != null);
+		if (root instanceof Package) {
+			return (((Package) root).getAppliedProfile("RobotML") != null);
 
-			//FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
+			// FIX: UMLUtil.getProfile() loads the profile into the resource set. This is not desired.
 			//
-			//			Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, root);
+			// Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, root);
 			//
-			//			if(((Package)root).isProfileApplied(robotml)) {
-			//				isRobotmlModel = true;
-			//			}
+			// if(((Package)root).isProfileApplied(robotml)) {
+			// isRobotmlModel = true;
+			// }
 		}
 
 
@@ -94,23 +94,23 @@ public class RobotmlSelectionTester extends PropertyTester {
 	private EObject getRoot(Object receiver) {
 		EObject root = null;
 
-		if(receiver instanceof ISelection) {
-			ISelection selection = (ISelection)receiver;
-			if(selection.isEmpty()) {
+		if (receiver instanceof ISelection) {
+			ISelection selection = (ISelection) receiver;
+			if (selection.isEmpty()) {
 				return null;
 			}
 
 			try {
-				//this is the case where the selection is on the Project Explorer
-				IStructuredSelection selectionstructured = (IStructuredSelection)selection;
+				// this is the case where the selection is on the Project Explorer
+				IStructuredSelection selectionstructured = (IStructuredSelection) selection;
 
 				Object selectedElement = selectionstructured.getFirstElement();
 
 				Object selectedAdapter = Platform.getAdapterManager().getAdapter(selectedElement, IFile.class);
 
 
-				if(selectedAdapter instanceof IFile) {
-					final IFile selectedFile = (IFile)selectedAdapter;
+				if (selectedAdapter instanceof IFile) {
+					final IFile selectedFile = (IFile) selectedAdapter;
 					ModelSet modelSet = new ModelSet();
 					ModelsReader reader = new ModelsReader();
 					reader.readModel(modelSet);
@@ -121,22 +121,22 @@ public class RobotmlSelectionTester extends PropertyTester {
 					URI workspaceURI = URI.createPlatformResourceURI(workspacePath.toString(), true);
 					modelSet.loadModels(workspaceURI);
 
-					UmlModel openedModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
-					if(openedModel != null) {
+					UmlModel openedModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+					if (openedModel != null) {
 						root = openedModel.lookupRoot();
 					}
 				} else {
-					//this is the case where the selection is on the Model Explorer
+					// this is the case where the selection is on the Model Explorer
 					ServiceUtilsForSelection serviceUtils = ServiceUtilsForSelection.getInstance();
-					UmlModel openedModel = (UmlModel)serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
-					if(openedModel != null) {
+					UmlModel openedModel = (UmlModel) serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
+					if (openedModel != null) {
 						root = openedModel.lookupRoot();
 					}
 				}
 
 			} catch (Exception e) {
-				//Ignored: The selection cannot be used to retrieve the ServicesRegistry.
-				//Do not log exceptions: this is just not a Papyrus/RobotML model
+				// Ignored: The selection cannot be used to retrieve the ServicesRegistry.
+				// Do not log exceptions: this is just not a Papyrus/RobotML model
 			}
 		}
 

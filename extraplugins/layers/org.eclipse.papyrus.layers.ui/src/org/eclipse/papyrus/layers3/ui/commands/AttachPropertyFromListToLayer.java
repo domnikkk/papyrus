@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,7 +34,7 @@ import org.eclipse.ui.dialogs.ListSelectionDialog;
 /**
  * Attach a property to the selected Layer.
  * Property are proposed in a list.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -67,17 +67,17 @@ public class AttachPropertyFromListToLayer extends AbstractLayersCommand {
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
 		// check enable
-		if( ! isEnabled(context, selections)) {
+		if (!isEnabled(context, selections)) {
 			return;
 		}
 
 		// Open the dialog to ask the new name
 		// TODO dialog should not be in the transaction !! put it outside !
-		
+
 		try {
 			// Get the layer and application
 			LayersStackApplication application = lookupLayersStackApplicationChecked(context);
-			AbstractLayer layer = (AbstractLayer)getSelections(context).get(0);
+			AbstractLayer layer = (AbstractLayer) getSelections(context).get(0);
 
 			// Get the list of available properties
 			Property[] properties = application.getPropertyRegistry().getProperties().toArray(new Property[0]);
@@ -90,60 +90,60 @@ public class AttachPropertyFromListToLayer extends AbstractLayersCommand {
 			List<Property> initialSelection = layer.getAttachedProperties();
 			dialog.setInitialSelections(initialSelection.toArray(new Property[initialSelection.size()]));
 
-			if(dialog.open() != Window.OK) {
+			if (dialog.open() != Window.OK) {
 				return;
-			} 
+			}
 
 			// TODO: improve algorithm:
 			// use only the two list (or arrays) of initialSelection and finalSelection
-			// Walk the first, for each element, 
-			// 		if the element is in the second list
-			// 			remove element in both list (set list[i]=null)
-			//   	else
-			//			remove element from first list
-			// At the end, 
+			// Walk the first, for each element,
+			// if the element is in the second list
+			// remove element in both list (set list[i]=null)
+			// else
+			// remove element from first list
+			// At the end,
 			// initialCollection contains unsetted elements (with nulls)
 			// finalSelection contains set elements (with nulls)
 			// Walk each array/list, and skip nulls.
-			
-			
-			
+
+
+
 			// Process selected Properties
 			Object[] res = dialog.getResult();
 			// Create a list from the array. No better way ...
 			// In the same time, create unchanged and set lists
 			List<Property> finalSelection = new ArrayList<Property>(res.length);
-			List<Property> unchangedProperties = new ArrayList<Property>(initialSelection.size());			
+			List<Property> unchangedProperties = new ArrayList<Property>(initialSelection.size());
 			List<Property> setProperties = new ArrayList<Property>(finalSelection.size());
-	
-			for( Object o : res ) {
+
+			for (Object o : res) {
 				// Create a clone list of the result
-				finalSelection.add((Property)o);
+				finalSelection.add((Property) o);
 				// Create the unchanged and set list
-				if( initialSelection.contains(o)) {
-					unchangedProperties.add((Property)o);
-				} 
+				if (initialSelection.contains(o)) {
+					unchangedProperties.add((Property) o);
+				}
 				else {
-					setProperties.add((Property)o);
+					setProperties.add((Property) o);
 				}
 			}
-			
+
 			// We also need the unset list
 			// Obtain it by removing unchanged from initialSelection
 			List<Property> unsetProperties = new ArrayList<Property>(initialSelection);
 			unsetProperties.removeAll(unchangedProperties);
-			
+
 			// Remove unset instances
-			for( Property property : unsetProperties) {
-				if(log.isDebugEnabled()) {
+			for (Property property : unsetProperties) {
+				if (log.isDebugEnabled()) {
 					log.debug("unset Property " + property.getName());
 				}
 				layer.removePropertyInstance(property);
 			}
 
 			// add set instances
-			for( Property property : setProperties) {
-				if(log.isDebugEnabled()) {
+			for (Property property : setProperties) {
+				if (log.isDebugEnabled()) {
 					log.debug("set Property " + property.getName());
 				}
 				layer.addPropertyInstance(property);
@@ -174,18 +174,21 @@ public class AttachPropertyFromListToLayer extends AbstractLayersCommand {
 
 	private class MyContentProvider implements IStructuredContentProvider {
 
+		@Override
 		public Object[] getElements(Object inputElement) {
-			return (Property[])inputElement;
+			return (Property[]) inputElement;
 		}
 
+		@Override
 		public void dispose() {
-			
+
 		}
 
+		@Override
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			
+
 		}
-		
+
 	}
 
 	private class MyLabelProvider extends LabelProvider {
@@ -193,8 +196,8 @@ public class AttachPropertyFromListToLayer extends AbstractLayersCommand {
 
 		@Override
 		public String getText(Object element) {
-			return ((Property)element).getName();
+			return ((Property) element).getName();
 		}
-		
+
 	}
 }

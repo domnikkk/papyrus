@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,21 +26,25 @@ import org.eclipse.papyrus.texteditor.model.texteditormodel.TextEditorModel;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQuery;
 
 /** Returns true if the element contains a Table */
-//FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
+// FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
 public class IsTextEditorContainer extends AbstractEditorContainerQuery implements IJavaModelQuery<EObject, Boolean> {
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Boolean evaluate(final EObject context, ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		Iterator<EObject> roots = NotationUtils.getNotationRoots(context);
-		if (roots == null)
+		if (roots == null) {
 			return false;
+		}
 		while (roots.hasNext()) {
 			EObject inner = roots.next();
-			if (inner instanceof TextEditorModel)
-				if (EcoreUtil.equals(((TextEditorModel)inner).getEditedObject(), context))
+			if (inner instanceof TextEditorModel) {
+				if (EcoreUtil.equals(((TextEditorModel) inner).getEditedObject(), context)) {
 					return true;
+				}
+			}
 		}
 		return false;
 	}

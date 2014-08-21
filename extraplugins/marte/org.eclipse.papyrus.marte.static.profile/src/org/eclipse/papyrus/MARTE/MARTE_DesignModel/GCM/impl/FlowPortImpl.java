@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#isIsAtomic <em>Is Atomic</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#getBase_Port <em>Base Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#isIsAtomic <em>Is Atomic</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#getDirection <em>Direction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.FlowPortImpl#getBase_Port <em>Base Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The default value of the '{@link #isIsAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsAtomic()
 	 * @generated
 	 * @ordered
@@ -59,6 +60,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -79,6 +82,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FlowPortImpl() {
@@ -97,6 +102,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,26 +113,28 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isIsAtomic() {
 		// TODO: implement this method to return the 'Is Atomic' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
 		// throw new UnsupportedOperationException();
-		
+
 		Port port = getBase_Port();
 		Type portType = port.getType();
-		if(portType != null) {
+		if (portType != null) {
 			// get flowSpecification stereotype
-			FlowSpecification flowSpec = 
-				(FlowSpecification) ElementUtil.hasStereotype(portType, GCMPackage.eINSTANCE.getFlowSpecification());
-			
+			FlowSpecification flowSpec =
+					(FlowSpecification) ElementUtil.hasStereotype(portType, GCMPackage.eINSTANCE.getFlowSpecification());
+
 			// flowSpecification stereotype is applied
-			if(flowSpec != null) {
+			if (flowSpec != null) {
 				return false;
 			}
 		}
-		
+
 		// untyped port or port not typed with a flowSpecification.
 		return true;
 
@@ -135,8 +143,10 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsAtomic(boolean newIsAtomic) {
 		// TODO: implement this method to set the 'Is Atomic' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -146,8 +156,10 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public FlowDirectionKind getDirection() {
 		return direction;
 	}
@@ -155,27 +167,33 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDirection(FlowDirectionKind newDirection) {
 		FlowDirectionKind oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.FLOW_PORT__DIRECTION, oldDirection, direction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Port getBase_Port() {
 		if (base_Port != null && base_Port.eIsProxy()) {
-			InternalEObject oldBase_Port = (InternalEObject)base_Port;
-			base_Port = (Port)eResolveProxy(oldBase_Port);
+			InternalEObject oldBase_Port = (InternalEObject) base_Port;
+			base_Port = (Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.FLOW_PORT__BASE_PORT, oldBase_Port, base_Port));
+				}
 			}
 		}
 		return base_Port;
@@ -184,6 +202,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -193,30 +212,36 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.FLOW_PORT__BASE_PORT, oldBase_Port, base_Port));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GCMPackage.FLOW_PORT__IS_ATOMIC:
-				return isIsAtomic();
-			case GCMPackage.FLOW_PORT__DIRECTION:
-				return getDirection();
-			case GCMPackage.FLOW_PORT__BASE_PORT:
-				if (resolve) return getBase_Port();
-				return basicGetBase_Port();
+		case GCMPackage.FLOW_PORT__IS_ATOMIC:
+			return isIsAtomic();
+		case GCMPackage.FLOW_PORT__DIRECTION:
+			return getDirection();
+		case GCMPackage.FLOW_PORT__BASE_PORT:
+			if (resolve) {
+				return getBase_Port();
+			}
+			return basicGetBase_Port();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,20 +249,21 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GCMPackage.FLOW_PORT__IS_ATOMIC:
-				setIsAtomic((Boolean)newValue);
-				return;
-			case GCMPackage.FLOW_PORT__DIRECTION:
-				setDirection((FlowDirectionKind)newValue);
-				return;
-			case GCMPackage.FLOW_PORT__BASE_PORT:
-				setBase_Port((Port)newValue);
-				return;
+		case GCMPackage.FLOW_PORT__IS_ATOMIC:
+			setIsAtomic((Boolean) newValue);
+			return;
+		case GCMPackage.FLOW_PORT__DIRECTION:
+			setDirection((FlowDirectionKind) newValue);
+			return;
+		case GCMPackage.FLOW_PORT__BASE_PORT:
+			setBase_Port((Port) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,20 +271,21 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GCMPackage.FLOW_PORT__IS_ATOMIC:
-				setIsAtomic(IS_ATOMIC_EDEFAULT);
-				return;
-			case GCMPackage.FLOW_PORT__DIRECTION:
-				setDirection(DIRECTION_EDEFAULT);
-				return;
-			case GCMPackage.FLOW_PORT__BASE_PORT:
-				setBase_Port((Port)null);
-				return;
+		case GCMPackage.FLOW_PORT__IS_ATOMIC:
+			setIsAtomic(IS_ATOMIC_EDEFAULT);
+			return;
+		case GCMPackage.FLOW_PORT__DIRECTION:
+			setDirection(DIRECTION_EDEFAULT);
+			return;
+		case GCMPackage.FLOW_PORT__BASE_PORT:
+			setBase_Port((Port) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,17 +293,18 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GCMPackage.FLOW_PORT__IS_ATOMIC:
-				return isIsAtomic() != IS_ATOMIC_EDEFAULT;
-			case GCMPackage.FLOW_PORT__DIRECTION:
-				return direction != DIRECTION_EDEFAULT;
-			case GCMPackage.FLOW_PORT__BASE_PORT:
-				return base_Port != null;
+		case GCMPackage.FLOW_PORT__IS_ATOMIC:
+			return isIsAtomic() != IS_ATOMIC_EDEFAULT;
+		case GCMPackage.FLOW_PORT__DIRECTION:
+			return direction != DIRECTION_EDEFAULT;
+		case GCMPackage.FLOW_PORT__BASE_PORT:
+			return base_Port != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -284,11 +312,14 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (direction: ");
@@ -296,9 +327,9 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 		result.append(')');
 		return result.toString();
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return
 	 * @generated NOT
 	 */
@@ -306,16 +337,16 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 
 		Image ImageNotFound = null;
 
-		if(getBase_Port() != null) {
+		if (getBase_Port() != null) {
 			Stereotype st = getBase_Port().getAppliedStereotype(MarteResource.FLOW_PORT_ID);
 
 			Image defaultImage = st.getIcons().get(0);
 			Image image = null;
 
-			if(isIsAtomic()) {
-				if(getDirection() == FlowDirectionKind.OUT) {
+			if (isIsAtomic()) {
+				if (getDirection() == FlowDirectionKind.OUT) {
 					image = st.getIcons().get(1);
-				} else if(getDirection() == FlowDirectionKind.INOUT) {
+				} else if (getDirection() == FlowDirectionKind.INOUT) {
 					image = st.getIcons().get(2);
 				} else {
 					// Default : IN
@@ -323,7 +354,7 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 				}
 
 			}
-			
+
 			else {
 				image = st.getIcons().get(2);
 			}
@@ -336,4 +367,4 @@ public class FlowPortImpl extends EObjectImpl implements FlowPort {
 	}
 
 
-} //FlowPortImpl
+} // FlowPortImpl

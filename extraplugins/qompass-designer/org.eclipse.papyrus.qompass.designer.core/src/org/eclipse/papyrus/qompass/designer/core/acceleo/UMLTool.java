@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *  Christophe JOUVRAY
  *
  *****************************************************************************/
@@ -49,9 +49,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * Collection of utility functions. In contrast to core.Utils, it is chiefly used by Acceleo
  * scripts
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 
 public class UMLTool {
@@ -64,9 +64,9 @@ public class UMLTool {
 	 */
 	public static EList<Parameter> parametersInInout(Operation operation) {
 		EList<Parameter> list = new BasicEList<Parameter>();
-		for(Parameter parameter : operation.getOwnedParameters()) {
-			if((parameter.getDirection().getValue() == ParameterDirectionKind.IN) ||
-				(parameter.getDirection().getValue() == ParameterDirectionKind.INOUT)) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
+			if ((parameter.getDirection().getValue() == ParameterDirectionKind.IN) ||
+					(parameter.getDirection().getValue() == ParameterDirectionKind.INOUT)) {
 				list.add(parameter);
 			}
 		}
@@ -79,10 +79,10 @@ public class UMLTool {
 	 */
 	public static EList<Parameter> parametersOutInout(Operation operation) {
 		EList<Parameter> list = new BasicEList<Parameter>();
-		for(Parameter parameter : operation.getOwnedParameters()) {
-			if((parameter.getDirection().getValue() == ParameterDirectionKind.OUT) ||
-				(parameter.getDirection().getValue() == ParameterDirectionKind.RETURN) ||
-				(parameter.getDirection().getValue() == ParameterDirectionKind.INOUT)) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
+			if ((parameter.getDirection().getValue() == ParameterDirectionKind.OUT) ||
+					(parameter.getDirection().getValue() == ParameterDirectionKind.RETURN) ||
+					(parameter.getDirection().getValue() == ParameterDirectionKind.INOUT)) {
 				list.add(parameter);
 			}
 		}
@@ -95,8 +95,8 @@ public class UMLTool {
 	 */
 	public static EList<Parameter> parametersNonRet(Operation operation) {
 		EList<Parameter> list = new BasicEList<Parameter>();
-		for(Parameter parameter : operation.getOwnedParameters()) {
-			if(parameter.getDirection().getValue() != ParameterDirectionKind.RETURN) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
+			if (parameter.getDirection().getValue() != ParameterDirectionKind.RETURN) {
 				list.add(parameter);
 			}
 		}
@@ -118,8 +118,8 @@ public class UMLTool {
 	 * Unlike varName2, replace scoping signs as well
 	 */
 	public static String varName(String umlName) {
-		umlName = umlName.replace(".", UNDERSCORE);  //$NON-NLS-1$
-		umlName = umlName.replace(Namespace.SEPARATOR, UNDERSCORE);
+		umlName = umlName.replace(".", UNDERSCORE); //$NON-NLS-1$
+		umlName = umlName.replace(NamedElement.SEPARATOR, UNDERSCORE);
 		return varName2(umlName);
 	}
 
@@ -135,7 +135,7 @@ public class UMLTool {
 
 	/**
 	 * Like varName, but does not replace "." with "_"
-	 * 
+	 *
 	 * @param umlName
 	 * @return
 	 */
@@ -150,7 +150,7 @@ public class UMLTool {
 	public static EList<Namespace> usedNamespaces(NamedElement element) {
 		EList<Namespace> list = new BasicEList<Namespace>(element.allNamespaces());
 
-		if(list.size() < 1) {
+		if (list.size() < 1) {
 			return null;
 		}
 		list.remove(list.size() - 1); // remove last element (top-level)
@@ -162,7 +162,7 @@ public class UMLTool {
 	 * one, i.e. the one in which the element is contained. It will end before the
 	 * searchNS namespace is reached. Returns null, if the element is not contained
 	 * within the search namespace.
-	 * 
+	 *
 	 * @param element
 	 * @param searchNS
 	 * @return
@@ -170,18 +170,18 @@ public class UMLTool {
 	public static EList<Namespace> relativePath(Element element, Namespace searchNS) {
 		EList<Namespace> pathList = new BasicEList<Namespace>();
 		Element owner = element.getOwner();
-		if(!(owner instanceof Namespace)) {
+		if (!(owner instanceof Namespace)) {
 			// happens, if element is contained in a template signature
 			return null;
 		}
-		Namespace ns = (Namespace)owner;
-		while(ns != null) {
-			if(ns == searchNS) {
+		Namespace ns = (Namespace) owner;
+		while (ns != null) {
+			if (ns == searchNS) {
 				return pathList;
 			}
 			pathList.add(ns);
 
-			ns = (Namespace)ns.getOwner();
+			ns = (Namespace) ns.getOwner();
 		}
 		return null;
 	}
@@ -196,22 +196,22 @@ public class UMLTool {
 		EList<Classifier> list = new UniqueEList<Classifier>();
 		list.addAll(classifier.parents());
 
-		if(classifier instanceof Class) {
+		if (classifier instanceof Class) {
 			// get classifiers referenced by attributes
-			for(Operation operation : ((Class)classifier).getOwnedOperations()) {
-				for(Parameter parameter : operation.getOwnedParameters()) {
+			for (Operation operation : ((Class) classifier).getOwnedOperations()) {
+				for (Parameter parameter : operation.getOwnedParameters()) {
 					Type type = parameter.getType();
-					if(type instanceof Classifier) {
-						list.add((Classifier)type);
+					if (type instanceof Classifier) {
+						list.add((Classifier) type);
 					}
 				}
 			}
 
 			// get classifiers referenced by attributes
-			for(Property attribute : ((Class)classifier).getOwnedAttributes()) {
+			for (Property attribute : ((Class) classifier).getOwnedAttributes()) {
 				Type type = attribute.getType();
-				if(type instanceof Classifier) {
-					list.add((Classifier)type);
+				if (type instanceof Classifier) {
+					list.add((Classifier) type);
 				}
 			}
 		}
@@ -220,17 +220,17 @@ public class UMLTool {
 
 	/**
 	 * TODO: copy&paste from C++ generator (& specific for C++)
-	 * 
+	 *
 	 * @param ne
 	 * @return
 	 */
 	public static String cppQName(NamedElement ne) {
-		if((StereotypeUtil.isApplied(ne, External.class)) || (StereotypeUtil.isApplied(ne, NoCodeGen.class))) {
+		if ((StereotypeUtil.isApplied(ne, External.class)) || (StereotypeUtil.isApplied(ne, NoCodeGen.class))) {
 			return ne.getName();
 		} else {
 			String qName = ne.getName();
-			for(Namespace ns : ne.allNamespaces()) {
-				if(!(ns instanceof Model)) {
+			for (Namespace ns : ne.allNamespaces()) {
+				if (!(ns instanceof Model)) {
 					qName = ns.getName() + "::" + qName; //$NON-NLS-1$
 				}
 			}
@@ -242,12 +242,12 @@ public class UMLTool {
 	 * Return the name of a parameter. In case of a return parameter, always return the name
 	 * "retValue". This is quite useful for marshalling operations (which need to assign a
 	 * value to the return parameter, which is sometimes not initialized)
-	 * 
+	 *
 	 * @param parameter
 	 * @return
 	 */
 	public static String paramName(Parameter parameter) {
-		if(parameter.getDirection().getValue() == ParameterDirectionKind.RETURN) {
+		if (parameter.getDirection().getValue() == ParameterDirectionKind.RETURN) {
 			return "retValue"; //$NON-NLS-1$
 		} else {
 			return parameter.getName();
@@ -262,31 +262,31 @@ public class UMLTool {
 	 * belongs to it (since the operations are enumerated within each interface).
 	 * TODO: move operation into state-chart java code
 	 * TODO: would not work for ROOM ports typed with a collaboration
-	 * 
+	 *
 	 * @param operation
 	 * @return the interface which the operation belongs
 	 */
 	public static Interface implementsInterface(Operation operation) {
 		Element owner = operation.getOwner();
-		if(owner instanceof BehavioredClassifier) {
+		if (owner instanceof BehavioredClassifier) {
 			String name = operation.getName();
 			EList<Type> types = new BasicEList<Type>();
-			for(Parameter parameter : operation.getOwnedParameters()) {
+			for (Parameter parameter : operation.getOwnedParameters()) {
 				types.add(parameter.getType());
 			}
 			// loop over implemented realizations. Do not rely on FCM derivedElement information
 			// as it might be missing on some models (it would point from an operation of the class
 			// to the associated operation of the interface)
-			for(InterfaceRealization ir : ((BehavioredClassifier)owner).getInterfaceRealizations()) {
+			for (InterfaceRealization ir : ((BehavioredClassifier) owner).getInterfaceRealizations()) {
 				// check for types to allow for overloading
 				Operation candidate = ir.getContract().getOwnedOperation(name, null, types);
-				if(candidate != null) {
+				if (candidate != null) {
 					return ir.getContract();
 				}
 			}
 		}
-		else if(owner instanceof Interface) {
-			return (Interface)owner;
+		else if (owner instanceof Interface) {
+			return (Interface) owner;
 		}
 		return null;
 	}
@@ -294,16 +294,16 @@ public class UMLTool {
 	/**
 	 * Convenience function: Declare a dependency from source to destination. The function checks,
 	 * if a dependency already exists to avoid double dependencies.
-	 * 
+	 *
 	 * @param source
-	 *        source type of the dependency
+	 *            source type of the dependency
 	 * @param dest
-	 *        destination of the dependency
+	 *            destination of the dependency
 	 */
 	public static void declareDependency(Type source, Type dest) {
 		// check, if a relationship already exists
-		for(Relationship dependency : source.getRelationships(UMLPackage.eINSTANCE.getDependency())) {
-			if(((Dependency)dependency).getSuppliers().contains(dest)) {
+		for (Relationship dependency : source.getRelationships(UMLPackage.eINSTANCE.getDependency())) {
+			if (((Dependency) dependency).getSuppliers().contains(dest)) {
 				return;
 			}
 		}
@@ -313,18 +313,18 @@ public class UMLTool {
 	/**
 	 * Get the URI fragment of an element within your model
 	 * Useful for transmitting model references
-	 * 
+	 *
 	 * @param element
-	 *        a UML element
+	 *            a UML element
 	 * @return
 	 */
 	public static String fragment(Element element) {
 		Resource resource = element.eResource();
 		// TODO: use EcoreUtil getURI (InternalEObject) instead?
 
-		if(resource instanceof XMLResource) {
-			XMLResource xmlResource = (XMLResource)resource;
-			return "\"" + xmlResource.getURIFragment(element) + "\"";  //$NON-NLS-1$//$NON-NLS-2$
+		if (resource instanceof XMLResource) {
+			XMLResource xmlResource = (XMLResource) resource;
+			return "\"" + xmlResource.getURIFragment(element) + "\""; //$NON-NLS-1$//$NON-NLS-2$
 		}
 		return null;
 	}
@@ -332,17 +332,17 @@ public class UMLTool {
 	/**
 	 * Get the XML (URI) Id of an element within your model
 	 * Useful for transmitting model references
-	 * 
+	 *
 	 * @param element
-	 *        a UML element
+	 *            a UML element
 	 * @return
 	 */
 	public static String xmlID(Element element) {
 		Resource resource = element.eResource();
 		// TODO: use EcoreUtil getURI (InternalEObject) instead?
 
-		if(resource instanceof XMLResource) {
-			XMLResource xmlResource = (XMLResource)resource;
+		if (resource instanceof XMLResource) {
+			XMLResource xmlResource = (XMLResource) resource;
 			return xmlResource.getID(element);
 		}
 		return null;
@@ -350,7 +350,7 @@ public class UMLTool {
 
 	public static String getURI(Element element) {
 		Resource resource = element.eResource();
-		if(resource != null) {
+		if (resource != null) {
 			URI uri = resource.getURI();
 			return uri.toString();
 		}
@@ -358,18 +358,18 @@ public class UMLTool {
 	}
 
 	/**
-	 * 
+	 *
 	 * TODO: Specific to C++
-	 * 
+	 *
 	 * @param type
-	 *        a type
+	 *            a type
 	 * @return return the definition of a typedef, if the type has been defined via
 	 *         the stereotype CppType of the Cpp profile
 	 */
 	public static String dereferenceTypedef(Type type) {
-		if(type instanceof PrimitiveType) {
+		if (type instanceof PrimitiveType) {
 			Typedef cppType = UMLUtil.getStereotypeApplication(type, Typedef.class);
-			if(cppType != null) {
+			if (cppType != null) {
 				return cppType.getDefinition();
 			}
 		}
@@ -386,14 +386,15 @@ public class UMLTool {
 
 	public static String decodeID(String encodedURI) {
 		String result = ""; //$NON-NLS-1$
-		for(int i = 0; i < encodedURI.length(); i++) {
+		for (int i = 0; i < encodedURI.length(); i++) {
 			char c = encodedURI.charAt(i);
-			if(c == '_') {
+			if (c == '_') {
 				char next = encodedURI.charAt(i + 1);
-				if(next == 'M')
+				if (next == 'M') {
 					result += '-';
-				else if(next == '_')
+				} else if (next == '_') {
 					result += '_';
+				}
 				i++;
 			}
 			else {

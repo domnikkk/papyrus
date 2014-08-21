@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.Pseudostate;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate#getBase_Pseudostate <em>Base Pseudostate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate#getBase_Pseudostate <em>Base Pseudostate</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface RTPseudostate extends EObject {
 	 * Returns the value of the '<em><b>Base Pseudostate</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Pseudostate</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Pseudostate</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Pseudostate</em>' reference.
 	 * @see #setBase_Pseudostate(Pseudostate)
 	 * @see org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeStateMachPackage#getRTPseudostate_Base_Pseudostate()
@@ -53,7 +53,9 @@ public interface RTPseudostate extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.RTPseudostate#getBase_Pseudostate <em>Base Pseudostate</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Pseudostate</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Pseudostate</em>' reference.
 	 * @see #getBase_Pseudostate()
 	 * @generated
 	 */
@@ -63,13 +65,16 @@ public interface RTPseudostate extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * let knd = base_Pseudostate.kind in 
-	 *    (knd <> UML::PseudostateKind::shallowHistory) and
-	 *    (knd <> UML::PseudostateKind::fork) and
-	 *    (knd <> UML::PseudostateKind::join)
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
+	 * let knd = base_Pseudostate.kind in
+	 * (knd <> UML::PseudostateKind::shallowHistory) and
+	 * (knd <> UML::PseudostateKind::fork) and
+	 * (knd <> UML::PseudostateKind::join)
+	 * 
+	 * @param diagnostics
+	 *            The chain of diagnostics to which problems are to be appended.
+	 * @param context
+	 *            The cache of context-specific information.
+	 *            <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='RT state machines do not support concurrency or shallow history'"
 	 * @generated
 	 */

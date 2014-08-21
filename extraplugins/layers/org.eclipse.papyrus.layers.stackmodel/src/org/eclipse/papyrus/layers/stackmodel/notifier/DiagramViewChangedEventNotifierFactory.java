@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 /**
  * Factory used to create a {@link DiagramViewChangedEventNotifier}.
  * The factory ensures that there is only one Notifier for a given {@link LayersStack}.
+ * 
  * @author cedric dumoulin
  *
  */
@@ -31,18 +32,19 @@ public class DiagramViewChangedEventNotifierFactory extends AdapterFactoryImpl {
 	 * Global factory.
 	 */
 	static public DiagramViewChangedEventNotifierFactory instance = new DiagramViewChangedEventNotifierFactory();
-	
+
 	/**
 	 * Convenience method.
+	 * 
 	 * @param target
 	 * @return
 	 */
 	public DiagramViewChangedEventNotifier adapt(Notifier target) {
-		return (DiagramViewChangedEventNotifier)adapt(target, DiagramViewChangedEventNotifier.class);
+		return (DiagramViewChangedEventNotifier) adapt(target, DiagramViewChangedEventNotifier.class);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterFactoryImpl#createAdapter(org.eclipse.emf.common.notify.Notifier)
 	 *
 	 * @param target
@@ -55,7 +57,7 @@ public class DiagramViewChangedEventNotifierFactory extends AdapterFactoryImpl {
 
 	/**
 	 * This Factory is for {@link DiagramViewChangedEventNotifier}.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterFactoryImpl#isFactoryForType(java.lang.Object)
 	 *
 	 * @param type

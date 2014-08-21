@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.DependabilityPackage
  * @generated
  */
@@ -44,6 +45,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static DependabilityPackage modelPackage;
@@ -52,56 +54,67 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DependabilitySwitch<Adapter> modelSwitch =
-		new DependabilitySwitch<Adapter>() {
-			@Override
-			public Adapter caseHazardousEvent(HazardousEvent object) {
-				return createHazardousEventAdapter();
-			}
-			@Override
-			public Adapter caseHazard(Hazard object) {
-				return createHazardAdapter();
-			}
-			@Override
-			public Adapter caseFeatureFlaw(FeatureFlaw object) {
-				return createFeatureFlawAdapter();
-			}
-			@Override
-			public Adapter caseItem(Item object) {
-				return createItemAdapter();
-			}
-			@Override
-			public Adapter caseDependability(Dependability object) {
-				return createDependabilityAdapter();
-			}
-			@Override
-			public Adapter caseEAElement(EAElement object) {
-				return createEAElementAdapter();
-			}
-			@Override
-			public Adapter caseEAPackageableElement(EAPackageableElement object) {
-				return createEAPackageableElementAdapter();
-			}
-			@Override
-			public Adapter caseTraceableSpecification(TraceableSpecification object) {
-				return createTraceableSpecificationAdapter();
-			}
-			@Override
-			public Adapter caseContext(Context object) {
-				return createContextAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new DependabilitySwitch<Adapter>() {
+				@Override
+				public Adapter caseHazardousEvent(HazardousEvent object) {
+					return createHazardousEventAdapter();
+				}
+
+				@Override
+				public Adapter caseHazard(Hazard object) {
+					return createHazardAdapter();
+				}
+
+				@Override
+				public Adapter caseFeatureFlaw(FeatureFlaw object) {
+					return createFeatureFlawAdapter();
+				}
+
+				@Override
+				public Adapter caseItem(Item object) {
+					return createItemAdapter();
+				}
+
+				@Override
+				public Adapter caseDependability(Dependability object) {
+					return createDependabilityAdapter();
+				}
+
+				@Override
+				public Adapter caseEAElement(EAElement object) {
+					return createEAElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPackageableElement(EAPackageableElement object) {
+					return createEAPackageableElementAdapter();
+				}
+
+				@Override
+				public Adapter caseTraceableSpecification(TraceableSpecification object) {
+					return createTraceableSpecificationAdapter();
+				}
+
+				@Override
+				public Adapter caseContext(Context object) {
+					return createContextAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DependabilityAdapterFactory() {
@@ -114,13 +127,15 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -129,6 +144,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.Context
 	 * @generated
@@ -143,6 +159,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.Dependability
 	 * @generated
@@ -157,6 +174,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -171,6 +189,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -184,6 +203,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -197,6 +217,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.FeatureFlaw
 	 * @generated
@@ -211,6 +232,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.Hazard
 	 * @generated
@@ -225,6 +247,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.HazardousEvent
 	 * @generated
@@ -239,6 +262,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.Item
 	 * @generated
@@ -253,6 +277,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -266,6 +291,7 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -275,9 +301,9 @@ public class DependabilityAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
 
-} //DependabilityAdapterFactory
+} // DependabilityAdapterFactory

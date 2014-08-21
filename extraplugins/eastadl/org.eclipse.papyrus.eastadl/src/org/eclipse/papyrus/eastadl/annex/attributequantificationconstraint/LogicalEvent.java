@@ -13,8 +13,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent#isIsExternVisible <em>Is Extern Visible</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent#getVisibleThroughFunctionPort <em>Visible Through Function Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent#isIsExternVisible <em>Is Extern Visible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent#getVisibleThroughFunctionPort <em>Visible Through Function Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface LogicalEvent extends Quantification {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Extern Visible</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Extern Visible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Extern Visible</em>' attribute.
 	 * @see #setIsExternVisible(boolean)
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getLogicalEvent_IsExternVisible()
@@ -44,7 +44,9 @@ public interface LogicalEvent extends Quantification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.LogicalEvent#isIsExternVisible <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Extern Visible</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Extern Visible</em>' attribute.
 	 * @see #isIsExternVisible()
 	 * @generated
 	 */
@@ -55,10 +57,10 @@ public interface LogicalEvent extends Quantification {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Visible Through Function Port</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Visible Through Function Port</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Visible Through Function Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getLogicalEvent_VisibleThroughFunctionPort()
 	 * @model ordered="false"

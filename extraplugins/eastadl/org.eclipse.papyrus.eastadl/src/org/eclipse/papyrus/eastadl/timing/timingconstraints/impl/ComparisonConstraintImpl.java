@@ -19,9 +19,9 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getRightOperand <em>Right Operand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getLeftOperand <em>Left Operand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getOperator <em>Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getRightOperand <em>Right Operand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getLeftOperand <em>Left Operand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ComparisonConstraintImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getRightOperand() <em>Right Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRightOperand()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getLeftOperand() <em>Left Operand</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLeftOperand()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComparisonConstraintImpl() {
@@ -80,6 +85,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,15 +96,18 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getRightOperand() {
 		if (rightOperand != null && rightOperand.eIsProxy()) {
-			InternalEObject oldRightOperand = (InternalEObject)rightOperand;
-			rightOperand = (TimingExpression)eResolveProxy(oldRightOperand);
+			InternalEObject oldRightOperand = (InternalEObject) rightOperand;
+			rightOperand = (TimingExpression) eResolveProxy(oldRightOperand);
 			if (rightOperand != oldRightOperand) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND, oldRightOperand, rightOperand));
+				}
 			}
 		}
 		return rightOperand;
@@ -107,6 +116,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetRightOperand() {
@@ -116,27 +126,33 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setRightOperand(TimingExpression newRightOperand) {
 		TimingExpression oldRightOperand = rightOperand;
 		rightOperand = newRightOperand;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND, oldRightOperand, rightOperand));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getLeftOperand() {
 		if (leftOperand != null && leftOperand.eIsProxy()) {
-			InternalEObject oldLeftOperand = (InternalEObject)leftOperand;
-			leftOperand = (TimingExpression)eResolveProxy(oldLeftOperand);
+			InternalEObject oldLeftOperand = (InternalEObject) leftOperand;
+			leftOperand = (TimingExpression) eResolveProxy(oldLeftOperand);
 			if (leftOperand != oldLeftOperand) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND, oldLeftOperand, leftOperand));
+				}
 			}
 		}
 		return leftOperand;
@@ -145,6 +161,7 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetLeftOperand() {
@@ -154,20 +171,25 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLeftOperand(TimingExpression newLeftOperand) {
 		TimingExpression oldLeftOperand = leftOperand;
 		leftOperand = newLeftOperand;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND, oldLeftOperand, leftOperand));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComparisonKind getOperator() {
 		return operator;
 	}
@@ -175,31 +197,39 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOperator(ComparisonKind newOperator) {
 		ComparisonKind oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR, oldOperator, operator));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
-				if (resolve) return getRightOperand();
-				return basicGetRightOperand();
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
-				if (resolve) return getLeftOperand();
-				return basicGetLeftOperand();
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
-				return getOperator();
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
+			if (resolve) {
+				return getRightOperand();
+			}
+			return basicGetRightOperand();
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
+			if (resolve) {
+				return getLeftOperand();
+			}
+			return basicGetLeftOperand();
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
+			return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,20 +237,21 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
-				setRightOperand((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
-				setLeftOperand((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
-				setOperator((ComparisonKind)newValue);
-				return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
+			setRightOperand((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
+			setLeftOperand((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
+			setOperator((ComparisonKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -228,20 +259,21 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
-				setRightOperand((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
-				setLeftOperand((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
-				setOperator(OPERATOR_EDEFAULT);
-				return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
+			setRightOperand((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
+			setLeftOperand((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
+			setOperator(OPERATOR_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,17 +281,18 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
-				return rightOperand != null;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
-				return leftOperand != null;
-			case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
-				return operator != OPERATOR_EDEFAULT;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__RIGHT_OPERAND:
+			return rightOperand != null;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__LEFT_OPERAND:
+			return leftOperand != null;
+		case TimingconstraintsPackage.COMPARISON_CONSTRAINT__OPERATOR:
+			return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,11 +300,14 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operator: ");
@@ -280,4 +316,4 @@ public class ComparisonConstraintImpl extends TimingConstraintImpl implements Co
 		return result.toString();
 	}
 
-} //ComparisonConstraintImpl
+} // ComparisonConstraintImpl

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -49,11 +49,11 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 
 	/**
 	 * Default Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param theElement
-	 *        the UML element to be modified
+	 *            the UML element to be modified
 	 */
 	public ChooseConfigOpt(Shell parentShell, Package model, ContainerRule rule) {
 		super(parentShell,
@@ -62,30 +62,30 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 		labelProvider = new ConfigOptionLabelProvider();
 		decoratedContentProposalProvider = new ConfigOptContentProposalProvider();
 
-		for(ConfigOption option : rule.getForConfig()) {
+		for (ConfigOption option : rule.getForConfig()) {
 			selectedElementList.addElement(option.getBase_Class());
 		}
 
 		visitedPackages = new BasicEList<Package>();
 		EList<Class> configOptList = new BasicEList<Class>();
 		getAvailConfigOpts(model, configOptList);
-		for(Class current : configOptList) {
-			if(!selectedElementList.contains(current)) {
+		for (Class current : configOptList) {
+			if (!selectedElementList.contains(current)) {
 				possibleElementList.addElement(current);
 			}
 		}
 	}
 
 	private void getAvailConfigOpts(Package pkg, EList<Class> configOptList) {
-		for(Element el : pkg.getMembers()) {
-			if(el instanceof Package) {
-				if(!visitedPackages.contains(el)) {
-					visitedPackages.add((Package)el);
-					getAvailConfigOpts((Package)el, configOptList);
+		for (Element el : pkg.getMembers()) {
+			if (el instanceof Package) {
+				if (!visitedPackages.contains(el)) {
+					visitedPackages.add((Package) el);
+					getAvailConfigOpts((Package) el, configOptList);
 				}
-			} else if(el instanceof Class) {
-				if(StereotypeUtil.isApplied(el, ConfigOption.class)) {
-					configOptList.add((Class)el);
+			} else if (el instanceof Class) {
+				if (StereotypeUtil.isApplied(el, ConfigOption.class)) {
+					configOptList.add((Class) el);
 				}
 			}
 		}
@@ -98,10 +98,10 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 	 */
 	/**
 	 * Creates the dialog area.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the control
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 		column = new TableColumn(possibleElementsTable, SWT.LEFT, 1);
 		column.setText("Information");
 		column.setWidth(165);
-		// Add listener to column so tasks are sorted by description when clicked 
+		// Add listener to column so tasks are sorted by description when clicked
 		column.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -137,7 +137,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 			}
 		});
 
-		// set sorter to the possible element table viewer 
+		// set sorter to the possible element table viewer
 		possibleElementsTableViewer.setSorter(new AlphabeticalViewerSorter(0));
 
 		return composite;
@@ -150,9 +150,9 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 	 */
 	/**
 	 * Run add element.
-	 * 
+	 *
 	 * @param name
-	 *        the name
+	 *            the name
 	 */
 	@Override
 	protected void runAddElement(String name) {
@@ -160,12 +160,12 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 		Class option = null;
 		for (Object possibleElement : possibleElementList.getElements()) {
 			Class element = (Class) possibleElement;
-			if(name.equalsIgnoreCase(element.getName()) ||
-				name.equalsIgnoreCase(element.getQualifiedName())) {
+			if (name.equalsIgnoreCase(element.getName()) ||
+					name.equalsIgnoreCase(element.getQualifiedName())) {
 				option = element;
 			}
 		}
-		if(option != null) {
+		if (option != null) {
 			runActionAdd(option);
 		}
 	}
@@ -177,10 +177,10 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 	 */
 	/**
 	 * Checks if is selectable element.
-	 * 
+	 *
 	 * @param text
-	 *        the text
-	 * 
+	 *            the text
+	 *
 	 * @return true, if is selectable element
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 		// iterate through all possibilities and return true if text corresponds
 		for (Object possibleElement : possibleElementList.getElements()) {
 			Class element = (Class) possibleElement;
-			if(text.equalsIgnoreCase(element.getName()) || text.equalsIgnoreCase(element.getQualifiedName())) {
+			if (text.equalsIgnoreCase(element.getName()) || text.equalsIgnoreCase(element.getQualifiedName())) {
 				return true;
 			}
 		}
@@ -198,7 +198,7 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 	/**
 	 * Content Proposal provider for stereotypes dialog. Propose the simple
 	 * name of the stereotype and its qualified name.
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	public class ConfigOptContentProposalProvider extends DecoratedContentProposalProvider {
@@ -210,29 +210,29 @@ public class ChooseConfigOpt extends ChooseSetAssistedDialog implements IChooseD
 		 */
 		/**
 		 * Gets the proposals.
-		 * 
+		 *
 		 * @param contents
-		 *        the contents
+		 *            the contents
 		 * @param position
-		 *        the position
-		 * 
+		 *            the position
+		 *
 		 * @return the proposals
 		 */
 		@Override
 		public DecoratedContentProposal[] getProposals(String contents, int position) {
 			ArrayList<DecoratedContentProposal> proposals = new ArrayList<DecoratedContentProposal>();
 
-			if(possibleElementList != null) {
-				for(Object configOptObj : possibleElementList.getElements()) {
-					final Class configOpt = (Class)configOptObj;
+			if (possibleElementList != null) {
+				for (Object configOptObj : possibleElementList.getElements()) {
+					final Class configOpt = (Class) configOptObj;
 					final String simpleName = configOpt.getName();
 					final String qualifiedName = configOpt.getQualifiedName();
 
-					if(position < simpleName.length() && contents.substring(0, position).equalsIgnoreCase(simpleName.substring(0, position))) {
+					if (position < simpleName.length() && contents.substring(0, position).equalsIgnoreCase(simpleName.substring(0, position))) {
 						proposals.add(new DecoratedContentProposal(configOpt, labelProvider));
 					}
 
-					if(position < qualifiedName.length() && contents.substring(0, position).equalsIgnoreCase(qualifiedName.substring(0, position))) {
+					if (position < qualifiedName.length() && contents.substring(0, position).equalsIgnoreCase(qualifiedName.substring(0, position))) {
 						proposals.add(new DecoratedContentProposal(configOpt, qualifiedLabelProvider));
 					}
 				}

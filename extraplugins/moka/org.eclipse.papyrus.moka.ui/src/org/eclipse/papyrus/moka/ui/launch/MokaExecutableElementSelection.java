@@ -22,6 +22,7 @@ public class MokaExecutableElementSelection extends SelectionAdapter {
 		this.launchConfigTab = tab;
 	}
 
+	@Override
 	public void widgetSelected(SelectionEvent event) {
 		this.launchConfigTab.updateLaunchConfigurationDialog();
 	}

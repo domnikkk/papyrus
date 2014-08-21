@@ -25,12 +25,14 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramTemplatePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass diagramDefinitionEClass = null;
@@ -38,6 +40,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass selectionEClass = null;
@@ -45,6 +48,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass selectionRefEClass = null;
@@ -52,6 +56,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass templateEClass = null;
@@ -59,6 +64,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass abstractSelectionEClass = null;
@@ -66,20 +72,17 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum selectionKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#eNS_URI
 	 * @see #init()
@@ -92,27 +95,30 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link DiagramTemplatePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * <p>This method is used to initialize {@link DiagramTemplatePackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static DiagramTemplatePackage init() {
-		if (isInited) return (DiagramTemplatePackage)EPackage.Registry.INSTANCE.getEPackage(DiagramTemplatePackage.eNS_URI);
+		if (isInited) {
+			return (DiagramTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(DiagramTemplatePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		DiagramTemplatePackageImpl theDiagramTemplatePackage = (DiagramTemplatePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DiagramTemplatePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DiagramTemplatePackageImpl());
+		DiagramTemplatePackageImpl theDiagramTemplatePackage = (DiagramTemplatePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DiagramTemplatePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DiagramTemplatePackageImpl());
 
 		isInited = true;
 
@@ -125,7 +131,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 		// Mark meta-data to indicate it can't be changed
 		theDiagramTemplatePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DiagramTemplatePackage.eNS_URI, theDiagramTemplatePackage);
 		return theDiagramTemplatePackage;
@@ -134,6 +140,7 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDiagramDefinition() {
@@ -143,69 +150,77 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Description() {
-		return (EAttribute)diagramDefinitionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) diagramDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramDefinition_FromRoot() {
-		return (EReference)diagramDefinitionEClass.getEStructuralFeatures().get(1);
+		return (EReference) diagramDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDiagramDefinition_Selection() {
-		return (EReference)diagramDefinitionEClass.getEStructuralFeatures().get(2);
+		return (EReference) diagramDefinitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_DiagramKind() {
-		return (EAttribute)diagramDefinitionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) diagramDefinitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_LayoutToApply() {
-		return (EAttribute)diagramDefinitionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) diagramDefinitionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Name() {
-		return (EAttribute)diagramDefinitionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) diagramDefinitionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDiagramDefinition_Prefix() {
-		return (EAttribute)diagramDefinitionEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) diagramDefinitionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getSelection() {
@@ -215,15 +230,17 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getSelection_Recursively() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) selectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getSelectionRef() {
@@ -233,15 +250,17 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getSelectionRef_EReference() {
-		return (EReference)selectionRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) selectionRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTemplate() {
@@ -251,24 +270,27 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTemplate_DiagramDefinitions() {
-		return (EReference)templateEClass.getEStructuralFeatures().get(0);
+		return (EReference) templateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTemplate_TargetRoot() {
-		return (EReference)templateEClass.getEStructuralFeatures().get(1);
+		return (EReference) templateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getAbstractSelection() {
@@ -278,51 +300,57 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getAbstractSelection_Element() {
-		return (EReference)abstractSelectionEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractSelectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_Kind() {
-		return (EAttribute)abstractSelectionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) abstractSelectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getAbstractSelection_SelectionRef() {
-		return (EReference)abstractSelectionEClass.getEStructuralFeatures().get(2);
+		return (EReference) abstractSelectionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_SubTypes() {
-		return (EAttribute)abstractSelectionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) abstractSelectionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getAbstractSelection_StereotypedBy() {
-		return (EAttribute)abstractSelectionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) abstractSelectionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getSelectionKind() {
@@ -332,28 +360,33 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramTemplateFactory getDiagramTemplateFactory() {
-		return (DiagramTemplateFactory)getEFactoryInstance();
+		return (DiagramTemplateFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -390,19 +423,23 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -421,8 +458,10 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 		// Initialize classes and features; add operations and parameters
 		initEClass(diagramDefinitionEClass, DiagramDefinition.class, "DiagramDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDiagramDefinition_Description(), ecorePackage.getEString(), "description", null, 1, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiagramDefinition_FromRoot(), ecorePackage.getEObject(), null, "fromRoot", null, 0, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiagramDefinition_Selection(), this.getSelection(), null, "selection", null, 0, -1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramDefinition_FromRoot(), ecorePackage.getEObject(), null, "fromRoot", null, 0, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getDiagramDefinition_Selection(), this.getSelection(), null, "selection", null, 0, -1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getDiagramDefinition_DiagramKind(), ecorePackage.getEString(), "diagramKind", null, 0, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDiagramDefinition_LayoutToApply(), ecorePackage.getEString(), "layoutToApply", null, 0, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDiagramDefinition_Name(), ecorePackage.getEString(), "name", null, 1, 1, DiagramDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -432,16 +471,20 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 		initEAttribute(getSelection_Recursively(), ecorePackage.getEBoolean(), "recursively", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionRefEClass, SelectionRef.class, "SelectionRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectionRef_EReference(), ecorePackage.getEObject(), null, "eReference", null, 0, 1, SelectionRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectionRef_EReference(), ecorePackage.getEObject(), null, "eReference", null, 0, 1, SelectionRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(templateEClass, Template.class, "Template", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemplate_DiagramDefinitions(), this.getDiagramDefinition(), null, "diagramDefinitions", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTemplate_DiagramDefinitions(), this.getDiagramDefinition(), null, "diagramDefinitions", null, 0, -1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getTemplate_TargetRoot(), ecorePackage.getEObject(), null, "targetRoot", null, 0, 1, Template.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractSelectionEClass, AbstractSelection.class, "AbstractSelection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractSelection_Element(), ecorePackage.getEObject(), null, "element", null, 0, 1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractSelection_Element(), ecorePackage.getEObject(), null, "element", null, 0, 1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getAbstractSelection_Kind(), this.getSelectionKind(), "kind", null, 1, 1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractSelection_SelectionRef(), this.getSelectionRef(), null, "selectionRef", null, 0, -1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractSelection_SelectionRef(), this.getSelectionRef(), null, "selectionRef", null, 0, -1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractSelection_SubTypes(), ecorePackage.getEBoolean(), "subTypes", null, 1, 1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractSelection_StereotypedBy(), ecorePackage.getEString(), "stereotypedBy", null, 1, 1, AbstractSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -455,4 +498,4 @@ public class DiagramTemplatePackageImpl extends EPackageImpl implements DiagramT
 		createResource(eNS_URI);
 	}
 
-} //DiagramTemplatePackageImpl
+} // DiagramTemplatePackageImpl

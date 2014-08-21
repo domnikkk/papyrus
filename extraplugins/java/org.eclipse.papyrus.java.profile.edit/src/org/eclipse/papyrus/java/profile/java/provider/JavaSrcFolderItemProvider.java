@@ -28,11 +28,12 @@ import org.eclipse.papyrus.java.profile.java.JavaSrcFolder;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaSrcFolder} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JavaSrcFolderItemProvider
-	extends JavaGenItemProvider
-	implements
+		extends JavaGenItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -42,6 +43,7 @@ public class JavaSrcFolderItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaSrcFolderItemProvider(AdapterFactory adapterFactory) {
@@ -52,6 +54,7 @@ public class JavaSrcFolderItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,28 +71,30 @@ public class JavaSrcFolderItemProvider
 	 * This adds a property descriptor for the Base Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addBase_PackagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JavaSrcFolder_base_Package_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JavaSrcFolder_base_Package_feature", "_UI_JavaSrcFolder_type"),
-				 JavaPackage.Literals.JAVA_SRC_FOLDER__BASE_PACKAGE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JavaSrcFolder_base_Package_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JavaSrcFolder_base_Package_feature", "_UI_JavaSrcFolder_type"),
+						JavaPackage.Literals.JAVA_SRC_FOLDER__BASE_PACKAGE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns JavaSrcFolder.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,14 +106,15 @@ public class JavaSrcFolderItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JavaSrcFolder)object).getName();
+		String label = ((JavaSrcFolder) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JavaSrcFolder_type") :
-			getString("_UI_JavaSrcFolder_type") + " " + label;
+				getString("_UI_JavaSrcFolder_type") :
+				getString("_UI_JavaSrcFolder_type") + " " + label;
 	}
 
 	/**
@@ -116,6 +122,7 @@ public class JavaSrcFolderItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -129,6 +136,7 @@ public class JavaSrcFolderItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

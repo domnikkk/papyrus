@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,15 +49,15 @@ public class CDOStateAdapter
 
 	public static CDOStateAdapter get(Notifier notifier) {
 		return (CDOStateAdapter) EcoreUtil.getExistingAdapter(notifier,
-			DawnState.class);
+				DawnState.class);
 	}
 
 	public static DawnState getState(Notifier notifier) {
 		CDOStateAdapter adapter = get(notifier);
 
 		return (adapter == null)
-			? DawnState.CLEAN
-			: adapter.getState();
+				? DawnState.CLEAN
+				: adapter.getState();
 	}
 
 	public static void setState(Notifier notifier, DawnState state) {
@@ -95,8 +95,8 @@ public class CDOStateAdapter
 
 	public void setState(DawnState state) {
 		this.state = (state == null)
-			? DawnState.CLEAN
-			: state;
+				? DawnState.CLEAN
+				: state;
 	}
 
 	@Override

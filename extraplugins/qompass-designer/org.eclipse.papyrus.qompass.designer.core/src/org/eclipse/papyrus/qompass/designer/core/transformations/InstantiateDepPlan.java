@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -19,6 +19,7 @@ import java.io.IOException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -68,9 +69,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * instantiation). This transformation targets a new model 2. Adding
  * get_p/connect_q operations to a class (transformation within same model) 3.
  * Remove all component types 4. distribute to nodes
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class InstantiateDepPlan {
 
@@ -149,12 +150,12 @@ public class InstantiateDepPlan {
 	/**
 	 * Instantiate a deployment plan, i.e. generate an intermediate model via a
 	 * sequence of transformations
-	 * 
+	 *
 	 * @param umlElement
 	 *            a deployment plan (UML package) or a configuration (UML class)
 	 * @param monitor
 	 *            a progress monitor.
-	 * 
+	 *
 	 * @param project
 	 *            the current project. This information is used to store the
 	 *            intermediate model in a subfolder (tmpModel) of the current
@@ -194,7 +195,7 @@ public class InstantiateDepPlan {
 	protected void executeTransformation() throws Exception {
 		modelIsObjectOriented = true;
 		ModelManagement intermediateModelManagement = null;
-		
+
 		InstanceSpecification mainInstance = DepUtils
 				.getMainInstance(srcModelComponentDeploymentPlan);
 		EList<InstanceSpecification> nodes = AllocUtils
@@ -224,10 +225,10 @@ public class InstantiateDepPlan {
 
 		// get the temporary model
 		Model intermediateModel = intermediateModelManagement.getModel();
-		
+
 		// create a package for global enumerations that are used by Acceleo code
 		EnumService.createEnumPackage(intermediateModel);
-		
+
 		// create a lazy copier towards the intermediate model
 		LazyCopier intermediateModelCopier = new LazyCopier(existingModel, intermediateModel, false, true);
 		// add pre-copy and post-copy listeners to the copier
@@ -240,8 +241,8 @@ public class InstantiateDepPlan {
 		Package intermediateModelComponentDeploymentPlan = (Package) intermediateModelCopier
 				.shallowCopy(srcModelComponentDeploymentPlan);
 		intermediateModelCopier.createShallowContainer(srcModelComponentDeploymentPlan);
-		
-		ContainerTrafo.init();
+
+		AbstractContainerTrafo.init();
 		InstanceConfigurator.onNodeModel = false;
 		MainModelTrafo mainModelTrafo = new MainModelTrafo(intermediateModelCopier,
 				intermediateModelComponentDeploymentPlan);
@@ -334,7 +335,7 @@ public class InstantiateDepPlan {
 		if (langSupport == null) {
 			return;
 		}
-		
+
 		Deploy deployment = new Deploy(targetCopy, langSupport, node,
 				nodeIndex, nodes.size());
 		InstanceSpecification nodeRootIS = deployment
@@ -370,7 +371,7 @@ public class InstantiateDepPlan {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param mainInstance
 	 * @param existingModel
 	 * @param node
@@ -402,19 +403,19 @@ public class InstantiateDepPlan {
 
 	protected String getTargetOS(InstanceSpecification node) {
 		Target target = UMLUtil.getStereotypeApplication(node, Target.class);
-		if(target == null) {
+		if (target == null) {
 			// get information from node referenced by the instance
 			target = UMLUtil.getStereotypeApplication(DepUtils.getClassifier(node), Target.class);
 		}
-		if(target != null) {
+		if (target != null) {
 			OperatingSystem os = target.getUsedOS();
-			if(os != null) {
+			if (os != null) {
 				return os.getBase_Class().getName();
 			}
 		}
 		return null;
 	}
-	
+
 	private void destroyDeploymentPlanFolder(Model generatedModel) {
 		PackageableElement deploymentPlanFolder = generatedModel
 				.getPackagedElement(DeployConstants.depPlanFolderHw);
@@ -501,11 +502,12 @@ public class InstantiateDepPlan {
 			final String message, final boolean consultConsole) {
 		e.printStackTrace();
 		displayError(title, message);
-		Log.log(Status.ERROR, Log.DEPLOYMENT, "", e); //$NON-NLS-1$
+		Log.log(IStatus.ERROR, Log.DEPLOYMENT, "", e); //$NON-NLS-1$
 	}
 
 	private void displayError(final String title, final String message) {
 		Display.getDefault().syncExec(new Runnable() {
+			@Override
 			public void run() {
 				Shell shell = new Shell();
 				MessageDialog.openInformation(shell, title, message);
@@ -516,7 +518,7 @@ public class InstantiateDepPlan {
 	/**
 	 * Create a new empty model from an existing model that applies the same
 	 * profiles and has the same imports
-	 * 
+	 *
 	 * @param existingModel
 	 * @return
 	 */
@@ -562,7 +564,7 @@ public class InstantiateDepPlan {
 				} catch (WrappedException e) {
 					// read 2nd time (some diagnostic errors are raised only
 					// once)
-					Log.log(Status.WARNING,
+					Log.log(IStatus.WARNING,
 							Log.DEPLOYMENT,
 							"Warning: exception in profile.eResource() " + e.getMessage()); //$NON-NLS-1$
 					profileResource = ModelManagement.getResourceSet()

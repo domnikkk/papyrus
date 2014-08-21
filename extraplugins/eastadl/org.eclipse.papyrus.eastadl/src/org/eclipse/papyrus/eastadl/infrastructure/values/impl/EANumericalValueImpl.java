@@ -15,7 +15,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EANumericalValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,6 +26,7 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -36,6 +37,7 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -45,6 +47,7 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EANumericalValueImpl() {
@@ -54,6 +57,7 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,8 +68,10 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Float getValue() {
 		return value;
 	}
@@ -73,25 +79,29 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValue(Float newValue) {
 		Float oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ValuesPackage.EA_NUMERICAL_VALUE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
-				return getValue();
+		case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,14 +109,15 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
-				setValue((Float)newValue);
-				return;
+		case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
+			setValue((Float) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,14 +125,15 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -129,13 +141,14 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case ValuesPackage.EA_NUMERICAL_VALUE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -143,11 +156,14 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -156,4 +172,4 @@ public class EANumericalValueImpl extends EAValueImpl implements EANumericalValu
 		return result.toString();
 	}
 
-} //EANumericalValueImpl
+} // EANumericalValueImpl

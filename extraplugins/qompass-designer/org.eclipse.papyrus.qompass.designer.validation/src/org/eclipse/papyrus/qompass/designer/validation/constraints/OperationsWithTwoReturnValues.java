@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -33,18 +33,18 @@ import org.eclipse.uml2.uml.ParameterDirectionKind;
 public class OperationsWithTwoReturnValues extends AbstractModelConstraint
 {
 	@Override
-	public IStatus validate (IValidationContext ctx)
+	public IStatus validate(IValidationContext ctx)
 	{
 		Operation operation = (Operation) ctx.getTarget();
 		boolean firstReturn = true;
-		for (Parameter parameter : operation.getOwnedParameters ()) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
 			if (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 				if (firstReturn) {
 					firstReturn = false;
 				}
 				else {
 					if (StereotypeUtil.isApplicable(operation, DerivedElement.class)) {
-						return ctx.createFailureStatus ("The operation '" + operation.getName () + "' has more than one return parameter. It must have at most one");
+						return ctx.createFailureStatus("The operation '" + operation.getName() + "' has more than one return parameter. It must have at most one");
 					}
 					else {
 						break;

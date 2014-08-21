@@ -22,15 +22,15 @@ import org.eclipse.papyrus.uml.tools.model.UmlModel;
 
 public class PapyrusResourceUtils {
 
-	private static final String[] FILE_EXTENSIONS = new String[]{ UmlModel.UML_FILE_EXTENSION, NotationModel.NOTATION_FILE_EXTENSION, DiModel.MODEL_FILE_EXTENSION };
+	private static final String[] FILE_EXTENSIONS = new String[] { UmlModel.UML_FILE_EXTENSION, NotationModel.NOTATION_FILE_EXTENSION, DiModel.MODEL_FILE_EXTENSION };
 
 
 	public static void addExtraResources(ResourceSet ressourceSet, Collection<URI> uris, URI uri) {
 		String currentExtension = uri.fileExtension();
-		for(String ext : FILE_EXTENSIONS) {
-			if(!ext.equals(currentExtension)) {
+		for (String ext : FILE_EXTENSIONS) {
+			if (!ext.equals(currentExtension)) {
 				URI sateliteResource = URIUtils.getSateliteResource(uri, ext);
-				if(URIUtils.isResourceURI(sateliteResource, ressourceSet)) {
+				if (URIUtils.isResourceURI(sateliteResource, ressourceSet)) {
 					uris.add(sateliteResource);
 				}
 			}

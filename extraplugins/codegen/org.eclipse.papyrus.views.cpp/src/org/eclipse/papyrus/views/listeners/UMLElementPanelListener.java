@@ -30,45 +30,59 @@ public class UMLElementPanelListener implements Adapter {
 
 	/**
 	 * Creates a new UMLElementListener for the given panel.
-	 * @param panel the panel that describes this element 
+	 * 
+	 * @param panel
+	 *            the panel that describes this element
 	 */
-	public UMLElementPanelListener(CppAbstractPanel panel){	
-		this.panel=panel;
+	public UMLElementPanelListener(CppAbstractPanel panel) {
+		this.panel = panel;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.common.notify.Adapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
-		if( notification.getEventType()!=Notification.REMOVING_ADAPTER ){
-			panel.reset();	// equivalent to a refresh
+		if (notification.getEventType() != Notification.REMOVING_ADAPTER) {
+			panel.reset(); // equivalent to a refresh
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.common.notify.Adapter#getTarget()
 	 */
+	@Override
 	public Notifier getTarget() {
 		return this.target;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.common.notify.Adapter#setTarget(org.eclipse.emf.common.notify.Notifier)
 	 */
+	@Override
 	public void setTarget(Notifier newTarget) {
 		this.target = newTarget;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.common.notify.Adapter#isAdapterForType(java.lang.Object)
 	 */
+	@Override
 	public boolean isAdapterForType(Object type) {
 		Class<? extends Notifier> class_ = target.getClass();
 		// if class is not null
-		if(class_!=null) {
+		if (class_ != null) {
 			return class_.equals(type);
 		}
-		//default case: it is not an adapter
+		// default case: it is not an adapter
 		return false;
 	}
 }

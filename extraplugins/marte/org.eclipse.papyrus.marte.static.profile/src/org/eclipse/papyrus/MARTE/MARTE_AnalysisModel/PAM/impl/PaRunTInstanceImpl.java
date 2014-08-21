@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,13 +31,13 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getPoolSize <em>Pool Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#isUnbddPool <em>Unbdd Pool</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getInstance <em>Instance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getHost <em>Host</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getUtilization <em>Utilization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getThroughput <em>Throughput</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getPoolSize <em>Pool Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#isUnbddPool <em>Unbdd Pool</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getInstance <em>Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getHost <em>Host</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getUtilization <em>Utilization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getThroughput <em>Throughput</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.PAM.impl.PaRunTInstanceImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getPoolSize() <em>Pool Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoolSize()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #isUnbddPool() <em>Unbdd Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUnbddPool()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #isUnbddPool() <em>Unbdd Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUnbddPool()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getInstance() <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInstance()
 	 * @generated
 	 * @ordered
@@ -98,6 +103,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getHost() <em>Host</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHost()
 	 * @generated
 	 * @ordered
@@ -108,6 +114,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -118,6 +125,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUtilization()
 	 * @generated
 	 * @ordered
@@ -128,6 +136,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -138,6 +147,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -148,6 +158,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -157,6 +168,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PaRunTInstanceImpl() {
@@ -166,6 +178,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,8 +189,10 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPoolSize() {
 		return poolSize;
 	}
@@ -185,20 +200,25 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPoolSize(String newPoolSize) {
 		String oldPoolSize = poolSize;
 		poolSize = newPoolSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE, oldPoolSize, poolSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isUnbddPool() {
 		return unbddPool;
 	}
@@ -206,27 +226,33 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUnbddPool(boolean newUnbddPool) {
 		boolean oldUnbddPool = unbddPool;
 		unbddPool = newUnbddPool;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL, oldUnbddPool, unbddPool));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public SchedulableResource getInstance() {
 		if (instance != null && instance.eIsProxy()) {
-			InternalEObject oldInstance = (InternalEObject)instance;
-			instance = (SchedulableResource)eResolveProxy(oldInstance);
+			InternalEObject oldInstance = (InternalEObject) instance;
+			instance = (SchedulableResource) eResolveProxy(oldInstance);
 			if (instance != oldInstance) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PAMPackage.PA_RUN_TINSTANCE__INSTANCE, oldInstance, instance));
+				}
 			}
 		}
 		return instance;
@@ -235,6 +261,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SchedulableResource basicGetInstance() {
@@ -244,27 +271,33 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setInstance(SchedulableResource newInstance) {
 		SchedulableResource oldInstance = instance;
 		instance = newInstance;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__INSTANCE, oldInstance, instance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GaExecHost getHost() {
 		if (host != null && host.eIsProxy()) {
-			InternalEObject oldHost = (InternalEObject)host;
-			host = (GaExecHost)eResolveProxy(oldHost);
+			InternalEObject oldHost = (InternalEObject) host;
+			host = (GaExecHost) eResolveProxy(oldHost);
 			if (host != oldHost) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PAMPackage.PA_RUN_TINSTANCE__HOST, oldHost, host));
+				}
 			}
 		}
 		return host;
@@ -273,6 +306,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GaExecHost basicGetHost() {
@@ -282,20 +316,25 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setHost(GaExecHost newHost) {
 		GaExecHost oldHost = host;
 		host = newHost;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__HOST, oldHost, host));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getUtilization() {
 		return utilization;
 	}
@@ -303,20 +342,25 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUtilization(String newUtilization) {
 		String oldUtilization = utilization;
 		utilization = newUtilization;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__UTILIZATION, oldUtilization, utilization));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getThroughput() {
 		return throughput;
 	}
@@ -324,27 +368,33 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setThroughput(String newThroughput) {
 		String oldThroughput = throughput;
 		throughput = newThroughput;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT, oldThroughput, throughput));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -353,6 +403,7 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -362,40 +413,50 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
-				return getPoolSize();
-			case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
-				return isUnbddPool();
-			case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
-				if (resolve) return getInstance();
-				return basicGetInstance();
-			case PAMPackage.PA_RUN_TINSTANCE__HOST:
-				if (resolve) return getHost();
-				return basicGetHost();
-			case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
-				return getUtilization();
-			case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
-				return getThroughput();
-			case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
-				if (resolve) return getBase_NamedElement();
-				return basicGetBase_NamedElement();
+		case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
+			return getPoolSize();
+		case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
+			return isUnbddPool();
+		case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
+			if (resolve) {
+				return getInstance();
+			}
+			return basicGetInstance();
+		case PAMPackage.PA_RUN_TINSTANCE__HOST:
+			if (resolve) {
+				return getHost();
+			}
+			return basicGetHost();
+		case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
+			return getUtilization();
+		case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
+			return getThroughput();
+		case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
+			if (resolve) {
+				return getBase_NamedElement();
+			}
+			return basicGetBase_NamedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -403,32 +464,33 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
-				setPoolSize((String)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
-				setUnbddPool((Boolean)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
-				setInstance((SchedulableResource)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__HOST:
-				setHost((GaExecHost)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
-				setUtilization((String)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
-				setThroughput((String)newValue);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)newValue);
-				return;
+		case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
+			setPoolSize((String) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
+			setUnbddPool((Boolean) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
+			setInstance((SchedulableResource) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__HOST:
+			setHost((GaExecHost) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
+			setUtilization((String) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
+			setThroughput((String) newValue);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -436,32 +498,33 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
-				setPoolSize(POOL_SIZE_EDEFAULT);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
-				setUnbddPool(UNBDD_POOL_EDEFAULT);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
-				setInstance((SchedulableResource)null);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__HOST:
-				setHost((GaExecHost)null);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
-				setThroughput(THROUGHPUT_EDEFAULT);
-				return;
-			case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)null);
-				return;
+		case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
+			setPoolSize(POOL_SIZE_EDEFAULT);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
+			setUnbddPool(UNBDD_POOL_EDEFAULT);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
+			setInstance((SchedulableResource) null);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__HOST:
+			setHost((GaExecHost) null);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
+			setUtilization(UTILIZATION_EDEFAULT);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
+			setThroughput(THROUGHPUT_EDEFAULT);
+			return;
+		case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -469,25 +532,26 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
-				return POOL_SIZE_EDEFAULT == null ? poolSize != null : !POOL_SIZE_EDEFAULT.equals(poolSize);
-			case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
-				return unbddPool != UNBDD_POOL_EDEFAULT;
-			case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
-				return instance != null;
-			case PAMPackage.PA_RUN_TINSTANCE__HOST:
-				return host != null;
-			case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
-			case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
-				return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
-			case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
-				return base_NamedElement != null;
+		case PAMPackage.PA_RUN_TINSTANCE__POOL_SIZE:
+			return POOL_SIZE_EDEFAULT == null ? poolSize != null : !POOL_SIZE_EDEFAULT.equals(poolSize);
+		case PAMPackage.PA_RUN_TINSTANCE__UNBDD_POOL:
+			return unbddPool != UNBDD_POOL_EDEFAULT;
+		case PAMPackage.PA_RUN_TINSTANCE__INSTANCE:
+			return instance != null;
+		case PAMPackage.PA_RUN_TINSTANCE__HOST:
+			return host != null;
+		case PAMPackage.PA_RUN_TINSTANCE__UTILIZATION:
+			return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
+		case PAMPackage.PA_RUN_TINSTANCE__THROUGHPUT:
+			return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
+		case PAMPackage.PA_RUN_TINSTANCE__BASE_NAMED_ELEMENT:
+			return base_NamedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -495,11 +559,14 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (poolSize: ");
@@ -514,4 +581,4 @@ public class PaRunTInstanceImpl extends EObjectImpl implements PaRunTInstance {
 		return result.toString();
 	}
 
-} //PaRunTInstanceImpl
+} // PaRunTInstanceImpl

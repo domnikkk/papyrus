@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,8 +21,7 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionmodelingPa
 
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Functional Device</b></em>
- * '. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Functional Device</b></em> '. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -32,6 +31,7 @@ public class FunctionalDeviceImpl extends AnalysisFunctionTypeImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FunctionalDeviceImpl() {
@@ -40,6 +40,7 @@ public class FunctionalDeviceImpl extends AnalysisFunctionTypeImpl implements Fu
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

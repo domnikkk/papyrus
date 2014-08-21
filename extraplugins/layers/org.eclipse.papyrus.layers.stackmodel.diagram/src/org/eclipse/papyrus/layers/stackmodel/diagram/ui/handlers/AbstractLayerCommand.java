@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -31,6 +31,7 @@ import org.eclipse.ui.IEditorPart;
 /**
  * Base class for Commands on Layers.
  * This class provide utility methods to find the current Layer, LayerStack, ...
+ * 
  * @author cedric dumoulin
  *
  */
@@ -49,8 +50,9 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
-	 * 
+	 *
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		executeTransaction(event);
 
@@ -59,7 +61,8 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 
 	/**
 	 * Execute as transaction
-	 * @param event 
+	 * 
+	 * @param event
 	 */
 	private void executeTransaction(ExecutionEvent event) {
 
@@ -86,7 +89,7 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 				AbstractLayerCommand.this.doExecute(notationDiagramHelper);
 			}
 
-			
+
 		};
 
 		editingDomain.getCommandStack().execute(cmd);
@@ -94,9 +97,9 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 	}
 
 	/**
-	 * Get the name used in the {@link RecordingCommand}. This name will be visible in 
+	 * Get the name used in the {@link RecordingCommand}. This name will be visible in
 	 * undo/redo.
-	 * 
+	 *
 	 * @return The command name to show.
 	 */
 	public abstract String getCommandName();
@@ -104,83 +107,87 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 	/**
 	 * Do the execution of the command.
 	 * Subclass should implements this method.
-	 * 
+	 *
 	 * @param notationDiagramHelper
 	 */
 	protected abstract void doExecute(NotationDiagramHelper notationDiagramHelper);
 
-//	/**
-//	 * 
-//	 * @return
-//	 * @throws NotFoundException
-//	 */
-//	protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
-//		
-//		return lookupLayersViewChecked().getLayerStackMngrChecked();
-//		
-//	}
+	// /**
+	// *
+	// * @return
+	// * @throws NotFoundException
+	// */
+	// protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
+	//
+	// return lookupLayersViewChecked().getLayerStackMngrChecked();
+	//
+	// }
 
-	
+
 	protected IEvaluationContext getIEvaluationContext(ExecutionEvent event) throws NotFoundException {
 		try {
-			return (IEvaluationContext)event.getApplicationContext();
+			return (IEvaluationContext) event.getApplicationContext();
 		} catch (ClassCastException e) {
 			throw new NotFoundException("IEvaluationContext can't be found.");
 		}
-		
+
 	}
+
 	/**
 	 * Try to lookup the TransactionalEditingDomain.
+	 * 
 	 * @return
-	 * @throws ServiceException If the Editing domain can't be found.
+	 * @throws ServiceException
+	 *             If the Editing domain can't be found.
 	 */
 	protected TransactionalEditingDomain lookupTransactionalEditingDomain(IEvaluationContext context) throws ServiceException {
 
 		// Get page from the event !
-//	    IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
-		
-	    return ServiceUtilsForIEvaluationContext.getInstance().getTransactionalEditingDomain(context);
+		// IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
+
+		return ServiceUtilsForIEvaluationContext.getInstance().getTransactionalEditingDomain(context);
 	}
 
 	/**
 	 * Called by framework. Need to set the enabled flag.
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
 	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		
-		if( ! (evaluationContext instanceof IEvaluationContext)) {
+
+		if (!(evaluationContext instanceof IEvaluationContext)) {
 			setBaseEnabled(false);
-//			System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ") - no context");
+			// System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ") - no context");
 			return;
 		}
-		
-		IEvaluationContext context = (IEvaluationContext)evaluationContext;
-		
+
+		IEvaluationContext context = (IEvaluationContext) evaluationContext;
+
 		try {
 			NotationDiagramHelper diagramHelper = lookupNotationDiagramHelperChecked(context);
 
 			// Ask the subclass
 			setBaseEnabled(isEnabled(diagramHelper));
-			
+
 		} catch (ServiceException e) {
 			// Can't find ServiceRegistry: disable
-			setBaseEnabled( false);
+			setBaseEnabled(false);
 		} catch (NotFoundException e) {
 			// Can't find ServiceRegistry: disable
-			setBaseEnabled( false);
+			setBaseEnabled(false);
 		}
-		
-		
-//		System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ")");
+
+
+		// System.out.println(getCommandName() + ".setEnabled(" + isEnabled() + ")");
 	}
-	
+
 	/**
 	 * Return true if the action is enabled, false otherwise.
 	 * Subclasses should implements this method. The default implementation return true.
+	 * 
 	 * @param notationDiagramHelper
 	 * @return
 	 */
@@ -188,47 +195,47 @@ public abstract class AbstractLayerCommand extends AbstractHandler {
 		return true;
 	}
 
-	//	/**
-	//	 * 
-	//	 * @return
-	//	 * @throws NotFoundException
-	//	 */
-	//	protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
-	//		
-	//		return lookupLayersViewChecked().getLayerStackMngrChecked();
-	//		
-	//	}
-	
-		/**
-		 * Get the notation diagram helper.
-		 * This method can be used from {@link #execute(ExecutionEvent)} or {@link #setEnabled(Object)}.
-		 * 
-		 * @return The 
-		 * @throws NotFoundException
-		 * @throws ServiceException 
-		 */
-		protected NotationDiagramHelper lookupNotationDiagramHelperChecked(IEvaluationContext context) throws NotFoundException, ServiceException {
-			
-			
-			// Get page from the event !
-	//	    IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
-			
-			IEditorPart editor = ServiceUtilsForIEvaluationContext.getInstance().getNestedActiveIEditorPart(context);
-	
-			if( ! (editor instanceof DiagramDocumentEditor) ) {
-				throw new NotFoundException("Selected editor do not contains Diagram");
-			}
-			DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor)editor;
-			
-			Diagram diagram = diagramEditor.getDiagram();
-			if(diagram == null) {
-				throw new NotFoundException("Selected editor do not contains Diagram");			
-			}
-			
-			// Lookup the Layer model
-			LayersModel layersModel = (LayersModel)ServiceUtilsForIEvaluationContext.getInstance().getModelSet(context).getModel(LayersModel.MODEL_ID);
-			// Return a new instance of the Helper
-			return new NotationDiagramHelper(layersModel, diagram);
+	// /**
+	// *
+	// * @return
+	// * @throws NotFoundException
+	// */
+	// protected LayerStackMngr lookupLayerStackMngrChecked() throws NotFoundException {
+	//
+	// return lookupLayersViewChecked().getLayerStackMngrChecked();
+	//
+	// }
+
+	/**
+	 * Get the notation diagram helper.
+	 * This method can be used from {@link #execute(ExecutionEvent)} or {@link #setEnabled(Object)}.
+	 *
+	 * @return The
+	 * @throws NotFoundException
+	 * @throws ServiceException
+	 */
+	protected NotationDiagramHelper lookupNotationDiagramHelperChecked(IEvaluationContext context) throws NotFoundException, ServiceException {
+
+
+		// Get page from the event !
+		// IWorkbenchPage page = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
+
+		IEditorPart editor = ServiceUtilsForIEvaluationContext.getInstance().getNestedActiveIEditorPart(context);
+
+		if (!(editor instanceof DiagramDocumentEditor)) {
+			throw new NotFoundException("Selected editor do not contains Diagram");
 		}
+		DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor) editor;
+
+		Diagram diagram = diagramEditor.getDiagram();
+		if (diagram == null) {
+			throw new NotFoundException("Selected editor do not contains Diagram");
+		}
+
+		// Lookup the Layer model
+		LayersModel layersModel = (LayersModel) ServiceUtilsForIEvaluationContext.getInstance().getModelSet(context).getModel(LayersModel.MODEL_ID);
+		// Return a new instance of the Helper
+		return new NotationDiagramHelper(layersModel, diagram);
+	}
 
 }

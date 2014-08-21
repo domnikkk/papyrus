@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -28,24 +28,29 @@ public class GeneratorPreferenceImpl implements GeneratorPreference {
 	private IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
 
+	@Override
 	public boolean implementMethodsOfIntefaces() {
 		return store.getBoolean(PreferenceConstants.P_IMPLEMENT_METHODS_OF_INTERFACES_AND_ABSTRACT_CLASS);
 	}
 
+	@Override
 	public boolean implementMethodsOfAbstractClass() {
 		return store.getBoolean(PreferenceConstants.P_IMPLEMENT_METHODS_OF_INTERFACES_AND_ABSTRACT_CLASS);
 	}
 
+	@Override
 	public boolean generateGetters() {
 		return store.getBoolean(PreferenceConstants.P_GENERATE_GETTERS);
 	}
 
+	@Override
 	public boolean generateSetters() {
 		return store.getBoolean(PreferenceConstants.P_GENERATE_SETTERS);
 	}
 
+	@Override
 	public boolean isPackageToGenerate(String packageQualifiedName) {
-		if(packageQualifiedName == null || packageQualifiedName.isEmpty()) {
+		if (packageQualifiedName == null || packageQualifiedName.isEmpty()) {
 			return true;
 		}
 
@@ -53,25 +58,25 @@ public class GeneratorPreferenceImpl implements GeneratorPreference {
 		String listStr = store.getString(PreferenceConstants.P_FILTER_OF_PACKAGE_NOT_TO_GENERATE);
 
 		// if list of package don't exist, return true
-		if(listStr == null || listStr.isEmpty()) {
+		if (listStr == null || listStr.isEmpty()) {
 			return true;
 		}
 
 		// gather list in a table
 		String[] listPackage = listStr.split(";");
 
-		for(String _package : listPackage) {
-			if(_package.equals(packageQualifiedName)) {
+		for (String _package : listPackage) {
+			if (_package.equals(packageQualifiedName)) {
 				return false;
 			}
 
-			// if package have a *, we delete *			
+			// if package have a *, we delete *
 			String packageWithoutStar = _package;
-			if(_package.contains("*")) {
+			if (_package.contains("*")) {
 				packageWithoutStar = _package.substring(0, _package.indexOf("*") - 1);
 			}
 
-			if(packageQualifiedName.contains(packageWithoutStar)) {
+			if (packageQualifiedName.contains(packageWithoutStar)) {
 				return false;
 			}
 		}
@@ -80,10 +85,12 @@ public class GeneratorPreferenceImpl implements GeneratorPreference {
 		return true;
 	}
 
+	@Override
 	public String genericClassForMultiValue() {
 		return store.getString(PreferenceConstants.P_GENERIC_CLASS_FOR_MULTIVALUE);
 	}
 
+	@Override
 	public boolean stopOnFirstError() {
 		return store.getBoolean(PreferenceConstants.P_STOP_ON_FIRST_ERROR);
 	}

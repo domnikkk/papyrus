@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.EACompositeValue#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,10 +26,10 @@ public interface EACompositeValue extends EAValue {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.values.EAValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Value</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage#getEACompositeValue_Value()
 	 * @model required="true" ordered="false"

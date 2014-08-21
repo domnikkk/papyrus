@@ -14,6 +14,7 @@ package org.eclipse.papyrus.moka.ui.launch;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
 import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -37,23 +38,24 @@ public class MokaProjectSelection extends SelectionAdapter {
 		this.launchConfigTab = tab;
 	}
 
+	@Override
 	public void widgetSelected(SelectionEvent event) {
 		TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getCurrent().getActiveShell());
 		dialog.setTitle(DIALOG_NAME);
 		dialog.setContentProvider(new WorkspaceContentProvider());
 		dialog.setLabelProvider(WorkbenchLabelProvider.getDecoratingWorkbenchLabelProvider());
 
-		if(this.currentSelection != null && this.currentSelection.exists()) {
-			dialog.setInitialSelections(new IFile[]{ this.currentSelection });
+		if (this.currentSelection != null && this.currentSelection.exists()) {
+			dialog.setInitialSelections(new IFile[] { this.currentSelection });
 		}
 
 		dialog.open();
 		Object[] selection = dialog.getResult();
-		if(dialog.getReturnCode() == Dialog.OK && selection.length > 0 && (selection[0] instanceof IFile)) {
-			this.currentSelection = (IFile)selection[0];
+		if (dialog.getReturnCode() == Window.OK && selection.length > 0 && (selection[0] instanceof IFile)) {
+			this.currentSelection = (IFile) selection[0];
 			URI fileURI = URI.createPlatformResourceURI(this.currentSelection.getFullPath().toString(), true);
 			this.projectSelection.setText(fileURI.toString());
-			if(this.launchConfigTab != null) {
+			if (this.launchConfigTab != null) {
 				this.launchConfigTab.updateLaunchConfigurationDialog();
 			}
 		}

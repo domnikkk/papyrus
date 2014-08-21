@@ -12,7 +12,7 @@ import org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class StereotypeApplicationWithVSLExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class StereotypeApplicationWithVSLExecutableExtensionFactory extends Abst
 	protected Bundle getBundle() {
 		return StereotypeApplicationWithVSLActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return StereotypeApplicationWithVSLActivator.getInstance().getInjector(StereotypeApplicationWithVSLActivator.ORG_ECLIPSE_PAPYRUS_MARTE_TEXTEDIT_STEREOTYPEAPPLICATIONWITHVSL_XTEXT_STEREOTYPEAPPLICATIONWITHVSL);
 	}
-	
+
 }

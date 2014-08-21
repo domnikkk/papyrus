@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ import org.eclipse.uml2.uml.Dependency;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine#getBase_Dependency <em>Base Dependency</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine#getBase_Dependency <em>Base Dependency</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine#getConstraint <em>Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface NfpRefine extends EObject {
 	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Dependency</em>' reference.
 	 * @see #setBase_Dependency(Dependency)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getNfpRefine_Base_Dependency()
@@ -56,7 +56,9 @@ public interface NfpRefine extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.NfpRefine#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Dependency</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Dependency</em>' reference.
 	 * @see #getBase_Dependency()
 	 * @generated
 	 */
@@ -67,10 +69,10 @@ public interface NfpRefine extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Constraint</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getNfpRefine_Constraint()
 	 * @model ordered="false"

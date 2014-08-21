@@ -22,6 +22,7 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArmImpl() {
@@ -31,6 +32,7 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -38,4 +40,4 @@ public class ArmImpl extends MinimalEObjectImpl.Container implements Arm {
 		return RobotMLPackage.Literals.ARM;
 	}
 
-} //ArmImpl
+} // ArmImpl

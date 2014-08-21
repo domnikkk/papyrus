@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,10 +49,10 @@ public class OpenPapyrusModelAction
 					String name = uri.trimFileExtension().lastSegment();
 
 					PapyrusCDOEditorManager.INSTANCE.openEditor(part.getSite()
-						.getPage(), uri, name);
+							.getPage(), uri, name);
 				} catch (PartInitException e) {
 					StatusManager.getManager().handle(e.getStatus(),
-						StatusManager.SHOW);
+							StatusManager.SHOW);
 				}
 			}
 		}
@@ -65,7 +65,7 @@ public class OpenPapyrusModelAction
 			result = (CDOResource) object;
 		} else if (object instanceof IAdaptable) {
 			result = (CDOResource) ((IAdaptable) object)
-				.getAdapter(CDOResource.class);
+					.getAdapter(CDOResource.class);
 		}
 
 		return result;

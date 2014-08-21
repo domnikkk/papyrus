@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -19,6 +19,7 @@ import java.io.IOException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -58,14 +59,15 @@ import org.eclipse.uml2.uml.Profile;
  * 2. Adding get_p/connect_q operations to a class (transformation within same model)
  * 3. Remove all component types
  * 4. distribute to nodes
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class TrafoAndCodegenPackage {
 
 	/**
 	 * Iterate over source model and apply transformation
+	 * 
 	 * @param copy
 	 * @param pkg
 	 * @throws TransformationException
@@ -73,50 +75,54 @@ public class TrafoAndCodegenPackage {
 	public static void applyTrafo(LazyCopier copy, Package pkg) throws TransformationException {
 		EList<PackageableElement> peList = new BasicEList<PackageableElement>();
 		peList.addAll(pkg.getPackagedElements());
-		for(PackageableElement element : peList) {
-			if(element instanceof Package) {
-				applyTrafo(copy, (Package)element);
+		for (PackageableElement element : peList) {
+			if (element instanceof Package) {
+				applyTrafo(copy, (Package) element);
 			}
-			else if(element instanceof Class) {
-			
-				Class smImplementation = (Class)element;
+			else if (element instanceof Class) {
+
+				Class smImplementation = (Class) element;
 				Class tmImplementation = copy.getCopy(smImplementation);
-				
+
 				// get container trafo instance, if already existing
-				AbstractContainerTrafo containerTrafo = ContainerTrafo.get(tmImplementation);
+				AbstractContainerTrafo containerTrafo = AbstractContainerTrafo.get(tmImplementation);
 
 				// we may not apply the transformation to the boot-loader itself, in particular it would transform
 				// singletons into pointers.
 				EList<ContainerRule> rules = FCMUtil.getAllContainerRules(smImplementation);
-				for(ContainerRule rule : rules) {
+				for (ContainerRule rule : rules) {
 					// if(RuleManagement.isRuleActive(rule)) {
-						// at least one active rule => create container (or get previously instantiated))
-						if(rule.getKind() == ContainerRuleKind.LIGHT_WEIGHT_OO_RULE) {
-							if (containerTrafo == null) {
-								// container does not exist yet, create
-								containerTrafo = new LWContainerTrafo(copy, null);
-								containerTrafo.createContainer(smImplementation, tmImplementation);
-							}
-							containerTrafo.applyRule(rule, smImplementation, tmImplementation);
+					// at least one active rule => create container (or get previously instantiated))
+					if (rule.getKind() == ContainerRuleKind.LIGHT_WEIGHT_OO_RULE) {
+						if (containerTrafo == null) {
+							// container does not exist yet, create
+							containerTrafo = new LWContainerTrafo(copy, null);
+							containerTrafo.createContainer(smImplementation, tmImplementation);
 						}
+						containerTrafo.applyRule(rule, smImplementation, tmImplementation);
 					}
+				}
 				// }
 			}
 		}
 	}
-	
+
 	/**
 	 * Instantiate a deployment plan, i.e. generate an intermediate model via a sequence of transformations
+	 *
+	 * @param cdpOrConfig
+	 *            a deployment plan (UML package) or a configuration (UML class)
+	 * @param monitor
+	 *            a progress monitor.
 	 * 
-	 * @param cdpOrConfig a deployment plan (UML package) or a configuration (UML class)
-	 * @param monitor  a progress monitor.
-	
-	 * @param project the current project. This information is used to store the intermediate model in
-	 * 	a subfolder (tmpModel) of the current project
-	 * @param genOptions select whether to produce an intermediate model only, also code, ... @see GenerationOptions
+	 * @param project
+	 *            the current project. This information is used to store the intermediate model in
+	 *            a subfolder (tmpModel) of the current project
+	 * @param genOptions
+	 *            select whether to produce an intermediate model only, also code, ... @see GenerationOptions
 	 */
 	public static void instantiate(Element cdpOrConfig, IProgressMonitor monitor, IProject project) {
-		if(project == null) {
+		if (project == null) {
 			String projectName = cdpOrConfig.eResource().getURI().toString();
 			project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		}
@@ -125,8 +131,8 @@ public class TrafoAndCodegenPackage {
 
 		AcceleoDriver.clearErrors();
 		Package selectedPkg;
-		if(cdpOrConfig instanceof Package) {
-			selectedPkg = (Package)cdpOrConfig;
+		if (cdpOrConfig instanceof Package) {
+			selectedPkg = (Package) cdpOrConfig;
 			RuleManagement.setConfiguration(null);
 		}
 		else {
@@ -144,7 +150,7 @@ public class TrafoAndCodegenPackage {
 			int steps = 3;
 
 			monitor.beginTask(Messages.InstantiateDepPlan_InfoGeneratingModel, steps);
-			if(monitor.isCanceled()) {
+			if (monitor.isCanceled()) {
 				return;
 			}
 
@@ -158,7 +164,7 @@ public class TrafoAndCodegenPackage {
 			// de-activate automatic transformations that should not be applied to the generated
 			// model.
 			monitor.worked(1);
-			if(monitor.isCanceled()) {
+			if (monitor.isCanceled()) {
 				return;
 			}
 
@@ -169,20 +175,20 @@ public class TrafoAndCodegenPackage {
 			LazyCopier tmpCopy = new LazyCopier(existingModel, tmpModel, false, true);
 			tmpCopy.preCopyListeners.add(FilterTemplate.getInstance());
 
-				// 1b: reify the connectors "into" the new model
+			// 1b: reify the connectors "into" the new model
 			monitor.subTask(Messages.InstantiateDepPlan_InfoExpandingConnectors);
 
 			// obtain reference to CDP in target model
-			
-			ContainerTrafo.init();
+
+			AbstractContainerTrafo.init();
 			monitor.worked(1);
 
 			// create recursive copy of selectedPackage
 			tmpCopy.getCopy(selectedPkg);
-			
+
 			// apply container transformation
 			applyTrafo(tmpCopy, selectedPkg);
-			
+
 			// 1c: late bindings
 			// LateEval.bindLateOperations();
 			// 3: distribute to nodes
@@ -199,15 +205,15 @@ public class TrafoAndCodegenPackage {
 			IProject genProject = project;
 			ILangSupport langSupport = LanguageSupport.getLangSupport(targetLanguage);
 			langSupport.resetConfigurationData();
-			
+
 			langSupport.setProject(genProject);
-	
+
 			GenerateCode codeGen = new GenerateCode(genProject, langSupport, genMM, monitor);
 			codeGen.generate(null, targetLanguage, false);
 
 			genMM.dispose();
 
-			if(monitor.isCanceled()) {
+			if (monitor.isCanceled()) {
 				return;
 			}
 			monitor.worked(1);
@@ -217,35 +223,38 @@ public class TrafoAndCodegenPackage {
 			final TransformationException teFinal = te;
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					Shell shell = new Shell();
 					MessageDialog.openError(shell, Messages.InstantiateDepPlan_TransformationException, teFinal.getMessage());
 				}
 			});
-			Log.log(Status.ERROR, Log.DEPLOYMENT, "", teFinal);   //$NON-NLS-1$
+			Log.log(IStatus.ERROR, Log.DEPLOYMENT, "", teFinal); //$NON-NLS-1$
 		} catch (Exception e) {
 			final Exception eFinal = e;
 			e.printStackTrace();
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					Shell shell = new Shell();
-					String msg = eFinal.toString() + "\n\n" +   //$NON-NLS-1$
-						Messages.InstantiateDepPlan_ConsultConsole; 
+					String msg = eFinal.toString() + "\n\n" + //$NON-NLS-1$
+							Messages.InstantiateDepPlan_ConsultConsole;
 					MessageDialog.openError(shell, Messages.InstantiateDepPlan_ErrorsDuringTransformation, msg);
 				}
 			});
-			Log.log(Status.ERROR, Log.DEPLOYMENT, "", e);  //$NON-NLS-1$
+			Log.log(IStatus.ERROR, Log.DEPLOYMENT, "", e); //$NON-NLS-1$
 		}
-		if(tmpMM != null) {
+		if (tmpMM != null) {
 			tmpMM.dispose();
 		}
 		if (AcceleoDriver.hasErrors()) {
 			Display.getDefault().syncExec(new Runnable() {
+				@Override
 				public void run() {
 					Shell shell = new Shell();
 					MessageDialog.openInformation(shell, Messages.InstantiateDepPlan_AcceleoErrors,
-						Messages.InstantiateDepPlan_AcceleoErrorsCheckLog);
+							Messages.InstantiateDepPlan_AcceleoErrorsCheckLog);
 				}
 			});
 		}
@@ -256,7 +265,7 @@ public class TrafoAndCodegenPackage {
 	/**
 	 * Create a new empty model from an existing model that applies the same
 	 * profiles and has the same imports
-	 * 
+	 *
 	 * @param existingModel
 	 * @return
 	 */
@@ -267,16 +276,16 @@ public class TrafoAndCodegenPackage {
 
 		try {
 			// copy profile application
-			for(Profile profile : existingModel.getAppliedProfiles()) {
+			for (Profile profile : existingModel.getAppliedProfiles()) {
 				// reload profile in resource of new model
 				monitor.subTask(Messages.InstantiateDepPlan_InfoApplyProfile + profile.getQualifiedName());
 
-				if(profile.eResource() == null) {
+				if (profile.eResource() == null) {
 					String profileName = profile.getQualifiedName();
-					if(profileName == null) {
-						if(profile instanceof MinimalEObjectImpl.Container) {
-							URI uri = ((MinimalEObjectImpl.Container)profile).eProxyURI();
-							if(uri != null) {
+					if (profileName == null) {
+						if (profile instanceof MinimalEObjectImpl.Container) {
+							URI uri = ((MinimalEObjectImpl.Container) profile).eProxyURI();
+							if (uri != null) {
 								throw new TransformationException(String.format(Messages.InstantiateDepPlan_CheckInputModelProfileNoRes, uri));
 							}
 						}
@@ -290,20 +299,20 @@ public class TrafoAndCodegenPackage {
 					profileResource = ModelManagement.getResourceSet().getResource(profile.eResource().getURI(), true);
 				} catch (WrappedException e) {
 					// read 2nd time (some diagnostic errors are raised only once)
-					Log.log(Status.WARNING, Log.DEPLOYMENT, "Warning: exception in profile.eResource() " + e.getMessage()); //$NON-NLS-1$
+					Log.log(IStatus.WARNING, Log.DEPLOYMENT, "Warning: exception in profile.eResource() " + e.getMessage()); //$NON-NLS-1$
 					profileResource = ModelManagement.getResourceSet().getResource(profile.eResource().getURI(), true);
 				}
-				Profile newProfileTop = (Profile)profileResource.getContents().get(0);
+				Profile newProfileTop = (Profile) profileResource.getContents().get(0);
 				Profile newProfile;
 				String qname = profile.getQualifiedName();
-				if((qname != null) && qname.contains("::")) { //$NON-NLS-1$
+				if ((qname != null) && qname.contains("::")) { //$NON-NLS-1$
 					// profile is a sub-profile within same resource
 					// TODO: should Copy class copy profile applications?
 					// Should be handled in shallowContainer class.
 					// if we put profile/newProfile pair into copy map, copy would find (and copy profile
 					// applications in sub-folders
 					qname = qname.substring(qname.indexOf("::") + 2); //$NON-NLS-1$
-					newProfile = (Profile)Utils.getQualifiedElement(newProfileTop, qname);
+					newProfile = (Profile) Utils.getQualifiedElement(newProfileTop, qname);
 				}
 				else {
 					newProfile = newProfileTop;
@@ -320,16 +329,16 @@ public class TrafoAndCodegenPackage {
 		// has been generated and compiled (for the right target) into a library. This may be
 		// quite tedious, unless automatically managed.
 		// Therefore we do not activate this option in a first pass of the model transformations.
-		if(copyImports) {
-			for(Package importedPackage : existingModel.getImportedPackages()) {
-				if(importedPackage == null) {
+		if (copyImports) {
+			for (Package importedPackage : existingModel.getImportedPackages()) {
+				if (importedPackage == null) {
 					throw new TransformationException(Messages.InstantiateDepPlan_CheckInputImportPkg);
 				}
-				if(importedPackage.eResource() == null) {
+				if (importedPackage.eResource() == null) {
 					String errorMsg = Messages.InstantiateDepPlan_CheckInputImportPkgNoRes;
-					if(importedPackage instanceof MinimalEObjectImpl.Container) {
-						URI uri = ((MinimalEObjectImpl.Container)importedPackage).eProxyURI();
-						if(uri != null) {
+					if (importedPackage instanceof MinimalEObjectImpl.Container) {
+						URI uri = ((MinimalEObjectImpl.Container) importedPackage).eProxyURI();
+						if (uri != null) {
 							errorMsg += " - URI: " + uri.devicePath(); //$NON-NLS-1$
 						}
 					}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Message Resource Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#getMessageResourceKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Message Queue</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MESSAGE_QUEUE_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Pipe</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PIPE_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Blackboard</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #BLACKBOARD_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -83,10 +89,10 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Message Queue</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Message Queue</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Message Queue</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MESSAGE_QUEUE
 	 * @model name="MessageQueue"
 	 * @generated
@@ -98,10 +104,10 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Pipe</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Pipe</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Pipe</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PIPE
 	 * @model name="Pipe"
 	 * @generated
@@ -113,10 +119,10 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Blackboard</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Blackboard</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Blackboard</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #BLACKBOARD
 	 * @model name="Blackboard"
 	 * @generated
@@ -128,10 +134,10 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF
 	 * @model name="Undef"
 	 * @generated
@@ -143,10 +149,10 @@ public enum MessageResourceKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="Other"
 	 * @generated
@@ -158,21 +164,23 @@ public enum MessageResourceKind implements Enumerator {
 	 * An array of all the '<em><b>Message Resource Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final MessageResourceKind[] VALUES_ARRAY =
-		new MessageResourceKind[] {
-			MESSAGE_QUEUE,
-			PIPE,
-			BLACKBOARD,
-			UNDEF,
-			OTHER,
-		};
+			new MessageResourceKind[] {
+					MESSAGE_QUEUE,
+					PIPE,
+					BLACKBOARD,
+					UNDEF,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Message Resource Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<MessageResourceKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -181,6 +189,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * Returns the '<em><b>Message Resource Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static MessageResourceKind get(String literal) {
@@ -197,6 +206,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * Returns the '<em><b>Message Resource Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static MessageResourceKind getByName(String name) {
@@ -213,15 +223,21 @@ public enum MessageResourceKind implements Enumerator {
 	 * Returns the '<em><b>Message Resource Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static MessageResourceKind get(int value) {
 		switch (value) {
-			case MESSAGE_QUEUE_VALUE: return MESSAGE_QUEUE;
-			case PIPE_VALUE: return PIPE;
-			case BLACKBOARD_VALUE: return BLACKBOARD;
-			case UNDEF_VALUE: return UNDEF;
-			case OTHER_VALUE: return OTHER;
+		case MESSAGE_QUEUE_VALUE:
+			return MESSAGE_QUEUE;
+		case PIPE_VALUE:
+			return PIPE;
+		case BLACKBOARD_VALUE:
+			return BLACKBOARD;
+		case UNDEF_VALUE:
+			return UNDEF;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -229,6 +245,7 @@ public enum MessageResourceKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -236,6 +253,7 @@ public enum MessageResourceKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -243,6 +261,7 @@ public enum MessageResourceKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -251,6 +270,7 @@ public enum MessageResourceKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private MessageResourceKind(int value, String name, String literal) {
@@ -262,39 +282,46 @@ public enum MessageResourceKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //MessageResourceKind
+
+} // MessageResourceKind

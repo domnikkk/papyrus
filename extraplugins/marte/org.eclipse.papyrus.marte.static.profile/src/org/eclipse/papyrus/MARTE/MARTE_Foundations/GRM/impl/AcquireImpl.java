@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.AcquireImpl#isIsBlocking <em>Is Blocking</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.AcquireImpl#isIsBlocking <em>Is Blocking</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	 * The default value of the '{@link #isIsBlocking() <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsBlocking()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	 * The cached value of the '{@link #isIsBlocking() <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsBlocking()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AcquireImpl() {
@@ -65,6 +68,7 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,8 +79,10 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsBlocking() {
 		return isBlocking;
 	}
@@ -84,25 +90,29 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsBlocking(boolean newIsBlocking) {
 		boolean oldIsBlocking = isBlocking;
 		isBlocking = newIsBlocking;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.ACQUIRE__IS_BLOCKING, oldIsBlocking, isBlocking));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.ACQUIRE__IS_BLOCKING:
-				return isIsBlocking();
+		case GRMPackage.ACQUIRE__IS_BLOCKING:
+			return isIsBlocking();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,14 +120,15 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.ACQUIRE__IS_BLOCKING:
-				setIsBlocking((Boolean)newValue);
-				return;
+		case GRMPackage.ACQUIRE__IS_BLOCKING:
+			setIsBlocking((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,14 +136,15 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.ACQUIRE__IS_BLOCKING:
-				setIsBlocking(IS_BLOCKING_EDEFAULT);
-				return;
+		case GRMPackage.ACQUIRE__IS_BLOCKING:
+			setIsBlocking(IS_BLOCKING_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,13 +152,14 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.ACQUIRE__IS_BLOCKING:
-				return isBlocking != IS_BLOCKING_EDEFAULT;
+		case GRMPackage.ACQUIRE__IS_BLOCKING:
+			return isBlocking != IS_BLOCKING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,11 +167,14 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isBlocking: ");
@@ -167,4 +183,4 @@ public class AcquireImpl extends GrServiceImpl implements Acquire {
 		return result.toString();
 	}
 
-} //AcquireImpl
+} // AcquireImpl

@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -31,6 +31,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * 
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 

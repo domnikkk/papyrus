@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -21,7 +21,7 @@ package org.eclipse.papyrus.layers.stackmodel.layers;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance#isValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance#isValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,10 +34,10 @@ public interface BooleanInstance extends TypeInstance {
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(boolean)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getBooleanInstance_Value()
@@ -50,7 +50,9 @@ public interface BooleanInstance extends TypeInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance#isValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #isValue()
 	 * @generated
 	 */

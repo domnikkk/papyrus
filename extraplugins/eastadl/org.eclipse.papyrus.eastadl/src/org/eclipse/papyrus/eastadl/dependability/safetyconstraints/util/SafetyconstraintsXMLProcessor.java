@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.eclipse.papyrus.eastadl.dependability.safetyconstraints.Safetyconstra
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SafetyconstraintsXMLProcessor extends XMLProcessor {
@@ -34,17 +35,19 @@ public class SafetyconstraintsXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SafetyconstraintsXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		SafetyconstraintsPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the SafetyconstraintsResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -57,4 +60,4 @@ public class SafetyconstraintsXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //SafetyconstraintsXMLProcessor
+} // SafetyconstraintsXMLProcessor

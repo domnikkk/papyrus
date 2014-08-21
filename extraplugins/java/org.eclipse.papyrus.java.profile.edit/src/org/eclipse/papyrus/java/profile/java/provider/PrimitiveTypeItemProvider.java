@@ -30,11 +30,12 @@ import org.eclipse.papyrus.java.profile.java.PrimitiveType;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.PrimitiveType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PrimitiveTypeItemProvider
-	extends JavaGenItemProvider
-	implements
+		extends JavaGenItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class PrimitiveTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PrimitiveTypeItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class PrimitiveTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,72 +75,76 @@ public class PrimitiveTypeItemProvider
 	 * This adds a property descriptor for the Implementation Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addImplementationClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimitiveType_implementationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_implementationClass_feature", "_UI_PrimitiveType_type"),
-				 JavaPackage.Literals.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PrimitiveType_implementationClass_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_implementationClass_feature", "_UI_PrimitiveType_type"),
+						JavaPackage.Literals.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Primitive Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addBase_PrimitiveTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimitiveType_base_PrimitiveType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_base_PrimitiveType_feature", "_UI_PrimitiveType_type"),
-				 JavaPackage.Literals.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PrimitiveType_base_PrimitiveType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_base_PrimitiveType_feature", "_UI_PrimitiveType_type"),
+						JavaPackage.Literals.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Collection Implementation Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addCollectionImplementationClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimitiveType_collectionImplementationClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_collectionImplementationClass_feature", "_UI_PrimitiveType_type"),
-				 JavaPackage.Literals.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PrimitiveType_collectionImplementationClass_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveType_collectionImplementationClass_feature", "_UI_PrimitiveType_type"),
+						JavaPackage.Literals.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns PrimitiveType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,14 +156,15 @@ public class PrimitiveTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveType)object).getName();
+		String label = ((PrimitiveType) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PrimitiveType_type") :
-			getString("_UI_PrimitiveType_type") + " " + label;
+				getString("_UI_PrimitiveType_type") :
+				getString("_UI_PrimitiveType_type") + " " + label;
 	}
 
 	/**
@@ -164,6 +172,7 @@ public class PrimitiveTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,10 +180,10 @@ public class PrimitiveTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PrimitiveType.class)) {
-			case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
-			case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
+		case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -184,6 +193,7 @@ public class PrimitiveTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

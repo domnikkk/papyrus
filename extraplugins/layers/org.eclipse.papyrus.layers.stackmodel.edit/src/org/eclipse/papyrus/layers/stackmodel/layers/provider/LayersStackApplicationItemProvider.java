@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -37,11 +37,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayersStackApplicationItemProvider
-	extends FolderElementItemProvider
-	implements
+		extends FolderElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -51,6 +52,7 @@ public class LayersStackApplicationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayersStackApplicationItemProvider(AdapterFactory adapterFactory) {
@@ -61,6 +63,7 @@ public class LayersStackApplicationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,11 +76,11 @@ public class LayersStackApplicationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +101,7 @@ public class LayersStackApplicationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,6 +116,7 @@ public class LayersStackApplicationItemProvider
 	 * This returns LayersStackApplication.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,6 +128,7 @@ public class LayersStackApplicationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,6 +141,7 @@ public class LayersStackApplicationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,15 +149,15 @@ public class LayersStackApplicationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LayersStackApplication.class)) {
-			case LayersPackage.LAYERS_STACK_APPLICATION__LAYERS_STACKS:
-			case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_STACK_REGISTRY:
-			case LayersPackage.LAYERS_STACK_APPLICATION__PROPERTY_REGISTRY:
-			case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_DESCRIPTOR_REGISTRY:
-			case LayersPackage.LAYERS_STACK_APPLICATION__FACTORY:
-			case LayersPackage.LAYERS_STACK_APPLICATION__PROPERTY_SETTER_REGISTRY:
-			case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_OPERATOR_DESCRIPTOR_REGISTRY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.LAYERS_STACK_APPLICATION__LAYERS_STACKS:
+		case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_STACK_REGISTRY:
+		case LayersPackage.LAYERS_STACK_APPLICATION__PROPERTY_REGISTRY:
+		case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_DESCRIPTOR_REGISTRY:
+		case LayersPackage.LAYERS_STACK_APPLICATION__FACTORY:
+		case LayersPackage.LAYERS_STACK_APPLICATION__PROPERTY_SETTER_REGISTRY:
+		case LayersPackage.LAYERS_STACK_APPLICATION__LAYER_OPERATOR_DESCRIPTOR_REGISTRY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -160,6 +167,7 @@ public class LayersStackApplicationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,39 +175,39 @@ public class LayersStackApplicationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__LAYERS_STACKS,
-				 LayersFactory.eINSTANCE.createLayersStack()));
+						LayersFactory.eINSTANCE.createLayersStack()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__LAYER_STACK_REGISTRY,
-				 LayersFactory.eINSTANCE.createLayerStackDescriptorRegistry()));
+						LayersFactory.eINSTANCE.createLayerStackDescriptorRegistry()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__PROPERTY_REGISTRY,
-				 LayersFactory.eINSTANCE.createPropertyRegistry()));
+						LayersFactory.eINSTANCE.createPropertyRegistry()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__LAYER_DESCRIPTOR_REGISTRY,
-				 LayersFactory.eINSTANCE.createLayerDescriptorRegistry()));
+						LayersFactory.eINSTANCE.createLayerDescriptorRegistry()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__FACTORY,
-				 LayersFactory.eINSTANCE.createLayerApplicationFactory()));
+						LayersFactory.eINSTANCE.createLayerApplicationFactory()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__PROPERTY_SETTER_REGISTRY,
-				 LayersFactory.eINSTANCE.createPropertySetterRegistry()));
+						LayersFactory.eINSTANCE.createPropertySetterRegistry()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYERS_STACK_APPLICATION__LAYER_OPERATOR_DESCRIPTOR_REGISTRY,
-				 LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry()));
+						LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry()));
 	}
 
 }

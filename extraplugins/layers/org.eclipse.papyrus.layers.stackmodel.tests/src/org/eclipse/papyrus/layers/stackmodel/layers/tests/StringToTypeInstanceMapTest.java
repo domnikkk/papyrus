@@ -16,6 +16,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>String To Type Instance Map</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StringToTypeInstanceMapTest extends TestCase {
@@ -24,6 +25,7 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	 * The fixture for this String To Type Instance Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Map.Entry<String, TypeInstance> fixture = null;
@@ -31,6 +33,7 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -41,6 +44,7 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	 * Constructs a new String To Type Instance Map test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StringToTypeInstanceMapTest(String name) {
@@ -51,6 +55,7 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	 * Sets the fixture for this String To Type Instance Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(Map.Entry<String, TypeInstance> fixture) {
@@ -61,6 +66,7 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	 * Returns the fixture for this String To Type Instance Map test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Map.Entry<String, TypeInstance> getFixture() {
@@ -70,18 +76,20 @@ public class StringToTypeInstanceMapTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	protected void setUp() throws Exception {
-		setFixture((Map.Entry<String, TypeInstance>)LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP));
+		setFixture((Map.Entry<String, TypeInstance>) LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_TYPE_INSTANCE_MAP));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -90,4 +98,4 @@ public class StringToTypeInstanceMapTest extends TestCase {
 		setFixture(null);
 	}
 
-} //StringToTypeInstanceMapTest
+} // StringToTypeInstanceMapTest

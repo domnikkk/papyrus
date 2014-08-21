@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Package#getElements <em>Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.Package#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +36,10 @@ public interface Package extends PackageableElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.layers.stackmodel.layers.PackageableElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getPackage_Elements()
 	 * @model containment="true" ordered="false"

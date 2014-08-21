@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ package org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Acquire#isIsBlocking <em>Is Blocking</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Acquire#isIsBlocking <em>Is Blocking</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,10 +35,10 @@ public interface Acquire extends GrService {
 	 * Returns the value of the '<em><b>Is Blocking</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Blocking</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Blocking</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Blocking</em>' attribute.
 	 * @see #setIsBlocking(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage#getAcquire_IsBlocking()
@@ -51,7 +51,9 @@ public interface Acquire extends GrService {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Acquire#isIsBlocking <em>Is Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Blocking</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Blocking</em>' attribute.
 	 * @see #isIsBlocking()
 	 * @generated
 	 */

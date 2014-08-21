@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -49,19 +49,19 @@ public class DiagramViewEventNotifierTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-//		// Create ModelSet and Model
-//		ModelSet mngr = new ModelSet();
-//		// LayersModel
-//		LayersModel layersModel = new LayersModel();
-//		mngr.registerModel(layersModel);
-//		// Notation model
-//		NotationModel notationModel = new NotationModel();
-//		mngr.registerModel(notationModel);
-//		// Do create resources
-//		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
-//		mngr.createModels(uri);
-//		
-//		modelSet = mngr;
+		// // Create ModelSet and Model
+		// ModelSet mngr = new ModelSet();
+		// // LayersModel
+		// LayersModel layersModel = new LayersModel();
+		// mngr.registerModel(layersModel);
+		// // Notation model
+		// NotationModel notationModel = new NotationModel();
+		// mngr.registerModel(notationModel);
+		// // Do create resources
+		// URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
+		// mngr.createModels(uri);
+		//
+		// modelSet = mngr;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class DiagramViewEventNotifierTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-//		modelSet.unload();
+		// modelSet.unload();
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class DiagramViewEventNotifierTest {
 	@Test
 	public void testDiagramViewEventNotifier() {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		DiagramViewEventNotifier notifier = new DiagramViewEventNotifier(diagram);
 		assertNotNull("notifier created", notifier);
 
@@ -92,7 +92,7 @@ public class DiagramViewEventNotifierTest {
 	@Test
 	public void testDispose() {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		DiagramViewEventNotifier notifier = new DiagramViewEventNotifier(diagram);
 		assertNotNull("notifier created", notifier);
 
@@ -126,24 +126,24 @@ public class DiagramViewEventNotifierTest {
 	@Test
 	public void testFireDiagramViewAddedEvent() {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		DiagramViewEventNotifier notifier = new DiagramViewEventNotifier(diagram);
-		
+
 		TraceDiagramViewEventListener listener = new TraceDiagramViewEventListener();
 		notifier.addEventListener(listener);
-		
+
 		// Add view
-		Node node1 = diagram.createChild( NotationPackage.eINSTANCE.getShape() );
-		
+		Node node1 = diagram.createChild(NotationPackage.eINSTANCE.getShape());
+
 		// Check for event
 		assertEquals("event found", "diagramViewAdded", listener.traces.get(0).name);
-		
+
 		// Check inner creation
 		listener.traces.clear();
-		node1.createChild( NotationPackage.eINSTANCE.getShape() );
+		node1.createChild(NotationPackage.eINSTANCE.getShape());
 		assertEquals("event found", "diagramViewAdded", listener.traces.get(0).name);
 
-		
+
 	}
 
 	/**
@@ -152,18 +152,18 @@ public class DiagramViewEventNotifierTest {
 	@Test
 	public void testFireDiagramViewRemovedEvent() {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		DiagramViewEventNotifier notifier = new DiagramViewEventNotifier(diagram);
-		
+
 		TraceDiagramViewEventListener listener = new TraceDiagramViewEventListener();
 		notifier.addEventListener(listener);
-		
+
 		// Add view
-		Node node1 = diagram.createChild( NotationPackage.eINSTANCE.getShape() );
-		
+		Node node1 = diagram.createChild(NotationPackage.eINSTANCE.getShape());
+
 		// Check inner creation
 		listener.traces.clear();
-		node1.createChild( NotationPackage.eINSTANCE.getShape() );
+		node1.createChild(NotationPackage.eINSTANCE.getShape());
 
 		// Check if the node is a children of the diagram
 		assertTrue("event found", diagram.getChildren().contains(node1));
@@ -172,9 +172,9 @@ public class DiagramViewEventNotifierTest {
 		listener.traces.clear();
 		diagram.removeChild(node1);
 		assertFalse("event found", diagram.getChildren().contains(node1));
-		
+
 		assertTrue("event found", listener.traces.contains("diagramViewRemoved"));
-//		assertEquals("event found", "diagramViewRemoved", listener.traces.get(0).name);
+		// assertEquals("event found", "diagramViewRemoved", listener.traces.get(0).name);
 	}
 
 }

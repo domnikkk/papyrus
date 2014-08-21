@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -99,17 +99,17 @@ public class PluginExportUtil {
 
 	/**
 	 * Creates the plugin.
-	 * 
+	 *
 	 * @param progressMonitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 * @param pluginName
-	 *        the plugin name
+	 *            the plugin name
 	 * @param executionEnvironment
-	 *        the execution environment
+	 *            the execution environment
 	 * @param pluginVersion
-	 *        the plugin version
+	 *            the plugin version
 	 * @param provider
-	 *        the provider
+	 *            the provider
 	 * @return the i project
 	 */
 	public IProject createPlugin(IProgressMonitor progressMonitor, final String pluginName, String executionEnvironment, String pluginVersion, String provider) {
@@ -148,16 +148,19 @@ public class PluginExportUtil {
 
 		IProjectProvider fProjectProvider = new IProjectProvider() {
 
+			@Override
 			public String getProjectName() {
 				// TODO Auto-generated method stub
 				return pluginName;
 			}
 
+			@Override
 			public IProject getProject() {
 				// TODO Auto-generated method stub
 				return project;
 			}
 
+			@Override
 			public IPath getLocationPath() {
 				// TODO Auto-generated method stub
 				return ResourcesPlugin.getWorkspace().getRoot().getLocation();
@@ -183,24 +186,24 @@ public class PluginExportUtil {
 
 	/**
 	 * Export profile plugin.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param installationDirectory
-	 *        the installation directory
+	 *            the installation directory
 	 * @param installedProfilesUri
-	 *        the installed profiles uri
+	 *            the installed profiles uri
 	 * @return true, if successful
 	 */
 	public boolean exportProfilePlugin(Shell shell, Object object, String installationDirectory, List<InstalledProfileURI> installedProfilesUri) {
 
-		if(!PlatformUI.getWorkbench().saveAllEditors(true)) {
+		if (!PlatformUI.getWorkbench().saveAllEditors(true)) {
 			return false;
 		}
 
-		if(!performPreliminaryChecks(shell, object)) {
+		if (!performPreliminaryChecks(shell, object)) {
 			return false;
 		}
 
@@ -213,13 +216,13 @@ public class PluginExportUtil {
 
 	/**
 	 * Schedule export job.
-	 * 
+	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param installationDirectory
-	 *        the installation directory
+	 *            the installation directory
 	 * @param installedProfilesUri
-	 *        the installed profiles uri
+	 *            the installed profiles uri
 	 */
 	protected void scheduleExportJob(Object object, String installationDirectory, final List<InstalledProfileURI> installedProfilesUri) {
 		Object obj[] = new Object[1];
@@ -239,7 +242,7 @@ public class PluginExportUtil {
 		info.qualifier = null;
 
 		final boolean installAfterExport = true;
-		if(installAfterExport) {
+		if (installAfterExport) {
 			RuntimeInstallJob.modifyInfoForInstall(info);
 		}
 
@@ -251,24 +254,25 @@ public class PluginExportUtil {
 
 			@Override
 			public void done(IJobChangeEvent event) {
-				if(job.hasAntErrors()) {
+				if (job.hasAntErrors()) {
 					// If there were errors when running the ant scripts, inform the user where the logs can be found.
 					final File logLocation = new File(info.destinationDirectory, "logs.zip"); //$NON-NLS-1$
-					if(logLocation.exists()) {
+					if (logLocation.exists()) {
 						PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 
+							@Override
 							public void run() {
 								ExportErrorDialog dialog = new ExportErrorDialog(logLocation);
 								dialog.open();
 							}
 						});
 					}
-				} else if(event.getResult().isOK() && installAfterExport) {
+				} else if (event.getResult().isOK() && installAfterExport) {
 					// Install the export into the current running platform
 					RuntimeInstallJob installJob = new RuntimeInstallJob(PDEUIMessages.PluginExportWizard_InstallJobName, info);
 					installJob.setUser(true);
 					installJob.setProperty(IProgressConstants.ICON_PROPERTY, PDEPluginImages.DESC_FEATURE_OBJ);
-					//add preferences that contain the information about the correspondence between the installed and the local profiles
+					// add preferences that contain the information about the correspondence between the installed and the local profiles
 					editPreferences(installedProfilesUri);
 					installJob.schedule();
 				}
@@ -279,15 +283,15 @@ public class PluginExportUtil {
 
 	/**
 	 * Edits the preferences.
-	 * 
+	 *
 	 * @param installedProfilesUri
-	 *        the installed profiles uri
+	 *            the installed profiles uri
 	 */
 	private void editPreferences(List<InstalledProfileURI> installedProfilesUri) {
 		// TODO Auto-generated method stub
 		IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode("org.eclipse.papyrus.uml.export");
 		org.osgi.service.prefs.Preferences node = preferences.node("installedProfilesUriCorrespondance");
-		for(InstalledProfileURI p : installedProfilesUri) {
+		for (InstalledProfileURI p : installedProfilesUri) {
 			node.put(p.getUri_local(), p.getUri_installed());
 
 
@@ -303,40 +307,40 @@ public class PluginExportUtil {
 
 	/**
 	 * Perform preliminary checks.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @return true, if successful
 	 */
 	@SuppressWarnings("unchecked")
 	protected boolean performPreliminaryChecks(Shell shell, Object object) {
 		// Check if we are going to overwrite an existing build.xml file
-		if(!MessageDialogWithToggle.ALWAYS.equals(PDEPlugin.getDefault().getPreferenceStore().getString(IPreferenceConstants.OVERWRITE_BUILD_FILES_ON_EXPORT))) {
+		if (!MessageDialogWithToggle.ALWAYS.equals(PDEPlugin.getDefault().getPreferenceStore().getString(IPreferenceConstants.OVERWRITE_BUILD_FILES_ON_EXPORT))) {
 
 			@SuppressWarnings("rawtypes")
 			List problemModels = new ArrayList();
 
 			String installLocation = null;
 			IResource underlyingResource = null;
-			if(object instanceof WorkspacePluginModelBase) {
-				installLocation = ((WorkspacePluginModelBase)object).getInstallLocation();
-				underlyingResource = ((WorkspacePluginModelBase)object).getUnderlyingResource();
-			} else if(object instanceof WorkspaceFeatureModel) {
-				installLocation = ((WorkspaceFeatureModel)object).getInstallLocation();
-				underlyingResource = ((WorkspaceFeatureModel)object).getUnderlyingResource();
+			if (object instanceof WorkspacePluginModelBase) {
+				installLocation = ((WorkspacePluginModelBase) object).getInstallLocation();
+				underlyingResource = ((WorkspacePluginModelBase) object).getUnderlyingResource();
+			} else if (object instanceof WorkspaceFeatureModel) {
+				installLocation = ((WorkspaceFeatureModel) object).getInstallLocation();
+				underlyingResource = ((WorkspaceFeatureModel) object).getUnderlyingResource();
 			}
-			if(installLocation != null && underlyingResource != null) {
+			if (installLocation != null && underlyingResource != null) {
 				File file = new File(installLocation, "build.xml"); //$NON-NLS-1$
-				if(file.exists()) {
+				if (file.exists()) {
 					try {
 						IFile buildFile = PDEProject.getBuildProperties(underlyingResource.getProject());
 						IBuildModel buildModel = new WorkspaceBuildModel(buildFile);
 						buildModel.load();
-						if(buildModel != null) {
+						if (buildModel != null) {
 							IBuildEntry entry = buildModel.getBuild().getEntry(IBuildPropertiesConstants.PROPERTY_CUSTOM);
-							if(entry == null || !entry.contains(IBuildPropertiesConstants.TRUE)) {
+							if (entry == null || !entry.contains(IBuildPropertiesConstants.TRUE)) {
 								problemModels.add(object);
 							}
 						}
@@ -346,22 +350,23 @@ public class PluginExportUtil {
 				}
 			}
 
-			if(problemModels.size() > 0) {
+			if (problemModels.size() > 0) {
 				StringBuffer buf = new StringBuffer();
 				PDELabelProvider labelProvider = new PDELabelProvider();
 				int maxCount = 10;
-				for(Iterator<Object> iterator = problemModels.iterator(); iterator.hasNext();) {
+				for (Iterator<Object> iterator = problemModels.iterator(); iterator.hasNext();) {
 					buf.append(labelProvider.getText(iterator.next()));
 					buf.append('\n');
 					maxCount--;
-					if(maxCount <= 0) {
+					if (maxCount <= 0) {
 						buf.append(Dialog.ELLIPSIS);
 						break;
 					}
 				}
 
-				MessageDialogWithToggle dialog = MessageDialogWithToggle.openOkCancelConfirm(shell, PDEUIMessages.AntGeneratingExportWizard_0, MessageFormat.format(PDEUIMessages.AntGeneratingExportWizard_1, buf.toString()), PDEUIMessages.AntGeneratingExportWizard_2, false, PDEPlugin.getDefault().getPreferenceStore(), IPreferenceConstants.OVERWRITE_BUILD_FILES_ON_EXPORT);
-				if(dialog.getReturnCode() == Window.CANCEL) {
+				MessageDialogWithToggle dialog = MessageDialogWithToggle.openOkCancelConfirm(shell, PDEUIMessages.AntGeneratingExportWizard_0, MessageFormat.format(PDEUIMessages.AntGeneratingExportWizard_1, buf.toString()),
+						PDEUIMessages.AntGeneratingExportWizard_2, false, PDEPlugin.getDefault().getPreferenceStore(), IPreferenceConstants.OVERWRITE_BUILD_FILES_ON_EXPORT);
+				if (dialog.getReturnCode() == Window.CANCEL) {
 					return false;
 				}
 			}
@@ -380,20 +385,20 @@ public class PluginExportUtil {
 
 		/**
 		 * Instantiates a new export error dialog.
-		 * 
+		 *
 		 * @param logLocation
-		 *        the log location
+		 *            the log location
 		 */
 		public ExportErrorDialog(File logLocation) {
-			super(PlatformUI.getWorkbench().getDisplay().getActiveShell(), PDECoreMessages.FeatureBasedExportOperation_ProblemDuringExport, null, null, MessageDialog.ERROR, new String[]{ IDialogConstants.OK_LABEL }, 0);
+			super(PlatformUI.getWorkbench().getDisplay().getActiveShell(), PDECoreMessages.FeatureBasedExportOperation_ProblemDuringExport, null, null, MessageDialog.ERROR, new String[] { IDialogConstants.OK_LABEL }, 0);
 			fLogLocation = logLocation;
 		}
 
 		/**
 		 * Creates the message area.
-		 * 
+		 *
 		 * @param composite
-		 *        the composite
+		 *            the composite
 		 * @return the control
 		 * @see org.eclipse.jface.dialogs.IconAndMessageDialog#createMessageArea(org.eclipse.swt.widgets.Composite)
 		 */
@@ -424,53 +429,54 @@ public class PluginExportUtil {
 		}
 	}
 
-	//	public  void createJarFromPlugin(final IProject project, Shell parentShell){
-	//		JarPackageData description= new JarPackageData();
-	//		IPath location= new Path("projectDir+File.separator+jarFileName");
-	//		description.setJarLocation(location);
-	//		description.setManifestMainClass(mainType);
-	//		description.setExportClassFiles(true);
-	//		description.setExportOutputFolders(false);
-	//		description.setExportErrors(true);
-	//		description.setExportWarnings(true);
-	//		description.setOverwrite(true);
-	//		description.setGenerateManifest(true);
-	//		description.setElements(filestoExport);
-	//		IJarExportRunnable runnable= description.createJarExportRunnable(parentShell);
-	//		try {
-	//		new ProgressMonitorDialog(parentShell).run(true,true, runnable);S
-	//		} catch (InvocationTargetException e) {
-	//		} catch (InterruptedException e) {
-	//		} 
-	//		return;
-	//	}
+	// public void createJarFromPlugin(final IProject project, Shell parentShell){
+	// JarPackageData description= new JarPackageData();
+	// IPath location= new Path("projectDir+File.separator+jarFileName");
+	// description.setJarLocation(location);
+	// description.setManifestMainClass(mainType);
+	// description.setExportClassFiles(true);
+	// description.setExportOutputFolders(false);
+	// description.setExportErrors(true);
+	// description.setExportWarnings(true);
+	// description.setOverwrite(true);
+	// description.setGenerateManifest(true);
+	// description.setElements(filestoExport);
+	// IJarExportRunnable runnable= description.createJarExportRunnable(parentShell);
+	// try {
+	// new ProgressMonitorDialog(parentShell).run(true,true, runnable);S
+	// } catch (InvocationTargetException e) {
+	// } catch (InterruptedException e) {
+	// }
+	// return;
+	// }
 
 
 	/**
 	 * Delete.
-	 * 
+	 *
 	 * @param project
-	 *        the project to delete.
+	 *            the project to delete.
 	 * @throws CoreException
-	 *         the core exception
+	 *             the core exception
 	 */
 	public void delete(final IProject project) throws CoreException {
 		IWorkspaceRunnable runnable = new IWorkspaceRunnable() {
 
+			@Override
 			public void run(IProgressMonitor monitor) throws CoreException {
-				//				jproject.setRawClasspath(new IClasspathEntry[0], jproject
-				//						.getProject().getFullPath(), null);
-				for(int i = 0; i < MAX_RETRY; i++) {
+				// jproject.setRawClasspath(new IClasspathEntry[0], jproject
+				// .getProject().getFullPath(), null);
+				for (int i = 0; i < MAX_RETRY; i++) {
 					try {
 						IProject tmpProject = project.getProject();
-						synchronized(tmpProject) {
-							if(tmpProject.exists()) {
+						synchronized (tmpProject) {
+							if (tmpProject.exists()) {
 								tmpProject.delete(true, true, null);
 							}
 						}
 						i = MAX_RETRY;
 					} catch (CoreException e) {
-						if(i == MAX_RETRY - 1) {
+						if (i == MAX_RETRY - 1) {
 
 							throw e;
 						}
@@ -487,9 +493,9 @@ public class PluginExportUtil {
 
 	/**
 	 * Gets the plugin model for project.
-	 * 
+	 *
 	 * @param project
-	 *        the project
+	 *            the project
 	 * @return the plugin model for project
 	 */
 	public static IPluginModel getPluginModelForProject(final IProject project) {
@@ -497,11 +503,11 @@ public class PluginExportUtil {
 		PluginModelManager pmm = PDECore.getDefault().getModelManager();
 		IPluginModelBase[] wsPlugins = pmm.getWorkspaceModels();
 
-		if(wsPlugins.length == 0) {
-			//ErrorHandler.reportError("Project " + project.getName() + " is not a plugin project (no plugin projects)?", false);
+		if (wsPlugins.length == 0) {
+			// ErrorHandler.reportError("Project " + project.getName() + " is not a plugin project (no plugin projects)?", false);
 			return null;
 		}
-		for(int i = 0; i < wsPlugins.length; i++) {
+		for (int i = 0; i < wsPlugins.length; i++) {
 			IPluginModelBase wsPlugin = wsPlugins[i];
 
 
@@ -509,26 +515,26 @@ public class PluginExportUtil {
 			// May get both workspace and project plugin models
 			// (although only the latter are of interest)
 			IPluginBase pmBase = wsPlugin.getPluginBase();
-			if(pmBase == null) {
+			if (pmBase == null) {
 				continue;
 			}
 			String id = pmBase.getId();
-			if(id == null) {
+			if (id == null) {
 				continue;
 			}
 			String projName = project.getName();
-			if(projName == null) {
+			if (projName == null) {
 				continue;
 			}
 
 
 			String resourceLocation = pmBase.getModel().getUnderlyingResource().getLocation().toString();
-			if(resourceLocation.endsWith(projName + "/META-INF/MANIFEST.MF")) {
-				return (IPluginModel)wsPlugin;
+			if (resourceLocation.endsWith(projName + "/META-INF/MANIFEST.MF")) {
+				return (IPluginModel) wsPlugin;
 			}
 
 		}
-		//ErrorHandler.reportError("Could not find plugin for project " + project.getName(), false);
+		// ErrorHandler.reportError("Could not find plugin for project " + project.getName(), false);
 		return null;
 	}
 

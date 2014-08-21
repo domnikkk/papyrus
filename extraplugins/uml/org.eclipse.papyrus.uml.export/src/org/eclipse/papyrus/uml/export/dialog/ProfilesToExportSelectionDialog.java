@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,15 +49,15 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 
 	/**
 	 * Instantiates a new profiles to export selection dialog.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param multi
-	 *        the multi
+	 *            the multi
 	 * @param input
-	 *        the input
+	 *            the input
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 	public ProfilesToExportSelectionDialog(Shell shell, boolean multi, Object[] input, String title) {
 		super(shell, multi);
@@ -71,33 +71,33 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 
 	/**
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#getElementName(java.lang.Object)
-	 * 
+	 *
 	 * @param item
 	 * @return
 	 */
 
 	@Override
 	public String getElementName(Object item) {
-		if(!(item instanceof Profile)) {
+		if (!(item instanceof Profile)) {
 			return null;
 		}
-		//System.err.println(((Profile)item).getName());
+		// System.err.println(((Profile)item).getName());
 
-		return ((Profile)item).getName();
+		return ((Profile) item).getName();
 	}
 
 
 
 	/**
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#createExtendedContentArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
 
 	@Override
 	protected Control createExtendedContentArea(Composite parent) {
-		//nothing
+		// nothing
 		return null;
 	}
 
@@ -108,7 +108,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 	 */
 	/**
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#createFilter()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -128,7 +128,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 		 */
 		@Override
 		public boolean isConsistentItem(Object item) {
-			if(item instanceof Profile) {
+			if (item instanceof Profile) {
 				return true;
 			}
 			return false;
@@ -136,14 +136,14 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 
 		/**
 		 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog.ItemsFilter#matchItem(java.lang.Object)
-		 * 
+		 *
 		 * @param item
 		 * @return
 		 */
 
 		@Override
 		public boolean matchItem(Object item) {
-			if((item instanceof Profile)) {
+			if ((item instanceof Profile)) {
 				return true;
 			}
 			return false;
@@ -159,6 +159,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 	protected Comparator<Profile> getItemsComparator() {
 		Comparator<Profile> comp = new Comparator<Profile>() {
 
+			@Override
 			public int compare(Profile o1, Profile o2) {
 				return o1.getName().compareTo(o2.getName());
 			}
@@ -172,7 +173,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 	@Override
 	protected IDialogSettings getDialogSettings() {
 		IDialogSettings settings = Activator.getDefault().getDialogSettings().getSection(DIALOG_SETTINGS);
-		if(settings == null) {
+		if (settings == null) {
 			settings = Activator.getDefault().getDialogSettings().addNewSection(DIALOG_SETTINGS);
 		}
 		return settings;
@@ -180,7 +181,7 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 
 	/**
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#validateItem(java.lang.Object)
-	 * 
+	 *
 	 * @param item
 	 * @return
 	 */
@@ -198,14 +199,14 @@ public class ProfilesToExportSelectionDialog extends FilteredItemsSelectionDialo
 	 */
 	@Override
 	protected void fillContentProvider(AbstractContentProvider contentProvider, ItemsFilter itemsFilter, IProgressMonitor progressMonitor) throws CoreException {
-		if(progressMonitor != null) {
+		if (progressMonitor != null) {
 			progressMonitor.beginTask(Messages.ProfilesToExportSelectionDialog_3, totalInput.length);
 		}
-		for(int i = 0; i < totalInput.length; i++) {
+		for (int i = 0; i < totalInput.length; i++) {
 			contentProvider.add(totalInput[i], itemsFilter);
 			progressMonitor.worked(1);
 		}
-		if(progressMonitor != null) {
+		if (progressMonitor != null) {
 			progressMonitor.done();
 		}
 

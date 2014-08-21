@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,9 +35,10 @@ public class AbstractLayerOperatorImplTest {
 	 * Object to test.
 	 * As the {@link AbstractLayerOperator} is abstract, the implementation
 	 * is one of the concrete subtype.
-	 * 
+	 *
 	 */
 	protected AbstractLayerOperator abstractLayerOperator;
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -66,17 +67,17 @@ public class AbstractLayerOperatorImplTest {
 	 */
 	@Test
 	public void testIsDescriptorSet() {
-		
+
 		// Create objects requested for test
 		LayerOperatorDescriptor layerDesc = LayersFactory.eINSTANCE.createLayerOperatorDescriptor();
 
-		// Check 
-		assertFalse( "descriptor is not set after creation", abstractLayerOperator.isDescriptorSet());
-		
+		// Check
+		assertFalse("descriptor is not set after creation", abstractLayerOperator.isDescriptorSet());
+
 		// Set name and application.
 		// This should call reset, and set the descriptor
 		abstractLayerOperator.setLayerOperatorDescriptor(layerDesc);
-		
+
 		// check if the descriptor is set
 		assertTrue("descriptor is set", abstractLayerOperator.isDescriptorSet());
 		assertSame("right descriptor is set", layerDesc, abstractLayerOperator.getLayerOperatorDescriptor());

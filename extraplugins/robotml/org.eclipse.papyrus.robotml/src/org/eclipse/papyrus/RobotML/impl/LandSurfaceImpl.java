@@ -20,6 +20,7 @@ public class LandSurfaceImpl extends GroundImpl implements LandSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LandSurfaceImpl() {
@@ -29,6 +30,7 @@ public class LandSurfaceImpl extends GroundImpl implements LandSurface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class LandSurfaceImpl extends GroundImpl implements LandSurface {
 		return RobotMLPackage.Literals.LAND_SURFACE;
 	}
 
-} //LandSurfaceImpl
+} // LandSurfaceImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.common.ui.resources.FileChangeManager;
 import org.eclipse.gmf.runtime.common.ui.resources.IFileObserver;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
@@ -88,9 +89,8 @@ import org.eclipse.uml2.uml.NamedElement;
  * available either in this or another plug-in (e.g. the workspace).
  * The view is connected to the model using a content provider.
  * <p>
- * The view uses a label provider to define how model objects should be presented in the view. Each view can present the same model objects using
- * different labels and icons, if needed. Alternatively, a single label provider can be shared between views in order to ensure that objects of the
- * same type are presented in the same way everywhere.
+ * The view uses a label provider to define how model objects should be presented in the view. Each view can present the same model objects using different labels and icons, if needed. Alternatively, a single label provider can be shared between views in order
+ * to ensure that objects of the same type are presented in the same way everywhere.
  * <p>
  */
 
@@ -131,21 +131,24 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 	 */
 	class ViewContentProvider implements IStructuredContentProvider {
 
+		@Override
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
 		}
 
+		@Override
 		public void dispose() {
 		}
 
+		@Override
 		public Object[] getElements(Object parent) {
 			try {
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-				if(root != null) {
+				if (root != null) {
 					return root.findMarkers(TracepointConstants.tpOrbpMarker, true, IResource.DEPTH_INFINITE);
 				}
 			} catch (CoreException e) {
 			}
-			return new String[]{};
+			return new String[] {};
 		}
 	}
 
@@ -157,12 +160,13 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 			this.traceImage = new TraceFunctions();
 		}
 
+		@Override
 		public String getColumnText(Object obj, int index) {
-			if(obj instanceof IMarker) {
-				EObject eobj = MarkerUtils.getEObjectOfMarker((IMarker)obj);
-				if(eobj instanceof NamedElement) {
-					return ((NamedElement)eobj).getQualifiedName();
-				} else if(eobj != null) {
+			if (obj instanceof IMarker) {
+				EObject eobj = MarkerUtils.getEObjectOfMarker((IMarker) obj);
+				if (eobj instanceof NamedElement) {
+					return ((NamedElement) eobj).getQualifiedName();
+				} else if (eobj != null) {
 					return eobj.toString();
 				}
 			}
@@ -170,14 +174,15 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 
 		}
 
+		@Override
 		public Image getColumnImage(Object obj, int index) {
-			if(TraceState.skipAllTracepoints) {
+			if (TraceState.skipAllTracepoints) {
 				return TraceViewImages.getSkipAllImage();
 			}
-			if(obj instanceof IPapyrusMarker) {
-				IPapyrusMarker marker = (IPapyrusMarker)obj;
+			if (obj instanceof IPapyrusMarker) {
+				IPapyrusMarker marker = (IPapyrusMarker) obj;
 				ImageDescriptor id = traceImage.getImageDescriptorForGE(marker);
-				if(id != null) {
+				if (id != null) {
 					// TODO: leaks!
 					return id.createImage();
 				}
@@ -208,13 +213,15 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 		viewer.setLabelProvider(new ViewLabelProvider());
 		viewer.setCheckStateProvider(new ICheckStateProvider() {
 
+			@Override
 			public boolean isGrayed(Object element) {
 				return false;
 			}
 
+			@Override
 			public boolean isChecked(Object element) {
-				if(element instanceof IMarker) {
-					IMarker marker = (IMarker)element;
+				if (element instanceof IMarker) {
+					IMarker marker = (IMarker) element;
 					return marker.getAttribute(TracepointConstants.isActive, false);
 				}
 				return false;
@@ -235,11 +242,12 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 		contributeToActionBars();
 		viewer.addCheckStateListener(new ICheckStateListener() {
 
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				Object element = event.getElement();
 				boolean isChecked = event.getChecked();
-				if(element instanceof IMarker) {
-					IMarker marker = (IMarker)element;
+				if (element instanceof IMarker) {
+					IMarker marker = (IMarker) element;
 					try {
 						marker.setAttribute(TracepointConstants.isActive, isChecked);
 						switchUI();
@@ -251,28 +259,35 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 
 		fileObserver = new IFileObserver() {
 
+			@Override
 			public void handleMarkerDeleted(IMarker marker, @SuppressWarnings("rawtypes") Map attributes) {
 				switchUI();
 			}
 
+			@Override
 			public void handleMarkerChanged(IMarker marker) {
 				switchUI();
 			}
 
+			@Override
 			public void handleMarkerAdded(IMarker marker) {
 				switchUI();
 			}
 
 			// TODO need to handle?
+			@Override
 			public void handleFileRenamed(IFile oldFile, IFile file) {
 			}
 
+			@Override
 			public void handleFileMoved(IFile oldFile, IFile file) {
 			}
 
+			@Override
 			public void handleFileDeleted(IFile file) {
 			}
 
+			@Override
 			public void handleFileChanged(IFile file) {
 			}
 		};
@@ -282,7 +297,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 
 	@Override
 	public void dispose() {
-		if(fileObserver != null) {
+		if (fileObserver != null) {
 			FileChangeManager.getInstance().addFileObserver(fileObserver);
 		}
 		super.dispose();
@@ -291,6 +306,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 	public void switchUI() {
 		Display.getDefault().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				// ... do any work that updates the screen ...
 				viewer.refresh();
@@ -303,6 +319,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 		menuMgr.setRemoveAllWhenShown(true);
 		menuMgr.addMenuListener(new IMenuListener() {
 
+			@Override
 			public void menuAboutToShow(IMenuManager manager) {
 				TracepointView.this.fillContextMenu(manager);
 			}
@@ -340,7 +357,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 	}
 
 	protected void makeActions() {
-		actionSkip = new Action("Skip all", Action.AS_CHECK_BOX) {
+		actionSkip = new Action("Skip all", IAction.AS_CHECK_BOX) {
 
 			@Override
 			public void run() {
@@ -358,9 +375,9 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-				if(obj instanceof IMarker) {
-					IMarker marker = (IMarker)obj;
+				Object obj = ((IStructuredSelection) selection).getFirstElement();
+				if (obj instanceof IMarker) {
+					IMarker marker = (IMarker) obj;
 					try {
 						marker.delete();
 					} catch (CoreException e) {
@@ -377,7 +394,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 			public void run() {
 
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-				if(root != null) {
+				if (root != null) {
 					try {
 						root.deleteMarkers(TracepointConstants.tpOrbpMarker, true, 0);
 					} catch (CoreException e) {
@@ -394,15 +411,15 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-				if(obj instanceof IMarker) {
-					IMarker marker = (IMarker)obj;
+				Object obj = ((IStructuredSelection) selection).getFirstElement();
+				if (obj instanceof IMarker) {
+					IMarker marker = (IMarker) obj;
 					boolean onlyNavigatoToActiveEditor = false;
 					IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-					if(onlyNavigatoToActiveEditor) {
+					if (onlyNavigatoToActiveEditor) {
 						IEditorPart part = activePage.getActiveEditor();
-						if(part instanceof IGotoMarker) {
-							((IGotoMarker)part).gotoMarker(marker);
+						if (part instanceof IGotoMarker) {
+							((IGotoMarker) part).gotoMarker(marker);
 						}
 					} else {
 						try {
@@ -424,18 +441,18 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-				if(obj instanceof IMarker) {
+				Object obj = ((IStructuredSelection) selection).getFirstElement();
+				if (obj instanceof IMarker) {
 					// EditorPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(input, null);
-					IMarker marker = (IMarker)obj;
+					IMarker marker = (IMarker) obj;
 					EObject eobj = MarkerUtils.getEObjectOfMarker(marker);
-					if(eobj instanceof Element) {
-						TraceActionSelection tad = new TraceActionSelection(new Shell(), (IMarker)obj, (Element)eobj);
+					if (eobj instanceof Element) {
+						TraceActionSelection tad = new TraceActionSelection(new Shell(), (IMarker) obj, (Element) eobj);
 						tad.open();
-						if(tad.getReturnCode() == IDialogConstants.OK_ID) {
+						if (tad.getReturnCode() == IDialogConstants.OK_ID) {
 							Object[] result = tad.getResult();
-							int traceAction = (Integer)result[0];
-							String traceMechanism = (String)result[1];
+							int traceAction = (Integer) result[0];
+							String traceMechanism = (String) result[1];
 							try {
 								marker.setAttribute(TracepointConstants.traceAction, traceAction);
 								marker.setAttribute(TracepointConstants.traceMechanism, traceMechanism);
@@ -455,6 +472,7 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 	protected void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
 				doubleClickAction.run();
 			}
@@ -476,22 +494,23 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 	 * org.eclipse.jface.viewers.ISelection)
 	 */
 	// TODO: function not used currently
+	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
 		IStructuredSelection sSelection = null;
-		if(selection instanceof IStructuredSelection) {
-			sSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			sSelection = (IStructuredSelection) selection;
 		}
 
 		// exclude case of an empty selection which is not a Tree selection, since changing views provokes an
 		// empty selection (selection gets lost, although same element remains selected)
-		if((selection != null) && (sSelection != null) && sSelection.isEmpty()) {
+		if ((selection != null) && (sSelection != null) && sSelection.isEmpty()) {
 			return;
 		}
 		currentElement = null;
 
 		// No available selection: switch to default panel
-		if((sSelection == null) || (sSelection.size() != 1)) {
+		if ((sSelection == null) || (sSelection.size() != 1)) {
 			switchUI();
 			return;
 		}
@@ -499,21 +518,21 @@ public class TracepointView extends ViewPart implements ISelectionListener {
 		// Retrieve selected object
 		Object currentObject = sSelection.getFirstElement();
 		// If the object is an edit part, try to get semantic bridge
-		if(currentObject instanceof GraphicalEditPart) {
-			GraphicalEditPart editPart = (GraphicalEditPart)currentObject;
-			if(editPart.getModel() instanceof View) {
-				View view = (View)editPart.getModel();
-				if(view.getElement() instanceof Element) {
+		if (currentObject instanceof GraphicalEditPart) {
+			GraphicalEditPart editPart = (GraphicalEditPart) currentObject;
+			if (editPart.getModel() instanceof View) {
+				View view = (View) editPart.getModel();
+				if (view.getElement() instanceof Element) {
 					currentObject = view.getElement();
 				}
 			}
-		} else if(currentObject instanceof IAdaptable) {
+		} else if (currentObject instanceof IAdaptable) {
 			// modisco ModelElementItem supports IAdaptable (cleaner than cast / dependency with modisco)
-			currentObject = ((IAdaptable)currentObject).getAdapter(EObject.class);
+			currentObject = ((IAdaptable) currentObject).getAdapter(EObject.class);
 		}
 
-		if(currentObject instanceof Element) {
-			currentElement = (Element)currentObject;
+		if (currentObject instanceof Element) {
+			currentElement = (Element) currentObject;
 			// switchUI();
 		}
 	}

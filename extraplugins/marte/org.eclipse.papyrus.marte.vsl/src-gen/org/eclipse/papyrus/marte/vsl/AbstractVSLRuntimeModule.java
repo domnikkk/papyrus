@@ -14,7 +14,7 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {org.eclipse.papyrus.marte.vsl.VSLRuntimeModule}
  */
- @SuppressWarnings("all")
+@SuppressWarnings("all")
 public abstract class AbstractVSLRuntimeModule extends DefaultRuntimeModule {
 
 	protected Properties properties = null;
@@ -24,16 +24,17 @@ public abstract class AbstractVSLRuntimeModule extends DefaultRuntimeModule {
 		properties = tryBindProperties(binder, "org/eclipse/papyrus/marte/vsl/VSL.properties");
 		super.configure(binder);
 	}
-	
+
 	public void configureLanguageName(Binder binder) {
 		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.eclipse.papyrus.marte.vsl.VSL");
 	}
-	
+
 	public void configureFileExtensions(Binder binder) {
-		if (properties == null || properties.getProperty(Constants.FILE_EXTENSIONS) == null)
+		if (properties == null || properties.getProperty(Constants.FILE_EXTENSIONS) == null) {
 			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("vsl");
+		}
 	}
-	
+
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
 	public java.lang.ClassLoader bindClassLoaderToInstance() {
 		return getClass().getClassLoader();
@@ -55,6 +56,7 @@ public abstract class AbstractVSLRuntimeModule extends DefaultRuntimeModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.parser.ITokenToStringConverter> bindITokenToStringConverter() {
 		return org.eclipse.xtext.parser.antlr.AntlrTokenToStringConverter.class;
 	}
@@ -80,26 +82,31 @@ public abstract class AbstractVSLRuntimeModule extends DefaultRuntimeModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.parser.antlr.ITokenDefProvider> bindITokenDefProvider() {
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator> bindVSLJavaValidator() {
+	@org.eclipse.xtext.service.SingletonBinding(eager = true)
+	public Class<? extends org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator> bindVSLJavaValidator() {
 		return org.eclipse.papyrus.marte.vsl.validation.VSLJavaValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return org.eclipse.papyrus.marte.vsl.scoping.VSLScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public void configureIScopeProviderDelegate(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.eclipse.xtext.scoping.impl.SimpleLocalScopeProvider.class);
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE))
+				.to(org.eclipse.xtext.scoping.impl.SimpleLocalScopeProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider.class;
 	}
@@ -110,11 +117,13 @@ public abstract class AbstractVSLRuntimeModule extends DefaultRuntimeModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.exporting.SimpleNamesFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return org.eclipse.xtext.naming.SimpleNameProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return org.eclipse.papyrus.marte.vsl.formatting.VSLFormatter.class;
 	}

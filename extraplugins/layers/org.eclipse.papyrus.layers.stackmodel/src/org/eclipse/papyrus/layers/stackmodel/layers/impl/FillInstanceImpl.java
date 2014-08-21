@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -29,8 +29,8 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl#getTransparency <em>Transparency</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl#getFillColor <em>Fill Color</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl#getTransparency <em>Transparency</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.FillInstanceImpl#getFillColor <em>Fill Color</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The default value of the '{@link #getTransparency() <em>Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTransparency()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The cached value of the '{@link #getTransparency() <em>Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTransparency()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	 * The cached value of the '{@link #getFillColor() <em>Fill Color</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFillColor()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FillInstanceImpl() {
@@ -79,6 +83,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getTransparency() {
 		return transparency;
 	}
@@ -98,20 +105,25 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTransparency(int newTransparency) {
 		int oldTransparency = transparency;
 		transparency = newTransparency;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FILL_INSTANCE__TRANSPARENCY, oldTransparency, transparency));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ColorInstance getFillColor() {
 		return fillColor;
 	}
@@ -119,6 +131,7 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetFillColor(ColorInstance newFillColor, NotificationChain msgs) {
@@ -126,7 +139,11 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 		fillColor = newFillColor;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LayersPackage.FILL_INSTANCE__FILL_COLOR, oldFillColor, newFillColor);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -134,32 +151,40 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFillColor(ColorInstance newFillColor) {
 		if (newFillColor != fillColor) {
 			NotificationChain msgs = null;
-			if (fillColor != null)
-				msgs = ((InternalEObject)fillColor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.FILL_INSTANCE__FILL_COLOR, null, msgs);
-			if (newFillColor != null)
-				msgs = ((InternalEObject)newFillColor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.FILL_INSTANCE__FILL_COLOR, null, msgs);
+			if (fillColor != null) {
+				msgs = ((InternalEObject) fillColor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.FILL_INSTANCE__FILL_COLOR, null, msgs);
+			}
+			if (newFillColor != null) {
+				msgs = ((InternalEObject) newFillColor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.FILL_INSTANCE__FILL_COLOR, null, msgs);
+			}
 			msgs = basicSetFillColor(newFillColor, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.FILL_INSTANCE__FILL_COLOR, newFillColor, newFillColor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				return basicSetFillColor(null, msgs);
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			return basicSetFillColor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,15 +192,16 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
-				return getTransparency();
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				return getFillColor();
+		case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
+			return getTransparency();
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			return getFillColor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,17 +209,18 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
-				setTransparency((Integer)newValue);
-				return;
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				setFillColor((ColorInstance)newValue);
-				return;
+		case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
+			setTransparency((Integer) newValue);
+			return;
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			setFillColor((ColorInstance) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,17 +228,18 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
-				setTransparency(TRANSPARENCY_EDEFAULT);
-				return;
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				setFillColor((ColorInstance)null);
-				return;
+		case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
+			setTransparency(TRANSPARENCY_EDEFAULT);
+			return;
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			setFillColor((ColorInstance) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -219,15 +247,16 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
-				return transparency != TRANSPARENCY_EDEFAULT;
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				return fillColor != null;
+		case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
+			return transparency != TRANSPARENCY_EDEFAULT;
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			return fillColor != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,14 +264,16 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromString(String value) {
-		
-		if(value==null || value.length()==0) {
+
+		if (value == null || value.length() == 0) {
 			return;
 		}
-			
+
 		// The value should contains the 2 values, separated by comma
 		// "transparency, fillColor"
 		String[] values = value.split(",");
@@ -257,16 +288,18 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromInstance(TypeInstance value) {
-		
+
 		// Check if the value is of the right instance
-		if( ! getClass().isInstance(value) ) {
+		if (!getClass().isInstance(value)) {
 			return;
 		}
-		
-		FillInstance instance = (FillInstance)value;
+
+		FillInstance instance = (FillInstance) value;
 		setTransparency(instance.getTransparency());
 		// Set by copy
 		getFillColor().setValueFromInstance(instance.getFillColor());
@@ -275,11 +308,14 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (transparency: ");
@@ -288,4 +324,4 @@ public class FillInstanceImpl extends TypeInstanceImpl implements FillInstance {
 		return result.toString();
 	}
 
-} //FillInstanceImpl
+} // FillInstanceImpl

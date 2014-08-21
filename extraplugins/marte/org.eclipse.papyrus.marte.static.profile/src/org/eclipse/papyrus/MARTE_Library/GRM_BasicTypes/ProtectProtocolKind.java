@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Protect Protocol Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.GRM_BasicTypesPackage#getProtectProtocolKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIFO_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>No Preemption</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NO_PREEMPTION_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Priority Ceiling</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PRIORITY_CEILING_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Priority Inheritance</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PRIORITY_INHERITANCE_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Stack Based</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STACK_BASED_VALUE
 	 * @generated
 	 * @ordered
@@ -83,6 +89,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -93,6 +100,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -103,10 +111,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIFO
 	 * @model
 	 * @generated
@@ -118,10 +126,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>No Preemption</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>No Preemption</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>No Preemption</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NO_PREEMPTION
 	 * @model name="NoPreemption"
 	 * @generated
@@ -133,10 +141,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Priority Ceiling</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Priority Ceiling</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Priority Ceiling</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PRIORITY_CEILING
 	 * @model name="PriorityCeiling"
 	 * @generated
@@ -148,10 +156,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Priority Inheritance</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Priority Inheritance</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Priority Inheritance</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PRIORITY_INHERITANCE
 	 * @model name="PriorityInheritance"
 	 * @generated
@@ -163,10 +171,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Stack Based</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Stack Based</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Stack Based</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STACK_BASED
 	 * @model name="StackBased"
 	 * @generated
@@ -178,10 +186,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF
 	 * @model name="Undef"
 	 * @generated
@@ -193,10 +201,10 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="Other"
 	 * @generated
@@ -208,23 +216,25 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * An array of all the '<em><b>Protect Protocol Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final ProtectProtocolKind[] VALUES_ARRAY =
-		new ProtectProtocolKind[] {
-			FIFO,
-			NO_PREEMPTION,
-			PRIORITY_CEILING,
-			PRIORITY_INHERITANCE,
-			STACK_BASED,
-			UNDEF,
-			OTHER,
-		};
+			new ProtectProtocolKind[] {
+					FIFO,
+					NO_PREEMPTION,
+					PRIORITY_CEILING,
+					PRIORITY_INHERITANCE,
+					STACK_BASED,
+					UNDEF,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Protect Protocol Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ProtectProtocolKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -233,6 +243,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * Returns the '<em><b>Protect Protocol Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ProtectProtocolKind get(String literal) {
@@ -249,6 +260,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * Returns the '<em><b>Protect Protocol Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ProtectProtocolKind getByName(String name) {
@@ -265,17 +277,25 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * Returns the '<em><b>Protect Protocol Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ProtectProtocolKind get(int value) {
 		switch (value) {
-			case FIFO_VALUE: return FIFO;
-			case NO_PREEMPTION_VALUE: return NO_PREEMPTION;
-			case PRIORITY_CEILING_VALUE: return PRIORITY_CEILING;
-			case PRIORITY_INHERITANCE_VALUE: return PRIORITY_INHERITANCE;
-			case STACK_BASED_VALUE: return STACK_BASED;
-			case UNDEF_VALUE: return UNDEF;
-			case OTHER_VALUE: return OTHER;
+		case FIFO_VALUE:
+			return FIFO;
+		case NO_PREEMPTION_VALUE:
+			return NO_PREEMPTION;
+		case PRIORITY_CEILING_VALUE:
+			return PRIORITY_CEILING;
+		case PRIORITY_INHERITANCE_VALUE:
+			return PRIORITY_INHERITANCE;
+		case STACK_BASED_VALUE:
+			return STACK_BASED;
+		case UNDEF_VALUE:
+			return UNDEF;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -283,6 +303,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -290,6 +311,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -297,6 +319,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -305,6 +328,7 @@ public enum ProtectProtocolKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ProtectProtocolKind(int value, String name, String literal) {
@@ -316,39 +340,46 @@ public enum ProtectProtocolKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ProtectProtocolKind
+
+} // ProtectProtocolKind

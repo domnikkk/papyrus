@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,23 +43,25 @@ public class CDOStateDiagramDecorator
 		this.stylizer = stylizer;
 	}
 
+	@Override
 	public void activate() {
 		// pass
 	}
 
+	@Override
 	public void refresh() {
 		removeDecoration();
 
 		View view = (View) getDecoratorTarget().getAdapter(View.class);
 		EObject element = ((view == null) || !view.isSetElement())
-			? null
-			: view.getElement();
+				? null
+				: view.getElement();
 		CDOObject cdo = (element == null)
-			? null
-			: CDOUtils.getCDOObject(element);
+				? null
+				: CDOUtils.getCDOObject(element);
 		if (cdo != null) {
 			EditPart editPart = (EditPart) getDecoratorTarget().getAdapter(
-				EditPart.class);
+					EditPart.class);
 
 			// does the view, itself, have a conflict or lock state?
 			DawnState state = CDOStateAdapter.getState(view);
@@ -73,13 +75,13 @@ public class CDOStateDiagramDecorator
 			if (image != null) {
 				if (editPart instanceof ShapeEditPart) {
 					int margin = MapModeUtil.getMapMode(
-						((GraphicalEditPart) editPart).getFigure()).DPtoLP(-1);
+							((GraphicalEditPart) editPart).getFigure()).DPtoLP(-1);
 					setDecoration(getDecoratorTarget().addShapeDecoration(
-						image, Direction.SOUTH_EAST, margin, true));
+							image, Direction.SOUTH_EAST, margin, true));
 				} else if (view instanceof Edge) {
 					int percent = 50;
 					setDecoration(getDecoratorTarget().addConnectionDecoration(
-						image, percent, true));
+							image, percent, true));
 				}
 			}
 		}

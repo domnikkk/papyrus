@@ -17,12 +17,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.java.profile.java.JavaFactory
  * @model kind="package"
  * @generated
@@ -32,6 +33,7 @@ public interface JavaPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "java";
@@ -40,6 +42,7 @@ public interface JavaPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/JAVA/1";
@@ -48,6 +51,7 @@ public interface JavaPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "java";
@@ -56,6 +60,7 @@ public interface JavaPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	JavaPackage eINSTANCE = org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl.init();
@@ -64,6 +69,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaNamedElement()
 	 * @generated
@@ -74,6 +80,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -83,6 +90,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -92,6 +100,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -101,6 +110,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -110,6 +120,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -119,6 +130,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -128,6 +140,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl <em>Gen</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaGen()
 	 * @generated
@@ -138,6 +151,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -147,6 +161,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -156,6 +171,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -165,6 +181,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -174,6 +191,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -183,6 +201,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -192,6 +211,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -201,6 +221,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Gen</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -210,6 +231,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaClassImpl <em>Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaClassImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaClass()
 	 * @generated
@@ -220,6 +242,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -229,6 +252,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -238,6 +262,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -247,6 +272,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -256,6 +282,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -265,6 +292,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -274,6 +302,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -283,6 +312,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -292,6 +322,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -301,6 +332,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -310,6 +342,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -319,6 +352,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -328,6 +362,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -337,6 +372,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -346,6 +382,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaPackage_Impl <em>Package </em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackage_Impl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaPackage_()
 	 * @generated
@@ -356,6 +393,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -365,6 +403,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -374,6 +413,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -383,6 +423,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -392,6 +433,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -401,6 +443,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -410,6 +453,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -419,6 +463,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -428,6 +473,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -437,6 +483,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Package </em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -446,6 +493,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaMethodImpl <em>Method</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaMethodImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaMethod()
 	 * @generated
@@ -456,6 +504,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -465,6 +514,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -474,6 +524,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -483,6 +534,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -492,6 +544,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -501,6 +554,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -510,6 +564,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -519,6 +574,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -528,6 +584,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Native</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -537,6 +594,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Synchronized</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -546,6 +604,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Constructor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -555,6 +614,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -564,6 +624,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -573,6 +634,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -582,6 +644,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -591,6 +654,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaParameterImpl <em>Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaParameterImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaParameter()
 	 * @generated
@@ -601,6 +665,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -610,6 +675,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -619,6 +685,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -628,6 +695,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -637,6 +705,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -646,6 +715,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -655,6 +725,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -664,6 +735,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -673,6 +745,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl <em>Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaProperty()
 	 * @generated
@@ -683,6 +756,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -692,6 +766,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -701,6 +776,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -710,6 +786,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -719,6 +796,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -728,6 +806,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -737,6 +816,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -746,6 +826,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -755,6 +836,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Transient</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -764,6 +846,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Generate Getter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -773,6 +856,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Generate Setter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -782,6 +866,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -791,6 +876,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -800,6 +886,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Explicit Required Imports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -809,6 +896,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -818,6 +906,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl <em>Primitive Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getPrimitiveType()
 	 * @generated
@@ -828,6 +917,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -837,6 +927,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -846,6 +937,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -855,6 +947,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -864,6 +957,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -873,6 +967,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -882,6 +977,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -891,6 +987,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Implementation Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -900,6 +997,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Primitive Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -909,6 +1007,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Collection Implementation Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -918,6 +1017,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Primitive Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -927,6 +1027,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaProjectImpl <em>Project</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaProjectImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaProject()
 	 * @generated
@@ -937,6 +1038,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -946,6 +1048,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -955,6 +1058,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -964,6 +1068,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -973,6 +1078,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -982,6 +1088,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -991,6 +1098,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1000,6 +1108,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1009,6 +1118,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1018,6 +1128,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaSrcFolderImpl <em>Src Folder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaSrcFolderImpl
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaSrcFolder()
 	 * @generated
@@ -1028,6 +1139,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1037,6 +1149,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1046,6 +1159,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1055,6 +1169,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1064,6 +1179,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Generated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1073,6 +1189,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Src Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1082,6 +1199,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1091,6 +1209,7 @@ public interface JavaPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1100,6 +1219,7 @@ public interface JavaPackage extends EPackage {
 	 * The number of structural features of the '<em>Src Folder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1109,6 +1229,7 @@ public interface JavaPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.java.profile.java.TrueFalseDefault <em>True False Default</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getTrueFalseDefault()
 	 * @generated
@@ -1120,6 +1241,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaClass <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass
 	 * @generated
@@ -1130,6 +1252,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaClass#getBase_Classifier <em>Base Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Classifier</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#getBase_Classifier()
 	 * @see #getJavaClass()
@@ -1141,6 +1264,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Final</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#isFinal()
 	 * @see #getJavaClass()
@@ -1152,6 +1276,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isAbstract <em>Is Abstract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#isAbstract()
 	 * @see #getJavaClass()
@@ -1163,6 +1288,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaClass#isStatic <em>Is Static</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Static</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#isStatic()
 	 * @see #getJavaClass()
@@ -1174,6 +1300,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.java.profile.java.JavaClass#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Explicit Plain Text Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#getExplicitPlainTextRequiredImports()
 	 * @see #getJavaClass()
@@ -1185,6 +1312,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.java.profile.java.JavaClass#getExplicitRequiredImports <em>Explicit Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Explicit Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaClass#getExplicitRequiredImports()
 	 * @see #getJavaClass()
@@ -1196,6 +1324,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaGen <em>Gen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Gen</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaGen
 	 * @generated
@@ -1206,6 +1335,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaGen#getSrcName <em>Src Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Src Name</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaGen#getSrcName()
 	 * @see #getJavaGen()
@@ -1217,6 +1347,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaGen#getProjectName <em>Project Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Project Name</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaGen#getProjectName()
 	 * @see #getJavaGen()
@@ -1228,6 +1359,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Named Element</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement
 	 * @generated
@@ -1238,6 +1370,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement#getName()
 	 * @see #getJavaNamedElement()
@@ -1249,6 +1382,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Author</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement#getAuthor()
 	 * @see #getJavaNamedElement()
@@ -1260,6 +1394,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement#getVersion()
 	 * @see #getJavaNamedElement()
@@ -1271,6 +1406,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement#getComment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Comment</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement#getComment()
 	 * @see #getJavaNamedElement()
@@ -1282,6 +1418,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaNamedElement#isGenerated <em>Is Generated</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Generated</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaNamedElement#isGenerated()
 	 * @see #getJavaNamedElement()
@@ -1293,6 +1430,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaPackage_ <em>Package </em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Package </em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage_
 	 * @generated
@@ -1303,6 +1441,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaPackage_#getPackageName <em>Package Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Package Name</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage_#getPackageName()
 	 * @see #getJavaPackage_()
@@ -1314,6 +1453,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaPackage_#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaPackage_#getBase_Package()
 	 * @see #getJavaPackage_()
@@ -1325,6 +1465,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Method</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod
 	 * @generated
@@ -1335,6 +1476,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isStatic <em>Is Static</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Static</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isStatic()
 	 * @see #getJavaMethod()
@@ -1346,6 +1488,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Final</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isFinal()
 	 * @see #getJavaMethod()
@@ -1357,6 +1500,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isAbstract <em>Is Abstract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isAbstract()
 	 * @see #getJavaMethod()
@@ -1368,6 +1512,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isNative <em>Is Native</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Native</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isNative()
 	 * @see #getJavaMethod()
@@ -1379,6 +1524,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isSynchronized <em>Is Synchronized</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Synchronized</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isSynchronized()
 	 * @see #getJavaMethod()
@@ -1390,6 +1536,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#isConstructor <em>Is Constructor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Constructor</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#isConstructor()
 	 * @see #getJavaMethod()
@@ -1401,6 +1548,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#getBase_Operation <em>Base Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Operation</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#getBase_Operation()
 	 * @see #getJavaMethod()
@@ -1412,6 +1560,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Explicit Plain Text Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#getExplicitPlainTextRequiredImports()
 	 * @see #getJavaMethod()
@@ -1423,6 +1572,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.java.profile.java.JavaMethod#getExplicitRequiredImports <em>Explicit Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Explicit Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaMethod#getExplicitRequiredImports()
 	 * @see #getJavaMethod()
@@ -1434,6 +1584,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Parameter</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaParameter
 	 * @generated
@@ -1444,6 +1595,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaParameter#isFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Final</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaParameter#isFinal()
 	 * @see #getJavaParameter()
@@ -1455,6 +1607,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaParameter#getBase_Parameter <em>Base Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Parameter</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaParameter#getBase_Parameter()
 	 * @see #getJavaParameter()
@@ -1466,6 +1619,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty
 	 * @generated
@@ -1476,6 +1630,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isAbstract <em>Is Abstract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#isAbstract()
 	 * @see #getJavaProperty()
@@ -1487,6 +1642,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Final</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#isFinal()
 	 * @see #getJavaProperty()
@@ -1498,6 +1654,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#getBase_Property()
 	 * @see #getJavaProperty()
@@ -1509,6 +1666,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isTransient <em>Is Transient</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Transient</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#isTransient()
 	 * @see #getJavaProperty()
@@ -1520,6 +1678,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateGetter <em>Generate Getter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Generate Getter</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateGetter()
 	 * @see #getJavaProperty()
@@ -1531,6 +1690,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateSetter <em>Generate Setter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Generate Setter</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#getGenerateSetter()
 	 * @see #getJavaProperty()
@@ -1542,6 +1702,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#isStatic <em>Is Static</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Static</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#isStatic()
 	 * @see #getJavaProperty()
@@ -1553,6 +1714,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Explicit Plain Text Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitPlainTextRequiredImports()
 	 * @see #getJavaProperty()
@@ -1564,6 +1726,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitRequiredImports <em>Explicit Required Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Explicit Required Imports</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProperty#getExplicitRequiredImports()
 	 * @see #getJavaProperty()
@@ -1575,6 +1738,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType <em>Primitive Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Primitive Type</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.PrimitiveType
 	 * @generated
@@ -1585,6 +1749,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getImplementationClass <em>Implementation Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Implementation Class</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.PrimitiveType#getImplementationClass()
 	 * @see #getPrimitiveType()
@@ -1596,6 +1761,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getBase_PrimitiveType <em>Base Primitive Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Primitive Type</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.PrimitiveType#getBase_PrimitiveType()
 	 * @see #getPrimitiveType()
@@ -1607,6 +1773,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.java.profile.java.PrimitiveType#getCollectionImplementationClass <em>Collection Implementation Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Collection Implementation Class</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.PrimitiveType#getCollectionImplementationClass()
 	 * @see #getPrimitiveType()
@@ -1618,6 +1785,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Project</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProject
 	 * @generated
@@ -1628,6 +1796,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaProject#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaProject#getBase_Package()
 	 * @see #getJavaProject()
@@ -1639,6 +1808,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.java.profile.java.JavaSrcFolder <em>Src Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Src Folder</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaSrcFolder
 	 * @generated
@@ -1649,6 +1819,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.java.profile.java.JavaSrcFolder#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.JavaSrcFolder#getBase_Package()
 	 * @see #getJavaSrcFolder()
@@ -1660,6 +1831,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.java.profile.java.TrueFalseDefault <em>True False Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>True False Default</em>'.
 	 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 	 * @generated
@@ -1670,6 +1842,7 @@ public interface JavaPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1679,12 +1852,13 @@ public interface JavaPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -1692,6 +1866,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaClassImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaClass()
 		 * @generated
@@ -1702,6 +1877,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_CLASS__BASE_CLASSIFIER = eINSTANCE.getJavaClass_Base_Classifier();
@@ -1710,6 +1886,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_CLASS__IS_FINAL = eINSTANCE.getJavaClass_IsFinal();
@@ -1718,6 +1895,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_CLASS__IS_ABSTRACT = eINSTANCE.getJavaClass_IsAbstract();
@@ -1726,6 +1904,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Static</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_CLASS__IS_STATIC = eINSTANCE.getJavaClass_IsStatic();
@@ -1734,6 +1913,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_CLASS__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS = eINSTANCE.getJavaClass_ExplicitPlainTextRequiredImports();
@@ -1742,6 +1922,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Required Imports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_CLASS__EXPLICIT_REQUIRED_IMPORTS = eINSTANCE.getJavaClass_ExplicitRequiredImports();
@@ -1750,6 +1931,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl <em>Gen</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaGen()
 		 * @generated
@@ -1760,6 +1942,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Src Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_GEN__SRC_NAME = eINSTANCE.getJavaGen_SrcName();
@@ -1768,6 +1951,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Project Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_GEN__PROJECT_NAME = eINSTANCE.getJavaGen_ProjectName();
@@ -1776,6 +1960,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaNamedElement()
 		 * @generated
@@ -1786,6 +1971,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_NAMED_ELEMENT__NAME = eINSTANCE.getJavaNamedElement_Name();
@@ -1794,6 +1980,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_NAMED_ELEMENT__AUTHOR = eINSTANCE.getJavaNamedElement_Author();
@@ -1802,6 +1989,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_NAMED_ELEMENT__VERSION = eINSTANCE.getJavaNamedElement_Version();
@@ -1810,6 +1998,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_NAMED_ELEMENT__COMMENT = eINSTANCE.getJavaNamedElement_Comment();
@@ -1818,6 +2007,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Generated</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_NAMED_ELEMENT__IS_GENERATED = eINSTANCE.getJavaNamedElement_IsGenerated();
@@ -1826,6 +2016,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaPackage_Impl <em>Package </em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackage_Impl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaPackage_()
 		 * @generated
@@ -1836,6 +2027,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PACKAGE___PACKAGE_NAME = eINSTANCE.getJavaPackage__PackageName();
@@ -1844,6 +2036,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_PACKAGE___BASE_PACKAGE = eINSTANCE.getJavaPackage__Base_Package();
@@ -1852,6 +2045,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaMethodImpl <em>Method</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaMethodImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaMethod()
 		 * @generated
@@ -1862,6 +2056,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Static</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_STATIC = eINSTANCE.getJavaMethod_IsStatic();
@@ -1870,6 +2065,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_FINAL = eINSTANCE.getJavaMethod_IsFinal();
@@ -1878,6 +2074,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_ABSTRACT = eINSTANCE.getJavaMethod_IsAbstract();
@@ -1886,6 +2083,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Native</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_NATIVE = eINSTANCE.getJavaMethod_IsNative();
@@ -1894,6 +2092,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Synchronized</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_SYNCHRONIZED = eINSTANCE.getJavaMethod_IsSynchronized();
@@ -1902,6 +2101,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Constructor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__IS_CONSTRUCTOR = eINSTANCE.getJavaMethod_IsConstructor();
@@ -1910,6 +2110,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_METHOD__BASE_OPERATION = eINSTANCE.getJavaMethod_Base_Operation();
@@ -1918,6 +2119,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_METHOD__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS = eINSTANCE.getJavaMethod_ExplicitPlainTextRequiredImports();
@@ -1926,6 +2128,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Required Imports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_METHOD__EXPLICIT_REQUIRED_IMPORTS = eINSTANCE.getJavaMethod_ExplicitRequiredImports();
@@ -1934,6 +2137,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaParameterImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaParameter()
 		 * @generated
@@ -1944,6 +2148,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PARAMETER__IS_FINAL = eINSTANCE.getJavaParameter_IsFinal();
@@ -1952,6 +2157,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_PARAMETER__BASE_PARAMETER = eINSTANCE.getJavaParameter_Base_Parameter();
@@ -1960,6 +2166,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaProperty()
 		 * @generated
@@ -1970,6 +2177,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__IS_ABSTRACT = eINSTANCE.getJavaProperty_IsAbstract();
@@ -1978,6 +2186,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__IS_FINAL = eINSTANCE.getJavaProperty_IsFinal();
@@ -1986,6 +2195,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_PROPERTY__BASE_PROPERTY = eINSTANCE.getJavaProperty_Base_Property();
@@ -1994,6 +2204,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Transient</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__IS_TRANSIENT = eINSTANCE.getJavaProperty_IsTransient();
@@ -2002,6 +2213,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generate Getter</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__GENERATE_GETTER = eINSTANCE.getJavaProperty_GenerateGetter();
@@ -2010,6 +2222,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generate Setter</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__GENERATE_SETTER = eINSTANCE.getJavaProperty_GenerateSetter();
@@ -2018,6 +2231,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Static</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__IS_STATIC = eINSTANCE.getJavaProperty_IsStatic();
@@ -2026,6 +2240,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Plain Text Required Imports</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS = eINSTANCE.getJavaProperty_ExplicitPlainTextRequiredImports();
@@ -2034,6 +2249,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Explicit Required Imports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS = eINSTANCE.getJavaProperty_ExplicitRequiredImports();
@@ -2042,6 +2258,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl <em>Primitive Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getPrimitiveType()
 		 * @generated
@@ -2052,6 +2269,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Implementation Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRIMITIVE_TYPE__IMPLEMENTATION_CLASS = eINSTANCE.getPrimitiveType_ImplementationClass();
@@ -2060,6 +2278,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Primitive Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE = eINSTANCE.getPrimitiveType_Base_PrimitiveType();
@@ -2068,6 +2287,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Collection Implementation Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS = eINSTANCE.getPrimitiveType_CollectionImplementationClass();
@@ -2076,6 +2296,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaProjectImpl <em>Project</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaProjectImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaProject()
 		 * @generated
@@ -2086,6 +2307,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_PROJECT__BASE_PACKAGE = eINSTANCE.getJavaProject_Base_Package();
@@ -2094,6 +2316,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.impl.JavaSrcFolderImpl <em>Src Folder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaSrcFolderImpl
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getJavaSrcFolder()
 		 * @generated
@@ -2104,6 +2327,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference JAVA_SRC_FOLDER__BASE_PACKAGE = eINSTANCE.getJavaSrcFolder_Base_Package();
@@ -2112,6 +2336,7 @@ public interface JavaPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.java.profile.java.TrueFalseDefault <em>True False Default</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.java.profile.java.TrueFalseDefault
 		 * @see org.eclipse.papyrus.java.profile.java.impl.JavaPackageImpl#getTrueFalseDefault()
 		 * @generated
@@ -2120,4 +2345,4 @@ public interface JavaPackage extends EPackage {
 
 	}
 
-} //JavaPackage
+} // JavaPackage

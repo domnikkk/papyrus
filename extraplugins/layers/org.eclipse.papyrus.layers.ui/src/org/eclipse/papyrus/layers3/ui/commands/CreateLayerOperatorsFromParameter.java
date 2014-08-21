@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,7 +35,7 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 	 * Value used to compute new names.
 	 */
 	private static int creationCount = 0;
-	
+
 	/**
 	 * ID of the layer to create
 	 */
@@ -47,7 +47,7 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 	private LayersStackApplication application;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -57,7 +57,7 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 
 	/**
 	 * Prepare the execution of the command
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers3.ui.commands.AbstractLayersCommand#preExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext, java.util.List)
 	 *
 	 * @param event
@@ -69,19 +69,19 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 	@Override
 	protected boolean preExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) throws ExecutionException {
 
-		if(!isEnabled(context, selections)) {
+		if (!isEnabled(context, selections)) {
 			return false;
 		}
 
 		// Get command parameters
 		newLayerID = event.getParameter("org.eclipse.papyrus.layers.ui.createLayerOperator.parameters");
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug("Create Layer Operators '" + newLayerID + "'.");
 		}
-		
+
 		// Get application
 		try {
-		   application = lookupLayersStackApplicationChecked(context);
+			application = lookupLayersStackApplicationChecked(context);
 		} catch (NotFoundException e) {
 			// Silently fails
 			return false;
@@ -92,12 +92,13 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 			// Silently fails
 			return false;
 		}
-	
+
 
 		return true;
 	}
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers3.ui.commands.AbstractLayersCommand#doExecute(org.eclipse.core.commands.ExecutionEvent, org.eclipse.core.expressions.IEvaluationContext, java.util.List)
 	 *
 	 * @param event
@@ -106,10 +107,10 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 	 */
 	@Override
 	protected void doExecute(ExecutionEvent event, IEvaluationContext context, List<Object> selections) {
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug(this.getClass().getSimpleName() + ".doExecute()");
 		}
-		
+
 		// Create a layer !
 		AbstractLayerOperator layerOperator;
 		try {
@@ -117,23 +118,23 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 			layerOperator.setName("layer" + creationCount++);
 			layerOperator.setApplication(application);
 		} catch (LayersException e) {
-//			e.printStackTrace();
-			log.error("Log - " + this.getClass().getName() 
+			// e.printStackTrace();
+			log.error("Log - " + this.getClass().getName()
 					+ " - " + e.getMessage(), e);
 			return;
 		}
-		
+
 		// insert layer in selected object
 		Object selection = selections.get(0);
-		if(selection instanceof LayersStack) {
-			LayersStack stack = (LayersStack)selection;
+		if (selection instanceof LayersStack) {
+			LayersStack stack = (LayersStack) selection;
 			stack.setLayers(layerOperator);
 		}
 		else {
-			LayerOperator operator = (LayerOperator)selection;
+			LayerOperator operator = (LayerOperator) selection;
 			operator.getLayers().add(layerOperator);
 		}
-		
+
 	}
 
 	/**
@@ -141,16 +142,16 @@ public class CreateLayerOperatorsFromParameter extends AbstractLayersCommand {
 	 */
 	@Override
 	public boolean isEnabled(IEvaluationContext context, List<Object> selections) {
-	    if( selections.size() != 1) {
-	    	return false;
-	    }
-	    Object first = selections.get(0);
-	    boolean res = (first instanceof LayerOperator) || (first instanceof LayersStack);
+		if (selections.size() != 1) {
+			return false;
+		}
+		Object first = selections.get(0);
+		boolean res = (first instanceof LayerOperator) || (first instanceof LayersStack);
 		return res;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers3.ui.commands.AbstractLayersCommand#getCommandName()
 	 *
 	 * @return

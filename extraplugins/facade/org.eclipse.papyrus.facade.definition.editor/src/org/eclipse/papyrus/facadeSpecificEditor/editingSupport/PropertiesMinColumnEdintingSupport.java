@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,40 +42,40 @@ public class PropertiesMinColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(Object element, Object value) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 
 			try {
 
-				if(((VirtualTypedElement)element).getRepresentedElement() instanceof MultiplicityElement || ((VirtualTypedElement)element).getRepresentedElement() instanceof ETypedElement) {
+				if (((VirtualTypedElement) element).getRepresentedElement() instanceof MultiplicityElement || ((VirtualTypedElement) element).getRepresentedElement() instanceof ETypedElement) {
 					boolean isOk = false;
-					int intValue = Integer.valueOf((String)value);
+					int intValue = Integer.valueOf((String) value);
 
-					if(intValue >= -1) {
+					if (intValue >= -1) {
 						int lowerReference = 0;
 
-						if(((VirtualTypedElement)element).getRepresentedElement() instanceof MultiplicityElement) {
-							lowerReference = ((MultiplicityElement)((VirtualTypedElement)element).getRepresentedElement()).getLower();
+						if (((VirtualTypedElement) element).getRepresentedElement() instanceof MultiplicityElement) {
+							lowerReference = ((MultiplicityElement) ((VirtualTypedElement) element).getRepresentedElement()).getLower();
 
-						} else if(((VirtualTypedElement)element).getRepresentedElement() instanceof ETypedElement) {
-							lowerReference = ((ETypedElement)((VirtualTypedElement)element).getRepresentedElement()).getLowerBound();
+						} else if (((VirtualTypedElement) element).getRepresentedElement() instanceof ETypedElement) {
+							lowerReference = ((ETypedElement) ((VirtualTypedElement) element).getRepresentedElement()).getLowerBound();
 						}
 
-						if(lowerReference != -1) {
-							if(intValue >= lowerReference) {
+						if (lowerReference != -1) {
+							if (intValue >= lowerReference) {
 								isOk = true;
 							}
 						}
 
-						if(isOk) {
-							SetCommand command = new SetCommand(editingDomain, (VirtualTypedElement)element, VirtualmetamodelPackage.eINSTANCE.getVirtualTypedElement_Lower(), intValue); //$NON-NLS-1$
+						if (isOk) {
+							SetCommand command = new SetCommand(editingDomain, (VirtualTypedElement) element, VirtualmetamodelPackage.eINSTANCE.getVirtualTypedElement_Lower(), intValue);
 							editingDomain.getCommandStack().execute(command);
 							getViewer().refresh();
 						} else {
@@ -93,32 +93,32 @@ public class PropertiesMinColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 
-			return ((VirtualTypedElement)element).getLower() + ""; //$NON-NLS-1$
+			return ((VirtualTypedElement) element).getLower() + ""; //$NON-NLS-1$
 
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected CellEditor getCellEditor(Object element) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 			return new TextCellEditor(parent);
 		}
 
@@ -126,15 +126,15 @@ public class PropertiesMinColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected boolean canEdit(Object element) {
-		if(element instanceof VirtualProperty) {
+		if (element instanceof VirtualProperty) {
 			return true;
 		}
 

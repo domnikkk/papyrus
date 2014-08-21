@@ -46,22 +46,22 @@ public class MokaTriggerComboPopulation implements ModifyListener {
 	public void modifyText(ModifyEvent e) {
 		List<NamedElement> namedElements = new ArrayList<NamedElement>();
 		this.list.removeAll();
-		Text text = (Text)e.widget;
+		Text text = (Text) e.widget;
 		URI projectUri = URI.createURI(text.getText());
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.getResource(projectUri, true);
 		Iterator<EObject> contentIterator = resource.getAllContents();
-		while(contentIterator.hasNext()) {
+		while (contentIterator.hasNext()) {
 			EObject eObject = contentIterator.next();
-			if(eObject instanceof Behavior) {
-				if(eObject instanceof Activity || eObject instanceof OpaqueBehavior || eObject instanceof StateMachine) {
-					namedElements.add((NamedElement)eObject);
+			if (eObject instanceof Behavior) {
+				if (eObject instanceof Activity || eObject instanceof OpaqueBehavior || eObject instanceof StateMachine) {
+					namedElements.add((NamedElement) eObject);
 				}
-			} else if(eObject instanceof Class) {
-				if(!(eObject instanceof Node) || !(eObject instanceof Stereotype) || !(eObject instanceof AssociationClass)) {
-					//if(((Class)eObject).isActive()){
-					namedElements.add((NamedElement)eObject);
-					//}
+			} else if (eObject instanceof Class) {
+				if (!(eObject instanceof Node) || !(eObject instanceof Stereotype) || !(eObject instanceof AssociationClass)) {
+					// if(((Class)eObject).isActive()){
+					namedElements.add((NamedElement) eObject);
+					// }
 				}
 			}
 		}
@@ -77,7 +77,7 @@ public class MokaTriggerComboPopulation implements ModifyListener {
 
 		Collections.sort(namedElements, comp);
 
-		for(NamedElement n : namedElements) {
+		for (NamedElement n : namedElements) {
 			this.list.add(n);
 		}
 		this.list.selectFirst();

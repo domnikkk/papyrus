@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,11 +37,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualTypedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualTypedElementItemProvider
-	extends VirtualElementItemProvider
-	implements
+		extends VirtualElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -51,6 +52,7 @@ public class VirtualTypedElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualTypedElementItemProvider(AdapterFactory adapterFactory) {
@@ -61,6 +63,7 @@ public class VirtualTypedElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,88 +82,93 @@ public class VirtualTypedElementItemProvider
 	 * This adds a property descriptor for the Lower feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLowerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualTypedElement_lower_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_lower_feature", "_UI_VirtualTypedElement_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__LOWER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualTypedElement_lower_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_lower_feature", "_UI_VirtualTypedElement_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__LOWER,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Upper feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addUpperPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualTypedElement_upper_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_upper_feature", "_UI_VirtualTypedElement_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__UPPER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualTypedElement_upper_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_upper_feature", "_UI_VirtualTypedElement_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__UPPER,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualTypedElement_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_type_feature", "_UI_VirtualTypedElement_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualTypedElement_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualTypedElement_type_feature", "_UI_VirtualTypedElement_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_TYPED_ELEMENT__TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualTypedElement)object).getAliasName();
+		String label = ((VirtualTypedElement) object).getAliasName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualTypedElement_type") :
-			getString("_UI_VirtualTypedElement_type") + " " + label;
+				getString("_UI_VirtualTypedElement_type") :
+				getString("_UI_VirtualTypedElement_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -168,10 +176,10 @@ public class VirtualTypedElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(VirtualTypedElement.class)) {
-			case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT__LOWER:
-			case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT__UPPER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT__LOWER:
+		case VirtualmetamodelPackage.VIRTUAL_TYPED_ELEMENT__UPPER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -181,6 +189,7 @@ public class VirtualTypedElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

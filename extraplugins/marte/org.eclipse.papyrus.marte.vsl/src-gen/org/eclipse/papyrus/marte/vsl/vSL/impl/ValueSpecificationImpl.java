@@ -24,55 +24,63 @@ import org.eclipse.uml2.uml.Type;
  */
 public class ValueSpecificationImpl extends MinimalEObjectImpl.Container implements ValueSpecification
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ValueSpecificationImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ValueSpecificationImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return VSLPackage.Literals.VALUE_SPECIFICATION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return VSLPackage.Literals.VALUE_SPECIFICATION;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getFilteredParentRule(final EClass filter)
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EObject getFilteredParentRule(final EClass filter)
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type getExpectedType()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Type getExpectedType()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element getContextElement()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Element getContextElement()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this);
+	}
 
-} //ValueSpecificationImpl
+} // ValueSpecificationImpl

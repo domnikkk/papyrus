@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Classifier;
 
 public class Locus implements Cloneable {
 
-	//FIXME : To be removed
+	// FIXME : To be removed
 	public Behavior currentModelToBeExecuted;
 
 	/*
@@ -60,16 +60,16 @@ public class Locus implements Cloneable {
 		// given classifier as a type.
 		List<ExtensionalValue> extent = new ArrayList<ExtensionalValue>();
 		List<ExtensionalValue> extensionalValues = this.extensionalValues;
-		for(int i = 0; i < extensionalValues.size(); i++) {
+		for (int i = 0; i < extensionalValues.size(); i++) {
 			ExtensionalValue value = extensionalValues.get(i);
 			List<Classifier> types = value.getTypes();
 			boolean conforms = false;
 			int j = 1;
-			while(!conforms & j <= types.size()) {
+			while (!conforms & j <= types.size()) {
 				conforms = this.conforms(types.get(j - 1), classifier);
 				j = j + 1;
 			}
-			if(conforms) {
+			if (conforms) {
 				extent.add(value);
 			}
 		}
@@ -87,8 +87,8 @@ public class Locus implements Cloneable {
 		value.locus = null;
 		boolean notFound = true;
 		int i = 1;
-		while(notFound & i <= this.extensionalValues.size()) {
-			if(this.extensionalValues.get(i - 1) == value) {
+		while (notFound & i <= this.extensionalValues.size()) {
+			if (this.extensionalValues.get(i - 1) == value) {
 				this.extensionalValues.remove(i - 1);
 				notFound = false;
 			}
@@ -99,8 +99,8 @@ public class Locus implements Cloneable {
 	public Object_ instantiate(Class type) {
 		// Instantiate the given class at this locus.
 		Object_ object = null;
-		if(type instanceof Behavior) {
-			object = this.factory.createExecution((Behavior)type, null);
+		if (type instanceof Behavior) {
+			object = this.factory.createExecution((Behavior) type, null);
 		} else {
 			object = new Object_();
 			object.types.add(type);
@@ -114,11 +114,11 @@ public class Locus implements Cloneable {
 		// Test if a type conforms to a given classifier, that is, the type is
 		// equal to or a descendant of the classifier.
 		boolean doesConform = false;
-		if(type == classifier) {
+		if (type == classifier) {
 			doesConform = true;
 		} else {
 			int i = 1;
-			while(!doesConform & i <= type.getGenerals().size()) {
+			while (!doesConform & i <= type.getGenerals().size()) {
 				doesConform = this.conforms(type.getGenerals().get(i - 1), classifier);
 				i = i + 1;
 			}
@@ -129,18 +129,21 @@ public class Locus implements Cloneable {
 	/**
 	 * Perform a deep copy for every attributes of this class except for {@link ExtensionalValues}
 	 */
+	@Override
 	public Locus clone() {
 		Locus copy = null;
 		try {
-			copy = (Locus)super.clone();
+			copy = (Locus) super.clone();
 		} catch (CloneNotSupportedException e) {
 			Activator.log.error(e);
 			return null;
 		}
-		if(this.executor != null)
+		if (this.executor != null) {
 			copy.executor = this.executor.clone();
-		if(this.factory != null)
+		}
+		if (this.factory != null) {
 			copy.factory = this.factory.clone();
+		}
 		return copy;
 	}
 }

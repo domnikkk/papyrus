@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ public class HwASICImpl extends HwComputingResourceImpl implements HwASIC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwASICImpl() {
@@ -39,6 +40,7 @@ public class HwASICImpl extends HwComputingResourceImpl implements HwASIC {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -46,4 +48,4 @@ public class HwASICImpl extends HwComputingResourceImpl implements HwASIC {
 		return HwComputingPackage.Literals.HW_ASIC;
 	}
 
-} //HwASICImpl
+} // HwASICImpl

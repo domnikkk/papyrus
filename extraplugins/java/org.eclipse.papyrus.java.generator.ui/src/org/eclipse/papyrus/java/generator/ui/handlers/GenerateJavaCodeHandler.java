@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -45,9 +45,9 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * Handler used to launch Java code generation from a selected UML element.
- * 
+ *
  * @author Cedric dumoulin
- * 
+ *
  */
 public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler {
 
@@ -57,8 +57,9 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
-	 * 
+	 *
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		// Get selection
@@ -73,7 +74,7 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 	/**
 	 * Get the name used in the {@link RecordingCommand}. This name will be visible in
 	 * undo/redo.
-	 * 
+	 *
 	 * @return The command name to show.
 	 */
 	public String getCommandName() {
@@ -82,7 +83,7 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 
 	/**
 	 * Return a list of selected domain (UML) elements.
-	 * 
+	 *
 	 * @return
 	 */
 	protected List<NamedElement> getSelectedUmlObject() {
@@ -91,18 +92,18 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 		List<NamedElement> results = new ArrayList<NamedElement>();
 
 		// create model with EList<EObject> objects
-		for(Object obj : selections) {
+		for (Object obj : selections) {
 			// Adapt object to NamedElement
 			NamedElement ele = null;
-			if(obj instanceof IAdaptable) {
-				ele = (NamedElement)((IAdaptable)obj).getAdapter(NamedElement.class);
+			if (obj instanceof IAdaptable) {
+				ele = (NamedElement) ((IAdaptable) obj).getAdapter(NamedElement.class);
 			}
-			if(ele == null) {
-				ele = (NamedElement)Platform.getAdapterManager().getAdapter(obj, NamedElement.class);
+			if (ele == null) {
+				ele = (NamedElement) Platform.getAdapterManager().getAdapter(obj, NamedElement.class);
 			}
 
 			// Add uml element if found
-			if(ele != null) {
+			if (ele != null) {
 				results.add(ele);
 			}
 
@@ -113,9 +114,9 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 
 	/**
 	 * Do the execution of the command.
-	 * 
+	 *
 	 * @param objects
-	 *        List of object to generate Java code from.
+	 *            List of object to generate Java code from.
 	 */
 	protected void doExecute(final List<Object> objects) {
 
@@ -131,7 +132,7 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 					return status;
 				}
 				catch (Exception e) {
-					return new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+					return new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 				}
 				finally {
 
@@ -148,9 +149,9 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 
 	/**
 	 * Do the execution of the command.
-	 * 
+	 *
 	 * @param objects
-	 *        List of object to generate Java code from.
+	 *            List of object to generate Java code from.
 	 */
 	protected IStatus doExecute(IProgressMonitor monitor, List<Object> objects) {
 		monitor.beginTask("Generate ...", 3);
@@ -159,18 +160,18 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 		EList<EObject> model = new BasicEList<EObject>();
 
 		// create model with EList<EObject> objects
-		for(Object obj : objects) {
+		for (Object obj : objects) {
 			// Adapt object to NamedElement
 			NamedElement ele = null;
-			if(obj instanceof IAdaptable) {
-				ele = (NamedElement)((IAdaptable)obj).getAdapter(NamedElement.class);
+			if (obj instanceof IAdaptable) {
+				ele = (NamedElement) ((IAdaptable) obj).getAdapter(NamedElement.class);
 			}
-			if(ele == null) {
-				ele = (NamedElement)Platform.getAdapterManager().getAdapter(obj, NamedElement.class);
+			if (ele == null) {
+				ele = (NamedElement) Platform.getAdapterManager().getAdapter(obj, NamedElement.class);
 			}
 
 			// Add uml element if found
-			if(ele != null) {
+			if (ele != null) {
 				model.add(ele);
 			}
 
@@ -178,14 +179,14 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 		monitor.worked(1);
 
 		// recover window
-		//		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();		
+		// IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 
 		// Check if there is a right selection
-		if(model.size() <= 0) {
+		if (model.size() <= 0) {
 			String msg = "No UML element selected. Please select one or more UML element to generate";
-			//			MessageDialog.openInformation(window.getShell(),"No Selection", msg);
+			// MessageDialog.openInformation(window.getShell(),"No Selection", msg);
 
-			return new Status(Status.ERROR, Activator.PLUGIN_ID, msg);
+			return new Status(IStatus.ERROR, Activator.PLUGIN_ID, msg);
 
 		}
 
@@ -200,43 +201,43 @@ public class GenerateJavaCodeHandler extends AbstractHandler implements IHandler
 		} catch (JDTVisitorException e) {
 			// error message
 			StringBuffer stackTrace = new StringBuffer();
-			for(StackTraceElement trace : e.getStackTrace()) {
+			for (StackTraceElement trace : e.getStackTrace()) {
 				stackTrace.append("at " + trace.getMethodName() + "(" + trace.getClassName() + ":" + trace.getLineNumber() + ")\n");
 			}
 
-			IStatus status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-			//			ErrorDialog errDg = new ErrorDialog(window.getShell(), "Error encountered during code generation", 
-			//													"Error encountered during code generation", 
-			//													status,
-			//													Status.ERROR);
-			//			errDg.open();
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+			// ErrorDialog errDg = new ErrorDialog(window.getShell(), "Error encountered during code generation",
+			// "Error encountered during code generation",
+			// status,
+			// Status.ERROR);
+			// errDg.open();
 			return status;
 		}
 
-		//		if(message.isEmpty()) message = "Code generated successfully!";
+		// if(message.isEmpty()) message = "Code generated successfully!";
 
 		monitor.worked(2);
-		//		MessageDialog.openInformation(window.getShell(),"Code generation",message);
+		// MessageDialog.openInformation(window.getShell(),"Code generation",message);
 
 		return Status.OK_STATUS;
 	}
 
 	/**
 	 * Lookup selected objects in UI.
-	 * 
+	 *
 	 * @return
 	 */
 	private List<Object> lookupSelectedElements() {
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		ISelection selection = page.getSelection();
-		//		System.out.println("check " + selection);
-		if(selection instanceof IStructuredSelection)
+		// System.out.println("check " + selection);
+		if (selection instanceof IStructuredSelection)
 		{
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			return structuredSelection.toList();
 		}
-		else if(selection instanceof TreeSelection) {
-			TreeSelection treeSelection = (TreeSelection)selection;
+		else if (selection instanceof TreeSelection) {
+			TreeSelection treeSelection = (TreeSelection) selection;
 			return treeSelection.toList();
 
 		}

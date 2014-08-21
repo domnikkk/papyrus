@@ -11,6 +11,7 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>layers</b></em>' package.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayersTests extends TestSuite {
@@ -18,6 +19,7 @@ public class LayersTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,6 +29,7 @@ public class LayersTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Test suite() {
@@ -81,10 +84,11 @@ public class LayersTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayersTests(String name) {
 		super(name);
 	}
 
-} //LayersTests
+} // LayersTests

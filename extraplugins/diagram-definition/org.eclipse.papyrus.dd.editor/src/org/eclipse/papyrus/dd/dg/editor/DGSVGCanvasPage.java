@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -16,6 +16,7 @@ import java.awt.EventQueue;
 import java.awt.Frame;
 
 import org.apache.batik.swing.JSVGCanvas;
+import org.apache.batik.swing.svg.AbstractJSVGComponent;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
@@ -46,7 +47,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 	/**
 	 * Constructs a new SVG canvas page for a given DG editor
-	 * 
+	 *
 	 * @param editor
 	 *            The DG editor
 	 */
@@ -75,7 +76,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 	/**
 	 * Gets an instance of <code>DGToSVGConverter</code>
-	 * 
+	 *
 	 * @return DGToSVGConverter
 	 */
 	protected DGToSVGConverter getConverter() {
@@ -99,7 +100,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 
 		/**
 		 * Constructs a new Canvas viewer
-		 * 
+		 *
 		 * @param parent
 		 *            the SWT composite parent control
 		 */
@@ -110,7 +111,7 @@ public class DGSVGCanvasPage extends DDEditorPage {
 			frame.setVisible(true);
 
 			svgCanvas = new JSVGCanvas();
-			svgCanvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
+			svgCanvas.setDocumentState(AbstractJSVGComponent.ALWAYS_DYNAMIC);
 			frame.add(svgCanvas);
 		}
 
@@ -140,10 +141,11 @@ public class DGSVGCanvasPage extends DDEditorPage {
 					String value = svg
 							.getAttribute(DGToSVGConverter.SVG_BACKGROUND_COLOR_ATTRIBUTE);
 
-					if (value != null && value.length() > 0)
+					if (value != null && value.length() > 0) {
 						svgCanvas.setBackground(Color.decode(value));
-					else
+					} else {
 						svgCanvas.setBackground(Color.white);
+					}
 				}
 			});
 		}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,7 +18,7 @@ package org.eclipse.papyrus.layers.stackmodel;
 public class InstanciationException extends LayersException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 2070317356365033045L;
 

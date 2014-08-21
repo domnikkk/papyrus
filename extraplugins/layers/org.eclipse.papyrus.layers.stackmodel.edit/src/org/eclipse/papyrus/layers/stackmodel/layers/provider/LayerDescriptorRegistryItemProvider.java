@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -40,11 +40,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayerDescriptorRegistryItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerDescriptorRegistryItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,11 +79,11 @@ public class LayerDescriptorRegistryItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,6 +98,7 @@ public class LayerDescriptorRegistryItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,6 +113,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * This returns LayerDescriptorRegistry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,6 +125,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,6 +138,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,9 +146,9 @@ public class LayerDescriptorRegistryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LayerDescriptorRegistry.class)) {
-			case LayersPackage.LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -151,6 +158,7 @@ public class LayerDescriptorRegistryItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,25 +166,26 @@ public class LayerDescriptorRegistryItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS,
-				 LayersFactory.eINSTANCE.createLayerDescriptor()));
+						LayersFactory.eINSTANCE.createLayerDescriptor()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS,
-				 LayersFactory.eINSTANCE.createSimpleLayerDescriptor()));
+						LayersFactory.eINSTANCE.createSimpleLayerDescriptor()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYER_DESCRIPTOR_REGISTRY__LAYER_DESCRIPTORS,
-				 LayersFactory.eINSTANCE.createRegExpLayerDescriptor()));
+						LayersFactory.eINSTANCE.createRegExpLayerDescriptor()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

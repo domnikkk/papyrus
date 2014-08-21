@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -47,11 +47,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JDTJavaModelItemProvider
-	extends JDTParentJavaElementItemProvider
-	implements
+		extends JDTParentJavaElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -61,6 +62,7 @@ public class JDTJavaModelItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JDTJavaModelItemProvider(AdapterFactory adapterFactory) {
@@ -71,6 +73,7 @@ public class JDTJavaModelItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,11 +86,11 @@ public class JDTJavaModelItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,6 +105,7 @@ public class JDTJavaModelItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,6 +120,7 @@ public class JDTJavaModelItemProvider
 	 * This returns JDTJavaModel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,14 +132,15 @@ public class JDTJavaModelItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTJavaModel)object).getElementName();
+		String label = ((JDTJavaModel) object).getElementName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTJavaModel_type") :
-			getString("_UI_JDTJavaModel_type") + " " + label;
+				getString("_UI_JDTJavaModel_type") :
+				getString("_UI_JDTJavaModel_type") + " " + label;
 	}
 
 	/**
@@ -142,6 +148,7 @@ public class JDTJavaModelItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,9 +156,9 @@ public class JDTJavaModelItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JDTJavaModel.class)) {
-			case JdtmmPackage.JDT_JAVA_MODEL__JAVA_PROJECT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case JdtmmPackage.JDT_JAVA_MODEL__JAVA_PROJECT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -161,6 +168,7 @@ public class JDTJavaModelItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -168,9 +176,9 @@ public class JDTJavaModelItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(JdtmmPackage.Literals.JDT_JAVA_MODEL__JAVA_PROJECT,
-				 JdtmmFactory.eINSTANCE.createJDTJavaProject()));
+						JdtmmFactory.eINSTANCE.createJDTJavaProject()));
 	}
 
 }

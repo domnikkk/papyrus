@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,6 +33,7 @@ public class LayersStackApplicationItemProvider extends org.eclipse.papyrus.laye
 
 	/**
 	 * Only return the owned stacks
+	 * 
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 *
 	 * @param object
@@ -40,7 +41,7 @@ public class LayersStackApplicationItemProvider extends org.eclipse.papyrus.laye
 	 */
 	@Override
 	public Collection<?> getChildren(Object object) {
-		
-		return ((LayersStackApplication)object).getLayersStacks();
+
+		return ((LayersStackApplication) object).getLayersStacks();
 	}
 }

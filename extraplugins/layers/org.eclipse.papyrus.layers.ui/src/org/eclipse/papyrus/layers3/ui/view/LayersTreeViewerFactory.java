@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -30,9 +30,9 @@ import org.eclipse.ui.IWorkbenchPartSite;
 
 /**
  * A utility class to create LayersTreeViewer suitable to render layers as a tree.
- * 
- * 
- * 
+ *
+ *
+ *
  * @author cedric dumoulin
  *
  */
@@ -47,8 +47,8 @@ public class LayersTreeViewerFactory {
 	 * Create a TreeViewer suitable to render Layers as a Tree.
 	 * The content and label providers are set.
 	 * The context menu is not set.
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	static public TreeViewer createLayersTreeViewer(Composite parent, int style) {
@@ -62,6 +62,7 @@ public class LayersTreeViewerFactory {
 
 	/**
 	 * Set appropriate Content and Label providers for the LayersTreeViewer.
+	 * 
 	 * @param layersExplorerTree
 	 */
 	protected static void initContentAndLabelProviders(TreeViewer layersExplorerTree) {
@@ -73,13 +74,14 @@ public class LayersTreeViewerFactory {
 
 	/**
 	 * Create an AdapterFactory suitable for the LayersTreeViewer.
+	 * 
 	 * @return
 	 */
 	static public AdapterFactory createLayersTreeViewerItemProvidersFactory() {
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-//		adapterFactory.addAdapterFactory(new LayersItemProviderAdapterFactory());
+		// adapterFactory.addAdapterFactory(new LayersItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CustomLayersItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new NotationItemProviderAdapterFactory());
@@ -90,24 +92,24 @@ public class LayersTreeViewerFactory {
 
 	/**
 	 * This creates a context menu for the viewer and adds a listener as well as registering the menu for extension.
-	 * 
+	 *
 	 */
 	static public void initContextMenuFor(IWorkbenchPartSite site, StructuredViewer viewer) {
 		MenuManager contextMenu = new MenuManager("#PopUp");
 		contextMenu.add(new Separator("additions"));
 		contextMenu.setRemoveAllWhenShown(true);
-		//			contextMenu.addMenuListener(this);
-		Menu menu= contextMenu.createContextMenu(viewer.getControl());
+		// contextMenu.addMenuListener(this);
+		Menu menu = contextMenu.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
-		//		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
+		// getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
-		//			getSite().registerContextMenu(CONTEXT_MENU_ID, contextMenu, new UnwrappingSelectionProvider(viewer));
+		// getSite().registerContextMenu(CONTEXT_MENU_ID, contextMenu, new UnwrappingSelectionProvider(viewer));
 		site.registerContextMenu(CONTEXT_MENU_ID, contextMenu, viewer);
 
-		//			int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		//			Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
-		//			viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
-		//			viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
+		// int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
+		// Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
+		// viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
+		// viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
 
 

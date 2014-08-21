@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR <em>R</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG <em>G</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB <em>B</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA <em>A</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR <em>R</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG <em>G</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB <em>B</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA <em>A</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface ColorRGBA extends EObject {
 	 * Returns the value of the '<em><b>R</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>R</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>R</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>R</em>' attribute.
 	 * @see #setR(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getColorRGBA_R()
@@ -44,7 +44,9 @@ public interface ColorRGBA extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR <em>R</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>R</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>R</em>' attribute.
 	 * @see #getR()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface ColorRGBA extends EObject {
 	 * Returns the value of the '<em><b>G</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>G</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>G</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>G</em>' attribute.
 	 * @see #setG(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getColorRGBA_G()
@@ -70,7 +72,9 @@ public interface ColorRGBA extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG <em>G</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>G</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>G</em>' attribute.
 	 * @see #getG()
 	 * @generated
 	 */
@@ -80,10 +84,10 @@ public interface ColorRGBA extends EObject {
 	 * Returns the value of the '<em><b>B</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>B</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>B</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>B</em>' attribute.
 	 * @see #setB(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getColorRGBA_B()
@@ -96,7 +100,9 @@ public interface ColorRGBA extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB <em>B</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>B</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>B</em>' attribute.
 	 * @see #getB()
 	 * @generated
 	 */
@@ -106,10 +112,10 @@ public interface ColorRGBA extends EObject {
 	 * Returns the value of the '<em><b>A</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>A</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>A</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>A</em>' attribute.
 	 * @see #setA(float)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage#getColorRGBA_A()
@@ -122,7 +128,9 @@ public interface ColorRGBA extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>A</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>A</em>' attribute.
 	 * @see #getA()
 	 * @generated
 	 */

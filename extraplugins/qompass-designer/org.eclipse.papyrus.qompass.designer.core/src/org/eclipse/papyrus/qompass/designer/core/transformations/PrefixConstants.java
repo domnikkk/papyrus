@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -35,17 +35,19 @@ public class PrefixConstants {
 
 	/**
 	 * Initialize a specific CIF variant
-	 * 
+	 *
 	 * TODO currently unused
-	 * @param cif Which CIF variant should used?
+	 * 
+	 * @param cif
+	 *            Which CIF variant should used?
 	 */
 	void init(CIFvariant cif) {
-		if(cif == CIFvariant.UML) {
+		if (cif == CIFvariant.UML) {
 			getP_Prefix = "get_"; //$NON-NLS-1$
 			getConnQ_Prefix = ""; //$NON-NLS-1$
 			connectQ_Prefix = "connect_"; //$NON-NLS-1$
 			attributePrefix = ""; //$NON-NLS-1$
-		} else if(cif == CIFvariant.CCM) {
+		} else if (cif == CIFvariant.CCM) {
 			getP_Prefix = "get_"; //$NON-NLS-1$
 			getConnQ_Prefix = "getconnection_"; //$NON-NLS-1$
 			connectQ_Prefix = "connect_"; //$NON-NLS-1$

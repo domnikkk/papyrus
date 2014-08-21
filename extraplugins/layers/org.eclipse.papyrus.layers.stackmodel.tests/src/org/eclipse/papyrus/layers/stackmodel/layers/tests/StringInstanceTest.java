@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.StringInstance;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>String Instance</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StringInstanceTest extends TypeInstanceTest {
@@ -18,6 +19,7 @@ public class StringInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class StringInstanceTest extends TypeInstanceTest {
 	 * Constructs a new String Instance test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StringInstanceTest(String name) {
@@ -38,16 +41,18 @@ public class StringInstanceTest extends TypeInstanceTest {
 	 * Returns the fixture for this String Instance test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected StringInstance getFixture() {
-		return (StringInstance)fixture;
+		return (StringInstance) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class StringInstanceTest extends TypeInstanceTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class StringInstanceTest extends TypeInstanceTest {
 		setFixture(null);
 	}
 
-} //StringInstanceTest
+} // StringInstanceTest

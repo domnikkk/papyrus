@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,10 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaLatencyObs;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getLatency <em>Latency</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getMiss <em>Miss</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getUtility <em>Utility</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getMaxJitter <em>Max Jitter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getLatency <em>Latency</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getMiss <em>Miss</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getUtility <em>Utility</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaLatencyObsImpl#getMaxJitter <em>Max Jitter</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getLatency() <em>Latency</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLatency()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getMiss() <em>Miss</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMiss()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getUtility() <em>Utility</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUtility()
 	 * @generated
 	 * @ordered
@@ -72,6 +75,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	 * The cached value of the '{@link #getMaxJitter() <em>Max Jitter</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaxJitter()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GaLatencyObsImpl() {
@@ -90,6 +95,7 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,8 +106,10 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getLatency() {
 		if (latency == null) {
 			latency = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_LATENCY_OBS__LATENCY);
@@ -112,8 +120,10 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getMiss() {
 		if (miss == null) {
 			miss = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_LATENCY_OBS__MISS);
@@ -124,8 +134,10 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getUtility() {
 		if (utility == null) {
 			utility = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_LATENCY_OBS__UTILITY);
@@ -136,8 +148,10 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getMaxJitter() {
 		if (maxJitter == null) {
 			maxJitter = new EDataTypeUniqueEList<String>(String.class, this, GQAMPackage.GA_LATENCY_OBS__MAX_JITTER);
@@ -148,19 +162,20 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_LATENCY_OBS__LATENCY:
-				return getLatency();
-			case GQAMPackage.GA_LATENCY_OBS__MISS:
-				return getMiss();
-			case GQAMPackage.GA_LATENCY_OBS__UTILITY:
-				return getUtility();
-			case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
-				return getMaxJitter();
+		case GQAMPackage.GA_LATENCY_OBS__LATENCY:
+			return getLatency();
+		case GQAMPackage.GA_LATENCY_OBS__MISS:
+			return getMiss();
+		case GQAMPackage.GA_LATENCY_OBS__UTILITY:
+			return getUtility();
+		case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
+			return getMaxJitter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,28 +183,29 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_LATENCY_OBS__LATENCY:
-				getLatency().clear();
-				getLatency().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__MISS:
-				getMiss().clear();
-				getMiss().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__UTILITY:
-				getUtility().clear();
-				getUtility().addAll((Collection<? extends String>)newValue);
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
-				getMaxJitter().clear();
-				getMaxJitter().addAll((Collection<? extends String>)newValue);
-				return;
+		case GQAMPackage.GA_LATENCY_OBS__LATENCY:
+			getLatency().clear();
+			getLatency().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__MISS:
+			getMiss().clear();
+			getMiss().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__UTILITY:
+			getUtility().clear();
+			getUtility().addAll((Collection<? extends String>) newValue);
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
+			getMaxJitter().clear();
+			getMaxJitter().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,23 +213,24 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_LATENCY_OBS__LATENCY:
-				getLatency().clear();
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__MISS:
-				getMiss().clear();
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__UTILITY:
-				getUtility().clear();
-				return;
-			case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
-				getMaxJitter().clear();
-				return;
+		case GQAMPackage.GA_LATENCY_OBS__LATENCY:
+			getLatency().clear();
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__MISS:
+			getMiss().clear();
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__UTILITY:
+			getUtility().clear();
+			return;
+		case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
+			getMaxJitter().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,19 +238,20 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_LATENCY_OBS__LATENCY:
-				return latency != null && !latency.isEmpty();
-			case GQAMPackage.GA_LATENCY_OBS__MISS:
-				return miss != null && !miss.isEmpty();
-			case GQAMPackage.GA_LATENCY_OBS__UTILITY:
-				return utility != null && !utility.isEmpty();
-			case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
-				return maxJitter != null && !maxJitter.isEmpty();
+		case GQAMPackage.GA_LATENCY_OBS__LATENCY:
+			return latency != null && !latency.isEmpty();
+		case GQAMPackage.GA_LATENCY_OBS__MISS:
+			return miss != null && !miss.isEmpty();
+		case GQAMPackage.GA_LATENCY_OBS__UTILITY:
+			return utility != null && !utility.isEmpty();
+		case GQAMPackage.GA_LATENCY_OBS__MAX_JITTER:
+			return maxJitter != null && !maxJitter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -241,11 +259,14 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (latency: ");
@@ -260,4 +281,4 @@ public class GaLatencyObsImpl extends GaTimedObsImpl implements GaLatencyObs {
 		return result.toString();
 	}
 
-} //GaLatencyObsImpl
+} // GaLatencyObsImpl

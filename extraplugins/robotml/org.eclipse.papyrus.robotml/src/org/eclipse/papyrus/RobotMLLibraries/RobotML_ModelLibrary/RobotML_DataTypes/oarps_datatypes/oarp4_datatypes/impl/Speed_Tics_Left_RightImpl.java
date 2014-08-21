@@ -22,8 +22,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Speed_Tics_Left_RightImpl#getSpeed_tics_left <em>Speed tics left</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Speed_Tics_Left_RightImpl#getSpeed_tics_right <em>Speed tics right</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Speed_Tics_Left_RightImpl#getSpeed_tics_left <em>Speed tics left</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Speed_Tics_Left_RightImpl#getSpeed_tics_right <em>Speed tics right</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getSpeed_tics_left() <em>Speed tics left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSpeed_tics_left()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getSpeed_tics_right() <em>Speed tics right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSpeed_tics_right()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Speed_Tics_Left_RightImpl() {
@@ -62,6 +65,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +76,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Speed_Tics getSpeed_tics_left() {
@@ -81,6 +86,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetSpeed_tics_left(Speed_Tics newSpeed_tics_left, NotificationChain msgs) {
@@ -88,7 +94,11 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 		speed_tics_left = newSpeed_tics_left;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, oldSpeed_tics_left, newSpeed_tics_left);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -96,25 +106,32 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSpeed_tics_left(Speed_Tics newSpeed_tics_left) {
 		if (newSpeed_tics_left != speed_tics_left) {
 			NotificationChain msgs = null;
-			if (speed_tics_left != null)
-				msgs = ((InternalEObject)speed_tics_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, null, msgs);
-			if (newSpeed_tics_left != null)
-				msgs = ((InternalEObject)newSpeed_tics_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, null, msgs);
+			if (speed_tics_left != null) {
+				msgs = ((InternalEObject) speed_tics_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, null, msgs);
+			}
+			if (newSpeed_tics_left != null) {
+				msgs = ((InternalEObject) newSpeed_tics_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, null, msgs);
+			}
 			msgs = basicSetSpeed_tics_left(newSpeed_tics_left, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT, newSpeed_tics_left, newSpeed_tics_left));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Speed_Tics getSpeed_tics_right() {
@@ -124,6 +141,7 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetSpeed_tics_right(Speed_Tics newSpeed_tics_right, NotificationChain msgs) {
@@ -131,7 +149,11 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 		speed_tics_right = newSpeed_tics_right;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, oldSpeed_tics_right, newSpeed_tics_right);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -139,34 +161,41 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSpeed_tics_right(Speed_Tics newSpeed_tics_right) {
 		if (newSpeed_tics_right != speed_tics_right) {
 			NotificationChain msgs = null;
-			if (speed_tics_right != null)
-				msgs = ((InternalEObject)speed_tics_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, null, msgs);
-			if (newSpeed_tics_right != null)
-				msgs = ((InternalEObject)newSpeed_tics_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, null, msgs);
+			if (speed_tics_right != null) {
+				msgs = ((InternalEObject) speed_tics_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, null, msgs);
+			}
+			if (newSpeed_tics_right != null) {
+				msgs = ((InternalEObject) newSpeed_tics_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, null, msgs);
+			}
 			msgs = basicSetSpeed_tics_right(newSpeed_tics_right, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT, newSpeed_tics_right, newSpeed_tics_right));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
-				return basicSetSpeed_tics_left(null, msgs);
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
-				return basicSetSpeed_tics_right(null, msgs);
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
+			return basicSetSpeed_tics_left(null, msgs);
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
+			return basicSetSpeed_tics_right(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -174,15 +203,16 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
-				return getSpeed_tics_left();
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
-				return getSpeed_tics_right();
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
+			return getSpeed_tics_left();
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
+			return getSpeed_tics_right();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,17 +220,18 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
-				setSpeed_tics_left((Speed_Tics)newValue);
-				return;
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
-				setSpeed_tics_right((Speed_Tics)newValue);
-				return;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
+			setSpeed_tics_left((Speed_Tics) newValue);
+			return;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
+			setSpeed_tics_right((Speed_Tics) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -208,17 +239,18 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
-				setSpeed_tics_left((Speed_Tics)null);
-				return;
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
-				setSpeed_tics_right((Speed_Tics)null);
-				return;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
+			setSpeed_tics_left((Speed_Tics) null);
+			return;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
+			setSpeed_tics_right((Speed_Tics) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,17 +258,18 @@ public class Speed_Tics_Left_RightImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
-				return speed_tics_left != null;
-			case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
-				return speed_tics_right != null;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_LEFT:
+			return speed_tics_left != null;
+		case Oarp4_datatypesPackage.SPEED_TICS_LEFT_RIGHT__SPEED_TICS_RIGHT:
+			return speed_tics_right != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //Speed_Tics_Left_RightImpl
+} // Speed_Tics_Left_RightImpl

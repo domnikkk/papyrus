@@ -55,9 +55,9 @@ public class GenerateTestReport extends OpaqueBehaviorExecution {
 		} catch (TransformerConfigurationException e) {
 			Activator.log.error(e);
 		}
-		if(transformer != null) {
+		if (transformer != null) {
 			this.writeReport(transformer, report, Platform.getInstanceLocation().getURL(), reportName);
-			//System.out.println(Platform.getInstanceLocation().getURL());
+			// System.out.println(Platform.getInstanceLocation().getURL());
 		}
 	}
 

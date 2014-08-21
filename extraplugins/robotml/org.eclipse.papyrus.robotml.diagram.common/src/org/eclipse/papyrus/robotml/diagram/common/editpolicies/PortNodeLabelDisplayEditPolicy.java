@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class PortNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDi
 	@Override
 	public void notifyChanged(Notification notification) {
 		final Object feature = notification.getFeature();
-		if(feature == NotationPackage.eINSTANCE.getLocation_X() || feature == NotationPackage.eINSTANCE.getLocation_Y()) {
+		if (feature == NotationPackage.eINSTANCE.getLocation_X() || feature == NotationPackage.eINSTANCE.getLocation_Y()) {
 			Display.getDefault().asyncExec(new Runnable() {
 
 				public void run() {
@@ -51,11 +51,11 @@ public class PortNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDi
 
 		// retrieve the first stereotype in the list of displayed stereotype
 
-		//String firstStereotypeName = tokenizer.nextToken();
+		// String firstStereotypeName = tokenizer.nextToken();
 		EList<Stereotype> stereotype_list = getUMLElement().getAppliedStereotypes();
-		if(stereotype_list.size() != 0) {
+		if (stereotype_list.size() != 0) {
 			Stereotype stereotype = stereotype_list.get(0);
-			if(stereotype.getName().equals("DataFlowPort") || stereotype.getName().equals("ServicePort")) {
+			if (stereotype.getName().equals("DataFlowPort") || stereotype.getName().equals("ServicePort")) {
 				Image icon = Activator.getIconElement(getUMLElement(), stereotype, false);
 
 				IFigure portView = getHostFigure();
@@ -64,18 +64,18 @@ public class PortNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDi
 				Rectangle parentBounds = parentView.getBounds();
 				Rectangle portBounds = portView.getBounds();
 
-				if(portBounds.x() <= parentBounds.x()) {
-					//left
+				if (portBounds.x() <= parentBounds.x()) {
+					// left
 					return icon;
-				} else if(portBounds.x() >= (parentBounds.right() - portBounds.width())) {
-					//right
+				} else if (portBounds.x() >= (parentBounds.right() - portBounds.width())) {
+					// right
 
 					return new Image(icon.getDevice(), RotationHelper.rotateImage(icon, 180), SWT.IMAGE_COPY);
-				} else if(portBounds.y() <= parentBounds.y()) {
-					//top
+				} else if (portBounds.y() <= parentBounds.y()) {
+					// top
 					return new Image(icon.getDevice(), RotationHelper.rotateImage(icon, 90), SWT.IMAGE_COPY);
-				} else if(portBounds.y() >= parentBounds.bottom() - portBounds.height()) {
-					//bottom
+				} else if (portBounds.y() >= parentBounds.bottom() - portBounds.height()) {
+					// bottom
 					return new Image(icon.getDevice(), RotationHelper.rotateImage(icon, -90), SWT.IMAGE_COPY);
 				} else {
 					return null;

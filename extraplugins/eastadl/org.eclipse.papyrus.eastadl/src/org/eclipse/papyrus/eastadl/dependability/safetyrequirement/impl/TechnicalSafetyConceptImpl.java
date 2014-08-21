@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsHi
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl#getTechnicalSafetyRequirement <em>Technical Safety Requirement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.TechnicalSafetyConceptImpl#getTechnicalSafetyRequirement <em>Technical Safety Requirement</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	 * The cached value of the '{@link #getTechnicalSafetyRequirement() <em>Technical Safety Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTechnicalSafetyRequirement()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TechnicalSafetyConceptImpl() {
@@ -62,13 +64,14 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
-				return getTechnicalSafetyRequirement();
+		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
+			return getTechnicalSafetyRequirement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -76,13 +79,14 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
-				return technicalSafetyRequirement != null && !technicalSafetyRequirement.isEmpty();
+		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
+			return technicalSafetyRequirement != null && !technicalSafetyRequirement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -90,16 +94,17 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
-				getTechnicalSafetyRequirement().clear();
-				getTechnicalSafetyRequirement().addAll((Collection<? extends Requirement>)newValue);
-				return;
+		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
+			getTechnicalSafetyRequirement().clear();
+			getTechnicalSafetyRequirement().addAll((Collection<? extends Requirement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -107,6 +112,7 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,14 +123,15 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
-				getTechnicalSafetyRequirement().clear();
-				return;
+		case SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT:
+			getTechnicalSafetyRequirement().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,8 +139,10 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Requirement> getTechnicalSafetyRequirement() {
 		if (technicalSafetyRequirement == null) {
 			technicalSafetyRequirement = new EObjectResolvingEList<Requirement>(Requirement.class, this, SafetyrequirementPackage.TECHNICAL_SAFETY_CONCEPT__TECHNICAL_SAFETY_REQUIREMENT);
@@ -141,4 +150,4 @@ public class TechnicalSafetyConceptImpl extends RequirementsHierarchyImpl implem
 		return technicalSafetyRequirement;
 	}
 
-} //TechnicalSafetyConceptImpl
+} // TechnicalSafetyConceptImpl

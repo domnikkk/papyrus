@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -17,14 +17,14 @@ import org.eclipse.papyrus.layers.runtime.utils.TriggeredEventTraces;
 /**
  * A listener on {@link LayersModelEventNotifier}. This listener trace events from
  * the notifier.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class TraceLayersModelEventListener implements ILayersModelEventListener {
 
 	public TriggeredEventTraces traces = new TriggeredEventTraces();
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#propertyValueAdded(org.eclipse.emf.common.notify.Notification)
 	 *
@@ -56,7 +56,7 @@ public class TraceLayersModelEventListener implements ILayersModelEventListener 
 		traces.addTrace("propertyValueChanged", notification);
 	}
 
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#layerAdded(org.eclipse.emf.common.notify.Notification)
 	 *
@@ -65,9 +65,9 @@ public class TraceLayersModelEventListener implements ILayersModelEventListener 
 	@Override
 	public void layerSet(Notification notification) {
 		traces.addTrace("layerSet", notification);
-		
+
 	}
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#layerAdded(org.eclipse.emf.common.notify.Notification)
 	 *
@@ -129,7 +129,7 @@ public class TraceLayersModelEventListener implements ILayersModelEventListener 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#multiViewsRemovedFromLayer(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification
@@ -140,7 +140,7 @@ public class TraceLayersModelEventListener implements ILayersModelEventListener 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.ILayersModelEventListener#multiViewsAddedToLayer(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification

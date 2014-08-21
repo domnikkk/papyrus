@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -40,6 +40,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.util.LayersAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayersItemProviderAdapterFactory extends LayersAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -47,6 +48,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -55,6 +57,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -63,6 +66,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -71,6 +75,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayersItemProviderAdapterFactory() {
@@ -85,6 +90,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerNamedStyleItemProvider layerNamedStyleItemProvider;
@@ -93,6 +99,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,6 +115,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersStackItemProvider layersStackItemProvider;
@@ -116,6 +124,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,6 +140,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerDescriptorItemProvider layerDescriptorItemProvider;
@@ -139,6 +149,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,6 +165,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerApplicationFactoryItemProvider layerApplicationFactoryItemProvider;
@@ -162,6 +174,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerApplicationFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,6 +190,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertySetterRegistryItemProvider propertySetterRegistryItemProvider;
@@ -185,6 +199,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -200,6 +215,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringToPropertySetterItemProvider stringToPropertySetterItemProvider;
@@ -208,6 +224,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,6 +240,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Layer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerItemProvider layerItemProvider;
@@ -231,6 +249,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Layer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,6 +265,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Color} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ColorItemProvider colorItemProvider;
@@ -254,6 +274,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Color}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -269,6 +290,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ColorInstanceItemProvider colorInstanceItemProvider;
@@ -277,6 +299,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.ColorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -292,6 +315,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FillInstanceItemProvider fillInstanceItemProvider;
@@ -300,6 +324,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -315,6 +340,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Fill} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FillItemProvider fillItemProvider;
@@ -323,6 +349,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Fill}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -338,6 +365,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FillPropertySetterItemProvider fillPropertySetterItemProvider;
@@ -346,6 +374,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FillPropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -361,6 +390,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IsValidPropertySetterItemProvider isValidPropertySetterItemProvider;
@@ -369,6 +399,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.IsValidPropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -384,6 +415,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NullPropertySetterItemProvider nullPropertySetterItemProvider;
@@ -392,6 +424,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -407,6 +440,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LineType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LineTypeItemProvider lineTypeItemProvider;
@@ -415,6 +449,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LineType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -430,6 +465,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LineInstanceItemProvider lineInstanceItemProvider;
@@ -438,6 +474,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -453,6 +490,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LinePropertySetterItemProvider linePropertySetterItemProvider;
@@ -461,6 +499,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LinePropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -476,6 +515,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FontPropertySetterItemProvider fontPropertySetterItemProvider;
@@ -484,6 +524,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FontPropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -499,6 +540,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FontInstanceItemProvider fontInstanceItemProvider;
@@ -507,6 +549,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FontInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -522,6 +565,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.FontType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FontTypeItemProvider fontTypeItemProvider;
@@ -530,6 +574,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FontType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -545,6 +590,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IsVisiblePropertySetterItemProvider isVisiblePropertySetterItemProvider;
@@ -553,6 +599,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.IsVisiblePropertySetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -568,6 +615,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorRegistryItemProvider layerOperatorDescriptorRegistryItemProvider;
@@ -576,6 +624,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -591,6 +640,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TopLayerOperatorDescriptorItemProvider topLayerOperatorDescriptorItemProvider;
@@ -599,6 +649,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperatorDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -614,6 +665,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StackedLayerOperatorDescriptorItemProvider stackedLayerOperatorDescriptorItemProvider;
@@ -622,6 +674,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperatorDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -637,6 +690,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomPropertyOperatorItemProvider customPropertyOperatorItemProvider;
@@ -645,6 +699,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomPropertyOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -660,6 +715,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AndStackedLayerOperatorDescriptorItemProvider andStackedLayerOperatorDescriptorItemProvider;
@@ -668,6 +724,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AndStackedLayerOperatorDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -683,6 +740,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OrStackedLayerOperatorDescriptorItemProvider orStackedLayerOperatorDescriptorItemProvider;
@@ -691,6 +749,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.OrStackedLayerOperatorDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -706,6 +765,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IsAbstractUmlSetterItemProvider isAbstractUmlSetterItemProvider;
@@ -714,6 +774,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.IsAbstractUmlSetter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -729,6 +790,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AllViewsDerivedLayerItemProvider allViewsDerivedLayerItemProvider;
@@ -737,6 +799,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -752,6 +815,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringToTypeInstanceMapItemProvider stringToTypeInstanceMapItemProvider;
@@ -760,6 +824,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -775,6 +840,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyItemProvider propertyItemProvider;
@@ -783,6 +849,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Property}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -798,6 +865,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MetamodelItemProvider metamodelItemProvider;
@@ -806,6 +874,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Metamodel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -821,6 +890,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.Folder} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FolderItemProvider folderItemProvider;
@@ -829,6 +899,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Folder}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -844,6 +915,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.IntInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IntInstanceItemProvider intInstanceItemProvider;
@@ -852,6 +924,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.IntInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -867,6 +940,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BooleanInstanceItemProvider booleanInstanceItemProvider;
@@ -875,6 +949,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -890,6 +965,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.StringInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringInstanceItemProvider stringInstanceItemProvider;
@@ -898,6 +974,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.StringInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -913,6 +990,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.IntType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IntTypeItemProvider intTypeItemProvider;
@@ -921,6 +999,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.IntType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -936,6 +1015,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BooleanTypeItemProvider booleanTypeItemProvider;
@@ -944,6 +1024,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -959,6 +1040,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.StringType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringTypeItemProvider stringTypeItemProvider;
@@ -967,6 +1049,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.StringType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -982,6 +1065,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomTypeItemProvider customTypeItemProvider;
@@ -990,6 +1074,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1005,6 +1090,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorItemProvider layerOperatorDescriptorItemProvider;
@@ -1013,6 +1099,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1028,6 +1115,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyOperatorItemProvider propertyOperatorItemProvider;
@@ -1036,6 +1124,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1051,6 +1140,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DefaultPropertyOperatorItemProvider defaultPropertyOperatorItemProvider;
@@ -1059,6 +1149,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.DefaultPropertyOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1074,6 +1165,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersStackApplicationItemProvider layersStackApplicationItemProvider;
@@ -1082,6 +1174,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1097,6 +1190,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerStackDescriptorRegistryItemProvider layerStackDescriptorRegistryItemProvider;
@@ -1105,6 +1199,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerStackDescriptorRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1120,6 +1215,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyRegistryItemProvider propertyRegistryItemProvider;
@@ -1128,6 +1224,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1143,6 +1240,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringToPropertyIndexMapItemProvider stringToPropertyIndexMapItemProvider;
@@ -1151,6 +1249,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1166,6 +1265,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SimpleLayerDescriptorItemProvider simpleLayerDescriptorItemProvider;
@@ -1174,6 +1274,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.SimpleLayerDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1189,6 +1290,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegExpLayerDescriptorItemProvider regExpLayerDescriptorItemProvider;
@@ -1197,6 +1299,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayerDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1212,6 +1315,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NullInstanceItemProvider nullInstanceItemProvider;
@@ -1220,6 +1324,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.NullInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1235,6 +1340,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegExpLayerItemProvider regExpLayerItemProvider;
@@ -1243,6 +1349,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.RegExpLayer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1258,6 +1365,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyIndexItemProvider propertyIndexItemProvider;
@@ -1266,6 +1374,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1281,6 +1390,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TypeRegistryItemProvider typeRegistryItemProvider;
@@ -1289,6 +1399,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1304,6 +1415,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringToTypeMapItemProvider stringToTypeMapItemProvider;
@@ -1312,6 +1424,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link java.util.Map.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1327,6 +1440,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerDescriptorRegistryItemProvider layerDescriptorRegistryItemProvider;
@@ -1335,6 +1449,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerDescriptorRegistry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1350,6 +1465,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TopLayerOperatorItemProvider topLayerOperatorItemProvider;
@@ -1358,6 +1474,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1373,6 +1490,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StackedLayerOperatorItemProvider stackedLayerOperatorItemProvider;
@@ -1381,6 +1499,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.StackedLayerOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1396,6 +1515,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomLayerOperatorItemProvider customLayerOperatorItemProvider;
@@ -1404,6 +1524,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.CustomLayerOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1419,8 +1540,10 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -1429,8 +1552,10 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -1438,6 +1563,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1449,6 +1575,7 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1459,13 +1586,14 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -1477,8 +1605,10 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -1487,8 +1617,10 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -1497,8 +1629,10 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -1508,70 +1642,188 @@ public class LayersItemProviderAdapterFactory extends LayersAdapterFactory imple
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (layerNamedStyleItemProvider != null) layerNamedStyleItemProvider.dispose();
-		if (layersStackItemProvider != null) layersStackItemProvider.dispose();
-		if (layersStackApplicationItemProvider != null) layersStackApplicationItemProvider.dispose();
-		if (layerStackDescriptorRegistryItemProvider != null) layerStackDescriptorRegistryItemProvider.dispose();
-		if (propertyRegistryItemProvider != null) propertyRegistryItemProvider.dispose();
-		if (propertyItemProvider != null) propertyItemProvider.dispose();
-		if (metamodelItemProvider != null) metamodelItemProvider.dispose();
-		if (typeRegistryItemProvider != null) typeRegistryItemProvider.dispose();
-		if (stringToTypeMapItemProvider != null) stringToTypeMapItemProvider.dispose();
-		if (layerDescriptorRegistryItemProvider != null) layerDescriptorRegistryItemProvider.dispose();
-		if (layerDescriptorItemProvider != null) layerDescriptorItemProvider.dispose();
-		if (layerApplicationFactoryItemProvider != null) layerApplicationFactoryItemProvider.dispose();
-		if (propertySetterRegistryItemProvider != null) propertySetterRegistryItemProvider.dispose();
-		if (stringToPropertySetterItemProvider != null) stringToPropertySetterItemProvider.dispose();
-		if (layerOperatorDescriptorRegistryItemProvider != null) layerOperatorDescriptorRegistryItemProvider.dispose();
-		if (layerOperatorDescriptorItemProvider != null) layerOperatorDescriptorItemProvider.dispose();
-		if (propertyOperatorItemProvider != null) propertyOperatorItemProvider.dispose();
-		if (defaultPropertyOperatorItemProvider != null) defaultPropertyOperatorItemProvider.dispose();
-		if (stringToTypeInstanceMapItemProvider != null) stringToTypeInstanceMapItemProvider.dispose();
-		if (folderItemProvider != null) folderItemProvider.dispose();
-		if (intInstanceItemProvider != null) intInstanceItemProvider.dispose();
-		if (booleanInstanceItemProvider != null) booleanInstanceItemProvider.dispose();
-		if (stringInstanceItemProvider != null) stringInstanceItemProvider.dispose();
-		if (intTypeItemProvider != null) intTypeItemProvider.dispose();
-		if (booleanTypeItemProvider != null) booleanTypeItemProvider.dispose();
-		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
-		if (customTypeItemProvider != null) customTypeItemProvider.dispose();
-		if (topLayerOperatorItemProvider != null) topLayerOperatorItemProvider.dispose();
-		if (stackedLayerOperatorItemProvider != null) stackedLayerOperatorItemProvider.dispose();
-		if (customLayerOperatorItemProvider != null) customLayerOperatorItemProvider.dispose();
-		if (propertyIndexItemProvider != null) propertyIndexItemProvider.dispose();
-		if (stringToPropertyIndexMapItemProvider != null) stringToPropertyIndexMapItemProvider.dispose();
-		if (simpleLayerDescriptorItemProvider != null) simpleLayerDescriptorItemProvider.dispose();
-		if (regExpLayerDescriptorItemProvider != null) regExpLayerDescriptorItemProvider.dispose();
-		if (nullInstanceItemProvider != null) nullInstanceItemProvider.dispose();
-		if (regExpLayerItemProvider != null) regExpLayerItemProvider.dispose();
-		if (layerItemProvider != null) layerItemProvider.dispose();
-		if (colorItemProvider != null) colorItemProvider.dispose();
-		if (colorInstanceItemProvider != null) colorInstanceItemProvider.dispose();
-		if (fillInstanceItemProvider != null) fillInstanceItemProvider.dispose();
-		if (fillItemProvider != null) fillItemProvider.dispose();
-		if (fillPropertySetterItemProvider != null) fillPropertySetterItemProvider.dispose();
-		if (isValidPropertySetterItemProvider != null) isValidPropertySetterItemProvider.dispose();
-		if (nullPropertySetterItemProvider != null) nullPropertySetterItemProvider.dispose();
-		if (lineTypeItemProvider != null) lineTypeItemProvider.dispose();
-		if (lineInstanceItemProvider != null) lineInstanceItemProvider.dispose();
-		if (linePropertySetterItemProvider != null) linePropertySetterItemProvider.dispose();
-		if (fontPropertySetterItemProvider != null) fontPropertySetterItemProvider.dispose();
-		if (fontInstanceItemProvider != null) fontInstanceItemProvider.dispose();
-		if (fontTypeItemProvider != null) fontTypeItemProvider.dispose();
-		if (isVisiblePropertySetterItemProvider != null) isVisiblePropertySetterItemProvider.dispose();
-		if (topLayerOperatorDescriptorItemProvider != null) topLayerOperatorDescriptorItemProvider.dispose();
-		if (stackedLayerOperatorDescriptorItemProvider != null) stackedLayerOperatorDescriptorItemProvider.dispose();
-		if (customPropertyOperatorItemProvider != null) customPropertyOperatorItemProvider.dispose();
-		if (andStackedLayerOperatorDescriptorItemProvider != null) andStackedLayerOperatorDescriptorItemProvider.dispose();
-		if (orStackedLayerOperatorDescriptorItemProvider != null) orStackedLayerOperatorDescriptorItemProvider.dispose();
-		if (isAbstractUmlSetterItemProvider != null) isAbstractUmlSetterItemProvider.dispose();
-		if (allViewsDerivedLayerItemProvider != null) allViewsDerivedLayerItemProvider.dispose();
+		if (layerNamedStyleItemProvider != null) {
+			layerNamedStyleItemProvider.dispose();
+		}
+		if (layersStackItemProvider != null) {
+			layersStackItemProvider.dispose();
+		}
+		if (layersStackApplicationItemProvider != null) {
+			layersStackApplicationItemProvider.dispose();
+		}
+		if (layerStackDescriptorRegistryItemProvider != null) {
+			layerStackDescriptorRegistryItemProvider.dispose();
+		}
+		if (propertyRegistryItemProvider != null) {
+			propertyRegistryItemProvider.dispose();
+		}
+		if (propertyItemProvider != null) {
+			propertyItemProvider.dispose();
+		}
+		if (metamodelItemProvider != null) {
+			metamodelItemProvider.dispose();
+		}
+		if (typeRegistryItemProvider != null) {
+			typeRegistryItemProvider.dispose();
+		}
+		if (stringToTypeMapItemProvider != null) {
+			stringToTypeMapItemProvider.dispose();
+		}
+		if (layerDescriptorRegistryItemProvider != null) {
+			layerDescriptorRegistryItemProvider.dispose();
+		}
+		if (layerDescriptorItemProvider != null) {
+			layerDescriptorItemProvider.dispose();
+		}
+		if (layerApplicationFactoryItemProvider != null) {
+			layerApplicationFactoryItemProvider.dispose();
+		}
+		if (propertySetterRegistryItemProvider != null) {
+			propertySetterRegistryItemProvider.dispose();
+		}
+		if (stringToPropertySetterItemProvider != null) {
+			stringToPropertySetterItemProvider.dispose();
+		}
+		if (layerOperatorDescriptorRegistryItemProvider != null) {
+			layerOperatorDescriptorRegistryItemProvider.dispose();
+		}
+		if (layerOperatorDescriptorItemProvider != null) {
+			layerOperatorDescriptorItemProvider.dispose();
+		}
+		if (propertyOperatorItemProvider != null) {
+			propertyOperatorItemProvider.dispose();
+		}
+		if (defaultPropertyOperatorItemProvider != null) {
+			defaultPropertyOperatorItemProvider.dispose();
+		}
+		if (stringToTypeInstanceMapItemProvider != null) {
+			stringToTypeInstanceMapItemProvider.dispose();
+		}
+		if (folderItemProvider != null) {
+			folderItemProvider.dispose();
+		}
+		if (intInstanceItemProvider != null) {
+			intInstanceItemProvider.dispose();
+		}
+		if (booleanInstanceItemProvider != null) {
+			booleanInstanceItemProvider.dispose();
+		}
+		if (stringInstanceItemProvider != null) {
+			stringInstanceItemProvider.dispose();
+		}
+		if (intTypeItemProvider != null) {
+			intTypeItemProvider.dispose();
+		}
+		if (booleanTypeItemProvider != null) {
+			booleanTypeItemProvider.dispose();
+		}
+		if (stringTypeItemProvider != null) {
+			stringTypeItemProvider.dispose();
+		}
+		if (customTypeItemProvider != null) {
+			customTypeItemProvider.dispose();
+		}
+		if (topLayerOperatorItemProvider != null) {
+			topLayerOperatorItemProvider.dispose();
+		}
+		if (stackedLayerOperatorItemProvider != null) {
+			stackedLayerOperatorItemProvider.dispose();
+		}
+		if (customLayerOperatorItemProvider != null) {
+			customLayerOperatorItemProvider.dispose();
+		}
+		if (propertyIndexItemProvider != null) {
+			propertyIndexItemProvider.dispose();
+		}
+		if (stringToPropertyIndexMapItemProvider != null) {
+			stringToPropertyIndexMapItemProvider.dispose();
+		}
+		if (simpleLayerDescriptorItemProvider != null) {
+			simpleLayerDescriptorItemProvider.dispose();
+		}
+		if (regExpLayerDescriptorItemProvider != null) {
+			regExpLayerDescriptorItemProvider.dispose();
+		}
+		if (nullInstanceItemProvider != null) {
+			nullInstanceItemProvider.dispose();
+		}
+		if (regExpLayerItemProvider != null) {
+			regExpLayerItemProvider.dispose();
+		}
+		if (layerItemProvider != null) {
+			layerItemProvider.dispose();
+		}
+		if (colorItemProvider != null) {
+			colorItemProvider.dispose();
+		}
+		if (colorInstanceItemProvider != null) {
+			colorInstanceItemProvider.dispose();
+		}
+		if (fillInstanceItemProvider != null) {
+			fillInstanceItemProvider.dispose();
+		}
+		if (fillItemProvider != null) {
+			fillItemProvider.dispose();
+		}
+		if (fillPropertySetterItemProvider != null) {
+			fillPropertySetterItemProvider.dispose();
+		}
+		if (isValidPropertySetterItemProvider != null) {
+			isValidPropertySetterItemProvider.dispose();
+		}
+		if (nullPropertySetterItemProvider != null) {
+			nullPropertySetterItemProvider.dispose();
+		}
+		if (lineTypeItemProvider != null) {
+			lineTypeItemProvider.dispose();
+		}
+		if (lineInstanceItemProvider != null) {
+			lineInstanceItemProvider.dispose();
+		}
+		if (linePropertySetterItemProvider != null) {
+			linePropertySetterItemProvider.dispose();
+		}
+		if (fontPropertySetterItemProvider != null) {
+			fontPropertySetterItemProvider.dispose();
+		}
+		if (fontInstanceItemProvider != null) {
+			fontInstanceItemProvider.dispose();
+		}
+		if (fontTypeItemProvider != null) {
+			fontTypeItemProvider.dispose();
+		}
+		if (isVisiblePropertySetterItemProvider != null) {
+			isVisiblePropertySetterItemProvider.dispose();
+		}
+		if (topLayerOperatorDescriptorItemProvider != null) {
+			topLayerOperatorDescriptorItemProvider.dispose();
+		}
+		if (stackedLayerOperatorDescriptorItemProvider != null) {
+			stackedLayerOperatorDescriptorItemProvider.dispose();
+		}
+		if (customPropertyOperatorItemProvider != null) {
+			customPropertyOperatorItemProvider.dispose();
+		}
+		if (andStackedLayerOperatorDescriptorItemProvider != null) {
+			andStackedLayerOperatorDescriptorItemProvider.dispose();
+		}
+		if (orStackedLayerOperatorDescriptorItemProvider != null) {
+			orStackedLayerOperatorDescriptorItemProvider.dispose();
+		}
+		if (isAbstractUmlSetterItemProvider != null) {
+			isAbstractUmlSetterItemProvider.dispose();
+		}
+		if (allViewsDerivedLayerItemProvider != null) {
+			allViewsDerivedLayerItemProvider.dispose();
+		}
 	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 422257
  *   Christian W. Damus (CEA) - bug 437052
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -94,7 +94,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	protected EObject getCDOObject(URI uri, boolean loadOnDemand) {
 		EObject result = null;
 
-		if(CDOProxyManager.isCDOProxyURI(uri)) {
+		if (CDOProxyManager.isCDOProxyURI(uri)) {
 			// get a real proxy object, out of thin air, to give CDO the non-null
 			// instance that it needs (otherwise the 'non-null constraint' of
 			// all kinds of reference lists will be violated)
@@ -131,7 +131,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	@Override
 	protected void demandLoad(Resource resource) throws IOException {
 
-		if(CDOUtils.isCDOURI(resource.getURI())) {
+		if (CDOUtils.isCDOURI(resource.getURI())) {
 			// XML options not applicable to CDO resources
 			resource.load(null);
 
@@ -142,7 +142,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	}
 
 	protected void resourceLoadedHook(Resource resource) {
-		for(Diagram next : Iterables.filter(resource.getContents(), Diagram.class)) {
+		for (Diagram next : Iterables.filter(resource.getContents(), Diagram.class)) {
 
 			DawnDiagramUpdater.initializeElement(next);
 		}
@@ -169,12 +169,12 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 		// Did any of the models create a new resource? (the DiModel and/or HistoryModel may have done)
 		// If so, commit them now so that they don't dangle if we later close the editor without saving.
-		out: for(CDOResource next : Iterables.filter(getResources(), CDOResource.class)) {
-			switch(next.cdoState()) {
+		out: for (CDOResource next : Iterables.filter(getResources(), CDOResource.class)) {
+			switch (next.cdoState()) {
 			case NEW:
 			case DIRTY:
 				try {
-					((CDOTransaction)getCDOView()).commit(new NullProgressMonitor());
+					((CDOTransaction) getCDOView()).commit(new NullProgressMonitor());
 				} catch (CommitException e) {
 					Activator.log.error("Commit implicitly created resources failed.", e); //$NON-NLS-1$
 				}
@@ -187,17 +187,17 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	}
 
 	protected void initTransaction(URI uri) {
-		if(getCDOView() == null) {
+		if (getCDOView() == null) {
 			// get the repository and start a transaction on it
 
-			if(repository == null) {
+			if (repository == null) {
 				repository = repositoryManager.getRepositoryForURI(uri);
 			}
 
-			if(repository != null) {
+			if (repository != null) {
 				repository.createTransaction(this);
 				CDOView view = getCDOView();
-				if(view != null) {
+				if (view != null) {
 					view.addListener(getInvalidationListener());
 				}
 			}
@@ -214,9 +214,9 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 			try {
 				super.unload();
 			} finally {
-				if((repository != null) && (getCDOView() != null)) {
+				if ((repository != null) && (getCDOView() != null)) {
 					CDOView view = getCDOView();
-					if(view != null) {
+					if (view != null) {
 						view.removeListener(getInvalidationListener());
 					}
 					invalidationListener = null;
@@ -234,7 +234,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	}
 
 	protected final IListener getInvalidationListener() {
-		if(invalidationListener == null) {
+		if (invalidationListener == null) {
 			invalidationListener = createInvalidationListener();
 		}
 		return invalidationListener;
@@ -245,10 +245,10 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 			@Override
 			public void notifyEvent(IEvent event) {
-				if(event instanceof CDOViewInvalidationEvent) {
+				if (event instanceof CDOViewInvalidationEvent) {
 					TransactionalEditingDomain domain = getTransactionalEditingDomain();
-					if(domain instanceof CDOAwareTransactionalEditingDomain) {
-						((CDOAwareTransactionalEditingDomain)domain).fireResourceSetChanged((CDOViewInvalidationEvent)event);
+					if (domain instanceof CDOAwareTransactionalEditingDomain) {
+						((CDOAwareTransactionalEditingDomain) domain).fireResourceSetChanged((CDOViewInvalidationEvent) event);
 					}
 				}
 			}
@@ -262,7 +262,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 	@Override
 	public EList<Adapter> eAdapters() {
-		if(eAdapters == null) {
+		if (eAdapters == null) {
 			eAdapters = new EAdapterList<Adapter>(this) {
 
 				private static final long serialVersionUID = 1L;
@@ -270,7 +270,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 				@Override
 				public Adapter remove(int index) {
 					Adapter toRemove = primitiveGet(index);
-					if((toRemove instanceof CDOViewSet) && !canDisconnectCDOViewSet()) {
+					if ((toRemove instanceof CDOViewSet) && !canDisconnectCDOViewSet()) {
 						// don't allow its removal if my view is still open!
 						// (Papyrus attempts to clear the resource set's adapters when disposing a ModelSet)
 						return null;
@@ -281,10 +281,10 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 				@Override
 				public void clear() {
-					if(!canDisconnectCDOViewSet()) {
+					if (!canDisconnectCDOViewSet()) {
 						// we can remove everything but the view-set adapter
 						Adapter viewSetAdapter = getViewSetAdapter();
-						if(viewSetAdapter != null) {
+						if (viewSetAdapter != null) {
 							retainAll(Collections.singleton(viewSetAdapter));
 						} else {
 							super.clear();
@@ -309,7 +309,7 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 	}
 
 	boolean isDirty(Resource resource) {
-		return (resource instanceof CDOResource) && DIRTY_STATES.contains(((CDOResource)resource).cdoState());
+		return (resource instanceof CDOResource) && DIRTY_STATES.contains(((CDOResource) resource).cdoState());
 	}
 
 	@Override
@@ -320,9 +320,9 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 		// any changes made by resource deletions?
 		CDOView view = getCDOView();
-		if((view instanceof CDOTransaction) && (getResourcesToDeleteOnSave().size() < initialCount)) {
+		if ((view instanceof CDOTransaction) && (getResourcesToDeleteOnSave().size() < initialCount)) {
 			try {
-				((CDOTransaction)view).commit();
+				((CDOTransaction) view).commit();
 			} catch (CommitException e) {
 				Activator.log.error("Failed to commit resource deletions.", e); //$NON-NLS-1$
 			}
@@ -335,10 +335,10 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 		Resource resource = getResource(uri, false);
 
-		// if it was meant to be deleted, an attempt would have been made to remove it.  That may
-		// have been prevented if it was dirty.  If it isn't now, then delete it.  Otherwise,
+		// if it was meant to be deleted, an attempt would have been made to remove it. That may
+		// have been prevented if it was dirty. If it isn't now, then delete it. Otherwise,
 		// block again
-		if((resource != null) && isDirty(resource)) {
+		if ((resource != null) && isDirty(resource)) {
 			result = false;
 			Activator.log.warn("Attempt to delete a dirty CDO resource: " + uri); //$NON-NLS-1$
 		}
@@ -351,13 +351,13 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 		Resource res = getResource(uri, false);
 		boolean result = res instanceof CDOResource;
 
-		if(!result) {
-			// not a CDO resource.  Default behaviour
+		if (!result) {
+			// not a CDO resource. Default behaviour
 			result = super.deleteResource(uri);
 		} else {
 			try {
 				res.delete(null);
-				if(res.getResourceSet() != null) {
+				if (res.getResourceSet() != null) {
 					res.unload();
 					res.getResourceSet().getResources().remove(res);
 				}
@@ -375,13 +375,13 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 		CDOTransaction transaction = null;
 
 		Collection<CDOObject> updates;
-		if((view instanceof CDOTransaction) && view.isDirty()) {
+		if ((view instanceof CDOTransaction) && view.isDirty()) {
 			// collect updated objects to post-process for cross-unit references
-			transaction = (CDOTransaction)view;
+			transaction = (CDOTransaction) view;
 			updates = ImmutableList.<CDOObject> builder() //
-			.addAll(transaction.getNewObjects().values()) //
-			.addAll(transaction.getDirtyObjects().values()) //
-			.build();
+					.addAll(transaction.getNewObjects().values()) //
+					.addAll(transaction.getDirtyObjects().values()) //
+					.build();
 		} else {
 			updates = Collections.emptyList();
 		}
@@ -390,24 +390,24 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 		super.save(sub.newChild(1));
 
-		if(!updates.isEmpty()) {
+		if (!updates.isEmpty()) {
 			CDOControlModeParticipant control = new CDOControlModeParticipant();
 			CDOControlModeParticipant.IUpdate run = CDOControlModeParticipant.IUpdate.EMPTY;
 
-			for(CDOObject next : updates) {
+			for (CDOObject next : updates) {
 				EObject object = CDOUtil.getEObject(next);
-				if(object != null) {
-					for(EReference xref : object.eClass().getEAllReferences()) {
+				if (object != null) {
+					for (EReference xref : object.eClass().getEAllReferences()) {
 						// do include containment references because we may have added a model
 						// element and controlled it in the same transaction
-						if(xref.isChangeable() && !xref.isDerived() && !xref.isTransient()) {
+						if (xref.isChangeable() && !xref.isDerived() && !xref.isTransient()) {
 							run = run.chain(control.getProxyCrossReferencesUpdate(object, xref));
 						}
 					}
 				}
 			}
 
-			if(!run.isEmpty()) {
+			if (!run.isEmpty()) {
 				run.apply();
 
 				try {
@@ -435,9 +435,9 @@ public class CDOAwareModelSet extends OnDemandLoadingModelSet {
 
 		@Override
 		public boolean remove(Object object) {
-			boolean result = !(object instanceof CDOResource) || !isDirty((CDOResource)object);
+			boolean result = !(object instanceof CDOResource) || !isDirty((CDOResource) object);
 
-			if(result) {
+			if (result) {
 				result = super.remove(object);
 			}
 

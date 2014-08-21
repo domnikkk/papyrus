@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class RepositoryPropertyPage
 	private static final String MESSAGE = Messages.RepositoryPropertyPage_0;
 
 	private RepositoryPropertiesBlock block;
-	
+
 	private Button forgetCredsButton;
 
 	@Override
@@ -51,26 +51,26 @@ public class RepositoryPropertyPage
 
 		Composite result = new Composite(parent, SWT.NONE);
 		result.setLayout(new GridLayout(1, false));
-		
+
 		block = new RepositoryPropertiesBlock(getRepository());
 		block.createControl(result);
 		block
-			.addListener(new RepositoryPropertiesBlock.StatusChangedMessageProviderAdapter() {
+				.addListener(new RepositoryPropertiesBlock.StatusChangedMessageProviderAdapter() {
 
-				@Override
-				protected void handleMessageChange(String message,
-						int messageSeverity) {
+					@Override
+					protected void handleMessageChange(String message,
+							int messageSeverity) {
 
-					setValid(messageSeverity < IMessageProvider.ERROR);
+						setValid(messageSeverity < IMessageProvider.ERROR);
 
-					if (message == null) {
-						setMessage(MESSAGE);
-					} else {
-						setMessage(message, messageSeverity);
+						if (message == null) {
+							setMessage(MESSAGE);
+						} else {
+							setMessage(message, messageSeverity);
+						}
 					}
-				}
-			});
-		
+				});
+
 		forgetCredsButton = new Button(result, SWT.PUSH);
 		forgetCredsButton.setText(Messages.RepositoryPropertyPage_1);
 		forgetCredsButton.addSelectionListener(new SelectionAdapter() {
@@ -86,8 +86,8 @@ public class RepositoryPropertyPage
 	protected IPapyrusRepository getRepository() {
 		IAdaptable element = getElement();
 		IPapyrusRepository result = (element instanceof IPapyrusRepository)
-			? (IPapyrusRepository) element
-			: (IPapyrusRepository) element.getAdapter(IPapyrusRepository.class);
+				? (IPapyrusRepository) element
+				: (IPapyrusRepository) element.getAdapter(IPapyrusRepository.class);
 
 		return result;
 	}
@@ -102,12 +102,12 @@ public class RepositoryPropertyPage
 			IPapyrusRepository repository = getRepository();
 
 			if (!repository.isConnected()
-				|| Objects.equal(repository.getURL(), block.getURL())
-				|| MessageDialog
-					.openQuestion(
-						getShell(),
-						Messages.RepositoryPropertyPage_2,
-						Messages.RepositoryPropertyPage_3)) {
+					|| Objects.equal(repository.getURL(), block.getURL())
+					|| MessageDialog
+							.openQuestion(
+									getShell(),
+									Messages.RepositoryPropertyPage_2,
+									Messages.RepositoryPropertyPage_3)) {
 
 				updateRepository(repository);
 
@@ -125,7 +125,7 @@ public class RepositoryPropertyPage
 
 	private void updateRepository(IPapyrusRepository repository) {
 		boolean reconnect = repository.isConnected()
-			&& !Objects.equal(repository.getURL(), block.getURL());
+				&& !Objects.equal(repository.getURL(), block.getURL());
 
 		IInternalPapyrusRepositoryManager mgr = PapyrusRepositoryManager.INSTANCE;
 		String url = block.getURL();
@@ -147,7 +147,7 @@ public class RepositoryPropertyPage
 		} catch (CommitException e) {
 			StatusAdapter adapter = new StatusAdapter(e.getStatus());
 			adapter.setProperty(IStatusAdapterConstants.TITLE_PROPERTY,
-				Messages.RepositoryPropertyPage_4);
+					Messages.RepositoryPropertyPage_4);
 			StatusManager.getManager().handle(adapter, StatusManager.SHOW);
 		}
 	}

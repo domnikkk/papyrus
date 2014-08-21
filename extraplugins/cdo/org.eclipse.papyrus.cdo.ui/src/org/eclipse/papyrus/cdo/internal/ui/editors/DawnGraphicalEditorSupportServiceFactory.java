@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,42 +17,46 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 
 /**
- * This is the DawnGraphicalEditorSupportServiceFactory type.  Enjoy.
+ * This is the DawnGraphicalEditorSupportServiceFactory type. Enjoy.
  */
 public class DawnGraphicalEditorSupportServiceFactory
 		implements IServiceFactory {
 
 	private ServicesRegistry registry;
-	
+
 	private DawnGraphicalEditorSupport service;
-	
+
 	public DawnGraphicalEditorSupportServiceFactory() {
 		super();
 	}
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry)
 			throws ServiceException {
-		
+
 		this.registry = servicesRegistry;
 	}
 
+	@Override
 	public void startService()
 			throws ServiceException {
-		
+
 		// pass
 	}
 
+	@Override
 	public void disposeService()
 			throws ServiceException {
-		
+
 		if (service == null) {
 			// TODO clean up?
 		}
 	}
 
+	@Override
 	public Object createServiceInstance()
 			throws ServiceException {
-		
+
 		service = new DawnGraphicalEditorSupport(registry);
 		return service;
 	}

@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -40,9 +40,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * Allow to generate Code thanks to a JDT model
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTJavaProject implements JDTVisitor {
 
@@ -54,9 +54,9 @@ public class SynchJDTJavaProject implements JDTVisitor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param modelJDT
-	 *        the model JDT to generate
+	 *            the model JDT to generate
 	 */
 	public SynchJDTJavaProject(IJavaModel ijm, IWorkspaceRoot iroot, GeneratorPreference preference) {
 		this.ijm = ijm;
@@ -65,39 +65,42 @@ public class SynchJDTJavaProject implements JDTVisitor {
 	}
 
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		if(!element.isGenerated())
+		if (!element.isGenerated()) {
 			return;
+		}
 
-		if(!(element instanceof JDTJavaProject))
+		if (!(element instanceof JDTJavaProject)) {
 			return;
+		}
 		// cast element to JDTJavaProject
-		JDTJavaProject project = (JDTJavaProject)element;
+		JDTJavaProject project = (JDTJavaProject) element;
 
 		// set the multi-value for the metamodel
 		JdtmmPreference.setClassMultiValue(preference.genericClassForMultiValue().substring(preference.genericClassForMultiValue().lastIndexOf(".") + 1));
 
 
-		// search IJavaProject				
-		//IProject projet =  iroot.getProject(project.getElementName());
+		// search IJavaProject
+		// IProject projet = iroot.getProject(project.getElementName());
 		IJavaProject ijavaProjet = ijm.getJavaProject(project.getElementName());
 		IProject proj;
 
 		// if ijavaProjet don't exist, create this!
-		if(!ijavaProjet.exists()) {
+		if (!ijavaProjet.exists()) {
 			try {
 				proj = iroot.getProject(project.getElementName());
-				if(!proj.exists()) {
+				if (!proj.exists()) {
 					proj.create(null);
 					proj.open(null);
-				} else if(!proj.isOpen()) {
+				} else if (!proj.isOpen()) {
 					proj.open(null);
 				}
 
 				// Specifies type of project
 				IProjectDescription description = proj.getDescription();
-				description.setNatureIds(new String[]{ JavaCore.NATURE_ID });
+				description.setNatureIds(new String[] { JavaCore.NATURE_ID });
 				proj.setDescription(description, null);
 			} catch (CoreException e) {
 				e.printStackTrace();
@@ -107,7 +110,7 @@ public class SynchJDTJavaProject implements JDTVisitor {
 			ijavaProjet = JavaCore.create(proj);
 		}
 
-		// include the default JRE library if don't exist		
+		// include the default JRE library if don't exist
 		List<IClasspathEntry> entries = new ArrayList<IClasspathEntry>();
 		IVMInstall vmInstall = JavaRuntime.getDefaultVMInstall();
 		boolean creerJRE = true;
@@ -115,13 +118,14 @@ public class SynchJDTJavaProject implements JDTVisitor {
 
 		try {
 			// take libs to project class path
-			for(IClasspathEntry elem : ijavaProjet.getRawClasspath()) {
-				if(elem.getPath().toString().contains(JavaRuntime.JRE_CONTAINER))
+			for (IClasspathEntry elem : ijavaProjet.getRawClasspath()) {
+				if (elem.getPath().toString().contains(JavaRuntime.JRE_CONTAINER)) {
 					creerJRE = false;
+				}
 				entries.add(elem);
 			}
 			// if jre don't exist, we add it to classpath
-			if(creerJRE) {
+			if (creerJRE) {
 				entries.add(JavaCore.newContainerEntry(JavaRuntime.newJREContainerPath(vmInstall)));
 				ijavaProjet.setRawClasspath(entries.toArray(new IClasspathEntry[entries.size()]), null);
 			}
@@ -134,7 +138,7 @@ public class SynchJDTJavaProject implements JDTVisitor {
 
 		// browse all PackageFragmentRoot and call the visit
 		JDTVisitor visitor = new SynchJDTPackageFragmentRoot(ijavaProjet, preference);
-		for(JDTPackageFragmentRoot root : project.getPackageFragmentRoots()) {
+		for (JDTPackageFragmentRoot root : project.getPackageFragmentRoots()) {
 			root.accept(visitor);
 		}
 	}

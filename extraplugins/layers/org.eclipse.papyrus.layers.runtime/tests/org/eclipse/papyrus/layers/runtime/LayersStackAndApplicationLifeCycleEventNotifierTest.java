@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -55,7 +55,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		modelSet = mngr;
 	}
 
@@ -72,7 +72,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testLayersStackAndApplicationLifeCycleEventNotifier() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 		LayersStackAndApplicationLifeCycleEventNotifier notifier = new LayersStackAndApplicationLifeCycleEventNotifier(layersModel);
 		assertNotNull("application created", notifier);
@@ -86,11 +86,11 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testDispose() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 		LayersStackAndApplicationLifeCycleEventNotifier synchronizer = new LayersStackAndApplicationLifeCycleEventNotifier(layersModel);
 		assertFalse("application created", synchronizer.isDisposed());
-		
+
 		// Try to dispose
 		synchronizer.dispose();
 		assertTrue("object is disposed", synchronizer.isDisposed());
@@ -101,11 +101,11 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testIsDisposed() {
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 		LayersStackAndApplicationLifeCycleEventNotifier synchronizer = new LayersStackAndApplicationLifeCycleEventNotifier(layersModel);
 		assertFalse("application created", synchronizer.isDisposed());
-		
+
 		// Try to dispose
 		synchronizer.dispose();
 		assertTrue("object is disposed", synchronizer.isDisposed());
@@ -152,21 +152,21 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testModelSetCreation() {
-	
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
+
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
 		assertNotNull("NotationModel is created", notationModel);
 		// Try to create a Diagram
 		notationModel.addDiagram(NotationFactory.eINSTANCE.createDiagram());
-		// 
+		//
 		assertNotNull("Diagram is in the roots", notationModel.getResource().getContents().get(0));
-		
-		
-		
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+
+
+
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		assertNotNull("LayerModel is created", layersModel);
 		assertNotNull("LayerStackApplication is created", layersModel.getLayerStackApplication());
-	
-		
+
+
 	}
 
 	/**
@@ -175,25 +175,25 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testLayerStackAdded() {
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
-	
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
+
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		notationModel.addDiagram(diagram);
 		// Create a helper used to attach a LayerStack to diagram.
 		NotationDiagramHelper helper = new NotationDiagramHelper(layersModel, diagram);
-		
+
 		// Create the notifier
 		TraceLayersStackApplicationEventListener traces = new TraceLayersStackApplicationEventListener();
 		LayersStackAndApplicationLifeCycleEventNotifier notifier = new LayersStackAndApplicationLifeCycleEventNotifier(layersModel);
 		notifier.addLayersModelEventListener(traces);
-		
-	    // Add a layer Stack to the diagram
+
+		// Add a layer Stack to the diagram
 		helper.attachLayersStack();
-		
+
 		// Check if the appropriate method is called
 		assertTrue("event catched", traces.traces.contains("layerStackAdded"));
-		
+
 		// dispose
 		notifier.dispose();
 	}
@@ -203,28 +203,28 @@ public class LayersStackAndApplicationLifeCycleEventNotifierTest {
 	 */
 	@Test
 	public void testLayerStackRemoved() {
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
-	
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
+
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		notationModel.addDiagram(diagram);
 		// Create a helper used to attach a LayerStack to diagram.
 		NotationDiagramHelper helper = new NotationDiagramHelper(layersModel, diagram);
-		
+
 		// Create the notifier
 		TraceLayersStackApplicationEventListener traces = new TraceLayersStackApplicationEventListener();
 		LayersStackAndApplicationLifeCycleEventNotifier notifier = new LayersStackAndApplicationLifeCycleEventNotifier(layersModel);
 		notifier.addLayersModelEventListener(traces);
-		
-	    // Add a layer Stack to the diagram
+
+		// Add a layer Stack to the diagram
 		helper.attachLayersStack();
-		
+
 		traces.traces.clear();
 		helper.removeLayersStack();
-		
+
 		// Check if the appropriate method is called
 		assertTrue("event catched", traces.traces.contains("layerStackRemoved"));
-	
+
 		// dispose
 		notifier.dispose();
 	}

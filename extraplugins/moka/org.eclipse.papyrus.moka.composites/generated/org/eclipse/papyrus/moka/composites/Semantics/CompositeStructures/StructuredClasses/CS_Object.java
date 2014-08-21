@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,32 +45,32 @@ import org.eclipse.uml2.uml.StructuralFeature;
 public class CS_Object extends Object_ {
 
 	public Execution dispatchIn(Operation operation, CS_InteractionPoint interactionPoint) {
-		// If the interaction point refers to a behavior port, does nothing [for the moment... ?], 
+		// If the interaction point refers to a behavior port, does nothing [for the moment... ?],
 		// since the only kind of event supported in fUML is SignalEvent
-		// If it does not refer to a behavior port, select appropriate delegation links 
-		// from interactionPoint, and propagates the operation call through 
+		// If it does not refer to a behavior port, select appropriate delegation links
+		// from interactionPoint, and propagates the operation call through
 		// these links
 		Execution execution = null;
-		if(interactionPoint.definingPort.isBehavior()) {
+		if (interactionPoint.definingPort.isBehavior()) {
 			// Do nothing
 		} else {
 			boolean operationIsProvided = true;
 			List<Reference> potentialTargets = new ArrayList<Reference>();
 			List<CS_Link> cddLinks = this.getLinks(interactionPoint);
 			Integer linkIndex = 1;
-			while(linkIndex <= cddLinks.size()) {
+			while (linkIndex <= cddLinks.size()) {
 				List<Reference> validTargets = this.selectTargetsForDispatching(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, operation, operationIsProvided);
 				Integer targetIndex = 1;
-				while(targetIndex <= validTargets.size()) {
+				while (targetIndex <= validTargets.size()) {
 					potentialTargets.add(validTargets.get(targetIndex - 1));
 					targetIndex = targetIndex + 1;
 				}
 				linkIndex = linkIndex + 1;
 			}
-			// If potentialTargets is empty, no delegation target have been found, 
+			// If potentialTargets is empty, no delegation target have been found,
 			// and the operation call will be lost
-			if(!(potentialTargets.size() == 0)) {
-				CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+			if (!(potentialTargets.size() == 0)) {
+				CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 				// Choose one target non-deterministically
 				List<Reference> targets = strategy.select(potentialTargets, new CallOperationActionActivation());
 				Reference target = targets.get(0);
@@ -82,15 +82,15 @@ public class CS_Object extends Object_ {
 
 
 	public void sendIn(SignalInstance signalInstance, CS_InteractionPoint interactionPoint) {
-		// If the interaction is a behavior port, 
+		// If the interaction is a behavior port,
 		// creates a CS_SignalInstance from the signal instance,
 		// sets its interaction point,
 		// and sends it to the target object using operation send
-		// If this is not a behavior port, 
-		// select appropriate delegation targets from interactionPoint, 
+		// If this is not a behavior port,
+		// select appropriate delegation targets from interactionPoint,
 		// and propagates the signal to these targets
-		if(interactionPoint.definingPort.isBehavior()) {
-			CS_SignalInstance newSignalInstance = (CS_SignalInstance)signalInstance.copy();
+		if (interactionPoint.definingPort.isBehavior()) {
+			CS_SignalInstance newSignalInstance = (CS_SignalInstance) signalInstance.copy();
 			newSignalInstance.interactionPoint = interactionPoint;
 			this.send(newSignalInstance);
 		} else {
@@ -98,21 +98,21 @@ public class CS_Object extends Object_ {
 			List<Reference> potentialTargets = new ArrayList<Reference>();
 			List<CS_Link> cddLinks = this.getLinks(interactionPoint);
 			Integer linkIndex = 1;
-			while(linkIndex <= cddLinks.size()) {
+			while (linkIndex <= cddLinks.size()) {
 				List<Reference> validTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.type, toInternal);
 				Integer targetIndex = 1;
-				while(targetIndex <= validTargets.size()) {
+				while (targetIndex <= validTargets.size()) {
 					potentialTargets.add(validTargets.get(targetIndex - 1));
 					targetIndex = targetIndex + 1;
 				}
 				linkIndex = linkIndex + 1;
 			}
-			// If potential targets is empty, no delegation target has been found, 
+			// If potential targets is empty, no delegation target has been found,
 			// and the signal is lost
 			// Otherwise, do the following concurrently
-			for(int i = 0; i < potentialTargets.size(); i++) {
+			for (int i = 0; i < potentialTargets.size(); i++) {
 				Reference target = potentialTargets.get(i);
-				CS_SignalInstance newSignalInstance = (CS_SignalInstance)signalInstance.copy();
+				CS_SignalInstance newSignalInstance = (CS_SignalInstance) signalInstance.copy();
 				newSignalInstance.interactionPoint = interactionPoint;
 				target.send(newSignalInstance);
 			}
@@ -121,22 +121,22 @@ public class CS_Object extends Object_ {
 
 
 	public List<Reference> selectTargetsForSending(CS_Link link, CS_InteractionPoint interactionPoint, ConnectorKind connectorKind, Signal signal, Boolean toInternal) {
-		// From the given link, signal and interaction point, retrieves potential targets (i.e. end values of link) 
+		// From the given link, signal and interaction point, retrieves potential targets (i.e. end values of link)
 		// through which request can be propagated
 		// These targets are attached to interaction point through the given link, and respect the following rules:
 		// - if toInternal is true, connectorKind must be Delegation, the given link has to target the internals of this CS_Object
 		// - if toInternal is false, the given link has to target the environment of this CS_Object.
 		List<Reference> potentialTargets = new ArrayList<Reference>();
-		if(toInternal && connectorKind == ConnectorKind.DELEGATION_LITERAL) {
-			if(this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
+		if (toInternal && connectorKind == ConnectorKind.DELEGATION_LITERAL) {
+			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
 				Integer i = 1;
-				while(i <= link.getFeatureValues().size()) {
+				while (i <= link.getFeatureValues().size()) {
 					List<Value> values = link.getFeatureValues().get(i - 1).values;
-					if(!values.isEmpty()) {
+					if (!values.isEmpty()) {
 						Integer j = 1;
-						while(j <= values.size()) {
-							Reference cddTarget = (Reference)values.get(j - 1);
-							if(!cddTarget.equals(interactionPoint)) {
+						while (j <= values.size()) {
+							Reference cddTarget = (Reference) values.get(j - 1);
+							if (!cddTarget.equals(interactionPoint)) {
 								potentialTargets.add(cddTarget);
 							}
 							j = j + 1;
@@ -146,25 +146,25 @@ public class CS_Object extends Object_ {
 				}
 			}
 		} else { // to Environment
-			if(this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
+			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
 				Integer i = 1;
-				while(i <= link.getFeatureValues().size()) {
+				while (i <= link.getFeatureValues().size()) {
 					List<Value> values = link.getFeatureValues().get(i - 1).values;
-					if(!values.isEmpty() && values.get(0) instanceof Reference) {
-						Reference cddTarget = (Reference)values.get(0);
-						if(connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
-							if(!(cddTarget instanceof CS_InteractionPoint)) { // This is an assembly link
+					if (!values.isEmpty() && values.get(0) instanceof Reference) {
+						Reference cddTarget = (Reference) values.get(0);
+						if (connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
+							if (!(cddTarget instanceof CS_InteractionPoint)) { // This is an assembly link
 								potentialTargets.add(cddTarget);
 							} else {
-								// This is an assembly if the interaction point is not a feature value 
+								// This is an assembly if the interaction point is not a feature value
 								// for a container of this CS_Object
 								List<CS_Object> directContainers = this.getDirectContainers();
 								boolean isAssembly = true;
 								Integer j = 1;
-								if(!this.hasValueForAFeature(cddTarget)) {
-									while(isAssembly && j <= directContainers.size()) {
+								if (!this.hasValueForAFeature(cddTarget)) {
+									while (isAssembly && j <= directContainers.size()) {
 										CS_Object container = directContainers.get(j - 1);
-										if(container.hasValueForAFeature(cddTarget)) {
+										if (container.hasValueForAFeature(cddTarget)) {
 											isAssembly = false;
 										}
 										j++;
@@ -172,25 +172,25 @@ public class CS_Object extends Object_ {
 								} else {
 									isAssembly = false;
 								}
-								if(isAssembly) {
+								if (isAssembly) {
 									potentialTargets.add(cddTarget);
 								}
 							}
 						} else { // delegation
 									// This is a delegation if the target is an interaction point
 									// and if this interaction is a feature value for a container of this CS_Object
-							if(cddTarget instanceof CS_InteractionPoint) {
+							if (cddTarget instanceof CS_InteractionPoint) {
 								List<CS_Object> directContainers = this.getDirectContainers();
 								boolean isDelegation = false;
 								Integer j = 1;
-								while(!isDelegation && j <= directContainers.size()) {
+								while (!isDelegation && j <= directContainers.size()) {
 									CS_Object container = directContainers.get(j - 1);
-									if(container.hasValueForAFeature(cddTarget)) {
+									if (container.hasValueForAFeature(cddTarget)) {
 										isDelegation = true;
 									}
 									j++;
 								}
-								if(isDelegation) {
+								if (isDelegation) {
 									potentialTargets.add(cddTarget);
 								}
 							}
@@ -204,23 +204,23 @@ public class CS_Object extends Object_ {
 	}
 
 	public List<Reference> selectTargetsForDispatching(CS_Link link, CS_InteractionPoint interactionPoint, ConnectorKind connectorKind, Operation operation, Boolean toInternal) {
-		// From the given link, operation and interaction point, retrieves potential targets (i.e. end values of link) 
+		// From the given link, operation and interaction point, retrieves potential targets (i.e. end values of link)
 		// through which request can be propagated
 		// These targets are attached to interaction point through the given link, and respect the following rules:
-		// - if isProvided is true, connectorKind must be Delegation, the given link has to target the internals of this CS_Object, 
-		// and a valid target must provide the Operation 
+		// - if isProvided is true, connectorKind must be Delegation, the given link has to target the internals of this CS_Object,
+		// and a valid target must provide the Operation
 		// - if isProvided is false, the given link has to target the environment of this CS_Object.
-		//		- if connectorKind is assembly, a valid target has to provide the operation
-		// 		- if connectorKind is delegation, a valid target has to require the operation
+		// - if connectorKind is assembly, a valid target has to provide the operation
+		// - if connectorKind is delegation, a valid target has to require the operation
 		List<Reference> potentialTargets = new ArrayList<Reference>();
-		if(toInternal && connectorKind == ConnectorKind.DELEGATION_LITERAL) {
-			if(this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
+		if (toInternal && connectorKind == ConnectorKind.DELEGATION_LITERAL) {
+			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
 				Integer i = 1;
-				while(i <= link.getFeatureValues().size()) {
+				while (i <= link.getFeatureValues().size()) {
 					List<Value> values = link.getFeatureValues().get(i - 1).values;
-					if(!values.isEmpty() && values.get(0) instanceof Reference) {
-						Reference cddTarget = (Reference)values.get(0);
-						if(cddTarget != interactionPoint && this.isOperationProvided(cddTarget, operation)) {
+					if (!values.isEmpty() && values.get(0) instanceof Reference) {
+						Reference cddTarget = (Reference) values.get(0);
+						if (cddTarget != interactionPoint && this.isOperationProvided(cddTarget, operation)) {
 							potentialTargets.add(cddTarget);
 						}
 					}
@@ -228,27 +228,27 @@ public class CS_Object extends Object_ {
 				}
 			}
 		} else { // to environment
-			if(this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
+			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
 				Integer i = 1;
-				while(i <= link.getFeatureValues().size()) {
+				while (i <= link.getFeatureValues().size()) {
 					List<Value> values = link.getFeatureValues().get(i - 1).values;
-					if(!values.isEmpty() && values.get(0) instanceof Reference) {
-						Reference cddTarget = (Reference)values.get(0);
-						if(connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
-							if(!(cddTarget instanceof CS_InteractionPoint)) { // This is an assembly link
-								if(this.isOperationProvided(cddTarget, operation)) {
+					if (!values.isEmpty() && values.get(0) instanceof Reference) {
+						Reference cddTarget = (Reference) values.get(0);
+						if (connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
+							if (!(cddTarget instanceof CS_InteractionPoint)) { // This is an assembly link
+								if (this.isOperationProvided(cddTarget, operation)) {
 									potentialTargets.add(cddTarget);
 								}
 							} else {
-								// This is an assembly if the interaction point is not a feature value 
+								// This is an assembly if the interaction point is not a feature value
 								// for a container of this CS_Object
 								List<CS_Object> directContainers = this.getDirectContainers();
 								boolean isAssembly = true;
 								Integer j = 1;
-								if(!this.hasValueForAFeature(cddTarget)) {
-									while(isAssembly && j <= directContainers.size()) {
+								if (!this.hasValueForAFeature(cddTarget)) {
+									while (isAssembly && j <= directContainers.size()) {
 										CS_Object container = directContainers.get(j - 1);
-										if(container.hasValueForAFeature(cddTarget)) {
+										if (container.hasValueForAFeature(cddTarget)) {
 											isAssembly = false;
 										}
 										j++;
@@ -256,8 +256,8 @@ public class CS_Object extends Object_ {
 								} else {
 									isAssembly = false;
 								}
-								if(isAssembly) {
-									if(this.isOperationProvided(cddTarget, operation)) {
+								if (isAssembly) {
+									if (this.isOperationProvided(cddTarget, operation)) {
 										potentialTargets.add(cddTarget);
 									}
 								}
@@ -265,19 +265,19 @@ public class CS_Object extends Object_ {
 						} else { // delegation
 									// This is a delegation if the target is an interaction point
 									// and if this interaction is a feature value for a container of this CS_Object
-							if(cddTarget instanceof CS_InteractionPoint) {
+							if (cddTarget instanceof CS_InteractionPoint) {
 								List<CS_Object> directContainers = this.getDirectContainers();
 								boolean isDelegation = false;
 								Integer j = 1;
-								while(!isDelegation && j <= directContainers.size()) {
+								while (!isDelegation && j <= directContainers.size()) {
 									CS_Object container = directContainers.get(j - 1);
-									if(container.hasValueForAFeature(cddTarget)) {
+									if (container.hasValueForAFeature(cddTarget)) {
 										isDelegation = true;
 									}
 									j++;
 								}
-								if(isDelegation) {
-									if(this.isOperationRequired(cddTarget, operation)) {
+								if (isDelegation) {
+									if (this.isOperationRequired(cddTarget, operation)) {
 										potentialTargets.add(cddTarget);
 									}
 								}
@@ -292,7 +292,7 @@ public class CS_Object extends Object_ {
 	}
 
 	public void sendOut(SignalInstance signalInstance, CS_InteractionPoint interactionPoint) {
-		// Select appropriate delegation links from interactionPoint, 
+		// Select appropriate delegation links from interactionPoint,
 		// and propagates the signal instance through these links
 		// Appropriate links are links which target elements
 		// in the environment of this CS_Object.
@@ -307,17 +307,17 @@ public class CS_Object extends Object_ {
 
 		List<CS_Link> cddLinks = this.getLinks(interactionPoint);
 		Integer linkIndex = 1;
-		while(linkIndex <= cddLinks.size()) {
+		while (linkIndex <= cddLinks.size()) {
 			List<Reference> validAssemblyTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.ASSEMBLY_LITERAL, signalInstance.type, notToInternal);
 			Integer targetIndex = 1;
-			while(targetIndex <= validAssemblyTargets.size()) {
+			while (targetIndex <= validAssemblyTargets.size()) {
 				allPotentialTargets.add(validAssemblyTargets.get(targetIndex - 1));
 				targetsForSendingIn.add(validAssemblyTargets.get(targetIndex - 1));
 				targetIndex = targetIndex + 1;
 			}
 			List<Reference> validDelegationTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.type, notToInternal);
 			targetIndex = 1;
-			while(targetIndex <= validDelegationTargets.size()) {
+			while (targetIndex <= validDelegationTargets.size()) {
 				allPotentialTargets.add(validDelegationTargets.get(targetIndex - 1));
 				targetsForSendingOut.add(validDelegationTargets.get(targetIndex - 1));
 				targetIndex = targetIndex + 1;
@@ -325,22 +325,22 @@ public class CS_Object extends Object_ {
 			linkIndex = linkIndex + 1;
 		}
 
-		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 		List<Reference> selectedTargets = strategy.select(allPotentialTargets, new SendSignalActionActivation());
 
-		for(int j = 0; j < selectedTargets.size(); j++) {
+		for (int j = 0; j < selectedTargets.size(); j++) {
 			Reference target = selectedTargets.get(j);
-			for(int k = 0; k < targetsForSendingIn.size(); k++) {
+			for (int k = 0; k < targetsForSendingIn.size(); k++) {
 				Reference cddTarget = targetsForSendingIn.get(k);
-				if(cddTarget == target) {
+				if (cddTarget == target) {
 					target.send(signalInstance);
 				}
 			}
-			for(int k = 0; k < targetsForSendingOut.size(); k++) {
+			for (int k = 0; k < targetsForSendingOut.size(); k++) {
 				// The target must be an interaction point
 				// i.e. a delegation connector for a required reception can only target a port
-				CS_InteractionPoint cddTarget = (CS_InteractionPoint)targetsForSendingOut.get(k);
-				if(cddTarget == target) {
+				CS_InteractionPoint cddTarget = (CS_InteractionPoint) targetsForSendingOut.get(k);
+				if (cddTarget == target) {
 					CS_Reference owner = cddTarget.owner;
 					owner.sendOut(signalInstance, cddTarget);
 				}
@@ -349,7 +349,7 @@ public class CS_Object extends Object_ {
 	}
 
 	public Execution dispatchOut(Operation operation, CS_InteractionPoint interactionPoint) {
-		// Select appropriate delegation links from interactionPoint, 
+		// Select appropriate delegation links from interactionPoint,
 		// and propagates the operation call through these links
 		// Appropriate links are links which target elements
 		// in the environment of this CS_Object.
@@ -367,17 +367,17 @@ public class CS_Object extends Object_ {
 
 		List<CS_Link> cddLinks = this.getLinks(interactionPoint);
 		Integer linkIndex = 1;
-		while(linkIndex <= cddLinks.size()) {
+		while (linkIndex <= cddLinks.size()) {
 			List<Reference> validAssemblyTargets = this.selectTargetsForDispatching(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.ASSEMBLY_LITERAL, operation, notToInternal);
 			Integer targetIndex = 1;
-			while(targetIndex <= validAssemblyTargets.size()) {
+			while (targetIndex <= validAssemblyTargets.size()) {
 				allPotentialTargets.add(validAssemblyTargets.get(targetIndex - 1));
 				targetsForDispatchingIn.add(validAssemblyTargets.get(targetIndex - 1));
 				targetIndex = targetIndex + 1;
 			}
 			List<Reference> validDelegationTargets = this.selectTargetsForDispatching(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, operation, notToInternal);
 			targetIndex = 1;
-			while(targetIndex <= validDelegationTargets.size()) {
+			while (targetIndex <= validDelegationTargets.size()) {
 				allPotentialTargets.add(validDelegationTargets.get(targetIndex - 1));
 				targetsForDispatchingOut.add(validDelegationTargets.get(targetIndex - 1));
 				targetIndex = targetIndex + 1;
@@ -385,22 +385,22 @@ public class CS_Object extends Object_ {
 			linkIndex = linkIndex + 1;
 		}
 
-		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 		List<Reference> selectedTargets = strategy.select(allPotentialTargets, new SendSignalActionActivation());
 
-		for(int j = 0; j < selectedTargets.size(); j++) {
+		for (int j = 0; j < selectedTargets.size(); j++) {
 			Reference target = selectedTargets.get(j);
-			for(int k = 0; k < targetsForDispatchingIn.size() && execution == null; k++) {
+			for (int k = 0; k < targetsForDispatchingIn.size() && execution == null; k++) {
 				Reference cddTarget = targetsForDispatchingIn.get(k);
-				if(cddTarget == target) {
+				if (cddTarget == target) {
 					execution = target.dispatch(operation);
 				}
 			}
-			for(int k = 0; k < targetsForDispatchingOut.size() && execution == null; k++) {
+			for (int k = 0; k < targetsForDispatchingOut.size() && execution == null; k++) {
 				// The target must be an interaction point
 				// i.e. a delegation connector for a required operation can only target a port
-				CS_InteractionPoint cddTarget = (CS_InteractionPoint)targetsForDispatchingOut.get(k);
-				if(cddTarget == target) {
+				CS_InteractionPoint cddTarget = (CS_InteractionPoint) targetsForDispatchingOut.get(k);
+				if (cddTarget == target) {
 					CS_Reference owner = cddTarget.owner;
 					execution = owner.dispatchOut(operation, cddTarget);
 				}
@@ -409,24 +409,26 @@ public class CS_Object extends Object_ {
 		return execution;
 	}
 
+	@Override
 	public FeatureValue getFeatureValue(StructuralFeature feature) {
 		// In the case where the feature belongs to an Interface,
-		// fUML semantics is extended in the sense that reading is 
+		// fUML semantics is extended in the sense that reading is
 		// delegated to a CS_StructuralFeatureOfInterfaceAccessStrategy
-		if(feature.getNamespace() instanceof Interface) {
-			CS_StructuralFeatureOfInterfaceAccessStrategy readStrategy = (CS_StructuralFeatureOfInterfaceAccessStrategy)this.locus.factory.getStrategy("structuralFeature");
+		if (feature.getNamespace() instanceof Interface) {
+			CS_StructuralFeatureOfInterfaceAccessStrategy readStrategy = (CS_StructuralFeatureOfInterfaceAccessStrategy) this.locus.factory.getStrategy("structuralFeature");
 			return readStrategy.read(this, feature);
 		} else {
 			return super.getFeatureValue(feature);
 		}
 	}
 
+	@Override
 	public void setFeatureValue(StructuralFeature feature, List<Value> values, Integer position) {
 		// In the case where the feature belongs to an Interface,
-		// fUML semantics is extended in the sense that writing is 
+		// fUML semantics is extended in the sense that writing is
 		// delegated to a CS_StructuralFeatureOfInterfaceAccessStrategy
-		if(feature.getNamespace() instanceof Interface) {
-			CS_StructuralFeatureOfInterfaceAccessStrategy writeStrategy = (CS_StructuralFeatureOfInterfaceAccessStrategy)this.locus.factory.getStrategy("structuralFeature");
+		if (feature.getNamespace() instanceof Interface) {
+			CS_StructuralFeatureOfInterfaceAccessStrategy writeStrategy = (CS_StructuralFeatureOfInterfaceAccessStrategy) this.locus.factory.getStrategy("structuralFeature");
 			writeStrategy.write(this, feature, values, position);
 		} else {
 			super.setFeatureValue(feature, values, position);
@@ -439,15 +441,15 @@ public class CS_Object extends Object_ {
 		boolean objectIsContained = this.directlyContains(object);
 		// if object is not directly contained, restart the research
 		// recursively on the objects owned by this CS_Object
-		for(int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
+		for (int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
 			FeatureValue featureValue = this.featureValues.get(i);
 			List<Value> values = featureValue.values;
-			for(int j = 0; j < values.size() && !objectIsContained; j++) {
+			for (int j = 0; j < values.size() && !objectIsContained; j++) {
 				Value value = values.get(j);
-				if(value instanceof CS_Object) {
-					objectIsContained = ((CS_Object)value).contains(object);
-				} else if(value instanceof CS_Reference) {
-					CS_Object referent = ((CS_Reference)value).compositeReferent;
+				if (value instanceof CS_Object) {
+					objectIsContained = ((CS_Object) value).contains(object);
+				} else if (value instanceof CS_Reference) {
+					CS_Object referent = ((CS_Reference) value).compositeReferent;
 					objectIsContained = referent.contains(object);
 				}
 			}
@@ -459,15 +461,15 @@ public class CS_Object extends Object_ {
 		// Determines if the object given as a parameter is directly
 		// contained by this CS_Object
 		boolean objectIsContained = false;
-		for(int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
+		for (int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
 			FeatureValue featureValue = this.featureValues.get(i);
 			List<Value> values = featureValue.values;
-			for(int j = 0; j < values.size() && !objectIsContained; j++) {
+			for (int j = 0; j < values.size() && !objectIsContained; j++) {
 				Value value = values.get(j);
-				if(value == object) {
+				if (value == object) {
 					objectIsContained = true;
-				} else if(value instanceof CS_Reference) {
-					objectIsContained = (((CS_Reference)value).referent == object);
+				} else if (value instanceof CS_Reference) {
+					objectIsContained = (((CS_Reference) value).referent == object);
 				}
 			}
 		}
@@ -481,11 +483,11 @@ public class CS_Object extends Object_ {
 		// - it is a CS_Object
 		// - it directly contains this object (i.e. CS_Object.directlyContains(Object)==true)
 		List<CS_Object> containers = new ArrayList<CS_Object>();
-		for(int i = 0; i < this.locus.extensionalValues.size(); i++) {
+		for (int i = 0; i < this.locus.extensionalValues.size(); i++) {
 			ExtensionalValue extensionalValue = this.locus.extensionalValues.get(i);
-			if(extensionalValue != this && extensionalValue instanceof CS_Object) {
-				CS_Object cddContainer = (CS_Object)extensionalValue;
-				if(cddContainer.directlyContains(this)) {
+			if (extensionalValue != this && extensionalValue instanceof CS_Object) {
+				CS_Object cddContainer = (CS_Object) extensionalValue;
+				if (cddContainer.directlyContains(this)) {
 					containers.add(cddContainer);
 				}
 			}
@@ -501,20 +503,20 @@ public class CS_Object extends Object_ {
 		// an operation of one of its type, or one of its type provides a realization for this operation (in the case
 		// where the namespace of this Operation is an interface)
 		boolean isProvided = false;
-		if(reference instanceof CS_InteractionPoint) {
-			if(operation.getOwner() instanceof Interface) {
-				// We have to look in provided interfaces of the port if 
+		if (reference instanceof CS_InteractionPoint) {
+			if (operation.getOwner() instanceof Interface) {
+				// We have to look in provided interfaces of the port if
 				// they define directly or indirectly the Operation
 				Integer interfaceIndex = 1;
 				// Iterates on provided interfaces of the port
-				List<Interface> providedInterfaces = ((CS_InteractionPoint)reference).definingPort.getProvideds();
-				while(interfaceIndex <= providedInterfaces.size() && !isProvided) {
+				List<Interface> providedInterfaces = ((CS_InteractionPoint) reference).definingPort.getProvideds();
+				while (interfaceIndex <= providedInterfaces.size() && !isProvided) {
 					Interface interface_ = providedInterfaces.get(interfaceIndex - 1);
 					// Iterates on members of the current Interface
 					Integer memberIndex = 1;
-					while(memberIndex <= interface_.getMembers().size() && !isProvided) {
+					while (memberIndex <= interface_.getMembers().size() && !isProvided) {
 						NamedElement cddOperation = interface_.getMembers().get(memberIndex - 1);
-						if(cddOperation instanceof Operation) {
+						if (cddOperation instanceof Operation) {
 							isProvided = operation == cddOperation;
 						}
 						memberIndex = memberIndex + 1;
@@ -523,19 +525,19 @@ public class CS_Object extends Object_ {
 				}
 			}
 		} else {
-			// We have to look if one of the Classifiers typing this reference 
+			// We have to look if one of the Classifiers typing this reference
 			// directly or indirectly provides this operation
 			List<Classifier> types = reference.getTypes();
 			Integer typeIndex = 1;
-			while(typeIndex <= types.size() && !isProvided) {
-				if(types.get(typeIndex - 1) instanceof Class) {
+			while (typeIndex <= types.size() && !isProvided) {
+				if (types.get(typeIndex - 1) instanceof Class) {
 					Integer memberIndex = 1;
-					List<NamedElement> members = ((Class)types.get(typeIndex - 1)).getMembers();
-					while(memberIndex <= members.size() && !isProvided) {
+					List<NamedElement> members = ((Class) types.get(typeIndex - 1)).getMembers();
+					while (memberIndex <= members.size() && !isProvided) {
 						NamedElement cddOperation = members.get(memberIndex - 1);
-						if(cddOperation instanceof Operation) {
+						if (cddOperation instanceof Operation) {
 							CS_DispatchOperationOfInterfaceStrategy strategy = new CS_DispatchOperationOfInterfaceStrategy();
-							isProvided = strategy.operationsMatch((Operation)cddOperation, operation);
+							isProvided = strategy.operationsMatch((Operation) cddOperation, operation);
 						}
 						memberIndex = memberIndex + 1;
 					}
@@ -552,17 +554,17 @@ public class CS_Object extends Object_ {
 		// is a member of one of its required interfaces
 		// If the reference is not a interaction point, it cannot require an operation
 		boolean matches = false;
-		if(reference instanceof CS_InteractionPoint) {
+		if (reference instanceof CS_InteractionPoint) {
 			Integer interfaceIndex = 1;
 			// Iterates on provided interfaces of the port
-			List<Interface> requiredInterfaces = ((CS_InteractionPoint)reference).definingPort.getRequireds();
-			while(interfaceIndex <= requiredInterfaces.size() && !matches) {
+			List<Interface> requiredInterfaces = ((CS_InteractionPoint) reference).definingPort.getRequireds();
+			while (interfaceIndex <= requiredInterfaces.size() && !matches) {
 				Interface interface_ = requiredInterfaces.get(interfaceIndex - 1);
 				// Iterates on members of the current Interface
 				Integer memberIndex = 1;
-				while(memberIndex <= interface_.getMembers().size() && !matches) {
+				while (memberIndex <= interface_.getMembers().size() && !matches) {
 					NamedElement cddOperation = interface_.getMembers().get(memberIndex - 1);
-					if(cddOperation instanceof Operation) {
+					if (cddOperation instanceof Operation) {
 						matches = operation == cddOperation;
 					}
 					memberIndex = memberIndex + 1;
@@ -574,34 +576,34 @@ public class CS_Object extends Object_ {
 	}
 
 	public CS_LinkKind getLinkKind(CS_Link link, CS_InteractionPoint interactionPoint) {
-		// If the given interaction point belongs to this object, and if the given interaction point is used as an end of the link, 
-		// then the links targets the environment of the object (enumeration literal ToEnvironment) if all the feature values of the link 
-		// (but one for the interaction point) refer to values which are not themselves values for features of this object. 
-		// If all the feature values of the link refer to values which are themselves values for features of this object, 
-		// the link targets the internals of the object (enumeration literal ToInternal). Otherwise, the link has no particular meaning 
+		// If the given interaction point belongs to this object, and if the given interaction point is used as an end of the link,
+		// then the links targets the environment of the object (enumeration literal ToEnvironment) if all the feature values of the link
+		// (but one for the interaction point) refer to values which are not themselves values for features of this object.
+		// If all the feature values of the link refer to values which are themselves values for features of this object,
+		// the link targets the internals of the object (enumeration literal ToInternal). Otherwise, the link has no particular meaning
 		// in the context defined by the object and the interaction point (enumeration literal None).
-		if(!link.hasValueForAFeature(interactionPoint)) {
+		if (!link.hasValueForAFeature(interactionPoint)) {
 			return CS_LinkKind.None;
 		}
 		CS_LinkKind kind = CS_LinkKind.ToInternal;
 		List<FeatureValue> featureValues = link.getFeatureValues();
 		Integer i = 1;
-		while(i <= featureValues.size() && kind != CS_LinkKind.None) {
+		while (i <= featureValues.size() && kind != CS_LinkKind.None) {
 			FeatureValue value = featureValues.get(i - 1);
-			if(value.values.isEmpty()) {
+			if (value.values.isEmpty()) {
 				kind = CS_LinkKind.None;
 			} else {
 				Value v = value.values.get(0);
 				boolean vIsAValueForAFeatureOfContext = false;
-				if(v.equals(interactionPoint)) {
+				if (v.equals(interactionPoint)) {
 					vIsAValueForAFeatureOfContext = true;
-				} else if(v instanceof CS_InteractionPoint) {
-					v = ((CS_InteractionPoint)v).owner;
+				} else if (v instanceof CS_InteractionPoint) {
+					v = ((CS_InteractionPoint) v).owner;
 					vIsAValueForAFeatureOfContext = this.hasValueForAFeature(v);
 				} else {
 					vIsAValueForAFeatureOfContext = this.hasValueForAFeature(v);
 				}
-				if(!vIsAValueForAFeatureOfContext) {
+				if (!vIsAValueForAFeatureOfContext) {
 					kind = CS_LinkKind.ToEnvironment;
 				}
 			}
@@ -616,11 +618,11 @@ public class CS_Object extends Object_ {
 		List<ExtensionalValue> extensionalValues = this.locus.extensionalValues;
 		Integer i = 1;
 		List<CS_Link> connectorInstances = new ArrayList<CS_Link>();
-		while(i <= extensionalValues.size()) {
+		while (i <= extensionalValues.size()) {
 			ExtensionalValue value = extensionalValues.get(i - 1);
-			if(value instanceof CS_Link) {
-				CS_Link link = (CS_Link)value;
-				if(this.getLinkKind(link, interactionPoint) != CS_LinkKind.None) {
+			if (value instanceof CS_Link) {
+				CS_Link link = (CS_Link) value;
+				if (this.getLinkKind(link, interactionPoint) != CS_LinkKind.None) {
 					connectorInstances.add(link);
 				}
 			}
@@ -634,12 +636,12 @@ public class CS_Object extends Object_ {
 		List<FeatureValue> allFeatureValues = this.getFeatureValues();
 		Integer i = 1;
 		boolean isAValue = false;
-		while(i <= allFeatureValues.size() && !isAValue) {
+		while (i <= allFeatureValues.size() && !isAValue) {
 			FeatureValue featureValue = allFeatureValues.get(i - 1);
-			if(!featureValue.values.isEmpty()) {
+			if (!featureValue.values.isEmpty()) {
 				List<Value> valuesForCurrentFeature = featureValue.values;
 				Integer j = 1;
-				while(j <= valuesForCurrentFeature.size() && !isAValue) {
+				while (j <= valuesForCurrentFeature.size() && !isAValue) {
 					isAValue = featureValue.values.get(j - 1).equals(value);
 					j = j + 1;
 				}
@@ -655,13 +657,13 @@ public class CS_Object extends Object_ {
 		FeatureValue featureValue = this.getFeatureValue(onPort);
 		List<Value> values = featureValue.values;
 		List<Reference> potentialTargets = new ArrayList<Reference>();
-		for(int i = 0; i < values.size(); i++) {
-			potentialTargets.add((Reference)values.get(i));
+		for (int i = 0; i < values.size(); i++) {
+			potentialTargets.add((Reference) values.get(i));
 		}
-		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 		List<Reference> targets = strategy.select(potentialTargets, new SendSignalActionActivation());
-		for(int i = 0; i < targets.size(); i++) {
-			CS_InteractionPoint target = (CS_InteractionPoint)targets.get(i);
+		for (int i = 0; i < targets.size(); i++) {
+			CS_InteractionPoint target = (CS_InteractionPoint) targets.get(i);
 			this.sendOut(signalInstance, target);
 		}
 	}
@@ -673,15 +675,15 @@ public class CS_Object extends Object_ {
 		FeatureValue featureValue = this.getFeatureValue(onPort);
 		List<Value> values = featureValue.values;
 		List<Reference> potentialTargets = new ArrayList<Reference>();
-		for(int i = 0; i < values.size(); i++) {
-			potentialTargets.add((Reference)values.get(i));
+		for (int i = 0; i < values.size(); i++) {
+			potentialTargets.add((Reference) values.get(i));
 		}
-		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 		List<Reference> targets = strategy.select(potentialTargets, new CallOperationActionActivation());
 		// if targets is empty, no dispatch target has been found,
 		// and the operation call is lost
-		if(targets.size() >= 1) {
-			CS_InteractionPoint target = (CS_InteractionPoint)targets.get(0);
+		if (targets.size() >= 1) {
+			CS_InteractionPoint target = (CS_InteractionPoint) targets.get(0);
 			execution = this.dispatchOut(operation, target);
 		}
 		return execution;
@@ -693,8 +695,8 @@ public class CS_Object extends Object_ {
 		// and dispatches the operation call to this interaction point
 		FeatureValue featureValue = this.getFeatureValue(onPort);
 		List<Value> values = featureValue.values;
-		Integer choice = ((ChoiceStrategy)this.locus.factory.getStrategy("choice")).choose(featureValue.values.size()) - 1;
-		CS_InteractionPoint interactionPoint = (CS_InteractionPoint)values.get(choice);
+		Integer choice = ((ChoiceStrategy) this.locus.factory.getStrategy("choice")).choose(featureValue.values.size()) - 1;
+		CS_InteractionPoint interactionPoint = (CS_InteractionPoint) values.get(choice);
 		return interactionPoint.dispatch(operation);
 	}
 
@@ -704,12 +706,12 @@ public class CS_Object extends Object_ {
 		FeatureValue featureValue = this.getFeatureValue(onPort);
 		List<Value> values = featureValue.values;
 		List<Reference> potentialTargets = new ArrayList<Reference>();
-		for(int i = 0; i < values.size(); i++) {
-			potentialTargets.add((Reference)values.get(i));
+		for (int i = 0; i < values.size(); i++) {
+			potentialTargets.add((Reference) values.get(i));
 		}
-		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy)this.locus.factory.getStrategy("requestPropagation");
+		CS_RequestPropagationStrategy strategy = (CS_RequestPropagationStrategy) this.locus.factory.getStrategy("requestPropagation");
 		List<Reference> targets = strategy.select(potentialTargets, new SendSignalActionActivation());
-		for(int i = 0; i < targets.size(); i++) {
+		for (int i = 0; i < targets.size(); i++) {
 			Reference target = targets.get(i);
 			target.send(signalInstance);
 		}

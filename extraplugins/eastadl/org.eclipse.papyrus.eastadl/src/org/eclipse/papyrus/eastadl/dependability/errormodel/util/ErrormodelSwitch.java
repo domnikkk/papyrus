@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,13 +41,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage
  * @generated
  */
@@ -56,6 +56,7 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static ErrormodelPackage modelPackage;
@@ -64,6 +65,7 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ErrormodelSwitch() {
@@ -76,6 +78,7 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -91,7 +94,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Anomaly</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -106,7 +111,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Error Behavior</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -121,7 +128,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Error Model Prototype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -136,7 +145,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Error Model Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -151,7 +162,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Failure Out Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -166,7 +179,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -181,7 +196,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault Failure Propagation Link</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -196,7 +213,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Fault In Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -211,7 +230,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Internal Fault Prototype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -226,7 +247,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Process Fault Prototype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -241,7 +264,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -256,7 +281,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Prototype</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -271,7 +298,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Packageable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -286,7 +315,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Traceable Specification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -301,7 +332,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -316,7 +349,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -331,7 +366,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -346,7 +383,9 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -360,99 +399,171 @@ public class ErrormodelSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ErrormodelPackage.ANOMALY: {
-				Anomaly anomaly = (Anomaly)theEObject;
-				T result = caseAnomaly(anomaly);
-				if (result == null) result = caseEAElement(anomaly);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case ErrormodelPackage.ANOMALY: {
+			Anomaly anomaly = (Anomaly) theEObject;
+			T result = caseAnomaly(anomaly);
+			if (result == null) {
+				result = caseEAElement(anomaly);
 			}
-			case ErrormodelPackage.ERROR_MODEL_PROTOTYPE: {
-				ErrorModelPrototype errorModelPrototype = (ErrorModelPrototype)theEObject;
-				T result = caseErrorModelPrototype(errorModelPrototype);
-				if (result == null) result = caseEAElement(errorModelPrototype);
-				if (result == null) result = caseEAPrototype(errorModelPrototype);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case ErrormodelPackage.ERROR_MODEL_TYPE: {
-				ErrorModelType errorModelType = (ErrorModelType)theEObject;
-				T result = caseErrorModelType(errorModelType);
-				if (result == null) result = caseTraceableSpecification(errorModelType);
-				if (result == null) result = caseEAType(errorModelType);
-				if (result == null) result = caseEAPackageableElement(errorModelType);
-				if (result == null) result = caseEAElement(errorModelType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case ErrormodelPackage.ERROR_MODEL_PROTOTYPE: {
+			ErrorModelPrototype errorModelPrototype = (ErrorModelPrototype) theEObject;
+			T result = caseErrorModelPrototype(errorModelPrototype);
+			if (result == null) {
+				result = caseEAElement(errorModelPrototype);
 			}
-			case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK: {
-				FaultFailurePropagationLink faultFailurePropagationLink = (FaultFailurePropagationLink)theEObject;
-				T result = caseFaultFailurePropagationLink(faultFailurePropagationLink);
-				if (result == null) result = caseEAElement(faultFailurePropagationLink);
-				if (result == null) result = caseEAConnector(faultFailurePropagationLink);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAPrototype(errorModelPrototype);
 			}
-			case ErrormodelPackage.ERROR_BEHAVIOR: {
-				ErrorBehavior errorBehavior = (ErrorBehavior)theEObject;
-				T result = caseErrorBehavior(errorBehavior);
-				if (result == null) result = caseEAElement(errorBehavior);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE: {
-				InternalFaultPrototype internalFaultPrototype = (InternalFaultPrototype)theEObject;
-				T result = caseInternalFaultPrototype(internalFaultPrototype);
-				if (result == null) result = caseAnomaly(internalFaultPrototype);
-				if (result == null) result = caseEAElement(internalFaultPrototype);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case ErrormodelPackage.ERROR_MODEL_TYPE: {
+			ErrorModelType errorModelType = (ErrorModelType) theEObject;
+			T result = caseErrorModelType(errorModelType);
+			if (result == null) {
+				result = caseTraceableSpecification(errorModelType);
 			}
-			case ErrormodelPackage.FAILURE_OUT_PORT: {
-				FailureOutPort failureOutPort = (FailureOutPort)theEObject;
-				T result = caseFailureOutPort(failureOutPort);
-				if (result == null) result = caseFaultFailurePort(failureOutPort);
-				if (result == null) result = caseAnomaly(failureOutPort);
-				if (result == null) result = caseEAPort(failureOutPort);
-				if (result == null) result = caseEAElement(failureOutPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAType(errorModelType);
 			}
-			case ErrormodelPackage.FAULT_IN_PORT: {
-				FaultInPort faultInPort = (FaultInPort)theEObject;
-				T result = caseFaultInPort(faultInPort);
-				if (result == null) result = caseFaultFailurePort(faultInPort);
-				if (result == null) result = caseAnomaly(faultInPort);
-				if (result == null) result = caseEAPort(faultInPort);
-				if (result == null) result = caseEAElement(faultInPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAPackageableElement(errorModelType);
 			}
-			case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE: {
-				ProcessFaultPrototype processFaultPrototype = (ProcessFaultPrototype)theEObject;
-				T result = caseProcessFaultPrototype(processFaultPrototype);
-				if (result == null) result = caseAnomaly(processFaultPrototype);
-				if (result == null) result = caseEAElement(processFaultPrototype);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseEAElement(errorModelType);
 			}
-			case ErrormodelPackage.FAULT_FAILURE_PORT: {
-				FaultFailurePort faultFailurePort = (FaultFailurePort)theEObject;
-				T result = caseFaultFailurePort(faultFailurePort);
-				if (result == null) result = caseAnomaly(faultFailurePort);
-				if (result == null) result = caseEAPort(faultFailurePort);
-				if (result == null) result = caseEAElement(faultFailurePort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			default: return defaultCase(theEObject);
+			return result;
+		}
+		case ErrormodelPackage.FAULT_FAILURE_PROPAGATION_LINK: {
+			FaultFailurePropagationLink faultFailurePropagationLink = (FaultFailurePropagationLink) theEObject;
+			T result = caseFaultFailurePropagationLink(faultFailurePropagationLink);
+			if (result == null) {
+				result = caseEAElement(faultFailurePropagationLink);
+			}
+			if (result == null) {
+				result = caseEAConnector(faultFailurePropagationLink);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.ERROR_BEHAVIOR: {
+			ErrorBehavior errorBehavior = (ErrorBehavior) theEObject;
+			T result = caseErrorBehavior(errorBehavior);
+			if (result == null) {
+				result = caseEAElement(errorBehavior);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.INTERNAL_FAULT_PROTOTYPE: {
+			InternalFaultPrototype internalFaultPrototype = (InternalFaultPrototype) theEObject;
+			T result = caseInternalFaultPrototype(internalFaultPrototype);
+			if (result == null) {
+				result = caseAnomaly(internalFaultPrototype);
+			}
+			if (result == null) {
+				result = caseEAElement(internalFaultPrototype);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.FAILURE_OUT_PORT: {
+			FailureOutPort failureOutPort = (FailureOutPort) theEObject;
+			T result = caseFailureOutPort(failureOutPort);
+			if (result == null) {
+				result = caseFaultFailurePort(failureOutPort);
+			}
+			if (result == null) {
+				result = caseAnomaly(failureOutPort);
+			}
+			if (result == null) {
+				result = caseEAPort(failureOutPort);
+			}
+			if (result == null) {
+				result = caseEAElement(failureOutPort);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.FAULT_IN_PORT: {
+			FaultInPort faultInPort = (FaultInPort) theEObject;
+			T result = caseFaultInPort(faultInPort);
+			if (result == null) {
+				result = caseFaultFailurePort(faultInPort);
+			}
+			if (result == null) {
+				result = caseAnomaly(faultInPort);
+			}
+			if (result == null) {
+				result = caseEAPort(faultInPort);
+			}
+			if (result == null) {
+				result = caseEAElement(faultInPort);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.PROCESS_FAULT_PROTOTYPE: {
+			ProcessFaultPrototype processFaultPrototype = (ProcessFaultPrototype) theEObject;
+			T result = caseProcessFaultPrototype(processFaultPrototype);
+			if (result == null) {
+				result = caseAnomaly(processFaultPrototype);
+			}
+			if (result == null) {
+				result = caseEAElement(processFaultPrototype);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case ErrormodelPackage.FAULT_FAILURE_PORT: {
+			FaultFailurePort faultFailurePort = (FaultFailurePort) theEObject;
+			T result = caseFaultFailurePort(faultFailurePort);
+			if (result == null) {
+				result = caseAnomaly(faultFailurePort);
+			}
+			if (result == null) {
+				result = caseEAPort(faultFailurePort);
+			}
+			if (result == null) {
+				result = caseEAElement(faultFailurePort);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
-} //ErrormodelSwitch
+} // ErrormodelSwitch

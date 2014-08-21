@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,6 +48,7 @@ import org.eclipse.jface.text.FindReplaceDocumentAdapter;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.uml.export.Activator;
 import org.eclipse.papyrus.uml.export.dialog.ProfilesToExportSelectionDialog;
@@ -77,32 +78,32 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 
 	/**
 	 * Gets the i file.
-	 * 
+	 *
 	 * @param selectedObj
-	 *        the selected obj
+	 *            the selected obj
 	 * @return the i file
 	 */
 	public static IFile getIFile(Object selectedObj) {
 		IFile result = null;
-		if(selectedObj instanceof IFile) {
-			result = (IFile)selectedObj;
+		if (selectedObj instanceof IFile) {
+			result = (IFile) selectedObj;
 		}
 		// Try to adapt
-		if(result == null && selectedObj instanceof IAdaptable) {
-			result = (IFile)((IAdaptable)selectedObj).getAdapter(IFile.class);
+		if (result == null && selectedObj instanceof IAdaptable) {
+			result = (IFile) ((IAdaptable) selectedObj).getAdapter(IFile.class);
 		}
 		// adapt in ifile
-		if(result == null) {
-			result = (IFile)Platform.getAdapterManager().getAdapter(selectedObj, IFile.class);
+		if (result == null) {
+			result = (IFile) Platform.getAdapterManager().getAdapter(selectedObj, IFile.class);
 		}
-		if(result == null) {
+		if (result == null) {
 			// try to check if it is a collection
-			Collection<?> collec = (Collection<?>)Platform.getAdapterManager().getAdapter(selectedObj, Collection.class);
-			if(collec != null) {
-				for(Object o : collec) {
-					if(o instanceof IFile) {
-						IFile f = (IFile)o;
-						if("uml".equals(f.getFileExtension())) {
+			Collection<?> collec = (Collection<?>) Platform.getAdapterManager().getAdapter(selectedObj, Collection.class);
+			if (collec != null) {
+				for (Object o : collec) {
+					if (o instanceof IFile) {
+						IFile f = (IFile) o;
+						if ("uml".equals(f.getFileExtension())) {
 							result = f;
 							break;
 						}
@@ -115,26 +116,26 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 
 	/**
 	 * Checks if is profile application is editable.
-	 * 
+	 *
 	 * @param selectedObj
-	 *        the selected obj
+	 *            the selected obj
 	 * @return true, if is profile application editable
 	 */
 	public static boolean isProfileApplicationEditable(Object selectedObj) {
 		IFile file = getIFile(selectedObj);
-		if(file != null) {
+		if (file != null) {
 			ResourceSet resourceSet = new ResourceSetImpl();
 			Resource umlResource = WSFileUtil.loadResource(file.getFullPath().toString(), resourceSet);
-			if(umlResource.getContents().isEmpty()) {
+			if (umlResource.getContents().isEmpty()) {
 				// The root doesn't exist.
 				return false;
 			}
 			EObject root = umlResource.getContents().get(0);
 			Object[] appliedProfiles = ProfileUtil.getAppliedProfilesFromWS(root);
-			if(appliedProfiles != null) {
-				for(int i = 0; i < appliedProfiles.length; i++) {
-					String installedProfileURI = findCorrespondingInstalledProfile((Profile)appliedProfiles[i]);
-					if(installedProfileURI != null) {
+			if (appliedProfiles != null) {
+				for (int i = 0; i < appliedProfiles.length; i++) {
+					String installedProfileURI = findCorrespondingInstalledProfile((Profile) appliedProfiles[i]);
+					if (installedProfileURI != null) {
 						return true;
 					}
 
@@ -147,29 +148,29 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.actions.ActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			files = ((IStructuredSelection)selection).toList();
+		if (selection instanceof IStructuredSelection) {
+			files = ((IStructuredSelection) selection).toList();
 		}
 	}
 
 	/**
 	 * Run.
-	 * 
+	 *
 	 * @param action
-	 *        the action
+	 *            the action
 	 * @see org.eclipse.ui.actions.ActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 
 	@Override
 	public void run(IAction action) {
-		if(files != null) {
+		if (files != null) {
 			Iterator<IFile> filesIt = files.iterator();
 			final IFile file = filesIt.next();
 			ResourceSet resourceSet = new ResourceSetImpl();
@@ -185,7 +186,7 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 			final FindReplaceDocumentAdapter adapter = new FindReplaceDocumentAdapter(doc);
 			final MultiTextEdit multiEdit = new MultiTextEdit();
 			final Resource umlResource = WSFileUtil.loadResource(file.getFullPath().toString(), resourceSet);
-			if(umlResource.getContents().isEmpty()) {
+			if (umlResource.getContents().isEmpty()) {
 				// The root doesn't exist.
 				try {
 					throw new NotFoundException(Messages.EditProfileApplicationAction_0);
@@ -197,39 +198,40 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 			EObject root = umlResource.getContents().get(0);
 			Object[] appliedProfiles = ProfileUtil.getAppliedProfilesFromWS(root);
 			ArrayList<Object> appliedLocalProfiles = new ArrayList<Object>();
-			for(int i = 0; i < appliedProfiles.length; i++) {
-				String installedProfileURI = findCorrespondingInstalledProfile((Profile)appliedProfiles[i]);
-				if(installedProfileURI != null) {
+			for (int i = 0; i < appliedProfiles.length; i++) {
+				String installedProfileURI = findCorrespondingInstalledProfile((Profile) appliedProfiles[i]);
+				if (installedProfileURI != null) {
 					appliedLocalProfiles.add(appliedProfiles[i]);
 				}
 
 			}
-			if(appliedLocalProfiles != null && !appliedLocalProfiles.isEmpty()) {
+			if (appliedLocalProfiles != null && !appliedLocalProfiles.isEmpty()) {
 				Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 				final ProfilesToExportSelectionDialog dialog = new ProfilesToExportSelectionDialog(shell, true, appliedLocalProfiles.toArray(), "Change profile application from local to installed");
 
 				dialog.open();
-				if(Dialog.OK == dialog.getReturnCode()) {
+				if (Window.OK == dialog.getReturnCode()) {
 
 					IRunnableWithProgress operation = new IRunnableWithProgress() {
 
 
+						@Override
 						public void run(IProgressMonitor monitor) {
 							Object[] profiles = dialog.getResult();
-							for(int i = 0; i < profiles.length; i++) {
-								if(profiles[i] instanceof Profile) {
-									//Absolute profile URI (platform:/resource/)
-									URI localProfileURI = ((Profile)profiles[i]).eResource().getURI();
-									
-									//Absolute model URI (platform:/resource)
+							for (int i = 0; i < profiles.length; i++) {
+								if (profiles[i] instanceof Profile) {
+									// Absolute profile URI (platform:/resource/)
+									URI localProfileURI = ((Profile) profiles[i]).eResource().getURI();
+
+									// Absolute model URI (platform:/resource)
 									IPath filePath = file.getFullPath();
 									URI modelURI = umlResource.getURI();
-									
-									//Relative profile URI
+
+									// Relative profile URI
 									URI relativeProfileURI = localProfileURI.deresolve(modelURI);
 
-									String installedProfileURI = findCorrespondingInstalledProfile((Profile)profiles[i]);
-									if(installedProfileURI != null) {
+									String installedProfileURI = findCorrespondingInstalledProfile((Profile) profiles[i]);
+									if (installedProfileURI != null) {
 
 										try {
 											WSFileUtil.replaceString(localProfileURI.toString(), installedProfileURI, adapter, doc, 0, multiEdit);
@@ -244,7 +246,7 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 
 
 							}
-							if(multiEdit.hasChildren()) {
+							if (multiEdit.hasChildren()) {
 								try {
 									multiEdit.apply(doc);
 								} catch (MalformedTreeException e) {
@@ -276,7 +278,7 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 					}
 				}
 			} else {
-				//launch an error message
+				// launch an error message
 				Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 				MessageDialog.openError(shell, "Error", "No profile application to edit");
 			}
@@ -291,9 +293,9 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 
 	/**
 	 * Find corresponding installed profile.
-	 * 
+	 *
 	 * @param profile
-	 *        the profile
+	 *            the profile
 	 * @return the corresponding installed profile uri
 	 */
 	public static String findCorrespondingInstalledProfile(Profile profile) {
@@ -301,14 +303,14 @@ public class EditProfileApplicationAction extends ActionDelegate implements IAct
 		IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode("org.eclipse.papyrus.uml.export"); //$NON-NLS-1$
 		org.osgi.service.prefs.Preferences node = preferences.node("installedProfilesUriCorrespondance");
 		String installedProfileURI = node.get(profile.eResource().getURI().toString(), "default"); //$NON-NLS-1$
-		if((!installedProfileURI.equals("default"))) {
+		if ((!installedProfileURI.equals("default"))) {
 			URI uri = URI.createURI(installedProfileURI);
 			try {
 				ResourceSet resourceSet = new ResourceSetImpl();
 				Resource resource = resourceSet.getResource(uri, true);
-				//verify that the profile is indeed installed in the platform before replacing the uri
-				if((resource.isLoaded()) && (!(resource.getContents().isEmpty()))) {
-					//System.err.println(installedProfileURI);
+				// verify that the profile is indeed installed in the platform before replacing the uri
+				if ((resource.isLoaded()) && (!(resource.getContents().isEmpty()))) {
+					// System.err.println(installedProfileURI);
 					return installedProfileURI;
 				}
 			} catch (WrappedException ex) {

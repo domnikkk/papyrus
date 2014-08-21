@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl#getOn <em>On</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl#getOn <em>On</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TimedElementImpl() {
@@ -59,6 +61,7 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,8 +72,10 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Clock> getOn() {
 		if (on == null) {
 			on = new EObjectResolvingEList<Clock>(Clock.class, this, TimePackage.TIMED_ELEMENT__ON);
@@ -81,13 +86,14 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimePackage.TIMED_ELEMENT__ON:
-				return getOn();
+		case TimePackage.TIMED_ELEMENT__ON:
+			return getOn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,16 +101,17 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimePackage.TIMED_ELEMENT__ON:
-				getOn().clear();
-				getOn().addAll((Collection<? extends Clock>)newValue);
-				return;
+		case TimePackage.TIMED_ELEMENT__ON:
+			getOn().clear();
+			getOn().addAll((Collection<? extends Clock>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -112,14 +119,15 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_ELEMENT__ON:
-				getOn().clear();
-				return;
+		case TimePackage.TIMED_ELEMENT__ON:
+			getOn().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -127,15 +135,16 @@ public abstract class TimedElementImpl extends EObjectImpl implements TimedEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_ELEMENT__ON:
-				return on != null && !on.isEmpty();
+		case TimePackage.TIMED_ELEMENT__ON:
+			return on != null && !on.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TimedElementImpl
+} // TimedElementImpl

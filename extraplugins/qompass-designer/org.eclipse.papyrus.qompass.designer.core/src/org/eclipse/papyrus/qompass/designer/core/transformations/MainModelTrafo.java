@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -18,13 +18,14 @@ package org.eclipse.papyrus.qompass.designer.core.transformations;
  * This file is part of Qompass GenTools
  * Copyright (C) 2008 CEA LIST (http://www-list.cea.fr/)
 
- * initial developer : Christophe JOUVRAY from CEA LIST 
+ * initial developer : Christophe JOUVRAY from CEA LIST
  * Major contributions: Ansgar Radermacher from CEA LIST
  */
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -69,42 +70,42 @@ public class MainModelTrafo {
 
 
 	public static final String HW_COMP_PREFIX = "Hwc"; //$NON-NLS-1$
-	
+
 	/**
 	 * Create a new instance of main-model-transformation
-	 * 
+	 *
 	 * @param copy
-	 *        Copier
+	 *            Copier
 	 * @param tmCDP
-	 *        deployment plan in target model
+	 *            deployment plan in target model
 	 */
 	public MainModelTrafo(LazyCopier copy, Package tmCDP) {
 		nodeHandled = new HashMap<InstanceSpecification, Boolean>();
 		this.copy = copy;
 		this.tmCDP = tmCDP;
 	}
-	
+
 	/**
 	 * Return an instance specification that corresponds to a part. This
 	 * function is useful in the connector context, since it allows to retrieve
 	 * the instance specification that is reference by a connection end-point
 	 * (which points to the part).
-	 * 
+	 *
 	 * @param system
-	 *        the instance specification for the assembly
+	 *            the instance specification for the assembly
 	 * @param part
-	 *        the part within a class
+	 *            the part within a class
 	 * @return The instance specification for the passed part
 	 */
 	public static InstanceSpecification getInstanceForPart(
-		InstanceSpecification system, Property part) {
-		for(Slot slot : system.getSlots()) {
-			if(slot.getDefiningFeature() == part) {
-				for(ValueSpecification value : slot.getValues()) {
+			InstanceSpecification system, Property part) {
+		for (Slot slot : system.getSlots()) {
+			if (slot.getDefiningFeature() == part) {
+				for (ValueSpecification value : slot.getValues()) {
 					// instances are accessible via ValueSpecification subclass
 					// InstanceValue
-					if(value instanceof InstanceValue) {
-						return (((InstanceValue)value).getInstance());
+					if (value instanceof InstanceValue) {
+						return (((InstanceValue) value).getInstance());
 					}
 				}
 			}
@@ -114,34 +115,34 @@ public class MainModelTrafo {
 
 	/**
 	 * Find a port that would match a connection
-	 * 
+	 *
 	 * @param connectorType
-	 *        a connector type, i.e. a component with ports
+	 *            a connector type, i.e. a component with ports
 	 * @param the
-	 *        port on the other side of the connection
+	 *            port on the other side of the connection
 	 * @return the first port (of all ports owned or inherited by the type) that
 	 *         is compatible with the passed otherPort.
 	 */
 	public static Port getConnectorPort(EncapsulatedClassifier connectorType,
-		Port otherPort, boolean isAssembly) {
+			Port otherPort, boolean isAssembly) {
 		EList<Port> ports = PortUtils.getAllPorts(connectorType);
 		// try to find match via kind
-		for(Port port : ports) {
-			if(PortUtils.matches(port, otherPort, isAssembly)) {
+		for (Port port : ports) {
+			if (PortUtils.matches(port, otherPort, isAssembly)) {
 				return port;
 			}
 		}
 		// no match found, try weaker condition: find 1st match for provided ...
 		boolean otherEndProvides = PortUtils.getProvided(otherPort) != null;
-		for(Port port : ports) {
+		for (Port port : ports) {
 			Interface intf;
 			// if isAssembly: take "opposite" port
-			if(otherEndProvides != isAssembly) {
+			if (otherEndProvides != isAssembly) {
 				intf = PortUtils.getProvided(port);
 			} else {
 				intf = PortUtils.getRequired(port);
 			}
-			if(intf != null) {
+			if (intf != null) {
 				return port;
 			}
 		}
@@ -159,23 +160,23 @@ public class MainModelTrafo {
 	 * container expansion, if necessary. Please note that we use the naming
 	 * convention to prefix elements of the source model (wrt. to the
 	 * transformation) with sm and elements of the target model with tm.
-	 * 
+	 *
 	 * @param smIS
-	 *        source model instance specification
+	 *            source model instance specification
 	 * @param smDF
-	 *        source model defining feature (null for top-level instance).
+	 *            source model defining feature (null for top-level instance).
 	 * @param inheritedRules
-	 *        container rules inherited from containing composite
+	 *            container rules inherited from containing composite
 	 * @return new instance specification in traget model
-	 * 
+	 *
 	 * @throws TransformationException
 	 */
 	public InstanceSpecification transformInstance(
-		InstanceSpecification smIS, StructuralFeature smDF) throws TransformationException {
+			InstanceSpecification smIS, StructuralFeature smDF) throws TransformationException {
 		Class smComponent = null;
 		Classifier smCl = DepUtils.getClassifier(smIS);
-		if(smCl instanceof Class) {
-			smComponent = (Class)smCl;
+		if (smCl instanceof Class) {
+			smComponent = (Class) smCl;
 		} else {
 			// should not happen
 			return null;
@@ -184,7 +185,7 @@ public class MainModelTrafo {
 		String instName = smIS.getName();
 		// first check, if instance specification exists already. This may be the case for explicitly modeled singleton instances.
 		InstanceSpecification tmIS = (InstanceSpecification)
-			tmCDP.getPackagedElement(instName);
+				tmCDP.getPackagedElement(instName);
 		if (tmIS == null) {
 			tmIS = (InstanceSpecification)
 					tmCDP.createPackagedElement(instName, UMLPackage.eINSTANCE.getInstanceSpecification());
@@ -197,7 +198,7 @@ public class MainModelTrafo {
 		}
 
 		Class tmComponent = copy.getCopy(smComponent);
-		if(tmComponent == null) {
+		if (tmComponent == null) {
 			return null;
 		}
 		tmIS.getClassifiers().add(tmComponent);
@@ -207,20 +208,20 @@ public class MainModelTrafo {
 		EList<ContainerRule> rules = FCMUtil.getAllContainerRules(smComponent);
 
 		// get container trafo instance, if already existing
-		AbstractContainerTrafo containerTrafo = ContainerTrafo.get(tmComponent);
+		AbstractContainerTrafo containerTrafo = AbstractContainerTrafo.get(tmComponent);
 
 		// general idea: an instance of class ContainerTafo is responsible for a specific component.
 		// the method createContainerInstance must be called for each instance of the application component
 		// (caveat: don't mix-up with instance of Java classes of the development tool)
 		// TODO: since we support multiple container kinds, we need to keep their container map separate!
 		InstanceSpecification containerIS = null;
-		if(containerTrafo == null) {
+		if (containerTrafo == null) {
 			// no container exists, check rules and create eventually
-			for(ContainerRule rule : rules) {
-				if(RuleManagement.isRuleActive(rule)) {
+			for (ContainerRule rule : rules) {
+				if (RuleManagement.isRuleActive(rule)) {
 					// at least one active rule => create container (or get previously instantiated))
-					if(containerTrafo == null) {
-						if(rule.getKind() == ContainerRuleKind.LIGHT_WEIGHT_OO_RULE) {
+					if (containerTrafo == null) {
+						if (rule.getKind() == ContainerRuleKind.LIGHT_WEIGHT_OO_RULE) {
 							containerTrafo = new LWContainerTrafo(copy, tmCDP);
 						}
 						else {
@@ -247,50 +248,50 @@ public class MainModelTrafo {
 		// ------------------- end of container handling of SW nodes
 
 		// copy node allocation
-		for(InstanceSpecification smNode : AllocUtils.getNodes(smIS)) {
+		for (InstanceSpecification smNode : AllocUtils.getNodes(smIS)) {
 			InstanceSpecification tmNode = copy.getCopy(smNode);
 			if (containerIS != null) {
 				// allocate container instead of executor.
 				AllocUtils.allocate(containerIS, tmNode);
 			}
 			else {
-				AllocUtils.allocate(tmIS, tmNode);		
+				AllocUtils.allocate(tmIS, tmNode);
 			}
 
-			if(!nodeHandled.containsKey(tmNode)) {
+			if (!nodeHandled.containsKey(tmNode)) {
 				// check if node (on an instance level) has already been treated. This is required, since many
 				// instances might be allocated to the same node.
 				nodeHandled.put(tmNode, true);
 
 				// check, whether a container rule is applied on the tmNode
 				Classifier tmCS = DepUtils.getClassifier(tmNode);
-				if(tmCS instanceof Class) {
+				if (tmCS instanceof Class) {
 					// ---------------------------
 					EList<ContainerRule> hwRules = FCMUtil.getAllContainerRules(tmCS);
 
-					if(hwRules.size() > 0) {
+					if (hwRules.size() > 0) {
 
-						ContainerTrafo nodeContainerTrafo = (ContainerTrafo) ContainerTrafo.get((Class)tmCS);
-						
+						ContainerTrafo nodeContainerTrafo = (ContainerTrafo) AbstractContainerTrafo.get((Class) tmCS);
+
 						// issues
-						//   - unlike SW component container, don't update references pointing towards the HW node 
-						//   - create additional part in system (top-level) component for the node container
-						//   - container (_cc class) appears in platform component (same package as HW node)
-						//	 - port copying and creation of delegation connectors does not make much sense, creation of
-						//	   executor itself does not make much sense, additional operation "createHwContainer"
+						// - unlike SW component container, don't update references pointing towards the HW node
+						// - create additional part in system (top-level) component for the node container
+						// - container (_cc class) appears in platform component (same package as HW node)
+						// - port copying and creation of delegation connectors does not make much sense, creation of
+						// executor itself does not make much sense, additional operation "createHwContainer"
 
 						// obtain property related to node instance
 						Package smCDP = smIS.getNearestPackage();
 						DeploymentPlan smFCM_CDP = UMLUtil.getStereotypeApplication(smCDP, DeploymentPlan.class);
 
-						if(nodeContainerTrafo == null) {
+						if (nodeContainerTrafo == null) {
 							// container does not exist, check rules and create eventually
-							for(ContainerRule rule : hwRules) {
-								if(RuleManagement.isRuleActive(rule)) {
-									if(nodeContainerTrafo == null) {
+							for (ContainerRule rule : hwRules) {
+								if (RuleManagement.isRuleActive(rule)) {
+									if (nodeContainerTrafo == null) {
 										// at least one active rule => create container (or get previously instantiated))
 										nodeContainerTrafo = new ContainerTrafo(copy, tmCDP, tmIS);
-										nodeContainerTrafo.createHwContainer((Class)tmCS);
+										nodeContainerTrafo.createHwContainer((Class) tmCS);
 										nodeContainerTrafo.applyRule(rule, smComponent, tmComponent);
 									}
 								}
@@ -298,16 +299,16 @@ public class MainModelTrafo {
 						}
 						if (nodeContainerTrafo != null) {
 							InstanceSpecification hwContainerIS =
-								nodeContainerTrafo.createHwContainerInstance(tmComponent, tmNode);
+									nodeContainerTrafo.createHwContainerInstance(tmComponent, tmNode);
 							// now add attribute in system (obtain via classifier of main instance in smCDP)
-							if(smFCM_CDP != null) {
+							if (smFCM_CDP != null) {
 								InstanceSpecification smMI = smFCM_CDP.getMainInstance();
 								Classifier smSystem = DepUtils.getClassifier(smMI);
 								Classifier tmSystem = copy.getCopy(smSystem);
 								InstanceSpecification tmMI = DepUtils.getInstanceForClassifier(tmCDP, tmSystem);
-								if(tmSystem instanceof Class) {
+								if (tmSystem instanceof Class) {
 									Property hwcPart =
-										((Class)tmSystem).createOwnedAttribute(smNode.getName() + HW_COMP_PREFIX, nodeContainerTrafo.getContainer());
+											((Class) tmSystem).createOwnedAttribute(smNode.getName() + HW_COMP_PREFIX, nodeContainerTrafo.getContainer());
 									// and now create a slot for the created instance.
 									DepPlanUtils.createSlot(tmCDP, tmMI, hwContainerIS, hwcPart);
 								}
@@ -328,33 +329,33 @@ public class MainModelTrafo {
 		// copy parts, i.e. referenced slots
 		// loop on instances (instead of parts), since reification needs to be
 		// based on used implementations.
-		for(Slot slot : smIS.getSlots()) {
-			if(slot.getDefiningFeature() == null) {
+		for (Slot slot : smIS.getSlots()) {
+			if (slot.getDefiningFeature() == null) {
 				throw new TransformationException(
-					String.format(Messages.MainModelTrafo_NoDefiningFeature, smIS.getName()));
+						String.format(Messages.MainModelTrafo_NoDefiningFeature, smIS.getName()));
 			}
 			StructuralFeature smPartDF = slot.getDefiningFeature();
-			if(StereotypeUtil.isApplied(smPartDF.getType(), InteractionComponent.class)) {
-				if(smPartDF instanceof Property) {
-					Property tmPart = ConnectorReification.reifyConnector(copy, tmComponent, (Property)smPartDF, tmIS, null);
+			if (StereotypeUtil.isApplied(smPartDF.getType(), InteractionComponent.class)) {
+				if (smPartDF instanceof Property) {
+					Property tmPart = ConnectorReification.reifyConnector(copy, tmComponent, (Property) smPartDF, tmIS, null);
 					// update value specification (to the one just created)
 					Type type = tmPart.getType();
 					InstanceSpecification tmPartIS = EcoreUtil.copy(DepUtils.getInstance(slot));
 					tmCDP.getPackagedElements().add(tmPartIS);
-					if(type instanceof Classifier) {
-						if(tmPartIS.getClassifiers().size() > 0) {
-							tmPartIS.getClassifiers().set(0, (Classifier)type);
+					if (type instanceof Classifier) {
+						if (tmPartIS.getClassifiers().size() > 0) {
+							tmPartIS.getClassifiers().set(0, (Classifier) type);
 						}
 					}
 					DepCreation.createSlot(tmIS, tmPartIS, tmPart);
 				}
 			}
-			else if(smPartDF.getType() instanceof Class) {
+			else if (smPartDF.getType() instanceof Class) {
 
 				InstanceSpecification smPartIS = DepUtils.getInstance(slot);
-				if(smPartIS == null) {
+				if (smPartIS == null) {
 					throw new TransformationException(
-						String.format(Messages.MainModelTrafo_NoInstanceAssociated, smPartDF.getName()));
+							String.format(Messages.MainModelTrafo_NoInstanceAssociated, smPartDF.getName()));
 				}
 
 				// recursive reification
@@ -366,13 +367,13 @@ public class MainModelTrafo {
 				// retrieve part in the target model (it has been created during
 				// the copyClassifier operation before)
 				// TODO: avoid cast (use StructuralFeature instead)
-				Property tmPart = (Property)copy.getCopy(smPartDF);
+				Property tmPart = (Property) copy.getCopy(smPartDF);
 
 				// check whether the instance specification has been modified
 				// (due to a container transformation)
-				// modification would not be required, if 
-				if((tmPartIS != null) && (DepUtils.getClassifier(tmPartIS) != tmPart.getType())) {
-					Log.log(Status.INFO, Log.TRAFO_CONNECTOR, String.format(Messages.MainModelTrafo_ChangePartType, tmPart.getName()));
+				// modification would not be required, if
+				if ((tmPartIS != null) && (DepUtils.getClassifier(tmPartIS) != tmPart.getType())) {
+					Log.log(IStatus.INFO, Log.TRAFO_CONNECTOR, String.format(Messages.MainModelTrafo_ChangePartType, tmPart.getName()));
 					tmPart.setType(DepUtils.getClassifier(tmPartIS));
 				}
 				DepCreation.createSlot(tmIS, tmPartIS, tmPart);
@@ -389,21 +390,21 @@ public class MainModelTrafo {
 
 		// NamedElement socket = Utils.getQualifiedElement(smComponent.getModel(), "SocketRuntime::Socket");
 		// NamedElement socketCopy = copy.getCopy(socket);
-		
+
 		// loop on connectors
 		// TODO: check, if true (no instance specification exists for these - unlike a connector which is explicitly specified via a part)
 		// TODO: quite inefficient (and likely wrong), if same composite is instantiated several times (re-reification of connectors)
-		for(Connector smConnector : smComponent.getOwnedConnectors()) {
-			if(StUtils.isConnector(smConnector)) {
+		for (Connector smConnector : smComponent.getOwnedConnectors()) {
+			if (StUtils.isConnector(smConnector)) {
 				org.eclipse.papyrus.FCM.Connector fcmConn = StUtils.getConnector(smConnector);
-				if(fcmConn != null) {
+				if (fcmConn != null) {
 					// found an Qompass connector, connector type is specified.
 					// => Reify the connector within the target component, i.e. create a new part and
-					//    additional connections for it.
+					// additional connections for it.
 					Property connectorPart = ConnectorReification.reifyConnector(copy, tmComponent,
-						UMLTool.varName(smConnector), smConnector, tmIS, null);
+							UMLTool.varName(smConnector), smConnector, tmIS, null);
 
-					if(connectorPart == null) {
+					if (connectorPart == null) {
 						continue;
 					}
 
@@ -413,22 +414,22 @@ public class MainModelTrafo {
 
 					// Now create an instance specification for the reified connector
 					InstanceSpecification tmReifiedConnectorIS = DepCreation.createDepPlan(
-						tmCDP, (Class)connectorPart.getType(),
-						instName + "." + smConnector.getName(), false); //$NON-NLS-1$
+							tmCDP, (Class) connectorPart.getType(),
+							instName + "." + smConnector.getName(), false); //$NON-NLS-1$
 
 					// copy slots from the source deployment plan that are related to connector configuration
 					InstanceSpecification smConnectorIS = DepUtils.getNamedSubInstance(smIS, smConnector.getName());
-					if(smConnectorIS != null) {
+					if (smConnectorIS != null) {
 						// use putPair instead of put only - see bug 426748, avoid that classifier attribute points
 						// to two classifiers (bound and unbound)
 						copy.putPair(smConnectorIS, tmReifiedConnectorIS);
-						for(Slot smSlot : smConnectorIS.getSlots()) {
+						for (Slot smSlot : smConnectorIS.getSlots()) {
 							copy.getCopy(smSlot);
 						}
 					}
 
 					Slot partSlot =
-						DepCreation.createSlot(tmIS, tmReifiedConnectorIS, connectorPart);
+							DepCreation.createSlot(tmIS, tmReifiedConnectorIS, connectorPart);
 
 					ConnectorReification.propagateNodeAllocation(tmComponent, tmIS, partSlot);
 				}
@@ -449,8 +450,8 @@ public class MainModelTrafo {
 		// propagateNodeAllocation (cdp, compositeInstance);
 		AllocTransfo at = new AllocTransfo();
 		at.transformAllocs(copy, tmComponent);
-		
-		if(containerIS != null) {
+
+		if (containerIS != null) {
 			// return containerIS
 			return containerIS;
 		} else {
@@ -459,12 +460,12 @@ public class MainModelTrafo {
 	}
 
 	protected Map<InstanceSpecification, Boolean> nodeHandled;
-	
+
 	/**
 	 * Copier from source to target model
 	 */
-	protected LazyCopier copy;	
-	
+	protected LazyCopier copy;
+
 	/**
 	 * deployment plan within target model
 	 */

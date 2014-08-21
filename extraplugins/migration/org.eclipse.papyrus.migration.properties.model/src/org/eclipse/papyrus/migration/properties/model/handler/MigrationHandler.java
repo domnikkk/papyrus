@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,21 +41,21 @@ public class MigrationHandler extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench == null) {
+		if (workbench == null) {
 			return null;
 		}
 
 		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-		if(window == null) {
+		if (window == null) {
 			return null;
 		}
 
 		ISelection selection = window.getSelectionService().getSelection();
-		if(!(selection instanceof IStructuredSelection)) {
+		if (!(selection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		final IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		final IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 		Job migrationJob = new Job("Migrate selected files") {
 
@@ -64,13 +64,13 @@ public class MigrationHandler extends AbstractHandler {
 				monitor.beginTask(getName(), structuredSelection.size());
 
 				Iterator<?> iterator = structuredSelection.iterator();
-				while(iterator.hasNext()) {
+				while (iterator.hasNext()) {
 					Object selectedElement = iterator.next();
-					if(selectedElement instanceof IFile) {
-						IFile selectedFile = (IFile)selectedElement;
+					if (selectedElement instanceof IFile) {
+						IFile selectedFile = (IFile) selectedElement;
 						monitor.subTask("Migrating " + selectedFile.getName());
 
-						if(ContextExtension.equals(selectedFile.getFileExtension())) {
+						if (ContextExtension.equals(selectedFile.getFileExtension())) {
 							migrateFile(selectedFile);
 						}
 					}
@@ -89,7 +89,7 @@ public class MigrationHandler extends AbstractHandler {
 	}
 
 	private static void migrateFile(IFile file) {
-		//Ctx files weight between 4 and 400 kB, so it's probably ok to read their contents into a String
+		// Ctx files weight between 4 and 400 kB, so it's probably ok to read their contents into a String
 		try {
 			InputStream stream = file.getContents();
 			String charset = file.getContentDescription().getCharset();
@@ -100,7 +100,7 @@ public class MigrationHandler extends AbstractHandler {
 			char[] buffer = new char[4096];
 
 			int result;
-			while((result = reader.read(buffer)) != -1) {
+			while ((result = reader.read(buffer)) != -1) {
 				builder.append(buffer, 0, result);
 			}
 
@@ -113,7 +113,7 @@ public class MigrationHandler extends AbstractHandler {
 			contents = contents.replaceAll("contexts:ValueProperty", "constraints:ValueProperty");
 			contents = contents.replaceAll("contexts:ReferenceProperty", "constraints:ReferenceProperty");
 
-			if(!contents.contains("xmlns:constraints=")) {
+			if (!contents.contains("xmlns:constraints=")) {
 				String source = "xmlns:contexts=\"http://www.eclipse.org/papyrus/properties/contexts/0.9\"";
 				String target = source + "\n\txmlns:constraints=\"http://www.eclipse.org/papyrus/constraints/0.9\"";
 				contents = contents.replace(source, target);

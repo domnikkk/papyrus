@@ -13,7 +13,7 @@ import org.eclipse.papyrus.uml.service.types.utils.NamedElementHelper;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
 
-public class AllocateEditHelperAdvice  extends AbstractStereotypedElementEditHelperAdvice {
+public class AllocateEditHelperAdvice extends AbstractStereotypedElementEditHelperAdvice {
 
 	/** Default constructor */
 	public AllocateEditHelperAdvice() {
@@ -26,9 +26,10 @@ public class AllocateEditHelperAdvice  extends AbstractStereotypedElementEditHel
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, FunctionmodelingPackage.eINSTANCE.getFunctionAllocation());
 
 					// Set default name

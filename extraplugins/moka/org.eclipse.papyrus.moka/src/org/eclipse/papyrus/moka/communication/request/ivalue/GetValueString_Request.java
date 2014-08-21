@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class GetValueString_Request extends RequestMessage {
 
 	/**
 	 * Constructs a request message from the given value.
-	 * 
+	 *
 	 * @param value
-	 *        The value for which a string representation is requested
+	 *            The value for which a string representation is requested
 	 */
 	public GetValueString_Request(IValue value) {
 		this.value = value;
@@ -41,7 +41,7 @@ public class GetValueString_Request extends RequestMessage {
 
 	/**
 	 * Returns the value for which a string representation is requested
-	 * 
+	 *
 	 * @return The value for which a string representation is requested
 	 */
 	public IValue getValue() {
@@ -53,6 +53,7 @@ public class GetValueString_Request extends RequestMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().getValueString_request_marshal(this);
 	}

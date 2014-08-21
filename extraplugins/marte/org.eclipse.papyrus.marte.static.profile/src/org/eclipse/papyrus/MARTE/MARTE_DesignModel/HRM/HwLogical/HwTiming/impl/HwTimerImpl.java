@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.HwTimi
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getNbCounters <em>Nb Counters</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getCounterWidth <em>Counter Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getInputClock <em>Input Clock</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getNbCounters <em>Nb Counters</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getCounterWidth <em>Counter Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwTiming.impl.HwTimerImpl#getInputClock <em>Input Clock</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The default value of the '{@link #getNbCounters() <em>Nb Counters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbCounters()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getNbCounters() <em>Nb Counters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbCounters()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The default value of the '{@link #getCounterWidth() <em>Counter Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCounterWidth()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getCounterWidth() <em>Counter Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCounterWidth()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	 * The cached value of the '{@link #getInputClock() <em>Input Clock</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInputClock()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwTimerImpl() {
@@ -99,6 +105,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,8 +116,10 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNbCounters() {
 		return nbCounters;
 	}
@@ -118,20 +127,25 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNbCounters(String newNbCounters) {
 		String oldNbCounters = nbCounters;
 		nbCounters = newNbCounters;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwTimingPackage.HW_TIMER__NB_COUNTERS, oldNbCounters, nbCounters));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getCounterWidth() {
 		return counterWidth;
 	}
@@ -139,27 +153,33 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setCounterWidth(String newCounterWidth) {
 		String oldCounterWidth = counterWidth;
 		counterWidth = newCounterWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwTimingPackage.HW_TIMER__COUNTER_WIDTH, oldCounterWidth, counterWidth));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwClock getInputClock() {
 		if (inputClock != null && inputClock.eIsProxy()) {
-			InternalEObject oldInputClock = (InternalEObject)inputClock;
-			inputClock = (HwClock)eResolveProxy(oldInputClock);
+			InternalEObject oldInputClock = (InternalEObject) inputClock;
+			inputClock = (HwClock) eResolveProxy(oldInputClock);
 			if (inputClock != oldInputClock) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwTimingPackage.HW_TIMER__INPUT_CLOCK, oldInputClock, inputClock));
+				}
 			}
 		}
 		return inputClock;
@@ -168,6 +188,7 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HwClock basicGetInputClock() {
@@ -177,30 +198,36 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setInputClock(HwClock newInputClock) {
 		HwClock oldInputClock = inputClock;
 		inputClock = newInputClock;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwTimingPackage.HW_TIMER__INPUT_CLOCK, oldInputClock, inputClock));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwTimingPackage.HW_TIMER__NB_COUNTERS:
-				return getNbCounters();
-			case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
-				return getCounterWidth();
-			case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
-				if (resolve) return getInputClock();
-				return basicGetInputClock();
+		case HwTimingPackage.HW_TIMER__NB_COUNTERS:
+			return getNbCounters();
+		case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
+			return getCounterWidth();
+		case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
+			if (resolve) {
+				return getInputClock();
+			}
+			return basicGetInputClock();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,20 +235,21 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwTimingPackage.HW_TIMER__NB_COUNTERS:
-				setNbCounters((String)newValue);
-				return;
-			case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
-				setCounterWidth((String)newValue);
-				return;
-			case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
-				setInputClock((HwClock)newValue);
-				return;
+		case HwTimingPackage.HW_TIMER__NB_COUNTERS:
+			setNbCounters((String) newValue);
+			return;
+		case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
+			setCounterWidth((String) newValue);
+			return;
+		case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
+			setInputClock((HwClock) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -229,20 +257,21 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwTimingPackage.HW_TIMER__NB_COUNTERS:
-				setNbCounters(NB_COUNTERS_EDEFAULT);
-				return;
-			case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
-				setCounterWidth(COUNTER_WIDTH_EDEFAULT);
-				return;
-			case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
-				setInputClock((HwClock)null);
-				return;
+		case HwTimingPackage.HW_TIMER__NB_COUNTERS:
+			setNbCounters(NB_COUNTERS_EDEFAULT);
+			return;
+		case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
+			setCounterWidth(COUNTER_WIDTH_EDEFAULT);
+			return;
+		case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
+			setInputClock((HwClock) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,17 +279,18 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwTimingPackage.HW_TIMER__NB_COUNTERS:
-				return NB_COUNTERS_EDEFAULT == null ? nbCounters != null : !NB_COUNTERS_EDEFAULT.equals(nbCounters);
-			case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
-				return COUNTER_WIDTH_EDEFAULT == null ? counterWidth != null : !COUNTER_WIDTH_EDEFAULT.equals(counterWidth);
-			case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
-				return inputClock != null;
+		case HwTimingPackage.HW_TIMER__NB_COUNTERS:
+			return NB_COUNTERS_EDEFAULT == null ? nbCounters != null : !NB_COUNTERS_EDEFAULT.equals(nbCounters);
+		case HwTimingPackage.HW_TIMER__COUNTER_WIDTH:
+			return COUNTER_WIDTH_EDEFAULT == null ? counterWidth != null : !COUNTER_WIDTH_EDEFAULT.equals(counterWidth);
+		case HwTimingPackage.HW_TIMER__INPUT_CLOCK:
+			return inputClock != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,11 +298,14 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nbCounters: ");
@@ -283,4 +316,4 @@ public class HwTimerImpl extends HwTimingResourceImpl implements HwTimer {
 		return result.toString();
 	}
 
-} //HwTimerImpl
+} // HwTimerImpl

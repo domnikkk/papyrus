@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,11 +25,11 @@ import org.eclipse.uml2.uml.InvocationAction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#isIsAtomic <em>Is Atomic</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getSynchKind <em>Synch Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getMsgSize <em>Msg Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#isIsAtomic <em>Is Atomic</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getSynchKind <em>Synch Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getMsgSize <em>Msg Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_InvocationAction <em>Base Invocation Action</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,10 +43,10 @@ public interface RtAction extends EObject {
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Atomic</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Atomic</em>' attribute.
 	 * @see #setIsAtomic(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_IsAtomic()
@@ -59,7 +59,9 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#isIsAtomic <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Atomic</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Atomic</em>' attribute.
 	 * @see #isIsAtomic()
 	 * @generated
 	 */
@@ -70,10 +72,10 @@ public interface RtAction extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Synch Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Synch Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
 	 * @see #setSynchKind(SynchronizationKind)
@@ -87,7 +89,9 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getSynchKind <em>Synch Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Synch Kind</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Synch Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.SynchronizationKind
 	 * @see #getSynchKind()
 	 * @generated
@@ -98,10 +102,10 @@ public interface RtAction extends EObject {
 	 * Returns the value of the '<em><b>Msg Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Msg Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Msg Size</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Msg Size</em>' attribute.
 	 * @see #setMsgSize(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_MsgSize()
@@ -114,7 +118,9 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getMsgSize <em>Msg Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Msg Size</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Msg Size</em>' attribute.
 	 * @see #getMsgSize()
 	 * @generated
 	 */
@@ -124,10 +130,10 @@ public interface RtAction extends EObject {
 	 * Returns the value of the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_Base_BehavioralFeature()
@@ -140,7 +146,9 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Behavioral Feature</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 */
@@ -150,10 +158,10 @@ public interface RtAction extends EObject {
 	 * Returns the value of the '<em><b>Base Invocation Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Invocation Action</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #setBase_InvocationAction(InvocationAction)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getRtAction_Base_InvocationAction()
@@ -166,7 +174,9 @@ public interface RtAction extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.RtAction#getBase_InvocationAction <em>Base Invocation Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Invocation Action</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Invocation Action</em>' reference.
 	 * @see #getBase_InvocationAction()
 	 * @generated
 	 */

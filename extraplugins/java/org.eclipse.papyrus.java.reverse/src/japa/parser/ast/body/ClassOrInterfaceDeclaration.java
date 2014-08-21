@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -45,7 +45,8 @@ public final class ClassOrInterfaceDeclaration extends TypeDeclaration {
 	public ClassOrInterfaceDeclaration() {
 	}
 
-	public ClassOrInterfaceDeclaration(int beginLine, int beginColumn, int endLine, int endColumn, JavadocComment javaDoc, int modifiers, List<AnnotationExpr> annotations, boolean isInterface, String name, List<TypeParameter> typeParameters, List<ClassOrInterfaceType> extendsList, List<ClassOrInterfaceType> implementsList, List<BodyDeclaration> members) {
+	public ClassOrInterfaceDeclaration(int beginLine, int beginColumn, int endLine, int endColumn, JavadocComment javaDoc, int modifiers, List<AnnotationExpr> annotations, boolean isInterface, String name, List<TypeParameter> typeParameters,
+			List<ClassOrInterfaceType> extendsList, List<ClassOrInterfaceType> implementsList, List<BodyDeclaration> members) {
 		super(beginLine, beginColumn, endLine, endColumn, annotations, javaDoc, name, modifiers, members);
 		this.interface_ = isInterface;
 		this.typeParameters = typeParameters;

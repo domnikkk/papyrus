@@ -24,7 +24,7 @@ import org.eclipse.papyrus.team.collaborative.core.participants.version.IUpdater
 
 /**
  * Interface which return a super set of set using specific rules.
- * 
+ *
  * @author adaussy
  */
 public interface IExtendedURISuperSet extends ICollabParticipant {
@@ -32,14 +32,14 @@ public interface IExtendedURISuperSet extends ICollabParticipant {
 
 	/**
 	 * Return set of {@link ExtendedURI} which as to be used for an operation (see {@link ILocker}, {@link IUnlocker}, {@link IReverter},.
-	 * 
+	 *
 	 * @return the extended set {@link ICommitter}, {@link IUpdater}
 	 */
 	Set<IExtendedURI> getExtendedSet();
 
 	/**
 	 * ResourceSet that is in use for those {@link ExtendedURI}.
-	 * 
+	 *
 	 * @return the resource set
 	 */
 	ResourceSet getResourceSet();

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder#getFolderElements <em>Folder Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.Folder#getFolderElements <em>Folder Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +36,10 @@ public interface Folder extends FolderElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.layers.configmodel.layersconfig.FolderElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Folder Elements</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Folder Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Folder Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage#getFolder_FolderElements()
 	 * @model containment="true" ordered="false"

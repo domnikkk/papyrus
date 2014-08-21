@@ -21,6 +21,7 @@ import org.eclipse.papyrus.java.profile.java.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
@@ -28,16 +29,16 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static JavaFactory init() {
 		try {
-			JavaFactory theJavaFactory = (JavaFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/JAVA/1"); 
+			JavaFactory theJavaFactory = (JavaFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/JAVA/1");
 			if (theJavaFactory != null) {
 				return theJavaFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new JavaFactoryImpl();
@@ -47,6 +48,7 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaFactoryImpl() {
@@ -56,59 +58,72 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case JavaPackage.JAVA_CLASS: return createJavaClass();
-			case JavaPackage.JAVA_PACKAGE_: return createJavaPackage_();
-			case JavaPackage.JAVA_METHOD: return createJavaMethod();
-			case JavaPackage.JAVA_PARAMETER: return createJavaParameter();
-			case JavaPackage.JAVA_PROPERTY: return createJavaProperty();
-			case JavaPackage.PRIMITIVE_TYPE: return createPrimitiveType();
-			case JavaPackage.JAVA_PROJECT: return createJavaProject();
-			case JavaPackage.JAVA_SRC_FOLDER: return createJavaSrcFolder();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case JavaPackage.JAVA_CLASS:
+			return createJavaClass();
+		case JavaPackage.JAVA_PACKAGE_:
+			return createJavaPackage_();
+		case JavaPackage.JAVA_METHOD:
+			return createJavaMethod();
+		case JavaPackage.JAVA_PARAMETER:
+			return createJavaParameter();
+		case JavaPackage.JAVA_PROPERTY:
+			return createJavaProperty();
+		case JavaPackage.PRIMITIVE_TYPE:
+			return createPrimitiveType();
+		case JavaPackage.JAVA_PROJECT:
+			return createJavaProject();
+		case JavaPackage.JAVA_SRC_FOLDER:
+			return createJavaSrcFolder();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case JavaPackage.TRUE_FALSE_DEFAULT:
-				return createTrueFalseDefaultFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case JavaPackage.TRUE_FALSE_DEFAULT:
+			return createTrueFalseDefaultFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case JavaPackage.TRUE_FALSE_DEFAULT:
-				return convertTrueFalseDefaultToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case JavaPackage.TRUE_FALSE_DEFAULT:
+			return convertTrueFalseDefaultToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaClass createJavaClass() {
 		JavaClassImpl javaClass = new JavaClassImpl();
 		return javaClass;
@@ -117,8 +132,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaPackage_ createJavaPackage_() {
 		JavaPackage_Impl javaPackage_ = new JavaPackage_Impl();
 		return javaPackage_;
@@ -127,8 +144,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaMethod createJavaMethod() {
 		JavaMethodImpl javaMethod = new JavaMethodImpl();
 		return javaMethod;
@@ -137,8 +156,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaParameter createJavaParameter() {
 		JavaParameterImpl javaParameter = new JavaParameterImpl();
 		return javaParameter;
@@ -147,8 +168,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaProperty createJavaProperty() {
 		JavaPropertyImpl javaProperty = new JavaPropertyImpl();
 		return javaProperty;
@@ -157,8 +180,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PrimitiveType createPrimitiveType() {
 		PrimitiveTypeImpl primitiveType = new PrimitiveTypeImpl();
 		return primitiveType;
@@ -167,8 +192,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaProject createJavaProject() {
 		JavaProjectImpl javaProject = new JavaProjectImpl();
 		return javaProject;
@@ -177,8 +204,10 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaSrcFolder createJavaSrcFolder() {
 		JavaSrcFolderImpl javaSrcFolder = new JavaSrcFolderImpl();
 		return javaSrcFolder;
@@ -187,17 +216,21 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TrueFalseDefault createTrueFalseDefaultFromString(EDataType eDataType, String initialValue) {
 		TrueFalseDefault result = TrueFalseDefault.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertTrueFalseDefaultToString(EDataType eDataType, Object instanceValue) {
@@ -207,15 +240,18 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JavaPackage getJavaPackage() {
-		return (JavaPackage)getEPackage();
+		return (JavaPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -224,4 +260,4 @@ public class JavaFactoryImpl extends EFactoryImpl implements JavaFactory {
 		return JavaPackage.eINSTANCE;
 	}
 
-} //JavaFactoryImpl
+} // JavaFactoryImpl

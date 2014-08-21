@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.facade.virtualmetamodel.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements VirtualmetamodelFactory {
@@ -34,16 +35,16 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static VirtualmetamodelFactory init() {
 		try {
-			VirtualmetamodelFactory theVirtualmetamodelFactory = (VirtualmetamodelFactory)EPackage.Registry.INSTANCE.getEFactory(VirtualmetamodelPackage.eNS_URI);
+			VirtualmetamodelFactory theVirtualmetamodelFactory = (VirtualmetamodelFactory) EPackage.Registry.INSTANCE.getEFactory(VirtualmetamodelPackage.eNS_URI);
 			if (theVirtualmetamodelFactory != null) {
 				return theVirtualmetamodelFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new VirtualmetamodelFactoryImpl();
@@ -53,6 +54,7 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualmetamodelFactoryImpl() {
@@ -62,29 +64,40 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case VirtualmetamodelPackage.VIRTUAL_METAMODEL: return createVirtualMetamodel();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS: return createVirtualMetaclass();
-			case VirtualmetamodelPackage.VIRTUAL_PROPERTY: return createVirtualProperty();
-			case VirtualmetamodelPackage.VIRTUAL_OPERATION: return createVirtualOperation();
-			case VirtualmetamodelPackage.VIRTUAL_PARAMETER: return createVirtualParameter();
-			case VirtualmetamodelPackage.VIRTUAL_DATATYPE: return createVirtualDatatype();
-			case VirtualmetamodelPackage.VIRTUAL_ENUM: return createVirtualEnum();
-			case VirtualmetamodelPackage.VIRTUAL_LITERAL: return createVirtualLiteral();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case VirtualmetamodelPackage.VIRTUAL_METAMODEL:
+			return createVirtualMetamodel();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS:
+			return createVirtualMetaclass();
+		case VirtualmetamodelPackage.VIRTUAL_PROPERTY:
+			return createVirtualProperty();
+		case VirtualmetamodelPackage.VIRTUAL_OPERATION:
+			return createVirtualOperation();
+		case VirtualmetamodelPackage.VIRTUAL_PARAMETER:
+			return createVirtualParameter();
+		case VirtualmetamodelPackage.VIRTUAL_DATATYPE:
+			return createVirtualDatatype();
+		case VirtualmetamodelPackage.VIRTUAL_ENUM:
+			return createVirtualEnum();
+		case VirtualmetamodelPackage.VIRTUAL_LITERAL:
+			return createVirtualLiteral();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualMetamodel createVirtualMetamodel() {
 		VirtualMetamodelImpl virtualMetamodel = new VirtualMetamodelImpl();
 		return virtualMetamodel;
@@ -93,8 +106,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualMetaclass createVirtualMetaclass() {
 		VirtualMetaclassImpl virtualMetaclass = new VirtualMetaclassImpl();
 		return virtualMetaclass;
@@ -103,8 +118,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualProperty createVirtualProperty() {
 		VirtualPropertyImpl virtualProperty = new VirtualPropertyImpl();
 		return virtualProperty;
@@ -113,8 +130,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualOperation createVirtualOperation() {
 		VirtualOperationImpl virtualOperation = new VirtualOperationImpl();
 		return virtualOperation;
@@ -123,8 +142,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualParameter createVirtualParameter() {
 		VirtualParameterImpl virtualParameter = new VirtualParameterImpl();
 		return virtualParameter;
@@ -133,8 +154,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualDatatype createVirtualDatatype() {
 		VirtualDatatypeImpl virtualDatatype = new VirtualDatatypeImpl();
 		return virtualDatatype;
@@ -143,8 +166,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualEnum createVirtualEnum() {
 		VirtualEnumImpl virtualEnum = new VirtualEnumImpl();
 		return virtualEnum;
@@ -153,8 +178,10 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualLiteral createVirtualLiteral() {
 		VirtualLiteralImpl virtualLiteral = new VirtualLiteralImpl();
 		return virtualLiteral;
@@ -163,15 +190,18 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualmetamodelPackage getVirtualmetamodelPackage() {
-		return (VirtualmetamodelPackage)getEPackage();
+		return (VirtualmetamodelPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -180,4 +210,4 @@ public class VirtualmetamodelFactoryImpl extends EFactoryImpl implements Virtual
 		return VirtualmetamodelPackage.eINSTANCE;
 	}
 
-} //VirtualmetamodelFactoryImpl
+} // VirtualmetamodelFactoryImpl

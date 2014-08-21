@@ -18,8 +18,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeImpl#isIsExternVisible <em>Is Extern Visible</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeImpl#isIsExternVisible <em>Is Extern Visible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The default value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The cached value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -50,6 +52,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -59,6 +62,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AttributeImpl() {
@@ -68,6 +72,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,8 +83,10 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsExternVisible() {
 		return isExternVisible;
 	}
@@ -87,27 +94,33 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsExternVisible(boolean newIsExternVisible) {
 		boolean oldIsExternVisible = isExternVisible;
 		isExternVisible = newIsExternVisible;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE, oldIsExternVisible, isExternVisible));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EADatatype getType() {
 		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (EADatatype)eResolveProxy(oldType);
+			InternalEObject oldType = (InternalEObject) type;
+			type = (EADatatype) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AttributequantificationconstraintPackage.ATTRIBUTE__TYPE, oldType, type));
+				}
 			}
 		}
 		return type;
@@ -116,6 +129,7 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EADatatype basicGetType() {
@@ -125,28 +139,34 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setType(EADatatype newType) {
 		EADatatype oldType = type;
 		type = newType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.ATTRIBUTE__TYPE, oldType, type));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
-				return isIsExternVisible();
-			case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+		case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
+			return isIsExternVisible();
+		case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,17 +174,18 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
-				setIsExternVisible((Boolean)newValue);
-				return;
-			case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
-				setType((EADatatype)newValue);
-				return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
+			setIsExternVisible((Boolean) newValue);
+			return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
+			setType((EADatatype) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +193,18 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
-				setIsExternVisible(IS_EXTERN_VISIBLE_EDEFAULT);
-				return;
-			case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
-				setType((EADatatype)null);
-				return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
+			setIsExternVisible(IS_EXTERN_VISIBLE_EDEFAULT);
+			return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
+			setType((EADatatype) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +212,16 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
-				return isExternVisible != IS_EXTERN_VISIBLE_EDEFAULT;
-			case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
-				return type != null;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__IS_EXTERN_VISIBLE:
+			return isExternVisible != IS_EXTERN_VISIBLE_EDEFAULT;
+		case AttributequantificationconstraintPackage.ATTRIBUTE__TYPE:
+			return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +229,14 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isExternVisible: ");
@@ -219,4 +245,4 @@ public class AttributeImpl extends EAElementImpl implements Attribute {
 		return result.toString();
 	}
 
-} //AttributeImpl
+} // AttributeImpl

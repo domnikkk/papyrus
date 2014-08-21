@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,12 @@ import org.eclipse.papyrus.facademapping.StereotypedMapping;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facademapping.StereotypedMapping} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StereotypedMappingItemProvider
-	extends MappingItemProvider
-	implements
+		extends MappingItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -52,6 +53,7 @@ public class StereotypedMappingItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StereotypedMappingItemProvider(AdapterFactory adapterFactory) {
@@ -62,6 +64,7 @@ public class StereotypedMappingItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,50 +82,53 @@ public class StereotypedMappingItemProvider
 	 * This adds a property descriptor for the Applied Stereotypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addAppliedStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StereotypedMapping_appliedStereotypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StereotypedMapping_appliedStereotypes_feature", "_UI_StereotypedMapping_type"),
-				 FacademappingPackage.Literals.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_StereotypedMapping_appliedStereotypes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_StereotypedMapping_appliedStereotypes_feature", "_UI_StereotypedMapping_type"),
+						FacademappingPackage.Literals.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StereotypedMapping_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StereotypedMapping_kind_feature", "_UI_StereotypedMapping_type"),
-				 FacademappingPackage.Literals.STEREOTYPED_MAPPING__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_StereotypedMapping_kind_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_StereotypedMapping_kind_feature", "_UI_StereotypedMapping_type"),
+						FacademappingPackage.Literals.STEREOTYPED_MAPPING__KIND,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns StereotypedMapping.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,23 +140,25 @@ public class StereotypedMappingItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		ExtensionDefinitionKind labelValue = ((StereotypedMapping)object).getKind();
+		ExtensionDefinitionKind labelValue = ((StereotypedMapping) object).getKind();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StereotypedMapping_type") :
-			getString("_UI_StereotypedMapping_type") + " " + label;
+				getString("_UI_StereotypedMapping_type") :
+				getString("_UI_StereotypedMapping_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,9 +166,9 @@ public class StereotypedMappingItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StereotypedMapping.class)) {
-			case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -170,6 +178,7 @@ public class StereotypedMappingItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

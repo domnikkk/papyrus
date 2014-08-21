@@ -34,12 +34,13 @@ public class FCMUtil {
 	 * @return
 	 */
 	public static EList<ValueSpecification> getConfigurationValue(InstanceSpecification specification, String configPropertyName) {
-		if(specification != null) {
-			for(Iterator<Slot> i = specification.getSlots().iterator(); i.hasNext();) {
+		if (specification != null) {
+			for (Iterator<Slot> i = specification.getSlots().iterator(); i.hasNext();) {
 				Slot currentSlot = i.next();
-				if(currentSlot.getDefiningFeature() != null &&
-					currentSlot.getDefiningFeature().getName().equals(configPropertyName))
+				if (currentSlot.getDefiningFeature() != null &&
+						currentSlot.getDefiningFeature().getName().equals(configPropertyName)) {
 					return currentSlot.getValues();
+				}
 			}
 		}
 		return null;
@@ -51,10 +52,11 @@ public class FCMUtil {
 	 * @return
 	 */
 	public static Interface findInterfaceByName(EList<Interface> interfaces, String interfaceName) {
-		for(Iterator<Interface> i = interfaces.iterator(); i.hasNext();) {
+		for (Iterator<Interface> i = interfaces.iterator(); i.hasNext();) {
 			Interface currentInterface = i.next();
-			if(currentInterface.getName().equals(interfaceName))
+			if (currentInterface.getName().equals(interfaceName)) {
 				return currentInterface;
+			}
 		}
 		return null;
 	}
@@ -65,9 +67,9 @@ public class FCMUtil {
 	 * This data structure contains an hashmap<ConnectableElement, List<Element>>:
 	 * - keys must be roles of a Collaboration
 	 * - values must be list of elements playing this role in the context of a particular composite
-	 * 
+	 *
 	 * @author ac221913
-	 * 
+	 *
 	 */
 	public static final class RoleBindingTable {
 
@@ -75,11 +77,11 @@ public class FCMUtil {
 
 		public RoleBindingTable() {
 			this.table = new HashMap<org.eclipse.uml2.uml.ConnectableElement,
-				List<org.eclipse.uml2.uml.NamedElement>>();
+					List<org.eclipse.uml2.uml.NamedElement>>();
 		}
 
 		public void addEntry(org.eclipse.uml2.uml.ConnectableElement role,
-			List<org.eclipse.uml2.uml.NamedElement> playedBy) {
+				List<org.eclipse.uml2.uml.NamedElement> playedBy) {
 			table.put(role, playedBy);
 		}
 
@@ -96,8 +98,8 @@ public class FCMUtil {
 		}
 
 		public ConnectableElement getRoleKeyByName(String roleName) {
-			for(ConnectableElement role : table.keySet()) {
-				if(role.getName().equals(roleName)) {
+			for (ConnectableElement role : table.keySet()) {
+				if (role.getName().equals(roleName)) {
 					return role;
 				}
 			}
@@ -107,20 +109,20 @@ public class FCMUtil {
 
 	/**
 	 * Generate a connection pattern. Currently unused
-	 * 
+	 *
 	 * @param connectorComp
 	 */
 	public static void generateDefaultConnectionPattern(InteractionComponent connectorComp) {
 		org.eclipse.uml2.uml.Collaboration connectionPattern =
-			UMLFactory.eINSTANCE.createCollaboration();
+				UMLFactory.eINSTANCE.createCollaboration();
 
-		//((org.eclipse.uml2.uml.Package)connectorComp.getBase_Class().getOwner()).getPackagedElements().add(connectionPattern) ;
+		// ((org.eclipse.uml2.uml.Package)connectorComp.getBase_Class().getOwner()).getPackagedElements().add(connectionPattern) ;
 		connectorComp.getBase_Class().getNestedClassifiers().add(connectionPattern);
 		connectionPattern.setName(connectorComp.getBase_Class().getName() + "ConnectionPattern"); //$NON-NLS-1$
 
 		org.eclipse.uml2.uml.Property connectorRole =
-			connectionPattern.createOwnedAttribute("connector", connectorComp.getBase_Class(), 1, 1); //$NON-NLS-1$
-		for(Iterator<org.eclipse.uml2.uml.Port> i = connectorComp.getBase_Class().getOwnedPorts().iterator(); i.hasNext();) {
+				connectionPattern.createOwnedAttribute("connector", connectorComp.getBase_Class(), 1, 1); //$NON-NLS-1$
+		for (Iterator<org.eclipse.uml2.uml.Port> i = connectorComp.getBase_Class().getOwnedPorts().iterator(); i.hasNext();) {
 			org.eclipse.uml2.uml.Port port = i.next();
 			org.eclipse.uml2.uml.Property role;
 			org.eclipse.uml2.uml.Connector connector;
@@ -139,41 +141,42 @@ public class FCMUtil {
 
 	/**
 	 * TODO Move this method in ConnectorReification.java
-	 * 
+	 *
 	 * @author ac221913
-	 * 
+	 *
 	 */
 	public static void generateCollaborationUse(Connector connector) {
 
 		InteractionComponent connectorCompGen = connector.getIc();
 
-		if(!(connectorCompGen instanceof InteractionComponent)) {
+		if (!(connectorCompGen instanceof InteractionComponent)) {
 			return;
 		}
-		InteractionComponent connectorComp = (InteractionComponent)connectorCompGen;
+		InteractionComponent connectorComp = connectorCompGen;
 		org.eclipse.uml2.uml.Collaboration connectionPattern =
-			connectorComp.getConnectionPattern();
+				connectorComp.getConnectionPattern();
 
-		if(connectionPattern == null) {
+		if (connectionPattern == null) {
 			FCMUtil.generateDefaultConnectionPattern(connectorComp);
 			connectionPattern = connectorComp.getConnectionPattern();
 		}
 
-		Class composite = (Class)connector.getBase_Connector().getOwner();
+		Class composite = (Class) connector.getBase_Connector().getOwner();
 		CollaborationUse collaborationUse;
 		RoleBindingTable bindingTable = getConnectorRoleBindings(connector);
 
-		if(bindingTable == null)
+		if (bindingTable == null) {
 			return;
+		}
 
 		collaborationUse = composite.createCollaborationUse("useOf" + connectionPattern.getName()); //$NON-NLS-1$
 		collaborationUse.setType(connectionPattern);
-		for(Iterator<org.eclipse.uml2.uml.ConnectableElement> i = bindingTable.iterator(); i.hasNext();) {
+		for (Iterator<org.eclipse.uml2.uml.ConnectableElement> i = bindingTable.iterator(); i.hasNext();) {
 			org.eclipse.uml2.uml.ConnectableElement role = i.next();
 			org.eclipse.uml2.uml.Dependency roleBinding;
 			roleBinding = collaborationUse.createRoleBinding(role.getName() + "RoleBinding"); //$NON-NLS-1$
 			roleBinding.getSuppliers().add(role);
-			for(Iterator<org.eclipse.uml2.uml.NamedElement> j = bindingTable.getEntry(role).iterator(); j.hasNext();) {
+			for (Iterator<org.eclipse.uml2.uml.NamedElement> j = bindingTable.getEntry(role).iterator(); j.hasNext();) {
 				roleBinding.getClients().add(j.next());
 			}
 		}
@@ -183,27 +186,27 @@ public class FCMUtil {
 	 * Computes a RoleBindingTable for a given ConnectorComp
 	 * Implies that a java class has been defined in FCMProfile.util for this ConnectorComp,
 	 * and that it encapsulates corresponding role binding rule
-	 * 
+	 *
 	 * @author ac221913
-	 * 
+	 *
 	 */
 	public static RoleBindingTable getConnectorRoleBindings(Connector connector) {
 		InteractionComponent connectorCompGen = connector.getIc();
 
-		if(!(connectorCompGen instanceof InteractionComponent)) {
+		if (!(connectorCompGen instanceof InteractionComponent)) {
 			return null;
 		}
-		InteractionComponent type = (InteractionComponent)connectorCompGen;
+		InteractionComponent type = connectorCompGen;
 
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor("fcmEmbeddingRule"); //$NON-NLS-1$
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String extConnName = configElement.getAttribute("connectorName"); //$NON-NLS-1$
-				if(extConnName.equals(type.getBase_Class().getName())) {
+				if (extConnName.equals(type.getBase_Class().getName())) {
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof IEmbeddingRule) {
-						return ((IEmbeddingRule)obj).getRoleBindings(connector);
+					if (obj instanceof IEmbeddingRule) {
+						return ((IEmbeddingRule) obj).getRoleBindings(connector);
 					}
 				}
 			} catch (CoreException exception) {
@@ -219,15 +222,15 @@ public class FCMUtil {
 	 */
 	public static EList<ContainerRule> getAllContainerRules(Element element) {
 		EList<ContainerRule> list = new UniqueEList<ContainerRule>();
-		if(element != null) {
-			for(EObject eObj : element.getStereotypeApplications()) {
-				if(eObj instanceof RuleApplication) {
-					list.addAll(((RuleApplication)eObj).getContainerRule());
+		if (element != null) {
+			for (EObject eObj : element.getStereotypeApplications()) {
+				if (eObj instanceof RuleApplication) {
+					list.addAll(((RuleApplication) eObj).getContainerRule());
 					break;
 				}
 			}
 			element = element.getOwner();
-			if(element != null) {
+			if (element != null) {
 				list.addAll(getAllContainerRules(element));
 			}
 		}

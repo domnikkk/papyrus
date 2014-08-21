@@ -31,14 +31,12 @@ import org.eclipse.papyrus.team.collaborative.svn.locker.SVNUnlocker;
 import org.eclipse.papyrus.team.collaborative.svn.versioncontroller.SVNCommitter;
 import org.eclipse.papyrus.team.collaborative.svn.versioncontroller.SVNReverter;
 import org.eclipse.papyrus.team.collaborative.svn.versioncontroller.SVNUpdater;
-import org.eclipse.team.svn.core.utility.FileUtility;
-
 import com.google.common.collect.Collections2;
 
 
 /**
  * Factory to build element to do collaborative work with SVN.
- * 
+ *
  * @author adaussy
  */
 public class SVNCollabFactory implements ICollabFactory {
@@ -50,7 +48,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * Resource set svn status cache
 	 */
 	private WeakHashMap<ResourceSet, Boolean> alreadyOnSvnCache = new WeakHashMap<ResourceSet, Boolean>();
-	
+
 	/**
 	 * Instantiates a new sVN collab factory.
 	 */
@@ -62,31 +60,32 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#provide(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public boolean provide(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		/**
 		 * Workaround for eclipse bug 385394. This bug causes property testers to be called very frequently
 		 * even if no activity is taking place, causing important slowdowns when a right-click on a model explorer element is performed.
 		 * a cache prevents these calls (and the subsequent calls to FileUtility.alreadyOnSVN) from being too taxing on system resources.
-		 * 
+		 *
 		 * This bug was fixed on 16/01/2014 but its fix has not yet been released outside of integration builds. Remove this workaround when it is.
 		 */
-		if(alreadyOnSvnCache.containsKey(resourceSet)) {
+		if (alreadyOnSvnCache.containsKey(resourceSet)) {
 			return alreadyOnSvnCache.get(resourceSet);
 		}
 		boolean result;
 		Set<IProject> projects = new HashSet<IProject>();
-		for(IResource iResource : Collections2.transform(uris, CollabFunctionsFactory.getExtendedURIToIResource(resourceSet))) {
-			if(iResource != null) {
+		for (IResource iResource : Collections2.transform(uris, CollabFunctionsFactory.getExtendedURIToIResource(resourceSet))) {
+			if (iResource != null) {
 				projects.add(iResource.getProject());
 			}
 		}
-		if(projects.isEmpty()) {
+		if (projects.isEmpty()) {
 			result = false;
 			alreadyOnSvnCache.put(resourceSet, result);
 			return result;
 		}
-		for(IProject iProject : projects) {
-			if(!FileUtility.alreadyOnSVN(iProject)) {
+		for (IProject iProject : projects) {
+			if (!FileUtility.alreadyOnSVN(iProject)) {
 				result = false;
 				alreadyOnSvnCache.put(resourceSet, result);
 				return result;
@@ -102,6 +101,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#createLocker(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public ILocker createLocker(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		return new SVNLocker(uris, resourceSet);
 	}
@@ -111,6 +111,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#createUnlocker(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public IUnlocker createUnlocker(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		return new SVNUnlocker(uris, resourceSet);
 	}
@@ -120,6 +121,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#createReverter(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public IReverter createReverter(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		return new SVNReverter(uris, resourceSet);
 	}
@@ -129,6 +131,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#createCommitter(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public ICommitter createCommitter(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		return new SVNCommitter(uris, resourceSet);
 	}
@@ -138,6 +141,7 @@ public class SVNCollabFactory implements ICollabFactory {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.ICollabFactory#createUpdater(java.util.Set, org.eclipse.emf.ecore.resource.ResourceSet)
 	 */
+	@Override
 	public IUpdater createUpdater(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		return new SVNUpdater(uris, resourceSet);
 	}

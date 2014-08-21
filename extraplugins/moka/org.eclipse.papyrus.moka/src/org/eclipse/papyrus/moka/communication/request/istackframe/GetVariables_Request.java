@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ public class GetVariables_Request extends RequestMessage {
 	 * This debug element can be:
 	 * - A stack frame
 	 * - A value
-	 * 
+	 *
 	 * @param stackFrameOrValue
-	 *        The debug element from which variables have to be retrieved
+	 *            The debug element from which variables have to be retrieved
 	 */
 	public GetVariables_Request(IDebugElement stackFrameOrValue) {
 		this.stackFrameOrValue = stackFrameOrValue;
@@ -45,7 +45,7 @@ public class GetVariables_Request extends RequestMessage {
 
 	/**
 	 * Returns the debug element from which variables have to be retrieved.
-	 * 
+	 *
 	 * @return The debug element from which variables have to be retrieved.
 	 */
 	public IDebugElement getStackFrameOrValue() {
@@ -57,6 +57,7 @@ public class GetVariables_Request extends RequestMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().getVariables_request_marshal(this);
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,11 +27,12 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAType;
  *
  * <!-- begin-model-doc -->
  * The HardwareComponentType represents hardware element on an abstract level, allowing preliminary engineering activities related to hardware.
- * 
+ *
  * Semantics:
- * The HardwareElementType is a structural entity that defines a part of an electrical architecture. Through its ports it can be connected to electrical sources and sinks. Its logical behavior, the transfer function, may be defined in an HWFunctionType referencing the HardwareElementType. This is typically connected through its ports to the environment model to participate in the end-to-end behavioral definition of a function. 
- * 
- * 
+ * The HardwareElementType is a structural entity that defines a part of an electrical architecture. Through its ports it can be connected to electrical sources and sinks. Its logical behavior, the transfer function, may be defined in an HWFunctionType
+ * referencing the HardwareElementType. This is typically connected through its ports to the environment model to participate in the end-to-end behavioral definition of a function.
+ *
+ *
  * Extension:
  * Class
  * <!-- end-model-doc -->
@@ -39,11 +40,11 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getConnector <em>Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPin <em>Pin</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPart <em>Part</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPortConnector <em>Port Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPort <em>Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getConnector <em>Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPin <em>Pin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPart <em>Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPortConnector <em>Port Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwareComponentType#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +62,7 @@ public interface HardwareComponentType extends Context, EAType {
 	 * The HWConnectors.
 	 * {derived from UML::StructuredClassifier::ownedConnector}
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentType_Connector()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -77,6 +79,7 @@ public interface HardwareComponentType extends Context, EAType {
 	 * The Ports.
 	 * {derived from UML::EncapsulatedClassifier::ownedPort}
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Pin</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentType_Pin()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -93,6 +96,7 @@ public interface HardwareComponentType extends Context, EAType {
 	 * The HWElementPrototypes.
 	 * {derived from UML::Classifier::attribute}
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Part</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentType_Part()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -105,10 +109,10 @@ public interface HardwareComponentType extends Context, EAType {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePortConnector}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port Connector</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Port Connector</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Port Connector</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentType_PortConnector()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"
@@ -121,6 +125,7 @@ public interface HardwareComponentType extends Context, EAType {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareComponentType_Port()
 	 * @model transient="true" volatile="true" derived="true" ordered="false"

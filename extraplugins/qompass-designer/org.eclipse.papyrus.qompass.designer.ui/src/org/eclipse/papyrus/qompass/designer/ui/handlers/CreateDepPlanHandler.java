@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -45,7 +45,7 @@ public class CreateDepPlanHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if((selectedEObject instanceof Class) && Utils.isCompImpl((Class)selectedEObject)) {
+		if ((selectedEObject instanceof Class) && Utils.isCompImpl((Class) selectedEObject)) {
 			return true;
 		}
 		return false;
@@ -54,14 +54,16 @@ public class CreateDepPlanHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(!(selectedEObject instanceof Class)) {
+		if (!(selectedEObject instanceof Class)) {
 			return null;
 		}
-		final Class selectedComposite = (Class)selectedEObject;
+		final Class selectedComposite = (Class) selectedEObject;
 
 		CommandSupport.exec(Messages.CreateDepPlanHandler_CreateDPs, event, new Runnable() {
 
+			@Override
 			public void run() {
 				// execute with transaction support
 				depPlans = DepPlanUtils.getDepPlanRoot(selectedComposite);
@@ -70,35 +72,36 @@ public class CreateDepPlanHandler extends CmdHandler {
 
 		try {
 			String name = selectedComposite.getName() + DeployConstants.DepPlanPostfix;
-			if(depPlans.getMember(name) != null) {
+			if (depPlans.getMember(name) != null) {
 				Shell shell = new Shell();
-				String dialogButtonLabels[] = new String[]{
-					Messages.CreateDepPlanHandler_Cancel,
-					Messages.CreateDepPlanHandler_Sync,
-					Messages.CreateDepPlanHandler_CreateNew
+				String dialogButtonLabels[] = new String[] {
+						Messages.CreateDepPlanHandler_Cancel,
+						Messages.CreateDepPlanHandler_Sync,
+						Messages.CreateDepPlanHandler_CreateNew
 				};
 				MessageDialog dialog = new MessageDialog(shell, Messages.CreateDepPlanHandler_WhatShouldIDo, null,
-					String.format(Messages.CreateDepPlanHandler_DPwithNameExistsAlready, name),
-					MessageDialog.QUESTION, dialogButtonLabels, 0);
+						String.format(Messages.CreateDepPlanHandler_DPwithNameExistsAlready, name),
+						MessageDialog.QUESTION, dialogButtonLabels, 0);
 				int result = dialog.open();
-				if(result == 0) {
+				if (result == 0) {
 					return null;
 				}
-				else if(result == 1) {
+				else if (result == 1) {
 					NamedElement existing = depPlans.getMember(name);
-					if(existing instanceof Package) {
-						DepPlanSync.syncDepPlan((Package)existing);
+					if (existing instanceof Package) {
+						DepPlanSync.syncDepPlan((Package) existing);
 					}
 					else {
 						MessageDialog.openError(shell, Messages.CreateDepPlanHandler_CannotSync,
-							String.format(Messages.CreateDepPlanHandler_DPwithNameExistsNoPackage, name));
+								String.format(Messages.CreateDepPlanHandler_DPwithNameExistsNoPackage, name));
 					}
 				}
 				else {
-					for(int i = 2;; i++) {
+					for (int i = 2;; i++) {
 						name = selectedComposite.getName() + DeployConstants.DepPlanPostfix + i;
-						if(depPlans.getMember(name) == null)
+						if (depPlans.getMember(name) == null) {
 							break;
+						}
 					}
 
 				}
@@ -107,23 +110,24 @@ public class CreateDepPlanHandler extends CmdHandler {
 
 			CommandSupport.exec(Messages.CreateDepPlanHandler_CreateDP, event, new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					Package cdp = depPlans.createNestedPackage(depPlanName);
 					Stereotype st = StereotypeUtil.apply(cdp, org.eclipse.papyrus.FCM.DeploymentPlan.class);
-					if(st == null) {
+					if (st == null) {
 						MessageDialog.openInformation(new Shell(), Messages.CreateDepPlanHandler_CannotCreateDP,
-							Messages.CreateDepPlanHandler_StereoApplicationFailed);
+								Messages.CreateDepPlanHandler_StereoApplicationFailed);
 						return CommandResult.newErrorCommandResult(Messages.CreateDepPlanHandler_CannotCreateDP);
 					}
 					try {
 						InstanceSpecification newRootIS =
-							DepCreation.createDepPlan(cdp, selectedComposite, DeployConstants.MAIN_INSTANCE, true);
+								DepCreation.createDepPlan(cdp, selectedComposite, DeployConstants.MAIN_INSTANCE, true);
 						DepCreation.initAutoValues(newRootIS);
 						return CommandResult.newOKCommandResult();
 					}
 					catch (TransformationException e) {
 						MessageDialog.openInformation(new Shell(), Messages.CreateDepPlanHandler_CannotCreateDP,
-							e.getMessage());
+								e.getMessage());
 						return CommandResult.newErrorCommandResult(e.getMessage());
 					}
 				}

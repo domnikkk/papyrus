@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationModel;
 
 /**
  * Class implementing this interface can listen to diagram removed event from a {@link Resource}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -26,9 +26,10 @@ public interface INotationDiagramRemovedEventListener {
 
 	/**
 	 * Called by events when a {@link Diagram} is removed from the {@link NotationModel}
+	 * 
 	 * @param msg
 	 */
-	public void diagramRemoved(Notification msg) ;
-	
+	public void diagramRemoved(Notification msg);
+
 
 }

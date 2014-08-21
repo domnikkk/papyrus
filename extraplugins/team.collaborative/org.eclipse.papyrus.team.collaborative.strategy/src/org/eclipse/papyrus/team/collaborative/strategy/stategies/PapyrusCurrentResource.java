@@ -28,7 +28,7 @@ import com.google.common.collect.Sets;
 
 /**
  * Strategy that will lock the current triplet resource of the selection (uml,di,notation).
- * 
+ *
  * @author adaussy
  */
 public class PapyrusCurrentResource extends AbstractResourceBaseStrategy {
@@ -38,13 +38,14 @@ public class PapyrusCurrentResource extends AbstractResourceBaseStrategy {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.strategy.ILockingStrategy#getBusinessObject(java.util.Collection)
 	 */
+	@Override
 	public Set<IExtendedURI> getBusinessObject(Collection<EObject> eOjbects) {
-		if(!eOjbects.isEmpty()) {
+		if (!eOjbects.isEmpty()) {
 			ResourceSet ressourceSet = eOjbects.iterator().next().eResource().getResourceSet();
 			Collection<URI> uris = new HashSet<URI>();
-			for(EObject o : ModelsUtil.getRoots(eOjbects)) {
+			for (EObject o : ModelsUtil.getRoots(eOjbects)) {
 				URI uri = o.eResource().getURI();
-				if(!uris.contains(uri)) {
+				if (!uris.contains(uri)) {
 					uris.add(uri);
 					addExtraResources(ressourceSet, uris, uri);
 				}

@@ -23,21 +23,23 @@ public class MokaStackFrame_from_ActivityEdgeInstance extends MokaStackFrame_fro
 		this.activityEdgeInstance = activityEdgeInstance;
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Presentation
-	///////////////////////////////
+	// /////////////////////////////
 
+	@Override
 	public String getLabel() {
 		String activityName = activityEdgeInstance.edge.getActivity().getName();
 		String nodeName = activityEdgeInstance.edge.getName();
-		if(nodeName == null || nodeName.length() == 0)
+		if (nodeName == null || nodeName.length() == 0) {
 			nodeName = "Anonymous edge";
+		}
 		return activityName + "(" + nodeName + ")";
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Debug
-	///////////////////////////////
+	// /////////////////////////////
 
 	@Override
 	protected Object_ getContextObject() {

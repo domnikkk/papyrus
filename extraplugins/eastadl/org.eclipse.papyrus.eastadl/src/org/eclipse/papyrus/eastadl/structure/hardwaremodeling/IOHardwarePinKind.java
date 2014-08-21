@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * IOHardwarePinKind is an enumeration type representing different kinds of I/O Hardware Ports.
- * 
- * Extension: 
+ *
+ * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getIOHardwarePinKind()
  * @model
  * @generated
@@ -41,6 +42,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * The '<em><b>Digital</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DIGITAL_VALUE
 	 * @generated
 	 * @ordered
@@ -51,6 +53,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * The '<em><b>Analog</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ANALOG_VALUE
 	 * @generated
 	 * @ordered
@@ -61,6 +64,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * The '<em><b>Pwm</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PWM_VALUE
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -84,6 +89,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * I/O with fixed amplitude.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #DIGITAL
 	 * @model name="digital"
 	 * @generated
@@ -98,6 +104,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * I/O with varying amplitude.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #ANALOG
 	 * @model name="analog"
 	 * @generated
@@ -112,6 +119,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * PWM (Pulse Width Modulated) modulated I/O, i.e. a signal with fixed frequency and amplitude but varying duty cycle.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #PWM
 	 * @model name="pwm"
 	 * @generated
@@ -126,6 +134,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Another type of I/O port.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -137,20 +146,22 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * An array of all the '<em><b>IO Hardware Pin Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final IOHardwarePinKind[] VALUES_ARRAY =
-		new IOHardwarePinKind[] {
-			DIGITAL,
-			ANALOG,
-			PWM,
-			OTHER,
-		};
+			new IOHardwarePinKind[] {
+					DIGITAL,
+					ANALOG,
+					PWM,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>IO Hardware Pin Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<IOHardwarePinKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -159,14 +170,19 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * Returns the '<em><b>IO Hardware Pin Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static IOHardwarePinKind get(int value) {
 		switch (value) {
-			case DIGITAL_VALUE: return DIGITAL;
-			case ANALOG_VALUE: return ANALOG;
-			case PWM_VALUE: return PWM;
-			case OTHER_VALUE: return OTHER;
+		case DIGITAL_VALUE:
+			return DIGITAL;
+		case ANALOG_VALUE:
+			return ANALOG;
+		case PWM_VALUE:
+			return PWM;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -175,6 +191,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * Returns the '<em><b>IO Hardware Pin Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static IOHardwarePinKind get(String literal) {
@@ -191,6 +208,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * Returns the '<em><b>IO Hardware Pin Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static IOHardwarePinKind getByName(String name) {
@@ -206,6 +224,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -213,6 +232,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -220,6 +240,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -228,6 +249,7 @@ public enum IOHardwarePinKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private IOHardwarePinKind(int value, String name, String literal) {
@@ -239,39 +261,46 @@ public enum IOHardwarePinKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //IOHardwarePinKind
+
+} // IOHardwarePinKind

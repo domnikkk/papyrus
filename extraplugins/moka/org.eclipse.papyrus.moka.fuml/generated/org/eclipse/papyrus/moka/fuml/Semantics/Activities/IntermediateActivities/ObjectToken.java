@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,13 @@ public class ObjectToken extends Token {
 	 */
 	public Value value;
 
+	@Override
 	public Boolean equals(Token other) {
 		// Test if this object token is the same as the other token.
 		return this == other;
 	}
 
+	@Override
 	public Token copy() {
 		// Return a new object token with the same value as this token.
 		// [Note: the holder of the copy is not set.]
@@ -36,11 +38,13 @@ public class ObjectToken extends Token {
 		return copy;
 	}
 
+	@Override
 	public Boolean isControl() {
 		// Return false for an object token.
 		return false;
 	}
 
+	@Override
 	public Value getValue() {
 		// Return the value of this object token.
 		return this.value;

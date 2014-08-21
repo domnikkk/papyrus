@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,12 +27,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.annex.needs.NeedsFactory
  * @model kind="package"
  * @generated
@@ -42,12 +43,13 @@ public interface NeedsPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -55,6 +57,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderNeedImpl <em>Stakeholder Need</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderNeedImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getStakeholderNeed()
 		 * @generated
@@ -65,6 +68,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference STAKEHOLDER_NEED__BASE_CLASS = eINSTANCE.getStakeholderNeed_Base_Class();
@@ -73,6 +77,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Need</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STAKEHOLDER_NEED__NEED = eINSTANCE.getStakeholderNeed_Need();
@@ -81,6 +86,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STAKEHOLDER_NEED__PRIORITY = eINSTANCE.getStakeholderNeed_Priority();
@@ -89,6 +95,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stake Holder</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference STAKEHOLDER_NEED__STAKE_HOLDER = eINSTANCE.getStakeholderNeed_StakeHolder();
@@ -97,6 +104,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Problem Statement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference STAKEHOLDER_NEED__PROBLEM_STATEMENT = eINSTANCE.getStakeholderNeed_ProblemStatement();
@@ -105,6 +113,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ProblemStatementImpl <em>Problem Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ProblemStatementImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getProblemStatement()
 		 * @generated
@@ -115,6 +124,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PROBLEM_STATEMENT__BASE_CLASS = eINSTANCE.getProblemStatement_Base_Class();
@@ -123,6 +133,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Affects</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PROBLEM_STATEMENT__AFFECTS = eINSTANCE.getProblemStatement_Affects();
@@ -131,6 +142,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Impact</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PROBLEM_STATEMENT__IMPACT = eINSTANCE.getProblemStatement_Impact();
@@ -139,6 +151,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Problem</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PROBLEM_STATEMENT__PROBLEM = eINSTANCE.getProblemStatement_Problem();
@@ -147,6 +160,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Solution Benefits</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PROBLEM_STATEMENT__SOLUTION_BENEFITS = eINSTANCE.getProblemStatement_SolutionBenefits();
@@ -155,6 +169,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ProductPositioningImpl <em>Product Positioning</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ProductPositioningImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getProductPositioning()
 		 * @generated
@@ -165,6 +180,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PRODUCT_POSITIONING__BASE_CLASS = eINSTANCE.getProductPositioning_Base_Class();
@@ -173,6 +189,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Driving Needs</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRODUCT_POSITIONING__DRIVING_NEEDS = eINSTANCE.getProductPositioning_DrivingNeeds();
@@ -181,6 +198,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Key Capabilities</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRODUCT_POSITIONING__KEY_CAPABILITIES = eINSTANCE.getProductPositioning_KeyCapabilities();
@@ -189,6 +207,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Primary Competitive Alternative</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRODUCT_POSITIONING__PRIMARY_COMPETITIVE_ALTERNATIVE = eINSTANCE.getProductPositioning_PrimaryCompetitiveAlternative();
@@ -197,6 +216,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Primary Differentiation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRODUCT_POSITIONING__PRIMARY_DIFFERENTIATION = eINSTANCE.getProductPositioning_PrimaryDifferentiation();
@@ -205,6 +225,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Customers</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PRODUCT_POSITIONING__TARGET_CUSTOMERS = eINSTANCE.getProductPositioning_TargetCustomers();
@@ -213,6 +234,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.BusinessOpportunityImpl <em>Business Opportunity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.BusinessOpportunityImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getBusinessOpportunity()
 		 * @generated
@@ -223,6 +245,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BUSINESS_OPPORTUNITY__BASE_CLASS = eINSTANCE.getBusinessOpportunity_Base_Class();
@@ -231,6 +254,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Problem Statement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BUSINESS_OPPORTUNITY__PROBLEM_STATEMENT = eINSTANCE.getBusinessOpportunity_ProblemStatement();
@@ -239,6 +263,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Product Positioning</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BUSINESS_OPPORTUNITY__PRODUCT_POSITIONING = eINSTANCE.getBusinessOpportunity_ProductPositioning();
@@ -247,6 +272,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Business Opportunity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BUSINESS_OPPORTUNITY__BUSINESS_OPPORTUNITY = eINSTANCE.getBusinessOpportunity_BusinessOpportunity();
@@ -255,6 +281,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Motivates Development Of</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BUSINESS_OPPORTUNITY__MOTIVATES_DEVELOPMENT_OF = eINSTANCE.getBusinessOpportunity_MotivatesDevelopmentOf();
@@ -263,6 +290,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ConceptImpl <em>Concept</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ConceptImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getConcept()
 		 * @generated
@@ -273,6 +301,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.MissionImpl <em>Mission</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.MissionImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getMission()
 		 * @generated
@@ -283,6 +312,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.VehicleSystemImpl <em>Vehicle System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.VehicleSystemImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getVehicleSystem()
 		 * @generated
@@ -293,6 +323,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fulfills</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VEHICLE_SYSTEM__FULFILLS = eINSTANCE.getVehicleSystem_Fulfills();
@@ -301,6 +332,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Has An</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VEHICLE_SYSTEM__HAS_AN = eINSTANCE.getVehicleSystem_HasAn();
@@ -309,6 +341,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Has</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VEHICLE_SYSTEM__HAS = eINSTANCE.getVehicleSystem_Has();
@@ -317,6 +350,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitectureImpl <em>Architecture</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitectureImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecture()
 		 * @generated
@@ -327,6 +361,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Described By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARCHITECTURE__DESCRIBED_BY = eINSTANCE.getArchitecture_DescribedBy();
@@ -335,6 +370,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl <em>Architectural Description</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecturalDescription()
 		 * @generated
@@ -345,6 +381,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Aggregates</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARCHITECTURAL_DESCRIPTION__AGGREGATES = eINSTANCE.getArchitecturalDescription_Aggregates();
@@ -353,6 +390,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Identifies</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARCHITECTURAL_DESCRIPTION__IDENTIFIES = eINSTANCE.getArchitecturalDescription_Identifies();
@@ -361,6 +399,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl <em>Architectural Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecturalModel()
 		 * @generated
@@ -371,6 +410,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Concept For</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARCHITECTURAL_MODEL__IS_CONCEPT_FOR = eINSTANCE.getArchitecturalModel_IsConceptFor();
@@ -379,6 +419,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderImpl <em>Stakeholder</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderImpl
 		 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getStakeholder()
 		 * @generated
@@ -389,6 +430,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference STAKEHOLDER__BASE_CLASS = eINSTANCE.getStakeholder_Base_Class();
@@ -397,6 +439,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Responsibilities</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STAKEHOLDER__RESPONSIBILITIES = eINSTANCE.getStakeholder_Responsibilities();
@@ -405,6 +448,7 @@ public interface NeedsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Success Criteria</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STAKEHOLDER__SUCCESS_CRITERIA = eINSTANCE.getStakeholder_SuccessCriteria();
@@ -415,6 +459,7 @@ public interface NeedsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "needs";
@@ -423,6 +468,7 @@ public interface NeedsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Annex/Needs/1";
@@ -431,6 +477,7 @@ public interface NeedsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "Needs";
@@ -439,6 +486,7 @@ public interface NeedsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	NeedsPackage eINSTANCE = org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl.init();
@@ -447,6 +495,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderNeedImpl <em>Stakeholder Need</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderNeedImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getStakeholderNeed()
 	 * @generated
@@ -457,6 +506,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ProblemStatementImpl <em>Problem Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ProblemStatementImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getProblemStatement()
 	 * @generated
@@ -467,6 +517,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ProductPositioningImpl <em>Product Positioning</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ProductPositioningImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getProductPositioning()
 	 * @generated
@@ -477,6 +528,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.BusinessOpportunityImpl <em>Business Opportunity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.BusinessOpportunityImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getBusinessOpportunity()
 	 * @generated
@@ -487,6 +539,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ConceptImpl <em>Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ConceptImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getConcept()
 	 * @generated
@@ -497,6 +550,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.MissionImpl <em>Mission</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.MissionImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getMission()
 	 * @generated
@@ -507,6 +561,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitectureImpl <em>Architecture</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitectureImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecture()
 	 * @generated
@@ -517,6 +572,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl <em>Architectural Description</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalDescriptionImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecturalDescription()
 	 * @generated
@@ -527,6 +583,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl <em>Architectural Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.ArchitecturalModelImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getArchitecturalModel()
 	 * @generated
@@ -537,6 +594,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderImpl <em>Stakeholder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.StakeholderImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getStakeholder()
 	 * @generated
@@ -547,6 +605,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -556,6 +615,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -565,6 +625,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -574,6 +635,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -583,6 +645,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -592,6 +655,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -601,6 +665,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Responsibilities</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -610,6 +675,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Success Criteria</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -620,6 +686,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Stakeholder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -629,6 +696,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Stakeholder</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -638,6 +706,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -647,6 +716,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -656,6 +726,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -665,6 +736,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -674,6 +746,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -683,6 +756,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -692,6 +766,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Need</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -701,6 +776,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -710,6 +786,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Stake Holder</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -719,6 +796,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Problem Statement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -728,6 +806,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Stakeholder Need</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -737,6 +816,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Stakeholder Need</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -746,6 +826,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -755,6 +836,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -764,6 +846,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -773,6 +856,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -782,6 +866,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -791,6 +876,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -800,6 +886,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Affects</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -809,6 +896,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Impact</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -818,6 +906,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Problem</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -827,6 +916,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Solution Benefits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -836,6 +926,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Problem Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -845,6 +936,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Problem Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -854,6 +946,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -863,6 +956,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -872,6 +966,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -881,6 +976,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -890,6 +986,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -899,6 +996,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -908,6 +1006,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Driving Needs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -917,6 +1016,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Key Capabilities</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -926,6 +1026,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Primary Competitive Alternative</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -935,6 +1036,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Primary Differentiation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -944,6 +1046,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Customers</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -953,6 +1056,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Product Positioning</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -962,6 +1066,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Product Positioning</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -971,6 +1076,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -980,6 +1086,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -989,6 +1096,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -998,6 +1106,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1007,6 +1116,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1016,6 +1126,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1025,6 +1136,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Problem Statement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1034,6 +1146,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Product Positioning</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1043,6 +1156,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Business Opportunity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1052,6 +1166,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Motivates Development Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1061,6 +1176,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Business Opportunity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1070,6 +1186,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Business Opportunity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1079,6 +1196,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1088,6 +1206,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1097,6 +1216,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1106,6 +1226,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1115,6 +1236,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1124,6 +1246,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1133,6 +1256,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1142,6 +1266,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1151,6 +1276,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Mission</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1160,6 +1286,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Mission</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1169,6 +1296,7 @@ public interface NeedsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.annex.needs.impl.VehicleSystemImpl <em>Vehicle System</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.VehicleSystemImpl
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.impl.NeedsPackageImpl#getVehicleSystem()
 	 * @generated
@@ -1179,6 +1307,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1188,6 +1317,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1197,6 +1327,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1206,6 +1337,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Fulfills</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1215,6 +1347,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Has An</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1224,6 +1357,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Has</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1233,6 +1367,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Vehicle System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1242,6 +1377,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Vehicle System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1251,6 +1387,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1260,6 +1397,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1269,6 +1407,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1278,6 +1417,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Described By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1287,6 +1427,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Architecture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1296,6 +1437,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Architecture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1305,6 +1447,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1314,6 +1457,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1323,6 +1467,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1332,6 +1477,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Aggregates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1341,6 +1487,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifies</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1350,6 +1497,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Architectural Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1359,6 +1507,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Architectural Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1368,6 +1517,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1377,6 +1527,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1386,6 +1537,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1395,6 +1547,7 @@ public interface NeedsPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Concept For</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1404,6 +1557,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of structural features of the '<em>Architectural Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1413,6 +1567,7 @@ public interface NeedsPackage extends EPackage {
 	 * The number of operations of the '<em>Architectural Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1422,6 +1577,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription <em>Architectural Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Architectural Description</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription
 	 * @generated
@@ -1432,6 +1588,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription#getAggregates <em>Aggregates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Aggregates</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription#getAggregates()
 	 * @see #getArchitecturalDescription()
@@ -1443,6 +1600,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription#getIdentifies <em>Identifies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Identifies</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalDescription#getIdentifies()
 	 * @see #getArchitecturalDescription()
@@ -1454,6 +1612,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel <em>Architectural Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Architectural Model</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel
 	 * @generated
@@ -1464,6 +1623,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel#getIsConceptFor <em>Is Concept For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Is Concept For</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ArchitecturalModel#getIsConceptFor()
 	 * @see #getArchitecturalModel()
@@ -1475,6 +1635,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.Architecture <em>Architecture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Architecture</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Architecture
 	 * @generated
@@ -1485,6 +1646,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.Architecture#getDescribedBy <em>Described By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Described By</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Architecture#getDescribedBy()
 	 * @see #getArchitecture()
@@ -1496,6 +1658,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity <em>Business Opportunity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Business Opportunity</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity
 	 * @generated
@@ -1506,6 +1669,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBase_Class()
 	 * @see #getBusinessOpportunity()
@@ -1517,6 +1681,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity <em>Business Opportunity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Business Opportunity</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getBusinessOpportunity()
 	 * @see #getBusinessOpportunity()
@@ -1528,6 +1693,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getMotivatesDevelopmentOf <em>Motivates Development Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Motivates Development Of</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getMotivatesDevelopmentOf()
 	 * @see #getBusinessOpportunity()
@@ -1539,6 +1705,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProblemStatement <em>Problem Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Problem Statement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProblemStatement()
 	 * @see #getBusinessOpportunity()
@@ -1550,6 +1717,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProductPositioning <em>Product Positioning</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Product Positioning</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.BusinessOpportunity#getProductPositioning()
 	 * @see #getBusinessOpportunity()
@@ -1561,6 +1729,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.Concept <em>Concept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Concept</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Concept
 	 * @generated
@@ -1571,6 +1740,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.Mission <em>Mission</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Mission</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Mission
 	 * @generated
@@ -1581,6 +1751,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1590,6 +1761,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement <em>Problem Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Problem Statement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement
 	 * @generated
@@ -1600,6 +1772,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getBase_Class()
 	 * @see #getProblemStatement()
@@ -1611,6 +1784,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getAffects <em>Affects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Affects</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getAffects()
 	 * @see #getProblemStatement()
@@ -1622,6 +1796,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getImpact <em>Impact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Impact</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getImpact()
 	 * @see #getProblemStatement()
@@ -1633,6 +1808,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getProblem <em>Problem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Problem</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getProblem()
 	 * @see #getProblemStatement()
@@ -1644,6 +1820,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getSolutionBenefits <em>Solution Benefits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Solution Benefits</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProblemStatement#getSolutionBenefits()
 	 * @see #getProblemStatement()
@@ -1655,6 +1832,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning <em>Product Positioning</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Product Positioning</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning
 	 * @generated
@@ -1665,6 +1843,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getBase_Class()
 	 * @see #getProductPositioning()
@@ -1676,6 +1855,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getDrivingNeeds <em>Driving Needs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Driving Needs</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getDrivingNeeds()
 	 * @see #getProductPositioning()
@@ -1687,6 +1867,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getKeyCapabilities <em>Key Capabilities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Key Capabilities</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getKeyCapabilities()
 	 * @see #getProductPositioning()
@@ -1698,6 +1879,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryCompetitiveAlternative <em>Primary Competitive Alternative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Primary Competitive Alternative</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryCompetitiveAlternative()
 	 * @see #getProductPositioning()
@@ -1709,6 +1891,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryDifferentiation <em>Primary Differentiation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Primary Differentiation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getPrimaryDifferentiation()
 	 * @see #getProductPositioning()
@@ -1720,6 +1903,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getTargetCustomers <em>Target Customers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Target Customers</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.ProductPositioning#getTargetCustomers()
 	 * @see #getProductPositioning()
@@ -1731,6 +1915,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.Stakeholder <em>Stakeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Stakeholder</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Stakeholder
 	 * @generated
@@ -1741,6 +1926,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getBase_Class()
 	 * @see #getStakeholder()
@@ -1752,6 +1938,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getResponsibilities <em>Responsibilities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Responsibilities</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getResponsibilities()
 	 * @see #getStakeholder()
@@ -1763,6 +1950,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getSuccessCriteria <em>Success Criteria</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Success Criteria</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.Stakeholder#getSuccessCriteria()
 	 * @see #getStakeholder()
@@ -1774,6 +1962,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed <em>Stakeholder Need</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Stakeholder Need</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed
 	 * @generated
@@ -1784,6 +1973,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getBase_Class()
 	 * @see #getStakeholderNeed()
@@ -1795,6 +1985,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getNeed <em>Need</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Need</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getNeed()
 	 * @see #getStakeholderNeed()
@@ -1806,6 +1997,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Priority</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getPriority()
 	 * @see #getStakeholderNeed()
@@ -1817,6 +2009,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getProblemStatement <em>Problem Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Problem Statement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getProblemStatement()
 	 * @see #getStakeholderNeed()
@@ -1828,6 +2021,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getStakeHolder <em>Stake Holder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Stake Holder</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.StakeholderNeed#getStakeHolder()
 	 * @see #getStakeholderNeed()
@@ -1839,6 +2033,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem <em>Vehicle System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Vehicle System</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem
 	 * @generated
@@ -1849,6 +2044,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getFulfills <em>Fulfills</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Fulfills</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getFulfills()
 	 * @see #getVehicleSystem()
@@ -1860,6 +2056,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHas <em>Has</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Has</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHas()
 	 * @see #getVehicleSystem()
@@ -1871,6 +2068,7 @@ public interface NeedsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn <em>Has An</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Has An</em>'.
 	 * @see org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem#getHasAn()
 	 * @see #getVehicleSystem()
@@ -1878,4 +2076,4 @@ public interface NeedsPackage extends EPackage {
 	 */
 	EReference getVehicleSystem_HasAn();
 
-} //NeedsPackage
+} // NeedsPackage

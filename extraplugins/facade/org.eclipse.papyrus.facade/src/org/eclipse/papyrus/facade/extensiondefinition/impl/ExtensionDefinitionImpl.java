@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,11 +48,11 @@ import org.eclipse.uml2.uml.Stereotype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getExtension <em>Extension</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getBaseMetaclasses <em>Base Metaclasses</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getFacade <em>Facade</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getStereotype <em>Stereotype</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getExtension <em>Extension</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getBaseMetaclasses <em>Base Metaclasses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getFacade <em>Facade</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getStereotype <em>Stereotype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.ExtensionDefinitionImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +63,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtension()
 	 * @generated
 	 * @ordered
@@ -73,6 +74,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getBaseMetaclasses() <em>Base Metaclasses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBaseMetaclasses()
 	 * @generated
 	 * @ordered
@@ -83,6 +85,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getStereotype() <em>Stereotype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStereotype()
 	 * @generated
 	 * @ordered
@@ -93,6 +96,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -103,6 +107,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -112,6 +117,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExtensionDefinitionImpl() {
@@ -121,6 +127,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,15 +138,18 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Extension getExtension() {
 		if (extension != null && extension.eIsProxy()) {
-			InternalEObject oldExtension = (InternalEObject)extension;
-			extension = (Extension)eResolveProxy(oldExtension);
+			InternalEObject oldExtension = (InternalEObject) extension;
+			extension = (Extension) eResolveProxy(oldExtension);
 			if (extension != oldExtension) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION, oldExtension, extension));
+				}
 			}
 		}
 		return extension;
@@ -148,6 +158,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Extension basicGetExtension() {
@@ -157,20 +168,25 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setExtension(Extension newExtension) {
 		Extension oldExtension = extension;
 		extension = newExtension;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION, oldExtension, extension));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<BaseMetaclass> getBaseMetaclasses() {
 		if (baseMetaclasses == null) {
 			baseMetaclasses = new EObjectContainmentWithInverseEList<BaseMetaclass>(BaseMetaclass.class, this, ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES, ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION);
@@ -181,56 +197,72 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Facade getFacade() {
-		if (eContainerFeatureID() != ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE) return null;
-		return (Facade)eInternalContainer();
+		if (eContainerFeatureID() != ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE) {
+			return null;
+		}
+		return (Facade) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetFacade(Facade newFacade, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newFacade, ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newFacade, ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFacade(Facade newFacade) {
 		if (newFacade != eInternalContainer() || (eContainerFeatureID() != ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE && newFacade != null)) {
-			if (EcoreUtil.isAncestor(this, newFacade))
+			if (EcoreUtil.isAncestor(this, newFacade)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newFacade != null)
-				msgs = ((InternalEObject)newFacade).eInverseAdd(this, FacadePackage.FACADE__EXTENSION_DEFINITIONS, Facade.class, msgs);
+			}
+			if (newFacade != null) {
+				msgs = ((InternalEObject) newFacade).eInverseAdd(this, FacadePackage.FACADE__EXTENSION_DEFINITIONS, Facade.class, msgs);
+			}
 			msgs = basicSetFacade(newFacade, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE, newFacade, newFacade));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Stereotype getStereotype() {
 		if (stereotype != null && stereotype.eIsProxy()) {
-			InternalEObject oldStereotype = (InternalEObject)stereotype;
-			stereotype = (Stereotype)eResolveProxy(oldStereotype);
+			InternalEObject oldStereotype = (InternalEObject) stereotype;
+			stereotype = (Stereotype) eResolveProxy(oldStereotype);
 			if (stereotype != oldStereotype) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE, oldStereotype, stereotype));
+				}
 			}
 		}
 		return stereotype;
@@ -239,6 +271,7 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Stereotype basicGetStereotype() {
@@ -248,20 +281,25 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStereotype(Stereotype newStereotype) {
 		Stereotype oldStereotype = stereotype;
 		stereotype = newStereotype;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE, oldStereotype, stereotype));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ExtensionDefinitionKind getKind() {
 		return kind;
 	}
@@ -269,30 +307,35 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(ExtensionDefinitionKind newKind) {
 		ExtensionDefinitionKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBaseMetaclasses()).basicAdd(otherEnd, msgs);
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetFacade((Facade)otherEnd, msgs);
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBaseMetaclasses()).basicAdd(otherEnd, msgs);
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetFacade((Facade) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -300,15 +343,16 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				return ((InternalEList<?>)getBaseMetaclasses()).basicRemove(otherEnd, msgs);
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				return basicSetFacade(null, msgs);
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			return ((InternalEList<?>) getBaseMetaclasses()).basicRemove(otherEnd, msgs);
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			return basicSetFacade(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -316,13 +360,14 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				return eInternalContainer().eInverseRemove(this, FacadePackage.FACADE__EXTENSION_DEFINITIONS, Facade.class, msgs);
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			return eInternalContainer().eInverseRemove(this, FacadePackage.FACADE__EXTENSION_DEFINITIONS, Facade.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -330,23 +375,28 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
-				if (resolve) return getExtension();
-				return basicGetExtension();
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				return getBaseMetaclasses();
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				return getFacade();
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
-				if (resolve) return getStereotype();
-				return basicGetStereotype();
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
-				return getKind();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
+			if (resolve) {
+				return getExtension();
+			}
+			return basicGetExtension();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			return getBaseMetaclasses();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			return getFacade();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
+			if (resolve) {
+				return getStereotype();
+			}
+			return basicGetStereotype();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
+			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,28 +404,29 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
-				setExtension((Extension)newValue);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				getBaseMetaclasses().clear();
-				getBaseMetaclasses().addAll((Collection<? extends BaseMetaclass>)newValue);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				setFacade((Facade)newValue);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
-				setStereotype((Stereotype)newValue);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
-				setKind((ExtensionDefinitionKind)newValue);
-				return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
+			setExtension((Extension) newValue);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			getBaseMetaclasses().clear();
+			getBaseMetaclasses().addAll((Collection<? extends BaseMetaclass>) newValue);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			setFacade((Facade) newValue);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
+			setStereotype((Stereotype) newValue);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
+			setKind((ExtensionDefinitionKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -383,26 +434,27 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
-				setExtension((Extension)null);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				getBaseMetaclasses().clear();
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				setFacade((Facade)null);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
-				setStereotype((Stereotype)null);
-				return;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
+			setExtension((Extension) null);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			getBaseMetaclasses().clear();
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			setFacade((Facade) null);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
+			setStereotype((Stereotype) null);
+			return;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -410,21 +462,22 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
-				return extension != null;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
-				return baseMetaclasses != null && !baseMetaclasses.isEmpty();
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
-				return getFacade() != null;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
-				return stereotype != null;
-			case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
-				return kind != KIND_EDEFAULT;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__EXTENSION:
+			return extension != null;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES:
+			return baseMetaclasses != null && !baseMetaclasses.isEmpty();
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE:
+			return getFacade() != null;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__STEREOTYPE:
+			return stereotype != null;
+		case ExtensiondefinitionPackage.EXTENSION_DEFINITION__KIND:
+			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -432,11 +485,14 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -445,4 +501,4 @@ public class ExtensionDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return result.toString();
 	}
 
-} //ExtensionDefinitionImpl
+} // ExtensionDefinitionImpl

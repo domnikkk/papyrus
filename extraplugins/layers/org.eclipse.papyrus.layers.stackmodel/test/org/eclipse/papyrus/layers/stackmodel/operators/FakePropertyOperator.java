@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -17,12 +17,14 @@ import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
 
 /**
  * A fake custom operator for tests purpose.
+ * 
  * @author cedric dumoulin
  *
  */
 public class FakePropertyOperator implements CustomPropertyOperatorsInstance {
 
 	public boolean isComputePropertyValueCommandCalled = false;
+
 	/**
 	 * @see org.eclipse.papyrus.layers.stackmodel.operators.CustomPropertyOperatorsInstance#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)
 	 *

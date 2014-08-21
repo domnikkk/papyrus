@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The AllocationTarget is a superclass for elements to which AllocateableElements can be allocated. 
- * 
+ * The AllocationTarget is a superclass for elements to which AllocateableElements can be allocated.
+ *
  * Semantics:
  * An AllocationTarget is a resource element in the Hardware Design Architecture which may host functional behaviors in the Functional Design Architecture.
- * 
+ *
  * Extension: abstract, no extension
  * <!-- end-model-doc -->
  *

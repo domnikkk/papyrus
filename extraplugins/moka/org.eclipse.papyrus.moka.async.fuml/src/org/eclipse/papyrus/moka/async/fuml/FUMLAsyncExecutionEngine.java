@@ -51,7 +51,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 	 */
 	@Override
 	public void start(Behavior behavior) {
-		if(behavior != null) {
+		if (behavior != null) {
 			main = behavior;
 			// creates the locus, executor and execution factory
 			this.locus = new AsyncLocus();
@@ -70,7 +70,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 			// Finally launches the execution
 			this.started = true;
 			this.locus.executor.execute(main, null, this.arguments);
-			((AsyncControlDelegate)eInstance.getControlDelegate()).notifyMainThreadLogicallyEnded();
+			((AsyncControlDelegate) eInstance.getControlDelegate()).notifyMainThreadLogicallyEnded();
 		}
 	}
 
@@ -98,7 +98,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 	 */
 	@Override
 	public ControlDelegate getControlDelegate() {
-		if(this.controlDelegate == null) {
+		if (this.controlDelegate == null) {
 			this.controlDelegate = new AsyncControlDelegate(this);
 		}
 		return this.controlDelegate;
@@ -112,24 +112,24 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 	 */
 	@Override
 	public void resume(Resume_Request request) {
-		if(!this.started) {
+		if (!this.started) {
 			Runnable execution = new Runnable() {
 
 				public void run() {
-					if(main != null) {
+					if (main != null) {
 						try {
 							start(main);
 						}
 						catch (Exception e) {
-							Activator.log.error(e) ;
-							if (! MokaConstants.SILENT_MODE) {
+							Activator.log.error(e);
+							if (!MokaConstants.SILENT_MODE) {
 								Display.getDefault().syncExec(new Runnable() {
 									public void run() {
-										MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.") ;
+										MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.");
 									}
-								}) ;
+								});
 							}
-							setIsTerminated(true) ;
+							setIsTerminated(true);
 						}
 						// Waits for termination. i.e., the main thread is terminated, but object activations may still be running
 						FUMLExecutionEngine.eInstance.getControlDelegate().waitForTermination();
@@ -142,7 +142,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 				}
 			};
 			Thread mainThread = new Thread(execution);
-			((AsyncControlDelegate)eInstance.getControlDelegate()).registerObjectActivation(null);
+			((AsyncControlDelegate) eInstance.getControlDelegate()).registerObjectActivation(null);
 			mainThread.start();
 		} else {
 			this.getControlDelegate().resume(request);
@@ -157,7 +157,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 	 * Manages reply to a resume() request emitted from the debug target.
 	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	@Override
 	protected void resume_reply(String message) {

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,18 +33,21 @@ import org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
+ * 
  * @generated
  */
 public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass eProblemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass eProblemsContainerEClass = null;
@@ -52,38 +55,38 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum eSeverityEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType eDiagnosticEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType eIteratorEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
 	 * package package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory
-	 * method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.cdo.validation.problems.ProblemsPackage#eNS_URI
 	 * @see #init()
@@ -95,6 +98,7 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -102,24 +106,22 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model,
 	 * and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
-	 * This method is used to initialize {@link ProblemsPackage#eINSTANCE} when
-	 * that field is accessed. Clients should not invoke it directly. Instead,
-	 * they should simply access that field to obtain the package. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This method is used to initialize {@link ProblemsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ProblemsPackage init() {
-		if(isInited)
-			return (ProblemsPackage)EPackage.Registry.INSTANCE.getEPackage(ProblemsPackage.eNS_URI);
+		if (isInited) {
+			return (ProblemsPackage) EPackage.Registry.INSTANCE.getEPackage(ProblemsPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ProblemsPackageImpl theProblemsPackage = (ProblemsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ProblemsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ProblemsPackageImpl());
+		ProblemsPackageImpl theProblemsPackage = (ProblemsPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ProblemsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ProblemsPackageImpl());
 
 		isInited = true;
 
@@ -140,170 +142,212 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getEProblem() {
 		return eProblemEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEProblem_Severity() {
-		return (EAttribute)eProblemEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) eProblemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEProblem_Message() {
-		return (EAttribute)eProblemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) eProblemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEProblem_Source() {
-		return (EAttribute)eProblemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) eProblemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEProblem_Code() {
-		return (EAttribute)eProblemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) eProblemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblem_Element() {
-		return (EReference)eProblemEClass.getEStructuralFeatures().get(4);
+		return (EReference) eProblemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblem_Related() {
-		return (EReference)eProblemEClass.getEStructuralFeatures().get(5);
+		return (EReference) eProblemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblem_Container() {
-		return (EReference)eProblemEClass.getEStructuralFeatures().get(6);
+		return (EReference) eProblemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEProblem_Type() {
-		return (EAttribute)eProblemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) eProblemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblem_Attributes() {
-		return (EReference)eProblemEClass.getEStructuralFeatures().get(8);
+		return (EReference) eProblemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblem__ToDiagnostic() {
 		return eProblemEClass.getEOperations().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getEProblemsContainer() {
 		return eProblemsContainerEClass;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblemsContainer_Problems() {
-		return (EReference)eProblemsContainerEClass.getEStructuralFeatures().get(0);
+		return (EReference) eProblemsContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblemsContainer_Subjects() {
-		return (EReference)eProblemsContainerEClass.getEStructuralFeatures().get(1);
+		return (EReference) eProblemsContainerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblemsContainer_Subcontainers() {
-		return (EReference)eProblemsContainerEClass.getEStructuralFeatures().get(2);
+		return (EReference) eProblemsContainerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getEProblemsContainer_Container() {
-		return (EReference)eProblemsContainerEClass.getEStructuralFeatures().get(3);
+		return (EReference) eProblemsContainerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblemsContainer__AllProblems() {
 		return eProblemsContainerEClass.getEOperations().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblemsContainer__AllProblems__EObject() {
 		return eProblemsContainerEClass.getEOperations().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblemsContainer__AllDiagnostics() {
 		return eProblemsContainerEClass.getEOperations().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblemsContainer__AllDiagnostics__EObject() {
 		return eProblemsContainerEClass.getEOperations().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getEProblemsContainer__GetWorstProblem__EObject() {
 		return eProblemsContainerEClass.getEOperations().get(4);
 	}
@@ -311,8 +355,10 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getAttribute() {
 		return attributeEClass;
 	}
@@ -320,69 +366,84 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttribute_Key() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttribute_Value() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getESeverity() {
 		return eSeverityEEnum;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getEDiagnostic() {
 		return eDiagnosticEDataType;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getEIterator() {
 		return eIteratorEDataType;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ProblemsFactory getProblemsFactory() {
-		return (ProblemsFactory)getEFactoryInstance();
+		return (ProblemsFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -423,6 +484,7 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -431,12 +493,13 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -459,17 +522,22 @@ public class ProblemsPackageImpl extends EPackageImpl implements ProblemsPackage
 		initEAttribute(getEProblem_Code(), ecorePackage.getEInt(), "code", null, 0, 1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getEProblem_Element(), ecorePackage.getEObject(), null, "element", null, 1, 1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getEProblem_Related(), ecorePackage.getEObject(), null, "related", null, 0, -1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getEProblem_Container(), this.getEProblemsContainer(), this.getEProblemsContainer_Problems(), "container", null, 0, 1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEProblem_Container(), this.getEProblemsContainer(), this.getEProblemsContainer_Problems(),
+				"container", null, 0, 1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getEProblem_Type(), ecorePackage.getEString(), "type", "org.eclipse.emf.ecore.diagnostic", 0, 1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 		initEReference(getEProblem_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EProblem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEOperation(getEProblem__ToDiagnostic(), this.getEDiagnostic(), "toDiagnostic", 1, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eProblemsContainerEClass, EProblemsContainer.class, "EProblemsContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEProblemsContainer_Problems(), this.getEProblem(), this.getEProblem_Container(), "problems", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getEProblemsContainer_Subjects(), ecorePackage.getEObject(), null, "subjects", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getEProblemsContainer_Subcontainers(), this.getEProblemsContainer(), this.getEProblemsContainer_Container(), "subcontainers", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getEProblemsContainer_Container(), this.getEProblemsContainer(), this.getEProblemsContainer_Subcontainers(), "container", null, 0, 1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEProblemsContainer_Problems(), this.getEProblem(), this.getEProblem_Container(),
+				"problems", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEProblemsContainer_Subjects(), ecorePackage.getEObject(), null,
+				"subjects", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEProblemsContainer_Subcontainers(), this.getEProblemsContainer(), this.getEProblemsContainer_Container(),
+				"subcontainers", null, 0, -1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getEProblemsContainer_Container(), this.getEProblemsContainer(), this.getEProblemsContainer_Subcontainers(),
+				"container", null, 0, 1, EProblemsContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		EOperation op = initEOperation(getEProblemsContainer__AllProblems(), null, "allProblems", 1, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		EGenericType g1 = createEGenericType(this.getEIterator());

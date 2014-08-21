@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ public class NewRobotmlProjectWizard extends NewPapyrusProjectWizard {
 
 	/**
 	 * @see org.eclipse.papyrus.wizards.NewPapyrusProjectWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
-	 * 
+	 *
 	 * @param workbench
 	 * @param selection
 	 */
@@ -48,7 +48,7 @@ public class NewRobotmlProjectWizard extends NewPapyrusProjectWizard {
 	 */
 	@Override
 	protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
-		//here SysML is the only available category
+		// here SysML is the only available category
 		return null;
 	}
 
@@ -57,8 +57,8 @@ public class NewRobotmlProjectWizard extends NewPapyrusProjectWizard {
 	 */
 	@Override
 	protected void saveDiagramCategorySettings() {
-		//do nothing
-		//here SysML is the only available category
+		// do nothing
+		// here SysML is the only available category
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class NewRobotmlProjectWizard extends NewPapyrusProjectWizard {
 	 */
 	@Override
 	protected String[] getDiagramCategoryIds() {
-		return new String[]{ CreateRobotmlModelCommand.COMMAND_ID };
+		return new String[] { CreateRobotmlModelCommand.COMMAND_ID };
 	}
 
 

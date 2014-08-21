@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,9 @@ public class ParameterGenerator {
 
 	/**
 	 * Default Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        the Parameter to modify
+	 *            the Parameter to modify
 	 */
 	public ParameterGenerator(Parameter parameter) {
 		this.parameter = parameter;
@@ -48,9 +48,9 @@ public class ParameterGenerator {
 
 	/**
 	 * Parse the label of the Parameter and modify Parameter attributes.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the Parameter
+	 *            the label that defines the Parameter
 	 */
 	public void parseAndModifyParameter(String label) {
 		try {
@@ -67,10 +67,10 @@ public class ParameterGenerator {
 
 	/**
 	 * Parse the label of the Parameter and validate it.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the Parameter
-	 * 
+	 *            the label that defines the Parameter
+	 *
 	 * @return null if label is valid, else return the message that describes the error.
 	 */
 	public String parseAndValidateParameter(String label) {
@@ -96,10 +96,10 @@ public class ParameterGenerator {
 
 	/**
 	 * Parse the label of the Parameter, and generates an exception if does not validate.
-	 * 
+	 *
 	 * @param label
-	 *        the label that defines the Parameter
-	 * 
+	 *            the label that defines the Parameter
+	 *
 	 * @return null if label is valid, else return the message that describes the error.
 	 */
 	public String parseUndefinedParameterType(String label) {
@@ -116,8 +116,9 @@ public class ParameterGenerator {
 		} catch (RecognitionException re) {
 
 		} catch (RuntimeException tse) {
-			if(tse instanceof TypeRecognitionException)
-				return ((TypeRecognitionException)tse).getTypeName();
+			if (tse instanceof TypeRecognitionException) {
+				return ((TypeRecognitionException) tse).getTypeName();
+			}
 		}
 		return null;
 	}

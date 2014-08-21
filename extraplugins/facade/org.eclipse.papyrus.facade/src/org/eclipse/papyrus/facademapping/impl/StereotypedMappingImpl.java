@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,8 +37,8 @@ import org.eclipse.papyrus.facademapping.StereotypedMapping;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.impl.StereotypedMappingImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The cached value of the '{@link #getAppliedStereotypes() <em>Applied Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAppliedStereotypes()
 	 * @generated
 	 * @ordered
@@ -59,6 +60,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StereotypedMappingImpl() {
@@ -87,6 +91,7 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -97,8 +102,10 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<EObject> getAppliedStereotypes() {
 		if (appliedStereotypes == null) {
 			appliedStereotypes = new EObjectResolvingEList<EObject>(EObject.class, this, FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES);
@@ -109,8 +116,10 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ExtensionDefinitionKind getKind() {
 		return kind;
 	}
@@ -118,27 +127,31 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(ExtensionDefinitionKind newKind) {
 		ExtensionDefinitionKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FacademappingPackage.STEREOTYPED_MAPPING__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
-				return getAppliedStereotypes();
-			case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
-				return getKind();
+		case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
+			return getAppliedStereotypes();
+		case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
+			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,19 +159,20 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
-				getAppliedStereotypes().clear();
-				getAppliedStereotypes().addAll((Collection<? extends EObject>)newValue);
-				return;
-			case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
-				setKind((ExtensionDefinitionKind)newValue);
-				return;
+		case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
+			getAppliedStereotypes().clear();
+			getAppliedStereotypes().addAll((Collection<? extends EObject>) newValue);
+			return;
+		case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
+			setKind((ExtensionDefinitionKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,17 +180,18 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
-				getAppliedStereotypes().clear();
-				return;
-			case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
+		case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
+			getAppliedStereotypes().clear();
+			return;
+		case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,15 +199,16 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
-				return appliedStereotypes != null && !appliedStereotypes.isEmpty();
-			case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
-				return kind != KIND_EDEFAULT;
+		case FacademappingPackage.STEREOTYPED_MAPPING__APPLIED_STEREOTYPES:
+			return appliedStereotypes != null && !appliedStereotypes.isEmpty();
+		case FacademappingPackage.STEREOTYPED_MAPPING__KIND:
+			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -200,11 +216,14 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -213,4 +232,4 @@ public class StereotypedMappingImpl extends MappingImpl implements StereotypedMa
 		return result.toString();
 	}
 
-} //StereotypedMappingImpl
+} // StereotypedMappingImpl

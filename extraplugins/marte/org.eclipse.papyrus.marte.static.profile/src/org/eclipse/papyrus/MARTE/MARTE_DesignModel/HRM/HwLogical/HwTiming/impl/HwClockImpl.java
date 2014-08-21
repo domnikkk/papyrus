@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ public class HwClockImpl extends HwTimingResourceImpl implements HwClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwClockImpl() {
@@ -39,6 +40,7 @@ public class HwClockImpl extends HwTimingResourceImpl implements HwClock {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -46,4 +48,4 @@ public class HwClockImpl extends HwTimingResourceImpl implements HwClock {
 		return HwTimingPackage.Literals.HW_CLOCK;
 	}
 
-} //HwClockImpl
+} // HwClockImpl

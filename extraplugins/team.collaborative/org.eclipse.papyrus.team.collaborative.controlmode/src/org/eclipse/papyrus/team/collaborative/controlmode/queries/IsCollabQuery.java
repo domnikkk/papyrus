@@ -32,9 +32,9 @@ import com.google.common.collect.Sets;
 
 /**
  * Return true if the element is a collab element
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class IsCollabQuery implements IJavaModelQuery<EObject, Boolean> {
 
@@ -44,6 +44,7 @@ public class IsCollabQuery implements IJavaModelQuery<EObject, Boolean> {
 	 * @see org.eclipse.emf.facet.infra.query.core.java.IJavaModelQuery#evaluate(org.eclipse.emf.ecore.EObject,
 	 * org.eclipse.emf.facet.infra.query.core.java.ParameterValueList)
 	 */
+	@Override
 	public Boolean evaluate(EObject arg0, ParameterValueList arg1) throws ModelQueryExecutionException {
 		List<URI> uris = new ArrayList<URI>();
 		URI uri = arg0.eResource().getURI();
@@ -52,12 +53,12 @@ public class IsCollabQuery implements IJavaModelQuery<EObject, Boolean> {
 		PapyrusResourceUtils.addExtraResources(resourceSet, uris, uri);
 		Set<IExtendedURI> extendedURIS = Sets.newHashSet(Collections2.transform(uris, CollabFunctionsFactory.getURIToExtendedURIWithContainment()));
 		ILocker locker = ICollaborativeManager.INSTANCE.getLocker(extendedURIS, resourceSet);
-		if(locker == null) {
+		if (locker == null) {
 			return false;
 		}
 		boolean result = false;
-		for(IExtendedURI extURI : extendedURIS) {
-			if(locker.isLocked(extURI).isOK()) {
+		for (IExtendedURI extURI : extendedURIS) {
+			if (locker.isLocked(extURI).isOK()) {
 				result = true;
 			}
 		}

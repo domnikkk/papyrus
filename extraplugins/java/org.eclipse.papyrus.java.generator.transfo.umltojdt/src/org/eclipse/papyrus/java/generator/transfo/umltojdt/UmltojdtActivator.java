@@ -8,11 +8,11 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial transformation and implementation 
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial transformation and implementation 
- * 	Manuel Giles	 giles.manu@live.fr		 - Initial transformation and implementation 
+ * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial transformation and implementation
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Initial transformation and implementation
+ * 	Manuel Giles	 giles.manu@live.fr		 - Initial transformation and implementation
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 package org.eclipse.papyrus.java.generator.transfo.umltojdt;
 
@@ -30,7 +30,7 @@ public class UmltojdtActivator extends Plugin {
 
 	// The shared instance
 	private static UmltojdtActivator plugin;
-	
+
 	/**
 	 * The constructor
 	 */
@@ -39,8 +39,10 @@ public class UmltojdtActivator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
@@ -48,8 +50,10 @@ public class UmltojdtActivator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);

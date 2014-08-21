@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,6 +32,7 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 	 */
 	public List<Execution> callExecutions = new ArrayList<Execution>();
 
+	@Override
 	public void doAction() {
 		// Get the call execution object, set its input parameters from the
 		// argument pins and execute it.
@@ -39,17 +40,17 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 		// the call execution to the result pins of the call action execution,
 		// then destroy the execution.
 		Execution callExecution = this.getCallExecution();
-		if(callExecution != null) {
+		if (callExecution != null) {
 			this.callExecutions.add(callExecution);
-			CallAction callAction = (CallAction)(this.node);
+			CallAction callAction = (CallAction) (this.node);
 			List<InputPin> argumentPins = callAction.getArguments();
 			List<OutputPin> resultPins = callAction.getResults();
 			List<Parameter> parameters = callExecution.getBehavior().getOwnedParameters();
 			int pinNumber = 1;
 			int i = 1;
-			while(i <= parameters.size()) {
+			while (i <= parameters.size()) {
 				Parameter parameter = parameters.get(i - 1);
-				if(parameter.getDirection() == ParameterDirectionKind.IN_LITERAL | parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) {
+				if (parameter.getDirection() == ParameterDirectionKind.IN_LITERAL | parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) {
 					ParameterValue parameterValue = new ParameterValue();
 					parameterValue.parameter = parameter;
 					parameterValue.values = this.takeTokens(argumentPins.get(pinNumber - 1));
@@ -62,12 +63,12 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 			List<ParameterValue> outputParameterValues = callExecution.getOutputParameterValues();
 			pinNumber = 1;
 			i = 1;
-			while(i <= parameters.size()) {
+			while (i <= parameters.size()) {
 				Parameter parameter = parameters.get(i - 1);
-				if((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
-					for(int j = 0; j < outputParameterValues.size(); j++) {
+				if ((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
+					for (int j = 0; j < outputParameterValues.size(); j++) {
 						ParameterValue outputParameterValue = outputParameterValues.get(j);
-						if(outputParameterValue.parameter == parameter) {
+						if (outputParameterValue.parameter == parameter) {
 							OutputPin resultPin = resultPins.get(pinNumber - 1);
 							this.putTokens(resultPin, outputParameterValue.values);
 						}
@@ -83,10 +84,11 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 
 	public abstract Execution getCallExecution();
 
+	@Override
 	public void terminate() {
 		// Terminate all call executions (if any), then terminate the call
 		// action activation (self).
-		for(int i = 0; i < this.callExecutions.size(); i++) {
+		for (int i = 0; i < this.callExecutions.size(); i++) {
 			Execution execution = this.callExecutions.get(i);
 			execution.terminate();
 		}
@@ -97,8 +99,8 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 		// Remove the given execution from the current list of call executions.
 		boolean notFound = true;
 		int i = 1;
-		while(notFound & i <= this.callExecutions.size()) {
-			if(this.callExecutions.get(i - 1) == execution) {
+		while (notFound & i <= this.callExecutions.size()) {
+			if (this.callExecutions.get(i - 1) == execution) {
 				this.callExecutions.remove(i - 1);
 				notFound = false;
 			}

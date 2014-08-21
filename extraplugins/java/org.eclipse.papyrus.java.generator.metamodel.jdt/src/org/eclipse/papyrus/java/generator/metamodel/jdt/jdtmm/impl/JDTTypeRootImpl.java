@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -41,6 +41,7 @@ public abstract class JDTTypeRootImpl extends JDTParentJavaElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JDTTypeRootImpl() {
@@ -50,6 +51,7 @@ public abstract class JDTTypeRootImpl extends JDTParentJavaElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -57,4 +59,4 @@ public abstract class JDTTypeRootImpl extends JDTParentJavaElementImpl implement
 		return JdtmmPackage.Literals.JDT_TYPE_ROOT;
 	}
 
-} //JDTTypeRootImpl
+} // JDTTypeRootImpl

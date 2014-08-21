@@ -30,9 +30,9 @@ public abstract class CmdHandler extends AbstractHandler {
 	 */
 	public void updateSelectedEObject() {
 		// Retrieve selected elements
-		IStructuredSelection selection = (IStructuredSelection)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
+		IStructuredSelection selection = (IStructuredSelection) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
 
-		if(selection != null) {
+		if (selection != null) {
 			selectedEObject = EMFHelper.getEObject(selection.getFirstElement());
 		}
 	}

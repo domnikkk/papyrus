@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,23 +24,23 @@ import org.eclipse.emf.common.util.EList;
  *
  * <!-- begin-model-doc -->
  * Context represents a simple and practical way to allocate TraceableSpecifications to a specific EAST-ADL2 model context, and to let this specific model context own Relationships.
- * 
+ *
  * Semantics:
  * See Relationship and TraceableSpecification.
- * 
- * 
+ *
+ *
  * Changes:
  * New class in EAST-ADL2
- * 
- * Extension: 
+ *
+ * Extension:
  * The Context stereotype is an abstract stereotype which extends UML2 PackageableElement
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Context#getTraceableSpecification <em>Traceable Specification</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Context#getOwnedRelationship <em>Owned Relationship</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Context#getTraceableSpecification <em>Traceable Specification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Context#getOwnedRelationship <em>Owned Relationship</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +57,7 @@ public interface Context extends EAPackageableElement {
 	 * <!-- begin-model-doc -->
 	 * Relationship(s) associated to this context.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Owned Relationship</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getContext_OwnedRelationship()
 	 * @model ordered="false"
@@ -72,6 +73,7 @@ public interface Context extends EAPackageableElement {
 	 * <!-- begin-model-doc -->
 	 * Traceable specification(s) allocated to this context.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Traceable Specification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getContext_TraceableSpecification()
 	 * @model ordered="false"

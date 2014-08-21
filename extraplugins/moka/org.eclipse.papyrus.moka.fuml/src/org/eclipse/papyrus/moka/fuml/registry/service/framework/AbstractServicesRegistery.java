@@ -39,10 +39,12 @@ public abstract class AbstractServicesRegistery extends AbstractSystemServicesRe
 		this.initServiceQualifiedNames();
 	}
 
+	@Override
 	public List<Object_> instantiateServices() {
 		return this.instantiateServices(this.libraryName, this.serviceQualifiedNames);
 	}
 
+	@Override
 	protected Object_ instantiateService(Class service) {
 		return this.serviceFactory.instantiate(service);
 	}

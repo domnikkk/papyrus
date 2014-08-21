@@ -31,8 +31,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PoseArrayImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PoseArrayImpl#getPoses <em>Poses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PoseArrayImpl#getHeader <em>Header</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PoseArrayImpl#getPoses <em>Poses</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	 * The cached value of the '{@link #getPoses() <em>Poses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoses()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PoseArrayImpl() {
@@ -71,6 +74,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,6 +85,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -90,6 +95,7 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -97,7 +103,11 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POSE_ARRAY__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,25 +115,32 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POSE_ARRAY__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POSE_ARRAY__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POSE_ARRAY__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Geometry_datatypesPackage.POSE_ARRAY__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Geometry_datatypesPackage.POSE_ARRAY__HEADER, newHeader, newHeader));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Pose> getPoses() {
@@ -136,15 +153,16 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
-				return basicSetHeader(null, msgs);
-			case Geometry_datatypesPackage.POSE_ARRAY__POSES:
-				return ((InternalEList<?>)getPoses()).basicRemove(otherEnd, msgs);
+		case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
+			return basicSetHeader(null, msgs);
+		case Geometry_datatypesPackage.POSE_ARRAY__POSES:
+			return ((InternalEList<?>) getPoses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -152,15 +170,16 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
-				return getHeader();
-			case Geometry_datatypesPackage.POSE_ARRAY__POSES:
-				return getPoses();
+		case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
+			return getHeader();
+		case Geometry_datatypesPackage.POSE_ARRAY__POSES:
+			return getPoses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,19 +187,20 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
-				setHeader((Header)newValue);
-				return;
-			case Geometry_datatypesPackage.POSE_ARRAY__POSES:
-				getPoses().clear();
-				getPoses().addAll((Collection<? extends Pose>)newValue);
-				return;
+		case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
+			setHeader((Header) newValue);
+			return;
+		case Geometry_datatypesPackage.POSE_ARRAY__POSES:
+			getPoses().clear();
+			getPoses().addAll((Collection<? extends Pose>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,17 +208,18 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
-				setHeader((Header)null);
-				return;
-			case Geometry_datatypesPackage.POSE_ARRAY__POSES:
-				getPoses().clear();
-				return;
+		case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
+			setHeader((Header) null);
+			return;
+		case Geometry_datatypesPackage.POSE_ARRAY__POSES:
+			getPoses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,17 +227,18 @@ public class PoseArrayImpl extends MinimalEObjectImpl.Container implements PoseA
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
-				return header != null;
-			case Geometry_datatypesPackage.POSE_ARRAY__POSES:
-				return poses != null && !poses.isEmpty();
+		case Geometry_datatypesPackage.POSE_ARRAY__HEADER:
+			return header != null;
+		case Geometry_datatypesPackage.POSE_ARRAY__POSES:
+			return poses != null && !poses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PoseArrayImpl
+} // PoseArrayImpl

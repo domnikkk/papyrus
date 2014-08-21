@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,13 +31,12 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 /**
  * This class represents the TracePoint preference page
  * <p>
- * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences
- * can be accessed directly via the preference store.
+ * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences can be accessed directly via the preference store.
  */
 
 public class TPPreferencePage
-	extends FieldEditorPreferencePage
-	implements IWorkbenchPreferencePage {
+		extends FieldEditorPreferencePage
+		implements IWorkbenchPreferencePage {
 
 	public TPPreferencePage() {
 		super(GRID);
@@ -51,20 +50,21 @@ public class TPPreferencePage
 	 * of preferences. Each field editor knows how to save and
 	 * restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {
 		EList<ITraceMechanism> mechanisms = TraceMechanism.getTraceMechanisms();
 		int elements = 0;
-		for(ITraceMechanism mechanism : mechanisms) {
+		for (ITraceMechanism mechanism : mechanisms) {
 			// TODO: function need to support null object
 			EList<String> mechanismIDs = mechanism.getTraceMechanismIDs(null);
 			elements += mechanismIDs.size();
 		}
 		String[][] mechList = new String[elements][2];
 		elements = 0;
-		for(ITraceMechanism mechanism : mechanisms) {
+		for (ITraceMechanism mechanism : mechanisms) {
 			// TODO: function need to support null object
 			EList<String> mechanismIDs = mechanism.getTraceMechanismIDs(null);
-			for(String id : mechanismIDs) {
+			for (String id : mechanismIDs) {
 				mechList[elements][1] = id;
 				mechList[elements][0] = mechanism.getTraceMechanismDescription(null, id);
 				elements++;
@@ -80,20 +80,20 @@ public class TPPreferencePage
 		addField(new BinaryEncodedMChoiceFieldEditor(TPPreferenceConstants.P_TRACE_OPTION_STATE, Messages.TPPreferencePage_StateOptions, 3, taStateOptions, getFieldEditorParent(), true));
 
 		addField(new RadioGroupFieldEditor(
-			TPPreferenceConstants.P_TRACE_OPTION_OP,
-			Messages.TPPreferencePage_OperationOptions, 3, taOperationOptions, getFieldEditorParent(), true));
+				TPPreferenceConstants.P_TRACE_OPTION_OP,
+				Messages.TPPreferencePage_OperationOptions, 3, taOperationOptions, getFieldEditorParent(), true));
 
 		addField(new ComboFieldEditor(
-			TPPreferenceConstants.P_TRACE_IMPLEMENTATION_PORT,
-			Messages.TPPreferencePage_TMforPorts, mechList, getFieldEditorParent()));
+				TPPreferenceConstants.P_TRACE_IMPLEMENTATION_PORT,
+				Messages.TPPreferencePage_TMforPorts, mechList, getFieldEditorParent()));
 
 		addField(new ComboFieldEditor(
-			TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP,
-			Messages.TPPreferencePage_TMforOperations, mechList, getFieldEditorParent()));
+				TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP,
+				Messages.TPPreferencePage_TMforOperations, mechList, getFieldEditorParent()));
 
 		addField(new ComboFieldEditor(
-			TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM,
-			Messages.TPPreferencePage_TMforStateMachines, mechList, getFieldEditorParent()));
+				TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM,
+				Messages.TPPreferencePage_TMforStateMachines, mechList, getFieldEditorParent()));
 
 	}
 
@@ -102,6 +102,7 @@ public class TPPreferencePage
 	 * 
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 }

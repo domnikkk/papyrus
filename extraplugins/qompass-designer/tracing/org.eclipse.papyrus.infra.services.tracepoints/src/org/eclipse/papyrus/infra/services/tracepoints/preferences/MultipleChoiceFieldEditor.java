@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Group;
 /**
  * @author Dennis Hübner - Initial contribution and API
  *         [used within Papyrus to avoid dependency to Xtext, minor visibility modification]
- * 
+ *
  */
 public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
@@ -43,7 +43,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	protected String result;
 
 	public MultipleChoiceFieldEditor(String name, String labeltext, int numColumns, String[][] labelsAndValues,
-		Composite fieldEditorParent, boolean useGroup) {
+			Composite fieldEditorParent, boolean useGroup) {
 		init(name, labeltext);
 		this.numColumns = numColumns;
 		this.labelsAndValues = labelsAndValues.clone();
@@ -53,7 +53,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	/**
 	 * @param settings
-	 *        String[][fieldName,fieldValue,isChecked]
+	 *            String[][fieldName,fieldValue,isChecked]
 	 * @return value as String
 	 */
 	protected abstract String calculateResult(String[][] settings);
@@ -66,10 +66,10 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	@Override
 	protected void adjustForNumColumns(int numColumns) {
 		Control control = getLabelControl();
-		if(control != null) {
-			((GridData)control.getLayoutData()).horizontalSpan = numColumns;
+		if (control != null) {
+			((GridData) control.getLayoutData()).horizontalSpan = numColumns;
 		}
-		((GridData)checkBoxBox.getLayoutData()).horizontalSpan = numColumns;
+		((GridData) checkBoxBox.getLayoutData()).horizontalSpan = numColumns;
 	}
 
 	/*
@@ -81,7 +81,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	 */
 	@Override
 	protected void doFillIntoGrid(Composite parent, int numColumns) {
-		if(useGroup) {
+		if (useGroup) {
 			Control control = getCheckBoxControl(parent);
 			GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 			control.setLayoutData(gd);
@@ -99,13 +99,13 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	}
 
 	private Control getCheckBoxControl(Composite parent) {
-		if(checkBoxBox == null) {
+		if (checkBoxBox == null) {
 			Font font = parent.getFont();
-			if(useGroup) {
+			if (useGroup) {
 				Group group = new Group(parent, SWT.NONE);
 				group.setFont(font);
 				String text = getLabelText();
-				if(text != null) {
+				if (text != null) {
 					group.setText(text);
 				}
 				checkBoxBox = group;
@@ -126,7 +126,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 			}
 
 			checkBoxButtons = new Button[labelsAndValues.length];
-			for(int i = 0; i < labelsAndValues.length; i++) {
+			for (int i = 0; i < labelsAndValues.length; i++) {
 				Button checkBox = new Button(checkBoxBox, SWT.CHECK | SWT.LEFT);
 				checkBoxButtons[i] = checkBox;
 				String[] labelAndValue = labelsAndValues[i];
@@ -146,6 +146,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 			}
 			checkBoxBox.addDisposeListener(new DisposeListener() {
 
+				@Override
 				public void widgetDisposed(DisposeEvent event) {
 					checkBoxBox = null;
 					checkBoxButtons = null;
@@ -160,12 +161,12 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	protected String gatherSettings() {
 		String[][] settings = new String[checkBoxButtons.length][3];
-		for(int i = 0; i < checkBoxButtons.length; i++) {
+		for (int i = 0; i < checkBoxButtons.length; i++) {
 			Button currentCheckBox = checkBoxButtons[i];
 			String name = currentCheckBox.getText();
-			String value = (String)currentCheckBox.getData();
+			String value = (String) currentCheckBox.getData();
 			String checked = String.valueOf(currentCheckBox.getSelection());
-			settings[i] = new String[]{ name, value, checked };
+			settings[i] = new String[] { name, value, checked };
 		}
 		return calculateResult(settings);
 	}
@@ -191,7 +192,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	}
 
 	protected void setupControls(String valueToSet) {
-		for(int i = 0; i < checkBoxButtons.length; i++) {
+		for (int i = 0; i < checkBoxButtons.length; i++) {
 			Button currentCheckBox = checkBoxButtons[i];
 			currentCheckBox.setSelection(isSelected(currentCheckBox.getText(), valueToSet));
 		}
@@ -204,7 +205,7 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 	 */
 	@Override
 	protected void doStore() {
-		if(result == null) {
+		if (result == null) {
 			return;
 		}
 		getPreferenceStore().setValue(getPreferenceName(), result);
@@ -222,10 +223,10 @@ public abstract class MultipleChoiceFieldEditor extends FieldEditor {
 
 	@Override
 	public void setEnabled(boolean enabled, Composite parent) {
-		if(!useGroup) {
+		if (!useGroup) {
 			super.setEnabled(enabled, parent);
 		}
-		for(Button button : checkBoxButtons) {
+		for (Button button : checkBoxButtons) {
 			button.setEnabled(enabled);
 		}
 	}

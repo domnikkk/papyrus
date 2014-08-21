@@ -22,8 +22,8 @@ import org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailurePort_hwTargetInstanceRefImpl#getHardwarePort <em>Hardware Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailurePort_hwTargetInstanceRefImpl#getHardwareComponentProtype <em>Hardware Component Protype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailurePort_hwTargetInstanceRefImpl#getHardwarePort <em>Hardware Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailurePort_hwTargetInstanceRefImpl#getHardwareComponentProtype <em>Hardware Component Protype</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	 * The cached value of the '{@link #getHardwarePort() <em>Hardware Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHardwarePort()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	 * The cached value of the '{@link #getHardwareComponentProtype() <em>Hardware Component Protype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHardwareComponentProtype()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FaultFailurePort_hwTargetInstanceRefImpl() {
@@ -62,6 +65,7 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,15 +76,18 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HardwarePin getHardwarePort() {
 		if (hardwarePort != null && hardwarePort.eIsProxy()) {
-			InternalEObject oldHardwarePort = (InternalEObject)hardwarePort;
-			hardwarePort = (HardwarePin)eResolveProxy(oldHardwarePort);
+			InternalEObject oldHardwarePort = (InternalEObject) hardwarePort;
+			hardwarePort = (HardwarePin) eResolveProxy(oldHardwarePort);
 			if (hardwarePort != oldHardwarePort) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
+				}
 			}
 		}
 		return hardwarePort;
@@ -89,6 +96,7 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HardwarePin basicGetHardwarePort() {
@@ -98,20 +106,25 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setHardwarePort(HardwarePin newHardwarePort) {
 		HardwarePin oldHardwarePort = hardwarePort;
 		hardwarePort = newHardwarePort;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT, oldHardwarePort, hardwarePort));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HardwareComponentPrototype> getHardwareComponentProtype() {
 		if (hardwareComponentProtype == null) {
 			hardwareComponentProtype = new EObjectResolvingEList<HardwareComponentPrototype>(HardwareComponentPrototype.class, this, InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE);
@@ -122,16 +135,19 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
-				if (resolve) return getHardwarePort();
-				return basicGetHardwarePort();
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
-				return getHardwareComponentProtype();
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
+			if (resolve) {
+				return getHardwarePort();
+			}
+			return basicGetHardwarePort();
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
+			return getHardwareComponentProtype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +155,20 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
-				setHardwarePort((HardwarePin)newValue);
-				return;
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
-				getHardwareComponentProtype().clear();
-				getHardwareComponentProtype().addAll((Collection<? extends HardwareComponentPrototype>)newValue);
-				return;
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
+			setHardwarePort((HardwarePin) newValue);
+			return;
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
+			getHardwareComponentProtype().clear();
+			getHardwareComponentProtype().addAll((Collection<? extends HardwareComponentPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +176,18 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
-				setHardwarePort((HardwarePin)null);
-				return;
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
-				getHardwareComponentProtype().clear();
-				return;
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
+			setHardwarePort((HardwarePin) null);
+			return;
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
+			getHardwareComponentProtype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,17 +195,18 @@ public class FaultFailurePort_hwTargetInstanceRefImpl extends InstanceRefImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
-				return hardwarePort != null;
-			case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
-				return hardwareComponentProtype != null && !hardwareComponentProtype.isEmpty();
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_PORT:
+			return hardwarePort != null;
+		case InfrastructurePackage.FAULT_FAILURE_PORT_HW_TARGET_INSTANCE_REF__HARDWARE_COMPONENT_PROTYPE:
+			return hardwareComponentProtype != null && !hardwareComponentProtype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FaultFailurePort_hwTargetInstanceRefImpl
+} // FaultFailurePort_hwTargetInstanceRefImpl

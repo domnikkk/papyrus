@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Profile;
 
 /**
- *this class generate java classes in the project 
+ * this class generate java classes in the project
  *
  */
 public class JavaContentGenerator {
@@ -44,12 +44,14 @@ public class JavaContentGenerator {
 
 	private IProject project;
 
-	/** 
-	 * 
+	/**
+	 *
 	 * Constructor.
 	 *
-	 * @param project the content has to be filled in the given project
-	 * @param umlProfile the uml profile
+	 * @param project
+	 *            the content has to be filled in the given project
+	 * @param umlProfile
+	 *            the uml profile
 	 */
 	public JavaContentGenerator(IProject project, Profile umlProfile) {
 		this.project = project;
@@ -68,10 +70,10 @@ public class JavaContentGenerator {
 				try {
 					IContainer target = project.getFolder("src");
 					Utils.setPluginID(project.getName());
-					ClassesGenerator generator = new ClassesGenerator(modelURI,	target, getArguments());
+					ClassesGenerator generator = new ClassesGenerator(modelURI, target, getArguments());
 					generator.doGenerate(monitor);
 				} catch (IOException e) {
-					IStatus status = new Status(IStatus.ERROR,Activator.PLUGIN_ID, e.getMessage(), e);
+					IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 					Activator.getDefault().getLog().log(status);
 				}
 			}
@@ -79,10 +81,10 @@ public class JavaContentGenerator {
 		try {
 			PlatformUI.getWorkbench().getProgressService().run(true, true, operation);
 		} catch (InvocationTargetException e) {
-			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,	e.getMessage(), e);
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 			Activator.getDefault().getLog().log(status);
 		} catch (InterruptedException e) {
-			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,	e.getMessage(), e);
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 			Activator.getDefault().getLog().log(status);
 		}
 	}

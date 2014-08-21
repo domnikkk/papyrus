@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -17,9 +17,9 @@ import org.eclipse.papyrus.layers.runtime.NotationDiagramHelper;
 /**
  * Add a layer stack to a diagram.
  * This is performed on the current LayerStack Viewer.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ShowCreateChildCommand extends AbstractLayerCommand implements IHandler {
 
@@ -33,7 +33,7 @@ public class ShowCreateChildCommand extends AbstractLayerCommand implements IHan
 	public String getCommandName() {
 		return "Attach Layer Stack";
 	}
-	
+
 	/**
 	 * @see org.eclipse.papyrus.layers2.ui.view.commands.AbstractLayerCommand#doExecute(org.eclipse.papyrus.layers.application.NotationDiagramMngr)
 	 *
@@ -50,7 +50,7 @@ public class ShowCreateChildCommand extends AbstractLayerCommand implements IHan
 	 */
 	@Override
 	public boolean isEnabled(NotationDiagramHelper notationDiagramHelper) {
-		return ! notationDiagramHelper.isLayersStackAttached();
+		return !notationDiagramHelper.isLayersStackAttached();
 	}
 
 }

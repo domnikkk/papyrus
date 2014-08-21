@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,20 +37,20 @@ public abstract class AsyncTransactionAction<T> extends AsyncAction<T> {
 	}
 
 	protected CDOView getView(T selection) {
-		if(!(selection instanceof CDOObject)) {
+		if (!(selection instanceof CDOObject)) {
 			throw new IllegalArgumentException("selection is not a CDOObject"); //$NON-NLS-1$
 		}
-		return ((CDOObject)selection).cdoView();
+		return ((CDOObject) selection).cdoView();
 	}
 
 	@Override
 	protected void doRun(T selection, IProgressMonitor monitor) throws CoreException {
 		CDOView view = getView(selection);
 
-		if(view instanceof CDOTransaction) {
-			doRun(selection, (CDOTransaction)view, monitor);
+		if (view instanceof CDOTransaction) {
+			doRun(selection, (CDOTransaction) view, monitor);
 		} else {
-			final CDOID oid = (selection instanceof CDOObject) ? ((CDOObject)selection).cdoID() : null;
+			final CDOID oid = (selection instanceof CDOObject) ? ((CDOObject) selection).cdoID() : null;
 
 			CDOTransaction transaction = view.getSession().openTransaction();
 

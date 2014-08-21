@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -43,7 +43,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.RadialGradientImpl#getRadius <em>Radius</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RadialGradientImpl extends GradientImpl implements RadialGradient {
@@ -51,7 +51,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	/**
 	 * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCenter()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	/**
 	 * The cached value of the '{@link #getFocus() <em>Focus</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFocus()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	/**
 	 * The default value of the '{@link #getRadius() <em>Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRadius()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	/**
 	 * The cached value of the '{@link #getRadius() <em>Radius</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRadius()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RadialGradientImpl() {
@@ -99,7 +99,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,115 +109,132 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Point getCenter() {
 		return center;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetCenter(Point newCenter, NotificationChain msgs) {
 		Point oldCenter = center;
 		center = newCenter;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.RADIAL_GRADIENT__CENTER, oldCenter, newCenter);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setCenter(Point newCenter) {
-		if(newCenter != center) {
+		if (newCenter != center) {
 			NotificationChain msgs = null;
-			if(center != null)
-				msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__CENTER, null, msgs);
-			if(newCenter != null)
-				msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__CENTER, null, msgs);
+			if (center != null) {
+				msgs = ((InternalEObject) center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__CENTER, null, msgs);
+			}
+			if (newCenter != null) {
+				msgs = ((InternalEObject) newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__CENTER, null, msgs);
+			}
 			msgs = basicSetCenter(newCenter, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RADIAL_GRADIENT__CENTER, newCenter, newCenter));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Point getFocus() {
 		return focus;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetFocus(Point newFocus, NotificationChain msgs) {
 		Point oldFocus = focus;
 		focus = newFocus;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.RADIAL_GRADIENT__FOCUS, oldFocus, newFocus);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFocus(Point newFocus) {
-		if(newFocus != focus) {
+		if (newFocus != focus) {
 			NotificationChain msgs = null;
-			if(focus != null)
-				msgs = ((InternalEObject)focus).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
-			if(newFocus != null)
-				msgs = ((InternalEObject)newFocus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
+			if (focus != null) {
+				msgs = ((InternalEObject) focus).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
+			}
+			if (newFocus != null) {
+				msgs = ((InternalEObject) newFocus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
+			}
 			msgs = basicSetFocus(newFocus, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RADIAL_GRADIENT__FOCUS, newFocus, newFocus));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getRadius() {
 		return radius;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setRadius(double newRadius) {
 		double oldRadius = radius;
 		radius = newRadius;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.RADIAL_GRADIENT__RADIUS, oldRadius, radius));
+		}
 	}
 
 	/**
@@ -225,7 +242,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	 * <em>Valid Center Point</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #validCenterPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -234,11 +251,13 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean validCenterPoint(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_CENTER_POINT__DIAGNOSTICCHAIN_MAP, VALID_CENTER_POINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_CENTER_POINT);
+		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_CENTER_POINT__DIAGNOSTICCHAIN_MAP,
+				VALID_CENTER_POINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_CENTER_POINT);
 	}
 
 	/**
@@ -246,7 +265,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	 * <em>Valid Focus Point</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #validFocusPoint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -255,11 +274,13 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean validFocusPoint(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_FOCUS_POINT__DIAGNOSTICCHAIN_MAP, VALID_FOCUS_POINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_FOCUS_POINT);
+		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_FOCUS_POINT__DIAGNOSTICCHAIN_MAP,
+				VALID_FOCUS_POINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_FOCUS_POINT);
 	}
 
 	/**
@@ -267,7 +288,7 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 	 * <em>Valid Radius</em>}' invariant operation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #validRadius(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -276,21 +297,23 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean validRadius(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_RADIUS__DIAGNOSTICCHAIN_MAP, VALID_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_RADIUS);
+		return DGValidator.validate(DGPackage.Literals.RADIAL_GRADIENT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.RADIAL_GRADIENT___VALID_RADIUS__DIAGNOSTICCHAIN_MAP,
+				VALID_RADIUS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.RADIAL_GRADIENT__VALID_RADIUS);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.RADIAL_GRADIENT__CENTER:
 			return basicSetCenter(null, msgs);
 		case DGPackage.RADIAL_GRADIENT__FOCUS:
@@ -301,12 +324,12 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.RADIAL_GRADIENT__CENTER:
 			return getCenter();
 		case DGPackage.RADIAL_GRADIENT__FOCUS:
@@ -319,20 +342,20 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.RADIAL_GRADIENT__CENTER:
-			setCenter((Point)newValue);
+			setCenter((Point) newValue);
 			return;
 		case DGPackage.RADIAL_GRADIENT__FOCUS:
-			setFocus((Point)newValue);
+			setFocus((Point) newValue);
 			return;
 		case DGPackage.RADIAL_GRADIENT__RADIUS:
-			setRadius((Double)newValue);
+			setRadius((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,17 +363,17 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.RADIAL_GRADIENT__CENTER:
-			setCenter((Point)null);
+			setCenter((Point) null);
 			return;
 		case DGPackage.RADIAL_GRADIENT__FOCUS:
-			setFocus((Point)null);
+			setFocus((Point) null);
 			return;
 		case DGPackage.RADIAL_GRADIENT__RADIUS:
 			setRadius(RADIUS_EDEFAULT);
@@ -361,12 +384,12 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.RADIAL_GRADIENT__CENTER:
 			return center != null;
 		case DGPackage.RADIAL_GRADIENT__FOCUS:
@@ -379,32 +402,33 @@ public class RadialGradientImpl extends GradientImpl implements RadialGradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case DGPackage.RADIAL_GRADIENT___VALID_CENTER_POINT__DIAGNOSTICCHAIN_MAP:
-			return validCenterPoint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return validCenterPoint((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		case DGPackage.RADIAL_GRADIENT___VALID_FOCUS_POINT__DIAGNOSTICCHAIN_MAP:
-			return validFocusPoint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return validFocusPoint((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		case DGPackage.RADIAL_GRADIENT___VALID_RADIUS__DIAGNOSTICCHAIN_MAP:
-			return validRadius((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return validRadius((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (radius: ");
 		result.append(radius);

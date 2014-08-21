@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 
 		@Override
 		public boolean apply(Object input) {
-			return (input instanceof CDOResource) && DIResourceQuery.getDIResources(((CDOResource)input).cdoView()).contains(input);
+			return (input instanceof CDOResource) && DIResourceQuery.getDIResources(((CDOResource) input).cdoView()).contains(input);
 		}
 	};
 
@@ -51,7 +51,7 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 
 		@Override
 		public boolean apply(Object input) {
-			return !(input instanceof CDOResource) || DIResourceQuery.isUnaffiliatedResource((CDOResource)input);
+			return !(input instanceof CDOResource) || DIResourceQuery.isUnaffiliatedResource((CDOResource) input);
 		}
 	};
 
@@ -62,8 +62,8 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 
 		@Override
 		public Object apply(Object input) {
-			if(isDIResource.apply(input)) {
-				return DIModel.getInstance((CDOResource)input, true);
+			if (isDIResource.apply(input)) {
+				return DIModel.getInstance((CDOResource) input, true);
 			} else {
 				return input;
 			}
@@ -94,27 +94,27 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 	}
 
 	public ModelRepositoryItemProvider(IWorkbenchPage page) {
-		this(page, (IElementFilter)null);
+		this(page, (IElementFilter) null);
 	}
 
 	@Override
 	public Object[] getChildren(Object element) {
-		if(element instanceof IPapyrusRepository) {
+		if (element instanceof IPapyrusRepository) {
 			// initialize query for DI resources
-			IInternalPapyrusRepository repo = (IInternalPapyrusRepository)element;
-			if(repo.isConnected()) {
+			IInternalPapyrusRepository repo = (IInternalPapyrusRepository) element;
+			if (repo.isConnected()) {
 				DIResourceQuery.initialize(getViewer(), repo.getMasterView());
 			}
 		}
 
 		Iterable<?> result;
 
-		if(element instanceof DIModel) {
-			result = Arrays.asList(((DIModel)element).getChildren());
+		if (element instanceof DIModel) {
+			result = Arrays.asList(((DIModel) element).getChildren());
 		} else {
 			result = Arrays.asList(super.getChildren(element));
 
-			if((element instanceof CDOResourceFolder) || (element instanceof IPapyrusRepository)) {
+			if ((element instanceof CDOResourceFolder) || (element instanceof IPapyrusRepository)) {
 				result = filterDIResources(result);
 			}
 		}
@@ -126,32 +126,32 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 	public Object getParent(Object element) {
 		Object result;
 
-		if(element instanceof CDOResource) {
-			CDOResource di = DIResourceQuery.getAffiliateResource((CDOResource)element);
+		if (element instanceof CDOResource) {
+			CDOResource di = DIResourceQuery.getAffiliateResource((CDOResource) element);
 
-			if(di != null) {
+			if (di != null) {
 				result = DIModel.getInstance(di, true);
 			} else {
 				result = super.getParent(element);
 			}
-		} else if(element instanceof DIModel) {
-			CDOResource resource = ((DIModel)element).getResource();
+		} else if (element instanceof DIModel) {
+			CDOResource resource = ((DIModel) element).getResource();
 			CDOView view = resource.cdoView();
 
 			// can't query the parent of an object in a closed view
 			result = ((view != null) && view.isClosed()) ? null : super.getParent(resource);
 		} else {
 			CDOView view = null;
-			if(element instanceof CDOObject) {
-				view = ((CDOObject)element).cdoView();
+			if (element instanceof CDOObject) {
+				view = ((CDOObject) element).cdoView();
 			}
 
 			// can't query the parent of an object in a closed view
 			result = ((view != null) && view.isClosed()) ? null : super.getParent(element);
 
 			// we don't show the view
-			if(result instanceof CDOView) {
-				result = PapyrusRepositoryManager.INSTANCE.getRepository((CDOView)result);
+			if (result instanceof CDOView) {
+				result = PapyrusRepositoryManager.INSTANCE.getRepository((CDOView) result);
 			}
 		}
 
@@ -170,11 +170,11 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 	public Image getImage(Object obj) {
 		Image result;
 
-		if(obj instanceof IPapyrusRepository) {
-			boolean open = ((IPapyrusRepository)obj).isConnected();
+		if (obj instanceof IPapyrusRepository) {
+			boolean open = ((IPapyrusRepository) obj).isConnected();
 			result = SharedImages.getImage(open ? Activator.ICON_OPEN_REPOSITORY : Activator.ICON_CLOSED_REPOSITORY);
-		} else if(obj instanceof DIModel) {
-			result = ((DIModel)obj).getImage();
+		} else if (obj instanceof DIModel) {
+			result = ((DIModel) obj).getImage();
 		} else {
 			result = super.getImage(obj);
 		}
@@ -186,10 +186,10 @@ public class ModelRepositoryItemProvider extends CDOItemProvider {
 	public String getText(Object obj) {
 		String result;
 
-		if(obj instanceof IInternalPapyrusRepository) {
-			result = ((IInternalPapyrusRepository)obj).getName();
-		} else if(obj instanceof DIModel) {
-			result = ((DIModel)obj).getName();
+		if (obj instanceof IInternalPapyrusRepository) {
+			result = ((IInternalPapyrusRepository) obj).getName();
+		} else if (obj instanceof DIModel) {
+			result = ((DIModel) obj).getName();
 		} else {
 			result = super.getText(obj);
 		}

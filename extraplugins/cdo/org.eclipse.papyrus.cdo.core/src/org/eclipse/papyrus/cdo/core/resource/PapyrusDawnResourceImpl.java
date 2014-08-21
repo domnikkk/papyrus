@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,11 +57,11 @@ public class PapyrusDawnResourceImpl extends DawnWrapperResourceImpl {
 	@Override
 	public void setTrackingModification(boolean newTrackingModification) {
 		// don't support tracking modification in read-only views because CDO
-		// throws a ReadOnlyException.  But, it should be harmless to attempt to
+		// throws a ReadOnlyException. But, it should be harmless to attempt to
 		// set it because it couldn't possibly be needed, anyways
-		if(!cdoView().isReadOnly()) {
+		if (!cdoView().isReadOnly()) {
 			// XXX: actually, we can't set modification tracking because it is completely
-			// broken in CDO.  See http://www.eclipse.org/forums/index.php/t/457863/
+			// broken in CDO. See http://www.eclipse.org/forums/index.php/t/457863/
 
 			// super.setTrackingModification(newTrackingModification);
 		}

@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -37,9 +37,9 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.visitor.JDTVisitor
 
 /**
  * allow to generate package fragment root
- * 
+ *
  * @author Deblock Nicolas & Manuel Giles
- * 
+ *
  */
 public class SynchJDTPackageFragmentRoot implements JDTVisitor {
 
@@ -49,9 +49,9 @@ public class SynchJDTPackageFragmentRoot implements JDTVisitor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param iprojet
-	 *        the project parent
+	 *            the project parent
 	 */
 	public SynchJDTPackageFragmentRoot(IJavaProject iprojet, GeneratorPreference preference) {
 		super();
@@ -61,19 +61,21 @@ public class SynchJDTPackageFragmentRoot implements JDTVisitor {
 
 
 
+	@Override
 	public void visit(JDTJavaElement element) throws JDTVisitorException {
 		// if element can't be generated, we stop all
-		if(!element.isGenerated())
+		if (!element.isGenerated()) {
 			return;
+		}
 
-		JDTPackageFragmentRoot root = (JDTPackageFragmentRoot)element;
+		JDTPackageFragmentRoot root = (JDTPackageFragmentRoot) element;
 
 		try {
-			// research JDTPackageFragmentRoot		
+			// research JDTPackageFragmentRoot
 			IPackageFragmentRoot iroot = SynchTools.searchIJavaElement(iprojet.getAllPackageFragmentRoots(), root.getElementName());
 
 			// if IPackageFragmentRoot don't exist, we create this
-			if(iroot == null) {
+			if (iroot == null) {
 				// create the folder
 				IFolder sourceFolder = iprojet.getProject().getFolder(root.getElementName());
 				try {
@@ -87,10 +89,11 @@ public class SynchJDTPackageFragmentRoot implements JDTVisitor {
 				List<IClasspathEntry> newEntries = new ArrayList<IClasspathEntry>();
 
 				// copy the old entries in new entries
-				for(int i = 0; i < oldEntries.length; i++) {
+				for (int i = 0; i < oldEntries.length; i++) {
 					// don't take the /projectName, else an exception are throw
-					if(oldEntries[i] != null && !oldEntries[i].getPath().toString().equals("/" + iprojet.getElementName()))
+					if (oldEntries[i] != null && !oldEntries[i].getPath().toString().equals("/" + iprojet.getElementName())) {
 						newEntries.add(oldEntries[i]);
+					}
 				}
 
 				// add the new packageFragmentRoot
@@ -105,7 +108,7 @@ public class SynchJDTPackageFragmentRoot implements JDTVisitor {
 
 			// call children
 			JDTVisitor visitPackageFragment = new SynchJDTPackageFragment(iroot, preference);
-			for(JDTPackageFragment ipack : root.getPackageFragments()) {
+			for (JDTPackageFragment ipack : root.getPackageFragments()) {
 				ipack.accept(visitPackageFragment);
 			}
 

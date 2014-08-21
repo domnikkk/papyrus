@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import org.eclipse.uml2.uml.ReadIsClassifiedObjectAction;
 
 public class ReadIsClassifiedObjectActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the value on the object input pin and determine if it is
 		// classified by the classifier specified in the action.
@@ -33,16 +34,16 @@ public class ReadIsClassifiedObjectActionActivation extends ActionActivation {
 		// the result output pin if the input object has the specified
 		// classifier as a type.
 		// Otherwise place false on the result output pin.
-		ReadIsClassifiedObjectAction action = (ReadIsClassifiedObjectAction)(this.node);
+		ReadIsClassifiedObjectAction action = (ReadIsClassifiedObjectAction) (this.node);
 		Value input = this.takeTokens(action.getObject()).get(0);
 		List<Classifier> types = input.getTypes();
 		boolean result = false;
 		int i = 1;
-		while(!result & i <= types.size()) {
+		while (!result & i <= types.size()) {
 			Classifier type = types.get(i - 1);
-			if(type == action.getClassifier()) {
+			if (type == action.getClassifier()) {
 				result = true;
-			} else if(!action.isDirect()) {
+			} else if (!action.isDirect()) {
 				result = this.checkAllParents(type, action.getClassifier());
 			}
 			i = i + 1;
@@ -58,9 +59,9 @@ public class ReadIsClassifiedObjectActionActivation extends ActionActivation {
 		List<Classifier> directParents = type.getGenerals();
 		boolean matched = false;
 		int i = 1;
-		while(!matched & i <= directParents.size()) {
+		while (!matched & i <= directParents.size()) {
 			Classifier directParent = directParents.get(i - 1);
-			if(directParent == classifier) {
+			if (directParent == classifier) {
 				matched = true;
 			} else {
 				matched = this.checkAllParents(directParent, classifier);

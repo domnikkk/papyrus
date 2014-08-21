@@ -53,7 +53,7 @@ public class RobotMLReconciler extends DiagramReconciler {
 
 	static {
 		ourMigrations = new HashMap<String, MigrationData>();
-		for(MigrationData next : new MigrationData[]{ ARCHITECTURE, COMPONENT, INTERFACE, DATATYPE }) {
+		for (MigrationData next : new MigrationData[] { ARCHITECTURE, COMPONENT, INTERFACE, DATATYPE }) {
 			ourMigrations.put(safeToLowerCase(next.getOldType()), next);
 		}
 	}
@@ -152,15 +152,15 @@ public class RobotMLReconciler extends DiagramReconciler {
 		}
 
 		public ViewPrototype getPrototype() {
-			if(myCachedPrototype == null) {
+			if (myCachedPrototype == null) {
 				myCachedPrototype = findPrototype(myPrototypeLabel);
 			}
 			return myCachedPrototype;
 		}
 
 		private static ViewPrototype findPrototype(String label) {
-			for(ViewPrototype proto : PolicyChecker.getCurrent().getAllPrototypes()) {
-				if(proto.getLabel().contains(label)) {
+			for (ViewPrototype proto : PolicyChecker.getCurrent().getAllPrototypes()) {
+				if (proto.getLabel().contains(label)) {
 					return proto;
 				}
 			}

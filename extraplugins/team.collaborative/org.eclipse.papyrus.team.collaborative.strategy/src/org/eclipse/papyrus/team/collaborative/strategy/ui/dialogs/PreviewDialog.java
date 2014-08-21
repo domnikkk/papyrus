@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
+import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -68,9 +69,9 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Sets the objects to reveal.
-	 * 
+	 *
 	 * @param objectToReveal
-	 *        the new objects to reveal
+	 *            the new objects to reveal
 	 */
 	public void setObjectsToReveal(Collection<EObject> objectToReveal) {
 		this.objectsToReveal = objectToReveal;
@@ -78,59 +79,59 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Create contents of the dialog.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @return the control
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		setMessage(message);
 		setTitle(title);
-		Composite area = (Composite)super.createDialogArea(parent);
+		Composite area = (Composite) super.createDialogArea(parent);
 		Composite container = new Composite(area, SWT.NONE);
 		container.setLayout(new FillLayout(SWT.HORIZONTAL));
 		container.setLayoutData(new GridData(GridData.FILL_BOTH));
 		treeViewer = new CustomCommonViewer("org.eclipse.papyrus.modelexplorer.modelexplorer", container, SWT.BORDER);
 		treeViewer.setContentProvider(new SemanticUMLContentProvider() {
 
-//			@Override
-//			protected static EObject[] getRoots(ResourceSet root) {
-//				if(root instanceof ModelSet) {
-//					ModelSet modelSet = (ModelSet)root;
-//					UmlModel umlModel = (UmlUtils.getUmlModel(modelSet));
-//					
-//					if(umlModel == null)
-//						return null;
-//					
-//					EList<EObject> contents = umlModel.getResource().getContents();
-//					ArrayList<EObject> result = new ArrayList<EObject>();
-//					Iterator<EObject> iterator = contents.iterator();
-//					while(iterator.hasNext()) {
-//						EObject eObject = (EObject)iterator.next();
-//						//Shall be improved
-//						if(eObject.eClass().getEPackage().getNsURI().contains("uml")) {
-//							result.add(eObject);
-//						}
-//					}
-//				}
-//				return result.toArray(new EObject[result.size()]);
-//			}
+			// @Override
+			// protected static EObject[] getRoots(ResourceSet root) {
+			// if(root instanceof ModelSet) {
+			// ModelSet modelSet = (ModelSet)root;
+			// UmlModel umlModel = (UmlUtils.getUmlModel(modelSet));
+			//
+			// if(umlModel == null)
+			// return null;
+			//
+			// EList<EObject> contents = umlModel.getResource().getContents();
+			// ArrayList<EObject> result = new ArrayList<EObject>();
+			// Iterator<EObject> iterator = contents.iterator();
+			// while(iterator.hasNext()) {
+			// EObject eObject = (EObject)iterator.next();
+			// //Shall be improved
+			// if(eObject.eClass().getEPackage().getNsURI().contains("uml")) {
+			// result.add(eObject);
+			// }
+			// }
+			// }
+			// return result.toArray(new EObject[result.size()]);
+			// }
 
-//			@Override
-//			public Object[] getChildren(Object parentElement) {
-//				//Remove duplicate
-//				Object[] superChildren = super.getChildren(parentElement);
-//
-//				List<Object> result = new ArrayList<Object>();
-//				for(int i = 0; i < superChildren.length; i++) {
-//					Object c = superChildren[i];
-//					if(!result.contains(c)) {
-//						result.add(c);
-//					}
-//				}
-//				return result.toArray(new Object[result.size()]);
-//			}
+			// @Override
+			// public Object[] getChildren(Object parentElement) {
+			// //Remove duplicate
+			// Object[] superChildren = super.getChildren(parentElement);
+			//
+			// List<Object> result = new ArrayList<Object>();
+			// for(int i = 0; i < superChildren.length; i++) {
+			// Object c = superChildren[i];
+			// if(!result.contains(c)) {
+			// result.add(c);
+			// }
+			// }
+			// return result.toArray(new Object[result.size()]);
+			// }
 		});
 		treeViewer.setLabelProvider(labelProvider);
 
@@ -138,7 +139,7 @@ public class PreviewDialog extends TitleAreaDialog {
 			IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			ServicesRegistry serviceRegistry = ServiceUtilsForWorkbenchPage.getInstance().getServiceRegistry(activePage);
 			treeViewer.setInput(serviceRegistry);
-			if(objectsToReveal != null) {
+			if (objectsToReveal != null) {
 				reveal(objectsToReveal);
 			}
 		} catch (ServiceException e) {
@@ -150,9 +151,9 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Create contents of the button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -162,7 +163,7 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Return the initial size of the dialog.
-	 * 
+	 *
 	 * @return the initial size
 	 */
 	@Override
@@ -172,15 +173,15 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param labelProvider
-	 *        the label provider
+	 *            the label provider
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public PreviewDialog(Shell parentShell, ILabelProvider labelProvider, String title, String message) {
 		super(parentShell);
@@ -206,24 +207,25 @@ public class PreviewDialog extends TitleAreaDialog {
 
 	/**
 	 * Reveal.
-	 * 
+	 *
 	 * @param elementList
-	 *        the element list
+	 *            the element list
 	 */
 	public void reveal(Iterable<?> elementList) {
 		ArrayList<IMatchingItem> matchingItemsToSelect = new ArrayList<IMatchingItem>();
 		// filter out non EMF objects
 		Iterable<EObject> list = Iterables.transform(Iterables.filter(elementList, EObject.class), new Function<Object, EObject>() {
 
+			@Override
 			public EObject apply(Object from) {
-				return (EObject)from;
+				return (EObject) from;
 			}
 		});
 
-		for(EObject currentEObject : list) {
-			//TODO The custom ModelExplorer Revealer feature has not yet been backported. 
-			//See bug 426360. For now, we only reveal the given EObjects.
-			//EObject itemToSelect = ModelExplorerRevealerManager.getTargetObjectToRegveal(currentEObject);
+		for (EObject currentEObject : list) {
+			// TODO The custom ModelExplorer Revealer feature has not yet been backported.
+			// See bug 426360. For now, we only reveal the given EObjects.
+			// EObject itemToSelect = ModelExplorerRevealerManager.getTargetObjectToRegveal(currentEObject);
 			matchingItemsToSelect.add(new ModelElementItemMatchingItem(currentEObject));
 
 			// Does the content provider exist?
@@ -241,22 +243,22 @@ public class PreviewDialog extends TitleAreaDialog {
 			 * 
 			 * Please refer to MatchingItem for more infos.
 			 */
-			//for(IMatchingItem item : ModelExplorerRevealerManager.getChainToReveal(itemToSelect)) {
-			//	treeViewer.expandToLevel(item, 1);
-			//}
-			//}
+			// for(IMatchingItem item : ModelExplorerRevealerManager.getChainToReveal(itemToSelect)) {
+			// treeViewer.expandToLevel(item, 1);
+			// }
+			// }
 		}
-		treeViewer.expandToLevel(new StructuredSelection(matchingItemsToSelect), TreeViewer.ALL_LEVELS);
+		treeViewer.expandToLevel(new StructuredSelection(matchingItemsToSelect), AbstractTreeViewer.ALL_LEVELS);
 	}
 
 	/**
 	 * Select reveal.
-	 * 
+	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 */
 	public void selectReveal(ISelection selection) {
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			treeViewer.setSelection(selection, true);
 		}
 	}
@@ -268,9 +270,9 @@ public class PreviewDialog extends TitleAreaDialog {
 	 */
 	/**
 	 * Reveal semantic element.
-	 * 
+	 *
 	 * @param elementList
-	 *        the element list
+	 *            the element list
 	 */
 	public void revealSemanticElement(List<?> elementList) {
 		reveal(elementList);

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -32,6 +32,7 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected FontTypeImpl() {
@@ -42,6 +43,7 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -52,11 +54,13 @@ public class FontTypeImpl extends TypeImpl implements FontType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public TypeInstance createInstance() {
 		FontInstance instance = LayersFactory.eINSTANCE.createFontInstance();
 		return instance;
 	}
 
-} //FontTypeImpl
+} // FontTypeImpl

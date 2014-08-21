@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.Element;
 
 
 /**
- * 
+ *
  */
 public abstract class CppAbstractPanel extends Composite {
 
@@ -75,55 +75,55 @@ public abstract class CppAbstractPanel extends Composite {
 	public abstract Control createContent();
 
 
-	/////////////////////////////////////////////////////////////////////// 
+	// /////////////////////////////////////////////////////////////////////
 	// Following method are used to create text area w/o coloration
-	/////////////////////////////////////////////////////////////////////// 
-	//	/**
-	//	 * 
-	//	 */
-	//	protected FastPartitioner createPartitioner() {
-	//		FastPartitioner pluginPartitioner = new FastPartitioner(
-	//				new CPartitionScanner(), new String[] {
-	//					CPartitionScanner.C_SINGLE_LINE_COMMENT,
-	//					CPartitionScanner.C_MULTILINE_COMMENT,
-	//					CPartitionScanner.C_STRING
-	//				}
-	//		);
-	//		
-	//		return pluginPartitioner;
-	//	}
+	// /////////////////////////////////////////////////////////////////////
+	// /**
+	// *
+	// */
+	// protected FastPartitioner createPartitioner() {
+	// FastPartitioner pluginPartitioner = new FastPartitioner(
+	// new CPartitionScanner(), new String[] {
+	// CPartitionScanner.C_SINGLE_LINE_COMMENT,
+	// CPartitionScanner.C_MULTILINE_COMMENT,
+	// CPartitionScanner.C_STRING
+	// }
+	// );
+	//
+	// return pluginPartitioner;
+	// }
 
 
 	/**
 	 * Create a group for a text area
-	 * 
+	 *
 	 * @param textArea
-	 *        parent composite
+	 *            parent composite
 	 * @param name
-	 *        of the group
+	 *            of the group
 	 * @param t_previous
-	 *        attached to top border
+	 *            attached to top border
 	 * @param l_previous
-	 *        attached to left border
+	 *            attached to left border
 	 * @param toRight
-	 *        should group reach right border of parent
+	 *            should group reach right border of parent
 	 * @param height
-	 *        of text in percent of group size
+	 *            of text in percent of group size
 	 * @param width
-	 *        of text in percent of group size
+	 *            of text in percent of group size
 	 * @param toBottom
-	 *        should group reach bottom of parent
+	 *            should group reach bottom of parent
 	 * @return new Group
 	 */
 	protected Group createGroup(
-		Composite textArea
-		, String name
-		, Control t_previous
-		, Control l_previous
-		, boolean toRight
-		, int height
-		, int width
-		, boolean toBottom) {
+			Composite textArea
+			, String name
+			, Control t_previous
+			, Control l_previous
+			, boolean toRight
+			, int height
+			, int width
+			, boolean toBottom) {
 
 		Group groupBody = new Group(textArea, SWT.NONE);
 
@@ -133,29 +133,29 @@ public abstract class CppAbstractPanel extends Composite {
 		groupBody.setFont(Activator.VIEW_FONT);
 
 		FormData data = new FormData();
-		if(t_previous != null) {
+		if (t_previous != null) {
 			data.top = new FormAttachment(t_previous, H_SPACE);
 		}
 
-		if(l_previous != null) {
+		if (l_previous != null) {
 			data.left = new FormAttachment(l_previous, H_SPACE);
 		}
 
-		if(data.top == null) {
+		if (data.top == null) {
 			data.top = new FormAttachment(0, H_SPACE);
 		}
 
-		if(data.left == null) {
+		if (data.left == null) {
 			data.left = new FormAttachment(0, H_SPACE);
 		}
 
-		if(toBottom) {
+		if (toBottom) {
 			data.bottom = new FormAttachment(100, -H_SPACE);
-		} else if(height != 0) {
+		} else if (height != 0) {
 			data.bottom = new FormAttachment(height);
 		}
 
-		if(toRight) {
+		if (toRight) {
 			data.right = new FormAttachment(100, -H_SPACE);
 		} else {
 			data.right = new FormAttachment(width, 0);
@@ -167,7 +167,7 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Create a simple viewer without coloration
-	 * 
+	 *
 	 * @param doc
 	 * @param group
 	 * @return
@@ -175,7 +175,7 @@ public abstract class CppAbstractPanel extends Composite {
 	protected SourceViewer createViewer(IDocument doc, Group group) {
 
 		SourceViewer viewer =
-			new SourceViewer(group, null, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
+				new SourceViewer(group, null, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 
 		viewer.setDocument(doc);
 
@@ -192,7 +192,7 @@ public abstract class CppAbstractPanel extends Composite {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param doc
 	 * @param group
 	 * @return
@@ -203,7 +203,7 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Create a simple document
-	 * 
+	 *
 	 * @return
 	 */
 	protected IDocument createDocument() {
@@ -214,30 +214,31 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Create a C/C++ (see cdt) document
-	 * 
+	 *
 	 * @return
 	 */
 	protected IDocument createDocumentC() {
 		return createDocument();
 	}
 
-	/////////////////////////////////////////////////////////////////////// 
+	// /////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Create save and reset button in the top - right of the structure
-	 * 
+	 *
 	 */
 	protected void createSaveResetButtons() {
 
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 		// Create a composite that contain the "Save/Cancel" buttons
-		/////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////
 
 		buttonSave = new Button(this, SWT.PUSH);
 		buttonSave.setImage(Activator.getImage(Activator.SAVE_IMAGE));
 		buttonSave.setToolTipText(Activator.getResourceString("panel.class.button.save.tooltip")); //$NON-NLS-1$
 		buttonSave.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				save();
 			}
@@ -248,6 +249,7 @@ public abstract class CppAbstractPanel extends Composite {
 		buttonCancel.setToolTipText(Activator.getResourceString("panel.class.button.cancel.tooltip")); //$NON-NLS-1$
 		buttonCancel.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				reset();
 			}
@@ -266,13 +268,13 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Create new button
-	 * 
+	 *
 	 * @param name
-	 *        of the button
+	 *            of the button
 	 * @param parent
-	 *        composite that owns the button
+	 *            composite that owns the button
 	 * @param previous
-	 *        structure on which button is left attached
+	 *            structure on which button is left attached
 	 * @return the newly created button
 	 */
 	protected Button createButton(String name, Composite parent, Button previous) {
@@ -282,7 +284,7 @@ public abstract class CppAbstractPanel extends Composite {
 		newButton.setText(name);
 		FormData data = new FormData();
 
-		if(previous == null) {
+		if (previous == null) {
 			data.left = new FormAttachment(0, H_SPACE);
 		} else {
 			data.left = new FormAttachment(previous, H_SPACE);
@@ -296,25 +298,27 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Selection listener that match button status and a particular stereotype
-	 * 
+	 *
 	 * @param button
 	 * @param stereotypeName
 	 */
 	protected void addStereotypeSelectionListener(final Button button, final String stereotypeName) {
 
 		button.addSelectionListener(
-			new SelectionListener() {
+				new SelectionListener() {
 
-				public void widgetSelected(SelectionEvent e) {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
 
-					updateModel();
-					refreshPanel();
+						updateModel();
+						refreshPanel();
+					}
+
+					@Override
+					public void widgetDefaultSelected(SelectionEvent e) {
+					}
 				}
-
-				public void widgetDefaultSelected(SelectionEvent e) {
-				}
-			}
-			);
+				);
 	}
 
 	/**
@@ -334,19 +338,19 @@ public abstract class CppAbstractPanel extends Composite {
 		modelChanged = checkModifications();
 
 		// model has change, must go in a write transaction => save
-		if(modelChanged) {
+		if (modelChanged) {
 			MessageDialog dialog = new MessageDialog(
-				Display.getCurrent().getActiveShell(),
-				Activator.getResourceString("panel.property.dialog.saveorignore.title"), //$NON-NLS-1$
-				Activator.getImage(Activator.WARNING_IMAGE),
-				Activator.getResourceString("panel.property.dialog.saveorignore"), //$NON-NLS-1$
-				0,
-				new String[]{
-					Activator.getResourceString("panel.property.dialog.saveorignore.button.save"), //$NON-NLS-1$
-					Activator.getResourceString("panel.property.dialog.saveorignore.button.ignore") }, //$NON-NLS-1$
-				0);
+					Display.getCurrent().getActiveShell(),
+					Activator.getResourceString("panel.property.dialog.saveorignore.title"), //$NON-NLS-1$
+					Activator.getImage(Activator.WARNING_IMAGE),
+					Activator.getResourceString("panel.property.dialog.saveorignore"), //$NON-NLS-1$
+					0,
+					new String[] {
+							Activator.getResourceString("panel.property.dialog.saveorignore.button.save"), //$NON-NLS-1$
+							Activator.getResourceString("panel.property.dialog.saveorignore.button.ignore") }, //$NON-NLS-1$
+					0);
 			dialog.open();
-			if(dialog.getReturnCode() == 0) { //saveButton pressed
+			if (dialog.getReturnCode() == 0) { // saveButton pressed
 				save();
 			}
 		}
@@ -354,7 +358,7 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Check if the content of the panel has modification against the corresponding UML element.
-	 * 
+	 *
 	 * @return <code>true</code> if the panel has modification against the model
 	 */
 	public abstract boolean checkModifications();
@@ -370,7 +374,7 @@ public abstract class CppAbstractPanel extends Composite {
 	public void reset() {
 		boolean modelValid = true;
 		modelValid = isModelValid();
-		if(!modelValid) {
+		if (!modelValid) {
 			updateModel();
 		}
 		refreshPanel();
@@ -389,7 +393,7 @@ public abstract class CppAbstractPanel extends Composite {
 
 	/**
 	 * Check if model is coherent with the AccordCpp Methodology
-	 * 
+	 *
 	 * @return <code>true</code> if the model is coherent with the AccordCpp Methodology
 	 */
 	protected boolean isModelValid() {
@@ -403,7 +407,7 @@ public abstract class CppAbstractPanel extends Composite {
 	 */
 	@Override
 	public void dispose() {
-		if(getSelectedElement() != null && umlListener != null) {
+		if (getSelectedElement() != null && umlListener != null) {
 			getSelectedElement().eAdapters().remove(umlListener);
 		}
 		super.dispose();
@@ -413,29 +417,29 @@ public abstract class CppAbstractPanel extends Composite {
 	 * Returns the selected element
 	 * <p>
 	 * Warning: it can be <code>null</code>
-	 * 
+	 *
 	 * @return the selected element
 	 */
 	public abstract Element getSelectedElement();
 
 	/**
 	 * Sets the new selected element
-	 * 
+	 *
 	 * @param newElement
-	 *        the new selected element
+	 *            the new selected element
 	 */
 	public void setSelectedElement(Element newElement) {
-		if(newElement != null && umlListener != null) {
+		if (newElement != null && umlListener != null) {
 			newElement.eAdapters().add(umlListener);
 		}
 	}
 
-	protected static void openInformation( final String title, final String message )
+	protected static void openInformation(final String title, final String message)
 	{
 		Display.getDefault().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				MessageDialog.openInformation( Display.getCurrent().getActiveShell(), title, message );
+				MessageDialog.openInformation(Display.getCurrent().getActiveShell(), title, message);
 			}
 		});
 	}

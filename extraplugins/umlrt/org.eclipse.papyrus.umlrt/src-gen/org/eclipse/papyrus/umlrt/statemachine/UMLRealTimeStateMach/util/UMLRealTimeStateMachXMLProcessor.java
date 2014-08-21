@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.UMLRealTimeSt
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UMLRealTimeStateMachXMLProcessor extends XMLProcessor {
@@ -30,17 +31,19 @@ public class UMLRealTimeStateMachXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLRealTimeStateMachXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		UMLRealTimeStateMachPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the UMLRealTimeStateMachResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -53,4 +56,4 @@ public class UMLRealTimeStateMachXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //UMLRealTimeStateMachXMLProcessor
+} // UMLRealTimeStateMachXMLProcessor

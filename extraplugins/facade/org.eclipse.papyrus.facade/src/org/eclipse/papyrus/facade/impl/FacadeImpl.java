@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,8 +45,8 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.impl.FacadeImpl#getExtensionDefinitions <em>Extension Definitions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.impl.FacadeImpl#getVirtualmetamodel <em>Virtualmetamodel</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.impl.FacadeImpl#getExtensionDefinitions <em>Extension Definitions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.impl.FacadeImpl#getVirtualmetamodel <em>Virtualmetamodel</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +57,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	 * The cached value of the '{@link #getExtensionDefinitions() <em>Extension Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtensionDefinitions()
 	 * @generated
 	 * @ordered
@@ -67,6 +68,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	 * The cached value of the '{@link #getVirtualmetamodel() <em>Virtualmetamodel</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVirtualmetamodel()
 	 * @generated
 	 * @ordered
@@ -76,6 +78,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FacadeImpl() {
@@ -85,6 +88,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,8 +99,10 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ExtensionDefinition> getExtensionDefinitions() {
 		if (extensionDefinitions == null) {
 			extensionDefinitions = new EObjectContainmentWithInverseEList<ExtensionDefinition>(ExtensionDefinition.class, this, FacadePackage.FACADE__EXTENSION_DEFINITIONS, ExtensiondefinitionPackage.EXTENSION_DEFINITION__FACADE);
@@ -107,8 +113,10 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualMetamodel getVirtualmetamodel() {
 		return virtualmetamodel;
 	}
@@ -116,6 +124,7 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetVirtualmetamodel(VirtualMetamodel newVirtualmetamodel, NotificationChain msgs) {
@@ -123,7 +132,11 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 		virtualmetamodel = newVirtualmetamodel;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FacadePackage.FACADE__VIRTUALMETAMODEL, oldVirtualmetamodel, newVirtualmetamodel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -131,37 +144,46 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setVirtualmetamodel(VirtualMetamodel newVirtualmetamodel) {
 		if (newVirtualmetamodel != virtualmetamodel) {
 			NotificationChain msgs = null;
-			if (virtualmetamodel != null)
-				msgs = ((InternalEObject)virtualmetamodel).eInverseRemove(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, VirtualMetamodel.class, msgs);
-			if (newVirtualmetamodel != null)
-				msgs = ((InternalEObject)newVirtualmetamodel).eInverseAdd(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, VirtualMetamodel.class, msgs);
+			if (virtualmetamodel != null) {
+				msgs = ((InternalEObject) virtualmetamodel).eInverseRemove(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, VirtualMetamodel.class, msgs);
+			}
+			if (newVirtualmetamodel != null) {
+				msgs = ((InternalEObject) newVirtualmetamodel).eInverseAdd(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__FACADE, VirtualMetamodel.class, msgs);
+			}
 			msgs = basicSetVirtualmetamodel(newVirtualmetamodel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FacadePackage.FACADE__VIRTUALMETAMODEL, newVirtualmetamodel, newVirtualmetamodel));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensionDefinitions()).basicAdd(otherEnd, msgs);
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				if (virtualmetamodel != null)
-					msgs = ((InternalEObject)virtualmetamodel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FacadePackage.FACADE__VIRTUALMETAMODEL, null, msgs);
-				return basicSetVirtualmetamodel((VirtualMetamodel)otherEnd, msgs);
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getExtensionDefinitions()).basicAdd(otherEnd, msgs);
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			if (virtualmetamodel != null) {
+				msgs = ((InternalEObject) virtualmetamodel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FacadePackage.FACADE__VIRTUALMETAMODEL, null, msgs);
+			}
+			return basicSetVirtualmetamodel((VirtualMetamodel) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -169,15 +191,16 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				return ((InternalEList<?>)getExtensionDefinitions()).basicRemove(otherEnd, msgs);
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				return basicSetVirtualmetamodel(null, msgs);
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			return ((InternalEList<?>) getExtensionDefinitions()).basicRemove(otherEnd, msgs);
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			return basicSetVirtualmetamodel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -185,15 +208,16 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				return getExtensionDefinitions();
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				return getVirtualmetamodel();
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			return getExtensionDefinitions();
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			return getVirtualmetamodel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,19 +225,20 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				getExtensionDefinitions().clear();
-				getExtensionDefinitions().addAll((Collection<? extends ExtensionDefinition>)newValue);
-				return;
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				setVirtualmetamodel((VirtualMetamodel)newValue);
-				return;
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			getExtensionDefinitions().clear();
+			getExtensionDefinitions().addAll((Collection<? extends ExtensionDefinition>) newValue);
+			return;
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			setVirtualmetamodel((VirtualMetamodel) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,17 +246,18 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				getExtensionDefinitions().clear();
-				return;
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				setVirtualmetamodel((VirtualMetamodel)null);
-				return;
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			getExtensionDefinitions().clear();
+			return;
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			setVirtualmetamodel((VirtualMetamodel) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,17 +265,18 @@ public class FacadeImpl extends MinimalEObjectImpl.Container implements Facade {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
-				return extensionDefinitions != null && !extensionDefinitions.isEmpty();
-			case FacadePackage.FACADE__VIRTUALMETAMODEL:
-				return virtualmetamodel != null;
+		case FacadePackage.FACADE__EXTENSION_DEFINITIONS:
+			return extensionDefinitions != null && !extensionDefinitions.isEmpty();
+		case FacadePackage.FACADE__VIRTUALMETAMODEL:
+			return virtualmetamodel != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FacadeImpl
+} // FacadeImpl

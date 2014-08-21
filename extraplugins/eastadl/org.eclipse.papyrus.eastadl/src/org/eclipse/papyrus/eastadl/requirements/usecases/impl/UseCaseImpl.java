@@ -29,10 +29,10 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getBase_UseCase <em>Base Use Case</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getInclude <em>Include</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getExtend <em>Extend</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getExtensionPoint <em>Extension Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getBase_UseCase <em>Base Use Case</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getInclude <em>Include</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getExtend <em>Extend</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.UseCaseImpl#getExtensionPoint <em>Extension Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getBase_UseCase() <em>Base Use Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_UseCase()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getInclude() <em>Include</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInclude()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	 * The cached value of the '{@link #getExtend() <em>Extend</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtend()
 	 * @generated
 	 * @ordered
@@ -72,6 +75,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UseCaseImpl() {
@@ -81,6 +85,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -91,15 +96,18 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.UseCase getBase_UseCase() {
 		if (base_UseCase != null && base_UseCase.eIsProxy()) {
-			InternalEObject oldBase_UseCase = (InternalEObject)base_UseCase;
-			base_UseCase = (org.eclipse.uml2.uml.UseCase)eResolveProxy(oldBase_UseCase);
+			InternalEObject oldBase_UseCase = (InternalEObject) base_UseCase;
+			base_UseCase = (org.eclipse.uml2.uml.UseCase) eResolveProxy(oldBase_UseCase);
 			if (base_UseCase != oldBase_UseCase) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.USE_CASE__BASE_USE_CASE, oldBase_UseCase, base_UseCase));
+				}
 			}
 		}
 		return base_UseCase;
@@ -108,6 +116,7 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.UseCase basicGetBase_UseCase() {
@@ -117,20 +126,25 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_UseCase(org.eclipse.uml2.uml.UseCase newBase_UseCase) {
 		org.eclipse.uml2.uml.UseCase oldBase_UseCase = base_UseCase;
 		base_UseCase = newBase_UseCase;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.USE_CASE__BASE_USE_CASE, oldBase_UseCase, base_UseCase));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Include> getInclude() {
 		if (include == null) {
 			include = new EObjectResolvingEList<Include>(Include.class, this, UsecasesPackage.USE_CASE__INCLUDE);
@@ -141,8 +155,10 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Extend> getExtend() {
 		if (extend == null) {
 			extend = new EObjectResolvingEList<Extend>(Extend.class, this, UsecasesPackage.USE_CASE__EXTEND);
@@ -153,42 +169,48 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<ExtensionPoint> getExtensionPoint() {
 		EList<ExtensionPoint> results = new BasicEList<ExtensionPoint>();
 		ExtensionPoint adlExtensionPoint = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlExtensionPoint = (ExtensionPoint )UMLUtil.getStereotypeApplication(element, ExtensionPoint.class);
-				if (adlExtensionPoint != null)
+				adlExtensionPoint = UMLUtil.getStereotypeApplication(element, ExtensionPoint.class);
+				if (adlExtensionPoint != null) {
 					results.add(adlExtensionPoint);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<ExtensionPoint>(ExtensionPoint.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UsecasesPackage.USE_CASE__BASE_USE_CASE:
-				if (resolve) return getBase_UseCase();
-				return basicGetBase_UseCase();
-			case UsecasesPackage.USE_CASE__INCLUDE:
-				return getInclude();
-			case UsecasesPackage.USE_CASE__EXTEND:
-				return getExtend();
-			case UsecasesPackage.USE_CASE__EXTENSION_POINT:
-				return getExtensionPoint();
+		case UsecasesPackage.USE_CASE__BASE_USE_CASE:
+			if (resolve) {
+				return getBase_UseCase();
+			}
+			return basicGetBase_UseCase();
+		case UsecasesPackage.USE_CASE__INCLUDE:
+			return getInclude();
+		case UsecasesPackage.USE_CASE__EXTEND:
+			return getExtend();
+		case UsecasesPackage.USE_CASE__EXTENSION_POINT:
+			return getExtensionPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,23 +218,24 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UsecasesPackage.USE_CASE__BASE_USE_CASE:
-				setBase_UseCase((org.eclipse.uml2.uml.UseCase)newValue);
-				return;
-			case UsecasesPackage.USE_CASE__INCLUDE:
-				getInclude().clear();
-				getInclude().addAll((Collection<? extends Include>)newValue);
-				return;
-			case UsecasesPackage.USE_CASE__EXTEND:
-				getExtend().clear();
-				getExtend().addAll((Collection<? extends Extend>)newValue);
-				return;
+		case UsecasesPackage.USE_CASE__BASE_USE_CASE:
+			setBase_UseCase((org.eclipse.uml2.uml.UseCase) newValue);
+			return;
+		case UsecasesPackage.USE_CASE__INCLUDE:
+			getInclude().clear();
+			getInclude().addAll((Collection<? extends Include>) newValue);
+			return;
+		case UsecasesPackage.USE_CASE__EXTEND:
+			getExtend().clear();
+			getExtend().addAll((Collection<? extends Extend>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -220,20 +243,21 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UsecasesPackage.USE_CASE__BASE_USE_CASE:
-				setBase_UseCase((org.eclipse.uml2.uml.UseCase)null);
-				return;
-			case UsecasesPackage.USE_CASE__INCLUDE:
-				getInclude().clear();
-				return;
-			case UsecasesPackage.USE_CASE__EXTEND:
-				getExtend().clear();
-				return;
+		case UsecasesPackage.USE_CASE__BASE_USE_CASE:
+			setBase_UseCase((org.eclipse.uml2.uml.UseCase) null);
+			return;
+		case UsecasesPackage.USE_CASE__INCLUDE:
+			getInclude().clear();
+			return;
+		case UsecasesPackage.USE_CASE__EXTEND:
+			getExtend().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,21 +265,22 @@ public class UseCaseImpl extends TraceableSpecificationImpl implements UseCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UsecasesPackage.USE_CASE__BASE_USE_CASE:
-				return base_UseCase != null;
-			case UsecasesPackage.USE_CASE__INCLUDE:
-				return include != null && !include.isEmpty();
-			case UsecasesPackage.USE_CASE__EXTEND:
-				return extend != null && !extend.isEmpty();
-			case UsecasesPackage.USE_CASE__EXTENSION_POINT:
-				return !getExtensionPoint().isEmpty();
+		case UsecasesPackage.USE_CASE__BASE_USE_CASE:
+			return base_UseCase != null;
+		case UsecasesPackage.USE_CASE__INCLUDE:
+			return include != null && !include.isEmpty();
+		case UsecasesPackage.USE_CASE__EXTEND:
+			return extend != null && !extend.isEmpty();
+		case UsecasesPackage.USE_CASE__EXTENSION_POINT:
+			return !getExtensionPoint().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //UseCaseImpl
+} // UseCaseImpl

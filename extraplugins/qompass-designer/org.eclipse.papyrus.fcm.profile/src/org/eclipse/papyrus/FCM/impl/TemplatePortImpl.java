@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM.impl;
 
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.FCM.TemplatePort;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.TemplatePortImpl#getBoundType <em>Bound Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.TemplatePortImpl#getBoundType <em>Bound Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TemplatePortImpl() {
@@ -44,6 +45,7 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -54,16 +56,19 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PortKind getBoundType() {
 		PortKind boundType = basicGetBoundType();
-		return boundType != null && boundType.eIsProxy() ? (PortKind)eResolveProxy((InternalEObject)boundType) : boundType;
+		return boundType != null && boundType.eIsProxy() ? (PortKind) eResolveProxy((InternalEObject) boundType) : boundType;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PortKind basicGetBoundType() {
@@ -76,8 +81,10 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setBoundType(PortKind newBoundType) {
 		// TODO: implement this method to set the 'Bound Type' reference
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -86,8 +93,10 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void unsetBoundType() {
 		// TODO: implement this method to unset the 'Bound Type' reference
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -96,8 +105,10 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isSetBoundType() {
 		// TODO: implement this method to return whether the 'Bound Type' reference is set
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -107,14 +118,17 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
-				if (resolve) return getBoundType();
-				return basicGetBoundType();
+		case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
+			if (resolve) {
+				return getBoundType();
+			}
+			return basicGetBoundType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,14 +136,15 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
-				setBoundType((PortKind)newValue);
-				return;
+		case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
+			setBoundType((PortKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -137,14 +152,15 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
-				unsetBoundType();
-				return;
+		case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
+			unsetBoundType();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,15 +168,16 @@ public class TemplatePortImpl extends PortImpl implements TemplatePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
-				return isSetBoundType();
+		case FCMPackage.TEMPLATE_PORT__BOUND_TYPE:
+			return isSetBoundType();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TemplatePortImpl
+} // TemplatePortImpl

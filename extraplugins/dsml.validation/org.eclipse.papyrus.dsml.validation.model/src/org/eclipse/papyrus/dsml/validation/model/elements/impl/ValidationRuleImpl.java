@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,8 +27,8 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * Implementation of an interface relating to the constraint.
- * 
- * 
+ *
+ *
  */
 public class ValidationRuleImpl implements IValidationRule {
 
@@ -44,17 +44,17 @@ public class ValidationRuleImpl implements IValidationRule {
 
 	/**
 	 * Constructor which takes as an parameter constraint from the model.
-	 * 
+	 *
 	 * @param constraint
-	 *        constraint from the model
+	 *            constraint from the model
 	 * @throws WrongStereotypeException
-	 *         exception in case when constraint passed to the constructor
-	 *         is not stereotyped with IValidationRule stereotype
+	 *             exception in case when constraint passed to the constructor
+	 *             is not stereotyped with IValidationRule stereotype
 	 */
 	public ValidationRuleImpl(Constraint constraint) throws WrongStereotypeException {
 		this.constraint = constraint;
 		stereotype = constraint.getAppliedStereotype(IDSMLValidation.VALIDATIONRULE_STEREOTYPE);
-		if(stereotype == null) {
+		if (stereotype == null) {
 			throw new WrongStereotypeException(ERROR);
 		}
 	}
@@ -62,14 +62,14 @@ public class ValidationRuleImpl implements IValidationRule {
 	/**
 	 * Constructor which takes as an parameter constraint from the model and
 	 * category to which this constraint will belong.
-	 * 
+	 *
 	 * @param constraint
-	 *        constraint from the model
+	 *            constraint from the model
 	 * @param parentCategory
-	 *        parent category
+	 *            parent category
 	 * @throws WrongStereotypeException
-	 *         exception in case when constraint passed to the constructor
-	 *         is not stereotyped with IValidationRule stereotype
+	 *             exception in case when constraint passed to the constructor
+	 *             is not stereotyped with IValidationRule stereotype
 	 */
 	@SuppressWarnings("rawtypes")
 	public ValidationRuleImpl(Constraint constraint, Category parentCategory) throws WrongStereotypeException {
@@ -80,13 +80,13 @@ public class ValidationRuleImpl implements IValidationRule {
 		 * If the value of id has not been declared by the user, generated id
 		 * value will be assigned and saved in the model.
 		 */
-		if(constraint.getValue(stereotype, "id") == null || constraint.getValue(stereotype, "id").equals("")) {
+		if (constraint.getValue(stereotype, "id") == null || constraint.getValue(stereotype, "id").equals("")) {
 			String qname = constraint.getQualifiedName().replace("::", ".");
 			this.id = qname;
 
 		} else {
 
-			this.id = (String)constraint.getValue(stereotype, "id");
+			this.id = (String) constraint.getValue(stereotype, "id");
 		}
 
 		this.implementingClass = parentCategory.getID() + "." + this.getName() + "Constraint";
@@ -100,13 +100,13 @@ public class ValidationRuleImpl implements IValidationRule {
 		 * a target for a constraint, those elements which are extended by the
 		 * stereotype to which the constraint applies.
 		 */
-		if(constraint.getValue(stereotype, "target") != null && ((EDataTypeUniqueEList)constraint.getValue(stereotype, "target")).size() > 0) {
-			for(Object target : (EDataTypeUniqueEList)constraint.getValue(stereotype, "target")) {
-				if(target != null) {
-					this.targets.add((String)target);
+		if (constraint.getValue(stereotype, "target") != null && ((EDataTypeUniqueEList) constraint.getValue(stereotype, "target")).size() > 0) {
+			for (Object target : (EDataTypeUniqueEList) constraint.getValue(stereotype, "target")) {
+				if (target != null) {
+					this.targets.add((String) target);
 				}
 			}
-		
+
 		}
 
 		/*
@@ -114,8 +114,8 @@ public class ValidationRuleImpl implements IValidationRule {
 		 * assign default value for each constraint which is 1 and save it to
 		 * the model.
 		 */
-		this.statusCode = (Integer)constraint.getValue(stereotype, "statusCode");
-		if(this.statusCode == null) {
+		this.statusCode = (Integer) constraint.getValue(stereotype, "statusCode");
+		if (this.statusCode == null) {
 			this.statusCode = new Integer(1);
 		}
 
@@ -128,7 +128,7 @@ public class ValidationRuleImpl implements IValidationRule {
 
 	public String getID() {
 		// TODO Auto-generated method stub
-		return id == null ? (String)constraint.getValue(stereotype, "id") : id;
+		return id == null ? (String) constraint.getValue(stereotype, "id") : id;
 	}
 
 	private String id;
@@ -137,7 +137,7 @@ public class ValidationRuleImpl implements IValidationRule {
 	public Integer getStatusCode() {
 		// TODO Auto-generated method stub
 
-		Integer statusCode = (Integer)constraint.getValue(stereotype, "statusCode");
+		Integer statusCode = (Integer) constraint.getValue(stereotype, "statusCode");
 
 		return statusCode == null ? new Integer(1) : statusCode;
 	}
@@ -147,15 +147,15 @@ public class ValidationRuleImpl implements IValidationRule {
 	public Severity getSeverity() {
 		Object severityObj = constraint.getValue(stereotype, "severity"); //$NON-NLS-1$
 		if (severityObj instanceof Enumerator) {
-			Enumerator severity = (Enumerator)severityObj;
+			Enumerator severity = (Enumerator) severityObj;
 
 			String severityType = severity.getName();
 
-			if(severityType.compareTo(Severity.INFO.name()) == 0) {
+			if (severityType.compareTo(Severity.INFO.name()) == 0) {
 				return Severity.INFO;
-			} else if(severityType.compareTo(Severity.WARNING.name()) == 0) {
+			} else if (severityType.compareTo(Severity.WARNING.name()) == 0) {
 				return Severity.WARNING;
-			} else if(severityType.compareTo(Severity.CANCEL.name()) == 0) {
+			} else if (severityType.compareTo(Severity.CANCEL.name()) == 0) {
 				return Severity.CANCEL;
 			}
 		}
@@ -170,15 +170,15 @@ public class ValidationRuleImpl implements IValidationRule {
 	private String implementingClass;
 
 	public Mode getMode() {
-		Object modeObj = constraint.getValue(stereotype, "mode");  //$NON-NLS-1$
+		Object modeObj = constraint.getValue(stereotype, "mode"); //$NON-NLS-1$
 		if (modeObj instanceof Enumerator) {
 			Enumerator mode = (Enumerator) modeObj;
 
 			String modeType = mode.getName();
 
-			if(modeType.compareTo(Mode.Batch.name()) == 0) {
+			if (modeType.compareTo(Mode.Batch.name()) == 0) {
 				return Mode.Batch;
-			} else if(modeType.compareTo(Mode.Live.name()) == 0) {
+			} else if (modeType.compareTo(Mode.Live.name()) == 0) {
 				return Mode.Live;
 			}
 		}
@@ -187,17 +187,17 @@ public class ValidationRuleImpl implements IValidationRule {
 
 	public boolean isEnabledByDefault() {
 		// TODO Auto-generated method stub
-		return constraint.getValue(stereotype, "isEnabledByDefault") == null ? true : ((Boolean)constraint.getValue(stereotype, "isEnabledByDefault")).booleanValue();
+		return constraint.getValue(stereotype, "isEnabledByDefault") == null ? true : ((Boolean) constraint.getValue(stereotype, "isEnabledByDefault")).booleanValue();
 	}
 
 	public String getMessage() {
 		// TODO Auto-generated method stub
-		return (String)constraint.getValue(stereotype, "message");
+		return (String) constraint.getValue(stereotype, "message");
 	}
 
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return (String)constraint.getValue(stereotype, "description");
+		return (String) constraint.getValue(stereotype, "description");
 	}
 
 	public List<String> getTargets() {

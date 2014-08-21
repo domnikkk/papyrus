@@ -12,7 +12,7 @@ import org.eclipse.papyrus.marte.vsl.ui.internal.VSLActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class VSLExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class VSLExecutableExtensionFactory extends AbstractGuiceAwareExecutableE
 	protected Bundle getBundle() {
 		return VSLActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return VSLActivator.getInstance().getInjector(VSLActivator.ORG_ECLIPSE_PAPYRUS_MARTE_VSL_VSL);
 	}
-	
+
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public TextEditorModelSharedResource() {
 
@@ -45,9 +45,9 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 
 	/**
 	 * Get the file extension used for this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -57,9 +57,9 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 
 	/**
 	 * Get the identifier used to register this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -70,9 +70,9 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 
 	/**
 	 * Add a new initialized {@link TextEditorModel} to the model.
-	 * 
+	 *
 	 * @param textInstance
-	 *        The textInstance to add.
+	 *            The textInstance to add.
 	 */
 	public void addTextEditorModel(TextEditorModel textInstance) {
 		getResource().getContents().add(textInstance);
@@ -80,18 +80,18 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 
 	/**
 	 * Add a new initialized {@link PapyrustextInstance} to the model.
-	 * 
+	 *
 	 * @param textInstance
-	 *        The textInstance to add.
+	 *            The textInstance to add.
 	 */
 	public void removeTextEditorModel(TextEditorModel textInstance) {
 		getResource().getContents().remove(textInstance);
 	}
 
 	/**
-	 * @param editedObject an edited element
+	 * @param editedObject
+	 *            an edited element
 	 * @return an editor reference for a given object if an editor exists, or null
-	
 	 */
 	public TextEditorModel getTextEditorModel(EObject editedObject) {
 		for (EObject textInstanceEO : getResource().getContents()) {
@@ -104,11 +104,11 @@ public class TextEditorModelSharedResource extends AbstractModelWithSharedResour
 		}
 		return null;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource#isModelRoot(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -109,15 +109,13 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	};
 
 	/**
-	 * This will contain one
-	 * {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to
+	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to
 	 * each descriptor generated for the current selection by the item provider.
 	 */
 	protected Collection<IAction> createChildActions;
 
 	/**
-	 * This will contain a map of
-	 * {@link org.eclipse.emf.edit.ui.action.CreateChildAction}s, keyed by
+	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateChildAction}s, keyed by
 	 * sub-menu text.
 	 */
 	protected Map<String, Collection<IAction>> createChildSubmenuActions;
@@ -129,16 +127,14 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	protected IMenuManager createChildMenuManager;
 
 	/**
-	 * This will contain one
-	 * {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding
+	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding
 	 * to each descriptor generated for the current selection by the item
 	 * provider.
 	 */
 	protected Collection<IAction> createSiblingActions;
 
 	/**
-	 * This will contain a map of
-	 * {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction}s, keyed by
+	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction}s, keyed by
 	 * submenu text.
 	 */
 	protected Map<String, Collection<IAction>> createSiblingSubmenuActions;
@@ -262,9 +258,7 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This implements
-	 * {@link org.eclipse.jface.viewers.ISelectionChangedListener}, handling
-	 * {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for
+	 * This implements {@link org.eclipse.jface.viewers.ISelectionChangedListener}, handling {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for
 	 * the children and siblings that can be added to the selected object and
 	 * updating the menus accordingly.
 	 */
@@ -322,8 +316,7 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction}
-	 * for each object in <code>descriptors</code>, and returns the collection
+	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>, and returns the collection
 	 * of these actions.
 	 */
 	protected Collection<IAction> generateCreateChildActions(
@@ -339,8 +332,7 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This generates a
-	 * {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each
+	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each
 	 * object in <code>descriptors</code>, and returns the collection of these
 	 * actions.
 	 */
@@ -357,12 +349,9 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This populates the specified <code>manager</code> with
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
-	 * {@link org.eclipse.jface.action.IAction}s contained in the
-	 * <code>actions</code> collection, by inserting them before the specified
-	 * contribution item <code>contributionID</code>. If
-	 * <code>contributionID</code> is <code>null</code>, they are simply added.
+	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection, by inserting them before the
+	 * specified
+	 * contribution item <code>contributionID</code>. If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 */
 	protected void populateManager(IContributionManager manager,
 			Collection<? extends IAction> actions, String contributionID) {
@@ -378,10 +367,7 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This removes from the specified <code>manager</code> all
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
-	 * {@link org.eclipse.jface.action.IAction}s contained in the
-	 * <code>actions</code> collection.
+	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
 	 */
 	protected void depopulateManager(IContributionManager manager,
 			Collection<? extends IAction> actions) {
@@ -438,13 +424,9 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This populates the specified <code>manager</code> with
-	 * {@link org.eclipse.jface.action.MenuManager}s containing
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
-	 * {@link org.eclipse.jface.action.IAction}s contained in the
+	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.MenuManager}s containing {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the
 	 * <code>submenuActions</code> collection, by inserting them before the
-	 * specified contribution item <code>contributionID</code>. If
-	 * <code>contributionID</code> is <code>null</code>, they are simply added.
+	 * specified contribution item <code>contributionID</code>. If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 */
 	protected void populateManager(IContributionManager manager,
 			Map<String, Collection<IAction>> submenuActions,
@@ -464,10 +446,7 @@ public class DGActionBarContributor extends EditingDomainActionBarContributor
 	}
 
 	/**
-	 * This removes from the specified <code>manager</code> all
-	 * {@link org.eclipse.jface.action.MenuManager}s and their
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
-	 * {@link org.eclipse.jface.action.IAction}s contained in the
+	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.MenuManager}s and their {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s contained in the
 	 * <code>submenuActions</code> map.
 	 */
 	protected void depopulateManager(IContributionManager manager,

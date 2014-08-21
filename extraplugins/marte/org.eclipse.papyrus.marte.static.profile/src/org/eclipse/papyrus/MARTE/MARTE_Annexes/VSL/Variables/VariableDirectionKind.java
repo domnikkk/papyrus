@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Variable Direction Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.VariablesPackage#getVariableDirectionKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #IN_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OUT_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>Inout</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INOUT_VALUE
 	 * @generated
 	 * @ordered
@@ -63,10 +67,10 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #IN
 	 * @model name="in"
 	 * @generated
@@ -78,10 +82,10 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>Out</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OUT
 	 * @model name="out"
 	 * @generated
@@ -93,10 +97,10 @@ public enum VariableDirectionKind implements Enumerator {
 	 * The '<em><b>Inout</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Inout</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Inout</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INOUT
 	 * @model name="inout"
 	 * @generated
@@ -108,19 +112,21 @@ public enum VariableDirectionKind implements Enumerator {
 	 * An array of all the '<em><b>Variable Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final VariableDirectionKind[] VALUES_ARRAY =
-		new VariableDirectionKind[] {
-			IN,
-			OUT,
-			INOUT,
-		};
+			new VariableDirectionKind[] {
+					IN,
+					OUT,
+					INOUT,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Variable Direction Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<VariableDirectionKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -129,6 +135,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Variable Direction Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static VariableDirectionKind get(String literal) {
@@ -145,6 +152,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Variable Direction Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static VariableDirectionKind getByName(String name) {
@@ -161,13 +169,17 @@ public enum VariableDirectionKind implements Enumerator {
 	 * Returns the '<em><b>Variable Direction Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static VariableDirectionKind get(int value) {
 		switch (value) {
-			case IN_VALUE: return IN;
-			case OUT_VALUE: return OUT;
-			case INOUT_VALUE: return INOUT;
+		case IN_VALUE:
+			return IN;
+		case OUT_VALUE:
+			return OUT;
+		case INOUT_VALUE:
+			return INOUT;
 		}
 		return null;
 	}
@@ -175,6 +187,7 @@ public enum VariableDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -182,6 +195,7 @@ public enum VariableDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -189,6 +203,7 @@ public enum VariableDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -197,6 +212,7 @@ public enum VariableDirectionKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private VariableDirectionKind(int value, String name, String literal) {
@@ -208,39 +224,46 @@ public enum VariableDirectionKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //VariableDirectionKind
+
+} // VariableDirectionKind

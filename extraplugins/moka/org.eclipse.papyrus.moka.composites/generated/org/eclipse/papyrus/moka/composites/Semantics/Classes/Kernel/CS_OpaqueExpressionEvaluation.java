@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,12 +24,13 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 
 public class CS_OpaqueExpressionEvaluation extends Evaluation {
 
+	@Override
 	public Value evaluate() {
 		// Execute the behavior associated with the context OpaqueExpression, if any.
 		// If multiple return values are computed, then return the first one.
 		// If no value are computed, return null
 		List<Value> evaluation = this.executeExpressionBehavior();
-		if(evaluation.size() > 0) {
+		if (evaluation.size() > 0) {
 			return evaluation.get(0);
 		} else {
 			return null;
@@ -41,15 +42,15 @@ public class CS_OpaqueExpressionEvaluation extends Evaluation {
 		// then execute this behavior, and return computed values.
 		// Otherwise, return an empty list of values.
 		List<Value> evaluation = new ArrayList<Value>();
-		OpaqueExpression expression = (OpaqueExpression)this.specification;
+		OpaqueExpression expression = (OpaqueExpression) this.specification;
 		Behavior behavior = expression.getBehavior();
-		if(behavior != null) {
+		if (behavior != null) {
 			List<ParameterValue> inputs = new ArrayList<ParameterValue>();
 			List<ParameterValue> results = this.locus.executor.execute(behavior, null, inputs);
-			for(int i = 0; i < results.size(); i++) { // results.size should be 1
+			for (int i = 0; i < results.size(); i++) { // results.size should be 1
 				ParameterValue parameterValue = results.get(i);
 				List<Value> values = parameterValue.values;
-				for(int j = 0; j < values.size(); j++) {
+				for (int j = 0; j < values.size(); j++) {
 					evaluation.add(values.get(j));
 				}
 			}

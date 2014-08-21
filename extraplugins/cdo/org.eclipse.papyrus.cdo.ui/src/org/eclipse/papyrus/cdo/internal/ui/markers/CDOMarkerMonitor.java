@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,33 +36,35 @@ public class CDOMarkerMonitor
 	@Override
 	public void initialize(ModelSet modelSet) {
 		super.initialize(modelSet);
-		
+
 		this.util = new ProblemEditUtil(
-			((AdapterFactoryEditingDomain) modelSet
-				.getTransactionalEditingDomain()).getAdapterFactory());
+				((AdapterFactoryEditingDomain) modelSet
+						.getTransactionalEditingDomain()).getAdapterFactory());
 		this.problemsListener = createProblemsListener();
 		ProblemsManager.getProblemsManager(modelSet).addProblemsListener(
-			problemsListener);
+				problemsListener);
 	}
 
 	@Override
 	public void dispose() {
 		if (problemsListener != null) {
 			ProblemsManager.getProblemsManager(getModelSet())
-				.removeProblemsListener(problemsListener);
+					.removeProblemsListener(problemsListener);
 			problemsListener = null;
 		}
-		
+
 		super.dispose();
 	}
 
 	protected ProblemsListener createProblemsListener() {
 		return new ProblemsListener() {
 
+			@Override
 			public void problemAdded(ProblemsEvent event) {
 				fireMarkerAdded(new CDOPapyrusMarker(event.getProblem(), util));
 			}
 
+			@Override
 			public void problemRemoved(ProblemsEvent event) {
 				fireMarkerRemoved(new CDOPapyrusMarker(event.getProblem(), util));
 			}

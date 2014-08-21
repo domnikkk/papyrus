@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.papyrus.FCM.AutoIndex;
@@ -45,30 +46,30 @@ public class DepCreation {
 	private static Map<Object, Integer> map;
 
 	public static final String valueFor = "value for "; //$NON-NLS-1$
-	
+
 	/**
 	 * Create a slot and add an instance value associated with a part instance
 	 * specification.
-	 * 
+	 *
 	 * @param is
-	 *        the instance specification for which a slot should be created
+	 *            the instance specification for which a slot should be created
 	 * @param partIS
-	 *        the instance specification associated with the slot (to be
-	 *        precise with slot's instance value)
+	 *            the instance specification associated with the slot (to be
+	 *            precise with slot's instance value)
 	 * @param part
-	 *        the part associated with the slot, i.e. its defining feature
+	 *            the part associated with the slot, i.e. its defining feature
 	 * @return The created slot
 	 */
 	public static Slot createSlot(InstanceSpecification is,
-		InstanceSpecification partIS, Property part) {
+			InstanceSpecification partIS, Property part) {
 		// the instance specification of the composite has a slot for each part
 		// and it points
 		// to the instance specification associated with the part.
 		Slot slot = is.createSlot();
 		slot.setDefiningFeature(part);
 
-		InstanceValue iv = (InstanceValue)slot.createValue(null, null,
-			UMLPackage.eINSTANCE.getInstanceValue());
+		InstanceValue iv = (InstanceValue) slot.createValue(null, null,
+				UMLPackage.eINSTANCE.getInstanceValue());
 		iv.setInstance(partIS);
 		return slot;
 
@@ -76,11 +77,11 @@ public class DepCreation {
 
 	/**
 	 * Create a Slot and a value for a configuration attribute
-	 * 
+	 *
 	 * @param attribute
 	 */
 	public static Slot createSlotForConfigProp(InstanceSpecification is,
-		Property attribute) {
+			Property attribute) {
 
 		Slot slot = is.createSlot();
 		slot.setDefiningFeature(attribute);
@@ -101,22 +102,22 @@ public class DepCreation {
 		// string value must be quoted
 		// by the user).
 		Type type = attribute.getType();
-		if(type != null) {
+		if (type != null) {
 			String name = type.getName();
 			String qname = type.getQualifiedName();
-			if(name.equals("Integer") || qname.equals(CORBAtypeNames.Octet) //$NON-NLS-1$
-				|| qname.equals(CORBAtypeNames.Long)
-				|| qname.equals(CORBAtypeNames.UnsignedLong)
-				|| qname.equals(CORBAtypeNames.Short)
-				|| qname.equals(CORBAtypeNames.UnsignedShort)) {
+			if (name.equals("Integer") || qname.equals(CORBAtypeNames.Octet) //$NON-NLS-1$
+					|| qname.equals(CORBAtypeNames.Long)
+					|| qname.equals(CORBAtypeNames.UnsignedLong)
+					|| qname.equals(CORBAtypeNames.Short)
+					|| qname.equals(CORBAtypeNames.UnsignedShort)) {
 				slot.createValue(valueFor + attribute.getName(), type,
-					UMLPackage.eINSTANCE.getLiteralInteger());
-			} else if(name.equals("Boolean")) { //$NON-NLS-1$
+						UMLPackage.eINSTANCE.getLiteralInteger());
+			} else if (name.equals("Boolean")) { //$NON-NLS-1$
 				slot.createValue(valueFor + attribute.getName(), type,
-					UMLPackage.eINSTANCE.getLiteralBoolean());
+						UMLPackage.eINSTANCE.getLiteralBoolean());
 			} else {
 				slot.createValue(valueFor + attribute.getName(), type,
-					UMLPackage.eINSTANCE.getLiteralString());
+						UMLPackage.eINSTANCE.getLiteralString());
 			}
 		}
 		return slot;
@@ -124,18 +125,18 @@ public class DepCreation {
 
 	/**
 	 * Create a string slot and a value for a configuration attribute
-	 * 
+	 *
 	 * @param attribute
 	 */
 	public static Slot createStringSlotForConfigProp(InstanceSpecification is,
-		Property attribute) {
+			Property attribute) {
 
 		Slot slot = is.createSlot();
 		slot.setDefiningFeature(attribute);
 		Type type = attribute.getType();
-		if(type != null) {
+		if (type != null) {
 			slot.createValue(valueFor + attribute.getName(), type,
-				UMLPackage.eINSTANCE.getLiteralString());
+					UMLPackage.eINSTANCE.getLiteralString());
 		}
 		return slot;
 	}
@@ -148,46 +149,46 @@ public class DepCreation {
 	 * type of parts (not the concrete implementation), this function also
 	 * supports that a type is passed. In this case, an implementation is
 	 * automatically assigned.
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan (package) in which to create instances
+	 *            the deployment plan (package) in which to create instances
 	 * @param typeOrImplem
-	 *        the type
+	 *            the type
 	 * @param nane
-	 *        the name of the instance
+	 *            the name of the instance
 	 * @param createSlotsForConfigValues
-	 *        if true, create slots for configuration values
+	 *            if true, create slots for configuration values
 	 */
 	public static InstanceSpecification createDepPlan(Package cdp,
-		Class typeOrImplem, String name, boolean createSlotsForConfigValues)
-		throws TransformationException
+			Class typeOrImplem, String name, boolean createSlotsForConfigValues)
+			throws TransformationException
 	{
 		return createDepPlan(cdp, typeOrImplem, name, createSlotsForConfigValues, new Stack<Classifier>());
 	}
 
 	public static InstanceSpecification createDepPlan(Package cdp,
-		Class typeOrImplem, String name, boolean createSlotsForConfigValues, Stack<Classifier> visitedClassifiers)
-		throws TransformationException
+			Class typeOrImplem, String name, boolean createSlotsForConfigValues, Stack<Classifier> visitedClassifiers)
+			throws TransformationException
 	{
 		// create an instance specification for the composite
-		if(visitedClassifiers.contains(typeOrImplem)) {
+		if (visitedClassifiers.contains(typeOrImplem)) {
 			String path = ""; //$NON-NLS-1$
-			for(Classifier cl : visitedClassifiers) {
-				if(path.length() > 0) {
+			for (Classifier cl : visitedClassifiers) {
+				if (path.length() > 0) {
 					path += ", "; //$NON-NLS-1$
 				}
 				path += cl.getName();
 			}
 			path += ", " + typeOrImplem.getName(); //$NON-NLS-1$
 			throw new TransformationException(String.format(
-				Messages.DepCreation_CircularReference,
-				typeOrImplem.getQualifiedName(), path));
+					Messages.DepCreation_CircularReference,
+					typeOrImplem.getQualifiedName(), path));
 		}
 		visitedClassifiers.push(typeOrImplem);
 
 		InstanceSpecification is;
 		// treat singleton
-		if(Utils.isSingleton((Class)typeOrImplem)) {
+		if (Utils.isSingleton(typeOrImplem)) {
 			// is a singleton - exactly one instance exists
 			InstanceSpecification mainInstance = DepUtils.getMainInstance(cdp);
 
@@ -196,16 +197,16 @@ public class DepCreation {
 			name = mainInstance.getName() + DeployConstants.SEP_CHAR + partName;
 			PackageableElement pe = cdp.getPackagedElement(name);
 
-			if(pe == null) {
+			if (pe == null) {
 				// instance specification for singleton does not exist yet => create
-								
+
 				Classifier system = DepUtils.getClassifier(mainInstance);
 				Property singletonAttr = system.getAttribute(partName, typeOrImplem);
-				if((singletonAttr == null) && system instanceof Class) {
+				if ((singletonAttr == null) && system instanceof Class) {
 					singletonAttr = ((Class) system).createOwnedAttribute(partName, typeOrImplem);
 					singletonAttr.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 				}
-				
+
 				is = (InstanceSpecification)
 						cdp.createPackagedElement(name, UMLPackage.eINSTANCE.getInstanceSpecification());
 				// create slot within main instance
@@ -219,26 +220,26 @@ public class DepCreation {
 				// unlikely case that a packaged element with the name
 				// <singletonISname> exists already, but is not an instance specification
 				throw new TransformationException(String.format(
-					Messages.DepCreation_SingletonExistsAlready, name));
+						Messages.DepCreation_SingletonExistsAlready, name));
 			}
 		}
 		else {
-			 is = (InstanceSpecification)
+			is = (InstanceSpecification)
 					cdp.createPackagedElement(name, UMLPackage.eINSTANCE.getInstanceSpecification());
 		}
 
-		if(name.equals(DeployConstants.MAIN_INSTANCE)) {
+		if (name.equals(DeployConstants.MAIN_INSTANCE)) {
 			DepUtils.setMainInstance(cdp, is);
 		}
 
 		Class implementation = null;
 
 		// treat HW architecture or nodes as implementations
-		if(Utils.isCompImpl(typeOrImplem)
-			|| typeOrImplem instanceof Node) {
+		if (Utils.isCompImpl(typeOrImplem)
+				|| typeOrImplem instanceof Node) {
 			// implementation is known => must be able to do this.
-			if(typeOrImplem instanceof Class) {
-				implementation = (Class)typeOrImplem;
+			if (typeOrImplem instanceof Class) {
+				implementation = typeOrImplem;
 			}
 		} else {
 			// problem? further tree expansion might depend on chosen
@@ -248,30 +249,30 @@ public class DepCreation {
 			implementation = DepUtils.chooseImplementation(typeOrImplem, null, null);
 		}
 
-		if(!(implementation instanceof Class)) {
+		if (!(implementation instanceof Class)) {
 			throw new TransformationException(String.format(
-				Messages.DepCreation_CannotFindImplementation,
-				name, typeOrImplem.getName()));
+					Messages.DepCreation_CannotFindImplementation,
+					name, typeOrImplem.getName()));
 		}
 		// else implementation is instance of Class (and not null)
 
 		is.getClassifiers().add(implementation);
 		// add connector and container implementations
 		RuleApplication ruleApplication = UMLUtil.getStereotypeApplication(implementation, RuleApplication.class);
-		if((ruleApplication != null) && (createSlotsForConfigValues)) {
-			for(ContainerRule rule : ruleApplication.getContainerRule()) {
+		if ((ruleApplication != null) && (createSlotsForConfigValues)) {
+			for (ContainerRule rule : ruleApplication.getContainerRule()) {
 				addConfigurationOfContainer(rule, is);
 			}
 		}
 
-		for(Connector connector : implementation.getOwnedConnectors()) {
+		for (Connector connector : implementation.getOwnedConnectors()) {
 			org.eclipse.papyrus.FCM.Connector fcmConn = UMLUtil.getStereotypeApplication(connector, org.eclipse.papyrus.FCM.Connector.class);
-			if(fcmConn != null) {
+			if (fcmConn != null) {
 				String partName = name + "." + connector.getName(); //$NON-NLS-1$
 				InteractionComponent connectorComp = fcmConn.getIc();
-				if(connectorComp != null) {
+				if (connectorComp != null) {
 					Class cl = fcmConn.getIc().getBase_Class();
-					if(cl == null) {
+					if (cl == null) {
 						throw new TransformationException(Messages.DepCreation_FCMconnectorWithoutBaseClass);
 					}
 					// create sub-instance for connector. It is not possible to
@@ -282,59 +283,59 @@ public class DepCreation {
 			}
 		}
 
-		for(Property attribute : implementation.getAllAttributes()) {
+		for (Property attribute : implementation.getAllAttributes()) {
 			// loop over all attributes (not only parts, since we need to
 			// capture singletons)
-			if(attribute instanceof Port) {
+			if (attribute instanceof Port) {
 				continue;
 			}
 			Type type = attribute.getType();
 
-			if(Utils.isComposition(attribute)) {
+			if (Utils.isComposition(attribute)) {
 				// composition, attribute is a part
-				if(((type instanceof Class) && Utils.isComponent((Class)type)) || type instanceof Node) {
-					Class cl = (Class)type;
+				if (((type instanceof Class) && Utils.isComponent((Class) type)) || type instanceof Node) {
+					Class cl = (Class) type;
 
 					// TODO: ad-hoc replication support. Better solution via design patterns
 					int upper = attribute.getUpper();
 					String infix = ""; //$NON-NLS-1$
 
 					// TODO: check validation constraints
-					for(int i = 0; i < upper; i++) {
+					for (int i = 0; i < upper; i++) {
 						String partName = name + "." + attribute.getName(); //$NON-NLS-1$
-						if(upper > 1) {
+						if (upper > 1) {
 							partName += "_" + infix + i; //$NON-NLS-1$
 						}
 						InstanceSpecification partIS = createDepPlan(cdp, cl,
-							partName, createSlotsForConfigValues, visitedClassifiers);
+								partName, createSlotsForConfigValues, visitedClassifiers);
 						// may not create slot for singleton, since automatically done
-						if(!Utils.isSingleton((Class)type)) {
+						if (!Utils.isSingleton((Class) type)) {
 							createSlot(is, partIS, attribute);
 						}
 					}
 				}
-				else if(StereotypeUtil.isApplied(attribute, ConfigurationProperty.class)
-					&& createSlotsForConfigValues) {
+				else if (StereotypeUtil.isApplied(attribute, ConfigurationProperty.class)
+						&& createSlotsForConfigValues) {
 					// is a configuration property, create slot
 					// TODO: implicit assumption that configuration attributes
 					// are not components
 					createSlotForConfigProp(is, attribute);
 				}
 			}
-			else if(type instanceof Class) {
+			else if (type instanceof Class) {
 				// no composition - only create slot, if a singleton
 				// (otherwise, it's not clear with which instance the slot
 				// should be associated)
-				Log.log(Status.INFO, Log.DEPLOYMENT, String.format(
-					Messages.DepCreation_InfoCreateDepPlan, type.getQualifiedName()));
-				if(Utils.isSingleton((Class)type)) {
+				Log.log(IStatus.INFO, Log.DEPLOYMENT, String.format(
+						Messages.DepCreation_InfoCreateDepPlan, type.getQualifiedName()));
+				if (Utils.isSingleton((Class) type)) {
 					// is a singleton - exactly one instance exists
 					// recursive call - pass empty name, since name for singletons is re-calculated.
 					InstanceSpecification singletonIS = createDepPlan(cdp,
-						(Class)type, "", createSlotsForConfigValues, visitedClassifiers); //$NON-NLS-1$
+							(Class) type, "", createSlotsForConfigValues, visitedClassifiers); //$NON-NLS-1$
 					createSlot(is, singletonIS, attribute);
 				}
-			} else if(type == null) {
+			} else if (type == null) {
 				throw new TransformationException(String.format(Messages.DepCreation_TypeInAttributeUndefined,
 						attribute.getName(), implementation.getName()));
 			}
@@ -345,23 +346,23 @@ public class DepCreation {
 
 	/**
 	 * Create slot for configuration properties that come from container rules
-	 * 
+	 *
 	 * @param aRule
 	 * @param is
 	 * @throws TransformationException
 	 */
 	private static void addConfigurationOfContainer(ContainerRule rule,
-		InstanceSpecification is) throws TransformationException {
+			InstanceSpecification is) throws TransformationException {
 		boolean first = true;
-		for(Property attribute : ConfigUtils.getConfigAttributes(rule)) {
+		for (Property attribute : ConfigUtils.getConfigAttributes(rule)) {
 			Type type = attribute.getType();
-			if((StereotypeUtil.isApplied(attribute, ConfigurationProperty.class))
-				&& (type instanceof Class)) {
+			if ((StereotypeUtil.isApplied(attribute, ConfigurationProperty.class))
+					&& (type instanceof Class)) {
 				Class aggregateOrInterceptor = DepUtils.chooseImplementation(
-					(Class)type, new BasicEList<InstanceSpecification>(),
-					null);
+						(Class) type, new BasicEList<InstanceSpecification>(),
+						null);
 				// is a configuration property, create slot
-				if(first) {
+				if (first) {
 					// add contExtImpl to list of classifiers that the instance
 					// specification describes
 					is.getClassifiers().add(aggregateOrInterceptor);
@@ -370,9 +371,9 @@ public class DepCreation {
 				// CAVEAT:
 				// - single value specification for all occurrences of an interceptor
 				// - Could be done, but: how to know whether user wants single
-				//   vs. interceptor specific configuration?
+				// vs. interceptor specific configuration?
 				// - two different interceptors may not share the same type with
-				//   a configuration attribute
+				// a configuration attribute
 				createSlotForConfigProp(is, attribute);
 			}
 		}
@@ -386,59 +387,59 @@ public class DepCreation {
 	 * type of parts (not the concrete implementation), this function also
 	 * supports that a type is passed. In this case, an implementation is
 	 * automatically assigned.
-	 * 
+	 *
 	 * @param cdp
-	 *        the deployment plan (package) in which to create instances
+	 *            the deployment plan (package) in which to create instances
 	 * @param typeOrImplem
-	 *        the type
+	 *            the type
 	 * @param nane
-	 *        the name of the instance
+	 *            the name of the instance
 	 * @param createSlotsForConfigValues
-	 *        if true, create slots for configuration values
+	 *            if true, create slots for configuration values
 	 */
 	public static InstanceSpecification createPlatformInstances(
-		Package platform, Class implementation, String name)
-		throws TransformationException {
+			Package platform, Class implementation, String name)
+			throws TransformationException {
 		// create an instance specification for the composite
 		InstanceSpecification is = null;
-		is = (InstanceSpecification)platform.createPackagedElement(name,
-			UMLPackage.eINSTANCE.getInstanceSpecification());
+		is = (InstanceSpecification) platform.createPackagedElement(name,
+				UMLPackage.eINSTANCE.getInstanceSpecification());
 		is.getClassifiers().add(implementation);
-		
+
 		// add connector and container implementations
 
-		for(Property attribute : implementation.getAllAttributes()) {
+		for (Property attribute : implementation.getAllAttributes()) {
 			// loop over all attributes (not only parts, since we need to
 			// capture singletons)
-			if(attribute instanceof Port) {
+			if (attribute instanceof Port) {
 				continue;
 			}
 			Type type = attribute.getType();
 
-			if(Utils.isComposition(attribute)) {
+			if (Utils.isComposition(attribute)) {
 				// composition, attribute is a part
-				if(type instanceof Class) { // should be a node, but do not require it
-					Class cl = (Class)type;
+				if (type instanceof Class) { // should be a node, but do not require it
+					Class cl = (Class) type;
 
 					int upper = attribute.getUpper();
 					String infix = ""; //$NON-NLS-1$
 					// TODO: check validation constraints
-					for(int i = 0; i < upper; i++) {
+					for (int i = 0; i < upper; i++) {
 						// prefix with name, unless null
 						String partName = (name != null) ? name + DeployConstants.SEP_CHAR : ""; //$NON-NLS-1$
 						partName += attribute.getName();
-						if(upper > 1) {
+						if (upper > 1) {
 							partName += "_" + infix + i; //$NON-NLS-1$
 						}
 						InstanceSpecification partIS = createPlatformInstances(
-							platform, cl, partName);
+								platform, cl, partName);
 
-						if(is != null) {
+						if (is != null) {
 							createSlot(is, partIS, attribute);
 						}
 					}
-				} else if(StereotypeUtil.isApplied(attribute,
-					ConfigurationProperty.class)) {
+				} else if (StereotypeUtil.isApplied(attribute,
+						ConfigurationProperty.class)) {
 					// is a configuration property, create slot
 					// TODO: implicit assumption that configuration attributes
 					// are not components
@@ -452,9 +453,9 @@ public class DepCreation {
 	/**
 	 * Initialize the automatic values within a deployment plan - and the update
 	 * eventual copies of these values.
-	 * 
+	 *
 	 * @param is
-	 *        the main instance of the deployment plan
+	 *            the main instance of the deployment plan
 	 */
 	public static void initAutoValues(InstanceSpecification is) {
 		map = new HashMap<Object, Integer>();
@@ -465,27 +466,27 @@ public class DepCreation {
 
 	/**
 	 * Initialize the automatic values within a deployment plan.
-	 * 
+	 *
 	 * @param is
-	 *        the main instance of the deployment plan
+	 *            the main instance of the deployment plan
 	 */
 	public static void initAutoValuesHelper(InstanceSpecification is) {
-		for(Slot slot : is.getSlots()) {
+		for (Slot slot : is.getSlots()) {
 			StructuralFeature sf = slot.getDefiningFeature();
 			if (sf == null) {
-				throw new RuntimeException (String.format(Messages.DepCreation_DefiningFeatureNull,
+				throw new RuntimeException(String.format(Messages.DepCreation_DefiningFeatureNull,
 						slot.getOwningInstance().getName()));
 			}
-			if(StereotypeUtil.isApplied(sf, AutoIndex.class)) {
+			if (StereotypeUtil.isApplied(sf, AutoIndex.class)) {
 				Integer value = null;
 				Object key;
-				if(StereotypeUtil.isApplied(sf, AutoIndexPerNode.class)) {
+				if (StereotypeUtil.isApplied(sf, AutoIndexPerNode.class)) {
 					InstanceSpecification nodeOrThread = AllocUtils.getNode(is);
 					key = sf.getName() + nodeOrThread.getName();
 				} else {
 					key = sf;
 				}
-				if(!map.containsKey(key)) {
+				if (!map.containsKey(key)) {
 					map.put(key, new Integer(0));
 				}
 				value = map.get(key);
@@ -494,16 +495,16 @@ public class DepCreation {
 
 				// create slot and value specification (literal-integer) for the
 				// auto index
-				LiteralInteger li = (LiteralInteger)slot.createValue(
-					sf.getName() + DeployConstants.AUTO_POSTFIX, sf.getType(),
-					UMLPackage.eINSTANCE.getLiteralInteger());
+				LiteralInteger li = (LiteralInteger) slot.createValue(
+						sf.getName() + DeployConstants.AUTO_POSTFIX, sf.getType(),
+						UMLPackage.eINSTANCE.getLiteralInteger());
 				li.setValue(value);
 
 				// recursion in case of values that are instance values
-				for(ValueSpecification vs : slot.getValues()) {
-					if(vs instanceof InstanceValue) {
-						InstanceSpecification subIS = ((InstanceValue)vs)
-							.getInstance();
+				for (ValueSpecification vs : slot.getValues()) {
+					if (vs instanceof InstanceValue) {
+						InstanceSpecification subIS = ((InstanceValue) vs)
+								.getInstance();
 						initAutoValues(subIS);
 					}
 				}
@@ -513,37 +514,37 @@ public class DepCreation {
 
 	/**
 	 * Initialize the automatic values within a deployment plan.
-	 * 
+	 *
 	 * @param is
-	 *        the main instance of the deployment plan
+	 *            the main instance of the deployment plan
 	 */
 	public static void copyAutoValues(Stack<InstanceSpecification> isStack,
-		InstanceSpecification is) {
+			InstanceSpecification is) {
 		isStack.push(is);
-		for(Slot slot : is.getSlots()) {
+		for (Slot slot : is.getSlots()) {
 			StructuralFeature sf = slot.getDefiningFeature();
-			if(sf == null) {
+			if (sf == null) {
 				throw new TransformationRTException(is.getName() + " has a slot without defining feature"); //$NON-NLS-1$
 			}
-			if(StereotypeUtil.isApplied(sf, CopyAttributeValue.class)) {
+			if (StereotypeUtil.isApplied(sf, CopyAttributeValue.class)) {
 				CopyAttributeValue cav = UMLUtil.getStereotypeApplication(sf,
-					CopyAttributeValue.class);
+						CopyAttributeValue.class);
 				Property source = cav.getSource();
 				ValueSpecification vs = getNearestValue(isStack, source);
-				if(vs instanceof LiteralInteger) {
-					LiteralInteger liCopy = (LiteralInteger)slot.createValue(
-						sf.getName() + "_copy", sf.getType(), //$NON-NLS-1$
-						UMLPackage.eINSTANCE.getLiteralInteger());
-					int value = ((LiteralInteger)vs).getValue();
+				if (vs instanceof LiteralInteger) {
+					LiteralInteger liCopy = (LiteralInteger) slot.createValue(
+							sf.getName() + "_copy", sf.getType(), //$NON-NLS-1$
+							UMLPackage.eINSTANCE.getLiteralInteger());
+					int value = ((LiteralInteger) vs).getValue();
 					liCopy.setValue(value);
 				}
 			}
 
 			// recursion in case of values that are instance values
-			for(ValueSpecification vs : slot.getValues()) {
-				if(vs instanceof InstanceValue) {
-					InstanceSpecification subIS = ((InstanceValue)vs).getInstance();
-					if(subIS != null) {
+			for (ValueSpecification vs : slot.getValues()) {
+				if (vs instanceof InstanceValue) {
+					InstanceSpecification subIS = ((InstanceValue) vs).getInstance();
+					if (subIS != null) {
 						copyAutoValues(isStack, subIS);
 					}
 				}
@@ -556,23 +557,23 @@ public class DepCreation {
 	 * try to find a value (ValueSpecification) for the passed source element,
 	 * beginning a the "deepest" instance specification of the passed stack. If
 	 * not found, continue at elements higher up in the hierarchy
-	 * 
+	 *
 	 * @param isStack
-	 *        a stack of instance specifications corresponding to a path
-	 *        within an instance tree
+	 *            a stack of instance specifications corresponding to a path
+	 *            within an instance tree
 	 * @param source
-	 *        a property (defining feature) for which we search an instance
-	 *        specification
+	 *            a property (defining feature) for which we search an instance
+	 *            specification
 	 * @return The value specifications for the passed source property or null
 	 */
 	public static ValueSpecification getNearestValue(
-		Stack<InstanceSpecification> isStack, Property source) {
+			Stack<InstanceSpecification> isStack, Property source) {
 		Stack<InstanceSpecification> copy = new Stack<InstanceSpecification>();
 		copy.addAll(isStack);
-		while(!copy.isEmpty()) {
+		while (!copy.isEmpty()) {
 			InstanceSpecification pop = copy.pop();
 			ValueSpecification vs = getNearestValueHelper(isStack, pop, source);
-			if(vs != null) {
+			if (vs != null) {
 				return vs;
 			}
 		}
@@ -583,36 +584,36 @@ public class DepCreation {
 	 * Helper for getNearestValue: search for an instance specification that has
 	 * source as defining feature. Start at the passed instance specification,
 	 * but do not recurse into elements that are contained in the stack.
-	 * 
+	 *
 	 * @param isStack
-	 *        A stack of instance specifications corresponding to a path
-	 *        within an instance tree
+	 *            A stack of instance specifications corresponding to a path
+	 *            within an instance tree
 	 * @param is
-	 *        the starting instance specification
+	 *            the starting instance specification
 	 * @param source
-	 *        source a property (defining feature) for which we search an
-	 *        instance specification
+	 *            source a property (defining feature) for which we search an
+	 *            instance specification
 	 * @return The value specifications for the passed source property or null
 	 */
 	public static ValueSpecification getNearestValueHelper(
-		Stack<InstanceSpecification> isStack, InstanceSpecification is,
-		Property source) {
-		for(Slot slot : is.getSlots()) {
+			Stack<InstanceSpecification> isStack, InstanceSpecification is,
+			Property source) {
+		for (Slot slot : is.getSlots()) {
 			StructuralFeature sf = slot.getDefiningFeature();
-			if(sf == source) {
+			if (sf == source) {
 				// found property, now return first value specification
-				for(ValueSpecification vs : slot.getValues()) {
+				for (ValueSpecification vs : slot.getValues()) {
 					return vs;
 				}
 				return null;
 			}
 
 			// recursion in case of values that are instance values
-			for(ValueSpecification vs : slot.getValues()) {
-				if(vs instanceof InstanceValue) {
-					InstanceSpecification subIS = ((InstanceValue)vs)
-						.getInstance();
-					if(!isStack.contains(subIS)) {
+			for (ValueSpecification vs : slot.getValues()) {
+				if (vs instanceof InstanceValue) {
+					InstanceSpecification subIS = ((InstanceValue) vs)
+							.getInstance();
+					if (!isStack.contains(subIS)) {
 						// only recurse, if not contained in stack of instance
 						// specifications (avoid traversing
 						// the same elements multiple times)

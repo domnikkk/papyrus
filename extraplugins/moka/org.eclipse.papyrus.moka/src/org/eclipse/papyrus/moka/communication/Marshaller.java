@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.moka.communication.request.ivariable.GetValue_Request
 
 /**
  * A default implementation for the IMarshaler interface.
- * 
+ *
  * This default implementation of IMarshaller simulates marshaling and
  * unmarshaling of messages.
  * When a marshal operation is called, the returned string is simply a
@@ -61,22 +61,23 @@ import org.eclipse.papyrus.moka.communication.request.ivariable.GetValue_Request
  * which determines the order in which request, reply and event messages may be exchanged,
  * and hiding to contributor (in the case where they extend AbstractExecutionEngine)
  * interactions with the marshaling / unmarshaling mechanism.
- * 
+ *
  * This class encapsulates a static instance of interface IMarshaller,
  * which can be accessed by calling stating method getInstance().
  * By default, an instance of Marshaler will be returned.
  * However, a particular execution engine has the possibility an alternative
  * implementation, by calling method setMarshalerInstance() at the beginning
  * of the execution.
- * 
+ *
  */
 public class Marshaller implements IMarshaler {
 
 	protected static IMarshaler eInstance = null;
 
 	public static synchronized IMarshaler getInstance() {
-		if(eInstance == null)
+		if (eInstance == null) {
 			eInstance = new Marshaller();
+		}
 		return eInstance;
 	}
 
@@ -99,7 +100,7 @@ public class Marshaller implements IMarshaler {
 	public Start_Event start_event_unmarshal(String request) {
 		Object evt = messages.get(request);
 		messages.remove(request);
-		return (Start_Event)evt;
+		return (Start_Event) evt;
 	}
 
 	public String addBreakpoint_request_marshal(AddBreakpoint_Request request) {
@@ -111,7 +112,7 @@ public class Marshaller implements IMarshaler {
 	public AddBreakpoint_Request addBreakpoint_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (AddBreakpoint_Request)req;
+		return (AddBreakpoint_Request) req;
 	}
 
 	public String removeBreakpoint_request_marshal(RemoveBreakpoint_Request request) {
@@ -123,7 +124,7 @@ public class Marshaller implements IMarshaler {
 	public RemoveBreakpoint_Request removeBreakpoint_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (RemoveBreakpoint_Request)req;
+		return (RemoveBreakpoint_Request) req;
 	}
 
 	public String disconnect_request_marshal(Disconnect_Request request) {
@@ -135,7 +136,7 @@ public class Marshaller implements IMarshaler {
 	public Disconnect_Request disconnect_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (Disconnect_Request)req;
+		return (Disconnect_Request) req;
 	}
 
 
@@ -148,7 +149,7 @@ public class Marshaller implements IMarshaler {
 	public Resume_Request resume_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (Resume_Request)req;
+		return (Resume_Request) req;
 	}
 
 	public String resume_event_marshal(Resume_Event event) {
@@ -160,7 +161,7 @@ public class Marshaller implements IMarshaler {
 	public Resume_Event resume_event_unmarshal(String event) {
 		Object evt = messages.get(event);
 		messages.remove(event);
-		return (Resume_Event)evt;
+		return (Resume_Event) evt;
 	}
 
 	public String suspend_request_marshal(Suspend_Request request) {
@@ -172,7 +173,7 @@ public class Marshaller implements IMarshaler {
 	public Suspend_Request suspend_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (Suspend_Request)req;
+		return (Suspend_Request) req;
 	}
 
 	public String suspend_event_marshal(Suspend_Event event) {
@@ -184,7 +185,7 @@ public class Marshaller implements IMarshaler {
 	public Suspend_Event suspend_event_unmarshal(String event) {
 		Object evt = messages.get(event);
 		messages.remove(event);
-		return (Suspend_Event)evt;
+		return (Suspend_Event) evt;
 	}
 
 	public String terminate_request_marshal(Terminate_Request request) {
@@ -196,7 +197,7 @@ public class Marshaller implements IMarshaler {
 	public Terminate_Request terminate_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (Terminate_Request)req;
+		return (Terminate_Request) req;
 	}
 
 	public String terminate_event_marshal(Terminate_Event event) {
@@ -208,7 +209,7 @@ public class Marshaller implements IMarshaler {
 	public Terminate_Event terminate_event_unmarshal(String event) {
 		Object evt = messages.get(event);
 		messages.remove(event);
-		return (Terminate_Event)evt;
+		return (Terminate_Event) evt;
 	}
 
 	public String getStackFrames_request_marshal(GetStackFrames_Request request) {
@@ -220,7 +221,7 @@ public class Marshaller implements IMarshaler {
 	public GetStackFrames_Request getStackFrames_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (GetStackFrames_Request)req;
+		return (GetStackFrames_Request) req;
 	}
 
 	public String getStackFrames_reply_marshal(GetStackFrames_Reply reply) {
@@ -232,7 +233,7 @@ public class Marshaller implements IMarshaler {
 	public GetStackFrames_Reply getStackFrames_reply_unmarshal(String reply) {
 		Object rep = messages.get(reply);
 		messages.remove(reply);
-		return (GetStackFrames_Reply)rep;
+		return (GetStackFrames_Reply) rep;
 	}
 
 	public String getVariables_request_marshal(GetVariables_Request request) {
@@ -244,7 +245,7 @@ public class Marshaller implements IMarshaler {
 	public GetVariables_Request getVariables_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (GetVariables_Request)req;
+		return (GetVariables_Request) req;
 	}
 
 	public String getVariables_reply_marshal(GetVariables_Reply reply) {
@@ -256,7 +257,7 @@ public class Marshaller implements IMarshaler {
 	public GetVariables_Reply getVariables_reply_unmarshal(String reply) {
 		Object rep = messages.get(reply);
 		messages.remove(reply);
-		return (GetVariables_Reply)rep;
+		return (GetVariables_Reply) rep;
 	}
 
 	public String getValue_request_marshal(GetValue_Request request) {
@@ -268,7 +269,7 @@ public class Marshaller implements IMarshaler {
 	public GetValue_Request getValue_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (GetValue_Request)req;
+		return (GetValue_Request) req;
 	}
 
 	public String getValue_reply_marshal(GetValue_Reply reply) {
@@ -280,7 +281,7 @@ public class Marshaller implements IMarshaler {
 	public GetValue_Reply getValue_reply_unmarshal(String reply) {
 		Object rep = messages.get(reply);
 		messages.remove(reply);
-		return (GetValue_Reply)rep;
+		return (GetValue_Reply) rep;
 	}
 
 	public String getReferenceTypeName_request_marshal(GetReferenceTypeName_Request request) {
@@ -292,7 +293,7 @@ public class Marshaller implements IMarshaler {
 	public GetReferenceTypeName_Request getReferenceTypeName_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (GetReferenceTypeName_Request)req;
+		return (GetReferenceTypeName_Request) req;
 	}
 
 	public String getReferenceTypeName_reply_marshal(GetReferenceTypeName_Reply reply) {
@@ -304,7 +305,7 @@ public class Marshaller implements IMarshaler {
 	public GetReferenceTypeName_Reply getReferenceTypeName_reply_unmarshal(String reply) {
 		Object rep = messages.get(reply);
 		messages.remove(reply);
-		return (GetReferenceTypeName_Reply)rep;
+		return (GetReferenceTypeName_Reply) rep;
 	}
 
 	public String getValueString_request_marshal(GetValueString_Request request) {
@@ -316,7 +317,7 @@ public class Marshaller implements IMarshaler {
 	public GetValueString_Request getValueString_request_unmarshal(String request) {
 		Object req = messages.get(request);
 		messages.remove(request);
-		return (GetValueString_Request)req;
+		return (GetValueString_Request) req;
 	}
 
 	public String getValueString_reply_marshal(GetValueString_Reply reply) {
@@ -328,7 +329,7 @@ public class Marshaller implements IMarshaler {
 	public GetValueString_Reply getValueString_reply_unmarshal(String reply) {
 		Object rep = messages.get(reply);
 		messages.remove(reply);
-		return (GetValueString_Reply)rep;
+		return (GetValueString_Reply) rep;
 	}
 
 

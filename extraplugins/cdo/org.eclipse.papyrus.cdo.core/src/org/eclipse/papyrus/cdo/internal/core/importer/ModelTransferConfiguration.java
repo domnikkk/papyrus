@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
 
@@ -81,12 +81,12 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 		this.direction = direction;
 		this.operationContext = new ReentrantOperationContext(operationContext);
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			this.resourceSet = resourceSet;
 			this.ownResourceSet = false;
 		} else {
 			this.resourceSet = new ResourceSetImpl();
-			((ResourceSetImpl)this.resourceSet).setURIResourceMap(resources);
+			((ResourceSetImpl) this.resourceSet).setURIResourceMap(resources);
 			this.ownResourceSet = true;
 		}
 	}
@@ -97,13 +97,13 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 
 	@Override
 	public void dispose() {
-		if(resourceSet != null) {
-			if(ownResourceSet) {
+		if (resourceSet != null) {
+			if (ownResourceSet) {
 				EMFHelper.unload(resourceSet);
 				resourceSet = null;
 			} else {
 				// even if not owned, we should remove DependencyAdapters
-				for(Resource next : resourceSet.getResources()) {
+				for (Resource next : resourceSet.getResources()) {
 					DependencyAdapter adapter = DependencyAdapter.getExistingInstance(next);
 					next.eAdapters().remove(adapter);
 				}
@@ -135,7 +135,7 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	public IModelTransferNode addModelToTransfer(URI resourceURI) {
 		IModelTransferNode result = getNode(resourceURI);
 
-		if(modelsToImport.add(result)) {
+		if (modelsToImport.add(result)) {
 			fireModelsToImportChanged();
 		}
 
@@ -146,9 +146,9 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 		IModelTransferNode result = null;
 
 		final Resource resource = resourceSet.getResource(resourceURI, true);
-		if(resource != null) {
+		if (resource != null) {
 			result = importNodes.get(resource);
-			if(result == null) {
+			if (result == null) {
 				final ModelTransferNode newNode = new ModelTransferNode(this, resource);
 				importNodes.put(resource, newNode);
 
@@ -160,29 +160,29 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 					public Diagnostic run(IProgressMonitor monitor) {
 						SubMonitor sub = SubMonitor.convert(monitor, Messages.ModelTransferConfiguration_0, dependentsProviders.size());
 
-						for(IModelDependentsProvider next : dependentsProviders) {
+						for (IModelDependentsProvider next : dependentsProviders) {
 							// first, if it's a DI resource, ensure that it gets its components
-							if(DependencyAdapter.isDIResource(resource)) {
+							if (DependencyAdapter.isDIResource(resource)) {
 								DependencyAdapter adapter = DependencyAdapter.getInstance(resource);
 								final int oldCount = adapter.getDependencies().size();
 
-								for(URI uri : next.getComponents(resource, monitor)) {
+								for (URI uri : next.getComponents(resource, monitor)) {
 									// this is an implicit dependency, even if there are no references
 									// to it (which occurs, e.g., in model sub-units that have no diagrams)
 									Resource implicitDependency = resource.getResourceSet().getResource(uri, true);
-									if(implicitDependency != null) {
+									if (implicitDependency != null) {
 										adapter.addDependency(implicitDependency);
 									}
 								}
 
-								if(adapter.getDependencies().size() > oldCount) {
+								if (adapter.getDependencies().size() > oldCount) {
 									// scan for components and dependencies again
 									newNode.scanForComponents();
 									newNode.scanForDependencies();
 								}
 							}
 
-							for(URI uri : next.getDependents(newNode.getPrimaryResource(), monitor)) {
+							for (URI uri : next.getDependents(newNode.getPrimaryResource(), monitor)) {
 								newNode.addDependent(getNode(uri));
 							}
 
@@ -206,14 +206,14 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 
 	@Override
 	public void removeModelToTransfer(IModelTransferNode node) {
-		if(modelsToImport.remove(node)) {
+		if (modelsToImport.remove(node)) {
 			fireModelsToImportChanged();
 		}
 	}
 
 	@Override
 	public void addModelDependentsProvider(IModelDependentsProvider provider) {
-		if(!dependentsProviders.contains(provider)) {
+		if (!dependentsProviders.contains(provider)) {
 			dependentsProviders.add(provider);
 		}
 	}
@@ -223,7 +223,7 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 		BasicDiagnostic result = new BasicDiagnostic();
 
 		Set<IModelTransferNode> toImport = ImmutableSet.copyOf(getModelsToTransfer());
-		for(IModelTransferNode node : toImport) {
+		for (IModelTransferNode node : toImport) {
 			checkDependents(node, toImport, result);
 			checkDependencies(node, toImport, result);
 		}
@@ -236,13 +236,13 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	protected void checkDependents(IModelTransferNode node, Set<IModelTransferNode> toImport, DiagnosticChain diagnostics) {
 		Set<IModelTransferNode> dependents = ImmutableSet.copyOf(node.getDependents());
 		Set<IModelTransferNode> leftOut = Sets.difference(dependents, toImport);
-		if(!leftOut.isEmpty()) {
+		if (!leftOut.isEmpty()) {
 			IModelTransferNode parentUnit = findParentUnit(node, leftOut);
-			if(parentUnit != null) {
-				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_3, new Object[]{ node.getName(), direction, parentUnit.getName() }), new Object[]{ node, parentUnit }));
+			if (parentUnit != null) {
+				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_3, new Object[] { node.getName(), direction, parentUnit.getName() }), new Object[] { node, parentUnit }));
 			} else {
 				int severity = direction.isImport() ? Diagnostic.WARNING : Diagnostic.INFO;
-				diagnostics.add(new BasicDiagnostic(severity, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_1, node.getName(), direction), new Object[]{ node, leftOut }));
+				diagnostics.add(new BasicDiagnostic(severity, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_1, node.getName(), direction), new Object[] { node, leftOut }));
 			}
 		}
 	}
@@ -250,13 +250,13 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	protected void checkDependencies(IModelTransferNode node, Set<IModelTransferNode> toImport, DiagnosticChain diagnostics) {
 		Set<IModelTransferNode> dependencies = ImmutableSet.copyOf(node.getDependencies());
 		Set<IModelTransferNode> leftOut = Sets.difference(dependencies, toImport);
-		if(!leftOut.isEmpty()) {
+		if (!leftOut.isEmpty()) {
 			Set<IModelTransferNode> subUnits = findSubUnits(node, leftOut);
-			if(!subUnits.isEmpty()) {
-				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_4, new Object[]{ node.getName(), direction }), new Object[]{ node, subUnits }));
+			if (!subUnits.isEmpty()) {
+				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_4, new Object[] { node.getName(), direction }), new Object[] { node, subUnits }));
 			} else {
 				int severity = direction.isImport() ? Diagnostic.INFO : Diagnostic.WARNING;
-				diagnostics.add(new BasicDiagnostic(severity, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_2, node.getName(), direction), new Object[]{ node, leftOut }));
+				diagnostics.add(new BasicDiagnostic(severity, Activator.PLUGIN_ID, 0, NLS.bind(Messages.ModelTransferConfiguration_2, node.getName(), direction), new Object[] { node, leftOut }));
 			}
 		}
 	}
@@ -264,8 +264,8 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	private IModelTransferNode findParentUnit(IModelTransferNode node, Collection<? extends IModelTransferNode> possibleParents) {
 		IModelTransferNode result = null;
 
-		for(IModelTransferNode next : possibleParents) {
-			if(node.isModelParentUnit(next)) {
+		for (IModelTransferNode next : possibleParents) {
+			if (node.isModelParentUnit(next)) {
 				result = next;
 				break;
 			}
@@ -277,8 +277,8 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	private Set<IModelTransferNode> findSubUnits(IModelTransferNode node, Collection<? extends IModelTransferNode> possibleChildren) {
 		ImmutableSet.Builder<IModelTransferNode> result = ImmutableSet.builder();
 
-		for(IModelTransferNode next : possibleChildren) {
-			if(node.isModelSubUnit(next)) {
+		for (IModelTransferNode next : possibleChildren) {
+			if (node.isModelSubUnit(next)) {
 				result.add(next);
 			}
 		}
@@ -297,8 +297,8 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	}
 
 	void fireProblemsEvent(Diagnostic problems) {
-		if(problems.getSeverity() > Diagnostic.OK) {
-			for(IModelTransferListener next : listeners) {
+		if (problems.getSeverity() > Diagnostic.OK) {
+			for (IModelTransferListener next : listeners) {
 				try {
 					next.modelTransferProblemsOccurred(problems);
 				} catch (Exception e) {
@@ -309,7 +309,7 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	}
 
 	void fireModelsToImportChanged() {
-		for(IModelTransferListener next : listeners) {
+		for (IModelTransferListener next : listeners) {
 			try {
 				next.modelsToTransferChanged(this);
 			} catch (Exception e) {
@@ -319,7 +319,7 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 	}
 
 	void fireModelDependentsChanged(IModelTransferNode node) {
-		for(IModelTransferListener next : listeners) {
+		for (IModelTransferListener next : listeners) {
 			try {
 				next.modelDependentsChanged(node);
 			} catch (Exception e) {
@@ -337,10 +337,10 @@ public class ModelTransferConfiguration implements IModelTransferConfiguration {
 		boolean result = false;
 
 		ResourceSet rset = getResourceSet();
-		if(rset != null) {
-			for(IModelTransferNode next : importNodes.values()) {
+		if (rset != null) {
+			for (IModelTransferNode next : importNodes.values()) {
 				Resource primary = rset.getResource(next.getPrimaryResourceURI(), false);
-				if((primary != null) && (DiUtils.lookupSashWindowsMngr(primary) != null)) {
+				if ((primary != null) && (DiUtils.lookupSashWindowsMngr(primary) != null)) {
 					result = true;
 					break;
 				}

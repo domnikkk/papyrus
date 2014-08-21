@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,10 +39,10 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getBase_Package <em>Base Package</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.impl.TimingImpl#getBase_Package <em>Base Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class TimingImpl extends ContextImpl implements Timing {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class TimingImpl extends ContextImpl implements Timing {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -72,6 +74,7 @@ public class TimingImpl extends ContextImpl implements Timing {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TimingImpl() {
@@ -80,63 +83,71 @@ public class TimingImpl extends ContextImpl implements Timing {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingPackage.TIMING__CONSTRAINT:
-				return getConstraint();
-			case TimingPackage.TIMING__DESCRIPTION:
-				return getDescription();
-			case TimingPackage.TIMING__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case TimingPackage.TIMING__BASE_PACKAGE:
-				if (resolve) return getBase_Package();
-				return basicGetBase_Package();
+		case TimingPackage.TIMING__CONSTRAINT:
+			return getConstraint();
+		case TimingPackage.TIMING__DESCRIPTION:
+			return getDescription();
+		case TimingPackage.TIMING__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case TimingPackage.TIMING__BASE_PACKAGE:
+			if (resolve) {
+				return getBase_Package();
+			}
+			return basicGetBase_Package();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingPackage.TIMING__CONSTRAINT:
-				return !getConstraint().isEmpty();
-			case TimingPackage.TIMING__DESCRIPTION:
-				return !getDescription().isEmpty();
-			case TimingPackage.TIMING__BASE_CLASS:
-				return base_Class != null;
-			case TimingPackage.TIMING__BASE_PACKAGE:
-				return base_Package != null;
+		case TimingPackage.TIMING__CONSTRAINT:
+			return !getConstraint().isEmpty();
+		case TimingPackage.TIMING__DESCRIPTION:
+			return !getDescription().isEmpty();
+		case TimingPackage.TIMING__BASE_CLASS:
+			return base_Class != null;
+		case TimingPackage.TIMING__BASE_PACKAGE:
+			return base_Package != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingPackage.TIMING__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case TimingPackage.TIMING__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
-				return;
+		case TimingPackage.TIMING__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case TimingPackage.TIMING__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,60 +158,67 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<TimingConstraint> getConstraint() {
 		EList<TimingConstraint> results = new BasicEList<TimingConstraint>();
 		TimingConstraint adlBehavior = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlBehavior = (TimingConstraint )UMLUtil.getStereotypeApplication(element, TimingConstraint.class);
-				if (adlBehavior != null)
+				adlBehavior = UMLUtil.getStereotypeApplication(element, TimingConstraint.class);
+				if (adlBehavior != null) {
 					results.add(adlBehavior);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<TimingConstraint>(TimingConstraint.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<TimingDescription> getDescription() {
 		EList<TimingDescription> results = new BasicEList<TimingDescription>();
 		TimingDescription adlBehavior = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlBehavior = (TimingDescription )UMLUtil.getStereotypeApplication(element, TimingDescription.class);
-				if (adlBehavior != null)
+				adlBehavior = UMLUtil.getStereotypeApplication(element, TimingDescription.class);
+				if (adlBehavior != null) {
 					results.add(adlBehavior);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<TimingDescription>(TimingDescription.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingPackage.TIMING__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case TimingPackage.TIMING__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)null);
-				return;
+		case TimingPackage.TIMING__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case TimingPackage.TIMING__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,15 +226,18 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.TIMING__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -225,6 +246,7 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -234,27 +256,33 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.TIMING__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Package getBase_Package() {
 		if (base_Package != null && base_Package.eIsProxy()) {
-			InternalEObject oldBase_Package = (InternalEObject)base_Package;
-			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
+			InternalEObject oldBase_Package = (InternalEObject) base_Package;
+			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingPackage.TIMING__BASE_PACKAGE, oldBase_Package, base_Package));
+				}
 			}
 		}
 		return base_Package;
@@ -263,6 +291,7 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -272,13 +301,16 @@ public class TimingImpl extends ContextImpl implements Timing {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingPackage.TIMING__BASE_PACKAGE, oldBase_Package, base_Package));
+		}
 	}
 
 } // TimingImpl

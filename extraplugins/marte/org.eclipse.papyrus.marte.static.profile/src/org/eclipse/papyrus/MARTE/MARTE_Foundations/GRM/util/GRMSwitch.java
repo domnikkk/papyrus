@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,13 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.util;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.*;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Acquire;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ClockResource;
 import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationEndPoint;
@@ -45,13 +41,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.TimingResource;
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage
  * @generated
  */
@@ -60,6 +56,7 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static GRMPackage modelPackage;
@@ -68,6 +65,7 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GRMSwitch() {
@@ -80,6 +78,7 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -93,156 +92,244 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case GRMPackage.RESOURCE: {
-				Resource resource = (Resource)theEObject;
-				T result = caseResource(resource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case GRMPackage.RESOURCE: {
+			Resource resource = (Resource) theEObject;
+			T result = caseResource(resource);
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.STORAGE_RESOURCE: {
-				StorageResource storageResource = (StorageResource)theEObject;
-				T result = caseStorageResource(storageResource);
-				if (result == null) result = caseResource(storageResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.STORAGE_RESOURCE: {
+			StorageResource storageResource = (StorageResource) theEObject;
+			T result = caseStorageResource(storageResource);
+			if (result == null) {
+				result = caseResource(storageResource);
 			}
-			case GRMPackage.COMMUNICATION_END_POINT: {
-				CommunicationEndPoint communicationEndPoint = (CommunicationEndPoint)theEObject;
-				T result = caseCommunicationEndPoint(communicationEndPoint);
-				if (result == null) result = caseResource(communicationEndPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.SYNCHRONIZATION_RESOURCE: {
-				SynchronizationResource synchronizationResource = (SynchronizationResource)theEObject;
-				T result = caseSynchronizationResource(synchronizationResource);
-				if (result == null) result = caseResource(synchronizationResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.COMMUNICATION_END_POINT: {
+			CommunicationEndPoint communicationEndPoint = (CommunicationEndPoint) theEObject;
+			T result = caseCommunicationEndPoint(communicationEndPoint);
+			if (result == null) {
+				result = caseResource(communicationEndPoint);
 			}
-			case GRMPackage.CONCURRENCY_RESOURCE: {
-				ConcurrencyResource concurrencyResource = (ConcurrencyResource)theEObject;
-				T result = caseConcurrencyResource(concurrencyResource);
-				if (result == null) result = caseResource(concurrencyResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.SCHEDULER: {
-				Scheduler scheduler = (Scheduler)theEObject;
-				T result = caseScheduler(scheduler);
-				if (result == null) result = caseResource(scheduler);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.SYNCHRONIZATION_RESOURCE: {
+			SynchronizationResource synchronizationResource = (SynchronizationResource) theEObject;
+			T result = caseSynchronizationResource(synchronizationResource);
+			if (result == null) {
+				result = caseResource(synchronizationResource);
 			}
-			case GRMPackage.PROCESSING_RESOURCE: {
-				ProcessingResource processingResource = (ProcessingResource)theEObject;
-				T result = caseProcessingResource(processingResource);
-				if (result == null) result = caseResource(processingResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.COMPUTING_RESOURCE: {
-				ComputingResource computingResource = (ComputingResource)theEObject;
-				T result = caseComputingResource(computingResource);
-				if (result == null) result = caseProcessingResource(computingResource);
-				if (result == null) result = caseResource(computingResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.CONCURRENCY_RESOURCE: {
+			ConcurrencyResource concurrencyResource = (ConcurrencyResource) theEObject;
+			T result = caseConcurrencyResource(concurrencyResource);
+			if (result == null) {
+				result = caseResource(concurrencyResource);
 			}
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE: {
-				MutualExclusionResource mutualExclusionResource = (MutualExclusionResource)theEObject;
-				T result = caseMutualExclusionResource(mutualExclusionResource);
-				if (result == null) result = caseResource(mutualExclusionResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.SCHEDULABLE_RESOURCE: {
-				SchedulableResource schedulableResource = (SchedulableResource)theEObject;
-				T result = caseSchedulableResource(schedulableResource);
-				if (result == null) result = caseResource(schedulableResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.SCHEDULER: {
+			Scheduler scheduler = (Scheduler) theEObject;
+			T result = caseScheduler(scheduler);
+			if (result == null) {
+				result = caseResource(scheduler);
 			}
-			case GRMPackage.SECONDARY_SCHEDULER: {
-				SecondaryScheduler secondaryScheduler = (SecondaryScheduler)theEObject;
-				T result = caseSecondaryScheduler(secondaryScheduler);
-				if (result == null) result = caseScheduler(secondaryScheduler);
-				if (result == null) result = caseResource(secondaryScheduler);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.COMMUNICATION_MEDIA: {
-				CommunicationMedia communicationMedia = (CommunicationMedia)theEObject;
-				T result = caseCommunicationMedia(communicationMedia);
-				if (result == null) result = caseProcessingResource(communicationMedia);
-				if (result == null) result = caseResource(communicationMedia);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.PROCESSING_RESOURCE: {
+			ProcessingResource processingResource = (ProcessingResource) theEObject;
+			T result = caseProcessingResource(processingResource);
+			if (result == null) {
+				result = caseResource(processingResource);
 			}
-			case GRMPackage.DEVICE_RESOURCE: {
-				DeviceResource deviceResource = (DeviceResource)theEObject;
-				T result = caseDeviceResource(deviceResource);
-				if (result == null) result = caseProcessingResource(deviceResource);
-				if (result == null) result = caseResource(deviceResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.TIMING_RESOURCE: {
-				TimingResource timingResource = (TimingResource)theEObject;
-				T result = caseTimingResource(timingResource);
-				if (result == null) result = caseResource(timingResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.COMPUTING_RESOURCE: {
+			ComputingResource computingResource = (ComputingResource) theEObject;
+			T result = caseComputingResource(computingResource);
+			if (result == null) {
+				result = caseProcessingResource(computingResource);
 			}
-			case GRMPackage.CLOCK_RESOURCE: {
-				ClockResource clockResource = (ClockResource)theEObject;
-				T result = caseClockResource(clockResource);
-				if (result == null) result = caseTimingResource(clockResource);
-				if (result == null) result = caseResource(clockResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = caseResource(computingResource);
 			}
-			case GRMPackage.TIMER_RESOURCE: {
-				TimerResource timerResource = (TimerResource)theEObject;
-				T result = caseTimerResource(timerResource);
-				if (result == null) result = caseTimingResource(timerResource);
-				if (result == null) result = caseResource(timerResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.GR_SERVICE: {
-				GrService grService = (GrService)theEObject;
-				T result = caseGrService(grService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE: {
+			MutualExclusionResource mutualExclusionResource = (MutualExclusionResource) theEObject;
+			T result = caseMutualExclusionResource(mutualExclusionResource);
+			if (result == null) {
+				result = caseResource(mutualExclusionResource);
 			}
-			case GRMPackage.RELEASE: {
-				Release release = (Release)theEObject;
-				T result = caseRelease(release);
-				if (result == null) result = caseGrService(release);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case GRMPackage.ACQUIRE: {
-				Acquire acquire = (Acquire)theEObject;
-				T result = caseAcquire(acquire);
-				if (result == null) result = caseGrService(acquire);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case GRMPackage.SCHEDULABLE_RESOURCE: {
+			SchedulableResource schedulableResource = (SchedulableResource) theEObject;
+			T result = caseSchedulableResource(schedulableResource);
+			if (result == null) {
+				result = caseResource(schedulableResource);
 			}
-			case GRMPackage.RESOURCE_USAGE: {
-				ResourceUsage resourceUsage = (ResourceUsage)theEObject;
-				T result = caseResourceUsage(resourceUsage);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			default: return defaultCase(theEObject);
+			return result;
+		}
+		case GRMPackage.SECONDARY_SCHEDULER: {
+			SecondaryScheduler secondaryScheduler = (SecondaryScheduler) theEObject;
+			T result = caseSecondaryScheduler(secondaryScheduler);
+			if (result == null) {
+				result = caseScheduler(secondaryScheduler);
+			}
+			if (result == null) {
+				result = caseResource(secondaryScheduler);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.COMMUNICATION_MEDIA: {
+			CommunicationMedia communicationMedia = (CommunicationMedia) theEObject;
+			T result = caseCommunicationMedia(communicationMedia);
+			if (result == null) {
+				result = caseProcessingResource(communicationMedia);
+			}
+			if (result == null) {
+				result = caseResource(communicationMedia);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.DEVICE_RESOURCE: {
+			DeviceResource deviceResource = (DeviceResource) theEObject;
+			T result = caseDeviceResource(deviceResource);
+			if (result == null) {
+				result = caseProcessingResource(deviceResource);
+			}
+			if (result == null) {
+				result = caseResource(deviceResource);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.TIMING_RESOURCE: {
+			TimingResource timingResource = (TimingResource) theEObject;
+			T result = caseTimingResource(timingResource);
+			if (result == null) {
+				result = caseResource(timingResource);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.CLOCK_RESOURCE: {
+			ClockResource clockResource = (ClockResource) theEObject;
+			T result = caseClockResource(clockResource);
+			if (result == null) {
+				result = caseTimingResource(clockResource);
+			}
+			if (result == null) {
+				result = caseResource(clockResource);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.TIMER_RESOURCE: {
+			TimerResource timerResource = (TimerResource) theEObject;
+			T result = caseTimerResource(timerResource);
+			if (result == null) {
+				result = caseTimingResource(timerResource);
+			}
+			if (result == null) {
+				result = caseResource(timerResource);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.GR_SERVICE: {
+			GrService grService = (GrService) theEObject;
+			T result = caseGrService(grService);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.RELEASE: {
+			Release release = (Release) theEObject;
+			T result = caseRelease(release);
+			if (result == null) {
+				result = caseGrService(release);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.ACQUIRE: {
+			Acquire acquire = (Acquire) theEObject;
+			T result = caseAcquire(acquire);
+			if (result == null) {
+				result = caseGrService(acquire);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case GRMPackage.RESOURCE_USAGE: {
+			ResourceUsage resourceUsage = (ResourceUsage) theEObject;
+			T result = caseResourceUsage(resourceUsage);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -252,7 +339,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -267,7 +356,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Storage Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -282,7 +373,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Communication End Point</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -297,7 +390,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Synchronization Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -312,7 +407,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Concurrency Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -327,7 +424,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Scheduler</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -342,7 +441,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Processing Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -357,7 +458,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Computing Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -372,7 +475,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Mutual Exclusion Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -387,7 +492,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Schedulable Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -402,7 +509,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Secondary Scheduler</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -417,7 +526,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Communication Media</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -432,7 +543,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Device Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -447,7 +560,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Timing Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -462,7 +577,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Clock Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -477,7 +594,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Timer Resource</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -492,7 +611,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Gr Service</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -507,7 +628,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Release</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -522,7 +645,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Acquire</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -537,7 +662,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Resource Usage</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -552,7 +679,9 @@ public class GRMSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -562,4 +691,4 @@ public class GRMSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //GRMSwitch
+} // GRMSwitch

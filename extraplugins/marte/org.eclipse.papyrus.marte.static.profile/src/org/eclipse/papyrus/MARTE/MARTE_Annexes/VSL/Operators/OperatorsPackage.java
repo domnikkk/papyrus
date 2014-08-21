@@ -16,12 +16,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.OperatorsFactory
  * @model kind="package"
  * @generated
@@ -31,6 +32,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "Operators";
@@ -39,6 +41,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/Operators/1";
@@ -47,6 +50,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "Operators";
@@ -55,6 +59,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	OperatorsPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorsPackageImpl.init();
@@ -63,6 +68,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorImpl <em>Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorsPackageImpl#getOperator()
 	 * @generated
@@ -73,6 +79,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -82,6 +89,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The feature id for the '<em><b>Arity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +99,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +109,7 @@ public interface OperatorsPackage extends EPackage {
 	 * The number of structural features of the '<em>Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -110,6 +120,7 @@ public interface OperatorsPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Operator</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator
 	 * @generated
@@ -120,6 +131,7 @@ public interface OperatorsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getSymbol <em>Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Symbol</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getSymbol()
 	 * @see #getOperator()
@@ -131,6 +143,7 @@ public interface OperatorsPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getArity <em>Arity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Arity</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getArity()
 	 * @see #getOperator()
@@ -142,6 +155,7 @@ public interface OperatorsPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getBase_Behavior <em>Base Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.Operator#getBase_Behavior()
 	 * @see #getOperator()
@@ -153,6 +167,7 @@ public interface OperatorsPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -162,12 +177,13 @@ public interface OperatorsPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -175,6 +191,7 @@ public interface OperatorsPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorImpl <em>Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Operators.impl.OperatorsPackageImpl#getOperator()
 		 * @generated
@@ -185,6 +202,7 @@ public interface OperatorsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute OPERATOR__SYMBOL = eINSTANCE.getOperator_Symbol();
@@ -193,6 +211,7 @@ public interface OperatorsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Arity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute OPERATOR__ARITY = eINSTANCE.getOperator_Arity();
@@ -201,10 +220,11 @@ public interface OperatorsPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference OPERATOR__BASE_BEHAVIOR = eINSTANCE.getOperator_Base_Behavior();
 
 	}
 
-} //OperatorsPackage
+} // OperatorsPackage

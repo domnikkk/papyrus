@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <!-- begin-model-doc -->
  * ConfigurationDecisionFolder represents a grouping for ConfigurationDecisions.
- * 
- * 
+ *
+ *
  * Semantics:
  * ConfigurationDecisionFolder is a grouping entity for ConfigurationDecisions.
- * 
+ *
  * Extension:
  * Class
  * <!-- end-model-doc -->
@@ -36,7 +36,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionFolder#getChildEntry <em>Child Entry</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionFolder#getChildEntry <em>Child Entry</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,10 +50,10 @@ public interface ConfigurationDecisionFolder extends ConfigurationDecisionModelE
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionModelEntry}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Child Entry</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Child Entry</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Child Entry</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getConfigurationDecisionFolder_ChildEntry()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"

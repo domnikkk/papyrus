@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.dd.di.DIPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.umldi.UMLDIFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
@@ -44,7 +44,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umldi";
@@ -53,7 +53,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.omg.org/spec/UML/20131001/UMLDI";
@@ -62,7 +62,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umldi";
@@ -71,7 +71,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UMLDIPackage eINSTANCE = org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl.init();
@@ -80,7 +80,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl <em>Uml Diagram Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagramElement()
 	 * @generated
@@ -91,7 +91,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -101,7 +101,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +111,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -121,7 +121,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -131,7 +131,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -141,7 +141,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +151,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +161,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +171,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +181,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +191,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -201,7 +201,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +211,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +231,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Diagram Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +241,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Diagram Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -251,7 +251,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl <em>Uml Diagram</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlDiagramImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagram()
 	 * @generated
@@ -262,7 +262,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlStyleImpl <em>Uml Style</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlStyleImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlStyle()
 	 * @generated
@@ -273,7 +273,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlEdgeImpl <em>Uml Edge</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlEdgeImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlEdge()
 	 * @generated
@@ -284,7 +284,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlShapeImpl <em>Uml Shape</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlShapeImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlShape()
 	 * @generated
@@ -295,7 +295,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -305,7 +305,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -315,7 +315,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -325,7 +325,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -335,7 +335,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -345,7 +345,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -355,7 +355,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -365,7 +365,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,7 +375,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -385,7 +385,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -395,7 +395,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -405,7 +405,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -415,7 +415,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -425,7 +425,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -435,7 +435,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Shape</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Shape</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -465,7 +465,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -475,7 +475,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -485,7 +485,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -495,7 +495,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -505,7 +505,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -515,7 +515,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -525,7 +525,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -535,7 +535,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -545,7 +545,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -555,7 +555,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -565,7 +565,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -575,7 +575,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -585,7 +585,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -595,7 +595,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -605,7 +605,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -615,7 +615,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -625,7 +625,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -635,7 +635,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Resolution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -645,7 +645,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -655,7 +655,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -665,7 +665,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Font Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -675,7 +675,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Font Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -685,7 +685,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -695,7 +695,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The operation id for the '<em>Fontsize Positive</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -705,7 +705,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -715,7 +715,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -725,7 +725,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -735,7 +735,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -745,7 +745,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -755,7 +755,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -765,7 +765,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -775,7 +775,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -785,7 +785,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -795,7 +795,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -805,7 +805,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -815,7 +815,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -825,7 +825,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -835,7 +835,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -845,7 +845,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -855,7 +855,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -865,7 +865,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Waypoint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -875,7 +875,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -885,7 +885,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -895,7 +895,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -905,7 +905,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -915,7 +915,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -925,7 +925,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl <em>Uml Compartment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlCompartment()
 	 * @generated
@@ -936,7 +936,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -946,7 +946,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -956,7 +956,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -966,7 +966,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,7 +976,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -986,7 +986,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -996,7 +996,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1006,7 +1006,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1016,7 +1016,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1026,7 +1026,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1036,7 +1036,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1046,7 +1046,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1056,7 +1056,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1066,7 +1066,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1076,7 +1076,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1086,7 +1086,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1096,7 +1096,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Compartment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1106,7 +1106,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Compartment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1116,7 +1116,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.impl.UmlLabelImpl <em>Uml Label</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.impl.UmlLabelImpl
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlLabel()
 	 * @generated
@@ -1127,7 +1127,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1137,7 +1137,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Diagram Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1147,7 +1147,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Diagram Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1157,7 +1157,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1167,7 +1167,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1177,7 +1177,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1187,7 +1187,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1197,7 +1197,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Uml Model Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1207,7 +1207,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Shared Uml Style</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1217,7 +1217,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Local Uml Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1227,7 +1227,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owning Uml Diagram Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1237,7 +1237,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1247,7 +1247,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Target Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1257,7 +1257,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Uml Edge</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1267,7 +1267,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1277,7 +1277,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1287,7 +1287,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of structural features of the '<em>Uml Label</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1297,7 +1297,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The number of operations of the '<em>Uml Label</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1307,7 +1307,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.UmlCompartmentKind
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlCompartmentKind()
 	 * @generated
@@ -1318,7 +1318,7 @@ public interface UMLDIPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.umldi.UmlLabelKind <em>Uml Label Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.umldi.UmlLabelKind
 	 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlLabelKind()
 	 * @generated
@@ -1329,7 +1329,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlDiagram <em>Uml Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Diagram</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagram
 	 * @generated
@@ -1340,7 +1340,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlDiagramElement <em>Uml Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement
 	 * @generated
@@ -1352,7 +1352,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Uml Model Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Uml Model Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getUmlModelElement()
 	 * @see #getUmlDiagramElement()
@@ -1364,7 +1364,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getSharedUmlStyle <em>Shared Uml Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Shared Uml Style</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getSharedUmlStyle()
 	 * @see #getUmlDiagramElement()
@@ -1377,7 +1377,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Local Uml Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Local Uml Style</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getLocalUmlStyle()
 	 * @see #getUmlDiagramElement()
@@ -1390,7 +1390,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Owning Uml Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Owning Uml Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getOwningUmlDiagramElement()
 	 * @see #getUmlDiagramElement()
@@ -1403,7 +1403,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Owned Uml Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Owned Uml Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getOwnedUmlDiagramElement()
 	 * @see #getUmlDiagramElement()
@@ -1415,7 +1415,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getTargetUmlEdge <em>Target Uml Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Target Uml Edge</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getTargetUmlEdge()
 	 * @see #getUmlDiagramElement()
@@ -1427,7 +1427,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getSourceUmlEdge <em>Source Uml Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Source Uml Edge</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getSourceUmlEdge()
 	 * @see #getUmlDiagramElement()
@@ -1439,7 +1439,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlStyle <em>Uml Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Style</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlStyle
 	 * @generated
@@ -1450,7 +1450,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umldi.UmlStyle#getFontName <em>Font Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Font Name</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlStyle#getFontName()
 	 * @see #getUmlStyle()
@@ -1462,7 +1462,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umldi.UmlStyle#getFontSize <em>Font Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Font Size</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlStyle#getFontSize()
 	 * @see #getUmlStyle()
@@ -1471,12 +1471,11 @@ public interface UMLDIPackage extends EPackage {
 	EAttribute getUmlStyle_FontSize();
 
 	/**
-	 * Returns the meta object for the '
-	 * {@link org.eclipse.papyrus.umldi.UmlStyle#fontsizePositive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * Returns the meta object for the ' {@link org.eclipse.papyrus.umldi.UmlStyle#fontsizePositive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * <em>Fontsize Positive</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the '<em>Fontsize Positive</em>' operation.
 	 * @see org.eclipse.papyrus.umldi.UmlStyle#fontsizePositive(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
@@ -1487,7 +1486,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlEdge <em>Uml Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Edge</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlEdge
 	 * @generated
@@ -1499,7 +1498,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Source Uml Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Source Uml Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlEdge#getSourceUmlDiagramElement()
 	 * @see #getUmlEdge()
@@ -1512,7 +1511,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <em>Target Uml Diagram Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Target Uml Diagram Element</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlEdge#getTargetUmlDiagramElement()
 	 * @see #getUmlEdge()
@@ -1524,7 +1523,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlCompartment <em>Uml Compartment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Compartment</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlCompartment
 	 * @generated
@@ -1535,7 +1534,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umldi.UmlCompartment#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlCompartment#getKind()
 	 * @see #getUmlCompartment()
@@ -1547,7 +1546,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlLabel <em>Uml Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Label</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlLabel
 	 * @generated
@@ -1558,7 +1557,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.umldi.UmlLabel#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlLabel#getKind()
 	 * @see #getUmlLabel()
@@ -1570,7 +1569,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Uml Compartment Kind</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlCompartmentKind
 	 * @generated
@@ -1581,7 +1580,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.umldi.UmlLabelKind <em>Uml Label Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Uml Label Kind</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlLabelKind
 	 * @generated
@@ -1592,7 +1591,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.umldi.UmlShape <em>Uml Shape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uml Shape</em>'.
 	 * @see org.eclipse.papyrus.umldi.UmlShape
 	 * @generated
@@ -1603,7 +1602,7 @@ public interface UMLDIPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1620,7 +1619,7 @@ public interface UMLDIPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1629,7 +1628,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlDiagramImpl <em>Uml Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlDiagramImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagram()
 		 * @generated
@@ -1640,7 +1639,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl <em>Uml Diagram Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlDiagramElementImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlDiagramElement()
 		 * @generated
@@ -1651,7 +1650,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Uml Model Element</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__UML_MODEL_ELEMENT = eINSTANCE.getUmlDiagramElement_UmlModelElement();
@@ -1660,7 +1659,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Shared Uml Style</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__SHARED_UML_STYLE = eINSTANCE.getUmlDiagramElement_SharedUmlStyle();
@@ -1669,7 +1668,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Local Uml Style</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__LOCAL_UML_STYLE = eINSTANCE.getUmlDiagramElement_LocalUmlStyle();
@@ -1678,7 +1677,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owning Uml Diagram Element</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__OWNING_UML_DIAGRAM_ELEMENT = eINSTANCE.getUmlDiagramElement_OwningUmlDiagramElement();
@@ -1687,7 +1686,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owned Uml Diagram Element</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__OWNED_UML_DIAGRAM_ELEMENT = eINSTANCE.getUmlDiagramElement_OwnedUmlDiagramElement();
@@ -1696,7 +1695,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Uml Edge</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__TARGET_UML_EDGE = eINSTANCE.getUmlDiagramElement_TargetUmlEdge();
@@ -1705,7 +1704,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Uml Edge</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_DIAGRAM_ELEMENT__SOURCE_UML_EDGE = eINSTANCE.getUmlDiagramElement_SourceUmlEdge();
@@ -1714,7 +1713,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlStyleImpl <em>Uml Style</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlStyleImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlStyle()
 		 * @generated
@@ -1725,7 +1724,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Font Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UML_STYLE__FONT_NAME = eINSTANCE.getUmlStyle_FontName();
@@ -1734,7 +1733,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Font Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UML_STYLE__FONT_SIZE = eINSTANCE.getUmlStyle_FontSize();
@@ -1743,7 +1742,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fontsize Positive</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EOperation UML_STYLE___FONTSIZE_POSITIVE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getUmlStyle__FontsizePositive__DiagnosticChain_Map();
@@ -1752,7 +1751,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlEdgeImpl <em>Uml Edge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlEdgeImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlEdge()
 		 * @generated
@@ -1763,7 +1762,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Uml Diagram Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_EDGE__SOURCE_UML_DIAGRAM_ELEMENT = eINSTANCE.getUmlEdge_SourceUmlDiagramElement();
@@ -1772,7 +1771,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target Uml Diagram Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference UML_EDGE__TARGET_UML_DIAGRAM_ELEMENT = eINSTANCE.getUmlEdge_TargetUmlDiagramElement();
@@ -1781,7 +1780,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl <em>Uml Compartment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlCompartmentImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlCompartment()
 		 * @generated
@@ -1792,7 +1791,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UML_COMPARTMENT__KIND = eINSTANCE.getUmlCompartment_Kind();
@@ -1801,7 +1800,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlLabelImpl <em>Uml Label</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlLabelImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlLabel()
 		 * @generated
@@ -1812,7 +1811,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UML_LABEL__KIND = eINSTANCE.getUmlLabel_Kind();
@@ -1821,7 +1820,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.UmlCompartmentKind <em>Uml Compartment Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.UmlCompartmentKind
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlCompartmentKind()
 		 * @generated
@@ -1832,7 +1831,7 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.UmlLabelKind <em>Uml Label Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.UmlLabelKind
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlLabelKind()
 		 * @generated
@@ -1843,11 +1842,11 @@ public interface UMLDIPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.umldi.impl.UmlShapeImpl <em>Uml Shape</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.umldi.impl.UmlShapeImpl
 		 * @see org.eclipse.papyrus.umldi.impl.UMLDIPackageImpl#getUmlShape()
 		 * @generated
 		 */
 		EClass UML_SHAPE = eINSTANCE.getUmlShape();
 	}
-} //UMLDIPackage
+} // UMLDIPackage

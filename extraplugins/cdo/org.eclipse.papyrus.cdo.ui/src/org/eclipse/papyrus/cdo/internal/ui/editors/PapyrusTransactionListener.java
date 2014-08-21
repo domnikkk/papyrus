@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,10 +72,11 @@ public class PapyrusTransactionListener implements IListener {
 
 	private final Predicate<Adapter> shouldPropagate = new Predicate<Adapter>() {
 
+		@Override
 		public boolean apply(Adapter input) {
 			return (input instanceof ECrossReferenceAdapter) //
-				|| (input instanceof EContentAdapter) //
-				|| (input instanceof ChangeRecorder);
+					|| (input instanceof EContentAdapter) //
+					|| (input instanceof ChangeRecorder);
 		}
 	};
 
@@ -87,14 +88,16 @@ public class PapyrusTransactionListener implements IListener {
 		this.services = services;
 
 		contentAdapters = Sets.newHashSet(Iterables.filter(resourceSet.eAdapters(), shouldPropagate));
-		((EObservableAdapterList)resourceSet.eAdapters()).addListener(new EObservableAdapterList.Listener() {
+		((EObservableAdapterList) resourceSet.eAdapters()).addListener(new EObservableAdapterList.Listener() {
 
+			@Override
 			public void added(Notifier notifier, Adapter adapter) {
-				if(adapter instanceof EContentAdapter) {
+				if (adapter instanceof EContentAdapter) {
 					contentAdapters.add(adapter);
 				}
 			}
 
+			@Override
 			public void removed(Notifier notifier, Adapter adapter) {
 				contentAdapters.remove(adapter);
 			}
@@ -102,30 +105,31 @@ public class PapyrusTransactionListener implements IListener {
 
 	}
 
+	@Override
 	public void notifyEvent(IEvent event) {
-		if(event instanceof CDOViewInvalidationEvent) {
-			handleViewInvalidationEvent((CDOViewInvalidationEvent)event);
-		} else if(event instanceof CDOTransactionConflictEvent) {
-			handleTransactionConflictEvent((CDOTransactionConflictEvent)event);
-		} else if(event instanceof CDOViewLocksChangedEvent) {
-			handleLocksChangedEvent((CDOViewLocksChangedEvent)event);
-		} else if(event instanceof CDOTransactionFinishedEvent) {
-			handleTransactionFinishedEvent((CDOTransactionFinishedEvent)event);
+		if (event instanceof CDOViewInvalidationEvent) {
+			handleViewInvalidationEvent((CDOViewInvalidationEvent) event);
+		} else if (event instanceof CDOTransactionConflictEvent) {
+			handleTransactionConflictEvent((CDOTransactionConflictEvent) event);
+		} else if (event instanceof CDOViewLocksChangedEvent) {
+			handleLocksChangedEvent((CDOViewLocksChangedEvent) event);
+		} else if (event instanceof CDOTransactionFinishedEvent) {
+			handleTransactionFinishedEvent((CDOTransactionFinishedEvent) event);
 		} else {
 			handleEvent(event);
 		}
 	}
 
 	protected void handleTransactionConflictEvent(CDOTransactionConflictEvent event) {
-		if(UIUtil.ensureUIThread(this, event)) {
+		if (UIUtil.ensureUIThread(this, event)) {
 			CDOObject cdoObject = event.getConflictingObject();
 			EObject element = CDOUtil.getEObject(cdoObject);
 			View view = DawnDiagramUpdater.findViewByContainer(element);
 
-			if(view == null) {
+			if (view == null) {
 				// it's not actually a view that is conflicted, but a model
 				// element
-				if(cdoObject.cdoConflict()) {
+				if (cdoObject.cdoConflict()) {
 					CDOStateAdapter.setState(element, DawnState.CONFLICT);
 
 					CDOStateLabelDecorator.fireLabelUpdates();
@@ -135,36 +139,36 @@ public class PapyrusTransactionListener implements IListener {
 	}
 
 	protected void handleLocksChangedEvent(CDOViewLocksChangedEvent event) {
-		if(UIUtil.ensureUIThread(this, event)) {
+		if (UIUtil.ensureUIThread(this, event)) {
 			Map<EObject, DawnState> changedObjects = new HashMap<EObject, DawnState>();
 			CDOView cdoView = event.getSource();
 
-			for(CDOLockState state : event.getLockStates()) {
+			for (CDOLockState state : event.getLockStates()) {
 				Object lockedObject = state.getLockedObject();
 
 				CDOID id;
-				if(lockedObject instanceof CDOID) {
-					id = (CDOID)lockedObject;
-				} else if(lockedObject instanceof CDOIDAndBranch) {
-					id = ((CDOIDAndBranch)lockedObject).getID();
+				if (lockedObject instanceof CDOID) {
+					id = (CDOID) lockedObject;
+				} else if (lockedObject instanceof CDOIDAndBranch) {
+					id = ((CDOIDAndBranch) lockedObject).getID();
 				} else {
 					throw new RuntimeException("Unexpected object type: " //$NON-NLS-1$
-						+ lockedObject);
+							+ lockedObject);
 				}
 
-				if(id != null) {
+				if (id != null) {
 					CDOObject object = cdoView.getObject(id);
 					EObject element = CDOUtil.getEObject(object);
 
 					View view = DawnDiagramUpdater.findViewByContainer(element);
 
-					if(view == null) {
+					if (view == null) {
 						// it's not actually a view that is locked, but a model
 						// element
 
-						if(CDOUtils.isLocked(object, false)) {
+						if (CDOUtils.isLocked(object, false)) {
 							throw new IllegalStateException("Locally locked objects should not occur."); //$NON-NLS-1$
-						} else if(CDOUtils.isLocked(object, true)) {
+						} else if (CDOUtils.isLocked(object, true)) {
 							changedObjects.put(element, DawnState.LOCKED_REMOTELY);
 						} else {
 							changedObjects.put(element, DawnState.CLEAN);
@@ -181,8 +185,8 @@ public class PapyrusTransactionListener implements IListener {
 	 * @precondition The current thread is the UI thread
 	 */
 	void handleLocks(Map<EObject, DawnState> changedObjects) {
-		if(!changedObjects.isEmpty()) {
-			for(Map.Entry<EObject, DawnState> next : changedObjects.entrySet()) {
+		if (!changedObjects.isEmpty()) {
+			for (Map.Entry<EObject, DawnState> next : changedObjects.entrySet()) {
 
 				EObject element = next.getKey();
 				DawnState state = next.getValue();
@@ -195,12 +199,12 @@ public class PapyrusTransactionListener implements IListener {
 	}
 
 	protected void handleViewInvalidationEvent(CDOViewInvalidationEvent event) {
-		if(UIUtil.ensureUIThread(this, event)) {
+		if (UIUtil.ensureUIThread(this, event)) {
 			// process changed objects to ensure propagation of adapters to new objects.
 			// CDO doesn't tell us about new objects, but it does tell us that their
 			// containers changed, so we have to go fishing
-			for(EObject next : CDOUtils.getEObjects(event.getDirtyObjects())) {
-				for(EObject possiblyNew : next.eContents()) {
+			for (EObject next : CDOUtils.getEObjects(event.getDirtyObjects())) {
+				for (EObject possiblyNew : next.eContents()) {
 					synchronizeAdapters(possiblyNew);
 				}
 			}
@@ -217,24 +221,24 @@ public class PapyrusTransactionListener implements IListener {
 
 	protected void handleOperationHistory(CDOViewInvalidationEvent event) {
 		IOperationHistory history = getOperationHistory();
-		if(history != null) {
+		if (history != null) {
 			Iterable<EObject> affectedObjects = CDOUtils.getEObjects(Iterables.concat(event.getDirtyObjects(), event.getDetachedObjects()));
-			if(!Iterables.isEmpty(affectedObjects)) {
+			if (!Iterables.isEmpty(affectedObjects)) {
 				IUndoContext context = new CDOUndoContext(affectedObjects);
-				if(context != null) {
+				if (context != null) {
 					IUndoableOperation undoOperation = history.getUndoOperation(context);
 					IUndoableOperation redoOperation = history.getRedoOperation(context);
 
-					if((undoOperation != null) || (redoOperation != null)) {
-						// notify listeners of the impending changes.  We do this before flushing
+					if ((undoOperation != null) || (redoOperation != null)) {
+						// notify listeners of the impending changes. We do this before flushing
 						// the undo context because we depend on the fact that the UndoActionHandler
 						// and RedoActionHandler only react when the operation is their current
 						// operation (which means it mustn't have the context removed yet) *and* the
 						// update is posted asynchronously
-						if(undoOperation != null) {
+						if (undoOperation != null) {
 							history.operationChanged(undoOperation);
 						}
-						if(redoOperation != null) {
+						if (redoOperation != null) {
 							history.operationChanged(redoOperation);
 						}
 
@@ -253,10 +257,10 @@ public class PapyrusTransactionListener implements IListener {
 
 		try {
 			EditingDomain domain = services.getService(TransactionalEditingDomain.class);
-			if(domain != null) {
+			if (domain != null) {
 				CommandStack stack = domain.getCommandStack();
-				if(stack instanceof IWorkspaceCommandStack) {
-					result = ((IWorkspaceCommandStack)stack).getOperationHistory();
+				if (stack instanceof IWorkspaceCommandStack) {
+					result = ((IWorkspaceCommandStack) stack).getOperationHistory();
 				}
 			}
 		} catch (ServiceException e) {
@@ -282,16 +286,16 @@ public class PapyrusTransactionListener implements IListener {
 		// review all conflicts and locks
 		Map<EObject, DawnState> stateUpdates = Maps.newHashMap();
 
-		for(CDOStateAdapter next : CDOStateAdapter.getAll(event.getSource().getResourceSet())) {
+		for (CDOStateAdapter next : CDOStateAdapter.getAll(event.getSource().getResourceSet())) {
 
 			Object target = next.getTarget();
-			if(target instanceof EObject) {
-				EObject object = (EObject)target;
+			if (target instanceof EObject) {
+				EObject object = (EObject) target;
 				stateUpdates.put(object, CDOUtils.computeState(object));
 			}
 		}
 
-		for(Map.Entry<EObject, DawnState> next : stateUpdates.entrySet()) {
+		for (Map.Entry<EObject, DawnState> next : stateUpdates.entrySet()) {
 			CDOStateAdapter.setState(next.getKey(), next.getValue());
 		}
 

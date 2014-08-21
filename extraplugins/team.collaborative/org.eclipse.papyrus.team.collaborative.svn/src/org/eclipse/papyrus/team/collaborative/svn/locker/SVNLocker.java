@@ -23,19 +23,13 @@ import org.eclipse.papyrus.team.collaborative.core.reports.CollabStatus;
 import org.eclipse.papyrus.team.collaborative.svn.tracing.ITracingConstant;
 import org.eclipse.papyrus.team.collaborative.svn.tracing.Tracer;
 import org.eclipse.papyrus.team.collaborative.svn.utils.SVNUtils;
-import org.eclipse.team.svn.core.operation.CompositeOperation;
-import org.eclipse.team.svn.core.operation.IActionOperation;
-import org.eclipse.team.svn.core.operation.local.LockOperation;
-import org.eclipse.team.svn.core.operation.local.RefreshResourcesOperation;
-import org.eclipse.team.svn.ui.utility.ICancellableOperationWrapper;
-import org.eclipse.team.svn.ui.utility.UIMonitorUtility;
 
 
 /**
  * SVN implementation of {@link ILocker}
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class SVNLocker extends AbstractSVNCollab implements ILocker {
 
@@ -49,30 +43,31 @@ public class SVNLocker extends AbstractSVNCollab implements ILocker {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.participants.locker.ILocker#lock()
 	 */
+	@Override
 	public IStatus lock() {
 		IResource[] resourcesToProcess = getTargetFiles(getTargetResources());
-		//Check that every file is on repository
+		// Check that every file is on repository
 		List<IResource> fileToAddToRepo = new ArrayList<IResource>();
-		for(int i = 0; i < resourcesToProcess.length; i++) {
+		for (int i = 0; i < resourcesToProcess.length; i++) {
 			IResource currentResource = resourcesToProcess[i];
-			if(!SVNUtils.isAddedToRepository(currentResource)) {
+			if (!SVNUtils.isAddedToRepository(currentResource)) {
 				return CollabStatus.createErrorStatus(currentResource.getFullPath() + "is not in the repository");
 			}
 		}
-		//Add resource to repository
+		// Add resource to repository
 		IStatus addStatus = SVNUtils.addToRepository("Adding new resource to repository", fileToAddToRepo);
-		if(!addStatus.isOK()) {
+		if (!addStatus.isOK()) {
 			return addStatus;
 		}
-		if(ITracingConstant.LOCK_TRACING) {
+		if (ITracingConstant.LOCK_TRACING) {
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.append("Locking: ").append("\n");
-			for(IResource r : resourcesToProcess) {
+			for (IResource r : resourcesToProcess) {
 				stringBuilder.append(r.getFullPath()).append("\n");
 			}
 			Tracer.logInfo(stringBuilder.toString());
 		}
-		//Lock operation
+		// Lock operation
 		LockOperation mainOp = new LockOperation(resourcesToProcess, "Lock taken", false);
 		CompositeOperation op = new CompositeOperation(mainOp.getId(), mainOp.getMessagesClass());
 		op.add(mainOp);
@@ -86,10 +81,10 @@ public class SVNLocker extends AbstractSVNCollab implements ILocker {
 
 	@Override
 	protected Set<IExtendedURI> doBuild() {
-		for(IExtendedURI extendedURI : getUris()) {
+		for (IExtendedURI extendedURI : getUris()) {
 			IExtendedURI resourceURI = getResourceURI(extendedURI);
-			if(resourceURI != null) {
-				if(!isLocked(resourceURI).isOK()) {
+			if (resourceURI != null) {
+				if (!isLocked(resourceURI).isOK()) {
 					getExtendedSet().add(resourceURI);
 				}
 			}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.DataTypesFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "DataTypes";
@@ -46,6 +48,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/DataTypes/1";
@@ -54,6 +57,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "DataTypes";
@@ -62,6 +66,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	DataTypesPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl.init();
@@ -70,6 +75,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.BoundedSubtypeImpl <em>Bounded Subtype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.BoundedSubtypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getBoundedSubtype()
 	 * @generated
@@ -80,6 +86,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Min Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +106,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Max Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +116,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Min Open</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -116,6 +126,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Max Open</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +136,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +146,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Bounded Subtype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -143,6 +156,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.IntervalTypeImpl <em>Interval Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.IntervalTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getIntervalType()
 	 * @generated
@@ -153,6 +167,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Interval Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -162,6 +177,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -171,6 +187,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Interval Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -180,6 +197,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.CollectionTypeImpl <em>Collection Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.CollectionTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getCollectionType()
 	 * @generated
@@ -190,6 +208,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Collection Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +218,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +228,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Collection Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +238,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.ChoiceTypeImpl <em>Choice Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.ChoiceTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getChoiceType()
 	 * @generated
@@ -227,6 +249,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Choice Attrib</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -236,6 +259,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Attrib</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -245,6 +269,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -254,6 +279,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Choice Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -263,6 +289,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.TupleTypeImpl <em>Tuple Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.TupleTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getTupleType()
 	 * @generated
@@ -273,6 +300,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Tuple Attrib</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -282,6 +310,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -291,6 +320,7 @@ public interface DataTypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Tuple Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -301,6 +331,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype <em>Bounded Subtype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Bounded Subtype</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype
 	 * @generated
@@ -311,6 +342,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBaseType <em>Base Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBaseType()
 	 * @see #getBoundedSubtype()
@@ -322,6 +354,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMinValue <em>Min Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min Value</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMinValue()
 	 * @see #getBoundedSubtype()
@@ -333,6 +366,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMaxValue <em>Max Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max Value</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getMaxValue()
 	 * @see #getBoundedSubtype()
@@ -344,6 +378,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMinOpen <em>Is Min Open</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Min Open</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMinOpen()
 	 * @see #getBoundedSubtype()
@@ -355,6 +390,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMaxOpen <em>Is Max Open</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Max Open</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#isIsMaxOpen()
 	 * @see #getBoundedSubtype()
@@ -366,6 +402,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.BoundedSubtype#getBase_DataType()
 	 * @see #getBoundedSubtype()
@@ -377,6 +414,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType <em>Interval Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Interval Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType
 	 * @generated
@@ -387,6 +425,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getIntervalAttrib <em>Interval Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Interval Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getIntervalAttrib()
 	 * @see #getIntervalType()
@@ -398,6 +437,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.IntervalType#getBase_DataType()
 	 * @see #getIntervalType()
@@ -409,6 +449,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType <em>Collection Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Collection Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType
 	 * @generated
@@ -419,6 +460,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType#getCollectionAttrib <em>Collection Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Collection Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType#getCollectionAttrib()
 	 * @see #getCollectionType()
@@ -430,6 +472,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.CollectionType#getBase_DataType()
 	 * @see #getCollectionType()
@@ -441,6 +484,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType <em>Choice Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Choice Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType
 	 * @generated
@@ -451,6 +495,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getChoiceAttrib <em>Choice Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Choice Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getChoiceAttrib()
 	 * @see #getChoiceType()
@@ -462,6 +507,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getDefaultAttrib <em>Default Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Default Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getDefaultAttrib()
 	 * @see #getChoiceType()
@@ -473,6 +519,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.ChoiceType#getBase_DataType()
 	 * @see #getChoiceType()
@@ -484,6 +531,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType <em>Tuple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Tuple Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType
 	 * @generated
@@ -494,6 +542,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType#getTupleAttrib <em>Tuple Attrib</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Tuple Attrib</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType#getTupleAttrib()
 	 * @see #getTupleType()
@@ -505,6 +554,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.TupleType#getBase_DataType()
 	 * @see #getTupleType()
@@ -516,6 +566,7 @@ public interface DataTypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -525,12 +576,13 @@ public interface DataTypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -538,6 +590,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.BoundedSubtypeImpl <em>Bounded Subtype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.BoundedSubtypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getBoundedSubtype()
 		 * @generated
@@ -548,6 +601,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BOUNDED_SUBTYPE__BASE_TYPE = eINSTANCE.getBoundedSubtype_BaseType();
@@ -556,6 +610,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDED_SUBTYPE__MIN_VALUE = eINSTANCE.getBoundedSubtype_MinValue();
@@ -564,6 +619,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDED_SUBTYPE__MAX_VALUE = eINSTANCE.getBoundedSubtype_MaxValue();
@@ -572,6 +628,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Min Open</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDED_SUBTYPE__IS_MIN_OPEN = eINSTANCE.getBoundedSubtype_IsMinOpen();
@@ -580,6 +637,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Max Open</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOUNDED_SUBTYPE__IS_MAX_OPEN = eINSTANCE.getBoundedSubtype_IsMaxOpen();
@@ -588,6 +646,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BOUNDED_SUBTYPE__BASE_DATA_TYPE = eINSTANCE.getBoundedSubtype_Base_DataType();
@@ -596,6 +655,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.IntervalTypeImpl <em>Interval Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.IntervalTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getIntervalType()
 		 * @generated
@@ -606,6 +666,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Interval Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INTERVAL_TYPE__INTERVAL_ATTRIB = eINSTANCE.getIntervalType_IntervalAttrib();
@@ -614,6 +675,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INTERVAL_TYPE__BASE_DATA_TYPE = eINSTANCE.getIntervalType_Base_DataType();
@@ -622,6 +684,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.CollectionTypeImpl <em>Collection Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.CollectionTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getCollectionType()
 		 * @generated
@@ -632,6 +695,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Collection Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference COLLECTION_TYPE__COLLECTION_ATTRIB = eINSTANCE.getCollectionType_CollectionAttrib();
@@ -640,6 +704,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference COLLECTION_TYPE__BASE_DATA_TYPE = eINSTANCE.getCollectionType_Base_DataType();
@@ -648,6 +713,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.ChoiceTypeImpl <em>Choice Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.ChoiceTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getChoiceType()
 		 * @generated
@@ -658,6 +724,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Choice Attrib</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CHOICE_TYPE__CHOICE_ATTRIB = eINSTANCE.getChoiceType_ChoiceAttrib();
@@ -666,6 +733,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Attrib</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CHOICE_TYPE__DEFAULT_ATTRIB = eINSTANCE.getChoiceType_DefaultAttrib();
@@ -674,6 +742,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CHOICE_TYPE__BASE_DATA_TYPE = eINSTANCE.getChoiceType_Base_DataType();
@@ -682,6 +751,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.TupleTypeImpl <em>Tuple Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.TupleTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.DataTypes.impl.DataTypesPackageImpl#getTupleType()
 		 * @generated
@@ -692,6 +762,7 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Tuple Attrib</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TUPLE_TYPE__TUPLE_ATTRIB = eINSTANCE.getTupleType_TupleAttrib();
@@ -700,10 +771,11 @@ public interface DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TUPLE_TYPE__BASE_DATA_TYPE = eINSTANCE.getTupleType_Base_DataType();
 
 	}
 
-} //DataTypesPackage
+} // DataTypesPackage

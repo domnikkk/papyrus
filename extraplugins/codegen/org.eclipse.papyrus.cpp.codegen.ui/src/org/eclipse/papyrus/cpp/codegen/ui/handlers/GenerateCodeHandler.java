@@ -49,13 +49,13 @@ public class GenerateCodeHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		
+
 		if (selectedEObject instanceof Package || selectedEObject instanceof Classifier) {
 			URI uri = selectedEObject.eResource().getURI();
 
 			// URIConverter uriConverter = resource.getResourceSet().getURIConverter();
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			if(uri.segmentCount() < 2) {
+			if (uri.segmentCount() < 2) {
 				return false;
 			}
 			IProject modelProject = root.getProject(uri.segment(1));
@@ -67,31 +67,33 @@ public class GenerateCodeHandler extends CmdHandler {
 
 	/**
 	 * Generate code for a passed packageable element and the elements required by it (in the sense of #included statements)
-	 * 
-	 * @param mec model elements creator 
-	 * @param pe the element that should be generated
-	 * @param alreadyHandled list of packageable elements for which code has already been generated. 
-	 * @param recurse if the passed packageableElement is a package, generate code for its contents (recursively).
+	 *
+	 * @param mec
+	 *            model elements creator
+	 * @param pe
+	 *            the element that should be generated
+	 * @param alreadyHandled
+	 *            list of packageable elements for which code has already been generated.
+	 * @param recurse
+	 *            if the passed packageableElement is a package, generate code for its contents (recursively).
 	 */
 	public void generate(CppModelElementsCreator mec, PackageableElement pe, EList<PackageableElement> alreadyHandled, boolean recurse) {
 		IContainer srcPkg = mec.getContainer(pe);
 		try {
 			alreadyHandled.add(pe);
 			mec.createPackageableElement(srcPkg, null, pe, false);
-		}
-		catch (CoreException coreException) {
+		} catch (CoreException coreException) {
 			Activator.log.error(coreException);
-		}
-		finally {
-			// Refresh the container for the newly created files.  This needs to be done even
-				// during error because of the possibility for partial results.
+		} finally {
+			// Refresh the container for the newly created files. This needs to be done even
+			// during error because of the possibility for partial results.
 			try {
 				srcPkg.refreshLocal(IResource.DEPTH_INFINITE, null);
-			} catch(CoreException e) {
+			} catch (CoreException e) {
 				Activator.log.error(e);
- 			}
+			}
 		}
-		
+
 		if (pe instanceof Classifier) {
 			EList<Classifier> requiredClassifiers = ClassUtils.includedClassifiers((Classifier) pe);
 			for (Classifier requiredClassifier : requiredClassifiers) {
@@ -109,37 +111,37 @@ public class GenerateCodeHandler extends CmdHandler {
 		}
 		if ((pe instanceof Package) && recurse) {
 			// Continue generation parsing package contents
-			for(PackageableElement currentElement : ((Package) pe).getPackagedElements()) {
+			for (PackageableElement currentElement : ((Package) pe).getPackagedElements()) {
 				generate(mec, currentElement, alreadyHandled, recurse);
 			}
 		}
 	}
-	
+
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		if(selectedEObject instanceof PackageableElement) {
-			PackageableElement pe = (PackageableElement)selectedEObject;
+		if (selectedEObject instanceof PackageableElement) {
+			PackageableElement pe = (PackageableElement) selectedEObject;
 
 			IProject modelProject = LocateCppProject.getTargetProject(pe, true);
-			if(modelProject == null) {
+			if (modelProject == null) {
 				return null;
 			}
-			
+
 			// get the container for the current element
 			AcceleoDriver.clearErrors();
 			CppModelElementsCreator mec = new CppModelElementsCreator(modelProject);
 			generate(mec, pe, new BasicEList<PackageableElement>(), true);
-			
+
 			if (AcceleoDriver.hasErrors() && !Headless) {
 				Display.getDefault().syncExec(new Runnable() {
 					@Override
 					public void run() {
-						MessageDialog.openInformation(Display.getCurrent().getActiveShell(),
-								"Errors during code generation", //$NON-NLS-1$
+						MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Errors during code generation", //$NON-NLS-1$
 								"Errors occured during code generation. Please check the error log"); //$NON-NLS-1$
 					}
 				});
-			}	
+			}
 		}
 		return null;
 	}

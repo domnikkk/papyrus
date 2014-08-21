@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,14 +44,14 @@ public class FeatureValue {
 		// If the feature is ordered, then the values also have to be in the
 		// same order.
 		boolean equal = true;
-		if(this.values.size() != other.values.size()) {
+		if (this.values.size() != other.values.size()) {
 			equal = false;
 		} else {
 			// Debug.println("[hasEqualValues] feature = " + this.feature.name +
 			// ", " + this.values.size() + " value(s).");
-			if(this.feature.isOrdered()) {
+			if (this.feature.isOrdered()) {
 				int i = 1;
-				while(equal & i <= this.values.size()) {
+				while (equal & i <= this.values.size()) {
 					equal = this.values.get(i - 1).equals(other.values.get(i - 1));
 					i = i + 1;
 				}
@@ -62,18 +62,18 @@ public class FeatureValue {
 				// "remove" on a local list variable.
 				FeatureValue otherFeatureValues = new FeatureValue();
 				List<Value> values = other.values;
-				for(int i = 0; i < values.size(); i++) {
+				for (int i = 0; i < values.size(); i++) {
 					Value value = values.get(i);
 					otherFeatureValues.values.add(value);
 				}
 				int i = 1;
-				while(equal & i <= this.values.size()) {
+				while (equal & i <= this.values.size()) {
 					// Debug.println("[hasEqualValues] This value [" + (i-1) +
 					// "] = " + this.values.get(i-1));
 					boolean matched = false;
 					int j = 1;
-					while(!matched & j <= otherFeatureValues.values.size()) {
-						if(this.values.get(i - 1).equals(otherFeatureValues.values.get(j - 1))) {
+					while (!matched & j <= otherFeatureValues.values.size()) {
+						if (this.values.get(i - 1).equals(otherFeatureValues.values.get(j - 1))) {
 							// Debug.println("[hasEqualValues] Other value [" +
 							// (j-1) + "] = " +
 							// otherFeatureValues.values.get(j-1));
@@ -96,7 +96,7 @@ public class FeatureValue {
 		newValue.feature = this.feature;
 		newValue.position = this.position;
 		List<Value> values = this.values;
-		for(int i = 0; i < values.size(); i++) {
+		for (int i = 0; i < values.size(); i++) {
 			Value value = values.get(i);
 			newValue.values.add(value.copy());
 		}
@@ -108,7 +108,7 @@ public class FeatureValue {
 	}
 
 	public void setValues(List<Value> values) {
-		if(values != null) {
+		if (values != null) {
 			this.values = values;
 		}
 	}

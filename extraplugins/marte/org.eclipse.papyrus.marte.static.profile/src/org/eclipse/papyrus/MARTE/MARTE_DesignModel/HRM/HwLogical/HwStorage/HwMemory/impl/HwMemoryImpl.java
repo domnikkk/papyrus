@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,11 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.StorageResource;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getElementSize <em>Element Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getMemorySize <em>Memory Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getAdressSize <em>Adress Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getTimings <em>Timings</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getThroughput <em>Throughput</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getElementSize <em>Element Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getMemorySize <em>Memory Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getAdressSize <em>Adress Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getTimings <em>Timings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwMemoryImpl#getThroughput <em>Throughput</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElementSize()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getAdressSize() <em>Adress Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAdressSize()
 	 * @generated
 	 * @ordered
@@ -98,6 +103,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getAdressSize() <em>Adress Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAdressSize()
 	 * @generated
 	 * @ordered
@@ -108,6 +114,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getTimings() <em>Timings</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTimings()
 	 * @generated
 	 * @ordered
@@ -118,6 +125,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The default value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -128,6 +136,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	 * The cached value of the '{@link #getThroughput() <em>Throughput</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getThroughput()
 	 * @generated
 	 * @ordered
@@ -137,6 +146,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwMemoryImpl() {
@@ -146,6 +156,7 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,8 +167,10 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getElementSize() {
 		return elementSize;
 	}
@@ -165,20 +178,25 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setElementSize(String newElementSize) {
 		String oldElementSize = elementSize;
 		elementSize = newElementSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE, oldElementSize, elementSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getMemorySize() {
 		return memorySize;
 	}
@@ -186,20 +204,25 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMemorySize(String newMemorySize) {
 		String oldMemorySize = memorySize;
 		memorySize = newMemorySize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_MEMORY__MEMORY_SIZE, oldMemorySize, memorySize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getAdressSize() {
 		return adressSize;
 	}
@@ -207,20 +230,25 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAdressSize(String newAdressSize) {
 		String oldAdressSize = adressSize;
 		adressSize = newAdressSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_MEMORY__ADRESS_SIZE, oldAdressSize, adressSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getTimings() {
 		if (timings == null) {
 			timings = new EDataTypeUniqueEList<String>(String.class, this, HwMemoryPackage.HW_MEMORY__TIMINGS);
@@ -231,8 +259,10 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getThroughput() {
 		return throughput;
 	}
@@ -240,33 +270,37 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setThroughput(String newThroughput) {
 		String oldThroughput = throughput;
 		throughput = newThroughput;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_MEMORY__THROUGHPUT, oldThroughput, throughput));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
-				return getElementSize();
-			case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
-				return getMemorySize();
-			case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
-				return getAdressSize();
-			case HwMemoryPackage.HW_MEMORY__TIMINGS:
-				return getTimings();
-			case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
-				return getThroughput();
+		case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
+			return getElementSize();
+		case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
+			return getMemorySize();
+		case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
+			return getAdressSize();
+		case HwMemoryPackage.HW_MEMORY__TIMINGS:
+			return getTimings();
+		case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
+			return getThroughput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,28 +308,29 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
-				setElementSize((String)newValue);
-				return;
-			case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
-				setMemorySize((String)newValue);
-				return;
-			case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
-				setAdressSize((String)newValue);
-				return;
-			case HwMemoryPackage.HW_MEMORY__TIMINGS:
-				getTimings().clear();
-				getTimings().addAll((Collection<? extends String>)newValue);
-				return;
-			case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
-				setThroughput((String)newValue);
-				return;
+		case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
+			setElementSize((String) newValue);
+			return;
+		case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
+			setMemorySize((String) newValue);
+			return;
+		case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
+			setAdressSize((String) newValue);
+			return;
+		case HwMemoryPackage.HW_MEMORY__TIMINGS:
+			getTimings().clear();
+			getTimings().addAll((Collection<? extends String>) newValue);
+			return;
+		case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
+			setThroughput((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,26 +338,27 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
-				setElementSize(ELEMENT_SIZE_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
-				setMemorySize(MEMORY_SIZE_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
-				setAdressSize(ADRESS_SIZE_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_MEMORY__TIMINGS:
-				getTimings().clear();
-				return;
-			case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
-				setThroughput(THROUGHPUT_EDEFAULT);
-				return;
+		case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
+			setElementSize(ELEMENT_SIZE_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
+			setMemorySize(MEMORY_SIZE_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
+			setAdressSize(ADRESS_SIZE_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_MEMORY__TIMINGS:
+			getTimings().clear();
+			return;
+		case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
+			setThroughput(THROUGHPUT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -330,21 +366,22 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
-				return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
-			case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
-				return MEMORY_SIZE_EDEFAULT == null ? memorySize != null : !MEMORY_SIZE_EDEFAULT.equals(memorySize);
-			case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
-				return ADRESS_SIZE_EDEFAULT == null ? adressSize != null : !ADRESS_SIZE_EDEFAULT.equals(adressSize);
-			case HwMemoryPackage.HW_MEMORY__TIMINGS:
-				return timings != null && !timings.isEmpty();
-			case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
-				return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
+		case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
+			return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
+		case HwMemoryPackage.HW_MEMORY__MEMORY_SIZE:
+			return MEMORY_SIZE_EDEFAULT == null ? memorySize != null : !MEMORY_SIZE_EDEFAULT.equals(memorySize);
+		case HwMemoryPackage.HW_MEMORY__ADRESS_SIZE:
+			return ADRESS_SIZE_EDEFAULT == null ? adressSize != null : !ADRESS_SIZE_EDEFAULT.equals(adressSize);
+		case HwMemoryPackage.HW_MEMORY__TIMINGS:
+			return timings != null && !timings.isEmpty();
+		case HwMemoryPackage.HW_MEMORY__THROUGHPUT:
+			return THROUGHPUT_EDEFAULT == null ? throughput != null : !THROUGHPUT_EDEFAULT.equals(throughput);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -352,14 +389,17 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == StorageResource.class) {
 			switch (derivedFeatureID) {
-				case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE: return GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE;
-				default: return -1;
+			case HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE:
+				return GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -368,14 +408,17 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == StorageResource.class) {
 			switch (baseFeatureID) {
-				case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE: return HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE;
-				default: return -1;
+			case GRMPackage.STORAGE_RESOURCE__ELEMENT_SIZE:
+				return HwMemoryPackage.HW_MEMORY__ELEMENT_SIZE;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -384,11 +427,14 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementSize: ");
@@ -405,4 +451,4 @@ public class HwMemoryImpl extends HwResourceImpl implements HwMemory {
 		return result.toString();
 	}
 
-} //HwMemoryImpl
+} // HwMemoryImpl

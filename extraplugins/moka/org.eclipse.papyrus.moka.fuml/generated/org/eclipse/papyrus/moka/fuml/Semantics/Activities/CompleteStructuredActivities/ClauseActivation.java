@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,21 +39,21 @@ public class ClauseActivation {
 		// running and run the body of this clause.
 		// If the test fails, then pass control to successor clauses.
 		Debug.println("[receiveControl] clauseActivation = " + this);
-		if(this.isReady()) {
+		if (this.isReady()) {
 			Debug.println("[receiveControl] Running test...");
 			this.runTest();
 			BooleanValue decision = this.getDecision();
 			// Note that the decision may be null if the test was terminated
 			// before completion.
-			if(decision != null) {
-				if(decision.value == true) {
+			if (decision != null) {
+				if (decision.value == true) {
 					Debug.println("[receiveControl] Test succeeded.");
 					this.selectBody();
 				} else {
 					Debug.println("[receiveControl] Test failed.");
 					List<ClauseActivation> successors = this.getSuccessors();
 					// *** Give control to all successors concurrently. ***
-					for(Iterator<ClauseActivation> i = successors.iterator(); i.hasNext();) {
+					for (Iterator<ClauseActivation> i = successors.iterator(); i.hasNext();) {
 						ClauseActivation successor = i.next();
 						successor.receiveControl();
 					}
@@ -67,12 +67,12 @@ public class ClauseActivation {
 		List<ClauseActivation> predecessors = this.getPredecessors();
 		boolean ready = true;
 		int i = 1;
-		while(ready & i <= predecessors.size()) {
+		while (ready & i <= predecessors.size()) {
 			ClauseActivation predecessor = predecessors.get(i - 1);
 			BooleanValue decisionValue = predecessor.getDecision();
 			// Note that the decision will be null if the predecessor clause has
 			// not run yet.
-			if(decisionValue == null) {
+			if (decisionValue == null) {
 				ready = false;
 			} else {
 				ready = !decisionValue.value;
@@ -97,8 +97,8 @@ public class ClauseActivation {
 		// clause activation.
 		List<Value> deciderValues = this.conditionalNodeActivation.getPinValues(this.clause.getDecider());
 		BooleanValue deciderValue = null;
-		if(deciderValues.size() > 0) {
-			deciderValue = (BooleanValue)(deciderValues.get(0));
+		if (deciderValues.size() > 0) {
+			deciderValue = (BooleanValue) (deciderValues.get(0));
 		}
 		return deciderValue;
 	}
@@ -108,7 +108,7 @@ public class ClauseActivation {
 		// this clause activation.
 		List<ClauseActivation> predecessors = new ArrayList<ClauseActivation>();
 		List<Clause> predecessorClauses = this.clause.getPredecessorClauses();
-		for(int i = 0; i < predecessorClauses.size(); i++) {
+		for (int i = 0; i < predecessorClauses.size(); i++) {
 			Clause predecessorClause = predecessorClauses.get(i);
 			predecessors.add(this.conditionalNodeActivation.getClauseActivation(predecessorClause));
 		}
@@ -120,7 +120,7 @@ public class ClauseActivation {
 		// this clause activation.
 		List<ClauseActivation> successors = new ArrayList<ClauseActivation>();
 		List<Clause> successorClauses = this.clause.getSuccessorClauses();
-		for(int i = 0; i < successorClauses.size(); i++) {
+		for (int i = 0; i < successorClauses.size(); i++) {
 			Clause successorClause = successorClauses.get(i);
 			successors.add(this.conditionalNodeActivation.getClauseActivation(successorClause));
 		}

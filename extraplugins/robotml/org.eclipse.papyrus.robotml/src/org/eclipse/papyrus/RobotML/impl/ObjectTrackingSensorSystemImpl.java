@@ -20,6 +20,7 @@ public class ObjectTrackingSensorSystemImpl extends SensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ObjectTrackingSensorSystemImpl() {
@@ -29,6 +30,7 @@ public class ObjectTrackingSensorSystemImpl extends SensorSystemImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ObjectTrackingSensorSystemImpl extends SensorSystemImpl implements 
 		return RobotMLPackage.Literals.OBJECT_TRACKING_SENSOR_SYSTEM;
 	}
 
-} //ObjectTrackingSensorSystemImpl
+} // ObjectTrackingSensorSystemImpl

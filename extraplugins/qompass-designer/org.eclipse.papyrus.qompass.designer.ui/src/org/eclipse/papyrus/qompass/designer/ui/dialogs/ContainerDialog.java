@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -47,10 +47,10 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * Select container rules, either from a list of globally defined rules
  * or from local rules which may be created "on the fly" by this dialog.
- * 
+ *
  * TODO: extend rule application to instances (problematic, since rules transformation
  * is done on type level)
- * 
+ *
  * @author ansgar
  */
 public class ContainerDialog extends SelectionStatusDialog {
@@ -83,7 +83,7 @@ public class ContainerDialog extends SelectionStatusDialog {
 		super(parent);
 		// visitedPackages = new BasicEList<Package> ();
 		m_rulePropertiesOnly = StereotypeUtil.isApplied(componentOrRule, ContainerRule.class);
-		if(m_rulePropertiesOnly) {
+		if (m_rulePropertiesOnly) {
 			// m_currentRule = UMLUtil.getStereotypeApplication(componentOrRule, ContainerRule.class);
 		} else {
 			m_component = componentOrRule;
@@ -94,15 +94,17 @@ public class ContainerDialog extends SelectionStatusDialog {
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
-		if(m_rulePropertiesOnly) {
+		if (m_rulePropertiesOnly) {
 			createRuleInfoGroup(contents);
 			selectRule(m_currentRule);
 		} else {
@@ -136,11 +138,12 @@ public class ContainerDialog extends SelectionStatusDialog {
 
 		ICheckStateListener checkListener = new ICheckStateListener() {
 
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				Object obj = event.getElement();
-				if(obj instanceof ContainerRule) {
-					ContainerRule rule = (ContainerRule)obj;
-					if(event.getChecked()) {
+				if (obj instanceof ContainerRule) {
+					ContainerRule rule = (ContainerRule) obj;
+					if (event.getChecked()) {
 						applyRule(rule);
 					}
 					else {
@@ -160,9 +163,9 @@ public class ContainerDialog extends SelectionStatusDialog {
 		gRuleSelGroup.setLayoutData(groupGridData);
 
 		EList<ContainerRule> globalRuleList = Utils.getAllRules(m_model);
-		//		Table table = new Table(gRuleSelGroup, SWT.CHECK);
+		// Table table = new Table(gRuleSelGroup, SWT.CHECK);
 		fRules = CheckboxTableViewer.newCheckList(gRuleSelGroup, SWT.BORDER);
-		//		fRules = new CheckboxTableViewer(table);
+		// fRules = new CheckboxTableViewer(table);
 
 
 		GridData data2 = new GridData(GridData.FILL_BOTH);
@@ -173,20 +176,21 @@ public class ContainerDialog extends SelectionStatusDialog {
 		fRules.setContentProvider(new ArrayContentProvider());
 
 		fRules.setInput(globalRuleList.toArray());
-		for(ContainerRule rule : globalRuleList) {
-			if(isRuleApplied(rule)) {
+		for (ContainerRule rule : globalRuleList) {
+			if (isRuleApplied(rule)) {
 				fRules.setChecked(rule, true);
 			}
 		}
 		fRules.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = fRules.getSelection();
-				if(selection instanceof StructuredSelection) {
-					Object[] selected = ((StructuredSelection)selection).toArray();
-					if((selected.length == 1) && (selected[0] instanceof ContainerRule)) {
-						if(m_currentRule != selected[0]) {
-							selectRule((ContainerRule)selected[0]);
+				if (selection instanceof StructuredSelection) {
+					Object[] selected = ((StructuredSelection) selection).toArray();
+					if ((selected.length == 1) && (selected[0] instanceof ContainerRule)) {
+						if (m_currentRule != selected[0]) {
+							selectRule((ContainerRule) selected[0]);
 						}
 					}
 				}
@@ -217,7 +221,7 @@ public class ContainerDialog extends SelectionStatusDialog {
 
 		fDescription = new Text(ruleInfoGroup, SWT.WRAP | SWT.V_SCROLL | SWT.READ_ONLY);
 		fDescription.setLayoutData(span2);
-		//	createMessageArea (ruleInfoGroup);
+		// createMessageArea (ruleInfoGroup);
 		ruleInfoGroup.pack();
 		// fPortLabel = new Label (ruleInfoGroup, SWT.NONE);
 		// fPortLabel.setText ("for Ports");
@@ -226,7 +230,7 @@ public class ContainerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Select a rule, i.e. update the visual representation from the rule
-	 * 
+	 *
 	 * @param rule
 	 */
 	protected void selectRule(ContainerRule rule) {
@@ -236,54 +240,54 @@ public class ContainerDialog extends SelectionStatusDialog {
 
 	/**
 	 * Helper: add a local container rule to the current class
-	 * 
+	 *
 	 * @param name
-	 *        the name of the local rule
+	 *            the name of the local rule
 	 * @return
 	 */
 	ContainerRule addRule(String name) {
 		Class ruleCl = (Class)
-			m_component.createNestedClassifier(name, UMLPackage.eINSTANCE.getClass_());
+				m_component.createNestedClassifier(name, UMLPackage.eINSTANCE.getClass_());
 		StereotypeUtil.apply(ruleCl, ContainerRule.class);
 		return UMLUtil.getStereotypeApplication(ruleCl, ContainerRule.class);
 	}
 
 	/**
 	 * Helper function: delete a container rule from a class
-	 * 
+	 *
 	 * @param rule
 	 */
 	void deleteRule(ContainerRule rule) {
 		Classifier ruleCl = m_component.getNestedClassifier(rule.getBase_Class().getName());
-		if(ruleCl instanceof Class) {
+		if (ruleCl instanceof Class) {
 			ruleCl.destroy();
 		}
 	}
 
 	/**
 	 * Helper: apply a container rule to current component
-	 * 
+	 *
 	 * @param rule
 	 */
 	void applyRule(ContainerRule rule) {
-		if(!StereotypeUtil.isApplied(m_component, RuleApplication.class)) {
+		if (!StereotypeUtil.isApplied(m_component, RuleApplication.class)) {
 			StereotypeUtil.apply(m_component, RuleApplication.class);
 		}
 		RuleApplication containerConfig =
-			UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
+				UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
 		containerConfig.getContainerRule().add(rule);
 	}
 
 	/**
 	 * Helper: apply a container rule to current component
-	 * 
+	 *
 	 * @param rule
 	 */
 	void unapplyRule(ContainerRule rule) {
 		RuleApplication containerConfig =
-			UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
+				UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
 		int index = containerConfig.getContainerRule().indexOf(rule);
-		if((index >= 0) && (index < containerConfig.getContainerRule().size())) {
+		if ((index >= 0) && (index < containerConfig.getContainerRule().size())) {
 			containerConfig.getContainerRule().remove(index);
 		}
 	}
@@ -291,13 +295,13 @@ public class ContainerDialog extends SelectionStatusDialog {
 	/**
 	 * check whether a container rule is applied
 	 * h * @param rule
-	 * 
+	 *
 	 * @return true, if container rule is applied
 	 */
 	boolean isRuleApplied(ContainerRule rule) {
 		RuleApplication containerConfig =
-			UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
-		if(containerConfig != null) {
+				UMLUtil.getStereotypeApplication(m_component, RuleApplication.class);
+		if (containerConfig != null) {
 			return containerConfig.getContainerRule().contains(rule);
 		}
 		return false;

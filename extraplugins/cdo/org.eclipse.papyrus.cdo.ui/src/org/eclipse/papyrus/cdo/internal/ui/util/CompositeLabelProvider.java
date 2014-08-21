@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,18 +43,21 @@ public class CompositeLabelProvider
 		Iterables.addAll(this.labelProviders, providers);
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		for (ILabelProvider next : labelProviders) {
 			next.addListener(listener);
 		}
 	}
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		for (ILabelProvider next : labelProviders) {
 			next.removeListener(listener);
 		}
 	}
 
+	@Override
 	public void dispose() {
 		for (ILabelProvider next : labelProviders) {
 			next.dispose();
@@ -63,6 +66,7 @@ public class CompositeLabelProvider
 		labelProviders.clear();
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		for (ILabelProvider next : labelProviders) {
 			if (next.isLabelProperty(element, property)) {
@@ -73,6 +77,7 @@ public class CompositeLabelProvider
 		return false;
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		Image result = null;
 
@@ -87,6 +92,7 @@ public class CompositeLabelProvider
 		return result;
 	}
 
+	@Override
 	public String getText(Object element) {
 		String result = null;
 

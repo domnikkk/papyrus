@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Concurrency Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.HLAMPackage#getConcurrencyKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Reader</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #READER_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Writer</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #WRITER_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Parallel</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PARALLEL_VALUE
 	 * @generated
 	 * @ordered
@@ -63,10 +67,10 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Reader</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Reader</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Reader</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #READER
 	 * @model name="reader"
 	 * @generated
@@ -78,10 +82,10 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Writer</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Writer</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Writer</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #WRITER
 	 * @model name="writer"
 	 * @generated
@@ -93,10 +97,10 @@ public enum ConcurrencyKind implements Enumerator {
 	 * The '<em><b>Parallel</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Parallel</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Parallel</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PARALLEL
 	 * @model name="parallel"
 	 * @generated
@@ -108,19 +112,21 @@ public enum ConcurrencyKind implements Enumerator {
 	 * An array of all the '<em><b>Concurrency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final ConcurrencyKind[] VALUES_ARRAY =
-		new ConcurrencyKind[] {
-			READER,
-			WRITER,
-			PARALLEL,
-		};
+			new ConcurrencyKind[] {
+					READER,
+					WRITER,
+					PARALLEL,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Concurrency Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ConcurrencyKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -129,6 +135,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Concurrency Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ConcurrencyKind get(String literal) {
@@ -145,6 +152,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Concurrency Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ConcurrencyKind getByName(String name) {
@@ -161,13 +169,17 @@ public enum ConcurrencyKind implements Enumerator {
 	 * Returns the '<em><b>Concurrency Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ConcurrencyKind get(int value) {
 		switch (value) {
-			case READER_VALUE: return READER;
-			case WRITER_VALUE: return WRITER;
-			case PARALLEL_VALUE: return PARALLEL;
+		case READER_VALUE:
+			return READER;
+		case WRITER_VALUE:
+			return WRITER;
+		case PARALLEL_VALUE:
+			return PARALLEL;
 		}
 		return null;
 	}
@@ -175,6 +187,7 @@ public enum ConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -182,6 +195,7 @@ public enum ConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -189,6 +203,7 @@ public enum ConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -197,6 +212,7 @@ public enum ConcurrencyKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ConcurrencyKind(int value, String name, String literal) {
@@ -208,39 +224,46 @@ public enum ConcurrencyKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ConcurrencyKind
+
+} // ConcurrencyKind

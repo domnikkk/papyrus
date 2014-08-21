@@ -44,7 +44,7 @@ import org.eclipse.uml2.uml.NamedElement;
  * This Handler is activated when user drag'n'drop java resource into papyrus diagram.<br>
  * It display just non displayed java resource.
  * Moreover, it use DndReverseCodeDialog to know if it have to display model, packages and CompilationUnit or not.
- * 
+ *
  * @author Jonathan Geoffroy
  *
  */
@@ -74,7 +74,7 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 	 */
 	protected void doExecute(ReverseCodeDialog dialog) {
 		// Get user preferences on dialog
-		DndReverseCodeDialog dndDialog = (DndReverseCodeDialog)dialog;
+		DndReverseCodeDialog dndDialog = (DndReverseCodeDialog) dialog;
 		displayModel = dndDialog.displayModel();
 		displayPackages = dndDialog.displayPackages();
 		displayCU = dndDialog.displayCU();
@@ -82,14 +82,14 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 		// get current selection
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		ISelection selection = page.getSelection();
-		TreeSelection treeSelection = (TreeSelection)selection;
+		TreeSelection treeSelection = (TreeSelection) selection;
 
 		// Find active papyrus diagram
 		Diagram diagram = null;
 		IEditorPart activeEditor = MDTUtil.getActiveEditor();
-		if(activeEditor != null) {
-			if(activeEditor instanceof IMultiDiagramEditor) {
-				diagram = (Diagram)((IMultiDiagramEditor)activeEditor).getAdapter(Diagram.class);
+		if (activeEditor != null) {
+			if (activeEditor instanceof IMultiDiagramEditor) {
+				diagram = (Diagram) ((IMultiDiagramEditor) activeEditor).getAdapter(Diagram.class);
 			}
 		}
 
@@ -107,7 +107,7 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 
 		// Find model to display
 		Model model = null;
-		if(displayModel) {
+		if (displayModel) {
 			String modelName = dndDialog.getValue();
 			model = getModelToDisplay(diagram, modelName);
 		}
@@ -129,11 +129,11 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param selection
-	 *        java resources selected
+	 *            java resources selected
 	 * @param diagram
-	 *        opened papyrus diagram
+	 *            opened papyrus diagram
 	 * @return selection - resources already in diagram
 	 * @throws JavaModelException
 	 */
@@ -144,9 +144,9 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 		Iterator diagramIt = diagramList.iterator();
 		ShapeImpl item;
 		NamedElement e;
-		while(diagramIt.hasNext()) {
-			item = (ShapeImpl)diagramIt.next();
-			e = (NamedElement)(item.getElement());
+		while (diagramIt.hasNext()) {
+			item = (ShapeImpl) diagramIt.next();
+			e = (NamedElement) (item.getElement());
 			alreadyExists.add(e.getName());
 		}
 
@@ -154,9 +154,9 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 		TreeSelectionList selectionList = new TreeSelectionList(selection, displayPackages, displayCU);
 		ListIterator<IJavaElement> selectionIterator = selectionList.listIterator();
 		String selectionItemName;
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			selectionItemName = getName(selectionIterator.next());
-			if(selectionItemName != null && alreadyExists.contains(selectionItemName)) {
+			if (selectionItemName != null && alreadyExists.contains(selectionItemName)) {
 				selectionIterator.remove();
 			}
 		}
@@ -166,13 +166,13 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 
 	/**
 	 * Find the name of <code>item</code> For java compilation unit, remove ".java" extension
-	 * 
+	 *
 	 * @param item
 	 * @return the name of item.
 	 */
 	private String getName(IJavaElement item) {
 		String name = item.getElementName();
-		if(item instanceof ICompilationUnit) {
+		if (item instanceof ICompilationUnit) {
 			return name.substring(0, name.length() - 5);
 		}
 		return name;
@@ -180,21 +180,21 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 
 	/**
 	 * find a model named <code>modelName</code>
-	 * 
+	 *
 	 * @param modelName
-	 *        the name of the model the find
+	 *            the name of the model the find
 	 * @return the model which named <code>modelName</code>, or null if it doesn't exists into the current papyrus uml resource
 	 */
 	public Model getModel(String modelName) {
 		TreeIterator<EObject> tree = getUmlResource().getAllContents();
-		while(tree.hasNext()) {
-			for(EObject o : tree.next().eContents()) {
-				if(o instanceof Model) {
+		while (tree.hasNext()) {
+			for (EObject o : tree.next().eContents()) {
+				if (o instanceof Model) {
 					// Add it into items to display
-					Model model = (Model)o;
+					Model model = (Model) o;
 
 					// Search for model
-					if(model.getName().equals(modelName)) {
+					if (model.getName().equals(modelName)) {
 						System.out.println("model = " + model);
 						return model;
 					}
@@ -207,17 +207,17 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 
 	/**
 	 * find the model named <code>modelName</code>, and get it only if it has to be displayed
-	 * 
+	 *
 	 * @param diagram
-	 *        active papyrus diagram
+	 *            active papyrus diagram
 	 * @param modelName
-	 *        the name of the model to find
+	 *            the name of the model to find
 	 * @return model corresponding to the modelName if it has to be displayed, i.e. if it doesn't already displayed into the diagram, or null
 	 *         otherwise
 	 */
 	private Model getModelToDisplay(Diagram diagram, String modelName) {
 		Model model = getModel(modelName);
-		if(model != null && !isInDiagram(diagram, model)) {
+		if (model != null && !isInDiagram(diagram, model)) {
 			System.out.println("display model " + model);
 			return model;
 		}
@@ -226,7 +226,7 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param diagram
 	 * @param model
 	 * @return true if model is in diagram
@@ -235,9 +235,9 @@ public class DndReverseCodeHandler extends ReverseCodeHandler {
 		EList diagramList = diagram.getChildren();
 		Iterator diagramIt = diagramList.iterator();
 		ShapeImpl item;
-		while(diagramIt.hasNext()) {
-			item = (ShapeImpl)diagramIt.next();
-			if(item.getElement() == model) {
+		while (diagramIt.hasNext()) {
+			item = (ShapeImpl) diagramIt.next();
+			if (item.getElement() == model) {
 				return true;
 			}
 		}

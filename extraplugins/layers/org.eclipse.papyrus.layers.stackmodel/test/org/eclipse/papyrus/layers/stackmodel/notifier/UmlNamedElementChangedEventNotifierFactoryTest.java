@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,15 +50,15 @@ public class UmlNamedElementChangedEventNotifierFactoryTest {
 	 */
 	@Test
 	public void testUmlNamedElementChangedEventNotifierFactory() {
-		
+
 		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
 		NotationAndUmlModelsFactory modelsFactory = new NotationAndUmlModelsFactory();
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
-		
+
 		// Action
-		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
-	
+		UmlNamedElementChangedEventNotifier eventNotifier = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+
 		// Assert
 		assertNotNull("object created", eventNotifier);
 	}
@@ -68,26 +68,26 @@ public class UmlNamedElementChangedEventNotifierFactoryTest {
 	 */
 	@Test
 	public void testReturnSameInstanceImpl() {
-		
+
 		UmlNamedElementChangedEventNotifierFactory notifierFactory = new UmlNamedElementChangedEventNotifierFactory();
 		NotationAndUmlModelsFactory modelsFactory = new NotationAndUmlModelsFactory();
 		Diagram diagram1 = modelsFactory.newDiagram();
 		Class c1 = modelsFactory.newClass(diagram1, "C1");
 		Class c2 = modelsFactory.newClass(diagram1, "C2");
-		
+
 		// Action
-		UmlNamedElementChangedEventNotifier eventNotifier11 = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
-		UmlNamedElementChangedEventNotifier eventNotifier12 = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
-	
-		UmlNamedElementChangedEventNotifier eventNotifier21 = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c2, UmlNamedElementChangedEventNotifier.class);
-		UmlNamedElementChangedEventNotifier eventNotifier22 = (UmlNamedElementChangedEventNotifier)notifierFactory.adapt(c2, UmlNamedElementChangedEventNotifier.class);
-	
+		UmlNamedElementChangedEventNotifier eventNotifier11 = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifier eventNotifier12 = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c1, UmlNamedElementChangedEventNotifier.class);
+
+		UmlNamedElementChangedEventNotifier eventNotifier21 = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c2, UmlNamedElementChangedEventNotifier.class);
+		UmlNamedElementChangedEventNotifier eventNotifier22 = (UmlNamedElementChangedEventNotifier) notifierFactory.adapt(c2, UmlNamedElementChangedEventNotifier.class);
+
 		// Assert
 		assertNotNull("object created", eventNotifier11);
 		assertNotNull("object created", eventNotifier21);
-		
+
 		assertNotEquals("instance are different between diagram", eventNotifier11, eventNotifier21);
-		
+
 		assertEquals("return the same instance", eventNotifier11, eventNotifier12);
 		assertEquals("return the same instance", eventNotifier21, eventNotifier22);
 	}

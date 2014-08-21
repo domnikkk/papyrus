@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.dd.dg.Group;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Group} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GroupItemProvider extends GraphicalElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -47,7 +47,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GroupItemProvider(AdapterFactory adapterFactory) {
@@ -57,12 +57,12 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addLayoutPropertyDescriptor(object);
 		}
@@ -73,24 +73,24 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 * This adds a property descriptor for the Layout feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLayoutPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Group_layout_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Group_layout_feature", "_UI_Group_type"), DGPackage.Literals.GROUP__LAYOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Group_layout_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Group_layout_feature", "_UI_Group_type"), DGPackage.Literals.GROUP__LAYOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if(childrenFeatures == null) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.GROUP__MEMBER);
 		}
@@ -99,7 +99,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	/**
 	 * This returns Group.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,12 +124,12 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = getLabel((Group)object);
+		String label = getLabel((Group) object);
 		return label == null || label.length() == 0 ? getString("_UI_Group_type") : getString("_UI_Group_type") + " " + label;
 	}
 
@@ -138,13 +138,13 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(Group.class)) {
+		switch (notification.getFeatureID(Group.class)) {
 		case DGPackage.GROUP__LAYOUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -159,7 +159,7 @@ public class GroupItemProvider extends GraphicalElementItemProvider implements I
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

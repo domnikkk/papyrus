@@ -44,14 +44,14 @@ public class ConstraintWithVSLPopupEditorConfiguration extends DefaultXtextDirec
 
 	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof Constraint) {
-			Constraint theConstraint = (Constraint)editedObject;
-			if(theConstraint.getSpecification() != null && theConstraint.getSpecification() instanceof OpaqueExpression) {
-				OpaqueExpression spec = (OpaqueExpression)theConstraint.getSpecification();
+		if (editedObject instanceof Constraint) {
+			Constraint theConstraint = (Constraint) editedObject;
+			if (theConstraint.getSpecification() != null && theConstraint.getSpecification() instanceof OpaqueExpression) {
+				OpaqueExpression spec = (OpaqueExpression) theConstraint.getSpecification();
 				int indexOfVSLExpression = -1;
 				int i = 0;
-				for(String language : spec.getLanguages()) {
-					if(language.equals("VSL")) {
+				for (String language : spec.getLanguages()) {
+					if (language.equals("VSL")) {
 						indexOfVSLExpression = i;
 					}
 					i++;
@@ -98,7 +98,7 @@ public class ConstraintWithVSLPopupEditorConfiguration extends DefaultXtextDirec
 		}
 
 		public UpdateConstraintWithVSLCommand(Constraint constraint, String newBody) {
-			super((TransactionalEditingDomain)EMFHelper.resolveEditingDomain(constraint), "Constraint Update", getWorkspaceFiles(constraint));
+			super((TransactionalEditingDomain) EMFHelper.resolveEditingDomain(constraint), "Constraint Update", getWorkspaceFiles(constraint));
 			this.theConstraint = constraint;
 			this.newBody = newBody;
 		}
@@ -114,22 +114,22 @@ public class ConstraintWithVSLPopupEditorConfiguration extends DefaultXtextDirec
 	protected ICommand getParseCommand(EObject umlObject, EObject xtextObject) {
 		ConstraintSpecification newSpecification = null;
 
-		ConstraintRule rule = (ConstraintRule)xtextObject;
+		ConstraintRule rule = (ConstraintRule) xtextObject;
 		newSpecification = rule.getSpecification();
 		String newBody = null;
-		if(newSpecification != null) {
+		if (newSpecification != null) {
 			newBody = VSLSerializationUtil.printExpression(newSpecification.getExpression());
 		}
 
-		if(!(umlObject instanceof Constraint)) {
+		if (!(umlObject instanceof Constraint)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(newBody == null) {
+		if (newBody == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		Constraint constraint = (Constraint)umlObject;
+		Constraint constraint = (Constraint) umlObject;
 
 		UpdateConstraintWithVSLCommand updateCommand = new UpdateConstraintWithVSLCommand(constraint, newBody);
 

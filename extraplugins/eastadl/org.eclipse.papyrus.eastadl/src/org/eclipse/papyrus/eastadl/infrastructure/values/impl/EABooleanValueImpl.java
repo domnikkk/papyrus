@@ -15,7 +15,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl#isValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.values.impl.EABooleanValueImpl#isValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,6 +26,7 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	 * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isValue()
 	 * @generated
 	 * @ordered
@@ -36,6 +37,7 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	 * The cached value of the '{@link #isValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isValue()
 	 * @generated
 	 * @ordered
@@ -45,6 +47,7 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EABooleanValueImpl() {
@@ -54,6 +57,7 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,8 +68,10 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isValue() {
 		return value;
 	}
@@ -73,25 +79,29 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValue(boolean newValue) {
 		boolean oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ValuesPackage.EA_BOOLEAN_VALUE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
-				return isValue();
+		case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
+			return isValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,14 +109,15 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
-				setValue((Boolean)newValue);
-				return;
+		case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
+			setValue((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,14 +125,15 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -129,13 +141,14 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
-				return value != VALUE_EDEFAULT;
+		case ValuesPackage.EA_BOOLEAN_VALUE__VALUE:
+			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -143,11 +156,14 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -156,4 +172,4 @@ public class EABooleanValueImpl extends EAValueImpl implements EABooleanValue {
 		return result.toString();
 	}
 
-} //EABooleanValueImpl
+} // EABooleanValueImpl

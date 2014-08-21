@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <!-- begin-model-doc -->
  * The AllocateableElement is an abstract superclass for elements that are allocateable.
- * 
+ *
  * Semantics:
  * The AllocateableElement abstracts all elements that are allocateable.
  * Subclasses of the abstract class AllocateableElement add their own semantics.
- * 
+ *
  * Extension: abstract, no extension
  * <!-- end-model-doc -->
  *

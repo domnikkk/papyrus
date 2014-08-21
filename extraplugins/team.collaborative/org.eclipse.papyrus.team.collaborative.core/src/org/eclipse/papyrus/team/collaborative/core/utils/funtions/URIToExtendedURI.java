@@ -48,7 +48,7 @@ public class URIToExtendedURI implements Function<URI, IExtendedURI> {
 	/**
 	 * Returns the Singleton instance.
 	 * <p>
-	 * 
+	 *
 	 * @return The Singleton instance.
 	 */
 	public static URIToExtendedURI getInstance() {

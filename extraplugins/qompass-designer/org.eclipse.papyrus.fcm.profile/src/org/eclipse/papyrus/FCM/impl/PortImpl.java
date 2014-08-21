@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM.impl;
 
@@ -34,10 +34,10 @@ import org.eclipse.uml2.uml.Stereotype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getProvidedInterface <em>Provided Interface</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getRequiredInterface <em>Required Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getBase_Port <em>Base Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getProvidedInterface <em>Provided Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.PortImpl#getRequiredInterface <em>Required Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -59,6 +60,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PortImpl() {
@@ -77,6 +80,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,15 +91,18 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Port getBase_Port() {
 		if (base_Port != null && base_Port.eIsProxy()) {
-			InternalEObject oldBase_Port = (InternalEObject)base_Port;
-			base_Port = (org.eclipse.uml2.uml.Port)eResolveProxy(oldBase_Port);
+			InternalEObject oldBase_Port = (InternalEObject) base_Port;
+			base_Port = (org.eclipse.uml2.uml.Port) eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.PORT__BASE_PORT, oldBase_Port, base_Port));
+				}
 			}
 		}
 		return base_Port;
@@ -104,6 +111,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Port basicGetBase_Port() {
@@ -113,27 +121,33 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Port(org.eclipse.uml2.uml.Port newBase_Port) {
 		org.eclipse.uml2.uml.Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.PORT__BASE_PORT, oldBase_Port, base_Port));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PortKind getKind() {
 		if (kind != null && kind.eIsProxy()) {
-			InternalEObject oldKind = (InternalEObject)kind;
-			kind = (PortKind)eResolveProxy(oldKind);
+			InternalEObject oldKind = (InternalEObject) kind;
+			kind = (PortKind) eResolveProxy(oldKind);
 			if (kind != oldKind) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.PORT__KIND, oldKind, kind));
+				}
 			}
 		}
 		return kind;
@@ -142,6 +156,7 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PortKind basicGetKind() {
@@ -151,36 +166,41 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(PortKind newKind) {
 		PortKind oldKind = kind;
 		kind = newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.PORT__KIND, oldKind, kind));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Interface getProvidedInterface() {
-		Interface providedInterface = basicGetProvidedInterface();
-		return providedInterface != null && providedInterface.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)providedInterface) : providedInterface;
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	@Override
+	public Interface getProvidedInterface() {
+		Interface providedInterface = basicGetProvidedInterface();
+		return providedInterface != null && providedInterface.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) providedInterface) : providedInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public Interface basicGetProvidedInterface() {
-		if(base_Port == null) {
+		if (base_Port == null) {
 			return null;
 		}
-		if(base_Port.isConjugated()) {
+		if (base_Port.isConjugated()) {
 			return MapUtil.getRequiredInterface(this);
 		}
 		else {
@@ -191,9 +211,10 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isSetProvidedInterface() {
 		return (getProvidedInterface() != null);
 	}
@@ -201,24 +222,26 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Interface getRequiredInterface() {
 		Interface requiredInterface = basicGetRequiredInterface();
-		return requiredInterface != null && requiredInterface.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)requiredInterface) : requiredInterface;
+		return requiredInterface != null && requiredInterface.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) requiredInterface) : requiredInterface;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Interface basicGetRequiredInterface() {
-		if(base_Port == null) {
+		if (base_Port == null) {
 			return null;
 		}
-		if(!base_Port.isConjugated()) {
+		if (!base_Port.isConjugated()) {
 			return MapUtil.getRequiredInterface(this);
 		}
 		else {
@@ -229,9 +252,10 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isSetRequiredInterface() {
 		return (getRequiredInterface() != null);
 	}
@@ -239,23 +263,32 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FCMPackage.PORT__BASE_PORT:
-				if (resolve) return getBase_Port();
-				return basicGetBase_Port();
-			case FCMPackage.PORT__KIND:
-				if (resolve) return getKind();
-				return basicGetKind();
-			case FCMPackage.PORT__PROVIDED_INTERFACE:
-				if (resolve) return getProvidedInterface();
-				return basicGetProvidedInterface();
-			case FCMPackage.PORT__REQUIRED_INTERFACE:
-				if (resolve) return getRequiredInterface();
-				return basicGetRequiredInterface();
+		case FCMPackage.PORT__BASE_PORT:
+			if (resolve) {
+				return getBase_Port();
+			}
+			return basicGetBase_Port();
+		case FCMPackage.PORT__KIND:
+			if (resolve) {
+				return getKind();
+			}
+			return basicGetKind();
+		case FCMPackage.PORT__PROVIDED_INTERFACE:
+			if (resolve) {
+				return getProvidedInterface();
+			}
+			return basicGetProvidedInterface();
+		case FCMPackage.PORT__REQUIRED_INTERFACE:
+			if (resolve) {
+				return getRequiredInterface();
+			}
+			return basicGetRequiredInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,17 +296,18 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FCMPackage.PORT__BASE_PORT:
-				setBase_Port((org.eclipse.uml2.uml.Port)newValue);
-				return;
-			case FCMPackage.PORT__KIND:
-				setKind((PortKind)newValue);
-				return;
+		case FCMPackage.PORT__BASE_PORT:
+			setBase_Port((org.eclipse.uml2.uml.Port) newValue);
+			return;
+		case FCMPackage.PORT__KIND:
+			setKind((PortKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -281,17 +315,18 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FCMPackage.PORT__BASE_PORT:
-				setBase_Port((org.eclipse.uml2.uml.Port)null);
-				return;
-			case FCMPackage.PORT__KIND:
-				setKind((PortKind)null);
-				return;
+		case FCMPackage.PORT__BASE_PORT:
+			setBase_Port((org.eclipse.uml2.uml.Port) null);
+			return;
+		case FCMPackage.PORT__KIND:
+			setKind((PortKind) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,19 +334,20 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FCMPackage.PORT__BASE_PORT:
-				return base_Port != null;
-			case FCMPackage.PORT__KIND:
-				return kind != null;
-			case FCMPackage.PORT__PROVIDED_INTERFACE:
-				return isSetProvidedInterface();
-			case FCMPackage.PORT__REQUIRED_INTERFACE:
-				return isSetRequiredInterface();
+		case FCMPackage.PORT__BASE_PORT:
+			return base_Port != null;
+		case FCMPackage.PORT__KIND:
+			return kind != null;
+		case FCMPackage.PORT__PROVIDED_INTERFACE:
+			return isSetProvidedInterface();
+		case FCMPackage.PORT__REQUIRED_INTERFACE:
+			return isSetRequiredInterface();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,19 +365,19 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 	 */
 	public Image getIcon()
 	{
-		if(getKind() != null) {
+		if (getKind() != null) {
 			Class clazz = getKind().getBase_Class();
 
-			if(clazz instanceof Stereotype) {
-				EList<Image> icons = ((Stereotype)clazz).getIcons();
-				if(base_Port.isConjugated()) {
-					if(icons.size() > 1) {
+			if (clazz instanceof Stereotype) {
+				EList<Image> icons = ((Stereotype) clazz).getIcons();
+				if (base_Port.isConjugated()) {
+					if (icons.size() > 1) {
 						// standard position for conjugated icon
 						return icons.get(1);
 					}
 				}
 				else {
-					if(icons.size() > 0) {
+					if (icons.size() > 0) {
 						return icons.get(0);
 					}
 				}
@@ -349,8 +385,9 @@ public class PortImpl extends ConfigurableElementInstanceImpl implements Port {
 		}
 		return null;
 	}
-	
+
+	@Override
 	public void update() {
-		MapUtil.update(this);		
+		MapUtil.update(this);
 	}
 }

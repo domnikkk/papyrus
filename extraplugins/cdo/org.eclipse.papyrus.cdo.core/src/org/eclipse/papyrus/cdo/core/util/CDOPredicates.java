@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class CDOPredicates {
 	}
 
 	public static Predicate<CDOResourceNode> hasURIPrefix(URI prefix) {
-		if(!prefix.isPrefix()) {
+		if (!prefix.isPrefix()) {
 			throw new IllegalArgumentException("not a URI prefix"); //$NON-NLS-1$
 		}
 
@@ -55,6 +55,7 @@ public class CDOPredicates {
 			this.fileExtension = fileExtension;
 		}
 
+		@Override
 		public boolean apply(CDOResourceNode input) {
 			return fileExtension.equals(input.getURI().fileExtension());
 		}
@@ -71,7 +72,7 @@ public class CDOPredicates {
 
 		@Override
 		public boolean equals(Object other) {
-			return (other instanceof HasExtension) && ((HasExtension)other).fileExtension.equals(fileExtension);
+			return (other instanceof HasExtension) && ((HasExtension) other).fileExtension.equals(fileExtension);
 		}
 	}
 
@@ -81,6 +82,7 @@ public class CDOPredicates {
 			super();
 		}
 
+		@Override
 		public boolean apply(CDOResourceNode input) {
 			return input.getURI().fileExtension() == null;
 		}
@@ -109,6 +111,7 @@ public class CDOPredicates {
 			this.prefix = prefix;
 		}
 
+		@Override
 		public boolean apply(CDOResourceNode input) {
 			return input.getURI().toString().startsWith(prefix.toString());
 		}
@@ -125,7 +128,7 @@ public class CDOPredicates {
 
 		@Override
 		public boolean equals(Object other) {
-			return (other instanceof HasURIPrefix) && ((HasURIPrefix)other).prefix.equals(prefix);
+			return (other instanceof HasURIPrefix) && ((HasURIPrefix) other).prefix.equals(prefix);
 		}
 	}
 }

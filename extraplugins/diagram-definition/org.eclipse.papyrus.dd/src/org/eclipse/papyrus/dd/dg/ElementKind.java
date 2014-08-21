@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-user-doc --> A representation of the literals of the enumeration ' <em><b>Element Kind</b></em>', and utility methods for working with
  * them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage#getElementKind()
  * @model
  * @generated
@@ -31,7 +31,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Canvas</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #CANVAS_VALUE
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Circle</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #CIRCLE_VALUE
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Clip Path</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CLIP_PATH_VALUE
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Ellipse</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ELLIPSE_VALUE
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Group</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #GROUP_VALUE
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Image</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #IMAGE_VALUE
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Line</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #LINE_VALUE
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Marker</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #MARKER_VALUE
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Path</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #PATH_VALUE
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Polygon</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #POLYGON_VALUE
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Polyline</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #POLYLINE_VALUE
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Rectangle</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RECTANGLE_VALUE
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Text</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #TEXT_VALUE
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public enum ElementKind implements Enumerator {
 	 * The '<em><b>Use</b></em>' literal object.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #USE_VALUE
 	 * @generated
 	 * @ordered
@@ -175,7 +175,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Canvas</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CANVAS
 	 * @model name="canvas"
 	 * @generated
@@ -190,7 +190,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Circle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CIRCLE
 	 * @model name="circle"
 	 * @generated
@@ -205,7 +205,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Clip Path</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CLIP_PATH
 	 * @model name="clipPath"
 	 * @generated
@@ -220,7 +220,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Ellipse</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ELLIPSE
 	 * @model name="ellipse"
 	 * @generated
@@ -235,7 +235,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Group</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #GROUP
 	 * @model name="group"
 	 * @generated
@@ -250,7 +250,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Image</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #IMAGE
 	 * @model name="image"
 	 * @generated
@@ -265,7 +265,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Line</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #LINE
 	 * @model name="line"
 	 * @generated
@@ -280,7 +280,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Marker</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #MARKER
 	 * @model name="marker"
 	 * @generated
@@ -295,7 +295,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Path</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PATH
 	 * @model name="path"
 	 * @generated
@@ -310,7 +310,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Polygon</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #POLYGON
 	 * @model name="polygon"
 	 * @generated
@@ -325,7 +325,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Polyline</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #POLYLINE
 	 * @model name="polyline"
 	 * @generated
@@ -340,7 +340,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Rectangle</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #RECTANGLE
 	 * @model name="rectangle"
 	 * @generated
@@ -355,7 +355,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Text</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #TEXT
 	 * @model name="text"
 	 * @generated
@@ -370,7 +370,7 @@ public enum ElementKind implements Enumerator {
 	 * If the meaning of '<em><b>Use</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #USE
 	 * @model name="use"
 	 * @generated
@@ -381,15 +381,15 @@ public enum ElementKind implements Enumerator {
 	/**
 	 * An array of all the '<em><b>Element Kind</b></em>' enumerators. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	private static final ElementKind[] VALUES_ARRAY = new ElementKind[]{ CANVAS, CIRCLE, CLIP_PATH, ELLIPSE, GROUP, IMAGE, LINE, MARKER, PATH, POLYGON, POLYLINE, RECTANGLE, TEXT, USE, };
+	private static final ElementKind[] VALUES_ARRAY = new ElementKind[] { CANVAS, CIRCLE, CLIP_PATH, ELLIPSE, GROUP, IMAGE, LINE, MARKER, PATH, POLYGON, POLYLINE, RECTANGLE, TEXT, USE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Element Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ElementKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -397,13 +397,13 @@ public enum ElementKind implements Enumerator {
 	/**
 	 * Returns the '<em><b>Element Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ElementKind get(String literal) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ElementKind result = VALUES_ARRAY[i];
-			if(result.toString().equals(literal)) {
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -413,13 +413,13 @@ public enum ElementKind implements Enumerator {
 	/**
 	 * Returns the '<em><b>Element Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ElementKind getByName(String name) {
-		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ElementKind result = VALUES_ARRAY[i];
-			if(result.getName().equals(name)) {
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -429,11 +429,11 @@ public enum ElementKind implements Enumerator {
 	/**
 	 * Returns the '<em><b>Element Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ElementKind get(int value) {
-		switch(value) {
+		switch (value) {
 		case CANVAS_VALUE:
 			return CANVAS;
 		case CIRCLE_VALUE:
@@ -468,21 +468,21 @@ public enum ElementKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -491,7 +491,7 @@ public enum ElementKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ElementKind(int value, String name, String literal) {
@@ -502,27 +502,30 @@ public enum ElementKind implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 		return literal;
 	}
@@ -530,7 +533,7 @@ public enum ElementKind implements Enumerator {
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

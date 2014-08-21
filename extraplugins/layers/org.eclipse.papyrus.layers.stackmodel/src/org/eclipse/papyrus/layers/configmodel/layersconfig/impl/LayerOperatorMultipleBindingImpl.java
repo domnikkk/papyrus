@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,8 +33,8 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl#getLayerOperatorConfig <em>Layer Operator Config</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl#getBindings <em>Bindings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl#getLayerOperatorConfig <em>Layer Operator Config</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorMultipleBindingImpl#getBindings <em>Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getLayerOperatorConfig() <em>Layer Operator Config</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayerOperatorConfig()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	 * The cached value of the '{@link #getBindings() <em>Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBindings()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerOperatorMultipleBindingImpl() {
@@ -73,6 +76,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,15 +87,18 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public LayerOperatorConfig getLayerOperatorConfig() {
 		if (layerOperatorConfig != null && layerOperatorConfig.eIsProxy()) {
-			InternalEObject oldLayerOperatorConfig = (InternalEObject)layerOperatorConfig;
-			layerOperatorConfig = (LayerOperatorConfig)eResolveProxy(oldLayerOperatorConfig);
+			InternalEObject oldLayerOperatorConfig = (InternalEObject) layerOperatorConfig;
+			layerOperatorConfig = (LayerOperatorConfig) eResolveProxy(oldLayerOperatorConfig);
 			if (layerOperatorConfig != oldLayerOperatorConfig) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG, oldLayerOperatorConfig, layerOperatorConfig));
+				}
 			}
 		}
 		return layerOperatorConfig;
@@ -100,6 +107,7 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerOperatorConfig basicGetLayerOperatorConfig() {
@@ -109,20 +117,25 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLayerOperatorConfig(LayerOperatorConfig newLayerOperatorConfig) {
 		LayerOperatorConfig oldLayerOperatorConfig = layerOperatorConfig;
 		layerOperatorConfig = newLayerOperatorConfig;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG, oldLayerOperatorConfig, layerOperatorConfig));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<OperatorBinding> getBindings() {
 		if (bindings == null) {
 			bindings = new EObjectContainmentWithInverseEList<OperatorBinding>(OperatorBinding.class, this, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS, LayersconfigPackage.OPERATOR_BINDING__OWNER);
@@ -133,14 +146,15 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBindings()).basicAdd(otherEnd, msgs);
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBindings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -148,13 +162,14 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,16 +177,19 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
-				if (resolve) return getLayerOperatorConfig();
-				return basicGetLayerOperatorConfig();
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				return getBindings();
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
+			if (resolve) {
+				return getLayerOperatorConfig();
+			}
+			return basicGetLayerOperatorConfig();
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			return getBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,19 +197,20 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
-				setLayerOperatorConfig((LayerOperatorConfig)newValue);
-				return;
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				getBindings().clear();
-				getBindings().addAll((Collection<? extends OperatorBinding>)newValue);
-				return;
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
+			setLayerOperatorConfig((LayerOperatorConfig) newValue);
+			return;
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			getBindings().clear();
+			getBindings().addAll((Collection<? extends OperatorBinding>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,17 +218,18 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
-				setLayerOperatorConfig((LayerOperatorConfig)null);
-				return;
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				getBindings().clear();
-				return;
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
+			setLayerOperatorConfig((LayerOperatorConfig) null);
+			return;
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			getBindings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,17 +237,18 @@ public class LayerOperatorMultipleBindingImpl extends FolderElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
-				return layerOperatorConfig != null;
-			case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
-				return bindings != null && !bindings.isEmpty();
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__LAYER_OPERATOR_CONFIG:
+			return layerOperatorConfig != null;
+		case LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS:
+			return bindings != null && !bindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //LayerOperatorMultipleBindingImpl
+} // LayerOperatorMultipleBindingImpl

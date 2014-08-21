@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *   
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
- * Test the Acceleo handler: call a dialog that opens the 
+ * Test the Acceleo handler: call a dialog that opens the
+ * 
  * @author ansgar
  *
  */
@@ -32,7 +33,7 @@ public class TestAcceleoHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if(selectedEObject instanceof NamedElement) {
+		if (selectedEObject instanceof NamedElement) {
 			return true;
 		}
 		return false;
@@ -41,12 +42,13 @@ public class TestAcceleoHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(selectedEObject instanceof NamedElement) {
+		if (selectedEObject instanceof NamedElement) {
 			Display.getDefault().syncExec(new Runnable() {
 				@Override
 				public void run() {
-					new TestAcceleoDialog(Display.getCurrent().getActiveShell(), (NamedElement)selectedEObject).open();
+					new TestAcceleoDialog(Display.getCurrent().getActiveShell(), (NamedElement) selectedEObject).open();
 				}
 			});
 		}

@@ -40,7 +40,7 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 	@Override
 	public boolean isEnabled() {
 		Element selectedElement = Utils.getSelection();
-		if(selectedElement != null) {
+		if (selectedElement != null) {
 			return selectedElement instanceof Class && !(selectedElement instanceof Behavior);
 		}
 		return false;
@@ -54,15 +54,15 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 	 * @return Class
 	 */
 	protected Class getClassFromSelection(ISelection selected) {
-		if(selected.isEmpty()) {
+		if (selected.isEmpty()) {
 			return null;
 		} else {
 			// Every object retrieved from the model explorer is an IAdaptable
-			IAdaptable adaptableObj = (IAdaptable)((IStructuredSelection)selected).getFirstElement();
+			IAdaptable adaptableObj = (IAdaptable) ((IStructuredSelection) selected).getFirstElement();
 			// Get the model object behind the adaptable object
-			EObject modelObj = (EObject)adaptableObj.getAdapter(org.eclipse.emf.ecore.EObject.class);
-			NamedElement nElem = (NamedElement)modelObj;
-			return nElem instanceof Class ? (Class)nElem : null;
+			EObject modelObj = (EObject) adaptableObj.getAdapter(org.eclipse.emf.ecore.EObject.class);
+			NamedElement nElem = (NamedElement) modelObj;
+			return nElem instanceof Class ? (Class) nElem : null;
 		}
 	}
 
@@ -70,7 +70,7 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		Class context = null;
 		context = this.getClassFromSelection(HandlerUtil.getCurrentSelection(event));
-		if(context != null) {
+		if (context != null) {
 			this.start(context);
 		}
 		return null;
@@ -80,11 +80,11 @@ public abstract class AbstractCompositeUtilsHandler extends AbstractHandler {
 	 * Launch the ConstructorBehaviorCreationCompiler
 	 *
 	 * @param myClass
-	 *        which is the class who need to create the constructor
+	 *            which is the class who need to create the constructor
 	 *
 	 */
 	public void start(Class myClass) {
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(myClass);
+		TransactionalEditingDomain domain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(myClass);
 		RecordingCommand updateCommand = this.getUpdateCommand(myClass, domain);
 		domain.getCommandStack().execute(updateCommand);
 	}

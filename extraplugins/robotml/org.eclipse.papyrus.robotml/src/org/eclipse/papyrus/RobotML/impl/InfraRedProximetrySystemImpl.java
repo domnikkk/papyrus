@@ -20,6 +20,7 @@ public class InfraRedProximetrySystemImpl extends ObjectDetectionSensorSystemImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected InfraRedProximetrySystemImpl() {
@@ -29,6 +30,7 @@ public class InfraRedProximetrySystemImpl extends ObjectDetectionSensorSystemImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class InfraRedProximetrySystemImpl extends ObjectDetectionSensorSystemImp
 		return RobotMLPackage.Literals.INFRA_RED_PROXIMETRY_SYSTEM;
 	}
 
-} //InfraRedProximetrySystemImpl
+} // InfraRedProximetrySystemImpl

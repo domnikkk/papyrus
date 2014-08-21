@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facademapping.FacadeMappping#getMappings <em>Mappings</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.FacadeMappping#getMappings <em>Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,10 +39,10 @@ public interface FacadeMappping extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.facademapping.Mapping}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mappings</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Mappings</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Mappings</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getFacadeMappping_Mappings()
 	 * @model containment="true"

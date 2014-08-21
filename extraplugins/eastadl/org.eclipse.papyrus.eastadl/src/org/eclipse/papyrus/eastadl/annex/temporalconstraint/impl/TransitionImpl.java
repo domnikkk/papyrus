@@ -24,11 +24,11 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getFrom <em>From</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getTo <em>To</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getQuantificationGuard <em>Quantification Guard</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getTimeGuard <em>Time Guard</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getFrom <em>From</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getTo <em>To</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getQuantificationGuard <em>Quantification Guard</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getTimeGuard <em>Time Guard</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFrom()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTo()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getQuantificationGuard() <em>Quantification Guard</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantificationGuard()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getTimeGuard() <em>Time Guard</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTimeGuard()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -88,6 +93,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TransitionImpl() {
@@ -97,6 +103,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,15 +114,18 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public State getFrom() {
 		if (from != null && from.eIsProxy()) {
-			InternalEObject oldFrom = (InternalEObject)from;
-			from = (State)eResolveProxy(oldFrom);
+			InternalEObject oldFrom = (InternalEObject) from;
+			from = (State) eResolveProxy(oldFrom);
 			if (from != oldFrom) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__FROM, oldFrom, from));
+				}
 			}
 		}
 		return from;
@@ -124,6 +134,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public State basicGetFrom() {
@@ -133,27 +144,33 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFrom(State newFrom) {
 		State oldFrom = from;
 		from = newFrom;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__FROM, oldFrom, from));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public State getTo() {
 		if (to != null && to.eIsProxy()) {
-			InternalEObject oldTo = (InternalEObject)to;
-			to = (State)eResolveProxy(oldTo);
+			InternalEObject oldTo = (InternalEObject) to;
+			to = (State) eResolveProxy(oldTo);
 			if (to != oldTo) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__TO, oldTo, to));
+				}
 			}
 		}
 		return to;
@@ -162,6 +179,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public State basicGetTo() {
@@ -171,20 +189,25 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTo(State newTo) {
 		State oldTo = to;
 		to = newTo;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__TO, oldTo, to));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Quantification> getQuantificationGuard() {
 		if (quantificationGuard == null) {
 			quantificationGuard = new EObjectResolvingEList<Quantification>(Quantification.class, this, TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD);
@@ -195,8 +218,10 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalTimeCondition> getTimeGuard() {
 		if (timeGuard == null) {
 			timeGuard = new EObjectResolvingEList<LogicalTimeCondition>(LogicalTimeCondition.class, this, TemporalconstraintPackage.TRANSITION__TIME_GUARD);
@@ -207,15 +232,18 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TransformationOccurrence getEffect() {
 		if (effect != null && effect.eIsProxy()) {
-			InternalEObject oldEffect = (InternalEObject)effect;
-			effect = (TransformationOccurrence)eResolveProxy(oldEffect);
+			InternalEObject oldEffect = (InternalEObject) effect;
+			effect = (TransformationOccurrence) eResolveProxy(oldEffect);
 			if (effect != oldEffect) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.TRANSITION__EFFECT, oldEffect, effect));
+				}
 			}
 		}
 		return effect;
@@ -224,6 +252,7 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TransformationOccurrence basicGetEffect() {
@@ -233,36 +262,46 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setEffect(TransformationOccurrence newEffect) {
 		TransformationOccurrence oldEffect = effect;
 		effect = newEffect;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.TRANSITION__EFFECT, oldEffect, effect));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION__FROM:
-				if (resolve) return getFrom();
-				return basicGetFrom();
-			case TemporalconstraintPackage.TRANSITION__TO:
-				if (resolve) return getTo();
-				return basicGetTo();
-			case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
-				return getQuantificationGuard();
-			case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
-				return getTimeGuard();
-			case TemporalconstraintPackage.TRANSITION__EFFECT:
-				if (resolve) return getEffect();
-				return basicGetEffect();
+		case TemporalconstraintPackage.TRANSITION__FROM:
+			if (resolve) {
+				return getFrom();
+			}
+			return basicGetFrom();
+		case TemporalconstraintPackage.TRANSITION__TO:
+			if (resolve) {
+				return getTo();
+			}
+			return basicGetTo();
+		case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
+			return getQuantificationGuard();
+		case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
+			return getTimeGuard();
+		case TemporalconstraintPackage.TRANSITION__EFFECT:
+			if (resolve) {
+				return getEffect();
+			}
+			return basicGetEffect();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,29 +309,30 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION__FROM:
-				setFrom((State)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION__TO:
-				setTo((State)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
-				getQuantificationGuard().clear();
-				getQuantificationGuard().addAll((Collection<? extends Quantification>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
-				getTimeGuard().clear();
-				getTimeGuard().addAll((Collection<? extends LogicalTimeCondition>)newValue);
-				return;
-			case TemporalconstraintPackage.TRANSITION__EFFECT:
-				setEffect((TransformationOccurrence)newValue);
-				return;
+		case TemporalconstraintPackage.TRANSITION__FROM:
+			setFrom((State) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION__TO:
+			setTo((State) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
+			getQuantificationGuard().clear();
+			getQuantificationGuard().addAll((Collection<? extends Quantification>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
+			getTimeGuard().clear();
+			getTimeGuard().addAll((Collection<? extends LogicalTimeCondition>) newValue);
+			return;
+		case TemporalconstraintPackage.TRANSITION__EFFECT:
+			setEffect((TransformationOccurrence) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -300,26 +340,27 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION__FROM:
-				setFrom((State)null);
-				return;
-			case TemporalconstraintPackage.TRANSITION__TO:
-				setTo((State)null);
-				return;
-			case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
-				getQuantificationGuard().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
-				getTimeGuard().clear();
-				return;
-			case TemporalconstraintPackage.TRANSITION__EFFECT:
-				setEffect((TransformationOccurrence)null);
-				return;
+		case TemporalconstraintPackage.TRANSITION__FROM:
+			setFrom((State) null);
+			return;
+		case TemporalconstraintPackage.TRANSITION__TO:
+			setTo((State) null);
+			return;
+		case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
+			getQuantificationGuard().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
+			getTimeGuard().clear();
+			return;
+		case TemporalconstraintPackage.TRANSITION__EFFECT:
+			setEffect((TransformationOccurrence) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -327,23 +368,24 @@ public class TransitionImpl extends EAElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.TRANSITION__FROM:
-				return from != null;
-			case TemporalconstraintPackage.TRANSITION__TO:
-				return to != null;
-			case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
-				return quantificationGuard != null && !quantificationGuard.isEmpty();
-			case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
-				return timeGuard != null && !timeGuard.isEmpty();
-			case TemporalconstraintPackage.TRANSITION__EFFECT:
-				return effect != null;
+		case TemporalconstraintPackage.TRANSITION__FROM:
+			return from != null;
+		case TemporalconstraintPackage.TRANSITION__TO:
+			return to != null;
+		case TemporalconstraintPackage.TRANSITION__QUANTIFICATION_GUARD:
+			return quantificationGuard != null && !quantificationGuard.isEmpty();
+		case TemporalconstraintPackage.TRANSITION__TIME_GUARD:
+			return timeGuard != null && !timeGuard.isEmpty();
+		case TemporalconstraintPackage.TRANSITION__EFFECT:
+			return effect != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TransitionImpl
+} // TransitionImpl

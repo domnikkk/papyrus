@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,12 +47,12 @@ public class ProfileUtils {
 		EcoreUtil.resolveAll(element);
 
 		EList<Resource> resources = element.eResource().getResourceSet().getResources();
-		for(Resource resource : resources) {
+		for (Resource resource : resources) {
 			TreeIterator<EObject> it = resource.getAllContents();
-			while(it.hasNext()) {
-				EObject eObject = (EObject)it.next();
-				if(eObject instanceof Classifier) {
-					output.add((Classifier)eObject);
+			while (it.hasNext()) {
+				EObject eObject = it.next();
+				if (eObject instanceof Classifier) {
+					output.add((Classifier) eObject);
 				}
 			}
 		}
@@ -68,12 +68,12 @@ public class ProfileUtils {
 		EcoreUtil.resolveAll(profile);
 
 		EList<Resource> resources = profile.eResource().getResourceSet().getResources();
-		for(Resource resource : resources) {
+		for (Resource resource : resources) {
 			TreeIterator<EObject> it = resource.getAllContents();
-			while(it.hasNext()) {
-				EObject eObject = (EObject)it.next();
-				if(eObject instanceof Extension) {
-					output.add((Extension)eObject);
+			while (it.hasNext()) {
+				EObject eObject = it.next();
+				if (eObject instanceof Extension) {
+					output.add((Extension) eObject);
 				}
 			}
 		}
@@ -84,10 +84,10 @@ public class ProfileUtils {
 	public static List<Extension> findExtensions(Stereotype stereotype) {
 		List<Extension> extensions = new ArrayList<Extension>();
 
-		for(Property property : stereotype.getAllAttributes()) {
-			if(property.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
-				if(property.getAssociation() instanceof Extension) {
-					extensions.add((Extension)property.getAssociation());
+		for (Property property : stereotype.getAllAttributes()) {
+			if (property.getName().startsWith(Extension.METACLASS_ROLE_PREFIX)) {
+				if (property.getAssociation() instanceof Extension) {
+					extensions.add((Extension) property.getAssociation());
 				}
 			}
 		}
@@ -100,10 +100,10 @@ public class ProfileUtils {
 		List<Stereotype> output = new ArrayList<Stereotype>();
 
 		HashSet<Classifier> classifiers = getAllClassifiers(classifier);
-		for(Classifier classifierCandidate : classifiers) {
-			if(classifierCandidate.getGenerals().contains(classifier)) {
-				if(classifierCandidate instanceof Stereotype) {
-					output.add((Stereotype)classifierCandidate);
+		for (Classifier classifierCandidate : classifiers) {
+			if (classifierCandidate.getGenerals().contains(classifier)) {
+				if (classifierCandidate instanceof Stereotype) {
+					output.add((Stereotype) classifierCandidate);
 				}
 			}
 
@@ -132,12 +132,12 @@ public class ProfileUtils {
 
 		EList<Classifier> stereotypeGenerals = stereotype.getGenerals();
 
-		if(!stereotypeGenerals.isEmpty()) {
-			for(Classifier classifier : stereotypeGenerals) {
-				if(classifier instanceof Stereotype) {
-					stereotypeRelatives.addAll(findAllSubsInProfile((Stereotype)classifier));
+		if (!stereotypeGenerals.isEmpty()) {
+			for (Classifier classifier : stereotypeGenerals) {
+				if (classifier instanceof Stereotype) {
+					stereotypeRelatives.addAll(findAllSubsInProfile((Stereotype) classifier));
 
-					stereotypeRelatives.add((Stereotype)classifier);
+					stereotypeRelatives.add((Stereotype) classifier);
 				}
 			}
 		} else {
@@ -154,7 +154,7 @@ public class ProfileUtils {
 		HashSet<Stereotype> stereotypeBRelatives = getSiblings(stereotypeB);
 
 		// They must not be relatives
-		if(!stereotypeARelatives.contains(stereotypeB) && !stereotypeBRelatives.contains(stereotypeA)) {
+		if (!stereotypeARelatives.contains(stereotypeB) && !stereotypeBRelatives.contains(stereotypeA)) {
 			return true;
 		}
 
@@ -166,33 +166,33 @@ public class ProfileUtils {
 		int[] indices;
 
 		List<Combination> allCombination = new ArrayList<Combination>();
-		for(int k = 1; k <= possibleStereotypes.size(); k++) {
+		for (int k = 1; k <= possibleStereotypes.size(); k++) {
 			CombinationGenerator combinaisonGenerator = new CombinationGenerator(elements.size(), k);
 
-			while(combinaisonGenerator.hasMore()) {
+			while (combinaisonGenerator.hasMore()) {
 				// ArrayList<Stereotype> combination = new ArrayList<Stereotype>();
 				indices = combinaisonGenerator.getNext();
 
 				Combination combinaison = ExtensiondefinitionFactory.eINSTANCE.createCombination();
 
-				for(int i = 0; i < indices.length; i++) {
+				for (int i = 0; i < indices.length; i++) {
 					// combination.add();
 					combinaison.getMembers().add(elements.get(indices[i]));
 				}
 
-				//Check that combination doesn't contain siblings
+				// Check that combination doesn't contain siblings
 				boolean containsSiblings = false;
-				for(BaseMetaclass baseA : combinaison.getMembers()) {
-					for(BaseMetaclass baseB : combinaison.getMembers()) {
-						if(baseA != baseB) {
-							if(!areNotRelatives(baseA.getExtensionDefinition().getStereotype(), baseB.getExtensionDefinition().getStereotype())) {
+				for (BaseMetaclass baseA : combinaison.getMembers()) {
+					for (BaseMetaclass baseB : combinaison.getMembers()) {
+						if (baseA != baseB) {
+							if (!areNotRelatives(baseA.getExtensionDefinition().getStereotype(), baseB.getExtensionDefinition().getStereotype())) {
 								containsSiblings = true;
 							}
 						}
 					}
 				}
 
-				if(!containsSiblings) {
+				if (!containsSiblings) {
 					allCombination.add(combinaison);
 				}
 			}
@@ -205,24 +205,24 @@ public class ProfileUtils {
 		List<BaseMetaclass> requiredCompatibleStereotypes = new ArrayList<BaseMetaclass>();
 		List<BaseMetaclass> optionalCompatibleStereotypes = new ArrayList<BaseMetaclass>();
 
-		if(inputElement.getExtensionDefinition().getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
+		if (inputElement.getExtensionDefinition().getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
 
 			Facade facade = inputElement.getExtensionDefinition().getFacade();
-			for(ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
+			for (ExtensionDefinition extensionDefinition : facade.getExtensionDefinitions()) {
 
-				if(extensionDefinition.getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
-					for(BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses()) {
-						if(baseMetaclass.getBase() == inputElement.getBase()) {
+				if (extensionDefinition.getKind() == ExtensionDefinitionKind.MULTI_GENERALIZATION) {
+					for (BaseMetaclass baseMetaclass : extensionDefinition.getBaseMetaclasses()) {
+						if (baseMetaclass.getBase() == inputElement.getBase()) {
 
-							if(baseMetaclass != inputElement) {
+							if (baseMetaclass != inputElement) {
 								Stereotype inputElementStereo = inputElement.getExtensionDefinition().getStereotype();
 								Stereotype baseMetaClassStereo = baseMetaclass.getExtensionDefinition().getStereotype();
 
-								if(ProfileUtils.areNotRelatives(inputElementStereo, baseMetaClassStereo)) {
+								if (ProfileUtils.areNotRelatives(inputElementStereo, baseMetaClassStereo)) {
 
-									if(!baseMetaclass.getExtensionDefinition().getStereotype().isAbstract()) {
+									if (!baseMetaclass.getExtensionDefinition().getStereotype().isAbstract()) {
 
-										if(baseMetaclass.getExtensionDefinition().getExtension().isRequired()) {
+										if (baseMetaclass.getExtensionDefinition().getExtension().isRequired()) {
 											requiredCompatibleStereotypes.add(baseMetaclass);
 										} else {
 											optionalCompatibleStereotypes.add(baseMetaclass);
@@ -238,8 +238,8 @@ public class ProfileUtils {
 		}
 
 		List<Combination> possibleCombination = generatePossibleCombination(optionalCompatibleStereotypes);
-		if(!requiredCompatibleStereotypes.isEmpty()) {
-			for(Combination combination : possibleCombination) {
+		if (!requiredCompatibleStereotypes.isEmpty()) {
+			for (Combination combination : possibleCombination) {
 				combination.getMembers().addAll(requiredCompatibleStereotypes);
 			}
 			Combination combinationRequired = ExtensiondefinitionFactory.eINSTANCE.createCombination();

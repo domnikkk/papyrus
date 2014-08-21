@@ -31,15 +31,15 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isFinal <em>Is Final</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getBase_Property <em>Base Property</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isTransient <em>Is Transient</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getGenerateGetter <em>Generate Getter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getGenerateSetter <em>Generate Setter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isStatic <em>Is Static</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isAbstract <em>Is Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isFinal <em>Is Final</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isTransient <em>Is Transient</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getGenerateGetter <em>Generate Getter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getGenerateSetter <em>Generate Setter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#isStatic <em>Is Static</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getExplicitPlainTextRequiredImports <em>Explicit Plain Text Required Imports</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaPropertyImpl#getExplicitRequiredImports <em>Explicit Required Imports</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isFinal()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isTransient() <em>Is Transient</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isTransient() <em>Is Transient</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isTransient()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -130,6 +138,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getGenerateGetter() <em>Generate Getter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerateGetter()
 	 * @generated
 	 * @ordered
@@ -140,6 +149,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -150,6 +160,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getGenerateSetter() <em>Generate Setter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerateSetter()
 	 * @generated
 	 * @ordered
@@ -160,6 +171,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The default value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -170,6 +182,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #isStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStatic()
 	 * @generated
 	 * @ordered
@@ -180,6 +193,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getExplicitPlainTextRequiredImports() <em>Explicit Plain Text Required Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExplicitPlainTextRequiredImports()
 	 * @generated
 	 * @ordered
@@ -190,6 +204,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	 * The cached value of the '{@link #getExplicitRequiredImports() <em>Explicit Required Imports</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExplicitRequiredImports()
 	 * @generated
 	 * @ordered
@@ -199,6 +214,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JavaPropertyImpl() {
@@ -208,6 +224,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -218,8 +235,10 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isAbstract() {
 		return isAbstract;
 	}
@@ -227,20 +246,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsAbstract(boolean newIsAbstract) {
 		boolean oldIsAbstract = isAbstract;
 		isAbstract = newIsAbstract;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__IS_ABSTRACT, oldIsAbstract, isAbstract));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isFinal() {
 		return isFinal;
 	}
@@ -248,27 +272,33 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsFinal(boolean newIsFinal) {
 		boolean oldIsFinal = isFinal;
 		isFinal = newIsFinal;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__IS_FINAL, oldIsFinal, isFinal));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JavaPackage.JAVA_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -277,6 +307,7 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -286,20 +317,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isTransient() {
 		return isTransient;
 	}
@@ -307,20 +343,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsTransient(boolean newIsTransient) {
 		boolean oldIsTransient = isTransient;
 		isTransient = newIsTransient;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__IS_TRANSIENT, oldIsTransient, isTransient));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TrueFalseDefault getGenerateGetter() {
 		return generateGetter;
 	}
@@ -328,20 +369,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setGenerateGetter(TrueFalseDefault newGenerateGetter) {
 		TrueFalseDefault oldGenerateGetter = generateGetter;
 		generateGetter = newGenerateGetter == null ? GENERATE_GETTER_EDEFAULT : newGenerateGetter;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__GENERATE_GETTER, oldGenerateGetter, generateGetter));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TrueFalseDefault getGenerateSetter() {
 		return generateSetter;
 	}
@@ -349,20 +395,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setGenerateSetter(TrueFalseDefault newGenerateSetter) {
 		TrueFalseDefault oldGenerateSetter = generateSetter;
 		generateSetter = newGenerateSetter == null ? GENERATE_SETTER_EDEFAULT : newGenerateSetter;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__GENERATE_SETTER, oldGenerateSetter, generateSetter));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isStatic() {
 		return isStatic;
 	}
@@ -370,20 +421,25 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsStatic(boolean newIsStatic) {
 		boolean oldIsStatic = isStatic;
 		isStatic = newIsStatic;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_PROPERTY__IS_STATIC, oldIsStatic, isStatic));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getExplicitPlainTextRequiredImports() {
 		if (explicitPlainTextRequiredImports == null) {
 			explicitPlainTextRequiredImports = new EDataTypeEList<String>(String.class, this, JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS);
@@ -394,8 +450,10 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Classifier> getExplicitRequiredImports() {
 		if (explicitRequiredImports == null) {
 			explicitRequiredImports = new EObjectResolvingEList<Classifier>(Classifier.class, this, JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS);
@@ -406,8 +464,10 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Classifier getExplicitRequiredImports(String name) {
 		return getExplicitRequiredImports(name, false, null);
 	}
@@ -415,14 +475,18 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Classifier getExplicitRequiredImports(String name, boolean ignoreCase, EClass eClass) {
 		explicitRequiredImportsLoop: for (Classifier explicitRequiredImports : getExplicitRequiredImports()) {
-			if (eClass != null && !eClass.isInstance(explicitRequiredImports))
+			if (eClass != null && !eClass.isInstance(explicitRequiredImports)) {
 				continue explicitRequiredImportsLoop;
-			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(explicitRequiredImports.getName()) : name.equals(explicitRequiredImports.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(explicitRequiredImports.getName()) : name.equals(explicitRequiredImports.getName()))) {
 				continue explicitRequiredImportsLoop;
+			}
 			return explicitRequiredImports;
 		}
 		return null;
@@ -431,30 +495,33 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
-				return isAbstract();
-			case JavaPackage.JAVA_PROPERTY__IS_FINAL:
-				return isFinal();
-			case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
-				if (resolve) return getBase_Property();
-				return basicGetBase_Property();
-			case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
-				return isTransient();
-			case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
-				return getGenerateGetter();
-			case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
-				return getGenerateSetter();
-			case JavaPackage.JAVA_PROPERTY__IS_STATIC:
-				return isStatic();
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				return getExplicitPlainTextRequiredImports();
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
-				return getExplicitRequiredImports();
+		case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
+			return isAbstract();
+		case JavaPackage.JAVA_PROPERTY__IS_FINAL:
+			return isFinal();
+		case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
+			if (resolve) {
+				return getBase_Property();
+			}
+			return basicGetBase_Property();
+		case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
+			return isTransient();
+		case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
+			return getGenerateGetter();
+		case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
+			return getGenerateSetter();
+		case JavaPackage.JAVA_PROPERTY__IS_STATIC:
+			return isStatic();
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			return getExplicitPlainTextRequiredImports();
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
+			return getExplicitRequiredImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -462,41 +529,42 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
-				setIsAbstract((Boolean)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_FINAL:
-				setIsFinal((Boolean)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
-				setBase_Property((Property)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
-				setIsTransient((Boolean)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
-				setGenerateGetter((TrueFalseDefault)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
-				setGenerateSetter((TrueFalseDefault)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_STATIC:
-				setIsStatic((Boolean)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				getExplicitPlainTextRequiredImports().clear();
-				getExplicitPlainTextRequiredImports().addAll((Collection<? extends String>)newValue);
-				return;
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
-				getExplicitRequiredImports().clear();
-				getExplicitRequiredImports().addAll((Collection<? extends Classifier>)newValue);
-				return;
+		case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
+			setIsAbstract((Boolean) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_FINAL:
+			setIsFinal((Boolean) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
+			setBase_Property((Property) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
+			setIsTransient((Boolean) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
+			setGenerateGetter((TrueFalseDefault) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
+			setGenerateSetter((TrueFalseDefault) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_STATIC:
+			setIsStatic((Boolean) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			getExplicitPlainTextRequiredImports().clear();
+			getExplicitPlainTextRequiredImports().addAll((Collection<? extends String>) newValue);
+			return;
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
+			getExplicitRequiredImports().clear();
+			getExplicitRequiredImports().addAll((Collection<? extends Classifier>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -504,38 +572,39 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
-				setIsAbstract(IS_ABSTRACT_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_FINAL:
-				setIsFinal(IS_FINAL_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
-				setBase_Property((Property)null);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
-				setIsTransient(IS_TRANSIENT_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
-				setGenerateGetter(GENERATE_GETTER_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
-				setGenerateSetter(GENERATE_SETTER_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__IS_STATIC:
-				setIsStatic(IS_STATIC_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				getExplicitPlainTextRequiredImports().clear();
-				return;
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
-				getExplicitRequiredImports().clear();
-				return;
+		case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
+			setIsAbstract(IS_ABSTRACT_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_FINAL:
+			setIsFinal(IS_FINAL_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
+			setBase_Property((Property) null);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
+			setIsTransient(IS_TRANSIENT_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
+			setGenerateGetter(GENERATE_GETTER_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
+			setGenerateSetter(GENERATE_SETTER_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__IS_STATIC:
+			setIsStatic(IS_STATIC_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			getExplicitPlainTextRequiredImports().clear();
+			return;
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
+			getExplicitRequiredImports().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -543,29 +612,30 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
-				return isAbstract != IS_ABSTRACT_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__IS_FINAL:
-				return isFinal != IS_FINAL_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
-				return base_Property != null;
-			case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
-				return isTransient != IS_TRANSIENT_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
-				return generateGetter != GENERATE_GETTER_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
-				return generateSetter != GENERATE_SETTER_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__IS_STATIC:
-				return isStatic != IS_STATIC_EDEFAULT;
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
-				return explicitPlainTextRequiredImports != null && !explicitPlainTextRequiredImports.isEmpty();
-			case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
-				return explicitRequiredImports != null && !explicitRequiredImports.isEmpty();
+		case JavaPackage.JAVA_PROPERTY__IS_ABSTRACT:
+			return isAbstract != IS_ABSTRACT_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__IS_FINAL:
+			return isFinal != IS_FINAL_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__BASE_PROPERTY:
+			return base_Property != null;
+		case JavaPackage.JAVA_PROPERTY__IS_TRANSIENT:
+			return isTransient != IS_TRANSIENT_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_GETTER:
+			return generateGetter != GENERATE_GETTER_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__GENERATE_SETTER:
+			return generateSetter != GENERATE_SETTER_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__IS_STATIC:
+			return isStatic != IS_STATIC_EDEFAULT;
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_PLAIN_TEXT_REQUIRED_IMPORTS:
+			return explicitPlainTextRequiredImports != null && !explicitPlainTextRequiredImports.isEmpty();
+		case JavaPackage.JAVA_PROPERTY__EXPLICIT_REQUIRED_IMPORTS:
+			return explicitRequiredImports != null && !explicitRequiredImports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -573,11 +643,14 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isAbstract: ");
@@ -598,4 +671,4 @@ public class JavaPropertyImpl extends JavaNamedElementImpl implements JavaProper
 		return result.toString();
 	}
 
-} //JavaPropertyImpl
+} // JavaPropertyImpl

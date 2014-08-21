@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -42,11 +42,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTClass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JDTClassItemProvider
-	extends JDTTypeItemProvider
-	implements
+		extends JDTTypeItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -56,6 +57,7 @@ public class JDTClassItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JDTClassItemProvider(AdapterFactory adapterFactory) {
@@ -66,6 +68,7 @@ public class JDTClassItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,6 +84,7 @@ public class JDTClassItemProvider
 	 * This returns JDTClass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -92,14 +96,15 @@ public class JDTClassItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTClass)object).getElementName();
+		String label = ((JDTClass) object).getElementName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTClass_type") :
-			getString("_UI_JDTClass_type") + " " + label;
+				getString("_UI_JDTClass_type") :
+				getString("_UI_JDTClass_type") + " " + label;
 	}
 
 	/**
@@ -107,6 +112,7 @@ public class JDTClassItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,6 +126,7 @@ public class JDTClassItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

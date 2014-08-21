@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface StereotypedMapping extends Mapping {
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Applied Stereotypes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Applied Stereotypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Applied Stereotypes</em>' reference list.
 	 * @see org.eclipse.papyrus.facademapping.FacademappingPackage#getStereotypedMapping_AppliedStereotypes()
 	 * @model required="true"
@@ -56,10 +56,10 @@ public interface StereotypedMapping extends Mapping {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.facademapping.ExtensionDefinitionKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 	 * @see #setKind(ExtensionDefinitionKind)
@@ -73,7 +73,9 @@ public interface StereotypedMapping extends Mapping {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facademapping.StereotypedMapping#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.facademapping.ExtensionDefinitionKind
 	 * @see #getKind()
 	 * @generated

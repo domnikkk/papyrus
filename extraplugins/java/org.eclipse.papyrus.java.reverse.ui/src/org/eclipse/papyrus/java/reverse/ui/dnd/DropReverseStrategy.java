@@ -27,12 +27,12 @@ public class DropReverseStrategy implements DropStrategy {
 
 	@Override
 	public String getLabel() {
-		return Messages.DropReverseStrategy_LABEL; 
+		return Messages.DropReverseStrategy_LABEL;
 	}
 
 	@Override
 	public String getDescription() {
-		return Messages.DropReverseStrategy_DESCRIPTION; 
+		return Messages.DropReverseStrategy_DESCRIPTION;
 	}
 
 	@Override

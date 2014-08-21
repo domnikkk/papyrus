@@ -34,7 +34,7 @@ public class ActiveObjectControllerServicesRegistry extends AbstractSystemServic
 
 	@Override
 	protected Object_ instantiateService(Class service) {
-		if(service.getQualifiedName().equals(ACTIVE_OBJECT_CONTROLLER_UI_SERVICE_NAME)) {
+		if (service.getQualifiedName().equals(ACTIVE_OBJECT_CONTROLLER_UI_SERVICE_NAME)) {
 			return new ActiveObjectControllerUIProxy(service);
 		}
 		return null;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class CDOResourceHyperlinkLabelProvider extends HyperLinkFilteredLabelPro
 
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof CDOResourceHyperlink) {
+		if (element instanceof CDOResourceHyperlink) {
 			return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, Activator.IMG_DOCUMENT);
 		}
 
@@ -38,8 +38,8 @@ public class CDOResourceHyperlinkLabelProvider extends HyperLinkFilteredLabelPro
 
 	@Override
 	public String getText(Object element) {
-		if(element instanceof CDOResourceHyperlink) {
-			CDOResourceHyperlink hyperlink = (CDOResourceHyperlink)element;
+		if (element instanceof CDOResourceHyperlink) {
+			CDOResourceHyperlink hyperlink = (CDOResourceHyperlink) element;
 
 			String tip = hyperlink.getTooltipText();
 			String uri = String.valueOf(hyperlink.getHyperlink());

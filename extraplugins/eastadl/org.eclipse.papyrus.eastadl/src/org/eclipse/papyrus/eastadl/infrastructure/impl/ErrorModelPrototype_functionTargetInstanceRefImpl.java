@@ -21,8 +21,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ErrorModelPrototype_functionTargetInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ErrorModelPrototype_functionTargetInstanceRefImpl#getFunctionPrototype_context <em>Function Prototype context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ErrorModelPrototype_functionTargetInstanceRefImpl#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.ErrorModelPrototype_functionTargetInstanceRefImpl#getFunctionPrototype_context <em>Function Prototype context</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	 * The cached value of the '{@link #getFunctionPrototype() <em>Function Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	 * The cached value of the '{@link #getFunctionPrototype_context() <em>Function Prototype context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFunctionPrototype_context()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ErrorModelPrototype_functionTargetInstanceRefImpl() {
@@ -61,6 +64,7 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,15 +75,18 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public FunctionPrototype getFunctionPrototype() {
 		if (functionPrototype != null && functionPrototype.eIsProxy()) {
-			InternalEObject oldFunctionPrototype = (InternalEObject)functionPrototype;
-			functionPrototype = (FunctionPrototype)eResolveProxy(oldFunctionPrototype);
+			InternalEObject oldFunctionPrototype = (InternalEObject) functionPrototype;
+			functionPrototype = (FunctionPrototype) eResolveProxy(oldFunctionPrototype);
 			if (functionPrototype != oldFunctionPrototype) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
+				}
 			}
 		}
 		return functionPrototype;
@@ -88,6 +95,7 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FunctionPrototype basicGetFunctionPrototype() {
@@ -97,20 +105,25 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFunctionPrototype(FunctionPrototype newFunctionPrototype) {
 		FunctionPrototype oldFunctionPrototype = functionPrototype;
 		functionPrototype = newFunctionPrototype;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE, oldFunctionPrototype, functionPrototype));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionPrototype> getFunctionPrototype_context() {
 		if (functionPrototype_context == null) {
 			functionPrototype_context = new EObjectResolvingEList<FunctionPrototype>(FunctionPrototype.class, this, InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT);
@@ -121,16 +134,19 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				if (resolve) return getFunctionPrototype();
-				return basicGetFunctionPrototype();
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
-				return getFunctionPrototype_context();
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			if (resolve) {
+				return getFunctionPrototype();
+			}
+			return basicGetFunctionPrototype();
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
+			return getFunctionPrototype_context();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,19 +154,20 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				setFunctionPrototype((FunctionPrototype)newValue);
-				return;
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
-				getFunctionPrototype_context().clear();
-				getFunctionPrototype_context().addAll((Collection<? extends FunctionPrototype>)newValue);
-				return;
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			setFunctionPrototype((FunctionPrototype) newValue);
+			return;
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
+			getFunctionPrototype_context().clear();
+			getFunctionPrototype_context().addAll((Collection<? extends FunctionPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -158,17 +175,18 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				setFunctionPrototype((FunctionPrototype)null);
-				return;
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
-				getFunctionPrototype_context().clear();
-				return;
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			setFunctionPrototype((FunctionPrototype) null);
+			return;
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
+			getFunctionPrototype_context().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -176,17 +194,18 @@ public class ErrorModelPrototype_functionTargetInstanceRefImpl extends InstanceR
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
-				return functionPrototype != null;
-			case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
-				return functionPrototype_context != null && !functionPrototype_context.isEmpty();
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE:
+			return functionPrototype != null;
+		case InfrastructurePackage.ERROR_MODEL_PROTOTYPE_FUNCTION_TARGET_INSTANCE_REF__FUNCTION_PROTOTYPE_CONTEXT:
+			return functionPrototype_context != null && !functionPrototype_context.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ErrorModelPrototype_functionTargetInstanceRefImpl
+} // ErrorModelPrototype_functionTargetInstanceRefImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,17 +28,17 @@ import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTabl
 
 /**
  * Handler for the delete Table action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class DeleteTableHandler extends AbstractTableModelExplorerHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -48,10 +48,10 @@ public class DeleteTableHandler extends AbstractTableModelExplorerHandler {
 
 		List<PapyrusTableInstance> tables = getSelectedTables();
 
-		if(editingDomain != null && pageMngr != null && !tables.isEmpty()) {
+		if (editingDomain != null && pageMngr != null && !tables.isEmpty()) {
 			CompoundCommand command = new CompoundCommand();
 
-			for(final PapyrusTableInstance table : tables) {
+			for (final PapyrusTableInstance table : tables) {
 				Command sashRemoveComd = new RecordingCommand(editingDomain) {
 
 					@Override

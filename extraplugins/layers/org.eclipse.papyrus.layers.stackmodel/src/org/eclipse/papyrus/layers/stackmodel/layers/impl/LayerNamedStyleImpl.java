@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl#getLayersStack <em>Layers Stack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerNamedStyleImpl#getLayersStack <em>Layers Stack</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	 * The cached value of the '{@link #getLayersStack() <em>Layers Stack</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayersStack()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerNamedStyleImpl() {
@@ -60,6 +62,7 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,8 +73,10 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LayersStack> getLayersStack() {
 		if (layersStack == null) {
 			layersStack = new EObjectContainmentEList<LayersStack>(LayersStack.class, this, LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK);
@@ -82,13 +87,14 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				return ((InternalEList<?>)getLayersStack()).basicRemove(otherEnd, msgs);
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			return ((InternalEList<?>) getLayersStack()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -96,13 +102,14 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				return getLayersStack();
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			return getLayersStack();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,16 +117,17 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				getLayersStack().clear();
-				getLayersStack().addAll((Collection<? extends LayersStack>)newValue);
-				return;
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			getLayersStack().clear();
+			getLayersStack().addAll((Collection<? extends LayersStack>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,14 +135,15 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				getLayersStack().clear();
-				return;
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			getLayersStack().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,15 +151,16 @@ public class LayerNamedStyleImpl extends NamedStyleImpl implements LayerNamedSty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				return layersStack != null && !layersStack.isEmpty();
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			return layersStack != null && !layersStack.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //LayerNamedStyleImpl
+} // LayerNamedStyleImpl

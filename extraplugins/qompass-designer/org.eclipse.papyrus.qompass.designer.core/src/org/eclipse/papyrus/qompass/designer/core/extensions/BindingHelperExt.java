@@ -34,10 +34,10 @@ public class BindingHelperExt {
 	public static final String IBINDING_HELPER_ID = org.eclipse.papyrus.FCM.Activator.PLUGIN_ID + ".fcmBindingHelper"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param iConfiguratorName
 	 * @param component
-	 *        containing composite (container)
+	 *            containing composite (container)
 	 * @param instance
 	 */
 	public static EObject applyPreHelper(BindingHelper helper, LazyCopier copier, TemplateBinding binding, EObject sourceEObj) {
@@ -45,17 +45,17 @@ public class BindingHelperExt {
 		if (sourceEObj instanceof Element) {
 			ihelper.handleElement(binding, (Element) sourceEObj);
 		}
-		if(ihelper instanceof PreCopyListener) {
+		if (ihelper instanceof PreCopyListener) {
 			return ((PreCopyListener) ihelper).preCopyEObject(copier, sourceEObj);
 		}
 		return sourceEObj;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param iConfiguratorName
 	 * @param component
-	 *        containing composite (container)
+	 *            containing composite (container)
 	 * @param instance
 	 */
 	public static void applyPostHelper(BindingHelper helper, LazyCopier copier, TemplateBinding binding, EObject targetEObj) {
@@ -63,7 +63,7 @@ public class BindingHelperExt {
 		if (targetEObj instanceof Element) {
 			ihelper.handleElement(binding, (Element) targetEObj);
 		}
-		if(ihelper instanceof PostCopyListener) {
+		if (ihelper instanceof PostCopyListener) {
 			((PostCopyListener) ihelper).postCopyEObject(copier, targetEObj);
 		}
 	}
@@ -78,14 +78,14 @@ public class BindingHelperExt {
 	public static IBindingHelper getBindingHelper(String helperName) {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(IBINDING_HELPER_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String configHelperName = configElement.getAttribute("bindingHelperName"); //$NON-NLS-1$
-				if(configHelperName.equals(helperName)) {
+				if (configHelperName.equals(helperName)) {
 					// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof IBindingHelper) {
-						return (IBindingHelper)obj;
+					if (obj instanceof IBindingHelper) {
+						return (IBindingHelper) obj;
 					}
 				}
 			} catch (CoreException exception) {

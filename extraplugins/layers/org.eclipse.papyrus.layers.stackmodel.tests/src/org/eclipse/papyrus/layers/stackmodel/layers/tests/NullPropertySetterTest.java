@@ -11,6 +11,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.NullPropertySetter;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Null Property Setter</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class NullPropertySetterTest extends PropertySetterTest {
@@ -18,6 +19,7 @@ public class NullPropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class NullPropertySetterTest extends PropertySetterTest {
 	 * Constructs a new Null Property Setter test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NullPropertySetterTest(String name) {
@@ -38,16 +41,18 @@ public class NullPropertySetterTest extends PropertySetterTest {
 	 * Returns the fixture for this Null Property Setter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected NullPropertySetter getFixture() {
-		return (NullPropertySetter)fixture;
+		return (NullPropertySetter) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class NullPropertySetterTest extends PropertySetterTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class NullPropertySetterTest extends PropertySetterTest {
 		setFixture(null);
 	}
 
-} //NullPropertySetterTest
+} // NullPropertySetterTest

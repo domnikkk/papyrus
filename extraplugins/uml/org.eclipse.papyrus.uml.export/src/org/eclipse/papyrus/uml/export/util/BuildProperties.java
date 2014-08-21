@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ public class BuildProperties {
 
 	/**
 	 * Instantiates a new builds the properties.
-	 * 
+	 *
 	 * @param project
-	 *        the project
+	 *            the project
 	 */
 	public BuildProperties(IProject project) {
 		this.project = project;
@@ -57,22 +57,22 @@ public class BuildProperties {
 	 * adds or overwrites an entry in the 'build.properties'.<br>
 	 * returns <b>true</b> if adding was successful,<br>
 	 * <b>false</b> is dialog did not confirm adding
-	 * 
+	 *
 	 * @param key
-	 *        the build property's name
+	 *            the build property's name
 	 * @param value
-	 *        the build property's value
+	 *            the build property's value
 	 * @return <b>true</b> if adding was successful,<br>
 	 *         <b>false</b> is dialog did not confirm adding
 	 * @throws CoreException
-	 *         the core exception
+	 *             the core exception
 	 */
 	public boolean addBuildEntry(String key, String value) throws CoreException {
 		Assert.isNotNull(key);
 		Assert.isNotNull(value);
 		boolean writeEntry = true;
-		if(hasBuildEntry(key)) {
-			if(getBuild().getEntry(key).contains(value)) {
+		if (hasBuildEntry(key)) {
+			if (getBuild().getEntry(key).contains(value)) {
 				return true;
 			}
 
@@ -81,13 +81,13 @@ public class BuildProperties {
 
 		}
 
-		if(writeEntry) {
+		if (writeEntry) {
 			IBuildModel buildModel = getBuildModel();
 			IBuildEntry buildEntry = buildModel.getFactory().createEntry(key);
 			buildEntry.addToken(value);
 			getBuild().add(buildEntry);
 
-			((WorkspaceBuildModel)buildModel).save();
+			((WorkspaceBuildModel) buildModel).save();
 		}
 		return writeEntry;
 	}
@@ -96,24 +96,24 @@ public class BuildProperties {
 
 	/**
 	 * removes an entry with the given name from the 'build.properties'
-	 * 
+	 *
 	 * @param key
-	 *        the build property's name
+	 *            the build property's name
 	 * @throws CoreException
-	 *         the core exception
+	 *             the core exception
 	 */
 	public void removeExistingBuildEntry(String key) throws CoreException {
 		IBuildEntry entry = getBuild().getEntry(key);
-		if(entry != null) {
+		if (entry != null) {
 			getBuild().remove(entry);
 		}
 	}
 
 	/**
 	 * returns whether an entry exists for the given key.
-	 * 
+	 *
 	 * @param key
-	 *        the build property's name
+	 *            the build property's name
 	 * @return true, if successful
 	 */
 	public boolean hasBuildEntry(final String key) {
@@ -124,12 +124,12 @@ public class BuildProperties {
 
 	/**
 	 * Gets the builds the.
-	 * 
+	 *
 	 * @return the builds the
 	 */
 	private IBuild getBuild() {
 		IBuildModel buildModel = getBuildModel();
-		if(buildModel == null) {
+		if (buildModel == null) {
 			return null;
 		}
 		return buildModel.getBuild();
@@ -138,9 +138,9 @@ public class BuildProperties {
 
 	/**
 	 * Gets the properties.
-	 * 
+	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @return the properties
 	 */
 	public String[] getProperties(String key) {
@@ -151,11 +151,11 @@ public class BuildProperties {
 
 	/**
 	 * returns the Eclipse BuildModel.
-	 * 
+	 *
 	 * @return the Eclipse BuildModel
 	 */
 	private IBuildModel getBuildModel() {
-		if(itsBuildModel == null) {
+		if (itsBuildModel == null) {
 			IPluginModelBase pluginModel = PluginRegistry.findModel(this.project);
 			itsBuildModel = createBuildModel(pluginModel);
 		}
@@ -165,15 +165,15 @@ public class BuildProperties {
 
 	/**
 	 * see org.eclipse.pde.internal.core.ClasspathUtilCore.getBuild
-	 * 
+	 *
 	 * @param model
-	 *        the model
+	 *            the model
 	 * @return the i build model
 	 */
 	private IBuildModel createBuildModel(final IPluginModelBase model) {
 		IProject project = model.getUnderlyingResource().getProject();
 		IFile buildFile = project.getFile("build.properties"); //$NON-NLS-1$
-		if(!buildFile.exists()) {
+		if (!buildFile.exists()) {
 			return null;
 		}
 		WorkspaceBuildModel buildModel = new WorkspaceBuildModel(buildFile);

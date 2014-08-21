@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -48,9 +48,9 @@ import org.eclipse.uml2.common.util.SubsetSupersetEObjectContainmentWithInverseE
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getPackageFragment <em>Package Fragment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getTypes <em>Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getPackageFragment <em>Package Fragment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTCompilationUnitImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +62,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -71,6 +72,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JDTCompilationUnitImpl() {
@@ -80,6 +82,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,6 +93,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,56 +105,71 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The array of subset feature identifiers for the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] CHILDREN_ESUBSETS = new int[] {JdtmmPackage.JDT_COMPILATION_UNIT__TYPES};
+	protected static final int[] CHILDREN_ESUBSETS = new int[] { JdtmmPackage.JDT_COMPILATION_UNIT__TYPES };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public JDTPackageFragment getPackageFragment() {
-		if (eContainerFeatureID() != JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT) return null;
-		return (JDTPackageFragment)eContainer();
+		if (eContainerFeatureID() != JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT) {
+			return null;
+		}
+		return (JDTPackageFragment) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetPackageFragment(JDTPackageFragment newPackageFragment, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPackageFragment, JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newPackageFragment, JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPackageFragment(JDTPackageFragment newPackageFragment) {
 		if (newPackageFragment != eInternalContainer() || (eContainerFeatureID() != JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT && newPackageFragment != null)) {
-			if (EcoreUtil.isAncestor(this, newPackageFragment))
+			if (EcoreUtil.isAncestor(this, newPackageFragment)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPackageFragment != null)
-				msgs = ((InternalEObject)newPackageFragment).eInverseAdd(this, JdtmmPackage.JDT_PACKAGE_FRAGMENT__COMPILATION_UNITS, JDTPackageFragment.class, msgs);
+			}
+			if (newPackageFragment != null) {
+				msgs = ((InternalEObject) newPackageFragment).eInverseAdd(this, JdtmmPackage.JDT_PACKAGE_FRAGMENT__COMPILATION_UNITS, JDTPackageFragment.class, msgs);
+			}
 			msgs = basicSetPackageFragment(newPackageFragment, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT, newPackageFragment, newPackageFragment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetPackageFragment() {
@@ -160,8 +179,10 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<JDTType> getTypes() {
 		if (types == null) {
 			types = new SubsetSupersetEObjectContainmentWithInverseEList<JDTType>(JDTType.class, this, JdtmmPackage.JDT_COMPILATION_UNIT__TYPES, TYPES_ESUPERSETS, null, JdtmmPackage.JDT_TYPE__COMPILATION_UNIT);
@@ -173,27 +194,30 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	 * The array of superset feature identifiers for the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] TYPES_ESUPERSETS = new int[] {JdtmmPackage.JDT_COMPILATION_UNIT__CHILDREN};
+	protected static final int[] TYPES_ESUPERSETS = new int[] { JdtmmPackage.JDT_COMPILATION_UNIT__CHILDREN };
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPackageFragment((JDTPackageFragment)otherEnd, msgs);
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTypes()).basicAdd(otherEnd, msgs);
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetPackageFragment((JDTPackageFragment) otherEnd, msgs);
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -201,15 +225,16 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				return basicSetPackageFragment(null, msgs);
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			return basicSetPackageFragment(null, msgs);
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			return ((InternalEList<?>) getTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,13 +242,14 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				return eInternalContainer().eInverseRemove(this, JdtmmPackage.JDT_PACKAGE_FRAGMENT__COMPILATION_UNITS, JDTPackageFragment.class, msgs);
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			return eInternalContainer().eInverseRemove(this, JdtmmPackage.JDT_PACKAGE_FRAGMENT__COMPILATION_UNITS, JDTPackageFragment.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -231,15 +257,16 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				return getPackageFragment();
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				return getTypes();
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			return getPackageFragment();
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,19 +274,20 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				setPackageFragment((JDTPackageFragment)newValue);
-				return;
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				getTypes().clear();
-				getTypes().addAll((Collection<? extends JDTType>)newValue);
-				return;
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			setPackageFragment((JDTPackageFragment) newValue);
+			return;
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			getTypes().clear();
+			getTypes().addAll((Collection<? extends JDTType>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,17 +295,18 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				setPackageFragment((JDTPackageFragment)null);
-				return;
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				getTypes().clear();
-				return;
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			setPackageFragment((JDTPackageFragment) null);
+			return;
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			getTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,15 +314,16 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
-				return isSetPackageFragment();
-			case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
-				return types != null && !types.isEmpty();
+		case JdtmmPackage.JDT_COMPILATION_UNIT__PACKAGE_FRAGMENT:
+			return isSetPackageFragment();
+		case JdtmmPackage.JDT_COMPILATION_UNIT__TYPES:
+			return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -301,17 +331,19 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean isSetChildren() {
 		return super.isSetChildren()
-			|| eIsSet(JdtmmPackage.JDT_COMPILATION_UNIT__TYPES);
+				|| eIsSet(JdtmmPackage.JDT_COMPILATION_UNIT__TYPES);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -322,6 +354,7 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -332,10 +365,11 @@ public class JDTCompilationUnitImpl extends JDTTypeRootImpl implements JDTCompil
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetParent() {
-  		return false;
+		return false;
 	}
 
-} //JDTCompilationUnitImpl
+} // JDTCompilationUnitImpl

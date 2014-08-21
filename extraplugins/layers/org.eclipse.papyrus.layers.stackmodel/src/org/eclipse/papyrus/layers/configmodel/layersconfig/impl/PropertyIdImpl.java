@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.PropertyIdImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyIdImpl() {
@@ -57,6 +59,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,15 +70,18 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TypeConfig getType() {
 		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (TypeConfig)eResolveProxy(oldType);
+			InternalEObject oldType = (InternalEObject) type;
+			type = (TypeConfig) eResolveProxy(oldType);
 			if (type != oldType) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersconfigPackage.PROPERTY_ID__TYPE, oldType, type));
+				}
 			}
 		}
 		return type;
@@ -84,6 +90,7 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TypeConfig basicGetType() {
@@ -93,26 +100,32 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setType(TypeConfig newType) {
 		TypeConfig oldType = type;
 		type = newType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.PROPERTY_ID__TYPE, oldType, type));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersconfigPackage.PROPERTY_ID__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+		case LayersconfigPackage.PROPERTY_ID__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,14 +133,15 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersconfigPackage.PROPERTY_ID__TYPE:
-				setType((TypeConfig)newValue);
-				return;
+		case LayersconfigPackage.PROPERTY_ID__TYPE:
+			setType((TypeConfig) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,14 +149,15 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.PROPERTY_ID__TYPE:
-				setType((TypeConfig)null);
-				return;
+		case LayersconfigPackage.PROPERTY_ID__TYPE:
+			setType((TypeConfig) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,15 +165,16 @@ public class PropertyIdImpl extends FolderElementImpl implements PropertyId {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.PROPERTY_ID__TYPE:
-				return type != null;
+		case LayersconfigPackage.PROPERTY_ID__TYPE:
+			return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PropertyIdImpl
+} // PropertyIdImpl

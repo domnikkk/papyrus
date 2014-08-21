@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -23,21 +23,21 @@ import org.eclipse.uml2.uml.Slot;
 
 /**
  * Deploy an instance (on a certain node). This operation is specifically non recursive
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public interface InstanceDeployer {
 
 	/**
 	 * Initialize the deployment
-	 * 
+	 *
 	 * @param sat
-	 *        information about source and target model
+	 *            information about source and target model
 	 * @param bootloader
-	 *        the bootloader generator, which will contain instance information
+	 *            the bootloader generator, which will contain instance information
 	 * @param node
-	 *        the node onto which the allocation should be done.
+	 *            the node onto which the allocation should be done.
 	 */
 	public void init(LazyCopier sat, BootLoaderGen bootloader, InstanceSpecification node);
 
@@ -51,11 +51,11 @@ public interface InstanceDeployer {
 	 * Therefore, this function is also responsible for creating the part associated with the
 	 * instance in the owning composite class and eventually complete connections within the
 	 * composites.
-	 * 
+	 *
 	 * @param is
-	 *        an instance (UML instance specification) within the deployment plan
+	 *            an instance (UML instance specification) within the deployment plan
 	 * @param slotPath
-	 *        a list (stack) of slots starting from the main instance
+	 *            a list (stack) of slots starting from the main instance
 	 * @return the classifier modified for deployment
 	 * @throws TransformationException
 	 */

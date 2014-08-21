@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.SelectionCriterion#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.SelectionCriterion#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.SelectionCriterion#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.SelectionCriterion#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,10 +48,10 @@ public interface SelectionCriterion extends EAElement, EAExpression {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.NamedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Source</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Source</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getSelectionCriterion_Source()
 	 * @model
@@ -63,10 +63,10 @@ public interface SelectionCriterion extends EAElement, EAExpression {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getSelectionCriterion_Base_Class()
@@ -79,7 +79,9 @@ public interface SelectionCriterion extends EAElement, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.SelectionCriterion#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */

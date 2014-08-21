@@ -85,12 +85,14 @@ import org.eclipse.papyrus.sysml.SysmlPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class BehaviordescriptionPackageImpl extends EPackageImpl implements BehaviordescriptionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintBindingAttributeEClass = null;
@@ -98,6 +100,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintParameterEClass = null;
@@ -105,6 +108,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintInternalBindingEClass = null;
@@ -112,6 +116,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintBindingEventEClass = null;
@@ -119,6 +124,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintPrototypeEClass = null;
@@ -126,6 +132,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintTypeEClass = null;
@@ -133,20 +140,17 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass behaviorConstraintTargetBindingEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.eastadl.annex.behaviordescription.BehaviordescriptionPackage#eNS_URI
 	 * @see #init()
@@ -159,27 +163,31 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link BehaviordescriptionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link BehaviordescriptionPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static BehaviordescriptionPackage init() {
-		if (isInited) return (BehaviordescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI);
+		if (isInited) {
+			return (BehaviordescriptionPackage) EPackage.Registry.INSTANCE.getEPackage(BehaviordescriptionPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new BehaviordescriptionPackageImpl());
+		BehaviordescriptionPackageImpl theBehaviordescriptionPackage = (BehaviordescriptionPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BehaviordescriptionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new BehaviordescriptionPackageImpl());
 
 		isInited = true;
 
@@ -187,39 +195,67 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		SysmlPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		EastadlPackageImpl theEastadlPackage = (EastadlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) instanceof EastadlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) : EastadlPackage.eINSTANCE);
-		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) : VariabilityPackage.eINSTANCE);
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
-		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
-		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
-		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) : ElementsPackage.eINSTANCE);
-		StructurePackageImpl theStructurePackage = (StructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) : StructurePackage.eINSTANCE);
-		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
-		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
-		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
-		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
-		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
-		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
-		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
-		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
-		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) : SafetycasePackage.eINSTANCE);
-		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) : ErrormodelPackage.eINSTANCE);
-		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);
-		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) : UsecasesPackage.eINSTANCE);
-		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
-		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		TimingPackageImpl theTimingPackage = (TimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
-		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
-		EventsPackageImpl theEventsPackage = (EventsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
-		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
-		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
-		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
-		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
-		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
-		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
+		EastadlPackageImpl theEastadlPackage = (EastadlPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) instanceof EastadlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EastadlPackage.eNS_URI) : EastadlPackage.eINSTANCE);
+		VariabilityPackageImpl theVariabilityPackage = (VariabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI) instanceof VariabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariabilityPackage.eNS_URI)
+				: VariabilityPackage.eINSTANCE);
+		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
+		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI)
+				: DatatypesPackage.eINSTANCE);
+		UserattributesPackageImpl theUserattributesPackage = (UserattributesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UserattributesPackage.eNS_URI) instanceof UserattributesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(UserattributesPackage.eNS_URI) : UserattributesPackage.eINSTANCE);
+		ValuesPackageImpl theValuesPackage = (ValuesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) instanceof ValuesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuesPackage.eNS_URI) : ValuesPackage.eINSTANCE);
+		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI) instanceof ElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI)
+				: ElementsPackage.eINSTANCE);
+		StructurePackageImpl theStructurePackage = (StructurePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI) instanceof StructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructurePackage.eNS_URI)
+				: StructurePackage.eINSTANCE);
+		FunctionmodelingPackageImpl theFunctionmodelingPackage = (FunctionmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI) instanceof FunctionmodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(FunctionmodelingPackage.eNS_URI) : FunctionmodelingPackage.eINSTANCE);
+		FeaturemodelingPackageImpl theFeaturemodelingPackage = (FeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(FeaturemodelingPackage.eNS_URI) instanceof FeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(FeaturemodelingPackage.eNS_URI) : FeaturemodelingPackage.eINSTANCE);
+		SystemmodelingPackageImpl theSystemmodelingPackage = (SystemmodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SystemmodelingPackage.eNS_URI) instanceof SystemmodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SystemmodelingPackage.eNS_URI) : SystemmodelingPackage.eINSTANCE);
+		VehiclefeaturemodelingPackageImpl theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) instanceof VehiclefeaturemodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(VehiclefeaturemodelingPackage.eNS_URI) : VehiclefeaturemodelingPackage.eINSTANCE);
+		HardwaremodelingPackageImpl theHardwaremodelingPackage = (HardwaremodelingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI) instanceof HardwaremodelingPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HardwaremodelingPackage.eNS_URI) : HardwaremodelingPackage.eINSTANCE);
+		DependabilityPackageImpl theDependabilityPackage = (DependabilityPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DependabilityPackage.eNS_URI) instanceof DependabilityPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(DependabilityPackage.eNS_URI) : DependabilityPackage.eINSTANCE);
+		SafetyrequirementPackageImpl theSafetyrequirementPackage = (SafetyrequirementPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyrequirementPackage.eNS_URI) instanceof SafetyrequirementPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SafetyrequirementPackage.eNS_URI) : SafetyrequirementPackage.eINSTANCE);
+		SafetyconstraintsPackageImpl theSafetyconstraintsPackage = (SafetyconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetyconstraintsPackage.eNS_URI) instanceof SafetyconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SafetyconstraintsPackage.eNS_URI) : SafetyconstraintsPackage.eINSTANCE);
+		SafetycasePackageImpl theSafetycasePackage = (SafetycasePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI) instanceof SafetycasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafetycasePackage.eNS_URI)
+				: SafetycasePackage.eINSTANCE);
+		ErrormodelPackageImpl theErrormodelPackage = (ErrormodelPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI) instanceof ErrormodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI)
+				: ErrormodelPackage.eINSTANCE);
+		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI)
+				: RequirementsPackage.eINSTANCE);
+		UsecasesPackageImpl theUsecasesPackage = (UsecasesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI) instanceof UsecasesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UsecasesPackage.eNS_URI)
+				: UsecasesPackage.eINSTANCE);
+		VerificationvalidationPackageImpl theVerificationvalidationPackage = (VerificationvalidationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VerificationvalidationPackage.eNS_URI) instanceof VerificationvalidationPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(VerificationvalidationPackage.eNS_URI) : VerificationvalidationPackage.eINSTANCE);
+		org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl theRequirementsPackage_1 = (org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) instanceof org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eNS_URI) : org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI)
+				: BehaviorPackage.eINSTANCE);
+		TimingPackageImpl theTimingPackage = (TimingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) instanceof TimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimingPackage.eNS_URI) : TimingPackage.eINSTANCE);
+		TimingconstraintsPackageImpl theTimingconstraintsPackage = (TimingconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimingconstraintsPackage.eNS_URI) instanceof TimingconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TimingconstraintsPackage.eNS_URI) : TimingconstraintsPackage.eINSTANCE);
+		EventsPackageImpl theEventsPackage = (EventsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) instanceof EventsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EventsPackage.eNS_URI) : EventsPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI)
+				: EnvironmentPackage.eINSTANCE);
+		AnnexPackageImpl theAnnexPackage = (AnnexPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) instanceof AnnexPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AnnexPackage.eNS_URI) : AnnexPackage.eINSTANCE);
+		NeedsPackageImpl theNeedsPackage = (NeedsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) instanceof NeedsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NeedsPackage.eNS_URI) : NeedsPackage.eINSTANCE);
+		AttributequantificationconstraintPackageImpl theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI) instanceof AttributequantificationconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(AttributequantificationconstraintPackage.eNS_URI) : AttributequantificationconstraintPackage.eINSTANCE);
+		TemporalconstraintPackageImpl theTemporalconstraintPackage = (TemporalconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI) instanceof TemporalconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TemporalconstraintPackage.eNS_URI) : TemporalconstraintPackage.eINSTANCE);
+		ComputationconstraintPackageImpl theComputationconstraintPackage = (ComputationconstraintPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI) instanceof ComputationconstraintPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(ComputationconstraintPackage.eNS_URI) : ComputationconstraintPackage.eINSTANCE);
+		GenericconstraintsPackageImpl theGenericconstraintsPackage = (GenericconstraintsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GenericconstraintsPackage.eNS_URI) instanceof GenericconstraintsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(GenericconstraintsPackage.eNS_URI) : GenericconstraintsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theBehaviordescriptionPackage.createPackageContents();
@@ -296,7 +332,7 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		// Mark meta-data to indicate it can't be changed
 		theBehaviordescriptionPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(BehaviordescriptionPackage.eNS_URI, theBehaviordescriptionPackage);
 		return theBehaviordescriptionPackage;
@@ -305,8 +341,10 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintBindingAttribute() {
 		return behaviorConstraintBindingAttributeEClass;
 	}
@@ -314,8 +352,10 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintParameter() {
 		return behaviorConstraintParameterEClass;
 	}
@@ -323,8 +363,10 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintInternalBinding() {
 		return behaviorConstraintInternalBindingEClass;
 	}
@@ -332,35 +374,43 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_BindingThroughClampConnector() {
-		return (EReference)behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector() {
-		return (EReference)behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector() {
-		return (EReference)behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(2);
+		return (EReference) behaviorConstraintInternalBindingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintBindingEvent() {
 		return behaviorConstraintBindingEventEClass;
 	}
@@ -368,8 +418,10 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintPrototype() {
 		return behaviorConstraintPrototypeEClass;
 	}
@@ -377,62 +429,76 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_InstantiationVariable() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_TargetVehicleFeatureElement() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_Type() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_FunctionTarget() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(3);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_HardwareComponentTarget() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(4);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintPrototype_ErrorModelTarget() {
-		return (EReference)behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(5);
+		return (EReference) behaviorConstraintPrototypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintType() {
 		return behaviorConstraintTypeEClass;
 	}
@@ -440,62 +506,76 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_SharedVariable() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_InterfaceVariable() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_Part() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_AttributeQuantificationconstraint() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_TemporalConstraint() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(4);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintType_ComputationConstraint() {
-		return (EReference)behaviorConstraintTypeEClass.getEStructuralFeatures().get(5);
+		return (EReference) behaviorConstraintTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBehaviorConstraintTargetBinding() {
 		return behaviorConstraintTargetBindingEClass;
 	}
@@ -503,100 +583,122 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_BehaviorConstraintType() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_TargetedVehicleFeature() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(1);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_TargetedFunctionType() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(2);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_ConstrainedErrorModel() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(3);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_TargetedHardwareComponentType() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(4);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(5);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_ConstrainedModeBehavior() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(6);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior() {
-		return (EReference)behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(7);
+		return (EReference) behaviorConstraintTargetBindingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehaviordescriptionFactory getBehaviordescriptionFactory() {
-		return (BehaviordescriptionFactory)getEFactoryInstance();
+		return (BehaviordescriptionFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -641,19 +743,23 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -662,17 +768,17 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		AttributequantificationconstraintPackage theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackage)EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI);
-		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
-		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		TemporalconstraintPackage theTemporalconstraintPackage = (TemporalconstraintPackage)EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI);
-		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
-		VehiclefeaturemodelingPackage theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackage)EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI);
-		ComputationconstraintPackage theComputationconstraintPackage = (ComputationconstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI);
-		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage)EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
-		ErrormodelPackage theErrormodelPackage = (ErrormodelPackage)EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
-		HardwaremodelingPackage theHardwaremodelingPackage = (HardwaremodelingPackage)EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
-		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		AttributequantificationconstraintPackage theAttributequantificationconstraintPackage = (AttributequantificationconstraintPackage) EPackage.Registry.INSTANCE.getEPackage(AttributequantificationconstraintPackage.eNS_URI);
+		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage) EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage) EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		TemporalconstraintPackage theTemporalconstraintPackage = (TemporalconstraintPackage) EPackage.Registry.INSTANCE.getEPackage(TemporalconstraintPackage.eNS_URI);
+		ElementsPackage theElementsPackage = (ElementsPackage) EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		VehiclefeaturemodelingPackage theVehiclefeaturemodelingPackage = (VehiclefeaturemodelingPackage) EPackage.Registry.INSTANCE.getEPackage(VehiclefeaturemodelingPackage.eNS_URI);
+		ComputationconstraintPackage theComputationconstraintPackage = (ComputationconstraintPackage) EPackage.Registry.INSTANCE.getEPackage(ComputationconstraintPackage.eNS_URI);
+		FunctionmodelingPackage theFunctionmodelingPackage = (FunctionmodelingPackage) EPackage.Registry.INSTANCE.getEPackage(FunctionmodelingPackage.eNS_URI);
+		ErrormodelPackage theErrormodelPackage = (ErrormodelPackage) EPackage.Registry.INSTANCE.getEPackage(ErrormodelPackage.eNS_URI);
+		HardwaremodelingPackage theHardwaremodelingPackage = (HardwaremodelingPackage) EPackage.Registry.INSTANCE.getEPackage(HardwaremodelingPackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage) EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -693,37 +799,60 @@ public class BehaviordescriptionPackageImpl extends EPackageImpl implements Beha
 		initEClass(behaviorConstraintParameterEClass, BehaviorConstraintParameter.class, "BehaviorConstraintParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(behaviorConstraintInternalBindingEClass, BehaviorConstraintInternalBinding.class, "BehaviorConstraintInternalBinding", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughClampConnector(), theEnvironmentPackage.getClampConnector(), null, "bindingThroughClampConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef(), null, "bindingThroughFunctionConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef(), null, "bindingThroughHardwareConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughClampConnector(), theEnvironmentPackage.getClampConnector(), null, "bindingThroughClampConnector", null, 0, -1, BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughFunctionConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughFunctionConnectorInstanceRef(), null, "bindingThroughFunctionConnector", null, 0, -1,
+				BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintInternalBinding_BindingThroughHardwareConnector(), theInfrastructurePackage.getBehaviorConstraintInternalBinding_throughHardwareConnectorInstanceRef(), null, "bindingThroughHardwareConnector", null, 0, -1,
+				BehaviorConstraintInternalBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(behaviorConstraintBindingEventEClass, BehaviorConstraintBindingEvent.class, "BehaviorConstraintBindingEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(behaviorConstraintPrototypeEClass, BehaviorConstraintPrototype.class, "BehaviorConstraintPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintPrototype_InstantiationVariable(), this.getBehaviorConstraintInternalBinding(), null, "instantiationVariable", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_TargetVehicleFeatureElement(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetVehicleFeatureElement", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_Type(), this.getBehaviorConstraintType(), null, "type", null, 1, 1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_FunctionTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_functionTargetInstanceRef(), null, "functionTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_HardwareComponentTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef(), null, "hardwareComponentTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintPrototype_ErrorModelTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_errorModelTargetInstanceRef(), null, "errorModelTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_InstantiationVariable(), this.getBehaviorConstraintInternalBinding(), null, "instantiationVariable", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_TargetVehicleFeatureElement(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetVehicleFeatureElement", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_Type(), this.getBehaviorConstraintType(), null, "type", null, 1, 1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_FunctionTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_functionTargetInstanceRef(), null, "functionTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_HardwareComponentTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_hardwareComponentTargetInstanceRef(), null, "hardwareComponentTarget", null, 0, -1, BehaviorConstraintPrototype.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintPrototype_ErrorModelTarget(), theInfrastructurePackage.getBehaviorConstraintPrototype_errorModelTargetInstanceRef(), null, "errorModelTarget", null, 0, -1, BehaviorConstraintPrototype.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(behaviorConstraintTypeEClass, BehaviorConstraintType.class, "BehaviorConstraintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintType_SharedVariable(), this.getBehaviorConstraintInternalBinding(), null, "sharedVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_InterfaceVariable(), this.getBehaviorConstraintParameter(), null, "interfaceVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_Part(), this.getBehaviorConstraintPrototype(), null, "part", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_AttributeQuantificationconstraint(), theAttributequantificationconstraintPackage.getAttributeQuantificationconstraint(), null, "attributeQuantificationconstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_TemporalConstraint(), theTemporalconstraintPackage.getTemporalConstraint(), null, "temporalConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintType_ComputationConstraint(), theComputationconstraintPackage.getComputationConstraint(), null, "computationConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_SharedVariable(), this.getBehaviorConstraintInternalBinding(), null, "sharedVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_InterfaceVariable(), this.getBehaviorConstraintParameter(), null, "interfaceVariable", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_Part(), this.getBehaviorConstraintPrototype(), null, "part", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_AttributeQuantificationconstraint(), theAttributequantificationconstraintPackage.getAttributeQuantificationconstraint(), null, "attributeQuantificationconstraint", null, 0, -1, BehaviorConstraintType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_TemporalConstraint(), theTemporalconstraintPackage.getTemporalConstraint(), null, "temporalConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintType_ComputationConstraint(), theComputationconstraintPackage.getComputationConstraint(), null, "computationConstraint", null, 0, -1, BehaviorConstraintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(behaviorConstraintTargetBindingEClass, BehaviorConstraintTargetBinding.class, "BehaviorConstraintTargetBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorConstraintTargetBinding_BehaviorConstraintType(), this.getBehaviorConstraintType(), null, "behaviorConstraintType", null, 1, 1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedVehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetedVehicleFeature", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedFunctionType(), theFunctionmodelingPackage.getFunctionType(), null, "targetedFunctionType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedErrorModel(), theErrormodelPackage.getErrorModelType(), null, "constrainedErrorModel", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_TargetedHardwareComponentType(), theHardwaremodelingPackage.getHardwareComponentType(), null, "targetedHardwareComponentType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering(), theBehaviorPackage.getFunctionTrigger(), null, "constrainedFunctionTriggering", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedModeBehavior(), theBehaviorPackage.getMode(), null, "constrainedModeBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior(), theBehaviorPackage.getFunctionBehavior(), null, "constrainedFunctionBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_BehaviorConstraintType(), this.getBehaviorConstraintType(), null, "behaviorConstraintType", null, 1, 1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_TargetedVehicleFeature(), theVehiclefeaturemodelingPackage.getVehicleFeature(), null, "targetedVehicleFeature", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_TargetedFunctionType(), theFunctionmodelingPackage.getFunctionType(), null, "targetedFunctionType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedErrorModel(), theErrormodelPackage.getErrorModelType(), null, "constrainedErrorModel", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_TargetedHardwareComponentType(), theHardwaremodelingPackage.getHardwareComponentType(), null, "targetedHardwareComponentType", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionTriggering(), theBehaviorPackage.getFunctionTrigger(), null, "constrainedFunctionTriggering", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedModeBehavior(), theBehaviorPackage.getMode(), null, "constrainedModeBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBehaviorConstraintTargetBinding_ConstrainedFunctionBehavior(), theBehaviorPackage.getFunctionBehavior(), null, "constrainedFunctionBehavior", null, 0, -1, BehaviorConstraintTargetBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
-} //BehaviordescriptionPackageImpl
+} // BehaviordescriptionPackageImpl

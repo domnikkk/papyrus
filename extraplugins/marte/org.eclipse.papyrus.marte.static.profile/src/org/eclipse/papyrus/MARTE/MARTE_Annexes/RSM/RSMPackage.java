@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,12 +24,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.RSMFactory
  * @model kind="package"
  * @generated
@@ -39,6 +40,7 @@ public interface RSMPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "RSM";
@@ -47,6 +49,7 @@ public interface RSMPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/RSM/1";
@@ -55,6 +58,7 @@ public interface RSMPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "RSM";
@@ -63,6 +67,7 @@ public interface RSMPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	RSMPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl.init();
@@ -71,6 +76,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.LinkTopologyImpl <em>Link Topology</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.LinkTopologyImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getLinkTopology()
 	 * @generated
@@ -81,6 +87,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -90,6 +97,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Link Topology</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +107,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DefaultLinkImpl <em>Default Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DefaultLinkImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getDefaultLink()
 	 * @generated
@@ -109,6 +118,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +128,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Default Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -127,6 +138,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl <em>Inter Repetition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getInterRepetition()
 	 * @generated
@@ -137,6 +149,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -146,6 +159,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Repetition Shape Dependence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -155,6 +169,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Modulo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -164,6 +179,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Inter Repetition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -173,6 +189,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl <em>Distribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getDistribute()
 	 * @generated
@@ -183,6 +200,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -192,6 +210,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Nature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -201,6 +220,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -210,6 +230,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Implied Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -219,6 +240,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -228,6 +250,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Repetition Space</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -237,6 +260,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>From Tiler</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -246,6 +270,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>To Tiler</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -255,6 +280,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Distribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -264,6 +290,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl <em>Reshape</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getReshape()
 	 * @generated
@@ -274,6 +301,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -283,6 +311,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -292,6 +321,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Repetiton Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -301,6 +331,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Reshape</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -310,6 +341,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl <em>Tiler</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getTiler()
 	 * @generated
@@ -320,6 +352,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -329,6 +362,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Origin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -338,6 +372,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Paving</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -347,6 +382,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Fitting</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -356,6 +392,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Tiler</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -365,6 +402,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector End</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -374,6 +412,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Tiler</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -383,6 +422,7 @@ public interface RSMPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl <em>Shaped</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getShaped()
 	 * @generated
@@ -393,6 +433,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Shape</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -402,6 +443,7 @@ public interface RSMPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Multiplicity Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -411,6 +453,7 @@ public interface RSMPackage extends EPackage {
 	 * The number of structural features of the '<em>Shaped</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -421,6 +464,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.LinkTopology <em>Link Topology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Link Topology</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.LinkTopology
 	 * @generated
@@ -431,6 +475,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.LinkTopology#getBase_Connector <em>Base Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Connector</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.LinkTopology#getBase_Connector()
 	 * @see #getLinkTopology()
@@ -442,6 +487,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.DefaultLink <em>Default Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Default Link</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.DefaultLink
 	 * @generated
@@ -452,6 +498,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition <em>Inter Repetition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Inter Repetition</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition
 	 * @generated
@@ -462,6 +509,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#getRepetitionShapeDependence <em>Repetition Shape Dependence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Repetition Shape Dependence</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#getRepetitionShapeDependence()
 	 * @see #getInterRepetition()
@@ -473,6 +521,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#isIsModulo <em>Is Modulo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Modulo</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.InterRepetition#isIsModulo()
 	 * @see #getInterRepetition()
@@ -484,6 +533,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute <em>Distribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Distribute</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute
 	 * @generated
@@ -494,6 +544,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getPatternShape <em>Pattern Shape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Pattern Shape</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getPatternShape()
 	 * @see #getDistribute()
@@ -505,6 +556,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getRepetitionSpace <em>Repetition Space</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Repetition Space</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getRepetitionSpace()
 	 * @see #getDistribute()
@@ -516,6 +568,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getFromTiler <em>From Tiler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>From Tiler</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getFromTiler()
 	 * @see #getDistribute()
@@ -527,6 +580,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getToTiler <em>To Tiler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>To Tiler</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Distribute#getToTiler()
 	 * @see #getDistribute()
@@ -538,6 +592,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape <em>Reshape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Reshape</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape
 	 * @generated
@@ -548,6 +603,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getPatternShape <em>Pattern Shape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Pattern Shape</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getPatternShape()
 	 * @see #getReshape()
@@ -559,6 +615,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getRepetitonShape <em>Repetiton Shape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Repetiton Shape</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Reshape#getRepetitonShape()
 	 * @see #getReshape()
@@ -570,6 +627,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler <em>Tiler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Tiler</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler
 	 * @generated
@@ -580,6 +638,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Origin</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getOrigin()
 	 * @see #getTiler()
@@ -591,6 +650,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getPaving <em>Paving</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Paving</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getPaving()
 	 * @see #getTiler()
@@ -602,6 +662,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getFitting <em>Fitting</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Fitting</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getFitting()
 	 * @see #getTiler()
@@ -613,6 +674,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getTiler <em>Tiler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Tiler</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getTiler()
 	 * @see #getTiler()
@@ -624,6 +686,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getBase_ConnectorEnd <em>Base Connector End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Connector End</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Tiler#getBase_ConnectorEnd()
 	 * @see #getTiler()
@@ -635,6 +698,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped <em>Shaped</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Shaped</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped
 	 * @generated
@@ -645,6 +709,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getShape <em>Shape</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Shape</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getShape()
 	 * @see #getShaped()
@@ -656,6 +721,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getBase_MultiplicityElement <em>Base Multiplicity Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Multiplicity Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.Shaped#getBase_MultiplicityElement()
 	 * @see #getShaped()
@@ -667,6 +733,7 @@ public interface RSMPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -676,12 +743,13 @@ public interface RSMPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -689,6 +757,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.LinkTopologyImpl <em>Link Topology</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.LinkTopologyImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getLinkTopology()
 		 * @generated
@@ -699,6 +768,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Connector</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference LINK_TOPOLOGY__BASE_CONNECTOR = eINSTANCE.getLinkTopology_Base_Connector();
@@ -707,6 +777,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DefaultLinkImpl <em>Default Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DefaultLinkImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getDefaultLink()
 		 * @generated
@@ -717,6 +788,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl <em>Inter Repetition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.InterRepetitionImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getInterRepetition()
 		 * @generated
@@ -727,6 +799,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repetition Shape Dependence</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTER_REPETITION__REPETITION_SHAPE_DEPENDENCE = eINSTANCE.getInterRepetition_RepetitionShapeDependence();
@@ -735,6 +808,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Modulo</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTER_REPETITION__IS_MODULO = eINSTANCE.getInterRepetition_IsModulo();
@@ -743,6 +817,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl <em>Distribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.DistributeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getDistribute()
 		 * @generated
@@ -753,6 +828,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pattern Shape</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISTRIBUTE__PATTERN_SHAPE = eINSTANCE.getDistribute_PatternShape();
@@ -761,6 +837,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repetition Space</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISTRIBUTE__REPETITION_SPACE = eINSTANCE.getDistribute_RepetitionSpace();
@@ -769,6 +846,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>From Tiler</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISTRIBUTE__FROM_TILER = eINSTANCE.getDistribute_FromTiler();
@@ -777,6 +855,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>To Tiler</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISTRIBUTE__TO_TILER = eINSTANCE.getDistribute_ToTiler();
@@ -785,6 +864,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl <em>Reshape</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ReshapeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getReshape()
 		 * @generated
@@ -795,6 +875,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pattern Shape</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute RESHAPE__PATTERN_SHAPE = eINSTANCE.getReshape_PatternShape();
@@ -803,6 +884,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repetiton Shape</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute RESHAPE__REPETITON_SHAPE = eINSTANCE.getReshape_RepetitonShape();
@@ -811,6 +893,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl <em>Tiler</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.TilerImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getTiler()
 		 * @generated
@@ -821,6 +904,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Origin</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TILER__ORIGIN = eINSTANCE.getTiler_Origin();
@@ -829,6 +913,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Paving</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TILER__PAVING = eINSTANCE.getTiler_Paving();
@@ -837,6 +922,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fitting</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TILER__FITTING = eINSTANCE.getTiler_Fitting();
@@ -845,6 +931,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Tiler</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TILER__TILER = eINSTANCE.getTiler_Tiler();
@@ -853,6 +940,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Connector End</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TILER__BASE_CONNECTOR_END = eINSTANCE.getTiler_Base_ConnectorEnd();
@@ -861,6 +949,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl <em>Shaped</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.ShapedImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.RSM.impl.RSMPackageImpl#getShaped()
 		 * @generated
@@ -871,6 +960,7 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Shape</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute SHAPED__SHAPE = eINSTANCE.getShaped_Shape();
@@ -879,10 +969,11 @@ public interface RSMPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Multiplicity Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference SHAPED__BASE_MULTIPLICITY_ELEMENT = eINSTANCE.getShaped_Base_MultiplicityElement();
 
 	}
 
-} //RSMPackage
+} // RSMPackage

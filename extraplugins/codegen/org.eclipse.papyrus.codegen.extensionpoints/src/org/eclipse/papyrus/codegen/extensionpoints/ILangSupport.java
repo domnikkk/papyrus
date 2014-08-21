@@ -26,38 +26,40 @@ public interface ILangSupport {
 	 * data before). In case of C/C++ for instance, a CDT project should be created, in case of Java,
 	 * a JDT project.
 	 * And implementation should call setProject and setSettings before returning the project
-	 * 
+	 *
 	 * @param projectName
-	 *        the named of the project
-	 * @param the operating system for which code should be produced
+	 *            the named of the project
+	 * @param the
+	 *            operating system for which code should be produced
 	 * @return the created project
 	 */
 	public IProject createProject(String projectName, String targetOS);
 
 	/**
 	 * Set project information
-	 * 
+	 *
 	 * @param project
-	 *        the project (must already been initialized)
+	 *            the project (must already been initialized)
 	 */
 	public void setProject(IProject project);
-	
+
 	public IProject getProject();
 
 	/**
 	 * Re-create the project settings from model information
-	 * 
-	 * @param the operating system for which code should be produced
+	 *
+	 * @param the
+	 *            operating system for which code should be produced
 	 */
 	public void setSettings(String targetOS);
 
 	/**
 	 * Generate code for a specific language
-	 * 
+	 *
 	 * @param monitor
-	 *        a progress monitor
+	 *            a progress monitor
 	 * @param element
-	 *        a packageable element, typically a classifier or a package
+	 *            a packageable element, typically a classifier or a package
 	 */
 	public void generateCode(IProgressMonitor monitor, PackageableElement element);
 
@@ -65,18 +67,18 @@ public interface ILangSupport {
 	 * Clean the code for a certain element, i.e. remove code that has previously generated for this element
 	 * This code is required for differential code generation which needs to remove elements for instance
 	 * after they have been renamed.
-	 * 
+	 *
 	 * @param project
-	 *        project in which code should be generated
+	 *            project in which code should be generated
 	 * @param element
-	 *        the element for which the generate code should be removed
+	 *            the element for which the generate code should be removed
 	 * @throws TransformationException
 	 */
 	public void cleanCode(IProgressMonitor monitor, PackageableElement element);
 
 	/**
 	 * Reset gathered configuration data
-	 * 
+	 *
 	 * @see gatherConfigData
 	 */
 	public void resetConfigurationData();
@@ -84,9 +86,9 @@ public interface ILangSupport {
 
 	/**
 	 * Gather configuration data from implementations, e.g. required include paths or libraries
-	 * 
+	 *
 	 * @param implementation
-	 *        a class copied to the target
+	 *            a class copied to the target
 	 */
 	public void gatherConfigData(Class implementation);
 }

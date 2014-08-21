@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,6 @@ import org.eclipse.emf.query.statements.IQueryResult;
 import org.eclipse.emf.query.statements.SELECT;
 import org.eclipse.emf.query.statements.WHERE;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
@@ -76,7 +75,7 @@ public class RegExpLayerImplWithQueriesTest {
 	@Test
 	public void testRegExpLayerImpl() {
 		RegExpLayer layer = LayersFactory.eINSTANCE.createRegExpLayer();
-		
+
 		assertNotNull("object created", layer);
 	}
 
@@ -86,50 +85,51 @@ public class RegExpLayerImplWithQueriesTest {
 	@Test
 	public void testSetExpr() {
 		RegExpLayer layer = LayersFactory.eINSTANCE.createRegExpLayer();
-		
+
 		assertNotNull("object created", layer);
-		
+
 		layer.setExpr("An expression");
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.RegExpLayerImpl#evaluateExpr()}.
-	 * @throws ParserException 
+	 * 
+	 * @throws ParserException
 	 */
 	@Test
 	public void testEvaluateExpr() throws ParserException {
 		RegExpLayer layer = LayersFactory.eINSTANCE.createRegExpLayer();
-		
+
 		assertNotNull("object created", layer);
-		
+
 		layer.setExpr("An expression");
-//		List<View> res = layer.evaluateExpr();
-//		
-//		assertNotNull("object created", res);
-		
-		
+		// List<View> res = layer.evaluateExpr();
+		//
+		// assertNotNull("object created", res);
+
+
 		String modelNotationKey = "notation";
 		String modelUMLKey = "uml";
 
 		String modelFileName = "/test/models/model1";
-		
+
 		Resource resource = getResource(modelFileName, modelNotationKey);
 
 		OCL ocl = OCL.newInstance();
-		EObjectCondition  condition = new BooleanOCLCondition<EClassifier, EClass, EObject>(
-		    ocl.getEnvironment(),
-//		    "self.oclIsKindOf(Shape)",
-//		    "self.oclIsKindOf(Shape) and self.oclAsType(Shape).visible = true",
-		    "self.oclAsType(Shape).visible = true",
-		    NotationPackage.Literals.SHAPE
-		    );
+		EObjectCondition condition = new BooleanOCLCondition<EClassifier, EClass, EObject>(
+				ocl.getEnvironment(),
+				// "self.oclIsKindOf(Shape)",
+				// "self.oclIsKindOf(Shape) and self.oclAsType(Shape).visible = true",
+				"self.oclAsType(Shape).visible = true",
+				NotationPackage.Literals.SHAPE
+				);
 
 		SELECT statement = new SELECT(SELECT.UNBOUNDED, false,
-			new FROM(resource.getContents()), new WHERE(condition),
-			new NullProgressMonitor());
+				new FROM(resource.getContents()), new WHERE(condition),
+				new NullProgressMonitor());
 
 		IQueryResult results = statement.execute();
-			
+
 		assertNotNull("got result", results);
 		assertFalse("results is not empty", results.isEmpty());
 	}
@@ -137,7 +137,7 @@ public class RegExpLayerImplWithQueriesTest {
 
 	/**
 	 * Test if the resource needed for the test exists.
-	 * 
+	 *
 	 * @throws ModelMultiException
 	 */
 	@Test
@@ -147,9 +147,9 @@ public class RegExpLayerImplWithQueriesTest {
 		String modelUMLKey = "uml";
 
 		String modelFileName = "/test/models/model1";
-		
+
 		Resource resource = getResource(modelFileName, modelNotationKey);
-		
+
 		assertNotNull("modelFile exist", resource);
 		assertTrue("model is loaded", !resource.getContents().isEmpty());
 	}
@@ -161,17 +161,17 @@ public class RegExpLayerImplWithQueriesTest {
 	 */
 	private Resource getResource(String modelFileName, String modelNotationKey) {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		
-		
-		URI uri = URI.createPlatformPluginURI(PLUGIN_PROJECT_NAME+ modelFileName + "." +  modelNotationKey, true);
-//		URI uri = URI.createPlatformPluginURI("/org.eclipse.papyrus.layers.stackmodel/model/layers.notation", true);
 
-		
+
+		URI uri = URI.createPlatformPluginURI(PLUGIN_PROJECT_NAME + modelFileName + "." + modelNotationKey, true);
+		// URI uri = URI.createPlatformPluginURI("/org.eclipse.papyrus.layers.stackmodel/model/layers.notation", true);
+
+
 		System.out.println("URI=" + uri.toString());
 		Resource resource = resourceSet.getResource(uri, true);
 		return resource;
 	}
-	
+
 
 
 }

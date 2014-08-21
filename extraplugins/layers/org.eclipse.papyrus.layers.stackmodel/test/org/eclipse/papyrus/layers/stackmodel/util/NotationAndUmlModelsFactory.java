@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,80 +26,79 @@ import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * A factory allowing to create Diagram and UML elements for testing purpose.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class NotationAndUmlModelsFactory {
 
-	
+
 	/**
 	 * Create a Diagram
+	 * 
 	 * @return
 	 */
 	public Diagram newDiagram() {
-		
+
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		return diagram;
 	}
-	
+
 	/**
-	 * Create a {@link Class} in the {@link Diagram}. Also create intermediate elements like 
-	 * {@link Shape}.
-	 * 
+	 * Create a {@link Class} in the {@link Diagram}. Also create intermediate elements like {@link Shape}.
+	 *
 	 * @param name
 	 * @return
 	 */
-	public Class newClass( String name) {
-	
+	public Class newClass(String name) {
+
 		Class c = UMLFactory.eINSTANCE.createClass();
 		c.setName(name);
 		return c;
 	}
 
 	/**
-	 * Create a {@link Class} in the {@link Diagram}. Also create intermediate elements like 
-	 * {@link Shape}.
-	 * 
+	 * Create a {@link Class} in the {@link Diagram}. Also create intermediate elements like {@link Shape}.
+	 *
 	 * @param diagram
 	 * @param name
 	 * @return
 	 */
-	public Class newClass( Diagram diagram, String name) {
-	
+	public Class newClass(Diagram diagram, String name) {
+
 		Class c = UMLFactory.eINSTANCE.createClass();
 		c.setName(name);
-		
-		Shape shape = (Shape)diagram.createChild(NotationPackage.eINSTANCE.getShape());
+
+		Shape shape = (Shape) diagram.createChild(NotationPackage.eINSTANCE.getShape());
 		shape.setElement(c);
-		
+
 		return c;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
-	public Property newProperty( String name) {
+	public Property newProperty(String name) {
 		Property c = UMLFactory.eINSTANCE.createProperty();
 		c.setName(name);
 		return c;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
-	public Property newProperty( Class c, String name) {
+	public Property newProperty(Class c, String name) {
 		return c.createOwnedAttribute(name, null);
 	}
-	
+
 	/**
 	 * Lookup the View owning the specified {@link NamedElement}.
 	 * return null if not found.
-	 * 
+	 *
 	 * @param diagram1
 	 * @param element
 	 * @return
@@ -107,9 +106,9 @@ public class NotationAndUmlModelsFactory {
 	public View lookupViewFor(Diagram diagram1, NamedElement element) {
 
 
-		for( Object o : diagram1.getChildren()) {
-			View view = (View)o;
-			if( view.getElement() == element) {
+		for (Object o : diagram1.getChildren()) {
+			View view = (View) o;
+			if (view.getElement() == element) {
 				return view;
 			}
 		}
@@ -119,15 +118,17 @@ public class NotationAndUmlModelsFactory {
 
 	/**
 	 * Remove the specified element and its associated View.
-	 * @param element element to remove.
+	 * 
+	 * @param element
+	 *            element to remove.
 	 * @return The associated view.
 	 */
 	public View remove(Diagram diagram, NamedElement element) {
 		View view = lookupViewFor(diagram, element);
-		if( view == null) {
+		if (view == null) {
 			return null;
 		}
-		
+
 		diagram.removeChild(view);
 		return view;
 	}

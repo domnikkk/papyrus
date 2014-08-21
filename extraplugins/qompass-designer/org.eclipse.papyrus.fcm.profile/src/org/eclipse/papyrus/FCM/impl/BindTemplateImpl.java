@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM.impl;
 
@@ -38,8 +38,8 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.BindTemplateImpl#getActual <em>Actual</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.BindTemplateImpl#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.BindTemplateImpl#getActual <em>Actual</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.BindTemplateImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	 * The cached value of the '{@link #getActual() <em>Actual</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getActual()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BindTemplateImpl() {
@@ -78,6 +81,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,8 +92,10 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Type> getActual() {
 		if (actual == null) {
 			actual = new EObjectResolvingEList<Type>(Type.class, this, FCMPackage.BIND_TEMPLATE__ACTUAL);
@@ -100,15 +106,18 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.BIND_TEMPLATE__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -117,6 +126,7 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -126,28 +136,34 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.BIND_TEMPLATE__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FCMPackage.BIND_TEMPLATE__ACTUAL:
-				return getActual();
-			case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
-				if (resolve) return getBase_Property();
-				return basicGetBase_Property();
+		case FCMPackage.BIND_TEMPLATE__ACTUAL:
+			return getActual();
+		case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
+			if (resolve) {
+				return getBase_Property();
+			}
+			return basicGetBase_Property();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,19 +171,20 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FCMPackage.BIND_TEMPLATE__ACTUAL:
-				getActual().clear();
-				getActual().addAll((Collection<? extends Type>)newValue);
-				return;
-			case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
-				setBase_Property((Property)newValue);
-				return;
+		case FCMPackage.BIND_TEMPLATE__ACTUAL:
+			getActual().clear();
+			getActual().addAll((Collection<? extends Type>) newValue);
+			return;
+		case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
+			setBase_Property((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -175,17 +192,18 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FCMPackage.BIND_TEMPLATE__ACTUAL:
-				getActual().clear();
-				return;
-			case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
-				setBase_Property((Property)null);
-				return;
+		case FCMPackage.BIND_TEMPLATE__ACTUAL:
+			getActual().clear();
+			return;
+		case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
+			setBase_Property((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,17 +211,18 @@ public class BindTemplateImpl extends EObjectImpl implements BindTemplate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FCMPackage.BIND_TEMPLATE__ACTUAL:
-				return actual != null && !actual.isEmpty();
-			case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
-				return base_Property != null;
+		case FCMPackage.BIND_TEMPLATE__ACTUAL:
+			return actual != null && !actual.isEmpty();
+		case FCMPackage.BIND_TEMPLATE__BASE_PROPERTY:
+			return base_Property != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BindTemplateImpl
+} // BindTemplateImpl

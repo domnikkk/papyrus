@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -20,11 +20,11 @@ import org.eclipse.emf.common.notify.Notification;
  * This class is used to record a list of traces.
  * Traces are for event triggered by a method.
  * This class is for tests purpose.
- * 
+ *
  * @author cedric dumoulin
  *
  */
-public class TriggeredEventTraces  {
+public class TriggeredEventTraces {
 
 
 	/**
@@ -38,9 +38,10 @@ public class TriggeredEventTraces  {
 	public void clear() {
 		traces.clear();
 	}
-	
+
 	/**
 	 * Add a trace to the list of traces
+	 * 
 	 * @param name
 	 * @param notification
 	 */
@@ -50,32 +51,39 @@ public class TriggeredEventTraces  {
 
 	/**
 	 * Return true if one of the trace has the specified name.
+	 * 
 	 * @param name
 	 * @return
 	 */
 	public boolean contains(String name) {
-		if( name == null)
+		if (name == null) {
 			return false;
-		
-		for(TriggeredEvent event : traces) {
-			if(name.equals(event.name))
+		}
+
+		for (TriggeredEvent event : traces) {
+			if (name.equals(event.name)) {
 				return true;
+			}
 		}
 		return false;
 	}
 
 	/**
 	 * Return true if one of the trace has the specified name.
-	 * @param name Name of the event to found
+	 * 
+	 * @param name
+	 *            Name of the event to found
 	 * @return the first event with the specified name, or null if nothing is found.
 	 */
 	public TriggeredEvent getFirstEvent(String name) {
-		if( name == null)
+		if (name == null) {
 			return null;
-		
-		for(TriggeredEvent event : traces) {
-			if(name.equals(event.name))
+		}
+
+		for (TriggeredEvent event : traces) {
+			if (name.equals(event.name)) {
 				return event;
+			}
 		}
 		return null;
 	}
@@ -89,6 +97,7 @@ public class TriggeredEventTraces  {
 		public String name;
 		public Notification notifier;
 		public Object object;
+
 		/**
 		 * Constructor.
 		 *
@@ -99,6 +108,7 @@ public class TriggeredEventTraces  {
 			this.name = name;
 			this.notifier = notifier;
 		}
+
 		/**
 		 * Constructor.
 		 *
@@ -109,12 +119,13 @@ public class TriggeredEventTraces  {
 			this.name = name;
 			this.object = object;
 		}
-		
+
 	}
 
 
 	/**
 	 * Return the number of traces
+	 * 
 	 * @return
 	 */
 	public int size() {
@@ -123,6 +134,7 @@ public class TriggeredEventTraces  {
 
 	/**
 	 * Get the specified trace.
+	 * 
 	 * @param i
 	 * @return
 	 */

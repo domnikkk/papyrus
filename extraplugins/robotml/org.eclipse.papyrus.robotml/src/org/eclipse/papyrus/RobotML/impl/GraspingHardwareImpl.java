@@ -20,6 +20,7 @@ public class GraspingHardwareImpl extends ActuatorHardwareImpl implements Graspi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GraspingHardwareImpl() {
@@ -29,6 +30,7 @@ public class GraspingHardwareImpl extends ActuatorHardwareImpl implements Graspi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class GraspingHardwareImpl extends ActuatorHardwareImpl implements Graspi
 		return RobotMLPackage.Literals.GRASPING_HARDWARE;
 	}
 
-} //GraspingHardwareImpl
+} // GraspingHardwareImpl

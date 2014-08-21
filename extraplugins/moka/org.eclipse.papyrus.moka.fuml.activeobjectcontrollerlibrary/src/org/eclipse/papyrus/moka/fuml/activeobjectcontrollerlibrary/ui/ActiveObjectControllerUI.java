@@ -69,21 +69,21 @@ import org.eclipse.uml2.uml.Signal;
 
 /**
  * This class create an UI for the Active Object Controller Library in the Debug view of Papyrus.
- * When an execution is start and a register signal is send, this UI is enable. 
- * 
- * This UI allow to send signals for registered objects during an execution. 
+ * When an execution is start and a register signal is send, this UI is enable.
+ *
+ * This UI allow to send signals for registered objects during an execution.
  * User can choice which signal he want to send, on which port and for which object.
  * Also, signals with properties can be edited with an integrated table.
  */
 public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
-	 * This composite 
+	 * This composite
 	 */
 	protected Composite self;
 
 	/**
-	 * SWT List which contains registered objects 
+	 * SWT List which contains registered objects
 	 */
 	protected List objectsList;
 
@@ -107,7 +107,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	 */
 	protected Button unexplicitSignal;
 
-	/** 
+	/**
 	 * SWT Table which contains properties for selected signals
 	 */
 	protected Table table;
@@ -115,7 +115,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	/**
 	 * SWT TableEditor, allow to edit TableItem containing in the SWT Table
 	 */
-	protected TableEditor editor;	
+	protected TableEditor editor;
 
 	/**
 	 * SWT Image which represent status (wrong) for TableItem
@@ -144,7 +144,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	protected final CS_InteractionPoint noPort = null;
 
 	/**
-	 * Name displaying in SWT portsList for see @noPort 
+	 * Name displaying in SWT portsList for see @noPort
 	 */
 	protected final String noPortName = "<none>";
 
@@ -201,7 +201,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	/**
 	 * UnlimitedNatural TableEditor status
 	 */
-	protected boolean unlimitedNaturalStatus = true;	
+	protected boolean unlimitedNaturalStatus = true;
 
 	/**
 	 * Class ID
@@ -210,7 +210,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Constructor Initialize eInstance
-	 * 
+	 *
 	 */
 	public ActiveObjectControllerUI() {
 		eInstance = this;
@@ -218,20 +218,21 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Get active object from model. Then, add them on the registeredObject list.
+	 * 
 	 * @param object
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
 	public void register(Object object) {
 		Object arg = object;
-		if(arg instanceof CS_Reference) {
-			CS_Reference ref = (CS_Reference)arg;
-			if(ref.compositeReferent instanceof CS_Object) {
+		if (arg instanceof CS_Reference) {
+			CS_Reference ref = (CS_Reference) arg;
+			if (ref.compositeReferent instanceof CS_Object) {
 				CS_Object referent = ref.compositeReferent;
 				// Add the registered object to the Object_ list
 				registeredObjects.add(referent);
-				
+
 				// get the execution context
-				if(this.model == null) {
+				if (this.model == null) {
 					this.model = referent.getTypes().get(0).getModel();
 				}
 
@@ -248,6 +249,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 				this.display.syncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						// Add registeredObject in the SWT List
 						objectsList.add(registeredObjectName);
@@ -290,8 +292,9 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Create Part Control on Debug Perspective
-	 * 
+	 *
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 
 		/* Create the main composite which contains all elements */
@@ -336,6 +339,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 		 */
 		this.objectsList.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				signalsList.removeAll();
 				signals.clear();
@@ -353,28 +357,30 @@ public class ActiveObjectControllerUI extends ViewPart {
 				boolean hasPort = false;
 				if (objectsList.getSelectionCount() > 0) {
 					int selectionIndex = objectsList.getSelectionIndices()[0];
-					Object_ target = (Object_)registeredObjects.get(selectionIndex);
-					for(Classifier c : target.getTypes()) {
-						for(Property prop : c.getAttributes()) {
-							if(prop instanceof Port) {
-								hasPort = true;;
-								Port p = (Port)prop;
+					Object_ target = registeredObjects.get(selectionIndex);
+					for (Classifier c : target.getTypes()) {
+						for (Property prop : c.getAttributes()) {
+							if (prop instanceof Port) {
+								hasPort = true;
+								;
+								Port p = (Port) prop;
 								FeatureValue f = target.getFeatureValue(p);
-								for(Value v : f.values) {
-									if(v instanceof CS_InteractionPoint) {
+								for (Value v : f.values) {
+									if (v instanceof CS_InteractionPoint) {
 										int index = f.values.indexOf(v) + 1;
 										portsList.add(p.getName() + "[" + index + "]");
-										ports.add((CS_InteractionPoint)v);
+										ports.add((CS_InteractionPoint) v);
 									}
 								}
 							}
 						}
-						if(!hasPort) {
+						if (!hasPort) {
 							getAllSignals();
 						}
 					}
 
 					display.syncExec(new Runnable() {
+						@Override
 						public void run() {
 							portsList.select(0);
 							btnSend.setEnabled(false);
@@ -405,6 +411,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 		 */
 		this.portsList.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				signalsList.removeAll();
 				signals.clear();
@@ -436,14 +443,15 @@ public class ActiveObjectControllerUI extends ViewPart {
 		this.signalsList.setLayoutData(gdComponents);
 
 		/*
-		 * Listener on listSignals If signal has property, create TableItem which represent them. 
+		 * Listener on listSignals If signal has property, create TableItem which represent them.
 		 * 
 		 * Activate sending button.
 		 */
 		this.signalsList.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (signalsList.getSelectionCount() > 0) {			
+				if (signalsList.getSelectionCount() > 0) {
 					int signalSelectionIndex = signalsList.getSelectionIndices()[0];
 					selectedSignal = signals.get(signalSelectionIndex);
 					java.util.List<Feature> features = selectedSignal.getFeatures();
@@ -451,11 +459,11 @@ public class ActiveObjectControllerUI extends ViewPart {
 					if (editor.getEditor() != null) {
 						editor.getEditor().dispose();
 					}
-					if(features.size() > 0) {
-						for(Feature feature : features) {
-							if(feature instanceof Property) {
-								Property p = (Property)feature;
-								if(p.getType() instanceof PrimitiveType) {
+					if (features.size() > 0) {
+						for (Feature feature : features) {
+							if (feature instanceof Property) {
+								Property p = (Property) feature;
+								if (p.getType() instanceof PrimitiveType) {
 									if (table.getItems().length > 0) {
 										for (int i = 0; i < table.getItems().length; i++) {
 											TableItem cddItem = table.getItems()[i];
@@ -471,7 +479,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 										if (p.getType().getName().equals("Integer")) {
 											item.setText(new String[] { p.getName(), "0" });
 											item.setImage(greenStatus);
-										} else if  (p.getType().getName().equals("String")) {
+										} else if (p.getType().getName().equals("String")) {
 											item.setText(new String[] { p.getName(), "" });
 											item.setImage(greenStatus);
 										} else if (p.getType().getName().equals("Boolean")) {
@@ -487,6 +495,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 										display.syncExec(new Runnable() {
 
+											@Override
 											public void run() {
 												table.setHeaderVisible(true);
 											}
@@ -502,6 +511,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 						}
 
 						display.syncExec(new Runnable() {
+							@Override
 							public void run() {
 								table.setHeaderVisible(false);
 							}
@@ -550,19 +560,19 @@ public class ActiveObjectControllerUI extends ViewPart {
 		/*
 		 * Listener on Sending Button.
 		 * Get elements selected on lists, then create a signal Instance to send.
-		 * If selected signal has property, evaluate values from the table and add them to the signal instance. 
+		 * If selected signal has property, evaluate values from the table and add them to the signal instance.
 		 * Then, send it.
 		 */
 		btnSend.addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if(signalsList.getSelection().length > 0 && portsList.getSelection().length > 0 && objectsList.getSelection().length > 0) {
+				if (signalsList.getSelection().length > 0 && portsList.getSelection().length > 0 && objectsList.getSelection().length > 0) {
 					int objectSelectionIndex = objectsList.getSelectionIndices()[0];
-					Object_ target = (Object_)registeredObjects.get(objectSelectionIndex);
+					Object_ target = registeredObjects.get(objectSelectionIndex);
 					int portSelectionIndex = portsList.getSelectionIndices()[0];
 					CS_InteractionPoint interactionPoint = null;
-					if(portSelectionIndex >= 0) {
+					if (portSelectionIndex >= 0) {
 						interactionPoint = ports.get(portSelectionIndex);
 					}
 					int signalSelectionIndex = signalsList.getSelectionIndices()[0];
@@ -572,9 +582,9 @@ public class ActiveObjectControllerUI extends ViewPart {
 					signalInstance.type = signal;
 					signalInstance.createFeatureValues();
 
-					evaluate(table.getItems(), signalInstance);					
+					evaluate(table.getItems(), signalInstance);
 
-					if(interactionPoint != null) {
+					if (interactionPoint != null) {
 						interactionPoint.send(signalInstance);
 					}
 					else {
@@ -599,6 +609,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 		 */
 		unexplicitSignal.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				signalsList.removeAll();
 				signals.clear();
@@ -614,9 +625,11 @@ public class ActiveObjectControllerUI extends ViewPart {
 	 * Evaluate value for item selected in the table
 	 * Editors supported : Integer, String, Boolean, Real
 	 * Editors shall be supported : UnlimitedNatural, Enumeration
-	 * 
-	 * @param items : representing table items in the view
-	 * @param signalInstance : signalInstance corresponding of parent of table items.
+	 *
+	 * @param items
+	 *            : representing table items in the view
+	 * @param signalInstance
+	 *            : signalInstance corresponding of parent of table items.
 	 */
 	protected void evaluate(TableItem[] items, CS_SignalInstance signalInstance) {
 		/**
@@ -629,8 +642,8 @@ public class ActiveObjectControllerUI extends ViewPart {
 			String text = it.getText(1);
 			FeatureValue cddFeatureValue = signalInstance.featureValues.get(i);
 			if (cddFeatureValue.feature instanceof Property) {
-				Property p = (Property)cddFeatureValue.feature;
-				if(p.getType() instanceof PrimitiveType) {
+				Property p = (Property) cddFeatureValue.feature;
+				if (p.getType() instanceof PrimitiveType) {
 					if (p.getType().getName().equals("Integer")) {
 						Integer cddInteger = Integer.parseInt(text);
 						IntegerValue cddValue = new IntegerValue();
@@ -669,8 +682,8 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Set and configure the table editors for the following supported types :
-	 * 	- Integer, Boolean, String, Real
-	 * 
+	 * - Integer, Boolean, String, Real
+	 *
 	 */
 	protected void createTableEditor() {
 		editor = new TableEditor(this.table);
@@ -683,45 +696,49 @@ public class ActiveObjectControllerUI extends ViewPart {
 		final int EDITABLECOLUMN = 1;
 
 		table.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// Clean up any previous editor control
 				Control oldEditor = editor.getEditor();
-				if (oldEditor != null)
+				if (oldEditor != null) {
 					oldEditor.dispose();
+				}
 
 				// Identify the selected row
 				TableItem item = (TableItem) e.item;
-				if (item == null)
+				if (item == null) {
 					return;
+				}
 
 				// The control that will be the editor must be a child of the table
 				Text newEditor = new Text(table, SWT.NONE);
 				newEditor.setText(item.getText(EDITABLECOLUMN));
 
 				newEditor.addModifyListener(new ModifyListener() {
+					@Override
 					public void modifyText(ModifyEvent me) {
 						/**
 						 * First, get edited text by user from the TableEditor.
-						 * Then, browse through featuresValue of selected signal which featureValue is edited. 
-						 * Finally, parse the edited text with the right editor and display correction status (validated or not). 
+						 * Then, browse through featuresValue of selected signal which featureValue is edited.
+						 * Finally, parse the edited text with the right editor and display correction status (validated or not).
 						 */
 
 						Text text = (Text) editor.getEditor();
-						editor.getItem().setText(EDITABLECOLUMN, text.getText()); 
+						editor.getItem().setText(EDITABLECOLUMN, text.getText());
 						enabledSendButton();
 						String cddText = editor.getItem().getText(EDITABLECOLUMN);
 						java.util.List<Feature> features = selectedSignal.getFeatures();
-						for(Feature feature : features) {
-							if(feature instanceof Property) {
-								Property p = (Property)feature;
-								if(p.getType() instanceof PrimitiveType) {
+						for (Feature feature : features) {
+							if (feature instanceof Property) {
+								Property p = (Property) feature;
+								if (p.getType() instanceof PrimitiveType) {
 									if (editor.getItem().getText(0).equals(p.getName())) {
 										if (p.getType().getName().equals("Integer")) {
-											try { 
-												Integer.parseInt(cddText); 
+											try {
+												Integer.parseInt(cddText);
 												setStatus(editor.getEditor(), editor.getItem(), greenStatus, true);
 												integerStatus = true;
-											} 
+											}
 											catch (Exception e) {
 												setStatus(editor.getEditor(), editor.getItem(), redStatus, false);
 												integerStatus = false;
@@ -735,17 +752,17 @@ public class ActiveObjectControllerUI extends ViewPart {
 												booleanStatus = false;
 											}
 										} else if (p.getType().getName().equals("Real")) {
-											try { 
-												Double.parseDouble(cddText); 
+											try {
+												Double.parseDouble(cddText);
 												setStatus(editor.getEditor(), editor.getItem(), greenStatus, true);
 												realStatus = true;
-											} 
+											}
 											catch (Exception e) {
 												setStatus(editor.getEditor(), editor.getItem(), redStatus, false);
 												realStatus = false;
 											}
 										} else if (p.getType().getName().equals("UnlimitedNatural")) {
-											try { 
+											try {
 												if (cddText.equals("*") || Integer.parseInt(cddText) > 0) {
 													setStatus(editor.getEditor(), editor.getItem(), greenStatus, true);
 													unlimitedNaturalStatus = true;
@@ -753,7 +770,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 													setStatus(editor.getEditor(), editor.getItem(), redStatus, false);
 													unlimitedNaturalStatus = false;
 												}
-											} 
+											}
 											catch (Exception e) {
 												setStatus(editor.getEditor(), editor.getItem(), redStatus, false);
 												unlimitedNaturalStatus = false;
@@ -779,10 +796,10 @@ public class ActiveObjectControllerUI extends ViewPart {
 	}
 
 	/**
-	 * Set the status of the table : 
-	 * 	- Change font color,
-	 * 	- Add status image. 
-	 * 
+	 * Set the status of the table :
+	 * - Change font color,
+	 * - Add status image.
+	 *
 	 */
 	protected void setStatus(Control editor, TableItem item, Image image, boolean status) {
 		if (status) {
@@ -798,6 +815,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * Return the instance of ActiveObjectControllerUI
+	 * 
 	 * @return instance of ActiveObjectControllerUI
 	 */
 	public static ActiveObjectControllerUI getInstance() {
@@ -806,11 +824,12 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 	/**
 	 * This method enable the send button of the view
-	 * 
+	 *
 	 */
 	protected void enabledSendButton() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				btnSend.setEnabled(true);
 			}
@@ -823,6 +842,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	protected void disabledSendButton() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				btnSend.setEnabled(false);
 			}
@@ -835,6 +855,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	protected void enabledUnexplicitSignalButton() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				unexplicitSignal.setEnabled(true);
 			}
@@ -847,6 +868,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	protected void disabledUnexplicitSignalButton() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				unexplicitSignal.setEnabled(false);
 			}
@@ -854,11 +876,12 @@ public class ActiveObjectControllerUI extends ViewPart {
 	}
 
 	/**
-	 * This method display headers of the table 
+	 * This method display headers of the table
 	 */
 	protected void enabledTableHeaderColumn() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				table.setHeaderVisible(true);
 			}
@@ -871,6 +894,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	protected void disabledTableHeaderColumn() {
 		display.syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				table.setHeaderVisible(false);
 			}
@@ -880,37 +904,37 @@ public class ActiveObjectControllerUI extends ViewPart {
 	/**
 	 * This method retrieves explicit or implicit signals for selection.
 	 * First, verifies if the checkBox is checked :
-	 * 		- if it's checked, display signals with explicit reception 
-	 * 		- if it's not, display all signals in the model
-	 * 
+	 * - if it's checked, display signals with explicit reception
+	 * - if it's not, display all signals in the model
+	 *
 	 */
 	protected void getAllSignals() {
 		/**
 		 * First, check which kind of signals is needed to be displayed :
 		 * If it's signals with explicit reception, there is two way to select them :
-		 * 		- If a port is selected, get the reception for the provided interface of the port.
-		 * 		- Else, search through the registered object selected an explicit reception (on port or not).
-		 * 
-		 * If don't hide signals without explicit reception,  we search through the model all defined signals.
-		 * 
+		 * - If a port is selected, get the reception for the provided interface of the port.
+		 * - Else, search through the registered object selected an explicit reception (on port or not).
+		 *
+		 * If don't hide signals without explicit reception, we search through the model all defined signals.
+		 *
 		 */
-		if(unexplicitSignal.getSelection()) {
+		if (unexplicitSignal.getSelection()) {
 			isChecked = true;
-			if(objectsList.getSelection().length > 0) {
+			if (objectsList.getSelection().length > 0) {
 				int objectSelectionIndex = objectsList.getSelectionIndices()[0];
-				Object_ target = (Object_)registeredObjects.get(objectSelectionIndex);
-				if(portsList.getSelection().length > 0) {
+				Object_ target = registeredObjects.get(objectSelectionIndex);
+				if (portsList.getSelection().length > 0) {
 					int portSelectionIndex = portsList.getSelectionIndices()[0];
 					CS_InteractionPoint interactionPoint = ports.get(portSelectionIndex);
 					if (interactionPoint == null) {
-						for(Classifier c : target.getTypes()) {
-							for(NamedElement n : c.getMembers()) {
+						for (Classifier c : target.getTypes()) {
+							for (NamedElement n : c.getMembers()) {
 								if (n instanceof Port) {
-									Port cddPort = (Port)n;
-									for(Interface i : cddPort.getProvideds()) {
-										for(NamedElement cddNamedElement : i.getMembers()) {
-											if(cddNamedElement instanceof Reception) {
-												Reception r = (Reception)cddNamedElement;
+									Port cddPort = (Port) n;
+									for (Interface i : cddPort.getProvideds()) {
+										for (NamedElement cddNamedElement : i.getMembers()) {
+											if (cddNamedElement instanceof Reception) {
+												Reception r = (Reception) cddNamedElement;
 												String signalName = "<<Signal>>" + r.getSignal().getName();
 												signalsList.add(signalName);
 												signals.add(r.getSignal());
@@ -918,7 +942,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 										}
 									}
 								} else if (n instanceof Reception) {
-									Reception r = (Reception)n;
+									Reception r = (Reception) n;
 									String signalName = "<<Signal>>" + r.getSignal().getName();
 									signalsList.add(signalName);
 									signals.add(r.getSignal());
@@ -926,10 +950,10 @@ public class ActiveObjectControllerUI extends ViewPart {
 							}
 						}
 					} else {
-						for(Interface i : interactionPoint.definingPort.getProvideds()) {
-							for(NamedElement n : i.getMembers()) {
-								if(n instanceof Reception) {
-									Reception r = (Reception)n;
+						for (Interface i : interactionPoint.definingPort.getProvideds()) {
+							for (NamedElement n : i.getMembers()) {
+								if (n instanceof Reception) {
+									Reception r = (Reception) n;
 									String signalName = "<<Signal>>" + r.getSignal().getName();
 									signalsList.add(signalName);
 									signals.add(r.getSignal());
@@ -939,10 +963,10 @@ public class ActiveObjectControllerUI extends ViewPart {
 					}
 
 				} else {
-					for(Classifier c : target.getTypes()) {
-						for(NamedElement n : c.getMembers()) {
-							if(n instanceof Reception) {
-								Reception r = (Reception)n;
+					for (Classifier c : target.getTypes()) {
+						for (NamedElement n : c.getMembers()) {
+							if (n instanceof Reception) {
+								Reception r = (Reception) n;
 								String signalName = "<<Signal>>" + r.getSignal().getName();
 								signalsList.add(signalName);
 								signals.add(r.getSignal());
@@ -953,10 +977,10 @@ public class ActiveObjectControllerUI extends ViewPart {
 			}
 		} else {
 			isChecked = false;
-			for(Iterator<EObject> i = model.eResource().getAllContents() ; i.hasNext() ; ) {
-				EObject n = i.next() ;
-				if(n instanceof Signal) {
-					Signal s = (Signal)n;
+			for (Iterator<EObject> i = model.eResource().getAllContents(); i.hasNext();) {
+				EObject n = i.next();
+				if (n instanceof Signal) {
+					Signal s = (Signal) n;
 					signalsList.add("<<Signal>>" + s.getName());
 					signals.add(s);
 				}
@@ -965,6 +989,6 @@ public class ActiveObjectControllerUI extends ViewPart {
 	}
 
 	@Override
-	public void setFocus() {		
+	public void setFocus() {
 	}
 }

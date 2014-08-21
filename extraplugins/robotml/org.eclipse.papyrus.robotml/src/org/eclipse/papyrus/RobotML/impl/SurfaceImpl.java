@@ -20,6 +20,7 @@ public class SurfaceImpl extends PhysicalObjectImpl implements Surface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SurfaceImpl() {
@@ -29,6 +30,7 @@ public class SurfaceImpl extends PhysicalObjectImpl implements Surface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class SurfaceImpl extends PhysicalObjectImpl implements Surface {
 		return RobotMLPackage.Literals.SURFACE;
 	}
 
-} //SurfaceImpl
+} // SurfaceImpl

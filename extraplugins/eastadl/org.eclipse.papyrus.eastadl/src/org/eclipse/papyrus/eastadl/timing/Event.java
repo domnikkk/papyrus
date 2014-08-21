@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,17 +20,21 @@ package org.eclipse.papyrus.eastadl.timing;
  * end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An Event (E) is supposed to denote a distinct form of state change in a running system, taking place at distinct points in time called occurrences of the event. An event may also report a [current] state. In that case, the event occurs periodically. For example, the "driver door has been opened" is an event indicating a state change; whereas the "driver door is open" is an event reporting a state.
- * 
- * A running system can be observed by identifying certain forms of state changes to watch for, and for each such observation point, noting the times when changes occur. This notion of observation also applies to a hypothetical predicted run of a system or a system model from a timing perspective, the only information that needs to be in the output of such a prediction is a sequence of times for each observation point, indicating the times that each event is predicted to occur.
- * 
- * The occurrence of an event either stimulates an execution, or is caused by an execution [as a response to another event that occurred before]. In the first case the event is called Stimulus (S) and in the latter case it is called Response (R). Stimuli always precede responses; and responses in turn always succeed stimuli.
- * 
- * An event occurs instantaneously, which means that an event occurs at a time instant without any duration. In addition, an event can appear any number of times and the subsequent occurrences may follow a specific pattern, like periodic, sporadic, or in sudden bursts. Each of these occurrences has a unique time instant. 
- * 
+ * An Event (E) is supposed to denote a distinct form of state change in a running system, taking place at distinct points in time called occurrences of the event. An event may also report a [current] state. In that case, the event occurs periodically. For
+ * example, the "driver door has been opened" is an event indicating a state change; whereas the "driver door is open" is an event reporting a state.
+ *
+ * A running system can be observed by identifying certain forms of state changes to watch for, and for each such observation point, noting the times when changes occur. This notion of observation also applies to a hypothetical predicted run of a system or a
+ * system model from a timing perspective, the only information that needs to be in the output of such a prediction is a sequence of times for each observation point, indicating the times that each event is predicted to occur.
+ *
+ * The occurrence of an event either stimulates an execution, or is caused by an execution [as a response to another event that occurred before]. In the first case the event is called Stimulus (S) and in the latter case it is called Response (R). Stimuli
+ * always precede responses; and responses in turn always succeed stimuli.
+ *
+ * An event occurs instantaneously, which means that an event occurs at a time instant without any duration. In addition, an event can appear any number of times and the subsequent occurrences may follow a specific pattern, like periodic, sporadic, or in
+ * sudden bursts. Each of these occurrences has a unique time instant.
+ *
  * The distinction between an event and its occurrence is usually obvious from the considered context (causal and temporal). The event is not defined by its occurrences, but rather by a description expressing its purpose.
- * 
- * 
+ *
+ *
  * Constraints:
  * [1] In the case that the event reports a [current] state (isStateChange is FALSE), the event must have a periodic event model [or a pattern model]. Rationale: The [current] state shall be reported consistently and periodically.
  * <!-- end-model-doc -->

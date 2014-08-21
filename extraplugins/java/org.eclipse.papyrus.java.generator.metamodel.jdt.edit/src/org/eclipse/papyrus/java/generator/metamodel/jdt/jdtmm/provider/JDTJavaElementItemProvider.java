@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -49,11 +49,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JDTJavaElementItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -63,6 +64,7 @@ public class JDTJavaElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JDTJavaElementItemProvider(AdapterFactory adapterFactory) {
@@ -73,6 +75,7 @@ public class JDTJavaElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,124 +96,130 @@ public class JDTJavaElementItemProvider
 	 * This adds a property descriptor for the Parent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addParentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTJavaElement_parent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_parent_feature", "_UI_JDTJavaElement_type"),
-				 JdtmmPackage.Literals.JDT_JAVA_ELEMENT__PARENT,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTJavaElement_parent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_parent_feature", "_UI_JDTJavaElement_type"),
+						JdtmmPackage.Literals.JDT_JAVA_ELEMENT__PARENT,
+						false,
+						false,
+						false,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addElementNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTJavaElement_elementName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_elementName_feature", "_UI_JDTJavaElement_type"),
-				 JdtmmPackage.Literals.JDT_JAVA_ELEMENT__ELEMENT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTJavaElement_elementName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_elementName_feature", "_UI_JDTJavaElement_type"),
+						JdtmmPackage.Literals.JDT_JAVA_ELEMENT__ELEMENT_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addElementTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTJavaElement_elementType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_elementType_feature", "_UI_JDTJavaElement_type"),
-				 JdtmmPackage.Literals.JDT_JAVA_ELEMENT__ELEMENT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTJavaElement_elementType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_elementType_feature", "_UI_JDTJavaElement_type"),
+						JdtmmPackage.Literals.JDT_JAVA_ELEMENT__ELEMENT_TYPE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTJavaElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_comment_feature", "_UI_JDTJavaElement_type"),
-				 JdtmmPackage.Literals.JDT_JAVA_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTJavaElement_comment_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_comment_feature", "_UI_JDTJavaElement_type"),
+						JdtmmPackage.Literals.JDT_JAVA_ELEMENT__COMMENT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Generated feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addGeneratedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTJavaElement_generated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_generated_feature", "_UI_JDTJavaElement_type"),
-				 JdtmmPackage.Literals.JDT_JAVA_ELEMENT__GENERATED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTJavaElement_generated_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTJavaElement_generated_feature", "_UI_JDTJavaElement_type"),
+						JdtmmPackage.Literals.JDT_JAVA_ELEMENT__GENERATED,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTJavaElement)object).getElementName();
+		String label = ((JDTJavaElement) object).getElementName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTJavaElement_type") :
-			getString("_UI_JDTJavaElement_type") + " " + label;
+				getString("_UI_JDTJavaElement_type") :
+				getString("_UI_JDTJavaElement_type") + " " + label;
 	}
 
 	/**
@@ -218,6 +227,7 @@ public class JDTJavaElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -225,12 +235,12 @@ public class JDTJavaElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JDTJavaElement.class)) {
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
-			case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
-			case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
-			case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_NAME:
+		case JdtmmPackage.JDT_JAVA_ELEMENT__ELEMENT_TYPE:
+		case JdtmmPackage.JDT_JAVA_ELEMENT__COMMENT:
+		case JdtmmPackage.JDT_JAVA_ELEMENT__GENERATED:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -240,6 +250,7 @@ public class JDTJavaElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -251,6 +262,7 @@ public class JDTJavaElementItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

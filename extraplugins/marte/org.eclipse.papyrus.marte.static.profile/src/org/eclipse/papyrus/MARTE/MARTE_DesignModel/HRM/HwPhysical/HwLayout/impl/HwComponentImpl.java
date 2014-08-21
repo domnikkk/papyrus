@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,19 +39,19 @@ import org.eclipse.papyrus.MARTE.utils.MarteUtils;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getDimensions <em>Dimensions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getArea <em>Area</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPosition <em>Position</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getGrid <em>Grid</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getNbPins <em>Nb Pins</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getWeight <em>Weight</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPrice <em>Price</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getR_Conditions <em>RConditions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPoweredServices <em>Powered Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getStaticConsumption <em>Static Consumption</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getStaticDissipation <em>Static Dissipation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getSubComponents <em>Sub Components</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getDimensions <em>Dimensions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getArea <em>Area</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPosition <em>Position</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getGrid <em>Grid</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getNbPins <em>Nb Pins</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getWeight <em>Weight</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPrice <em>Price</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getR_Conditions <em>RConditions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getPoweredServices <em>Powered Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getStaticConsumption <em>Static Consumption</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getStaticDissipation <em>Static Dissipation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwPhysical.HwLayout.impl.HwComponentImpl#getSubComponents <em>Sub Components</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +62,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -72,6 +73,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -82,6 +84,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getDimensions() <em>Dimensions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDimensions()
 	 * @generated
 	 * @ordered
@@ -92,6 +95,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getArea() <em>Area</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getArea()
 	 * @generated
 	 * @ordered
@@ -102,6 +106,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -112,6 +117,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getGrid() <em>Grid</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGrid()
 	 * @generated
 	 * @ordered
@@ -122,6 +128,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getNbPins() <em>Nb Pins</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbPins()
 	 * @generated
 	 * @ordered
@@ -132,6 +139,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getNbPins() <em>Nb Pins</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbPins()
 	 * @generated
 	 * @ordered
@@ -142,6 +150,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWeight()
 	 * @generated
 	 * @ordered
@@ -152,6 +161,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWeight()
 	 * @generated
 	 * @ordered
@@ -162,6 +172,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPrice()
 	 * @generated
 	 * @ordered
@@ -172,6 +183,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPrice()
 	 * @generated
 	 * @ordered
@@ -182,6 +194,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getR_Conditions() <em>RConditions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getR_Conditions()
 	 * @generated
 	 * @ordered
@@ -192,6 +205,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getPoweredServices() <em>Powered Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoweredServices()
 	 * @generated
 	 * @ordered
@@ -202,6 +216,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getStaticConsumption() <em>Static Consumption</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStaticConsumption()
 	 * @generated
 	 * @ordered
@@ -212,6 +227,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getStaticConsumption() <em>Static Consumption</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStaticConsumption()
 	 * @generated
 	 * @ordered
@@ -222,6 +238,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The default value of the '{@link #getStaticDissipation() <em>Static Dissipation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStaticDissipation()
 	 * @generated
 	 * @ordered
@@ -232,6 +249,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getStaticDissipation() <em>Static Dissipation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStaticDissipation()
 	 * @generated
 	 * @ordered
@@ -242,6 +260,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	 * The cached value of the '{@link #getSubComponents() <em>Sub Components</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSubComponents()
 	 * @generated
 	 * @ordered
@@ -251,6 +270,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwComponentImpl() {
@@ -260,6 +280,7 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,8 +291,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComponentKind getKind() {
 		return kind;
 	}
@@ -279,20 +302,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(ComponentKind newKind) {
 		ComponentKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getDimensions() {
 		if (dimensions == null) {
 			dimensions = new EDataTypeUniqueEList<String>(String.class, this, HwLayoutPackage.HW_COMPONENT__DIMENSIONS);
@@ -303,53 +331,55 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public String getArea() {
 		// TODO: implement this method to return the 'Area' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
 		// throw new UnsupportedOperationException();
-		
+
 		float area = 0;
 		int dimSize = getDimensions().size();
-		if(dimSize >= 2) {
+		if (dimSize >= 2) {
 			float dim1Value = Float.valueOf(MarteUtils.getValueFromTuple(getDimensions().get(0), "value"));
 			String dim1Unit = MarteUtils.getValueFromTuple(getDimensions().get(0), "unit");
 			float dim2Value = Float.valueOf(MarteUtils.getValueFromTuple(getDimensions().get(1), "value"));
 			String dim2Unit = MarteUtils.getValueFromTuple(getDimensions().get(1), "unit");
-			
-			if(dimSize == 2) {
-				if(dim1Unit.equals(dim2Unit)) {
-					return "{unit="+dim1Unit+"2,value="+String.valueOf(dim1Value*dim2Value)+"}";
+
+			if (dimSize == 2) {
+				if (dim1Unit.equals(dim2Unit)) {
+					return "{unit=" + dim1Unit + "2,value=" + String.valueOf(dim1Value * dim2Value) + "}";
 				}
-				
+
 				else {
-					return "{unit="+dim1Unit+"2,value="+String.valueOf(dim1Value*dim2Value*10)+"}";
+					return "{unit=" + dim1Unit + "2,value=" + String.valueOf(dim1Value * dim2Value * 10) + "}";
 				}
 			}
-			
+
 			else {
 				float dim3Value = Float.valueOf(MarteUtils.getValueFromTuple(getDimensions().get(2), "value"));
 				String dim3Unit = MarteUtils.getValueFromTuple(getDimensions().get(2), "unit");
-				
-				if(dim1Unit.equals(dim2Unit) && dim1Unit.equals(dim3Unit)) {
-					return "{unit="+dim1Unit+"2,value="+String.valueOf(2*dim1Value*dim2Value+2*dim1Value*dim3Value+2*dim2Value*dim3Value)+"}";
-				}
-				
-				else if(dim1Unit.equals(dim2Unit) && !dim1Unit.equals(dim3Unit) && dim1Unit.equals("mm")) {
-					return "{unit="+dim1Unit+"2,value="+String.valueOf(2*dim1Value*dim2Value+2*dim1Value*dim3Value*10+2*dim2Value*dim3Value*10)+"}";
-				}
-				
-				else if(dim1Unit.equals(dim2Unit) && !dim1Unit.equals(dim3Unit) && dim1Unit.equals("cm")){
-					return "{unit="+dim3Unit+"2,value="+String.valueOf(2*dim1Value*dim2Value*100+2*dim1Value*dim3Value*10+2*dim2Value*dim3Value*10)+"}";
-				}
-				
-				else if(dim1Unit.equals(dim3Unit) && !dim1Unit.equals(dim2Unit) && dim1Unit.equals("mm")) {
-					return "{unit="+dim1Unit+"2,value="+String.valueOf(2*dim1Value*dim2Value*10+2*dim1Value*dim3Value+2*dim2Value*dim3Value*10)+"}";
+
+				if (dim1Unit.equals(dim2Unit) && dim1Unit.equals(dim3Unit)) {
+					return "{unit=" + dim1Unit + "2,value=" + String.valueOf(2 * dim1Value * dim2Value + 2 * dim1Value * dim3Value + 2 * dim2Value * dim3Value) + "}";
 				}
 
-				else if(dim1Unit.equals(dim3Unit) && !dim1Unit.equals(dim2Unit) && dim1Unit.equals("cm")) {
-					return "{unit="+dim3Unit+"2,value="+String.valueOf(2*dim1Value*dim2Value*10+2*dim1Value*dim3Value*100+2*dim2Value*dim3Value*10)+"}";
+				else if (dim1Unit.equals(dim2Unit) && !dim1Unit.equals(dim3Unit) && dim1Unit.equals("mm")) {
+					return "{unit=" + dim1Unit + "2,value=" + String.valueOf(2 * dim1Value * dim2Value + 2 * dim1Value * dim3Value * 10 + 2 * dim2Value * dim3Value * 10) + "}";
+				}
+
+				else if (dim1Unit.equals(dim2Unit) && !dim1Unit.equals(dim3Unit) && dim1Unit.equals("cm")) {
+					return "{unit=" + dim3Unit + "2,value=" + String.valueOf(2 * dim1Value * dim2Value * 100 + 2 * dim1Value * dim3Value * 10 + 2 * dim2Value * dim3Value * 10) + "}";
+				}
+
+				else if (dim1Unit.equals(dim3Unit) && !dim1Unit.equals(dim2Unit) && dim1Unit.equals("mm")) {
+					return "{unit=" + dim1Unit + "2,value=" + String.valueOf(2 * dim1Value * dim2Value * 10 + 2 * dim1Value * dim3Value + 2 * dim2Value * dim3Value * 10) + "}";
+				}
+
+				else if (dim1Unit.equals(dim3Unit) && !dim1Unit.equals(dim2Unit) && dim1Unit.equals("cm")) {
+					return "{unit=" + dim3Unit + "2,value=" + String.valueOf(2 * dim1Value * dim2Value * 10 + 2 * dim1Value * dim3Value * 100 + 2 * dim2Value * dim3Value * 10) + "}";
 				}
 			}
 		}
@@ -360,8 +390,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setArea(String newArea) {
 		// TODO: implement this method to set the 'Area' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -371,8 +403,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getPosition() {
 		if (position == null) {
 			position = new EDataTypeUniqueEList<String>(String.class, this, HwLayoutPackage.HW_COMPONENT__POSITION);
@@ -383,8 +417,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getGrid() {
 		if (grid == null) {
 			grid = new EDataTypeUniqueEList<String>(String.class, this, HwLayoutPackage.HW_COMPONENT__GRID);
@@ -395,8 +431,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNbPins() {
 		return nbPins;
 	}
@@ -404,20 +442,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNbPins(String newNbPins) {
 		String oldNbPins = nbPins;
 		nbPins = newNbPins;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__NB_PINS, oldNbPins, nbPins));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getWeight() {
 		return weight;
 	}
@@ -425,20 +468,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWeight(String newWeight) {
 		String oldWeight = weight;
 		weight = newWeight;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__WEIGHT, oldWeight, weight));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPrice() {
 		return price;
 	}
@@ -446,20 +494,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPrice(String newPrice) {
 		String oldPrice = price;
 		price = newPrice;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__PRICE, oldPrice, price));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getR_Conditions() {
 		if (r_Conditions == null) {
 			r_Conditions = new EDataTypeUniqueEList<String>(String.class, this, HwLayoutPackage.HW_COMPONENT__RCONDITIONS);
@@ -470,8 +523,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwResourceService> getPoweredServices() {
 		if (poweredServices == null) {
 			poweredServices = new EObjectContainmentEList<HwResourceService>(HwResourceService.class, this, HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES);
@@ -482,8 +537,10 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getStaticConsumption() {
 		return staticConsumption;
 	}
@@ -491,20 +548,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStaticConsumption(String newStaticConsumption) {
 		String oldStaticConsumption = staticConsumption;
 		staticConsumption = newStaticConsumption;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION, oldStaticConsumption, staticConsumption));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getStaticDissipation() {
 		return staticDissipation;
 	}
@@ -512,20 +574,25 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStaticDissipation(String newStaticDissipation) {
 		String oldStaticDissipation = staticDissipation;
 		staticDissipation = newStaticDissipation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION, oldStaticDissipation, staticDissipation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwComponent> getSubComponents() {
 		if (subComponents == null) {
 			subComponents = new EObjectResolvingEList<HwComponent>(HwComponent.class, this, HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS);
@@ -536,13 +603,14 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
-				return ((InternalEList<?>)getPoweredServices()).basicRemove(otherEnd, msgs);
+		case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
+			return ((InternalEList<?>) getPoweredServices()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -550,37 +618,38 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwLayoutPackage.HW_COMPONENT__KIND:
-				return getKind();
-			case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
-				return getDimensions();
-			case HwLayoutPackage.HW_COMPONENT__AREA:
-				return getArea();
-			case HwLayoutPackage.HW_COMPONENT__POSITION:
-				return getPosition();
-			case HwLayoutPackage.HW_COMPONENT__GRID:
-				return getGrid();
-			case HwLayoutPackage.HW_COMPONENT__NB_PINS:
-				return getNbPins();
-			case HwLayoutPackage.HW_COMPONENT__WEIGHT:
-				return getWeight();
-			case HwLayoutPackage.HW_COMPONENT__PRICE:
-				return getPrice();
-			case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
-				return getR_Conditions();
-			case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
-				return getPoweredServices();
-			case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
-				return getStaticConsumption();
-			case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
-				return getStaticDissipation();
-			case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
-				return getSubComponents();
+		case HwLayoutPackage.HW_COMPONENT__KIND:
+			return getKind();
+		case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
+			return getDimensions();
+		case HwLayoutPackage.HW_COMPONENT__AREA:
+			return getArea();
+		case HwLayoutPackage.HW_COMPONENT__POSITION:
+			return getPosition();
+		case HwLayoutPackage.HW_COMPONENT__GRID:
+			return getGrid();
+		case HwLayoutPackage.HW_COMPONENT__NB_PINS:
+			return getNbPins();
+		case HwLayoutPackage.HW_COMPONENT__WEIGHT:
+			return getWeight();
+		case HwLayoutPackage.HW_COMPONENT__PRICE:
+			return getPrice();
+		case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
+			return getR_Conditions();
+		case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
+			return getPoweredServices();
+		case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
+			return getStaticConsumption();
+		case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
+			return getStaticDissipation();
+		case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
+			return getSubComponents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -588,57 +657,58 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwLayoutPackage.HW_COMPONENT__KIND:
-				setKind((ComponentKind)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
-				getDimensions().clear();
-				getDimensions().addAll((Collection<? extends String>)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__AREA:
-				setArea((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__POSITION:
-				getPosition().clear();
-				getPosition().addAll((Collection<? extends String>)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__GRID:
-				getGrid().clear();
-				getGrid().addAll((Collection<? extends String>)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__NB_PINS:
-				setNbPins((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__WEIGHT:
-				setWeight((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__PRICE:
-				setPrice((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
-				getR_Conditions().clear();
-				getR_Conditions().addAll((Collection<? extends String>)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
-				getPoweredServices().clear();
-				getPoweredServices().addAll((Collection<? extends HwResourceService>)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
-				setStaticConsumption((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
-				setStaticDissipation((String)newValue);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
-				getSubComponents().clear();
-				getSubComponents().addAll((Collection<? extends HwComponent>)newValue);
-				return;
+		case HwLayoutPackage.HW_COMPONENT__KIND:
+			setKind((ComponentKind) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
+			getDimensions().clear();
+			getDimensions().addAll((Collection<? extends String>) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__AREA:
+			setArea((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__POSITION:
+			getPosition().clear();
+			getPosition().addAll((Collection<? extends String>) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__GRID:
+			getGrid().clear();
+			getGrid().addAll((Collection<? extends String>) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__NB_PINS:
+			setNbPins((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__WEIGHT:
+			setWeight((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__PRICE:
+			setPrice((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
+			getR_Conditions().clear();
+			getR_Conditions().addAll((Collection<? extends String>) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
+			getPoweredServices().clear();
+			getPoweredServices().addAll((Collection<? extends HwResourceService>) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
+			setStaticConsumption((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
+			setStaticDissipation((String) newValue);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
+			getSubComponents().clear();
+			getSubComponents().addAll((Collection<? extends HwComponent>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -646,50 +716,51 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwLayoutPackage.HW_COMPONENT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
-				getDimensions().clear();
-				return;
-			case HwLayoutPackage.HW_COMPONENT__AREA:
-				setArea(AREA_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__POSITION:
-				getPosition().clear();
-				return;
-			case HwLayoutPackage.HW_COMPONENT__GRID:
-				getGrid().clear();
-				return;
-			case HwLayoutPackage.HW_COMPONENT__NB_PINS:
-				setNbPins(NB_PINS_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__WEIGHT:
-				setWeight(WEIGHT_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__PRICE:
-				setPrice(PRICE_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
-				getR_Conditions().clear();
-				return;
-			case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
-				getPoweredServices().clear();
-				return;
-			case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
-				setStaticConsumption(STATIC_CONSUMPTION_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
-				setStaticDissipation(STATIC_DISSIPATION_EDEFAULT);
-				return;
-			case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
-				getSubComponents().clear();
-				return;
+		case HwLayoutPackage.HW_COMPONENT__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
+			getDimensions().clear();
+			return;
+		case HwLayoutPackage.HW_COMPONENT__AREA:
+			setArea(AREA_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__POSITION:
+			getPosition().clear();
+			return;
+		case HwLayoutPackage.HW_COMPONENT__GRID:
+			getGrid().clear();
+			return;
+		case HwLayoutPackage.HW_COMPONENT__NB_PINS:
+			setNbPins(NB_PINS_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__WEIGHT:
+			setWeight(WEIGHT_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__PRICE:
+			setPrice(PRICE_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
+			getR_Conditions().clear();
+			return;
+		case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
+			getPoweredServices().clear();
+			return;
+		case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
+			setStaticConsumption(STATIC_CONSUMPTION_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
+			setStaticDissipation(STATIC_DISSIPATION_EDEFAULT);
+			return;
+		case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
+			getSubComponents().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -697,37 +768,38 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwLayoutPackage.HW_COMPONENT__KIND:
-				return kind != KIND_EDEFAULT;
-			case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
-				return dimensions != null && !dimensions.isEmpty();
-			case HwLayoutPackage.HW_COMPONENT__AREA:
-				return AREA_EDEFAULT == null ? getArea() != null : !AREA_EDEFAULT.equals(getArea());
-			case HwLayoutPackage.HW_COMPONENT__POSITION:
-				return position != null && !position.isEmpty();
-			case HwLayoutPackage.HW_COMPONENT__GRID:
-				return grid != null && !grid.isEmpty();
-			case HwLayoutPackage.HW_COMPONENT__NB_PINS:
-				return NB_PINS_EDEFAULT == null ? nbPins != null : !NB_PINS_EDEFAULT.equals(nbPins);
-			case HwLayoutPackage.HW_COMPONENT__WEIGHT:
-				return WEIGHT_EDEFAULT == null ? weight != null : !WEIGHT_EDEFAULT.equals(weight);
-			case HwLayoutPackage.HW_COMPONENT__PRICE:
-				return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
-			case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
-				return r_Conditions != null && !r_Conditions.isEmpty();
-			case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
-				return poweredServices != null && !poweredServices.isEmpty();
-			case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
-				return STATIC_CONSUMPTION_EDEFAULT == null ? staticConsumption != null : !STATIC_CONSUMPTION_EDEFAULT.equals(staticConsumption);
-			case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
-				return STATIC_DISSIPATION_EDEFAULT == null ? staticDissipation != null : !STATIC_DISSIPATION_EDEFAULT.equals(staticDissipation);
-			case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
-				return subComponents != null && !subComponents.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__KIND:
+			return kind != KIND_EDEFAULT;
+		case HwLayoutPackage.HW_COMPONENT__DIMENSIONS:
+			return dimensions != null && !dimensions.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__AREA:
+			return AREA_EDEFAULT == null ? getArea() != null : !AREA_EDEFAULT.equals(getArea());
+		case HwLayoutPackage.HW_COMPONENT__POSITION:
+			return position != null && !position.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__GRID:
+			return grid != null && !grid.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__NB_PINS:
+			return NB_PINS_EDEFAULT == null ? nbPins != null : !NB_PINS_EDEFAULT.equals(nbPins);
+		case HwLayoutPackage.HW_COMPONENT__WEIGHT:
+			return WEIGHT_EDEFAULT == null ? weight != null : !WEIGHT_EDEFAULT.equals(weight);
+		case HwLayoutPackage.HW_COMPONENT__PRICE:
+			return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
+		case HwLayoutPackage.HW_COMPONENT__RCONDITIONS:
+			return r_Conditions != null && !r_Conditions.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__POWERED_SERVICES:
+			return poweredServices != null && !poweredServices.isEmpty();
+		case HwLayoutPackage.HW_COMPONENT__STATIC_CONSUMPTION:
+			return STATIC_CONSUMPTION_EDEFAULT == null ? staticConsumption != null : !STATIC_CONSUMPTION_EDEFAULT.equals(staticConsumption);
+		case HwLayoutPackage.HW_COMPONENT__STATIC_DISSIPATION:
+			return STATIC_DISSIPATION_EDEFAULT == null ? staticDissipation != null : !STATIC_DISSIPATION_EDEFAULT.equals(staticDissipation);
+		case HwLayoutPackage.HW_COMPONENT__SUB_COMPONENTS:
+			return subComponents != null && !subComponents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -735,11 +807,14 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -766,4 +841,4 @@ public class HwComponentImpl extends HwResourceImpl implements HwComponent {
 		return result.toString();
 	}
 
-} //HwComponentImpl
+} // HwComponentImpl

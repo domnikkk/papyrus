@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,11 +34,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.BooleanInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class BooleanInstanceItemProvider
-	extends TypeInstanceItemProvider
-	implements
+		extends TypeInstanceItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -48,6 +49,7 @@ public class BooleanInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BooleanInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -58,6 +60,7 @@ public class BooleanInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,28 +77,30 @@ public class BooleanInstanceItemProvider
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BooleanInstance_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BooleanInstance_value_feature", "_UI_BooleanInstance_type"),
-				 LayersPackage.Literals.BOOLEAN_INSTANCE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_BooleanInstance_value_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BooleanInstance_value_feature", "_UI_BooleanInstance_type"),
+						LayersPackage.Literals.BOOLEAN_INSTANCE__VALUE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns BooleanInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,13 +112,14 @@ public class BooleanInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		BooleanInstance booleanInstance = (BooleanInstance)object;
+		BooleanInstance booleanInstance = (BooleanInstance) object;
 		String propertyName = getInstancePropertyName(object);
-		return  ("".equals(propertyName)?getString("_UI_BooleanInstance_type"):"'" + propertyName+"'") + "=" + booleanInstance.isValue();
+		return ("".equals(propertyName) ? getString("_UI_BooleanInstance_type") : "'" + propertyName + "'") + "=" + booleanInstance.isValue();
 	}
 
 	/**
@@ -121,6 +127,7 @@ public class BooleanInstanceItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -128,9 +135,9 @@ public class BooleanInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BooleanInstance.class)) {
-			case LayersPackage.BOOLEAN_INSTANCE__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case LayersPackage.BOOLEAN_INSTANCE__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -140,6 +147,7 @@ public class BooleanInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

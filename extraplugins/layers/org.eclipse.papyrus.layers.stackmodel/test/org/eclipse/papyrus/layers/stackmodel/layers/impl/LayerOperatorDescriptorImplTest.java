@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -46,18 +46,20 @@ public class LayerOperatorDescriptorImplTest {
 
 	/**
 	 * Create an operator
+	 * 
 	 * @param string
 	 * @return
 	 */
 	protected PropertyOperator createOperator(String name) {
 		PropertyOperator propertyOperator = LayersFactory.eINSTANCE.createPropertyOperator();
 		propertyOperator.setName(name);
-		
+
 		return propertyOperator;
 	}
 
 	/**
 	 * Create a Property
+	 * 
 	 * @param string
 	 * @param i
 	 * @return
@@ -67,13 +69,14 @@ public class LayerOperatorDescriptorImplTest {
 		Property property = LayersFactory.eINSTANCE.createProperty();
 		property.setName(name);
 		property.setIndex(index);
-		
+
 		return property;
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#getPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testGetPropertyOperator() throws NotFoundException {
@@ -85,21 +88,21 @@ public class LayerOperatorDescriptorImplTest {
 
 		// Create a Properties
 		int i = 0;
-		Property property1 = createProperty( "prop" + i, i++);
-		Property property2 = createProperty( "prop" + i, i++);
-		Property property4 = createProperty( "prop4" , 4);
-		
+		Property property1 = createProperty("prop" + i, i++);
+		Property property2 = createProperty("prop" + i, i++);
+		Property property4 = createProperty("prop4", 4);
+
 		// Create Operators
-		i=0;
-		PropertyOperator operator1 = createOperator( "oper" + i++ );
-		PropertyOperator operator2 = createOperator( "oper" + i++ );
-		PropertyOperator operator4 = createOperator( "oper4"  );
-		
+		i = 0;
+		PropertyOperator operator1 = createOperator("oper" + i++);
+		PropertyOperator operator2 = createOperator("oper" + i++);
+		PropertyOperator operator4 = createOperator("oper4");
+
 		// Try to add
 		descriptor.setPropertyOperator(property1, operator1);
 		descriptor.setPropertyOperator(property2, operator2);
 		descriptor.setPropertyOperator(property4, operator4);
-		
+
 		// Do test
 		assertSame("operators size has not changed", expectedSize, descriptor.getPropertyOperators().size());
 		assertSame("operator can be found", operator1, descriptor.getPropertyOperator(property1));
@@ -109,7 +112,8 @@ public class LayerOperatorDescriptorImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#setPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.Property, org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testSetPropertyOperator() throws NotFoundException {
@@ -121,21 +125,21 @@ public class LayerOperatorDescriptorImplTest {
 
 		// Create a Properties
 		int i = 0;
-		Property property1 = createProperty( "prop" + i, i++);
-		Property property2 = createProperty( "prop" + i, i++);
-		Property property4 = createProperty( "prop4" , 4);
-		
+		Property property1 = createProperty("prop" + i, i++);
+		Property property2 = createProperty("prop" + i, i++);
+		Property property4 = createProperty("prop4", 4);
+
 		// Create Operators
-		i=0;
-		PropertyOperator operator1 = createOperator( "oper" + i++ );
-		PropertyOperator operator2 = createOperator( "oper" + i++ );
-		PropertyOperator operator4 = createOperator( "oper4"  );
-		
+		i = 0;
+		PropertyOperator operator1 = createOperator("oper" + i++);
+		PropertyOperator operator2 = createOperator("oper" + i++);
+		PropertyOperator operator4 = createOperator("oper4");
+
 		// Try to add
 		descriptor.setPropertyOperator(property1, operator1);
 		descriptor.setPropertyOperator(property2, operator2);
 		descriptor.setPropertyOperator(property4, operator4);
-		
+
 		// Do test
 		assertSame("operators size has not changed", expectedSize, descriptor.getPropertyOperators().size());
 		assertSame("operator can be found", operator1, descriptor.getPropertyOperator(property1));
@@ -168,7 +172,7 @@ public class LayerOperatorDescriptorImplTest {
 
 		// Check operators init
 		assertSame("list has the expected size", expectedSize, descriptor.getPropertyOperators().size());
-		
+
 		assertSame("list is initialized", defaultPropertyOperator, descriptor.getPropertyOperators().get(0));
 	}
 

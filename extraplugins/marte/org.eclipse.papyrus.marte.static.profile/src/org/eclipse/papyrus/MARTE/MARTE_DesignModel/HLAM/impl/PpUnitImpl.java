@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.BehavioredClassifier;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getConcPolicy <em>Conc Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getMemorySize <em>Memory Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getBase_BehavioredClassifier <em>Base Behaviored Classifier</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getConcPolicy <em>Conc Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getMemorySize <em>Memory Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HLAM.impl.PpUnitImpl#getBase_BehavioredClassifier <em>Base Behaviored Classifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The default value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getConcPolicy() <em>Conc Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConcPolicy()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The default value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getMemorySize() <em>Memory Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMemorySize()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	 * The cached value of the '{@link #getBase_BehavioredClassifier() <em>Base Behaviored Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_BehavioredClassifier()
 	 * @generated
 	 * @ordered
@@ -92,6 +97,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PpUnitImpl() {
@@ -101,6 +107,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,8 +118,10 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public CallConcurrencyKind getConcPolicy() {
 		return concPolicy;
 	}
@@ -120,20 +129,25 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setConcPolicy(CallConcurrencyKind newConcPolicy) {
 		CallConcurrencyKind oldConcPolicy = concPolicy;
 		concPolicy = newConcPolicy == null ? CONC_POLICY_EDEFAULT : newConcPolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HLAMPackage.PP_UNIT__CONC_POLICY, oldConcPolicy, concPolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getMemorySize() {
 		return memorySize;
 	}
@@ -141,27 +155,33 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMemorySize(String newMemorySize) {
 		String oldMemorySize = memorySize;
 		memorySize = newMemorySize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HLAMPackage.PP_UNIT__MEMORY_SIZE, oldMemorySize, memorySize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BehavioredClassifier getBase_BehavioredClassifier() {
 		if (base_BehavioredClassifier != null && base_BehavioredClassifier.eIsProxy()) {
-			InternalEObject oldBase_BehavioredClassifier = (InternalEObject)base_BehavioredClassifier;
-			base_BehavioredClassifier = (BehavioredClassifier)eResolveProxy(oldBase_BehavioredClassifier);
+			InternalEObject oldBase_BehavioredClassifier = (InternalEObject) base_BehavioredClassifier;
+			base_BehavioredClassifier = (BehavioredClassifier) eResolveProxy(oldBase_BehavioredClassifier);
 			if (base_BehavioredClassifier != oldBase_BehavioredClassifier) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER, oldBase_BehavioredClassifier, base_BehavioredClassifier));
+				}
 			}
 		}
 		return base_BehavioredClassifier;
@@ -170,6 +190,7 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BehavioredClassifier basicGetBase_BehavioredClassifier() {
@@ -179,30 +200,36 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_BehavioredClassifier(BehavioredClassifier newBase_BehavioredClassifier) {
 		BehavioredClassifier oldBase_BehavioredClassifier = base_BehavioredClassifier;
 		base_BehavioredClassifier = newBase_BehavioredClassifier;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER, oldBase_BehavioredClassifier, base_BehavioredClassifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HLAMPackage.PP_UNIT__CONC_POLICY:
-				return getConcPolicy();
-			case HLAMPackage.PP_UNIT__MEMORY_SIZE:
-				return getMemorySize();
-			case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
-				if (resolve) return getBase_BehavioredClassifier();
-				return basicGetBase_BehavioredClassifier();
+		case HLAMPackage.PP_UNIT__CONC_POLICY:
+			return getConcPolicy();
+		case HLAMPackage.PP_UNIT__MEMORY_SIZE:
+			return getMemorySize();
+		case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
+			if (resolve) {
+				return getBase_BehavioredClassifier();
+			}
+			return basicGetBase_BehavioredClassifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,20 +237,21 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HLAMPackage.PP_UNIT__CONC_POLICY:
-				setConcPolicy((CallConcurrencyKind)newValue);
-				return;
-			case HLAMPackage.PP_UNIT__MEMORY_SIZE:
-				setMemorySize((String)newValue);
-				return;
-			case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
-				setBase_BehavioredClassifier((BehavioredClassifier)newValue);
-				return;
+		case HLAMPackage.PP_UNIT__CONC_POLICY:
+			setConcPolicy((CallConcurrencyKind) newValue);
+			return;
+		case HLAMPackage.PP_UNIT__MEMORY_SIZE:
+			setMemorySize((String) newValue);
+			return;
+		case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
+			setBase_BehavioredClassifier((BehavioredClassifier) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,20 +259,21 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HLAMPackage.PP_UNIT__CONC_POLICY:
-				setConcPolicy(CONC_POLICY_EDEFAULT);
-				return;
-			case HLAMPackage.PP_UNIT__MEMORY_SIZE:
-				setMemorySize(MEMORY_SIZE_EDEFAULT);
-				return;
-			case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
-				setBase_BehavioredClassifier((BehavioredClassifier)null);
-				return;
+		case HLAMPackage.PP_UNIT__CONC_POLICY:
+			setConcPolicy(CONC_POLICY_EDEFAULT);
+			return;
+		case HLAMPackage.PP_UNIT__MEMORY_SIZE:
+			setMemorySize(MEMORY_SIZE_EDEFAULT);
+			return;
+		case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
+			setBase_BehavioredClassifier((BehavioredClassifier) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,17 +281,18 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HLAMPackage.PP_UNIT__CONC_POLICY:
-				return concPolicy != CONC_POLICY_EDEFAULT;
-			case HLAMPackage.PP_UNIT__MEMORY_SIZE:
-				return MEMORY_SIZE_EDEFAULT == null ? memorySize != null : !MEMORY_SIZE_EDEFAULT.equals(memorySize);
-			case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
-				return base_BehavioredClassifier != null;
+		case HLAMPackage.PP_UNIT__CONC_POLICY:
+			return concPolicy != CONC_POLICY_EDEFAULT;
+		case HLAMPackage.PP_UNIT__MEMORY_SIZE:
+			return MEMORY_SIZE_EDEFAULT == null ? memorySize != null : !MEMORY_SIZE_EDEFAULT.equals(memorySize);
+		case HLAMPackage.PP_UNIT__BASE_BEHAVIORED_CLASSIFIER:
+			return base_BehavioredClassifier != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,11 +300,14 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (concPolicy: ");
@@ -285,4 +318,4 @@ public class PpUnitImpl extends EObjectImpl implements PpUnit {
 		return result.toString();
 	}
 
-} //PpUnitImpl
+} // PpUnitImpl

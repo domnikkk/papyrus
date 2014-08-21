@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,12 +47,12 @@ public class NameCompletionProposal implements ICompletionProposalComputer {
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -62,8 +62,8 @@ public class NameCompletionProposal implements ICompletionProposalComputer {
 		ICompletionProposal proposal = null;
 
 		// adds all name (static strings...)
-		for(int i = 0; i < nameStrings.length; i++) {
-			if(nameStrings[i].startsWith(prefix)) {
+		for (int i = 0; i < nameStrings.length; i++) {
+			if (nameStrings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(nameStrings[i], documentOffset - prefix.length(), prefix.length()
 						+ selectionRange, nameStrings[i].length(), null, nameStringsName[i], null, nameStringsInfo[i]);
 				v.add(proposal);

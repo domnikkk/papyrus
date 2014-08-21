@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,14 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * The ErrorBehaviorKind metaclass represents an enumeration of literals describing various types of formalisms used for specifying error behavior.
- * 
+ *
  * Semantics:
- * ErrorBehaviorKind represents different formalisms for ErrorBehavior. The semantics is defined at each enumeration literal. 
- * 
- * Extension: 
+ * ErrorBehaviorKind represents different formalisms for ErrorBehavior. The semantics is defined at each enumeration literal.
+ *
+ * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getErrorBehaviorKind()
  * @model
  * @generated
@@ -44,6 +45,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>HIP HOPS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HIP_HOPS_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>ALTARICA</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ALTARICA_VALUE
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>AADL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #AADL_VALUE
 	 * @generated
 	 * @ordered
@@ -72,6 +76,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>OTHER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -82,10 +87,10 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>HIP HOPS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>HIP HOPS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>HIP HOPS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HIP_HOPS
 	 * @model
 	 * @generated
@@ -97,10 +102,10 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>ALTARICA</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ALTARICA</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>ALTARICA</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ALTARICA
 	 * @model
 	 * @generated
@@ -112,10 +117,10 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>AADL</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>AADL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>AADL</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #AADL
 	 * @model
 	 * @generated
@@ -127,10 +132,10 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * The '<em><b>OTHER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>OTHER</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>OTHER</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model
 	 * @generated
@@ -142,20 +147,22 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * An array of all the '<em><b>Error Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final ErrorBehaviorKind[] VALUES_ARRAY =
-		new ErrorBehaviorKind[] {
-			HIP_HOPS,
-			ALTARICA,
-			AADL,
-			OTHER,
-		};
+			new ErrorBehaviorKind[] {
+					HIP_HOPS,
+					ALTARICA,
+					AADL,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Error Behavior Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ErrorBehaviorKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -164,14 +171,19 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ErrorBehaviorKind get(int value) {
 		switch (value) {
-			case HIP_HOPS_VALUE: return HIP_HOPS;
-			case ALTARICA_VALUE: return ALTARICA;
-			case AADL_VALUE: return AADL;
-			case OTHER_VALUE: return OTHER;
+		case HIP_HOPS_VALUE:
+			return HIP_HOPS;
+		case ALTARICA_VALUE:
+			return ALTARICA;
+		case AADL_VALUE:
+			return AADL;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -180,6 +192,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ErrorBehaviorKind get(String literal) {
@@ -196,6 +209,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Returns the '<em><b>Error Behavior Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ErrorBehaviorKind getByName(String name) {
@@ -211,6 +225,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -218,6 +233,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -225,6 +241,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -233,6 +250,7 @@ public enum ErrorBehaviorKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ErrorBehaviorKind(int value, String name, String literal) {
@@ -244,39 +262,46 @@ public enum ErrorBehaviorKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //ErrorBehaviorKind
+
+} // ErrorBehaviorKind

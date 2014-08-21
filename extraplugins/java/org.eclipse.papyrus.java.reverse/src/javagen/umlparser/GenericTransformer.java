@@ -1,7 +1,7 @@
 /***************************************************
  * Copyright (c) 2010 Atos Origin.
 
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * The Class GenericTransformer. Permits to transform an eobject of eclass to
@@ -41,7 +40,7 @@ public class GenericTransformer {
 
 	/**
 	 * Instantiates a new generic transformer.
-	 * 
+	 *
 	 * @param currentEobject
 	 *            the current eobject
 	 */
@@ -51,7 +50,7 @@ public class GenericTransformer {
 
 	/**
 	 * Transform the element to the given eclass.
-	 * 
+	 *
 	 * @param requestedType
 	 *            the targeted eclass
 	 */
@@ -65,7 +64,7 @@ public class GenericTransformer {
 			// Copy features
 			copyAllFeatures(element, result);
 			// Change parent
-//			EcoreUtil.replace(element, result);
+			// EcoreUtil.replace(element, result);
 			changeReferences(element, result);
 
 			// Change references on the old objet to references on the new
@@ -87,7 +86,7 @@ public class GenericTransformer {
 
 	/**
 	 * Copy the feature of the source into the target
-	 * 
+	 *
 	 * @param element2
 	 * @param result
 	 */
@@ -108,12 +107,12 @@ public class GenericTransformer {
 	/**
 	 * check if the target eclass contains a estructuralfeature with the same
 	 * name less rigorous can work for many cases
-	 * 
+	 *
 	 * @param target
 	 *            the target
 	 * @param e
 	 *            the e
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	private boolean contains(EClass target, EStructuralFeature e) {
@@ -128,7 +127,7 @@ public class GenericTransformer {
 
 	/**
 	 * Copy specified feature from source to target.
-	 * 
+	 *
 	 * @param mixedDomain
 	 *            the mixed domain
 	 * @param source
@@ -193,9 +192,9 @@ public class GenericTransformer {
 	}
 
 	/**
-	 * 
+	 *
 	 * Set the value of the specified feature
-	 * 
+	 *
 	 * @param elementToEdit
 	 * @param feature
 	 * @param value
@@ -220,12 +219,12 @@ public class GenericTransformer {
 
 	/**
 	 * Gets a feature from a name
-	 * 
+	 *
 	 * @param eobject
 	 *            the eobject
 	 * @param name
 	 *            the name
-	 * 
+	 *
 	 * @return the feature
 	 */
 	private EStructuralFeature getFeature(EObject eobject, String name) {
@@ -234,11 +233,10 @@ public class GenericTransformer {
 
 	/**
 	 * Replace all references on source by references on target Deletes the
-	 * object from its {@link EObject#eResource containing} resource and/or its
-	 * {@link EObject#eContainer containing} object as well as from any other
+	 * object from its {@link EObject#eResource containing} resource and/or its {@link EObject#eContainer containing} object as well as from any other
 	 * feature that references it within the enclosing resource set, resource,
 	 * or root object.
-	 * 
+	 *
 	 * @param eObject
 	 *            the object to delete.
 	 * @copyright org.eclipse.emf.ecore.util.EcoreUtil

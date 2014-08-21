@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsCoincidenceBased <em>Is Coincidence Based</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsPrecedenceBased <em>Is Precedence Based</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsChronometricBased <em>Is Chronometric Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsCoincidenceBased <em>Is Coincidence Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsPrecedenceBased <em>Is Precedence Based</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsChronometricBased <em>Is Chronometric Based</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +38,10 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Returns the value of the '<em><b>Is Coincidence Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Coincidence Based</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Coincidence Based</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Coincidence Based</em>' attribute.
 	 * @see #setIsCoincidenceBased(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockConstraint_IsCoincidenceBased()
@@ -54,7 +54,9 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsCoincidenceBased <em>Is Coincidence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Coincidence Based</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Coincidence Based</em>' attribute.
 	 * @see #isIsCoincidenceBased()
 	 * @generated
 	 */
@@ -64,10 +66,10 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Returns the value of the '<em><b>Is Precedence Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Precedence Based</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Precedence Based</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Precedence Based</em>' attribute.
 	 * @see #setIsPrecedenceBased(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockConstraint_IsPrecedenceBased()
@@ -80,7 +82,9 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsPrecedenceBased <em>Is Precedence Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Precedence Based</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Precedence Based</em>' attribute.
 	 * @see #isIsPrecedenceBased()
 	 * @generated
 	 */
@@ -90,10 +94,10 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Returns the value of the '<em><b>Is Chronometric Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Chronometric Based</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Chronometric Based</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Chronometric Based</em>' attribute.
 	 * @see #setIsChronometricBased(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimePackage#getClockConstraint_IsChronometricBased()
@@ -106,7 +110,9 @@ public interface ClockConstraint extends NfpConstraint, TimedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsChronometricBased <em>Is Chronometric Based</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Chronometric Based</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Chronometric Based</em>' attribute.
 	 * @see #isIsChronometricBased()
 	 * @generated
 	 */

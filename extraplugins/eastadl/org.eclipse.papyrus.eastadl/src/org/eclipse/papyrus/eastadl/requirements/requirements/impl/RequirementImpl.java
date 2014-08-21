@@ -36,14 +36,14 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getOwnedComment <em>Owned Comment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getBase_PackageableElement <em>Base Packageable Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getNote <em>Note</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getFormalism <em>Formalism</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getUrl <em>Url</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getMode <em>Mode</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getOwnedComment <em>Owned Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getBase_PackageableElement <em>Base Packageable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getNote <em>Note</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getFormalism <em>Formalism</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getUrl <em>Url</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementImpl#getMode <em>Mode</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOwnedComment()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getBase_PackageableElement() <em>Base Packageable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_PackageableElement()
 	 * @generated
 	 * @ordered
@@ -94,6 +98,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -104,6 +109,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getNote() <em>Note</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNote()
 	 * @generated
 	 * @ordered
@@ -114,6 +120,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getFormalism() <em>Formalism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFormalism()
 	 * @generated
 	 * @ordered
@@ -124,6 +131,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getFormalism() <em>Formalism</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFormalism()
 	 * @generated
 	 * @ordered
@@ -134,6 +142,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -144,6 +153,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -154,6 +164,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -163,6 +174,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RequirementImpl() {
@@ -172,6 +184,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,15 +195,18 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -199,6 +215,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -208,20 +225,25 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public String getName() {
 		return getBase_Class().getName();
 	}
@@ -229,17 +251,21 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setName(String newName) {
-		//derived property
+		// derived property
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Comment> getOwnedComment() {
 		if (ownedComment == null) {
 			ownedComment = new EObjectResolvingEList<Comment>(Comment.class, this, RequirementsPackage.REQUIREMENT__OWNED_COMMENT);
@@ -250,15 +276,18 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PackageableElement getBase_PackageableElement() {
 		if (base_PackageableElement != null && base_PackageableElement.eIsProxy()) {
-			InternalEObject oldBase_PackageableElement = (InternalEObject)base_PackageableElement;
-			base_PackageableElement = (PackageableElement)eResolveProxy(oldBase_PackageableElement);
+			InternalEObject oldBase_PackageableElement = (InternalEObject) base_PackageableElement;
+			base_PackageableElement = (PackageableElement) eResolveProxy(oldBase_PackageableElement);
 			if (base_PackageableElement != oldBase_PackageableElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
+				}
 			}
 		}
 		return base_PackageableElement;
@@ -267,6 +296,7 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PackageableElement basicGetBase_PackageableElement() {
@@ -276,20 +306,25 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_PackageableElement(PackageableElement newBase_PackageableElement) {
 		PackageableElement oldBase_PackageableElement = base_PackageableElement;
 		base_PackageableElement = newBase_PackageableElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT, oldBase_PackageableElement, base_PackageableElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNote() {
 		return note;
 	}
@@ -297,20 +332,25 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNote(String newNote) {
 		String oldNote = note;
 		note = newNote;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__NOTE, oldNote, note));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getFormalism() {
 		return formalism;
 	}
@@ -318,20 +358,25 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFormalism(String newFormalism) {
 		String oldFormalism = formalism;
 		formalism = newFormalism;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__FORMALISM, oldFormalism, formalism));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getUrl() {
 		return url;
 	}
@@ -339,20 +384,25 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__URL, oldUrl, url));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Mode> getMode() {
 		if (mode == null) {
 			mode = new EObjectResolvingEList<Mode>(Mode.class, this, RequirementsPackage.REQUIREMENT__MODE);
@@ -363,29 +413,34 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
-				if (resolve) return getBase_NamedElement();
-				return basicGetBase_NamedElement();
-			case RequirementsPackage.REQUIREMENT__NAME:
-				return getName();
-			case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
-				return getOwnedComment();
-			case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
-				if (resolve) return getBase_PackageableElement();
-				return basicGetBase_PackageableElement();
-			case RequirementsPackage.REQUIREMENT__NOTE:
-				return getNote();
-			case RequirementsPackage.REQUIREMENT__FORMALISM:
-				return getFormalism();
-			case RequirementsPackage.REQUIREMENT__URL:
-				return getUrl();
-			case RequirementsPackage.REQUIREMENT__MODE:
-				return getMode();
+		case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
+			if (resolve) {
+				return getBase_NamedElement();
+			}
+			return basicGetBase_NamedElement();
+		case RequirementsPackage.REQUIREMENT__NAME:
+			return getName();
+		case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
+			return getOwnedComment();
+		case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
+			if (resolve) {
+				return getBase_PackageableElement();
+			}
+			return basicGetBase_PackageableElement();
+		case RequirementsPackage.REQUIREMENT__NOTE:
+			return getNote();
+		case RequirementsPackage.REQUIREMENT__FORMALISM:
+			return getFormalism();
+		case RequirementsPackage.REQUIREMENT__URL:
+			return getUrl();
+		case RequirementsPackage.REQUIREMENT__MODE:
+			return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -393,38 +448,39 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__NAME:
-				setName((String)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
-				getOwnedComment().clear();
-				getOwnedComment().addAll((Collection<? extends Comment>)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
-				setBase_PackageableElement((PackageableElement)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__NOTE:
-				setNote((String)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__FORMALISM:
-				setFormalism((String)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__URL:
-				setUrl((String)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__MODE:
-				getMode().clear();
-				getMode().addAll((Collection<? extends Mode>)newValue);
-				return;
+		case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__NAME:
+			setName((String) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
+			getOwnedComment().clear();
+			getOwnedComment().addAll((Collection<? extends Comment>) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
+			setBase_PackageableElement((PackageableElement) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__NOTE:
+			setNote((String) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__FORMALISM:
+			setFormalism((String) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__URL:
+			setUrl((String) newValue);
+			return;
+		case RequirementsPackage.REQUIREMENT__MODE:
+			getMode().clear();
+			getMode().addAll((Collection<? extends Mode>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -432,35 +488,36 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)null);
-				return;
-			case RequirementsPackage.REQUIREMENT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
-				getOwnedComment().clear();
-				return;
-			case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
-				setBase_PackageableElement((PackageableElement)null);
-				return;
-			case RequirementsPackage.REQUIREMENT__NOTE:
-				setNote(NOTE_EDEFAULT);
-				return;
-			case RequirementsPackage.REQUIREMENT__FORMALISM:
-				setFormalism(FORMALISM_EDEFAULT);
-				return;
-			case RequirementsPackage.REQUIREMENT__URL:
-				setUrl(URL_EDEFAULT);
-				return;
-			case RequirementsPackage.REQUIREMENT__MODE:
-				getMode().clear();
-				return;
+		case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) null);
+			return;
+		case RequirementsPackage.REQUIREMENT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
+			getOwnedComment().clear();
+			return;
+		case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
+			setBase_PackageableElement((PackageableElement) null);
+			return;
+		case RequirementsPackage.REQUIREMENT__NOTE:
+			setNote(NOTE_EDEFAULT);
+			return;
+		case RequirementsPackage.REQUIREMENT__FORMALISM:
+			setFormalism(FORMALISM_EDEFAULT);
+			return;
+		case RequirementsPackage.REQUIREMENT__URL:
+			setUrl(URL_EDEFAULT);
+			return;
+		case RequirementsPackage.REQUIREMENT__MODE:
+			getMode().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -468,27 +525,28 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
-				return base_NamedElement != null;
-			case RequirementsPackage.REQUIREMENT__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
-				return ownedComment != null && !ownedComment.isEmpty();
-			case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
-				return base_PackageableElement != null;
-			case RequirementsPackage.REQUIREMENT__NOTE:
-				return NOTE_EDEFAULT == null ? note != null : !NOTE_EDEFAULT.equals(note);
-			case RequirementsPackage.REQUIREMENT__FORMALISM:
-				return FORMALISM_EDEFAULT == null ? formalism != null : !FORMALISM_EDEFAULT.equals(formalism);
-			case RequirementsPackage.REQUIREMENT__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
-			case RequirementsPackage.REQUIREMENT__MODE:
-				return mode != null && !mode.isEmpty();
+		case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
+			return base_NamedElement != null;
+		case RequirementsPackage.REQUIREMENT__NAME:
+			return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+		case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
+			return ownedComment != null && !ownedComment.isEmpty();
+		case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
+			return base_PackageableElement != null;
+		case RequirementsPackage.REQUIREMENT__NOTE:
+			return NOTE_EDEFAULT == null ? note != null : !NOTE_EDEFAULT.equals(note);
+		case RequirementsPackage.REQUIREMENT__FORMALISM:
+			return FORMALISM_EDEFAULT == null ? formalism != null : !FORMALISM_EDEFAULT.equals(formalism);
+		case RequirementsPackage.REQUIREMENT__URL:
+			return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+		case RequirementsPackage.REQUIREMENT__MODE:
+			return mode != null && !mode.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -496,28 +554,37 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EAElement.class) {
 			switch (derivedFeatureID) {
-				case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT: return ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
-				case RequirementsPackage.REQUIREMENT__NAME: return ElementsPackage.EA_ELEMENT__NAME;
-				case RequirementsPackage.REQUIREMENT__OWNED_COMMENT: return ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
-				default: return -1;
+			case RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT:
+				return ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT;
+			case RequirementsPackage.REQUIREMENT__NAME:
+				return ElementsPackage.EA_ELEMENT__NAME;
+			case RequirementsPackage.REQUIREMENT__OWNED_COMMENT:
+				return ElementsPackage.EA_ELEMENT__OWNED_COMMENT;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == EAPackageableElement.class) {
 			switch (derivedFeatureID) {
-				case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT: return ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT;
-				default: return -1;
+			case RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT:
+				return ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == TraceableSpecification.class) {
 			switch (derivedFeatureID) {
-				case RequirementsPackage.REQUIREMENT__NOTE: return ElementsPackage.TRACEABLE_SPECIFICATION__NOTE;
-				default: return -1;
+			case RequirementsPackage.REQUIREMENT__NOTE:
+				return ElementsPackage.TRACEABLE_SPECIFICATION__NOTE;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -526,38 +593,48 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EAElement.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT: return RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT;
-				case ElementsPackage.EA_ELEMENT__NAME: return RequirementsPackage.REQUIREMENT__NAME;
-				case ElementsPackage.EA_ELEMENT__OWNED_COMMENT: return RequirementsPackage.REQUIREMENT__OWNED_COMMENT;
-				default: return -1;
+			case ElementsPackage.EA_ELEMENT__BASE_NAMED_ELEMENT:
+				return RequirementsPackage.REQUIREMENT__BASE_NAMED_ELEMENT;
+			case ElementsPackage.EA_ELEMENT__NAME:
+				return RequirementsPackage.REQUIREMENT__NAME;
+			case ElementsPackage.EA_ELEMENT__OWNED_COMMENT:
+				return RequirementsPackage.REQUIREMENT__OWNED_COMMENT;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == EAPackageableElement.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT: return RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT;
-				default: return -1;
+			case ElementsPackage.EA_PACKAGEABLE_ELEMENT__BASE_PACKAGEABLE_ELEMENT:
+				return RequirementsPackage.REQUIREMENT__BASE_PACKAGEABLE_ELEMENT;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == TraceableSpecification.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE: return RequirementsPackage.REQUIREMENT__NOTE;
-				default: return -1;
+			case ElementsPackage.TRACEABLE_SPECIFICATION__NOTE:
+				return RequirementsPackage.REQUIREMENT__NOTE;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Requirement basicGetMaster() {
 		// The Requirement is the supplier of the Copy link between the master Requirement and
 		// current
@@ -565,20 +642,20 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 		Requirement master = null;
 		Copy currentCopy = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<Dependency> itDep = getBase_Class().getClientDependencies().iterator();
 
 			// Find Copy link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Dependency currentDep = itDep.next();
-				currentCopy = (Copy)UMLUtil.getStereotypeApplication(currentDep, Copy.class);
+				currentCopy = UMLUtil.getStereotypeApplication(currentDep, Copy.class);
 
-				if(currentCopy != null) {
+				if (currentCopy != null) {
 					EList<NamedElement> suppliers = currentCopy.getBase_Abstraction().getSuppliers();
 					Iterator<NamedElement> it = suppliers.iterator();
-					while(it.hasNext() && (master == null)) {
-						Requirement currentRequirement = (Requirement)UMLUtil.getStereotypeApplication(it.next(), Requirement.class);
-						if(currentRequirement != null) {
+					while (it.hasNext() && (master == null)) {
+						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);
+						if (currentRequirement != null) {
 							master = currentRequirement;
 						}
 					}
@@ -587,26 +664,27 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 		}
 		return master;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<NamedElement> getRefinedBy() {
 		// This should return the NamedElement(s) that refine current Requirement
 		EList<NamedElement> refinedBy = new BasicEList<NamedElement>();
 		Refine currentRefine = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find Refine link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
-				currentRefine = (Refine)UMLUtil.getStereotypeApplication(currentDRelationship, Refine.class);
+				currentRefine = UMLUtil.getStereotypeApplication(currentDRelationship, Refine.class);
 
-				if(currentRefine != null) {
+				if (currentRefine != null) {
 					refinedBy.addAll(currentRefine.getBase_Dependency().getClients());
 				}
 			}
@@ -618,30 +696,31 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<org.eclipse.papyrus.sysml.requirements.Requirement> getDerived() {
 		// This should return the Requirement(s) derived from current
 		EList<Requirement> derived = new BasicEList<Requirement>();
 		DeriveReqt currentDeriveReqt = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find DeriveReqt link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDirectedRelationship = itDep.next();
-				currentDeriveReqt = (DeriveReqt)UMLUtil.getStereotypeApplication(currentDirectedRelationship,
+				currentDeriveReqt = UMLUtil.getStereotypeApplication(currentDirectedRelationship,
 						DeriveReqt.class);
 
-				if(currentDeriveReqt != null) {
+				if (currentDeriveReqt != null) {
 					EList<NamedElement> clients = currentDeriveReqt.getBase_Abstraction().getClients();
 					Iterator<NamedElement> it = clients.iterator();
-					while(it.hasNext()) {
-						Requirement currentRequirement = (Requirement)UMLUtil.getStereotypeApplication(it.next(),
-							Requirement.class);
-						if(currentRequirement != null) {
+					while (it.hasNext()) {
+						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(),
+								Requirement.class);
+						if (currentRequirement != null) {
 							derived.add(currentRequirement);
 						}
 					}
@@ -650,17 +729,20 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 		}
 		// Convert to InternalEList<?>
 		return new BasicInternalEList<org.eclipse.papyrus.sysml.requirements.Requirement>(
-			org.eclipse.papyrus.sysml.requirements.Requirement.class, derived.size(), derived.toArray());
+				org.eclipse.papyrus.sysml.requirements.Requirement.class, derived.size(), derived.toArray());
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (note: ");
@@ -673,4 +755,4 @@ public class RequirementImpl extends org.eclipse.papyrus.sysml.requirements.inte
 		return result.toString();
 	}
 
-} //RequirementImpl
+} // RequirementImpl

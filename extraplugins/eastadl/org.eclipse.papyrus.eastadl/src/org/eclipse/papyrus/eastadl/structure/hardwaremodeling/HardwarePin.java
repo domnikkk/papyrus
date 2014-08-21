@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,10 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind;
  *
  * <!-- begin-model-doc -->
  * HardwarePin represents electrical connection points in the hardware architecture. Depending on modeling style, the actual wire or a logical connection can be considered.
- * 
+ *
  * Semantics
  * Hardware pin represents an electrical connection point.
- * 
+ *
  * Extension:
  * Port
  * <!-- end-model-doc -->
@@ -39,8 +39,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#isIsGround <em>Is Ground</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#getDirection <em>Direction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#isIsGround <em>Is Ground</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +57,7 @@ public interface HardwarePin extends EAElement, EAPort {
 	 * <!-- begin-model-doc -->
 	 * The direction of current through the pin.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 	 * @see #setDirection(EADirectionKind)
@@ -70,7 +71,9 @@ public interface HardwarePin extends EAElement, EAPort {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#getDirection <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Direction</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Direction</em>' attribute.
 	 * @see org.eclipse.papyrus.eastadl.structure.functionmodeling.EADirectionKind
 	 * @see #getDirection()
 	 * @generated
@@ -84,6 +87,7 @@ public interface HardwarePin extends EAElement, EAPort {
 	 * <!-- begin-model-doc -->
 	 * Indicates that the pin is connected to ground.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Is Ground</em>' attribute.
 	 * @see #setIsGround(boolean)
 	 * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwarePin_IsGround()
@@ -96,7 +100,9 @@ public interface HardwarePin extends EAElement, EAPort {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwarePin#isIsGround <em>Is Ground</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Ground</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Ground</em>' attribute.
 	 * @see #isIsGround()
 	 * @generated
 	 */

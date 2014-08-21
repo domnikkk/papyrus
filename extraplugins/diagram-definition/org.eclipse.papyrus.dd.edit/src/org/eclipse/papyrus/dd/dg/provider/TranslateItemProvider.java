@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -36,7 +36,7 @@ import org.eclipse.papyrus.dd.dg.Translate;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Translate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class TranslateItemProvider extends TransformItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -44,7 +44,7 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TranslateItemProvider(AdapterFactory adapterFactory) {
@@ -54,12 +54,12 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addDeltaXPropertyDescriptor(object);
 			addDeltaYPropertyDescriptor(object);
@@ -70,27 +70,29 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	/**
 	 * This adds a property descriptor for the Delta X feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDeltaXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Translate_deltaX_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Translate_deltaX_feature", "_UI_Translate_type"), DGPackage.Literals.TRANSLATE__DELTA_X, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Translate_deltaX_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Translate_deltaX_feature", "_UI_Translate_type"), DGPackage.Literals.TRANSLATE__DELTA_X, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Delta Y feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDeltaYPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Translate_deltaY_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Translate_deltaY_feature", "_UI_Translate_type"), DGPackage.Literals.TRANSLATE__DELTA_Y, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Translate_deltaY_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Translate_deltaY_feature", "_UI_Translate_type"), DGPackage.Literals.TRANSLATE__DELTA_Y, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns Translate.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,12 +104,12 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Translate translate = (Translate)object;
+		Translate translate = (Translate) object;
 		return getString("_UI_Translate_type") + " " + translate.getDeltaX();
 	}
 
@@ -116,13 +118,13 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(Translate.class)) {
+		switch (notification.getFeatureID(Translate.class)) {
 		case DGPackage.TRANSLATE__DELTA_X:
 		case DGPackage.TRANSLATE__DELTA_Y:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -135,7 +137,7 @@ public class TranslateItemProvider extends TransformItemProvider implements IEdi
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

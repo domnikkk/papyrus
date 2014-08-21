@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,18 +51,18 @@ public class PropertyLabelTemplateUI {
 	private ContributionContextTypeRegistry fRegistry;
 
 	/**
-	 * 
+	 *
 	 */
 	private PropertyLabelTemplateUI() {
 	}
 
 	/**
 	 * Returns the shared instance.
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static PropertyLabelTemplateUI getDefault() {
-		if(fInstance == null) {
+		if (fInstance == null) {
 			fInstance = new PropertyLabelTemplateUI();
 		}
 		return fInstance;
@@ -70,11 +70,11 @@ public class PropertyLabelTemplateUI {
 
 	/**
 	 * Returns this plug-in's template store.
-	 * 
+	 *
 	 * @return the template store of this plug-in instance
 	 */
 	public TemplateStore getTemplateStore() {
-		if(fStore == null) {
+		if (fStore == null) {
 			fStore = new ContributionTemplateStore(getContextTypeRegistry(), PapyrusParsersPlugin.getDefault()
 					.getPreferenceStore(), CUSTOM_TEMPLATES_KEY);
 			try {
@@ -88,11 +88,11 @@ public class PropertyLabelTemplateUI {
 
 	/**
 	 * Returns this plug-in's context type registry.
-	 * 
+	 *
 	 * @return the context type registry for this plug-in instance
 	 */
 	public ContextTypeRegistry getContextTypeRegistry() {
-		if(fRegistry == null) {
+		if (fRegistry == null) {
 			// create an configure the contexts available in the template editor
 			fRegistry = new ContributionContextTypeRegistry();
 			fRegistry.addContextType(PropertyLabelContextType.PROPERTYLABEL_CONTEXT_TYPE);
@@ -102,8 +102,8 @@ public class PropertyLabelTemplateUI {
 
 	/* Forward plug-in methods to javaeditor example plugin default instance */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	public ImageRegistry getImageRegistry() {
@@ -112,14 +112,14 @@ public class PropertyLabelTemplateUI {
 
 	/**
 	 * Creates and returns the <code>ImageDescriptor</code> for an image from a plugin.
-	 * 
+	 *
 	 * @param imageFilePath
-	 *        relative path to the file that stores the image
+	 *            relative path to the file that stores the image
 	 * @param pluginId
-	 *        the identifier of the plugin
-	 * 
+	 *            the identifier of the plugin
+	 *
 	 * @return the image descriptor
-	 * 
+	 *
 	 * @see AbstractUIPlugin#imageDescriptorFromPlugin(java.lang.String, java.lang.String)
 	 */
 	public static ImageDescriptor imageDescriptorFromPlugin(String pluginId, String imageFilePath) {
@@ -128,9 +128,9 @@ public class PropertyLabelTemplateUI {
 
 	/**
 	 * Returns the preference store of the plugin.
-	 * 
+	 *
 	 * @return the preference store of the plugin
-	 * 
+	 *
 	 * @see AbstractUIPlugin#getPreferenceStore()
 	 */
 	public IPreferenceStore getPreferenceStore() {
@@ -139,7 +139,7 @@ public class PropertyLabelTemplateUI {
 
 	/**
 	 * Save plugin preferences.
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.Plugin#savePluginPreferences()
 	 */
 	public void savePluginPreferences() {

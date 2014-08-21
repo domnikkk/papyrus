@@ -28,10 +28,6 @@ import org.eclipse.papyrus.team.collaborative.svn.tracing.ITracingConstant;
 import org.eclipse.papyrus.team.collaborative.svn.tracing.Tracer;
 import org.eclipse.papyrus.team.collaborative.svn.utils.CommitActionUtilityWithProperties;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.team.svn.core.operation.CompositeOperation;
-import org.eclipse.team.svn.core.operation.IActionOperation;
-import org.eclipse.team.svn.ui.utility.ICancellableOperationWrapper;
-import org.eclipse.team.svn.ui.utility.UIMonitorUtility;
 import org.eclipse.ui.PlatformUI;
 
 import com.google.common.collect.Lists;
@@ -39,7 +35,7 @@ import com.google.common.collect.Lists;
 
 /**
  * SVN implementation for {@link ICommitter}.
- * 
+ *
  * @author adaussy
  */
 public class SVNCommitter extends SVNWorkOnModifiedFile implements ICommitter {
@@ -47,11 +43,11 @@ public class SVNCommitter extends SVNWorkOnModifiedFile implements ICommitter {
 
 	/**
 	 * Instantiates a new SVN committer.
-	 * 
+	 *
 	 * @param uris
-	 *        the uris
+	 *            the uris
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 */
 	public SVNCommitter(Set<IExtendedURI> uris, ResourceSet resourceSet) {
 		super(uris, resourceSet);
@@ -62,6 +58,7 @@ public class SVNCommitter extends SVNWorkOnModifiedFile implements ICommitter {
 	 * 
 	 * @see org.eclipse.papyrus.team.collaborative.core.participants.version.ICommitter#commit(java.lang.String, boolean)
 	 */
+	@Override
 	public IStatus commit(String message, boolean keepLock) {
 		IStatus status = doCommit(message, keepLock, getTargetResources());
 		return status;
@@ -69,17 +66,17 @@ public class SVNCommitter extends SVNWorkOnModifiedFile implements ICommitter {
 
 	/**
 	 * Do commit.
-	 * 
+	 *
 	 * @param message
-	 *        the message for the commit action
+	 *            the message for the commit action
 	 * @param keepLock
-	 *        the keep lock set to true if the lock has to be kept
+	 *            the keep lock set to true if the lock has to be kept
 	 * @param resourceToCommit
-	 *        the resource to commit
+	 *            the resource to commit
 	 * @return the i status
 	 */
 	public static IStatus doCommit(String message, boolean keepLock, Set<Resource> resourceToCommit) {
-		if(resourceToCommit != null && !resourceToCommit.isEmpty()) {
+		if (resourceToCommit != null && !resourceToCommit.isEmpty()) {
 			List<IFile> targetIFileList = Lists.newArrayList(getTargetFiles(resourceToCommit));
 			return doCommit(message, keepLock, ResourceUtils.getListAncestors(targetIFileList));
 		}
@@ -88,22 +85,22 @@ public class SVNCommitter extends SVNWorkOnModifiedFile implements ICommitter {
 
 	/**
 	 * Do commit.
-	 * 
+	 *
 	 * @param message
-	 *        the message for the commit action
+	 *            the message for the commit action
 	 * @param keepLock
-	 *        the keep lock set to true if the lock has to be kept
+	 *            the keep lock set to true if the lock has to be kept
 	 * @param filesToCommit
-	 *        the files to commit
+	 *            the files to commit
 	 * @return the i status
 	 */
 	public static IStatus doCommit(String message, boolean keepLock, Collection<? extends IResource> filesToCommit) {
 		CommitActionUtilityWithProperties tt = new CommitActionUtilityWithProperties(new CollabResourceSelector(filesToCommit.toArray(new IResource[filesToCommit.size()]), Display.getDefault().getActiveShell()));
 		IResource[] allResources = tt.getAllResources();
-		if(ITracingConstant.COMMIT_TRACING) {
+		if (ITracingConstant.COMMIT_TRACING) {
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.append("Committing ").append(message).append("\n");
-			for(IResource r : allResources) {
+			for (IResource r : allResources) {
 				stringBuilder.append(r).append("\n");
 			}
 			Tracer.logInfo(stringBuilder.toString());

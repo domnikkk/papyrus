@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Transition;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl#getBase_Transition <em>Base Transition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.impl.ModeTransitionImpl#getBase_Transition <em>Base Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	 * The cached value of the '{@link #getBase_Transition() <em>Base Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Transition()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ModeTransitionImpl() {
@@ -58,6 +60,7 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,15 +71,18 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Transition getBase_Transition() {
 		if (base_Transition != null && base_Transition.eIsProxy()) {
-			InternalEObject oldBase_Transition = (InternalEObject)base_Transition;
-			base_Transition = (Transition)eResolveProxy(oldBase_Transition);
+			InternalEObject oldBase_Transition = (InternalEObject) base_Transition;
+			base_Transition = (Transition) eResolveProxy(oldBase_Transition);
 			if (base_Transition != oldBase_Transition) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION, oldBase_Transition, base_Transition));
+				}
 			}
 		}
 		return base_Transition;
@@ -85,6 +91,7 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Transition basicGetBase_Transition() {
@@ -94,26 +101,32 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Transition(Transition newBase_Transition) {
 		Transition oldBase_Transition = base_Transition;
 		base_Transition = newBase_Transition;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION, oldBase_Transition, base_Transition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
-				if (resolve) return getBase_Transition();
-				return basicGetBase_Transition();
+		case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
+			if (resolve) {
+				return getBase_Transition();
+			}
+			return basicGetBase_Transition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,14 +134,15 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
-				setBase_Transition((Transition)newValue);
-				return;
+		case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
+			setBase_Transition((Transition) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -136,14 +150,15 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
-				setBase_Transition((Transition)null);
-				return;
+		case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
+			setBase_Transition((Transition) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,15 +166,16 @@ public class ModeTransitionImpl extends EObjectImpl implements ModeTransition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
-				return base_Transition != null;
+		case CoreElementsPackage.MODE_TRANSITION__BASE_TRANSITION:
+			return base_Transition != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModeTransitionImpl
+} // ModeTransitionImpl

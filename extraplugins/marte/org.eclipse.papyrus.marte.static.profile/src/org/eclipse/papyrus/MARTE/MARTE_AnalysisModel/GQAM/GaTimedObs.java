@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.TimeObservation;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getLaxity <em>Laxity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getStartObs <em>Start Obs</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getEndObs <em>End Obs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getLaxity <em>Laxity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getStartObs <em>Start Obs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getEndObs <em>End Obs</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface GaTimedObs extends NfpConstraint {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Laxity</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Laxity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Laxity</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind
 	 * @see #setLaxity(LaxityKind)
@@ -58,7 +58,9 @@ public interface GaTimedObs extends NfpConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs#getLaxity <em>Laxity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Laxity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Laxity</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.LaxityKind
 	 * @see #getLaxity()
 	 * @generated
@@ -70,10 +72,10 @@ public interface GaTimedObs extends NfpConstraint {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.TimeObservation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Start Obs</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Start Obs</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Start Obs</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaTimedObs_StartObs()
 	 * @model
@@ -86,10 +88,10 @@ public interface GaTimedObs extends NfpConstraint {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.TimeObservation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>End Obs</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>End Obs</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>End Obs</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getGaTimedObs_EndObs()
 	 * @model

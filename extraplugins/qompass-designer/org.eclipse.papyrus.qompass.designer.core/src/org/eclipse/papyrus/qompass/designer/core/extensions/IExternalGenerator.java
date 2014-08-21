@@ -21,11 +21,13 @@ public interface IExternalGenerator {
 
 	/**
 	 * generate a class by means of an external generator
-	 * @param source A source element for the generator, e.g. an interface for a CORBA generator
+	 * 
+	 * @param source
+	 *            A source element for the generator, e.g. an interface for a CORBA generator
 	 * @returns a list of generated classifiers:
-	 * 	Even, if the external generator produces code directly, the Java wrapper should return a set
-	 *  model elements (may be incomplete) that represent the generated elements. For instance, in case
-	 *  of C++, an empty class with the stereotype "extern C" could be returned 
+	 *          Even, if the external generator produces code directly, the Java wrapper should return a set
+	 *          model elements (may be incomplete) that represent the generated elements. For instance, in case
+	 *          of C++, an empty class with the stereotype "extern C" could be returned
 	 */
-	public EList<Classifier> generate (Classifier source);
+	public EList<Classifier> generate(Classifier source);
 }

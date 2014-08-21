@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Repl Policy</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.HwMemoryPackage#getRepl_Policy()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>LRU</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LRU_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>NFU</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NFU_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIFO_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Random</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RANDOM_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -83,6 +89,7 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF_VALUE
 	 * @generated
 	 * @ordered
@@ -93,10 +100,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>LRU</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>LRU</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>LRU</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LRU
 	 * @model
 	 * @generated
@@ -108,10 +115,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>NFU</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>NFU</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>NFU</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NFU
 	 * @model
 	 * @generated
@@ -123,10 +130,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>FIFO</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>FIFO</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIFO
 	 * @model
 	 * @generated
@@ -138,10 +145,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Random</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Random</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Random</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RANDOM
 	 * @model name="random"
 	 * @generated
@@ -153,10 +160,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -168,10 +175,10 @@ public enum Repl_Policy implements Enumerator {
 	 * The '<em><b>Undef</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undef</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEF
 	 * @model name="undef"
 	 * @generated
@@ -183,22 +190,24 @@ public enum Repl_Policy implements Enumerator {
 	 * An array of all the '<em><b>Repl Policy</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final Repl_Policy[] VALUES_ARRAY =
-		new Repl_Policy[] {
-			LRU,
-			NFU,
-			FIFO,
-			RANDOM,
-			OTHER,
-			UNDEF,
-		};
+			new Repl_Policy[] {
+					LRU,
+					NFU,
+					FIFO,
+					RANDOM,
+					OTHER,
+					UNDEF,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Repl Policy</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<Repl_Policy> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -207,6 +216,7 @@ public enum Repl_Policy implements Enumerator {
 	 * Returns the '<em><b>Repl Policy</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Repl_Policy get(String literal) {
@@ -223,6 +233,7 @@ public enum Repl_Policy implements Enumerator {
 	 * Returns the '<em><b>Repl Policy</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Repl_Policy getByName(String name) {
@@ -239,16 +250,23 @@ public enum Repl_Policy implements Enumerator {
 	 * Returns the '<em><b>Repl Policy</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Repl_Policy get(int value) {
 		switch (value) {
-			case LRU_VALUE: return LRU;
-			case NFU_VALUE: return NFU;
-			case FIFO_VALUE: return FIFO;
-			case RANDOM_VALUE: return RANDOM;
-			case OTHER_VALUE: return OTHER;
-			case UNDEF_VALUE: return UNDEF;
+		case LRU_VALUE:
+			return LRU;
+		case NFU_VALUE:
+			return NFU;
+		case FIFO_VALUE:
+			return FIFO;
+		case RANDOM_VALUE:
+			return RANDOM;
+		case OTHER_VALUE:
+			return OTHER;
+		case UNDEF_VALUE:
+			return UNDEF;
 		}
 		return null;
 	}
@@ -256,6 +274,7 @@ public enum Repl_Policy implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -263,6 +282,7 @@ public enum Repl_Policy implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -270,6 +290,7 @@ public enum Repl_Policy implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -278,6 +299,7 @@ public enum Repl_Policy implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private Repl_Policy(int value, String name, String literal) {
@@ -289,39 +311,46 @@ public enum Repl_Policy implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //Repl_Policy
+
+} // Repl_Policy

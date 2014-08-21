@@ -23,20 +23,20 @@ public class AsyncDebug extends Debug {
 	 * Println.
 	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 */
 	public static void println(String message) {
-		//		int remainingSpaces = 30-Thread.currentThread().getName().length();
-		//		if(remainingSpaces < 0){
-		//			System.out.println(
-		//					String.format("%s", "["+Thread.currentThread().getName()+"]")
-		//						+message);
-		//		}else{
-		//			int sideSpaceCount = remainingSpaces/2;
-		//			System.out.println(
-		//					String.format("[%"+sideSpaceCount+"s%s%"+sideSpaceCount+"s]", " ",
-		//						Thread.currentThread().getName()
-		//							," ")+message);
-		//		}
+		// int remainingSpaces = 30-Thread.currentThread().getName().length();
+		// if(remainingSpaces < 0){
+		// System.out.println(
+		// String.format("%s", "["+Thread.currentThread().getName()+"]")
+		// +message);
+		// }else{
+		// int sideSpaceCount = remainingSpaces/2;
+		// System.out.println(
+		// String.format("[%"+sideSpaceCount+"s%s%"+sideSpaceCount+"s]", " ",
+		// Thread.currentThread().getName()
+		// ," ")+message);
+		// }
 	}
 }

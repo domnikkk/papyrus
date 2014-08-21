@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ public class FacadeActivator extends AbstractUIPlugin {
 
 	/**
 	 * Gets the context.
-	 * 
+	 *
 	 * @return the context
 	 */
 	static BundleContext getContext() {
@@ -46,7 +46,7 @@ public class FacadeActivator extends AbstractUIPlugin {
 	 */
 	/**
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
-	 * 
+	 *
 	 * @param bundleContext
 	 * @throws Exception
 	 */
@@ -64,7 +64,7 @@ public class FacadeActivator extends AbstractUIPlugin {
 	 */
 	/**
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
-	 * 
+	 *
 	 * @param bundleContext
 	 * @throws Exception
 	 */

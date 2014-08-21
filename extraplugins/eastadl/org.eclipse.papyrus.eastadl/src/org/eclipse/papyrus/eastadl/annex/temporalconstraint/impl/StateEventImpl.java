@@ -18,8 +18,8 @@ import org.eclipse.papyrus.eastadl.timing.impl.EventImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl#getEnd <em>End</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl#getEnd <em>End</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.temporalconstraint.impl.StateEventImpl#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StateEventImpl() {
@@ -58,6 +61,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,15 +72,18 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public State getEnd() {
 		if (end != null && end.eIsProxy()) {
-			InternalEObject oldEnd = (InternalEObject)end;
-			end = (State)eResolveProxy(oldEnd);
+			InternalEObject oldEnd = (InternalEObject) end;
+			end = (State) eResolveProxy(oldEnd);
 			if (end != oldEnd) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.STATE_EVENT__END, oldEnd, end));
+				}
 			}
 		}
 		return end;
@@ -85,6 +92,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public State basicGetEnd() {
@@ -94,27 +102,33 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setEnd(State newEnd) {
 		State oldEnd = end;
 		end = newEnd;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE_EVENT__END, oldEnd, end));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public State getStart() {
 		if (start != null && start.eIsProxy()) {
-			InternalEObject oldStart = (InternalEObject)start;
-			start = (State)eResolveProxy(oldStart);
+			InternalEObject oldStart = (InternalEObject) start;
+			start = (State) eResolveProxy(oldStart);
 			if (start != oldStart) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TemporalconstraintPackage.STATE_EVENT__START, oldStart, start));
+				}
 			}
 		}
 		return start;
@@ -123,6 +137,7 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public State basicGetStart() {
@@ -132,29 +147,37 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStart(State newStart) {
 		State oldStart = start;
 		start = newStart;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TemporalconstraintPackage.STATE_EVENT__START, oldStart, start));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemporalconstraintPackage.STATE_EVENT__END:
-				if (resolve) return getEnd();
-				return basicGetEnd();
-			case TemporalconstraintPackage.STATE_EVENT__START:
-				if (resolve) return getStart();
-				return basicGetStart();
+		case TemporalconstraintPackage.STATE_EVENT__END:
+			if (resolve) {
+				return getEnd();
+			}
+			return basicGetEnd();
+		case TemporalconstraintPackage.STATE_EVENT__START:
+			if (resolve) {
+				return getStart();
+			}
+			return basicGetStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,17 +185,18 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemporalconstraintPackage.STATE_EVENT__END:
-				setEnd((State)newValue);
-				return;
-			case TemporalconstraintPackage.STATE_EVENT__START:
-				setStart((State)newValue);
-				return;
+		case TemporalconstraintPackage.STATE_EVENT__END:
+			setEnd((State) newValue);
+			return;
+		case TemporalconstraintPackage.STATE_EVENT__START:
+			setStart((State) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,17 +204,18 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.STATE_EVENT__END:
-				setEnd((State)null);
-				return;
-			case TemporalconstraintPackage.STATE_EVENT__START:
-				setStart((State)null);
-				return;
+		case TemporalconstraintPackage.STATE_EVENT__END:
+			setEnd((State) null);
+			return;
+		case TemporalconstraintPackage.STATE_EVENT__START:
+			setStart((State) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,17 +223,18 @@ public class StateEventImpl extends EventImpl implements StateEvent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemporalconstraintPackage.STATE_EVENT__END:
-				return end != null;
-			case TemporalconstraintPackage.STATE_EVENT__START:
-				return start != null;
+		case TemporalconstraintPackage.STATE_EVENT__END:
+			return end != null;
+		case TemporalconstraintPackage.STATE_EVENT__START:
+			return start != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StateEventImpl
+} // StateEventImpl

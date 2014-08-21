@@ -30,7 +30,7 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 
 	@Override
 	public Behavior getBehavior() {
-		if(method == null) {
+		if (method == null) {
 			method = SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(this.operation);
 		}
 		return method;
@@ -42,20 +42,20 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
-		
+
 		/**
 		 * Add register object in the UML property containing in the ActiveObjectController model,
 		 * Then, register it in the UI.
 		 */
 		try {
 			Value v = inputParameters.get(0).values.get(0);
-			Object_ context = this.context; 
+			Object_ context = this.context;
 			if (context.featureValues.size() == 0) {
 				context.createFeatureValues();
 			}
 			List<FeatureValue> featureValues = context.featureValues;
 			for (int i = 0; i < featureValues.size(); i++) {
-				FeatureValue cddFeature = (FeatureValue)featureValues.get(i);
+				FeatureValue cddFeature = featureValues.get(i);
 				if (cddFeature.feature instanceof Property) {
 					if (cddFeature.feature.getName().equals("registered")) {
 						Value cddValue = v.copy();
@@ -66,7 +66,7 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 			ActiveObjectControllerUI.getInstance().register(v);
 		} catch (Exception e) {
 			// TODO Put it on papyrus error log
-			//Debug.println("An error occured during execution of " + this.operation.getQualifiedName());
+			// Debug.println("An error occured during execution of " + this.operation.getQualifiedName());
 			System.out.println(e);
 		}
 	}

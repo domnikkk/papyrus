@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Comment;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.RationaleImpl#getBase_Comment <em>Base Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.impl.RationaleImpl#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RationaleImpl() {
@@ -61,6 +63,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,15 +74,18 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Comment getBase_Comment() {
 		if (base_Comment != null && base_Comment.eIsProxy()) {
-			InternalEObject oldBase_Comment = (InternalEObject)base_Comment;
-			base_Comment = (Comment)eResolveProxy(oldBase_Comment);
+			InternalEObject oldBase_Comment = (InternalEObject) base_Comment;
+			base_Comment = (Comment) eResolveProxy(oldBase_Comment);
 			if (base_Comment != oldBase_Comment) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ElementsPackage.RATIONALE__BASE_COMMENT, oldBase_Comment, base_Comment));
+				}
 			}
 		}
 		return base_Comment;
@@ -88,6 +94,7 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -97,26 +104,32 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Comment(Comment newBase_Comment) {
 		Comment oldBase_Comment = base_Comment;
 		base_Comment = newBase_Comment;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ElementsPackage.RATIONALE__BASE_COMMENT, oldBase_Comment, base_Comment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElementsPackage.RATIONALE__BASE_COMMENT:
-				if (resolve) return getBase_Comment();
-				return basicGetBase_Comment();
+		case ElementsPackage.RATIONALE__BASE_COMMENT:
+			if (resolve) {
+				return getBase_Comment();
+			}
+			return basicGetBase_Comment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,14 +137,15 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElementsPackage.RATIONALE__BASE_COMMENT:
-				setBase_Comment((Comment)newValue);
-				return;
+		case ElementsPackage.RATIONALE__BASE_COMMENT:
+			setBase_Comment((Comment) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -139,14 +153,15 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.RATIONALE__BASE_COMMENT:
-				setBase_Comment((Comment)null);
-				return;
+		case ElementsPackage.RATIONALE__BASE_COMMENT:
+			setBase_Comment((Comment) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,15 +169,16 @@ public class RationaleImpl extends MinimalEObjectImpl.Container implements Ratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElementsPackage.RATIONALE__BASE_COMMENT:
-				return base_Comment != null;
+		case ElementsPackage.RATIONALE__BASE_COMMENT:
+			return base_Comment != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RationaleImpl
+} // RationaleImpl

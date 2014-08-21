@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,10 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#getAliasName <em>Alias Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#isKept <em>Kept</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#getRepresentedElement <em>Represented Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#isUseRepresented <em>Use Represented</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#getAliasName <em>Alias Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#isKept <em>Kept</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#getRepresentedElement <em>Represented Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualElementImpl#isUseRepresented <em>Use Represented</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getAliasName() <em>Alias Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAliasName()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getAliasName() <em>Alias Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAliasName()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #isKept() <em>Kept</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isKept()
 	 * @generated
 	 * @ordered
@@ -76,6 +79,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #isKept() <em>Kept</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isKept()
 	 * @generated
 	 * @ordered
@@ -86,6 +90,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getRepresentedElement() <em>Represented Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepresentedElement()
 	 * @generated
 	 * @ordered
@@ -96,6 +101,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #isUseRepresented() <em>Use Represented</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUseRepresented()
 	 * @generated
 	 * @ordered
@@ -106,6 +112,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #isUseRepresented() <em>Use Represented</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUseRepresented()
 	 * @generated
 	 * @ordered
@@ -115,6 +122,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected VirtualElementImpl() {
@@ -124,6 +132,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,8 +143,10 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getAliasName() {
 		return aliasName;
 	}
@@ -143,20 +154,25 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAliasName(String newAliasName) {
 		String oldAliasName = aliasName;
 		aliasName = newAliasName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME, oldAliasName, aliasName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isKept() {
 		return kept;
 	}
@@ -164,27 +180,33 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKept(boolean newKept) {
 		boolean oldKept = kept;
 		kept = newKept;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT, oldKept, kept));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EObject getRepresentedElement() {
 		if (representedElement != null && representedElement.eIsProxy()) {
-			InternalEObject oldRepresentedElement = (InternalEObject)representedElement;
+			InternalEObject oldRepresentedElement = (InternalEObject) representedElement;
 			representedElement = eResolveProxy(oldRepresentedElement);
 			if (representedElement != oldRepresentedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT, oldRepresentedElement, representedElement));
+				}
 			}
 		}
 		return representedElement;
@@ -193,6 +215,7 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EObject basicGetRepresentedElement() {
@@ -202,20 +225,25 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setRepresentedElement(EObject newRepresentedElement) {
 		EObject oldRepresentedElement = representedElement;
 		representedElement = newRepresentedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT, oldRepresentedElement, representedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isUseRepresented() {
 		return useRepresented;
 	}
@@ -223,32 +251,38 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUseRepresented(boolean newUseRepresented) {
 		boolean oldUseRepresented = useRepresented;
 		useRepresented = newUseRepresented;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED, oldUseRepresented, useRepresented));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
-				return getAliasName();
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
-				return isKept();
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
-				if (resolve) return getRepresentedElement();
-				return basicGetRepresentedElement();
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
-				return isUseRepresented();
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
+			return getAliasName();
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
+			return isKept();
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
+			if (resolve) {
+				return getRepresentedElement();
+			}
+			return basicGetRepresentedElement();
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
+			return isUseRepresented();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,23 +290,24 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
-				setAliasName((String)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
-				setKept((Boolean)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
-				setRepresentedElement((EObject)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
-				setUseRepresented((Boolean)newValue);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
+			setAliasName((String) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
+			setKept((Boolean) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
+			setRepresentedElement((EObject) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
+			setUseRepresented((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -280,23 +315,24 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
-				setAliasName(ALIAS_NAME_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
-				setKept(KEPT_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
-				setRepresentedElement((EObject)null);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
-				setUseRepresented(USE_REPRESENTED_EDEFAULT);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
+			setAliasName(ALIAS_NAME_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
+			setKept(KEPT_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
+			setRepresentedElement((EObject) null);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
+			setUseRepresented(USE_REPRESENTED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,19 +340,20 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
-				return ALIAS_NAME_EDEFAULT == null ? aliasName != null : !ALIAS_NAME_EDEFAULT.equals(aliasName);
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
-				return kept != KEPT_EDEFAULT;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
-				return representedElement != null;
-			case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
-				return useRepresented != USE_REPRESENTED_EDEFAULT;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__ALIAS_NAME:
+			return ALIAS_NAME_EDEFAULT == null ? aliasName != null : !ALIAS_NAME_EDEFAULT.equals(aliasName);
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__KEPT:
+			return kept != KEPT_EDEFAULT;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__REPRESENTED_ELEMENT:
+			return representedElement != null;
+		case VirtualmetamodelPackage.VIRTUAL_ELEMENT__USE_REPRESENTED:
+			return useRepresented != USE_REPRESENTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,11 +361,14 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (aliasName: ");
@@ -341,4 +381,4 @@ public abstract class VirtualElementImpl extends MinimalEObjectImpl.Container im
 		return result.toString();
 	}
 
-} //VirtualElementImpl
+} // VirtualElementImpl

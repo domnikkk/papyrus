@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.layers.runtime.utils.TriggeredEventTraces;
 /**
  * This class subclass the {@link LayerStackApplicationSynchronizer} in order to record
  * the calls to the method catching the events from the superclass.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -28,8 +28,8 @@ public class LayerStackApplicationSynchronizerSubclass extends LayerStackApplica
 	/**
 	 * List of recorded events.
 	 */
-	public TriggeredEventTraces traces ;
-	
+	public TriggeredEventTraces traces;
+
 	/**
 	 * Constructor.
 	 *
@@ -41,7 +41,7 @@ public class LayerStackApplicationSynchronizerSubclass extends LayerStackApplica
 		traces = new TriggeredEventTraces();
 	}
 
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -56,19 +56,19 @@ public class LayerStackApplicationSynchronizerSubclass extends LayerStackApplica
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.LayerStackApplicationSynchronizer#layerStackAdded(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
 	 */
 	@Override
 	public void layerStackAdded(Notification msg) {
-		traces.addTrace( "layerStackAdded", msg);
+		traces.addTrace("layerStackAdded", msg);
 		super.layerStackAdded(msg);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.LayerStackApplicationSynchronizer#layerStackRemoved(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
@@ -80,7 +80,7 @@ public class LayerStackApplicationSynchronizerSubclass extends LayerStackApplica
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.layers.runtime.LayerStackApplicationSynchronizer#diagramRemoved(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg

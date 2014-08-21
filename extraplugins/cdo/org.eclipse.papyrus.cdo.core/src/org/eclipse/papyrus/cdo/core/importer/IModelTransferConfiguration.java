@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.importer;
 
@@ -63,12 +63,12 @@ public interface IModelTransferConfiguration {
 		 * then the configuration will use it to load resources for dependency analysis. It will
 		 * then be the caller's responsibility to clean up that resource set, if necessary,
 		 * after completion of the transfer process.
-		 * 
+		 *
 		 * @param operationContext
-		 *        a context in which to run model transfer operations
+		 *            a context in which to run model transfer operations
 		 * @param resourceSet
-		 *        an optional resource set for the configuration to use for dependency analysis; may be {@code null}
-		 * 
+		 *            an optional resource set for the configuration to use for dependency analysis; may be {@code null}
+		 *
 		 * @return the model transfer configuration
 		 */
 		IModelTransferConfiguration create(IModelTransferOperation.Context operationContext, ResourceSet resourceSet);

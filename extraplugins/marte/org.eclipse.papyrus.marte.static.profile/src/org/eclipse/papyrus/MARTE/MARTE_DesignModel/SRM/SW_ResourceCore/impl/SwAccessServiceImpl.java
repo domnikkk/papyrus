@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl#isIsModifier <em>Is Modifier</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl#getAccessedElement <em>Accessed Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl#isIsModifier <em>Is Modifier</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.impl.SwAccessServiceImpl#getAccessedElement <em>Accessed Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The default value of the '{@link #isIsModifier() <em>Is Modifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsModifier()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The cached value of the '{@link #isIsModifier() <em>Is Modifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsModifier()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	 * The cached value of the '{@link #getAccessedElement() <em>Accessed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAccessedElement()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SwAccessServiceImpl() {
@@ -79,6 +83,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsModifier() {
 		return isModifier;
 	}
@@ -98,27 +105,33 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsModifier(boolean newIsModifier) {
 		boolean oldIsModifier = isModifier;
 		isModifier = newIsModifier;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER, oldIsModifier, isModifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getAccessedElement() {
 		if (accessedElement != null && accessedElement.eIsProxy()) {
-			InternalEObject oldAccessedElement = (InternalEObject)accessedElement;
-			accessedElement = (Property)eResolveProxy(oldAccessedElement);
+			InternalEObject oldAccessedElement = (InternalEObject) accessedElement;
+			accessedElement = (Property) eResolveProxy(oldAccessedElement);
 			if (accessedElement != oldAccessedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT, oldAccessedElement, accessedElement));
+				}
 			}
 		}
 		return accessedElement;
@@ -127,6 +140,7 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetAccessedElement() {
@@ -136,28 +150,34 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAccessedElement(Property newAccessedElement) {
 		Property oldAccessedElement = accessedElement;
 		accessedElement = newAccessedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT, oldAccessedElement, accessedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
-				return isIsModifier();
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
-				if (resolve) return getAccessedElement();
-				return basicGetAccessedElement();
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
+			return isIsModifier();
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
+			if (resolve) {
+				return getAccessedElement();
+			}
+			return basicGetAccessedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,17 +185,18 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
-				setIsModifier((Boolean)newValue);
-				return;
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
-				setAccessedElement((Property)newValue);
-				return;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
+			setIsModifier((Boolean) newValue);
+			return;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
+			setAccessedElement((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +204,18 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
-				setIsModifier(IS_MODIFIER_EDEFAULT);
-				return;
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
-				setAccessedElement((Property)null);
-				return;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
+			setIsModifier(IS_MODIFIER_EDEFAULT);
+			return;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
+			setAccessedElement((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +223,16 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
-				return isModifier != IS_MODIFIER_EDEFAULT;
-			case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
-				return accessedElement != null;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__IS_MODIFIER:
+			return isModifier != IS_MODIFIER_EDEFAULT;
+		case SW_ResourceCorePackage.SW_ACCESS_SERVICE__ACCESSED_ELEMENT:
+			return accessedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +240,14 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isModifier: ");
@@ -230,4 +256,4 @@ public class SwAccessServiceImpl extends GrServiceImpl implements SwAccessServic
 		return result.toString();
 	}
 
-} //SwAccessServiceImpl
+} // SwAccessServiceImpl

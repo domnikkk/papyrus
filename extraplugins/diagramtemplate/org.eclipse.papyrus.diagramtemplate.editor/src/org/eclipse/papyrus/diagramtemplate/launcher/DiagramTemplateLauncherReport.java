@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,10 +64,10 @@ public class DiagramTemplateLauncherReport {
 		 * {@inheritDoc}
 		 */
 		public Image getImage(Object element) {
-			if(element instanceof Entry) {
-				if(((Entry)element).getValue() == CreationReportKind.SUCCESS) {
+			if (element instanceof Entry) {
+				if (((Entry) element).getValue() == CreationReportKind.SUCCESS) {
 					return ResourceManager.getPluginImage("org.eclipse.papyrus.diagramtemplate.editor", "icons/full/obj16/add.gif"); //$NON-NLS-1$ //$NON-NLS-2$
-				} else if(((Entry)element).getValue() == CreationReportKind.FAIL) {
+				} else if (((Entry) element).getValue() == CreationReportKind.FAIL) {
 					return ResourceManager.getPluginImage("org.eclipse.papyrus.diagramtemplate.editor", "icons/full/obj16/delete.gif"); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
@@ -78,11 +78,11 @@ public class DiagramTemplateLauncherReport {
 		 * {@inheritDoc}
 		 */
 		public String getText(Object element) {
-			if(element instanceof Entry) {
-				Object key = ((Entry)element).getKey();
-				String result = ((EObject)key).eResource().getURIFragment((EObject)key);
-				if(key instanceof NamedElement) {
-					result = ((NamedElement)key).getQualifiedName() + " (" + result + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+			if (element instanceof Entry) {
+				Object key = ((Entry) element).getKey();
+				String result = ((EObject) key).eResource().getURIFragment((EObject) key);
+				if (key instanceof NamedElement) {
+					result = ((NamedElement) key).getQualifiedName() + " (" + result + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 				}
 				return result;
 			}
@@ -97,17 +97,18 @@ public class DiagramTemplateLauncherReport {
 	}
 
 	public static final synchronized DiagramTemplateLauncherReport getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new DiagramTemplateLauncherReport();
 		}
 
 		return instance;
-		//		return null;
+		// return null;
 	}
 
 	public void showReport(HashMap<EObject, CreationReportKind> report) {
-		//		ListSelectionDialog dlg = new ListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().getSite().getShell(), report, new DiagramTemplateLauncherReportContentProvider(), new DiagramTemplateLauncherReportLabelProvider(), "Report");
-		//		dlg.open();
+		// ListSelectionDialog dlg = new ListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().getSite().getShell(), report, new DiagramTemplateLauncherReportContentProvider(), new
+		// DiagramTemplateLauncherReportLabelProvider(), "Report");
+		// dlg.open();
 		ElementListSelectionDialog dlg = new ElementListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor().getSite().getShell(), new DiagramTemplateLauncherReportLabelProvider());
 		dlg.setElements(report.entrySet().toArray());
 		dlg.setTitle(Messages.DiagramTemplateLauncherReport_6);

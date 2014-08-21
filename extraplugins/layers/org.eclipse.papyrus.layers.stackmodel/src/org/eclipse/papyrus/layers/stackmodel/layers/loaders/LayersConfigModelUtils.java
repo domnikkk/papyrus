@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,12 +18,11 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorBinding;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.OperatorConfig;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.TypeConfig;
-import org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator;
 
 
 /**
  * Set of utility methods to create elements in a {@link LayersConfigModel}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -31,6 +30,7 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link Folder} element
+	 * 
 	 * @param parent
 	 * @param name
 	 * @return
@@ -44,12 +44,13 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link LayerOperatorConfig} element
+	 * 
 	 * @param parent
 	 * @param ID
 	 * @param classname
 	 * @return
 	 */
-	static public  LayerOperatorConfig createLayerOperatorConfig(Folder parent, String ID, String classname) {
+	static public LayerOperatorConfig createLayerOperatorConfig(Folder parent, String ID, String classname) {
 		LayerOperatorConfig config = LayersconfigFactory.eINSTANCE.createLayerOperatorConfig();
 		config.setName(ID);
 		config.setClassname(classname);
@@ -59,12 +60,13 @@ public class LayersConfigModelUtils {
 
 	/**
 	 * Create a {@link OperatorConfig} element
+	 * 
 	 * @param parent
 	 * @param ID
 	 * @param classname
 	 * @return
 	 */
-	static public  OperatorConfig createPropertyOperatorConfig(Folder parent, String ID, String classname) {
+	static public OperatorConfig createPropertyOperatorConfig(Folder parent, String ID, String classname) {
 		OperatorConfig config = LayersconfigFactory.eINSTANCE.createOperatorConfig();
 		config.setName(ID);
 		config.setClassname(classname);
@@ -73,7 +75,7 @@ public class LayersConfigModelUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param owner
 	 * @param layerOperator
 	 * @return

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -62,7 +62,7 @@ public class LayerImplTest {
 	@Test
 	public void testGetPropertyValues() {
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		assertNotNull("list created", layer.getPropertyValues());
 	}
 
@@ -72,15 +72,15 @@ public class LayerImplTest {
 	@Test
 	public void testPropertyValuesAllowsDouble() {
 		// Create object to test
-		LayerImpl layer = (LayerImpl)LayersFactory.eINSTANCE.createLayer();
-		
+		LayerImpl layer = (LayerImpl) LayersFactory.eINSTANCE.createLayer();
+
 		// check creation
 		TypeInstance instance = NullInstance.NULLINSTANCE;
-		
-		layer.getPropertyValues().add(instance);	
+
+		layer.getPropertyValues().add(instance);
 		assertEquals("instance added", 1, layer.getPropertyValues().size());
-		
-		layer.getPropertyValues().add(instance);	
+
+		layer.getPropertyValues().add(instance);
 		assertEquals("same instance added==> double allowed", 2, layer.getPropertyValues().size());
 	}
 
@@ -90,14 +90,14 @@ public class LayerImplTest {
 	@Test
 	public void testGetPropertyValueMap() {
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		assertNotNull("PropertyValueMap exist", layer.getPropertyValueMap());
-		
+
 		// Create a type instance and add it to layer
 		TypeInstance typeInstance = LayersFactory.eINSTANCE.createStringInstance();
 		String key = "name";
 		layer.getPropertyValueMap().put(key, typeInstance);
-		
+
 		// check if we can retrieve the instance
 		assertNotNull("PropertyValueMap exis", layer.getPropertyValueMap().get(key));
 
@@ -105,16 +105,17 @@ public class LayerImplTest {
 
 	/**
 	 * Test method .
-	 * @throws BadStateException 
+	 * 
+	 * @throws BadStateException
 	 */
 	@Test
 	public void testResetAllPropertyValuesFromRegistry() throws BadStateException {
-		LayerImpl layer = (LayerImpl)LayersFactory.eINSTANCE.createLayer();
-		
+		LayerImpl layer = (LayerImpl) LayersFactory.eINSTANCE.createLayer();
+
 		// call method.
 		// Nothing should happen
 		layer.resetAllPropertyValuesFromRegistry();
-		
+
 		// check
 		assertEquals("list is empty", 0, layer.getPropertyValues().size());
 	}
@@ -126,37 +127,39 @@ public class LayerImplTest {
 	@Test
 	public void testGetViews() {
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		assertNotNull("list created", layer.getViews());
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testAddPropertyInstance() throws LayersException {
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		String propertyName = "isSunday";
-		Property property = PropertyUtils.getInstance().createProperty( propertyName, LayersPackage.eINSTANCE.getBooleanType());
+		Property property = PropertyUtils.getInstance().createProperty(propertyName, LayersPackage.eINSTANCE.getBooleanType());
 		layer.addPropertyInstance(property);
-		
+
 		assertNotNull("list created", layer.getPropertyValueMap().get(propertyName));
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerImpl#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testgetPropertyInstanceByProperty() throws LayersException {
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
-		
+
 		String propertyName = "isSunday";
-		Property property = PropertyUtils.getInstance().createProperty( propertyName, LayersPackage.eINSTANCE.getBooleanType());
+		Property property = PropertyUtils.getInstance().createProperty(propertyName, LayersPackage.eINSTANCE.getBooleanType());
 		layer.addPropertyInstance(property);
-		
+
 		assertNotNull("property found by property", layer.getPropertyInstance(property));
 
 		assertNotNull("property found by name", layer.getPropertyInstance(propertyName));

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPort;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getFunctionTarget <em>Function Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getHwTarget <em>Hw Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getFunctionTarget <em>Function Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getHwTarget <em>Hw Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,10 +44,10 @@ public interface FaultFailurePort extends Anomaly, EAPort {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_functionTargetInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function Target</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Function Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Function Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePort_FunctionTarget()
 	 * @model containment="true" ordered="false"
@@ -60,10 +60,10 @@ public interface FaultFailurePort extends Anomaly, EAPort {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.infrastructure.FaultFailurePort_hwTargetInstanceRef}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hw Target</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Hw Target</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Hw Target</em>' containment reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage#getFaultFailurePort_HwTarget()
 	 * @model containment="true" ordered="false"

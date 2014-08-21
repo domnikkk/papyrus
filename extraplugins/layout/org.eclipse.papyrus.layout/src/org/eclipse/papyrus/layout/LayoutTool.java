@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class LayoutTool {
 
 	/**
 	 * Gets the single instance of LayoutTool.
-	 * 
+	 *
 	 * @return single instance of LayoutTool
 	 */
 	public static LayoutTool getInstance() {
@@ -48,16 +48,16 @@ public class LayoutTool {
 	 */
 	/**
 	 * Apply layout.
-	 * 
+	 *
 	 * @param algoName
-	 *        the algo name
+	 *            the algo name
 	 * @param parts
-	 *        the parts
+	 *            the parts
 	 */
 	public void applyLayout(String algoName, List<EditPart> parts) {
 		Collection<LayoutToolAlgorithms> algorithmes = ZestAlgortihms.getRegisteredAlgorithmes();
-		for(LayoutToolAlgorithms algorithme : algorithmes) {
-			if(algorithme.getName().equals(algoName)) {
+		for (LayoutToolAlgorithms algorithme : algorithmes) {
+			if (algorithme.getName().equals(algoName)) {
 				LayouttoolController controller = new LayouttoolController(parts, algorithme.getAlgorithm());
 				controller.execute();
 				break;

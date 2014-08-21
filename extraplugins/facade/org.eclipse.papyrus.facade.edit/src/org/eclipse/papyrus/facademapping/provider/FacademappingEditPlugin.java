@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
  * This is the central singleton for the Facademapping edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public final class FacademappingEditPlugin extends EMFPlugin {
@@ -28,6 +29,7 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final FacademappingEditPlugin INSTANCE = new FacademappingEditPlugin();
@@ -36,6 +38,7 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -44,18 +47,19 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FacademappingEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		   });
+		super(new ResourceLocator[] {
+				});
 	}
 
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -68,6 +72,7 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -79,6 +84,7 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -86,6 +92,7 @@ public final class FacademappingEditPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public Implementation() {

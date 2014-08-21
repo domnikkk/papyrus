@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.notation.NamedStyle;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle#getLayersStack <em>Layers Stack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle#getLayersStack <em>Layers Stack</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface LayerNamedStyle extends NamedStyle {
 	 * The list contents are of type {@link org.eclipse.papyrus.layers.stackmodel.layers.LayersStack}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layers Stack</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layers Stack</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layers Stack</em>' containment reference list.
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getLayerNamedStyle_LayersStack()
 	 * @model containment="true" ordered="false"

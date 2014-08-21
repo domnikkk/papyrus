@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431953 (pre-requisite refactoring of ModelSet service start-up)
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.uml.search.internal.ui.query;
 
@@ -93,7 +93,7 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 				CDOQuery result = input.getElement2().createQuery("ocl", ocl, UMLPackage.Literals.NAMED_ELEMENT);
 
 				// variables referenced by the OCL query expression
-				for(Map.Entry<String, ?> next : parameters.entrySet()) {
+				for (Map.Entry<String, ?> next : parameters.entrySet()) {
 					result.setParameter(next.getKey(), next.getValue());
 				}
 
@@ -108,21 +108,21 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		final String searchPattern = _searchPattern.getElement1();
 		final boolean isRegexMatch = _searchPattern.getElement2();
 
-		// build a multi-map of EClasses to EAttributes.  For any EClass that doesn't have
+		// build a multi-map of EClasses to EAttributes. For any EClass that doesn't have
 		// attributes specifically selected, add all of its attributes
 		final Multimap<EClass, EAttribute> attributes = ArrayListMultimap.create();
-		for(ParticipantTypeAttribute next : filter(queryInfo.getParticipantTypes(), ParticipantTypeAttribute.class)) {
-			if(next.getParent().getElement() instanceof EClass) {
-				EAttribute attr = (EAttribute)next.getElement();
-				attributes.put((EClass)next.getParent().getElement(), attr);
+		for (ParticipantTypeAttribute next : filter(queryInfo.getParticipantTypes(), ParticipantTypeAttribute.class)) {
+			if (next.getParent().getElement() instanceof EClass) {
+				EAttribute attr = (EAttribute) next.getElement();
+				attributes.put((EClass) next.getParent().getElement(), attr);
 			}
 		}
-		for(ParticipantTypeElement next : filter(queryInfo.getParticipantTypes(), not(instanceOf(ParticipantTypeAttribute.class)))) {
-			if(next.getElement() instanceof EClass) {
-				EClass eclass = (EClass)next.getElement();
-				if(!attributes.containsKey(eclass)) {
+		for (ParticipantTypeElement next : filter(queryInfo.getParticipantTypes(), not(instanceOf(ParticipantTypeAttribute.class)))) {
+			if (next.getElement() instanceof EClass) {
+				EClass eclass = (EClass) next.getElement();
+				if (!attributes.containsKey(eclass)) {
 					// don't bother looking for instances of classes that have no attributes to search anyways
-					if(!eclass.getEAllAttributes().isEmpty()) {
+					if (!eclass.getEAllAttributes().isEmpty()) {
 						attributes.putAll(eclass, eclass.getEAllAttributes());
 					}
 				}
@@ -138,7 +138,7 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 				CDOQuery result = input.getElement2().createQuery("ocl", ocl, UMLPackage.Literals.NAMED_ELEMENT);
 
 				// variables referenced by the OCL query expression
-				for(Map.Entry<String, ?> next : parameters.entrySet()) {
+				for (Map.Entry<String, ?> next : parameters.entrySet()) {
 					result.setParameter(next.getKey(), next.getValue());
 				}
 
@@ -150,7 +150,7 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 	protected Pair<String, Boolean> getSearchPattern(QueryInfo queryInfo) {
 		String searchPattern = PatternUtil.wrap(queryInfo.getQueryText(), queryInfo.isCaseSensitive(), queryInfo.isRegularExpression(), queryInfo.isSearchAllStringAttributes());
 		boolean isRegexMatch = searchPattern != null;
-		if(!isRegexMatch) {
+		if (!isRegexMatch) {
 			searchPattern = queryInfo.getQueryText();
 		}
 
@@ -162,7 +162,7 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 
 		Multimap<CDOView, URI> views = getViews(queryInfo.getScope());
 		List<AbstractPapyrusQuery> result = Lists.newArrayListWithCapacity(views.keySet().size());
-		for(CDOView view : views.keySet()) {
+		for (CDOView view : views.keySet()) {
 			CDOQuery query = queryFunction.apply(new Triplet<QueryInfo, CDOView, Collection<URI>>(queryInfo, view, views.get(view)));
 
 			// parameters for the server-side OCL query handler
@@ -187,11 +187,11 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		Map<IInternalPapyrusRepository, CDOView> views = Maps.newHashMap();
 
 		try {
-			for(URI uri : scope) {
+			for (URI uri : scope) {
 				IInternalPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(uri);
-				if((repo != null) && repo.isConnected()) {
+				if ((repo != null) && repo.isConnected()) {
 					CDOView view = views.get(repo);
-					if(view == null) {
+					if (view == null) {
 						// no view, yet, for this repo
 
 						ServicesRegistry services = new ServicesRegistry();
@@ -227,8 +227,8 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		StringBuilder scopeClause = getScopeClause(scope);
 
 		// based on the CDOResource scope clause, find the candidate NamedElements
-		if(scopeClause.length() == 0) {
-			// easy case.  Do an allInstances() query
+		if (scopeClause.length() == 0) {
+			// easy case. Do an allInstances() query
 			result.append("NamedElement.allInstances()"); //$NON-NLS-1$
 		} else {
 			// iterate the contents of resources matching the scope criteria
@@ -244,11 +244,11 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		}
 
 		// from our candidate NamedElements, select those that match
-		if(isAllStringAttributes) {
+		if (isAllStringAttributes) {
 			result.append("->select(e | e.cdoMatches(searchPattern))"); //$NON-NLS-1$
 		} else {
 			result.append("->select(e | not e.name.oclIsUndefined() and e.name."); //$NON-NLS-1$
-			if(isRegexMatch) {
+			if (isRegexMatch) {
 				result.append("matches(searchPattern)"); //$NON-NLS-1$
 			} else {
 				result.append("indexOf(searchPattern) > 0"); //$NON-NLS-1$
@@ -265,13 +265,13 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		StringBuilder result = new StringBuilder();
 
 		boolean first = true;
-		for(URI uri : scope) {
+		for (URI uri : scope) {
 			String path = CDOURIUtil.extractResourcePath(uri);
-			if(uri.hasTrailingPathSeparator() && !path.endsWith("/")) { //$NON-NLS-1$
+			if (uri.hasTrailingPathSeparator() && !path.endsWith("/")) { //$NON-NLS-1$
 				path = path + "/"; //$NON-NLS-1$
 			}
-			if((path.length() > 1) || (!path.startsWith("/") && (path.length() > 0))) { //$NON-NLS-1$
-				if(first) {
+			if ((path.length() > 1) || (!path.startsWith("/") && (path.length() > 0))) { //$NON-NLS-1$
+				if (first) {
 					first = false;
 				} else {
 					result.append(" or "); //$NON-NLS-1$
@@ -299,8 +299,8 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		StringBuilder scopeClause = getScopeClause(scope);
 
 		// based on the CDOResource scope clause, find the candidate NamedElements
-		if(scopeClause.length() == 0) {
-			// easy case.  Do an allInstances() query
+		if (scopeClause.length() == 0) {
+			// easy case. Do an allInstances() query
 			result.append("NamedElement.allInstances()"); //$NON-NLS-1$
 		} else {
 			// iterate the contents of resources matching the scope criteria
@@ -319,8 +319,8 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 		result.append("->select(e | "); //$NON-NLS-1$
 
 		boolean firstEClass = true;
-		for(EClass next : attributes.keySet()) {
-			if(firstEClass) {
+		for (EClass next : attributes.keySet()) {
+			if (firstEClass) {
 				firstEClass = false;
 			} else {
 				result.append(" or ");
@@ -330,21 +330,21 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 			result.append("let s : ").append(next.getName()).append(" = e.oclAsType(").append(next.getName()).append(") in "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 			boolean firstAttr = true;
-			for(EAttribute attr : attributes.get(next)) {
-				if(firstAttr) {
+			for (EAttribute attr : attributes.get(next)) {
+				if (firstAttr) {
 					firstAttr = false;
 				} else {
 					result.append(" or ");
 				}
 
-				if(isString(attr)) {
-					if(attr.isMany()) {
+				if (isString(attr)) {
+					if (attr.isMany()) {
 						result.append("s.").append(attr.getName()).append("->excluding(null)->exists(v | v"); //$NON-NLS-1$ //$NON-NLS-2$
 					} else {
 						result.append("(not s.").append(attr.getName()).append(".oclIsUndefined() and s.").append(attr.getName()); //$NON-NLS-1$ //$NON-NLS-2$
 					}
 
-					if(isRegexMatch) {
+					if (isRegexMatch) {
 						result.append(".matches(searchPattern)"); //$NON-NLS-1$
 					} else {
 						result.append(".indexOf(searchPattern) > 0"); //$NON-NLS-1$
@@ -353,11 +353,11 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 					// close the exists iterator (many case) or 'and' group (scalar case)
 					result.append(")"); //$NON-NLS-1$
 				} else {
-					// need toString() conversions.  For simplicity, because we're doing extra conversions anyways, coerce scalars to sets.
+					// need toString() conversions. For simplicity, because we're doing extra conversions anyways, coerce scalars to sets.
 					// N.B.: toString() can produce nulls that need to be filtered out!
 					result.append("s.").append(attr.getName()).append("->excluding(null).toString()->excluding(null)->exists(v | v"); //$NON-NLS-1$ //$NON-NLS-2$
 
-					if(isRegexMatch) {
+					if (isRegexMatch) {
 						result.append(".matches(searchPattern)"); //$NON-NLS-1$
 					} else {
 						result.append(".indexOf(searchPattern) > 0"); //$NON-NLS-1$
@@ -380,7 +380,7 @@ public class CDOSearchQueryProvider implements IPapyrusQueryProvider {
 
 	static String oclQuoteString(String s) {
 		return s.replace("'", "\\'") //$NON-NLS-1$ //$NON-NLS-2$
-		.replace("\\", "\\\\"); //$NON-NLS-1$ //$NON-NLS-2$
+				.replace("\\", "\\\\"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	static boolean isString(ETypedElement element) {

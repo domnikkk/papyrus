@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter#getDeclaringMember <em>Declaring Member</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter#getDeclaringMember <em>Declaring Member</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public interface JDTTypeParameter extends JDTJavaElement {
 	 * If the meaning of the '<em>Declaring Member</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Declaring Member</em>' container reference.
 	 * @see #setDeclaringMember(JDTMember)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTTypeParameter_DeclaringMember()
@@ -62,7 +63,9 @@ public interface JDTTypeParameter extends JDTJavaElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTTypeParameter#getDeclaringMember <em>Declaring Member</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Declaring Member</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Declaring Member</em>' container reference.
 	 * @see #getDeclaringMember()
 	 * @generated
 	 */

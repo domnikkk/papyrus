@@ -10,6 +10,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.FolderElement;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Folder Element</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public abstract class FolderElementTest extends TestCase {
@@ -18,6 +19,7 @@ public abstract class FolderElementTest extends TestCase {
 	 * The fixture for this Folder Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FolderElement fixture = null;
@@ -26,6 +28,7 @@ public abstract class FolderElementTest extends TestCase {
 	 * Constructs a new Folder Element test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FolderElementTest(String name) {
@@ -36,6 +39,7 @@ public abstract class FolderElementTest extends TestCase {
 	 * Sets the fixture for this Folder Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(FolderElement fixture) {
@@ -46,10 +50,11 @@ public abstract class FolderElementTest extends TestCase {
 	 * Returns the fixture for this Folder Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FolderElement getFixture() {
 		return fixture;
 	}
 
-} //FolderElementTest
+} // FolderElementTest

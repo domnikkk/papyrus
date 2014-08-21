@@ -20,6 +20,7 @@ public class EnvironmentImpl extends SystemImpl implements Environment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EnvironmentImpl() {
@@ -29,6 +30,7 @@ public class EnvironmentImpl extends SystemImpl implements Environment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class EnvironmentImpl extends SystemImpl implements Environment {
 		return RobotMLPackage.Literals.ENVIRONMENT;
 	}
 
-} //EnvironmentImpl
+} // EnvironmentImpl

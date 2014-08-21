@@ -13,6 +13,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Layer Named Style</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayerNamedStyleTest extends TestCase {
@@ -21,6 +22,7 @@ public class LayerNamedStyleTest extends TestCase {
 	 * The fixture for this Layer Named Style test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerNamedStyle fixture = null;
@@ -28,6 +30,7 @@ public class LayerNamedStyleTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +41,7 @@ public class LayerNamedStyleTest extends TestCase {
 	 * Constructs a new Layer Named Style test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerNamedStyleTest(String name) {
@@ -48,6 +52,7 @@ public class LayerNamedStyleTest extends TestCase {
 	 * Sets the fixture for this Layer Named Style test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(LayerNamedStyle fixture) {
@@ -58,6 +63,7 @@ public class LayerNamedStyleTest extends TestCase {
 	 * Returns the fixture for this Layer Named Style test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerNamedStyle getFixture() {
@@ -67,6 +73,7 @@ public class LayerNamedStyleTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +85,7 @@ public class LayerNamedStyleTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +94,4 @@ public class LayerNamedStyleTest extends TestCase {
 		setFixture(null);
 	}
 
-} //LayerNamedStyleTest
+} // LayerNamedStyleTest

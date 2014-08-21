@@ -30,7 +30,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Optio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.impl.OptionsImpl#getDefaultSourceFolder <em>Default Source Folder</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.impl.OptionsImpl#getDefaultSourceFolder <em>Default Source Folder</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 * The default value of the '{@link #getDefaultSourceFolder() <em>Default Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefaultSourceFolder()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 * The cached value of the '{@link #getDefaultSourceFolder() <em>Default Source Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefaultSourceFolder()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OptionsImpl() {
@@ -69,6 +72,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,8 +83,10 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDefaultSourceFolder() {
 		return defaultSourceFolder;
 	}
@@ -88,25 +94,29 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDefaultSourceFolder(String newDefaultSourceFolder) {
 		String oldDefaultSourceFolder = defaultSourceFolder;
 		defaultSourceFolder = newDefaultSourceFolder;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER, oldDefaultSourceFolder, defaultSourceFolder));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
-				return getDefaultSourceFolder();
+		case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
+			return getDefaultSourceFolder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,14 +124,15 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
-				setDefaultSourceFolder((String)newValue);
-				return;
+		case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
+			setDefaultSourceFolder((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,14 +140,15 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
-				setDefaultSourceFolder(DEFAULT_SOURCE_FOLDER_EDEFAULT);
-				return;
+		case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
+			setDefaultSourceFolder(DEFAULT_SOURCE_FOLDER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,13 +156,14 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
-				return DEFAULT_SOURCE_FOLDER_EDEFAULT == null ? defaultSourceFolder != null : !DEFAULT_SOURCE_FOLDER_EDEFAULT.equals(defaultSourceFolder);
+		case GeneratoroptionsmmPackage.OPTIONS__DEFAULT_SOURCE_FOLDER:
+			return DEFAULT_SOURCE_FOLDER_EDEFAULT == null ? defaultSourceFolder != null : !DEFAULT_SOURCE_FOLDER_EDEFAULT.equals(defaultSourceFolder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -158,11 +171,14 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (defaultSourceFolder: ");
@@ -171,4 +187,4 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 		return result.toString();
 	}
 
-} //OptionsImpl
+} // OptionsImpl

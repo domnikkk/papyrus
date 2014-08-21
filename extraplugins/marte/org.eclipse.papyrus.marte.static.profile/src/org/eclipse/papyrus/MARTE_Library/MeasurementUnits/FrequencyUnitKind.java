@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Frequency Unit Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.MeasurementUnits.MeasurementUnitsPackage#getFrequencyUnitKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>Hz</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HZ_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>KHz</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #KHZ_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>MHz</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MHZ_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>GHz</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GHZ_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>Rpm</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RPM_VALUE
 	 * @generated
 	 * @ordered
@@ -83,10 +89,10 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>Hz</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Hz</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Hz</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HZ
 	 * @model name="Hz"
 	 * @generated
@@ -98,10 +104,10 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>KHz</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>KHz</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>KHz</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #KHZ
 	 * @model name="KHz"
 	 * @generated
@@ -113,10 +119,10 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>MHz</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>MHz</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>MHz</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MHZ
 	 * @model name="MHz"
 	 * @generated
@@ -128,10 +134,10 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>GHz</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>GHz</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>GHz</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GHZ
 	 * @model name="GHz"
 	 * @generated
@@ -143,10 +149,10 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * The '<em><b>Rpm</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Rpm</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Rpm</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RPM
 	 * @model name="rpm"
 	 * @generated
@@ -158,21 +164,23 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * An array of all the '<em><b>Frequency Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final FrequencyUnitKind[] VALUES_ARRAY =
-		new FrequencyUnitKind[] {
-			HZ,
-			KHZ,
-			MHZ,
-			GHZ,
-			RPM,
-		};
+			new FrequencyUnitKind[] {
+					HZ,
+					KHZ,
+					MHZ,
+					GHZ,
+					RPM,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Frequency Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<FrequencyUnitKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -181,6 +189,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * Returns the '<em><b>Frequency Unit Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static FrequencyUnitKind get(String literal) {
@@ -197,6 +206,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * Returns the '<em><b>Frequency Unit Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static FrequencyUnitKind getByName(String name) {
@@ -213,15 +223,21 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * Returns the '<em><b>Frequency Unit Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static FrequencyUnitKind get(int value) {
 		switch (value) {
-			case HZ_VALUE: return HZ;
-			case KHZ_VALUE: return KHZ;
-			case MHZ_VALUE: return MHZ;
-			case GHZ_VALUE: return GHZ;
-			case RPM_VALUE: return RPM;
+		case HZ_VALUE:
+			return HZ;
+		case KHZ_VALUE:
+			return KHZ;
+		case MHZ_VALUE:
+			return MHZ;
+		case GHZ_VALUE:
+			return GHZ;
+		case RPM_VALUE:
+			return RPM;
 		}
 		return null;
 	}
@@ -229,6 +245,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -236,6 +253,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -243,6 +261,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -251,6 +270,7 @@ public enum FrequencyUnitKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private FrequencyUnitKind(int value, String name, String literal) {
@@ -262,39 +282,46 @@ public enum FrequencyUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //FrequencyUnitKind
+
+} // FrequencyUnitKind

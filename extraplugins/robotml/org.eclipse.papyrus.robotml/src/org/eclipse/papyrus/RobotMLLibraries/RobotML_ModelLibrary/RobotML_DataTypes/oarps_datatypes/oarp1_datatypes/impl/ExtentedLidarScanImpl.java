@@ -23,9 +23,9 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getScan <em>Scan</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getLayerId <em>Layer Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getLayerAngle <em>Layer Angle</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getScan <em>Scan</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getLayerId <em>Layer Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.ExtentedLidarScanImpl#getLayerAngle <em>Layer Angle</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getScan() <em>Scan</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getScan()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The default value of the '{@link #getLayerId() <em>Layer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayerId()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getLayerId() <em>Layer Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayerId()
 	 * @generated
 	 * @ordered
@@ -66,6 +69,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The default value of the '{@link #getLayerAngle() <em>Layer Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayerAngle()
 	 * @generated
 	 * @ordered
@@ -76,6 +80,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getLayerAngle() <em>Layer Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayerAngle()
 	 * @generated
 	 * @ordered
@@ -85,6 +90,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExtentedLidarScanImpl() {
@@ -94,6 +100,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -104,6 +111,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LaserScan getScan() {
@@ -113,6 +121,7 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetScan(LaserScan newScan, NotificationChain msgs) {
@@ -120,7 +129,11 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 		scan = newScan;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, oldScan, newScan);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -128,25 +141,32 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setScan(LaserScan newScan) {
 		if (newScan != scan) {
 			NotificationChain msgs = null;
-			if (scan != null)
-				msgs = ((InternalEObject)scan).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, null, msgs);
-			if (newScan != null)
-				msgs = ((InternalEObject)newScan).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, null, msgs);
+			if (scan != null) {
+				msgs = ((InternalEObject) scan).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, null, msgs);
+			}
+			if (newScan != null) {
+				msgs = ((InternalEObject) newScan).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, null, msgs);
+			}
 			msgs = basicSetScan(newScan, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN, newScan, newScan));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public char getLayerId() {
@@ -156,18 +176,21 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLayerId(char newLayerId) {
 		char oldLayerId = layerId;
 		layerId = newLayerId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID, oldLayerId, layerId));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getLayerAngle() {
@@ -177,25 +200,28 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLayerAngle(float newLayerAngle) {
 		float oldLayerAngle = layerAngle;
 		layerAngle = newLayerAngle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE, oldLayerAngle, layerAngle));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
-				return basicSetScan(null, msgs);
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
+			return basicSetScan(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,17 +229,18 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
-				return getScan();
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
-				return getLayerId();
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
-				return getLayerAngle();
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
+			return getScan();
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
+			return getLayerId();
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
+			return getLayerAngle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,20 +248,21 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
-				setScan((LaserScan)newValue);
-				return;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
-				setLayerId((Character)newValue);
-				return;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
-				setLayerAngle((Float)newValue);
-				return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
+			setScan((LaserScan) newValue);
+			return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
+			setLayerId((Character) newValue);
+			return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
+			setLayerAngle((Float) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -242,20 +270,21 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
-				setScan((LaserScan)null);
-				return;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
-				setLayerId(LAYER_ID_EDEFAULT);
-				return;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
-				setLayerAngle(LAYER_ANGLE_EDEFAULT);
-				return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
+			setScan((LaserScan) null);
+			return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
+			setLayerId(LAYER_ID_EDEFAULT);
+			return;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
+			setLayerAngle(LAYER_ANGLE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -263,17 +292,18 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
-				return scan != null;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
-				return layerId != LAYER_ID_EDEFAULT;
-			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
-				return layerAngle != LAYER_ANGLE_EDEFAULT;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__SCAN:
+			return scan != null;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ID:
+			return layerId != LAYER_ID_EDEFAULT;
+		case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN__LAYER_ANGLE:
+			return layerAngle != LAYER_ANGLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -281,11 +311,14 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (layerId: ");
@@ -296,4 +329,4 @@ public class ExtentedLidarScanImpl extends MinimalEObjectImpl.Container implemen
 		return result.toString();
 	}
 
-} //ExtentedLidarScanImpl
+} // ExtentedLidarScanImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Laxity Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage#getLaxityKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Hard</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HARD_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Soft</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SOFT_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -63,10 +67,10 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Hard</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Hard</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Hard</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HARD
 	 * @model name="hard"
 	 * @generated
@@ -78,10 +82,10 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Soft</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Soft</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Soft</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SOFT
 	 * @model name="soft"
 	 * @generated
@@ -93,10 +97,10 @@ public enum LaxityKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Other</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -108,19 +112,21 @@ public enum LaxityKind implements Enumerator {
 	 * An array of all the '<em><b>Laxity Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final LaxityKind[] VALUES_ARRAY =
-		new LaxityKind[] {
-			HARD,
-			SOFT,
-			OTHER,
-		};
+			new LaxityKind[] {
+					HARD,
+					SOFT,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Laxity Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<LaxityKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -129,6 +135,7 @@ public enum LaxityKind implements Enumerator {
 	 * Returns the '<em><b>Laxity Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LaxityKind get(String literal) {
@@ -145,6 +152,7 @@ public enum LaxityKind implements Enumerator {
 	 * Returns the '<em><b>Laxity Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LaxityKind getByName(String name) {
@@ -161,13 +169,17 @@ public enum LaxityKind implements Enumerator {
 	 * Returns the '<em><b>Laxity Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static LaxityKind get(int value) {
 		switch (value) {
-			case HARD_VALUE: return HARD;
-			case SOFT_VALUE: return SOFT;
-			case OTHER_VALUE: return OTHER;
+		case HARD_VALUE:
+			return HARD;
+		case SOFT_VALUE:
+			return SOFT;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -175,6 +187,7 @@ public enum LaxityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -182,6 +195,7 @@ public enum LaxityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -189,6 +203,7 @@ public enum LaxityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -197,6 +212,7 @@ public enum LaxityKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private LaxityKind(int value, String name, String literal) {
@@ -208,39 +224,46 @@ public enum LaxityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //LaxityKind
+
+} // LaxityKind

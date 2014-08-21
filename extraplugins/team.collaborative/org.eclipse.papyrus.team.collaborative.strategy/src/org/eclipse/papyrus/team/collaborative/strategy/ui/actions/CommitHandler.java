@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.team.collaborative.core.ExtendedURI;
 import org.eclipse.papyrus.team.collaborative.core.ICollaborativeManager;
 import org.eclipse.papyrus.team.collaborative.core.IExtendedURI;
@@ -40,7 +41,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * Handler use to deal with Commit action
  * The commit action will be performed on all the current model
- * 
+ *
  * @author adaussy
  */
 public class CommitHandler extends AbstractCollabHandler {
@@ -51,25 +52,26 @@ public class CommitHandler extends AbstractCollabHandler {
 	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		//Check that everything is commit
-		if(!UIUtils.saveAllDirtyEditor().isOK()) {
+		// Check that everything is commit
+		if (!UIUtils.saveAllDirtyEditor().isOK()) {
 			return null;
 		}
 		ResourceSet resourceSet = getResourceSet();
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			UIUtils.errorDialog(CollabStatus.createErrorStatus("unable to retreive the resource set"), "Collaboratibe error");
 			return null;
 		}
 		Set<IExtendedURI> uris = new HashSet<IExtendedURI>();
-		for(Resource r : resourceSet.getResources()) {
+		for (Resource r : resourceSet.getResources()) {
 			IFile file = WorkspaceSynchronizer.getFile(r);
-			if(file != null && file.exists()) {
+			if (file != null && file.exists()) {
 				uris.add(new ExtendedURI(r.getURI()));
 			}
 		}
 		IStatus status = doCommit(uris, resourceSet, true, null);
-		if(!status.isOK() && status.getCode() == Status.ERROR) {
+		if (!status.isOK() && status.getCode() == IStatus.ERROR) {
 			UIUtils.errorDialog(status, "Error");
 		}
 		return null;
@@ -79,25 +81,25 @@ public class CommitHandler extends AbstractCollabHandler {
 
 	/**
 	 * Do commit action
-	 * 
+	 *
 	 * @param uris
-	 *        the uris to commit
+	 *            the uris to commit
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @param isPreview
-	 *        Set to true if the used to be given preview
+	 *            Set to true if the used to be given preview
 	 * @param message
-	 *        the message used for the commit operation
+	 *            the message used for the commit operation
 	 * @return the {@link IStatus} of the operation
 	 */
 	public static IStatus doCommit(Set<IExtendedURI> uris, ResourceSet resourceSet, boolean isPreview, String message) {
 		ICommitter committer = ICollaborativeManager.INSTANCE.getCommitter(uris, resourceSet);
-		if(committer == null) {
+		if (committer == null) {
 			return CollabStatus.createErrorStatus("Unable to get a ICommitter for uris\n" + uris);
 		}
 		Set<IExtendedURI> toBeCommitted = committer.getExtendedSet();
 		IStatus status = doCommitFromBuilder(resourceSet, committer, toBeCommitted, isPreview, message);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			return status;
 		}
 		return Status.OK_STATUS;
@@ -106,41 +108,41 @@ public class CommitHandler extends AbstractCollabHandler {
 
 	/**
 	 * Do commit from builder using a already created {@link ICommitter}
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @param committer
-	 *        the {@link ICommitter} to use
+	 *            the {@link ICommitter} to use
 	 * @param toBeCommitted
-	 *        {@link IExtendedURI} of what is about to be committed
+	 *            {@link IExtendedURI} of what is about to be committed
 	 * @param isPreview
-	 *        Set to true if the user has to be given preview
+	 *            Set to true if the user has to be given preview
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @return the i status
 	 * @throws CollabException
-	 *         the collab exception
+	 *             the collab exception
 	 */
 	public static IStatus doCommitFromBuilder(ResourceSet resourceSet, ICommitter committer, Set<IExtendedURI> toBeCommitted, boolean isPreview, String message) {
-		if(isPreview || message == null) {
-			ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toBeCommitted),UIUtils.getModelExplorerLavelProvider());
+		if (isPreview || message == null) {
+			ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(toBeCommitted), UIUtils.getModelExplorerLavelProvider());
 			labelProvider.setColor(ICollabColors.COMMIT_COLLOR);
 			CommitDialog commitDialog = new CommitDialog(Display.getDefault().getActiveShell(), labelProvider, "Commit Dialog", "Element in red will be committed");
 			Collection<EObject> objectsToReveal = UIUtils.getLeafSemanticElement(toBeCommitted, resourceSet);
-			if(objectsToReveal != null && !objectsToReveal.isEmpty()) {
+			if (objectsToReveal != null && !objectsToReveal.isEmpty()) {
 				commitDialog.setObjectsToReveal(objectsToReveal);
 			}
-			if(commitDialog.open() == PreviewDialog.OK) {
+			if (commitDialog.open() == Window.OK) {
 				message = commitDialog.getCommitMessage();
 			} else {
 				return Status.CANCEL_STATUS;
 			}
 		}
 
-		//Keep lock force to true. This shall be improve later
+		// Keep lock force to true. This shall be improve later
 		IStatus commitStatus = committer.commit(message, true);
 		UIUtils.refreshModelExplorer(toBeCommitted, resourceSet);
-		if(!commitStatus.isOK()) {
+		if (!commitStatus.isOK()) {
 			return commitStatus;
 		}
 		return Status.OK_STATUS;

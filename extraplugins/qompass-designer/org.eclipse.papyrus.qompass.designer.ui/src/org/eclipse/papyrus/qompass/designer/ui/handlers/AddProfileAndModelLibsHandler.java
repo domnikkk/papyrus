@@ -36,7 +36,7 @@ public class AddProfileAndModelLibsHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if(selectedEObject instanceof Package) {
+		if (selectedEObject instanceof Package) {
 			return true;
 		}
 		return false;
@@ -45,38 +45,40 @@ public class AddProfileAndModelLibsHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(!(selectedEObject instanceof Package)) {
+		if (!(selectedEObject instanceof Package)) {
 			return null;
 		}
-		final Package selectedPkg = (Package)selectedEObject;
+		final Package selectedPkg = (Package) selectedEObject;
 
 		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(selectedPkg);
 		AddMarteAndFcmProfile addProfiles = new AddMarteAndFcmProfile(selectedPkg,
 				AddMarteAndFcmProfile.APPLY_FCM | AddMarteAndFcmProfile.APPLY_ALLOC | AddMarteAndFcmProfile.APPLY_HLAM_GCM,
 				domain);
 		AddQompassModelLibs addModelLibs = new AddQompassModelLibs(selectedPkg, domain);
-	
-		final ListSelectionDialog dialog = new ListSelectionDialog(new Shell(),
-			addModelLibs.getAvailableImportPackages().toArray(),
-			new ArrayContentProvider(),
-			new LabelProvider() {
 
-				public String getText(Object pi) {
-					return ((PackageImport)pi).getImportedPackage().getName();
-				}
-			},
-			"Select Qompass model libraries for package import.\n" + //$NON-NLS-1$
-				"Libraries that are already imported, are selected. Please note that additional\n" + //$NON-NLS-1$
-				"Qompass model library might be loaded with the standard \"import registered library\" option\n" + //$NON-NLS-1$
-				"\n" +//$NON-NLS-1$
-				"Pressing \"Ok\" will continue with the application of the FCM profile and (parts of) the MARTE profile\n");//$NON-NLS-1$
+		final ListSelectionDialog dialog = new ListSelectionDialog(new Shell(),
+				addModelLibs.getAvailableImportPackages().toArray(),
+				new ArrayContentProvider(),
+				new LabelProvider() {
+
+					@Override
+					public String getText(Object pi) {
+						return ((PackageImport) pi).getImportedPackage().getName();
+					}
+				},
+				"Select Qompass model libraries for package import.\n" + //$NON-NLS-1$
+						"Libraries that are already imported, are selected. Please note that additional\n" + //$NON-NLS-1$
+						"Qompass model library might be loaded with the standard \"import registered library\" option\n" + //$NON-NLS-1$
+						"\n" + //$NON-NLS-1$
+						"Pressing \"Ok\" will continue with the application of the FCM profile and (parts of) the MARTE profile\n");//$NON-NLS-1$
 
 		dialog.setTitle("Select import library"); //$NON-NLS-1$
 		dialog.setInitialElementSelections(addModelLibs.getAlreadyImportedPackages());
 		// dialog.setElements (list.toArray ());
 		int result = dialog.open();
-		if(result == IDialogConstants.OK_ID) {
+		if (result == IDialogConstants.OK_ID) {
 			addModelLibs.setImportList(dialog.getResult());
 			CommandSupport.exec(addModelLibs);
 			CommandSupport.exec(addProfiles);

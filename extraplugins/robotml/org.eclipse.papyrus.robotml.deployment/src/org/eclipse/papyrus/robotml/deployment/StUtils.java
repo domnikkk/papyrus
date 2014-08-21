@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,6 @@ package org.eclipse.papyrus.robotml.deployment;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -24,19 +23,19 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * Some functions around stereotype usage.
  * TODO: originally developed without use of static profile. It thus contains many functions
  * that are no longer needed (e.g. getBoolean) => needs some cleanup
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class StUtils {
 
 	/**
 	 * This method verifies if a stereotype is applied on an UML element
-	 * 
+	 *
 	 * @param element
-	 *        A UML element
+	 *            A UML element
 	 * @param str_name
-	 *        a qualified stereotype name
+	 *            a qualified stereotype name
 	 */
 	public static boolean isApplied(Element element, String str_name) {
 		return (element.getAppliedStereotype(str_name) != null);
@@ -44,16 +43,16 @@ public class StUtils {
 
 	/**
 	 * This method verifies if a stereotype is applied on an UML element
-	 * 
+	 *
 	 * @param element
-	 *        A UML element
+	 *            A UML element
 	 * @param the
-	 *        class of an element of a static profile
+	 *            class of an element of a static profile
 	 */
 	public static boolean isApplied(Element element, java.lang.Class<? extends EObject> clazz) {
-		for(EObject stereoApplication : element.getStereotypeApplications()) {
+		for (EObject stereoApplication : element.getStereotypeApplications()) {
 			// check whether the stereotype is a subclass of the passed parameter clazz
-			if(clazz.isAssignableFrom(stereoApplication.getClass())) {
+			if (clazz.isAssignableFrom(stereoApplication.getClass())) {
 				return true;
 			}
 		}
@@ -63,18 +62,18 @@ public class StUtils {
 	/**
 	 * Return the attribute of a stereotype. If the attribute type is a model reference,
 	 * use the function getAttributeBase instead.
-	 * 
+	 *
 	 * @param element
-	 *        the element which holds the stereotype
+	 *            the element which holds the stereotype
 	 * @param stereo_name
-	 *        the name of the stereotype
+	 *            the name of the stereotype
 	 * @param attrib_name
-	 *        the name of an attribute of this stereotype
+	 *            the name of an attribute of this stereotype
 	 * @return The value that is associated with the stereotype attribute
 	 */
 	public static Object getAttribute(Element element, String stereo_name, String attrib_name) {
 		Stereotype stereotype = element.getAppliedStereotype(stereo_name);
-		if(stereotype == null) {
+		if (stereotype == null) {
 			return null;
 		}
 		return element.getValue(stereotype, attrib_name);
@@ -82,19 +81,19 @@ public class StUtils {
 
 	/**
 	 * Set the value of a stereotype attribute
-	 * 
+	 *
 	 * @param element
-	 *        the element which holds the stereotype
+	 *            the element which holds the stereotype
 	 * @param stereo_name
-	 *        the name of the stereotype
+	 *            the name of the stereotype
 	 * @param attrib_name
-	 *        the name of an attribute of this stereotype
+	 *            the name of an attribute of this stereotype
 	 * @param value
-	 *        the value that is associated with the stereotype attribute
+	 *            the value that is associated with the stereotype attribute
 	 */
 	public static void setAttribute(Element element, String stereo_name, String attr_name, Object value) {
 		Stereotype st = apply(element, stereo_name);
-		if(st != null) {
+		if (st != null) {
 			element.setValue(st, attr_name, value);
 		}
 	}
@@ -102,24 +101,24 @@ public class StUtils {
 	/**
 	 * Return the stereotype application. Like getApplication below, except
 	 * that the passed stereotype is a string.
-	 * 
+	 *
 	 * @param element
 	 * @param stereo_name
-	 *        the qualified name of a stereotype. Applications of compatible sub-types will be returned as well (if exact stereotype is not applied)
+	 *            the qualified name of a stereotype. Applications of compatible sub-types will be returned as well (if exact stereotype is not applied)
 	 * @return
 	 */
 	public static EObject getApplication(Element element, String stereo_name) {
 
 		Stereotype stereotype = element.getApplicableStereotype(stereo_name);
-		if(stereotype != null) {
+		if (stereotype != null) {
 			EObject application = element.getStereotypeApplication(stereotype);
-			if(application != null) {
+			if (application != null) {
 				return application;
 			}
-			// not found, now try sub-stereotypes 
-			for(Stereotype subStereo : element.getAppliedSubstereotypes(stereotype)) {
+			// not found, now try sub-stereotypes
+			for (Stereotype subStereo : element.getAppliedSubstereotypes(stereotype)) {
 				application = element.getStereotypeApplication(subStereo);
-				if(application != null) {
+				if (application != null) {
 					return application;
 				}
 			}
@@ -130,19 +129,19 @@ public class StUtils {
 
 	/**
 	 * Return the stereotype application by passing an element of the static profile
-	 * 
+	 *
 	 * @param element
-	 *        the UML model element
+	 *            the UML model element
 	 * @param clazz
-	 *        the class of an element of a static profile. Compatible sub-types will be returned as well
+	 *            the class of an element of a static profile. Compatible sub-types will be returned as well
 	 * @return the stereotype application (first compatible with passed clazz) or null
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends EObject> T getApplication(Element element, java.lang.Class<T> clazz) {
-		for(EObject stereoApplication : element.getStereotypeApplications()) {
+		for (EObject stereoApplication : element.getStereotypeApplications()) {
 			// check whether the stereotype is an instance of the passed parameter clazz
-			if(clazz.isInstance(stereoApplication)) {
-				return (T)stereoApplication;
+			if (clazz.isInstance(stereoApplication)) {
+				return (T) stereoApplication;
 			}
 		}
 		return null;
@@ -151,21 +150,21 @@ public class StUtils {
 	/**
 	 * Apply a stereotype. The stereotype is not applied, if already a sub-stereotype is applied.
 	 * If you want to apply the new stereotype also in this case, use applyExact instead.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereo_name
-	 *        the stereotype name
+	 *            the stereotype name
 	 * @return
 	 */
 	public static Stereotype apply(Element element, String stereo_name) {
 		Stereotype stereotype = element.getApplicableStereotype(stereo_name);
-		if(stereotype != null) {
+		if (stereotype != null) {
 			EList<Stereotype> subStereos = element.getAppliedSubstereotypes(stereotype);
 			boolean alreadyApplied = (subStereos.size() > 0);
-			if(!alreadyApplied) {
+			if (!alreadyApplied) {
 				// it seems that subSterotypes do not include the stereotype itself
-				if(element.getStereotypeApplication(stereotype) == null) {
+				if (element.getStereotypeApplication(stereotype) == null) {
 					element.applyStereotype(stereotype);
 				}
 			}
@@ -175,17 +174,17 @@ public class StUtils {
 
 	/**
 	 * unapply a stereotype when the name of the stereotype is given.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereo_name
-	 *        the stereotype name
+	 *            the stereotype name
 	 * @return
 	 */
 	public static void unapply(Element element, String stereo_name) {
 		Stereotype stereotype = element.getApplicableStereotype(stereo_name);
-		if(stereotype != null) {
-			if(element.getStereotypeApplication(stereotype) != null) {
+		if (stereotype != null) {
+			if (element.getStereotypeApplication(stereotype) != null) {
 				element.unapplyStereotype(stereotype);
 			}
 		}
@@ -195,15 +194,15 @@ public class StUtils {
 	 * Apply a stereotype and return the stereotype application (if successful).
 	 * The stereotype is not applied, if already a sub-stereotype is applied.
 	 * If you want to apply the new stereotype also in this case, use applyExact instead.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereo_name
-	 *        the stereotype name
+	 *            the stereotype name
 	 * @return
 	 */
 	public static <T extends EObject> T applyApp(Element element, java.lang.Class<T> clazz) {
-		if(apply(element, clazz) != null) {
+		if (apply(element, clazz) != null) {
 			return getApplication(element, clazz);
 		}
 		return null;
@@ -216,9 +215,9 @@ public class StUtils {
 	 */
 	public static Stereotype applyExact(Element element, String stereo_name) {
 		Stereotype stereotype = element.getApplicableStereotype(stereo_name);
-		if(stereotype != null) {
+		if (stereotype != null) {
 			Stereotype alreadyApplied = element.getAppliedSubstereotype(stereotype, stereo_name);
-			if(alreadyApplied == null) {
+			if (alreadyApplied == null) {
 				element.applyStereotype(stereotype);
 			}
 		}
@@ -230,9 +229,9 @@ public class StUtils {
 	 * Caveat: the function relies on the correspondence between the fully qualified
 	 * stereotype name and the package name within the static profile. The latter may
 	 * use a different prefix (as it is the case with the MARTE analysis & design profile).
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param class a class of a static profile
 	 * @return
 	 */
@@ -245,11 +244,11 @@ public class StUtils {
 	 * Caveat: the function relies on the correspondence between the fully qualified
 	 * stereotype name and the package name within the static profile. The latter may
 	 * use a different prefix (as it is the case with the MARTE analysis & design profile).
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereo_name
-	 *        the stereotype name
+	 *            the stereotype name
 	 * @return
 	 */
 	public static void unapply(Element element, java.lang.Class<? extends EObject> clazz) {
@@ -261,11 +260,11 @@ public class StUtils {
 	 * Caveat: the function relies on the correspondence between the fully qualified
 	 * stereotype name and the package name within the static profile. The latter may
 	 * use a different prefix (as it is the case with the MARTE analysis & design profile).
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param stereo_name
-	 *        the stereotype name
+	 *            the stereotype name
 	 * @return
 	 */
 	public static Stereotype applyExact(Element element, java.lang.Class<? extends EObject> clazz) {
@@ -277,19 +276,19 @@ public class StUtils {
 	 * elements and the user wants to retrieve the underlying base elements (instead of the stereotype application)
 	 * The function applies the getBaseElement operation to the result of the
 	 * getStereotypeAttribute function above.
-	 * 
+	 *
 	 * @param element
-	 *        the element while holds the stereotype
+	 *            the element while holds the stereotype
 	 * @param stereo_name
-	 *        the name of the stereotype
+	 *            the name of the stereotype
 	 * @param attrib_name
-	 *        the name of an attribute of this stereotype
+	 *            the name of an attribute of this stereotype
 	 * @return The value that is associated with the stereotype attribute
 	 */
 	public static Element getAttributeBase(Element element, String stereo_name, String attrib_name) {
 		Object obj = getAttribute(element, stereo_name, attrib_name);
-		if(obj instanceof EObject) {
-			return UMLUtil.getBaseElement((EObject)obj);
+		if (obj instanceof EObject) {
+			return UMLUtil.getBaseElement((EObject) obj);
 		} else {
 			return null;
 		}
@@ -298,23 +297,23 @@ public class StUtils {
 	/**
 	 * Copy the stereotype application from a source to a destination element. The
 	 * function will also copy the stereotype attributes.
-	 * 
+	 *
 	 * @param source
 	 * @param destination
 	 * @return
 	 */
 	public static void copyStereotypes(Copy copy, Element source, Element destination) {
-		
-		for(Stereotype stereotype : source.getAppliedStereotypes()) {
+
+		for (Stereotype stereotype : source.getAppliedStereotypes()) {
 			String stereoName = stereotype.getQualifiedName();
-			
-				// Hack: do not copy derived element stereotype. Problem: when templates are instantiated,
-				//   some operations are derived from interface operations which in turn are derived from the
-				//   formal template parameter (e.g. FIFO). Since interface derived from ports are put into a
-				//   top-level directory "derived elements", they may be outside the package template and do not
-				//   get replaced.
-				copyAttributes(copy, stereotype.getQualifiedName(), source, destination);
-			
+
+			// Hack: do not copy derived element stereotype. Problem: when templates are instantiated,
+			// some operations are derived from interface operations which in turn are derived from the
+			// formal template parameter (e.g. FIFO). Since interface derived from ports are put into a
+			// top-level directory "derived elements", they may be outside the package template and do not
+			// get replaced.
+			copyAttributes(copy, stereotype.getQualifiedName(), source, destination);
+
 		}
 	}
 
@@ -324,11 +323,11 @@ public class StUtils {
 
 	/**
 	 * copy stereotype attributes.
-	 * 
+	 *
 	 * TODO: verify if it is necessary to distinguish between stereoSource and stereoDest
 	 * (they should be identical, if the resource sets are).
 	 * => simplify code
-	 * 
+	 *
 	 * @param stereotypeName
 	 * @param source
 	 * @param destination
@@ -339,27 +338,27 @@ public class StUtils {
 		Stereotype stereoSource = source.getAppliedStereotype(stereotypeName);
 		Stereotype stereoDest = destination.getApplicableStereotype(stereotypeName);
 
-		if((stereoSource == null) || (stereoDest == null)) {
+		if ((stereoSource == null) || (stereoDest == null)) {
 			return false;
 		}
 		Stereotype alreadyApplied = destination.getAppliedStereotype(stereotypeName);
-		if(alreadyApplied == null) {
+		if (alreadyApplied == null) {
 			// only apply stereotype, if not already applied
 			destination.applyStereotype(stereoDest);
 		}
 
 		// getAllAttributes? (but have to avoid attribute base_Class which resets stereotype application)
-		for(Property attribute : stereoSource.getAllAttributes()) {
+		for (Property attribute : stereoSource.getAllAttributes()) {
 			String attrName = attribute.getName();
 
-			if(attrName.length() >= 5) {
+			if (attrName.length() >= 5) {
 				// do not copy base_ stereotypes (base_class, base_package and base_PackageImport)
-				if(attrName.startsWith("base_")) {
+				if (attrName.startsWith("base_")) {
 					continue;
 				}
 			}
 			// do not copy derived attributes
-			if(attribute.isDerived()) {
+			if (attribute.isDerived()) {
 				continue;
 			}
 
@@ -372,21 +371,21 @@ public class StUtils {
 			 * }
 			 */
 
-			if(value instanceof EList) {
+			if (value instanceof EList) {
 				// copy list
 				EList<Object> newList = new BasicEList<Object>();
-				for(Object valueEl : (EList<Object>)value) {
-					if((copy != null) && (valueEl instanceof Element)) {
-						newList.add(copy.getCopy((Element)valueEl));
+				for (Object valueEl : (EList<Object>) value) {
+					if ((copy != null) && (valueEl instanceof Element)) {
+						newList.add(copy.getCopy((Element) valueEl));
 					} else {
 						newList.add(valueEl);
 					}
 				}
-				if(newList.size() > 0) {
+				if (newList.size() > 0) {
 					destination.setValue(stereoDest, attrName, newList);
 				}
-			} else if((copy != null) && (value instanceof Element)) {
-				destination.setValue(stereoDest, attrName, copy.getCopy((Element)value));
+			} else if ((copy != null) && (value instanceof Element)) {
+				destination.setValue(stereoDest, attrName, copy.getCopy((Element) value));
 			} else {
 				destination.setValue(stereoDest, attrName, value);
 			}
@@ -397,7 +396,7 @@ public class StUtils {
 
 	public static boolean copyAttribute(String stereotypeName, String attribute, Element source, Element destination) {
 		Stereotype stereotype = source.getAppliedStereotype(stereotypeName);
-		if(stereotype == null) {
+		if (stereotype == null) {
 			return false;
 		}
 		Object value = source.getValue(stereotype, attribute);
@@ -406,13 +405,13 @@ public class StUtils {
 		return true;
 	}
 
-//	public static org.eclipse.papyrus.FCM.Connector getConnector(Connector connector) {
-//		return getApplication(connector, org.eclipse.papyrus.FCM.Connector.class);
-//	}
-//
-//	public static boolean isConnector(Connector candidate) {
-//		return StUtils.isApplied(candidate, org.eclipse.papyrus.FCM.Connector.class);
-//	}
+	// public static org.eclipse.papyrus.FCM.Connector getConnector(Connector connector) {
+	// return getApplication(connector, org.eclipse.papyrus.FCM.Connector.class);
+	// }
+	//
+	// public static boolean isConnector(Connector candidate) {
+	// return StUtils.isApplied(candidate, org.eclipse.papyrus.FCM.Connector.class);
+	// }
 
 	public static Stereotype getStereo(Element element, java.lang.Class<? extends EObject> clazz) {
 		return element.getAppliedStereotype(getStereoName(element, clazz));

@@ -28,7 +28,7 @@ public class AllocateAxisManager
 
 	@Override
 	protected FunctionAllocation getStereotypeApplication(Element element) {
-		FunctionAllocation adlFunctionAllocation = (FunctionAllocation) UMLUtil
+		FunctionAllocation adlFunctionAllocation = UMLUtil
 				.getStereotypeApplication(element, FunctionAllocation.class);
 		return adlFunctionAllocation;
 	}
@@ -40,6 +40,7 @@ public class AllocateAxisManager
 		return name;
 	}
 
+	@Override
 	public boolean canCreateAxisElement(final String elementId) {
 		return ((ISpecializationType) EastadlElementTypes.FUNCTION_ALLOCATE)
 				.getId().equals(elementId);

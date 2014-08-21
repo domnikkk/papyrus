@@ -20,6 +20,7 @@ public class LegSystemImpl extends LocomotionSystemImpl implements LegSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LegSystemImpl() {
@@ -29,6 +30,7 @@ public class LegSystemImpl extends LocomotionSystemImpl implements LegSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class LegSystemImpl extends LocomotionSystemImpl implements LegSystem {
 		return RobotMLPackage.Literals.LEG_SYSTEM;
 	}
 
-} //LegSystemImpl
+} // LegSystemImpl

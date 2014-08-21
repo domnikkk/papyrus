@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.ScaleImpl#getFactorY <em>Factor Y</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ScaleImpl extends TransformImpl implements Scale {
@@ -47,7 +47,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 	/**
 	 * The default value of the '{@link #getFactorX() <em>Factor X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactorX()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 	/**
 	 * The cached value of the '{@link #getFactorX() <em>Factor X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactorX()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 	/**
 	 * The default value of the '{@link #getFactorY() <em>Factor Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactorY()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 	/**
 	 * The cached value of the '{@link #getFactorY() <em>Factor Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFactorY()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ScaleImpl() {
@@ -95,7 +95,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,44 +105,50 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getFactorX() {
 		return factorX;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFactorX(double newFactorX) {
 		double oldFactorX = factorX;
 		factorX = newFactorX;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SCALE__FACTOR_X, oldFactorX, factorX));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getFactorY() {
 		return factorY;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setFactorY(double newFactorY) {
 		double oldFactorY = factorY;
 		factorY = newFactorY;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.SCALE__FACTOR_Y, oldFactorY, factorY));
+		}
 	}
 
 	/**
@@ -150,7 +156,7 @@ public class ScaleImpl extends TransformImpl implements Scale {
 	 * <em>Nonnegativescale</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #nonnegativescale(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -159,21 +165,23 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean nonnegativescale(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.SCALE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.SCALE___NONNEGATIVESCALE__DIAGNOSTICCHAIN_MAP, NONNEGATIVESCALE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.SCALE__NONNEGATIVESCALE);
+		return DGValidator.validate(DGPackage.Literals.SCALE, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.SCALE___NONNEGATIVESCALE__DIAGNOSTICCHAIN_MAP, NONNEGATIVESCALE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.SCALE__NONNEGATIVESCALE);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.SCALE__FACTOR_X:
 			return getFactorX();
 		case DGPackage.SCALE__FACTOR_Y:
@@ -184,17 +192,17 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.SCALE__FACTOR_X:
-			setFactorX((Double)newValue);
+			setFactorX((Double) newValue);
 			return;
 		case DGPackage.SCALE__FACTOR_Y:
-			setFactorY((Double)newValue);
+			setFactorY((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,12 +210,12 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.SCALE__FACTOR_X:
 			setFactorX(FACTOR_X_EDEFAULT);
 			return;
@@ -220,12 +228,12 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.SCALE__FACTOR_X:
 			return factorX != FACTOR_X_EDEFAULT;
 		case DGPackage.SCALE__FACTOR_Y:
@@ -236,28 +244,29 @@ public class ScaleImpl extends TransformImpl implements Scale {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case DGPackage.SCALE___NONNEGATIVESCALE__DIAGNOSTICCHAIN_MAP:
-			return nonnegativescale((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return nonnegativescale((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (factorX: ");
 		result.append(factorX);

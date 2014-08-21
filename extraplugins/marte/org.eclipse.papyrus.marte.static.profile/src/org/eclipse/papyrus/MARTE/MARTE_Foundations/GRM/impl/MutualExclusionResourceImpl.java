@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,10 +30,10 @@ import org.eclipse.papyrus.MARTE_Library.GRM_BasicTypes.ProtectProtocolKind;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getProtectKind <em>Protect Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getCeiling <em>Ceiling</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getOtherProtectProtocol <em>Other Protect Protocol</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getScheduler <em>Scheduler</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getProtectKind <em>Protect Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getCeiling <em>Ceiling</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getOtherProtectProtocol <em>Other Protect Protocol</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.MutualExclusionResourceImpl#getScheduler <em>Scheduler</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getProtectKind() <em>Protect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProtectKind()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getCeiling() <em>Ceiling</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCeiling()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The default value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -94,6 +99,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getOtherProtectProtocol() <em>Other Protect Protocol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOtherProtectProtocol()
 	 * @generated
 	 * @ordered
@@ -104,6 +110,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	 * The cached value of the '{@link #getScheduler() <em>Scheduler</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getScheduler()
 	 * @generated
 	 * @ordered
@@ -113,6 +120,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MutualExclusionResourceImpl() {
@@ -122,6 +130,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,8 +141,10 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ProtectProtocolKind getProtectKind() {
 		return protectKind;
 	}
@@ -141,20 +152,25 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setProtectKind(ProtectProtocolKind newProtectKind) {
 		ProtectProtocolKind oldProtectKind = protectKind;
 		protectKind = newProtectKind == null ? PROTECT_KIND_EDEFAULT : newProtectKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND, oldProtectKind, protectKind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getCeiling() {
 		return ceiling;
 	}
@@ -162,20 +178,25 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setCeiling(String newCeiling) {
 		String oldCeiling = ceiling;
 		ceiling = newCeiling;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING, oldCeiling, ceiling));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getOtherProtectProtocol() {
 		return otherProtectProtocol;
 	}
@@ -183,27 +204,33 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOtherProtectProtocol(String newOtherProtectProtocol) {
 		String oldOtherProtectProtocol = otherProtectProtocol;
 		otherProtectProtocol = newOtherProtectProtocol;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL, oldOtherProtectProtocol, otherProtectProtocol));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Scheduler getScheduler() {
 		if (scheduler != null && scheduler.eIsProxy()) {
-			InternalEObject oldScheduler = (InternalEObject)scheduler;
-			scheduler = (Scheduler)eResolveProxy(oldScheduler);
+			InternalEObject oldScheduler = (InternalEObject) scheduler;
+			scheduler = (Scheduler) eResolveProxy(oldScheduler);
 			if (scheduler != oldScheduler) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER, oldScheduler, scheduler));
+				}
 			}
 		}
 		return scheduler;
@@ -212,6 +239,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Scheduler basicGetScheduler() {
@@ -221,6 +249,7 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetScheduler(Scheduler newScheduler, NotificationChain msgs) {
@@ -228,7 +257,11 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 		scheduler = newScheduler;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER, oldScheduler, newScheduler);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -236,34 +269,43 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setScheduler(Scheduler newScheduler) {
 		if (newScheduler != scheduler) {
 			NotificationChain msgs = null;
-			if (scheduler != null)
-				msgs = ((InternalEObject)scheduler).eInverseRemove(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
-			if (newScheduler != null)
-				msgs = ((InternalEObject)newScheduler).eInverseAdd(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
+			if (scheduler != null) {
+				msgs = ((InternalEObject) scheduler).eInverseRemove(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
+			}
+			if (newScheduler != null) {
+				msgs = ((InternalEObject) newScheduler).eInverseAdd(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
+			}
 			msgs = basicSetScheduler(newScheduler, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER, newScheduler, newScheduler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				if (scheduler != null)
-					msgs = ((InternalEObject)scheduler).eInverseRemove(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
-				return basicSetScheduler((Scheduler)otherEnd, msgs);
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			if (scheduler != null) {
+				msgs = ((InternalEObject) scheduler).eInverseRemove(this, GRMPackage.SCHEDULER__PROTECTED_SHARED_RESOURCES, Scheduler.class, msgs);
+			}
+			return basicSetScheduler((Scheduler) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -271,13 +313,14 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				return basicSetScheduler(null, msgs);
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			return basicSetScheduler(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -285,20 +328,23 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
-				return getProtectKind();
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
-				return getCeiling();
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
-				return getOtherProtectProtocol();
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				if (resolve) return getScheduler();
-				return basicGetScheduler();
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
+			return getProtectKind();
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
+			return getCeiling();
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
+			return getOtherProtectProtocol();
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			if (resolve) {
+				return getScheduler();
+			}
+			return basicGetScheduler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -306,23 +352,24 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
-				setProtectKind((ProtectProtocolKind)newValue);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
-				setCeiling((String)newValue);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
-				setOtherProtectProtocol((String)newValue);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				setScheduler((Scheduler)newValue);
-				return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
+			setProtectKind((ProtectProtocolKind) newValue);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
+			setCeiling((String) newValue);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
+			setOtherProtectProtocol((String) newValue);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			setScheduler((Scheduler) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -330,23 +377,24 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
-				setProtectKind(PROTECT_KIND_EDEFAULT);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
-				setCeiling(CEILING_EDEFAULT);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
-				setOtherProtectProtocol(OTHER_PROTECT_PROTOCOL_EDEFAULT);
-				return;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				setScheduler((Scheduler)null);
-				return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
+			setProtectKind(PROTECT_KIND_EDEFAULT);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
+			setCeiling(CEILING_EDEFAULT);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
+			setOtherProtectProtocol(OTHER_PROTECT_PROTOCOL_EDEFAULT);
+			return;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			setScheduler((Scheduler) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -354,19 +402,20 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
-				return protectKind != PROTECT_KIND_EDEFAULT;
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
-				return CEILING_EDEFAULT == null ? ceiling != null : !CEILING_EDEFAULT.equals(ceiling);
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
-				return OTHER_PROTECT_PROTOCOL_EDEFAULT == null ? otherProtectProtocol != null : !OTHER_PROTECT_PROTOCOL_EDEFAULT.equals(otherProtectProtocol);
-			case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
-				return scheduler != null;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__PROTECT_KIND:
+			return protectKind != PROTECT_KIND_EDEFAULT;
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__CEILING:
+			return CEILING_EDEFAULT == null ? ceiling != null : !CEILING_EDEFAULT.equals(ceiling);
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__OTHER_PROTECT_PROTOCOL:
+			return OTHER_PROTECT_PROTOCOL_EDEFAULT == null ? otherProtectProtocol != null : !OTHER_PROTECT_PROTOCOL_EDEFAULT.equals(otherProtectProtocol);
+		case GRMPackage.MUTUAL_EXCLUSION_RESOURCE__SCHEDULER:
+			return scheduler != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,11 +423,14 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (protectKind: ");
@@ -391,4 +443,4 @@ public class MutualExclusionResourceImpl extends ResourceImpl implements MutualE
 		return result.toString();
 	}
 
-} //MutualExclusionResourceImpl
+} // MutualExclusionResourceImpl

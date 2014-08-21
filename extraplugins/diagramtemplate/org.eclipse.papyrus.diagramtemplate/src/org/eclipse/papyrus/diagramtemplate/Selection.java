@@ -15,7 +15,7 @@ package org.eclipse.papyrus.diagramtemplate;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.Selection#isRecursively <em>Recursively</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.Selection#isRecursively <em>Recursively</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface Selection extends AbstractSelection {
 	 * Returns the value of the '<em><b>Recursively</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Recursively</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Recursively</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Recursively</em>' attribute.
 	 * @see #setRecursively(boolean)
 	 * @see org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage#getSelection_Recursively()
@@ -44,7 +44,9 @@ public interface Selection extends AbstractSelection {
 	 * Sets the value of the '{@link org.eclipse.papyrus.diagramtemplate.Selection#isRecursively <em>Recursively</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recursively</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Recursively</em>' attribute.
 	 * @see #isRecursively()
 	 * @generated
 	 */

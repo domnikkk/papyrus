@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.layers.stackmodel.command.ComputePropertyValueCommand
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface PropertyOperator extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage#getPropertyOperator_Name()
@@ -57,7 +57,9 @@ public interface PropertyOperator extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -66,7 +68,9 @@ public interface PropertyOperator extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException" propertyDataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" propertyMany="true"
+	 * 
+	 * @model dataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" required="true" ordered="false" exceptions="org.eclipse.papyrus.layers.stackmodel.layers.LayersException"
+	 *        propertyDataType="org.eclipse.papyrus.layers.stackmodel.layers.ComputePropertyValueCommand" propertyMany="true"
 	 * @generated
 	 */
 	ComputePropertyValueCommand getComputePropertyValueCommand(EList<ComputePropertyValueCommand> property) throws LayersException;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,11 +25,11 @@ public abstract class WriteStructuralFeatureActionActivation extends StructuralF
 		// it is not found.
 		boolean found = false;
 		int i = startAt;
-		while(!found & i <= list.size()) {
+		while (!found & i <= list.size()) {
 			found = list.get(i - 1).equals(value);
 			i = i + 1;
 		}
-		if(!found) {
+		if (!found) {
 			i = 1;
 		}
 		return i - 1;

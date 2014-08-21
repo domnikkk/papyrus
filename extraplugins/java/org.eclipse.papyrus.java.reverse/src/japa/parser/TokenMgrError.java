@@ -2,7 +2,7 @@
 /* JavaCCOptions: */
 /*
  * Copyright (C) 2008 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -61,8 +61,8 @@ public class TokenMgrError extends Error {
 	protected static final String addEscapes(String str) {
 		StringBuffer retval = new StringBuffer();
 		char ch;
-		for(int i = 0; i < str.length(); i++) {
-			switch(str.charAt(i)) {
+		for (int i = 0; i < str.length(); i++) {
+			switch (str.charAt(i)) {
 			case 0:
 				continue;
 			case '\b':
@@ -90,7 +90,7 @@ public class TokenMgrError extends Error {
 				retval.append("\\\\");
 				continue;
 			default:
-				if((ch = str.charAt(i)) < 0x20 || ch > 0x7e) {
+				if ((ch = str.charAt(i)) < 0x20 || ch > 0x7e) {
 					String s = "0000" + Integer.toString(ch, 16);
 					retval.append("\\u" + s.substring(s.length() - 4, s.length()));
 				} else {
@@ -118,7 +118,7 @@ public class TokenMgrError extends Error {
 		return ("Lexical error at line " +
 				errorLine + ", column " +
 				errorColumn + ".  Encountered: " +
-				(EOFSeen ? "<EOF> " : ("\"" + addEscapes(String.valueOf(curChar)) + "\"") + " (" + (int)curChar + "), ") +
+				(EOFSeen ? "<EOF> " : ("\"" + addEscapes(String.valueOf(curChar)) + "\"") + " (" + (int) curChar + "), ") +
 				"after : \"" + addEscapes(errorAfter) + "\"");
 	}
 
@@ -126,11 +126,12 @@ public class TokenMgrError extends Error {
 	 * You can also modify the body of this method to customize your error messages.
 	 * For example, cases like LOOP_DETECTED and INVALID_LEXICAL_STATE are not
 	 * of end-users concern, so you can return something like :
-	 * 
+	 *
 	 * "Internal Error : Please file a bug report .... "
-	 * 
+	 *
 	 * from this method for such cases in the release version of your parser.
 	 */
+	@Override
 	public String getMessage() {
 		return super.getMessage();
 	}

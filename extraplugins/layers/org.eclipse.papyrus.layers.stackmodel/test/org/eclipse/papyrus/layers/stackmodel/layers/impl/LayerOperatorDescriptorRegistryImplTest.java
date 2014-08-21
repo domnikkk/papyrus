@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -55,7 +55,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		assertNotNull("registry created", registry);
 	}
 
@@ -68,7 +68,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		assertNotNull("descriptors list is set", registry.getDescriptors());
 	}
 
@@ -81,7 +81,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		assertNotNull("operators list is set", registry.getPropertyOperators());
 	}
 
@@ -94,7 +94,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		assertSame("sie is set", propertiesCollectionSize, registry.getPropertyCollectionSize());
 	}
 
@@ -107,7 +107,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		assertSame("size set", propertiesCollectionSize, registry.getPropertyCollectionSize());
 	}
 
@@ -120,7 +120,7 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		int propertiesCollectionSize = 10;
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
-		
+
 		// Check the default operator
 		assertNotNull("default operator set", registry.getDefaultOperator());
 		assertTrue("default operator type", registry.getDefaultOperator() instanceof DefaultPropertyOperator);
@@ -136,24 +136,25 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
 
-	    // Create a LayerOperatorDesc
+		// Create a LayerOperatorDesc
 		LayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createAndStackedLayerOperatorDescriptor();
 
 		// Add it
 		registry.addLayerOperatorDescriptor(descriptor);
-		
+
 		// Check if correctly added
 		assertSame("list size increased", 1, registry.getDescriptors().size());
 		assertSame("descriptor found", descriptor, registry.getDescriptors().get(0));
-		
+
 		assertSame("descriptor property size set", propertiesCollectionSize, descriptor.getPropertyOperators().size());
-		
-		
+
+
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#getLayerOperatorDescriptor(java.lang.String)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testGetLayerOperatorDescriptor() throws NotFoundException {
@@ -162,13 +163,13 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
 
-	    // Create a LayerOperatorDesc
+		// Create a LayerOperatorDesc
 		LayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createLayerOperatorDescriptor();
 		descriptor.setName("desc1");
-		
+
 		// Add it
 		registry.addLayerOperatorDescriptor(descriptor);
-				
+
 		// Try to get by its name
 		assertSame("descriptor found by its name", descriptor, registry.getLayerOperatorDescriptor(descriptor.getName()));
 
@@ -191,13 +192,13 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
 
-	    // Create a PropertyOperator
+		// Create a PropertyOperator
 		PropertyOperator operator1 = LayersFactory.eINSTANCE.createPropertyOperator();
 		operator1.setName("op1");
 
 		// Add it
 		registry.addPropertyOperator(operator1);
-		
+
 		// Check if correctly added
 		assertSame("list size increased", 1, registry.getPropertyOperators().size());
 		assertSame("descriptor found", operator1, registry.getPropertyOperators().get(0));
@@ -205,7 +206,8 @@ public class LayerOperatorDescriptorRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#getPropertyOperator(java.lang.String)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testGetPropertyOperator() throws NotFoundException {
@@ -214,13 +216,13 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
 
-	    // Create a PropertyOperator
+		// Create a PropertyOperator
 		PropertyOperator operator1 = LayersFactory.eINSTANCE.createPropertyOperator();
 		operator1.setName("op1");
 
 		// Add it
 		registry.addPropertyOperator(operator1);
-		
+
 		// Try to get by its name
 		assertSame("operator found by its name", operator1, registry.getPropertyOperator(operator1.getName()));
 
@@ -235,7 +237,8 @@ public class LayerOperatorDescriptorRegistryImplTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorRegistryImpl#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testAttachOperatorToDescriptor() throws NotFoundException {
@@ -244,28 +247,28 @@ public class LayerOperatorDescriptorRegistryImplTest {
 		LayerOperatorDescriptorRegistry registry = LayersFactory.eINSTANCE.createLayerOperatorDescriptorRegistry();
 		registry.setPropertyCollectionSize(propertiesCollectionSize);
 
-	    // Create a LayerOperatorDesc
+		// Create a LayerOperatorDesc
 		LayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createLayerOperatorDescriptor();
 		descriptor.setName("desc1");
-		
+
 		// Add it
 		registry.addLayerOperatorDescriptor(descriptor);
-		
-	    // Create a PropertyOperator
+
+		// Create a PropertyOperator
 		PropertyOperator operator1 = LayersFactory.eINSTANCE.createPropertyOperator();
 		operator1.setName("op1");
 
 		// Add it
 		registry.addPropertyOperator(operator1);
-		
+
 		// Create a property
 		Property prop1 = LayersFactory.eINSTANCE.createProperty();
 		prop1.setName("prop1");
 		prop1.setIndex(0);
-		
+
 		// Attach Property
 		registry.attachOperatorToDescriptor(prop1, operator1.getName(), descriptor.getName());
-		
+
 		// Check if the operator is added to LayerOperator
 		assertSame("operator found in layer", operator1, descriptor.getPropertyOperator(prop1));
 	}

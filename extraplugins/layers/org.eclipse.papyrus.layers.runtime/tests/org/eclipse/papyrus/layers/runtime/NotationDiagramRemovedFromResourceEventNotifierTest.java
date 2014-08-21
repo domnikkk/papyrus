@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -60,7 +60,7 @@ public class NotationDiagramRemovedFromResourceEventNotifierTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		modelSet = mngr;
 	}
 
@@ -77,7 +77,7 @@ public class NotationDiagramRemovedFromResourceEventNotifierTest {
 	 */
 	@Test
 	public void testNotationDiagramRemovedFromResourceEventNotifier() {
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
 
 		NotationDiagramRemovedFromResourceEventNotifier notifier = new NotationDiagramRemovedFromResourceEventNotifier(notationModel);
 		assertNotNull("application created", notifier);
@@ -92,20 +92,20 @@ public class NotationDiagramRemovedFromResourceEventNotifierTest {
 	@Test
 	public void testModelSetCreation() {
 
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
 		assertNotNull("NotationModel is created", notationModel);
 		// Try to create a Diagram
 		notationModel.addDiagram(NotationFactory.eINSTANCE.createDiagram());
-		// 
+		//
 		assertNotNull("Diagram is in the roots", notationModel.getResource().getContents().get(0));
-		
-		
-		
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+
+
+
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 		assertNotNull("LayerModel is created", layersModel);
 		assertNotNull("LayerStackApplication is created", layersModel.getLayerStackApplication());
 
-		
+
 	}
 
 	/**
@@ -113,11 +113,11 @@ public class NotationDiagramRemovedFromResourceEventNotifierTest {
 	 */
 	@Test
 	public void testDispose() {
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
 
 		NotationDiagramRemovedFromResourceEventNotifier notifier = new NotationDiagramRemovedFromResourceEventNotifier(notationModel);
 		assertFalse("application created", notifier.isDisposed());
-		
+
 		// Try to dispose
 		notifier.dispose();
 		assertTrue("object is disposed", notifier.isDisposed());
@@ -146,35 +146,35 @@ public class NotationDiagramRemovedFromResourceEventNotifierTest {
 	 */
 	@Test
 	public void testFireDiagramRemovedEvent() {
-		NotationModel notationModel = (NotationModel)modelSet.getModel(NotationModel.MODEL_ID);
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		NotationModel notationModel = (NotationModel) modelSet.getModel(NotationModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 		// Create a diagram
 		Diagram diagram1 = NotationFactory.eINSTANCE.createDiagram();
 		notationModel.addDiagram(diagram1);
 		// Create a helper used to attach a LayerStack to diagram.
 		NotationDiagramHelper helperForDiag1 = new NotationDiagramHelper(layersModel, diagram1);
-		
+
 		// Create a diagram
 		Diagram diagram2 = NotationFactory.eINSTANCE.createDiagram();
 		notationModel.addDiagram(diagram2);
 		// Create a helper used to attach a LayerStack to diagram.
 		NotationDiagramHelper helperForDiag2 = new NotationDiagramHelper(layersModel, diagram2);
-		
+
 		// Create the synchronizer
 		NotationDiagramRemovedFromResourceEventNotifier notifier = new NotationDiagramRemovedFromResourceEventNotifier(notationModel);
 		TraceNotationDiagramRemovedFromResourceEventListener traces = new TraceNotationDiagramRemovedFromResourceEventListener();
 		notifier.addLayersModelEventListener(traces);
-		
-	    // Add a layer Stack to the diagram
+
+		// Add a layer Stack to the diagram
 		helperForDiag1.attachLayersStack();
 		helperForDiag2.attachLayersStack();
-		
+
 		// Try to remove a diagram
 		traces.traces.clear();
 		notationModel.getResource().getContents().remove(diagram2);
-		
-		
+
+
 		// Check if the appropriate method is called
 		assertTrue("event catched", traces.traces.contains("diagramRemoved"));
 		assertEquals("number of events", 1, traces.traces.size());

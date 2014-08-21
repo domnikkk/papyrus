@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,19 +28,20 @@ public class ResourceDropActionDelegate implements IDropActionDelegate {
 		super();
 	}
 
+	@Override
 	public boolean run(Object source, Object target) {
 		boolean result = false;
 
 		byte[] serial = null;
-		if(source instanceof byte[]) {
-			serial = (byte[])source;
+		if (source instanceof byte[]) {
+			serial = (byte[]) source;
 		}
 
-		if(serial != null) {
+		if (serial != null) {
 			IContainer container = CDOUtils.adapt(target, IContainer.class);
-			if(container != null) {
+			if (container != null) {
 				CDOResourceURITransferData data = CDOResourceURITransferData.deserialize(serial);
-				if(!data.getURIs().isEmpty()) {
+				if (!data.getURIs().isEmpty()) {
 					result = true;
 					ExportModelHandler.exportModels(container, data.getURIs());
 				}

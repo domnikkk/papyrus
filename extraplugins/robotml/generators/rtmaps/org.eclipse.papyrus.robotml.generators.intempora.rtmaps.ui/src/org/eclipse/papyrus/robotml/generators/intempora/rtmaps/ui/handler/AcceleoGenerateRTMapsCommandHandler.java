@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,44 +40,44 @@ public class AcceleoGenerateRTMapsCommandHandler extends AbstractHandler {
 	/** The rtmaps folder. */
 	private final String rtmapsFolder = "rtmaps-generated-files";
 
-	//	/**
-	//	 * @see org.eclipse.papyrus.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	//	 * 
-	//	 * @return
-	//	 */
+	// /**
+	// * @see org.eclipse.papyrus.modelexplorer.handler.AbstractCommandHandler#getCommand()
+	// *
+	// * @return
+	// */
 	//
-	//	@Override
-	//	protected Command getCommand() {
-	//		List<EObject> selectedObjects = getSelectedElements();
-	//		EObject selectedElement = getSelectedElement();
-	//		List<?> selection = getSelection();
-	//		TransactionalEditingDomain editingDomain = getEditingDomain();
-	//		if ((selectedObjects != null) && (selectedObjects.size()>0)){
-	//			EObject selectedObject = selectedObjects.get(0);
-	//			URI targetFolderURI = selectedObject.eResource().getURI();
-	//			int lastindex = targetFolderURI.toPlatformString(false).lastIndexOf("/");
-	//			String targetPath = targetFolderURI.toPlatformString(false).substring(0, lastindex);
-	//			return new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(new GenerateRTMapsCodeCommand("Generate RTMaps code command", editingDomain, selectedObject, targetPath + rtmapsFolder));
-	//		}
-	//			
-	//		
-	//return null;
-	//		
+	// @Override
+	// protected Command getCommand() {
+	// List<EObject> selectedObjects = getSelectedElements();
+	// EObject selectedElement = getSelectedElement();
+	// List<?> selection = getSelection();
+	// TransactionalEditingDomain editingDomain = getEditingDomain();
+	// if ((selectedObjects != null) && (selectedObjects.size()>0)){
+	// EObject selectedObject = selectedObjects.get(0);
+	// URI targetFolderURI = selectedObject.eResource().getURI();
+	// int lastindex = targetFolderURI.toPlatformString(false).lastIndexOf("/");
+	// String targetPath = targetFolderURI.toPlatformString(false).substring(0, lastindex);
+	// return new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(new GenerateRTMapsCodeCommand("Generate RTMaps code command", editingDomain, selectedObject, targetPath + rtmapsFolder));
+	// }
 	//
-	//	}
+	//
+	// return null;
+	//
+	//
+	// }
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			EObject selectedElement = EMFHelper.getEObject(structuredSelection.getFirstElement());
-			if(selectedElement == null) {
+			if (selectedElement == null) {
 				return null;
 			}
 
 			URI resourceURI = selectedElement.eResource().getURI();
-			//int lastSegment = resourceURI.segmentCount() - 1;
+			// int lastSegment = resourceURI.segmentCount() - 1;
 			URI targetFolderURI = resourceURI.trimSegments(1).appendSegment(rtmapsFolder);
 
 			try {
@@ -85,7 +85,7 @@ public class AcceleoGenerateRTMapsCommandHandler extends AbstractHandler {
 
 				ICommand generationCommand = new GenerateRTMapsCodeCommand("Generate RTMaps code command", editingDomain, selectedElement, targetFolderURI.toPlatformString(true));
 
-				if(generationCommand.canExecute()) {
+				if (generationCommand.canExecute()) {
 					generationCommand.execute(new NullProgressMonitor(), null);
 				}
 			} catch (ServiceException ex) {

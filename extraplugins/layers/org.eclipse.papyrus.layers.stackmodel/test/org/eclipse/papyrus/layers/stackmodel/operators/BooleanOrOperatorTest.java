@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -45,6 +45,7 @@ public class BooleanOrOperatorTest {
 
 	/**
 	 * Create an instance of boolean value cmd.
+	 * 
 	 * @param b
 	 * @return
 	 */
@@ -56,11 +57,12 @@ public class BooleanOrOperatorTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.operators.BooleanOrOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testGetComputePropertyValueCommandReturnTrue() throws LayersException {
-		
+
 		// Create a list of nested commands
 		EList<ComputePropertyValueCommand> nestedCommand = new BasicEList<ComputePropertyValueCommand>();
 		BooleanInstance val1 = createBooleanInstance(false);
@@ -69,23 +71,24 @@ public class BooleanOrOperatorTest {
 		nestedCommand.add(val2);
 		BooleanInstance val3 = createBooleanInstance(false);
 		nestedCommand.add(val3);
-		
-		
-		// Create the command 
+
+
+		// Create the command
 		BooleanOrOperator op = new BooleanOrOperator();
 		assertNotNull("command created", op.getComputePropertyValueCommand(nestedCommand));
 
-		assertSame("return the right value", true, ((BooleanInstance)op.getComputePropertyValueCommand(nestedCommand).getCmdValue()).isValue());
+		assertSame("return the right value", true, ((BooleanInstance) op.getComputePropertyValueCommand(nestedCommand).getCmdValue()).isValue());
 
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.operators.BooleanOrOperator#getComputePropertyValueCommand(org.eclipse.emf.common.util.EList)}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testGetComputePropertyValueCommandReturnFalse() throws LayersException {
-		
+
 		// Create a list of nested commands
 		EList<ComputePropertyValueCommand> nestedCommand = new BasicEList<ComputePropertyValueCommand>();
 		BooleanInstance val1 = createBooleanInstance(false);
@@ -94,13 +97,13 @@ public class BooleanOrOperatorTest {
 		nestedCommand.add(val2);
 		BooleanInstance val3 = createBooleanInstance(false);
 		nestedCommand.add(val3);
-		
-		
-		// Create the command 
+
+
+		// Create the command
 		BooleanOrOperator op = new BooleanOrOperator();
 		assertNotNull("command created", op.getComputePropertyValueCommand(nestedCommand));
 
-		assertSame("return the right value", false, ((BooleanInstance)op.getComputePropertyValueCommand(nestedCommand).getCmdValue()).isValue());
+		assertSame("return the right value", false, ((BooleanInstance) op.getComputePropertyValueCommand(nestedCommand).getCmdValue()).isValue());
 
 	}
 

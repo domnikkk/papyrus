@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,10 +20,10 @@ public abstract class LiteralEvaluation extends Evaluation {
 	public PrimitiveType getType(String builtInTypeName) {
 		// Get the type of the specification. If that is null, then use the
 		// built-in type of the given name.
-		PrimitiveType type = (PrimitiveType)(this.specification.getType());
-		if(type == null) {
-			//Cast required because builtInType list is of type Type
-			type = (PrimitiveType)this.locus.factory.getBuiltInType(builtInTypeName);
+		PrimitiveType type = (PrimitiveType) (this.specification.getType());
+		if (type == null) {
+			// Cast required because builtInType list is of type Type
+			type = (PrimitiveType) this.locus.factory.getBuiltInType(builtInTypeName);
 		}
 		return type;
 	}

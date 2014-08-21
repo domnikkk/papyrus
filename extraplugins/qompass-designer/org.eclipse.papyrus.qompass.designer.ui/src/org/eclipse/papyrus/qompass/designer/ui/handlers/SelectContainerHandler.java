@@ -1,8 +1,8 @@
 /*******************************************************************************
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -34,13 +34,13 @@ public class SelectContainerHandler extends CmdHandler {
 	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if((selectedEObject instanceof Class) ||
-			(selectedEObject instanceof InstanceSpecification)) {
+		if ((selectedEObject instanceof Class) ||
+				(selectedEObject instanceof InstanceSpecification)) {
 			return true;
 		}
-		if(selectedEObject instanceof Property) {
-			Type type = ((Property)selectedEObject).getType();
-			if(type instanceof Class) {
+		if (selectedEObject instanceof Property) {
+			Type type = ((Property) selectedEObject).getType();
+			if (type instanceof Class) {
 				return true;
 			}
 		}
@@ -52,19 +52,20 @@ public class SelectContainerHandler extends CmdHandler {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		if(!(selectedEObject instanceof NamedElement)) {
+		if (!(selectedEObject instanceof NamedElement)) {
 			return null;
 		}
 
-		NamedElement ne = (NamedElement)selectedEObject;
+		NamedElement ne = (NamedElement) selectedEObject;
 		final Shell shell = new Shell();
 
-		if(ne instanceof Property) {
+		if (ne instanceof Property) {
 			// treat property as the associated type
-			Type type = ((Property)ne).getType();
-			if(type instanceof Class) {
-				ne = (Class)type;
+			Type type = ((Property) ne).getType();
+			if (type instanceof Class) {
+				ne = type;
 			}
 		}
 		final NamedElement element = ne;
@@ -73,17 +74,18 @@ public class SelectContainerHandler extends CmdHandler {
 		// (only show compatible connectors check-box?)
 		// 2. select implementation group according to connector type
 
-		if(element instanceof Class) {
+		if (element instanceof Class) {
 			// container dialog: either extension, rule or interceptor
 			// howto select? which? (and howto add/remove?) - Std - dialog is good?
 			CommandSupport.exec("Select container", event, new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					ContainerDialog elementSelector =
-						new ContainerDialog(shell, (Class)element);
+							new ContainerDialog(shell, (Class) element);
 					elementSelector.setTitle("Select container rules for component " + element.getName());
 					elementSelector.open();
-					if(elementSelector.getReturnCode() == IDialogConstants.OK_ID) {
+					if (elementSelector.getReturnCode() == IDialogConstants.OK_ID) {
 						return CommandResult.newOKCommandResult();
 					}
 					else {
@@ -91,7 +93,7 @@ public class SelectContainerHandler extends CmdHandler {
 					}
 				}
 			});
-		} else if(element instanceof InstanceSpecification) {
+		} else if (element instanceof InstanceSpecification) {
 			/*
 			 * ConnectorSelectionDialog elementSelector =
 			 * new ConnectorSelectionDialog (shell, model, (InstanceSpecification) element);

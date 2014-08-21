@@ -31,9 +31,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 /**
  * Utility functions managing the "modifier" of an element, i.e. additional information whether a passed
  * parameter or an attribute is a pointer, a reference, an array or constant.
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class Modifier {
 
@@ -67,14 +67,14 @@ public class Modifier {
 
 	/**
 	 * Create instance and initialize the ptr/ref/array/isConst attributes.
-	 * 
+	 *
 	 * @param propertyOperationOrParameter
 	 */
 	public static void update(Element propertyOperationOrParameter) {
 
 		// Pointer
 		Ptr cppPtr = UMLUtil.getStereotypeApplication(propertyOperationOrParameter, Ptr.class);
-		if(cppPtr != null) {
+		if (cppPtr != null) {
 			ptr = (cppPtr.getDeclaration() != null) ? cppPtr.getDeclaration() : "*"; //$NON-NLS-1$
 		} else {
 			ptr = ""; //$NON-NLS-1$
@@ -87,42 +87,42 @@ public class Modifier {
 		// Ref
 		ref = GenUtils.hasStereotype(propertyOperationOrParameter, Ref.class) ? "&" : ""; //$NON-NLS-1$ //$NON-NLS-2$
 		boolean ptrOrRef = GenUtils.hasStereotype(propertyOperationOrParameter, Ref.class) ||
-			GenUtils.hasStereotype(propertyOperationOrParameter, Ptr.class);
+				GenUtils.hasStereotype(propertyOperationOrParameter, Ptr.class);
 
 		// Array
 		Array cppArray = UMLUtil.getStereotypeApplication(propertyOperationOrParameter, Array.class);
-		if(cppArray != null) {
+		if (cppArray != null) {
 			// explicit array definition
 			array = (cppArray.getDefinition() != null) ? cppArray.getDefinition() : "[]"; //$NON-NLS-1$
 		} else {
 			// calculate array from multiplicity definition
 			int multiplicity = 1;
-			if(propertyOperationOrParameter instanceof MultiplicityElement) {
-				multiplicity = ((MultiplicityElement)propertyOperationOrParameter).getUpper();
+			if (propertyOperationOrParameter instanceof MultiplicityElement) {
+				multiplicity = ((MultiplicityElement) propertyOperationOrParameter).getUpper();
 			}
 			array = ""; //$NON-NLS-1$
-			if(multiplicity == -1) {
+			if (multiplicity == -1) {
 				ptr += "*"; //$NON-NLS-1$
-			} else if(multiplicity > 1) {
+			} else if (multiplicity > 1) {
 				array = "[" + multiplicity + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
 
-		// out an inout parameter are realized by means of a pointer 
-		if(propertyOperationOrParameter instanceof Parameter) {
-			ParameterDirectionKind directionKind = ((Parameter)propertyOperationOrParameter).getDirection();
-			if(directionKind == ParameterDirectionKind.IN_LITERAL) {
+		// out an inout parameter are realized by means of a pointer
+		if (propertyOperationOrParameter instanceof Parameter) {
+			ParameterDirectionKind directionKind = ((Parameter) propertyOperationOrParameter).getDirection();
+			if (directionKind == ParameterDirectionKind.IN_LITERAL) {
 				ptr += " /*in*/"; //$NON-NLS-1$
 			}
-			else if(directionKind == ParameterDirectionKind.OUT_LITERAL) {
+			else if (directionKind == ParameterDirectionKind.OUT_LITERAL) {
 				ptr += " /*out*/"; //$NON-NLS-1$
-				if(!ptrOrRef) {
+				if (!ptrOrRef) {
 					ptr += CppCodeGenUtils.getOutInoutOp();
 				}
 			}
-			else if(directionKind == ParameterDirectionKind.INOUT_LITERAL) {
+			else if (directionKind == ParameterDirectionKind.INOUT_LITERAL) {
 				ptr += " /*inout*/"; //$NON-NLS-1$
-				if(!ptrOrRef) {
+				if (!ptrOrRef) {
 					ptr += CppCodeGenUtils.getOutInoutOp();
 				}
 			}
@@ -130,29 +130,26 @@ public class Modifier {
 
 		// CVQualifiers cannot be used with static functions
 		if (propertyOperationOrParameter instanceof Operation
-		 && ( (Operation)propertyOperationOrParameter ).isStatic() ) {
+				&& ((Operation) propertyOperationOrParameter).isStatic()) {
 			cvQualifier = new String();
 		}
 		// Const
 		else if (GenUtils.hasStereotype(propertyOperationOrParameter, Const.class)) {
 			// Volatile with const
 			if (GenUtils.hasStereotype(propertyOperationOrParameter, Volatile.class)) {
-				cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
-					" const volatile" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
-					"const volatile ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+				cvQualifier = (propertyOperationOrParameter instanceof Operation) ? " const volatile" : // added at the end of operation, prefix with " " //$NON-NLS-1$
+						"const volatile "; // before operation or parameter, postfix with " " //$NON-NLS-1$
 			}
 			// Const without Volatile
 			else {
-				cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
-					" const" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
-					"const ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+				cvQualifier = (propertyOperationOrParameter instanceof Operation) ? " const" : // added at the end of operation, prefix with " " //$NON-NLS-1$
+						"const "; // before operation or parameter, postfix with " " //$NON-NLS-1$
 			}
 		}
 		// Volatile without const
 		else if (GenUtils.hasStereotype(propertyOperationOrParameter, Volatile.class)) {
-			cvQualifier = (propertyOperationOrParameter instanceof Operation) ?
-				" volatile" :	// added at the end of operation, prefix with " " //$NON-NLS-1$
-				"volatile ";	// before operation or parameter, postfix with " " //$NON-NLS-1$
+			cvQualifier = (propertyOperationOrParameter instanceof Operation) ? " volatile" : // added at the end of operation, prefix with " " //$NON-NLS-1$
+					"volatile "; // before operation or parameter, postfix with " " //$NON-NLS-1$
 		}
 		// No CV qualifiers
 		else {

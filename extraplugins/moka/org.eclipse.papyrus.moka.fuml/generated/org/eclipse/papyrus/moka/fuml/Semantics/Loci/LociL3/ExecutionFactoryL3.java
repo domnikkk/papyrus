@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,15 +47,16 @@ public class ExecutionFactoryL3 extends ExecutionFactoryL2 {
 		super();
 	}
 
+	@Override
 	public SemanticVisitor instantiateVisitor(Element element) {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 3)
 		SemanticVisitor visitor = null;
-		if(element instanceof ConditionalNode) {
+		if (element instanceof ConditionalNode) {
 			visitor = new ConditionalNodeActivation();
-		} else if(element instanceof LoopNode) {
+		} else if (element instanceof LoopNode) {
 			visitor = new LoopNodeActivation();
-		} else if(element instanceof ExpansionRegion) {
+		} else if (element instanceof ExpansionRegion) {
 			visitor = new ExpansionRegionActivation();
 		}
 		// Note: Since ConditionalNode, LoopNode and ExpansionRegion are
@@ -63,23 +64,23 @@ public class ExecutionFactoryL3 extends ExecutionFactoryL2 {
 		// StructuredActivityNode, element must be tested against the three
 		// subclasses before
 		// the superclass
-		else if(element instanceof StructuredActivityNode) {
+		else if (element instanceof StructuredActivityNode) {
 			visitor = new StructuredActivityNodeActivation();
-		} else if(element instanceof ExpansionNode) {
+		} else if (element instanceof ExpansionNode) {
 			visitor = new ExpansionNodeActivation();
-		} else if(element instanceof ReadExtentAction) {
+		} else if (element instanceof ReadExtentAction) {
 			visitor = new ReadExtentActionActivation();
-		} else if(element instanceof ReadIsClassifiedObjectAction) {
+		} else if (element instanceof ReadIsClassifiedObjectAction) {
 			visitor = new ReadIsClassifiedObjectActionActivation();
-		} else if(element instanceof ReclassifyObjectAction) {
+		} else if (element instanceof ReclassifyObjectAction) {
 			visitor = new ReclassifyObjectActionActivation();
-		} else if(element instanceof StartObjectBehaviorAction) {
+		} else if (element instanceof StartObjectBehaviorAction) {
 			visitor = new StartObjectBehaviorActionActivation();
-		} else if(element instanceof StartClassifierBehaviorAction) {
+		} else if (element instanceof StartClassifierBehaviorAction) {
 			visitor = new StartClassifierBehaviorActionActivation();
-		} else if(element instanceof AcceptEventAction) {
+		} else if (element instanceof AcceptEventAction) {
 			visitor = new AcceptEventActionActivation();
-		} else if(element instanceof ReduceAction) {
+		} else if (element instanceof ReduceAction) {
 			visitor = new ReduceActionActivation();
 		} else {
 			visitor = super.instantiateVisitor(element);

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.dd.dg.*;
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
  * an adapter <code>createXXX</code> method for each class of the model. <!--
  * end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.dd.dg.DGPackage
  * @generated
  */
@@ -33,7 +33,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DGPackage modelPackage;
@@ -42,11 +42,11 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DGAdapterFactory() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = DGPackage.eINSTANCE;
 		}
 	}
@@ -56,17 +56,17 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This implementation returns <code>true</code> if
 	 * the object is either the model's package or is an instance object of the
 	 * model. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if(object == modelPackage) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if(object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -74,7 +74,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DGSwitch<Adapter> modelSwitch = new DGSwitch<Adapter>() {
@@ -304,15 +304,15 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
-	 *        the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -320,7 +320,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Canvas
 	 * @generated
@@ -334,7 +334,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Group
 	 * @generated
@@ -349,7 +349,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.GraphicalElement
 	 * @generated
@@ -363,7 +363,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Definition
 	 * @generated
@@ -377,7 +377,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.ClipPath
 	 * @generated
@@ -391,7 +391,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Style
 	 * @generated
@@ -405,7 +405,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Paint
 	 * @generated
@@ -419,7 +419,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.PaintServer
 	 * @generated
@@ -433,7 +433,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Transform
 	 * @generated
@@ -447,7 +447,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Definitions
 	 * @generated
@@ -461,7 +461,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.CubicCurveTo
 	 * @generated
@@ -475,7 +475,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.PathCommand
 	 * @generated
@@ -489,7 +489,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Marker
 	 * @generated
@@ -503,7 +503,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSheet
 	 * @generated
@@ -517,7 +517,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.StyleRule
 	 * @generated
@@ -531,7 +531,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.StyleSelector
 	 * @generated
@@ -545,7 +545,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Circle
 	 * @generated
@@ -559,7 +559,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.ClosePath
 	 * @generated
@@ -573,7 +573,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Ellipse
 	 * @generated
@@ -588,7 +588,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.EllipticalArcTo
 	 * @generated
@@ -603,7 +603,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.QuadraticCurveTo
 	 * @generated
@@ -617,7 +617,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Gradient
 	 * @generated
@@ -631,7 +631,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.GradientStop
 	 * @generated
@@ -645,7 +645,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Image
 	 * @generated
@@ -659,7 +659,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Line
 	 * @generated
@@ -673,7 +673,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.MarkedElement
 	 * @generated
@@ -687,7 +687,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so
 	 * that we can easily ignore cases; it's useful to ignore a case when
 	 * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.LinearGradient
 	 * @generated
@@ -701,7 +701,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.LineTo
 	 * @generated
@@ -715,7 +715,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Matrix
 	 * @generated
@@ -729,7 +729,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.MoveTo
 	 * @generated
@@ -743,7 +743,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Path
 	 * @generated
@@ -757,7 +757,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Pattern
 	 * @generated
@@ -771,7 +771,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Polygon
 	 * @generated
@@ -785,7 +785,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Polyline
 	 * @generated
@@ -799,7 +799,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so
 	 * that we can easily ignore cases; it's useful to ignore a case when
 	 * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.RadialGradient
 	 * @generated
@@ -813,7 +813,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Rectangle
 	 * @generated
@@ -827,7 +827,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.RootCanvas
 	 * @generated
@@ -841,7 +841,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Rotate
 	 * @generated
@@ -855,7 +855,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Scale
 	 * @generated
@@ -869,7 +869,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Skew
 	 * @generated
@@ -883,7 +883,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Text
 	 * @generated
@@ -897,7 +897,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Translate
 	 * @generated
@@ -912,7 +912,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.dd.dg.Use
 	 * @generated
@@ -925,7 +925,7 @@ public class DGAdapterFactory extends AdapterFactoryImpl {
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc --> This
 	 * default implementation returns null. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

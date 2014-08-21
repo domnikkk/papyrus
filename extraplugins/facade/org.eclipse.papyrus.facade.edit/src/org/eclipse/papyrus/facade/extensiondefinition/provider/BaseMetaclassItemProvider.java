@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,11 +45,12 @@ import org.eclipse.papyrus.facade.provider.FacadeEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class BaseMetaclassItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -59,6 +60,7 @@ public class BaseMetaclassItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BaseMetaclassItemProvider(AdapterFactory adapterFactory) {
@@ -69,6 +71,7 @@ public class BaseMetaclassItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -86,52 +89,54 @@ public class BaseMetaclassItemProvider
 	 * This adds a property descriptor for the Base feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addBasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BaseMetaclass_base_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaseMetaclass_base_feature", "_UI_BaseMetaclass_type"),
-				 ExtensiondefinitionPackage.Literals.BASE_METACLASS__BASE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_BaseMetaclass_base_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BaseMetaclass_base_feature", "_UI_BaseMetaclass_type"),
+						ExtensiondefinitionPackage.Literals.BASE_METACLASS__BASE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Possible feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addPossiblePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BaseMetaclass_possible_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BaseMetaclass_possible_feature", "_UI_BaseMetaclass_type"),
-				 ExtensiondefinitionPackage.Literals.BASE_METACLASS__POSSIBLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_BaseMetaclass_possible_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BaseMetaclass_possible_feature", "_UI_BaseMetaclass_type"),
+						ExtensiondefinitionPackage.Literals.BASE_METACLASS__POSSIBLE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,6 +152,7 @@ public class BaseMetaclassItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,6 +167,7 @@ public class BaseMetaclassItemProvider
 	 * This returns BaseMetaclass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,20 +179,22 @@ public class BaseMetaclassItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		BaseMetaclass baseMetaclass = (BaseMetaclass)object;
+		BaseMetaclass baseMetaclass = (BaseMetaclass) object;
 		return getString("_UI_BaseMetaclass_type") + " " + baseMetaclass.isPossible();
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -193,13 +202,13 @@ public class BaseMetaclassItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BaseMetaclass.class)) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -209,6 +218,7 @@ public class BaseMetaclassItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -216,20 +226,21 @@ public class BaseMetaclassItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ExtensiondefinitionPackage.Literals.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES,
-				 ExtensiondefinitionFactory.eINSTANCE.createCombination()));
+						ExtensiondefinitionFactory.eINSTANCE.createCombination()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ExtensiondefinitionPackage.Literals.BASE_METACLASS__COMPATIBLE_STEREOTYPES,
-				 ExtensiondefinitionFactory.eINSTANCE.createCombination()));
+						ExtensiondefinitionFactory.eINSTANCE.createCombination()));
 	}
 
 	/**
 	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -238,13 +249,12 @@ public class BaseMetaclassItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ExtensiondefinitionPackage.Literals.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES ||
-			childFeature == ExtensiondefinitionPackage.Literals.BASE_METACLASS__COMPATIBLE_STEREOTYPES;
+				childFeature == ExtensiondefinitionPackage.Literals.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES ||
+						childFeature == ExtensiondefinitionPackage.Literals.BASE_METACLASS__COMPATIBLE_STEREOTYPES;
 
 		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
@@ -253,6 +263,7 @@ public class BaseMetaclassItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

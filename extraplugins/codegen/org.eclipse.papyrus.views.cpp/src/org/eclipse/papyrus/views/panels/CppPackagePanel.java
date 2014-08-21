@@ -39,11 +39,11 @@ public class CppPackagePanel extends CppAbstractPanel {
 
 	/**
 	 * Default constructor
-	 * 
+	 *
 	 * @param parent
-	 *        the composite parent of this panel
+	 *            the composite parent of this panel
 	 * @param style
-	 *        the SWT style of this panel
+	 *            the SWT style of this panel
 	 */
 	public CppPackagePanel(Composite parent, int style) {
 		super(parent, style);
@@ -67,8 +67,8 @@ public class CppPackagePanel extends CppAbstractPanel {
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof Package) {
-			this.selectedPackage = (Package)newElement;
+		if (newElement instanceof Package) {
+			this.selectedPackage = (Package) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 Package");
@@ -80,48 +80,51 @@ public class CppPackagePanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContentHI()
 	 */
+	@Override
 	public Control createContent() {
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create a composite that contain the "Save/Cancel" buttons
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Package header declaration
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 		headerDocument = createDocumentC();
 		headerGroup = createGroup(
-			this
-			, "Header include declarations"
-			, buttonSave
-			, null
-			, true
-			, 0
-			, 0
-			, true);
+				this
+				, "Header include declarations"
+				, buttonSave
+				, null
+				, true
+				, 0
+				, 0
+				, true);
 		// Use CDT CEditor coloration
 		// headerViewer
 		createViewerC(headerDocument, headerGroup);
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		return this;
 	}
 
 	/**
 	 * Saves the include declarations for a '<code>Package</code>'
 	 */
+	@Override
 	public void save()
 	{
-		if(selectedPackage == null) {
+		if (selectedPackage == null) {
 			/* Log.debug("saveBody : selectedPackage is null"); */
 		}
 		else {
 			CommandSupport.exec("C++ package save", new Runnable() {
 
+				@Override
 				public void run()
 				{
-					if(headerDocument.get().equals("")) {
+					if (headerDocument.get().equals("")) {
 						StereotypeUtil.unapply(selectedPackage, Include.class);
 					} else {
 						Include cppInclude = StereotypeUtil.applyApp(selectedPackage, Include.class);
@@ -139,9 +142,9 @@ public class CppPackagePanel extends CppAbstractPanel {
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedPackage != null) {
+		if (selectedPackage != null) {
 			Include cppInclude = UMLUtil.getStereotypeApplication(selectedPackage, Include.class);
-			if(cppInclude != null) {
+			if (cppInclude != null) {
 				headerDocument.set(cppInclude.getHeader());
 			}
 			else {
@@ -155,6 +158,7 @@ public class CppPackagePanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -169,7 +173,7 @@ public class CppPackagePanel extends CppAbstractPanel {
 	public boolean checkModifications() {
 		String headerInModel = "";
 		Include cppInclude = UMLUtil.getStereotypeApplication(selectedPackage, Include.class);
-		if(cppInclude != null) {
+		if (cppInclude != null) {
 			headerInModel = cppInclude.getHeader();
 		}
 		return (!(headerDocument.get().equals(headerInModel)));

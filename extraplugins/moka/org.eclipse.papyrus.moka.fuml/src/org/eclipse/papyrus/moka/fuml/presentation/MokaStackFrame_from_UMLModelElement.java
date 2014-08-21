@@ -27,9 +27,9 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 		this.modelElement = modelElement;
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Presentation
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
@@ -57,9 +57,9 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 		return FUMLPresentationUtils.getImage(modelElement);
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Debug
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
@@ -80,18 +80,18 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 	public IVariable[] getVariables() throws DebugException {
 		Object_ contextObject = this.getContextObject();
 		IVariable[] variables;
-		if(contextObject == null) {
-			variables = new IVariable[]{};
+		if (contextObject == null) {
+			variables = new IVariable[] {};
 		} else {
 			MokaVariable_from_ContextObject var = new MokaVariable_from_ContextObject(contextObject);
-			variables = new IVariable[]{ var };
+			variables = new IVariable[] { var };
 		}
 		return variables;
 	}
 
 	/**
 	 * Returns the context fUML Object_ for this stack frame
-	 * 
+	 *
 	 * @return the context fUML Object_ for this stack frame
 	 */
 	protected abstract Object_ getContextObject();

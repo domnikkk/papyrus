@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,15 +26,15 @@ import org.eclipse.uml2.uml.NamedElement;
  *
  * <!-- begin-model-doc -->
  * PrivateContent is a marker class that marks the artifact element denoted by association privateElement as private, i.e. it will not be presented to the outside of the containing ConfigurableContainer.
- * 
+ *
  * Refer to the documentation of meta-class ConfigurableContainer for a detailed explanation of how ConfigurableContainer and PrivateContent play together.
- * 
+ *
  * Constraint:
  * [1] Identifies either one FunctionPrototype or one FunctionPort or one FunctionConnector or one HardwareComponentPrototype or one HardwarePort or one ClampConnector.
- * 
+ *
  * Semantics:
  * Marks the element identified by association privateElement as private. Otherwise the elements visibility defaults to public.
- * 
+ *
  * Extension:
  * Class
  * <!-- end-model-doc -->
@@ -42,8 +42,8 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getPrivateElement <em>Private Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getPrivateElement <em>Private Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,10 +56,10 @@ public interface PrivateContent extends EAElement {
 	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getPrivateContent_Base_Class()
@@ -72,7 +72,9 @@ public interface PrivateContent extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -82,10 +84,10 @@ public interface PrivateContent extends EAElement {
 	 * Returns the value of the '<em><b>Private Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Private Element</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Private Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Private Element</em>' reference.
 	 * @see #setPrivateElement(NamedElement)
 	 * @see org.eclipse.papyrus.eastadl.variability.VariabilityPackage#getPrivateContent_PrivateElement()
@@ -98,7 +100,9 @@ public interface PrivateContent extends EAElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.variability.PrivateContent#getPrivateElement <em>Private Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Private Element</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Private Element</em>' reference.
 	 * @see #getPrivateElement()
 	 * @generated
 	 */

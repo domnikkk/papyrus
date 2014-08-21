@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.Element;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uml Diagram Element</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * The most general class for UML diagram interchange.
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,7 +38,7 @@ import org.eclipse.uml2.uml.Element;
  * <li>{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getSourceUmlEdge <em>Source Uml Edge</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement()
  * @model abstract="true"
  * @generated
@@ -59,7 +59,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * Restricts UMLDiagramElements to show UML Elements, rather than other language elements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Uml Model Element</em>' reference list.
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_UmlModelElement()
 	 * @model
@@ -80,7 +80,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * Restricts shared styles to UMLStyles.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Shared Uml Style</em>' reference.
 	 * @see #setSharedUmlStyle(UmlStyle)
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_SharedUmlStyle()
@@ -93,9 +93,9 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getSharedUmlStyle <em>Shared Uml Style</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Shared Uml Style</em>' reference.
+	 *            the new value of the '<em>Shared Uml Style</em>' reference.
 	 * @see #getSharedUmlStyle()
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * Restricts owned styles to UMLStyles.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Local Uml Style</em>' containment reference.
 	 * @see #setLocalUmlStyle(UmlStyle)
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_LocalUmlStyle()
@@ -127,9 +127,9 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.umldi.UmlDiagramElement#getLocalUmlStyle <em>Local Uml Style</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Local Uml Style</em>' containment reference.
+	 *            the new value of the '<em>Local Uml Style</em>' containment reference.
 	 * @see #getLocalUmlStyle()
 	 * @generated
 	 */
@@ -150,7 +150,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * Restricts UMLDiagramElements to be owned by only UMLDiagramElements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owning Uml Diagram Element</em>' container reference.
 	 * @see #setOwningUmlDiagramElement(UmlDiagramElement)
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_OwningUmlDiagramElement()
@@ -165,9 +165,9 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Owning Uml Diagram Element</em>' container reference.
+	 *            the new value of the '<em>Owning Uml Diagram Element</em>' container reference.
 	 * @see #getOwningUmlDiagramElement()
 	 * @generated
 	 */
@@ -189,7 +189,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * <!-- begin-model-doc -->
 	 * Restricts UMLDiagramElements to own only UMLDiagramElements.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Uml Diagram Element</em>' containment reference list.
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_OwnedUmlDiagramElement()
 	 * @see org.eclipse.papyrus.umldi.UmlDiagramElement#getOwningUmlDiagramElement
@@ -214,7 +214,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * If the meaning of the '<em>Target Uml Edge</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Uml Edge</em>' reference list.
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_TargetUmlEdge()
 	 * @see org.eclipse.papyrus.umldi.UmlEdge#getTargetUmlDiagramElement
@@ -239,7 +239,7 @@ public interface UmlDiagramElement extends DiagramElement {
 	 * If the meaning of the '<em>Source Uml Edge</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source Uml Edge</em>' reference list.
 	 * @see org.eclipse.papyrus.umldi.UMLDIPackage#getUmlDiagramElement_SourceUmlEdge()
 	 * @see org.eclipse.papyrus.umldi.UmlEdge#getSourceUmlDiagramElement

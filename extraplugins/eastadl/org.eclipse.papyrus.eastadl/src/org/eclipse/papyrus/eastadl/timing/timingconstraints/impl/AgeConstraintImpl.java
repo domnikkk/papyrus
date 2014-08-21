@@ -19,9 +19,9 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getMaximum <em>Maximum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getMinimum <em>Minimum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getScope <em>Scope</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getMaximum <em>Maximum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getMinimum <em>Minimum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.AgeConstraintImpl#getScope <em>Scope</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaximum()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getScope()
 	 * @generated
 	 * @ordered
@@ -61,6 +64,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AgeConstraintImpl() {
@@ -70,6 +74,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,15 +85,18 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getMaximum() {
 		if (maximum != null && maximum.eIsProxy()) {
-			InternalEObject oldMaximum = (InternalEObject)maximum;
-			maximum = (TimingExpression)eResolveProxy(oldMaximum);
+			InternalEObject oldMaximum = (InternalEObject) maximum;
+			maximum = (TimingExpression) eResolveProxy(oldMaximum);
 			if (maximum != oldMaximum) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM, oldMaximum, maximum));
+				}
 			}
 		}
 		return maximum;
@@ -97,6 +105,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetMaximum() {
@@ -106,27 +115,33 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMaximum(TimingExpression newMaximum) {
 		TimingExpression oldMaximum = maximum;
 		maximum = newMaximum;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM, oldMaximum, maximum));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getMinimum() {
 		if (minimum != null && minimum.eIsProxy()) {
-			InternalEObject oldMinimum = (InternalEObject)minimum;
-			minimum = (TimingExpression)eResolveProxy(oldMinimum);
+			InternalEObject oldMinimum = (InternalEObject) minimum;
+			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM, oldMinimum, minimum));
+				}
 			}
 		}
 		return minimum;
@@ -135,6 +150,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -144,27 +160,33 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM, oldMinimum, minimum));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventChain getScope() {
 		if (scope != null && scope.eIsProxy()) {
-			InternalEObject oldScope = (InternalEObject)scope;
-			scope = (EventChain)eResolveProxy(oldScope);
+			InternalEObject oldScope = (InternalEObject) scope;
+			scope = (EventChain) eResolveProxy(oldScope);
 			if (scope != oldScope) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE, oldScope, scope));
+				}
 			}
 		}
 		return scope;
@@ -173,6 +195,7 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EventChain basicGetScope() {
@@ -182,32 +205,42 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setScope(EventChain newScope) {
 		EventChain oldScope = scope;
 		scope = newScope;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE, oldScope, scope));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
-				if (resolve) return getMaximum();
-				return basicGetMaximum();
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
-				if (resolve) return getMinimum();
-				return basicGetMinimum();
-			case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
-				if (resolve) return getScope();
-				return basicGetScope();
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
+			if (resolve) {
+				return getMaximum();
+			}
+			return basicGetMaximum();
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
+			if (resolve) {
+				return getMinimum();
+			}
+			return basicGetMinimum();
+		case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
+			if (resolve) {
+				return getScope();
+			}
+			return basicGetScope();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,20 +248,21 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
-				setMaximum((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
-				setMinimum((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
-				setScope((EventChain)newValue);
-				return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
+			setMaximum((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
+			setMinimum((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
+			setScope((EventChain) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,20 +270,21 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
-				setMaximum((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
-				setMinimum((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
-				setScope((EventChain)null);
-				return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
+			setMaximum((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
+			setMinimum((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
+			setScope((EventChain) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -257,19 +292,20 @@ public class AgeConstraintImpl extends TimingConstraintImpl implements AgeConstr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
-				return maximum != null;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
-				return minimum != null;
-			case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
-				return scope != null;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MAXIMUM:
+			return maximum != null;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__MINIMUM:
+			return minimum != null;
+		case TimingconstraintsPackage.AGE_CONSTRAINT__SCOPE:
+			return scope != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AgeConstraintImpl
+} // AgeConstraintImpl

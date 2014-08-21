@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.dd.dg.Rotate;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.dd.dg.Rotate} object.
  * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RotateItemProvider extends TransformItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider, IItemFontProvider {
@@ -48,7 +48,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RotateItemProvider(AdapterFactory adapterFactory) {
@@ -58,12 +58,12 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addAnglePropertyDescriptor(object);
 		}
@@ -73,24 +73,24 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This adds a property descriptor for the Angle feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAnglePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Rotate_angle_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Rotate_angle_feature", "_UI_Rotate_type"), DGPackage.Literals.ROTATE__ANGLE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Rotate_angle_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Rotate_angle_feature", "_UI_Rotate_type"), DGPackage.Literals.ROTATE__ANGLE, true, false, false, ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if(childrenFeatures == null) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DGPackage.Literals.ROTATE__CENTER);
 		}
@@ -99,7 +99,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	/**
 	 * This returns Rotate.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,12 +124,12 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Rotate rotate = (Rotate)object;
+		Rotate rotate = (Rotate) object;
 		return getString("_UI_Rotate_type") + " " + rotate.getAngle();
 	}
 
@@ -138,13 +138,13 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(Rotate.class)) {
+		switch (notification.getFeatureID(Rotate.class)) {
 		case DGPackage.ROTATE__ANGLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -159,7 +159,7 @@ public class RotateItemProvider extends TransformItemProvider implements IEditin
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

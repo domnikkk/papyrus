@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.Element#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.Element#getComment <em>Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.Element#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.Element#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public interface Element extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The documentation associated to the element.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Documentation</em>' attribute.
 	 * @see #setDocumentation(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getElement_Documentation()
@@ -45,7 +46,9 @@ public interface Element extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Element#getDocumentation <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Documentation</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Documentation</em>' attribute.
 	 * @see #getDocumentation()
 	 * @generated
 	 */
@@ -58,6 +61,7 @@ public interface Element extends EObject {
 	 * <!-- begin-model-doc -->
 	 * A comment added to the element. This can be used to discuss about an element.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#getElement_Comment()
@@ -70,7 +74,9 @@ public interface Element extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.design.profile.architecture.Element#getComment <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comment</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Comment</em>' attribute.
 	 * @see #getComment()
 	 * @generated
 	 */

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.TextImpl#getAnchor <em>Anchor</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class TextImpl extends GraphicalElementImpl implements Text {
@@ -49,7 +49,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * The default value of the '{@link #getAnchor() <em>Anchor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAnchor()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * The cached value of the '{@link #getAnchor() <em>Anchor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAnchor()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TextImpl() {
@@ -109,7 +109,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,77 +119,88 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getData() {
 		return data;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setData(String newData) {
 		String oldData = data;
 		data = newData;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__DATA, oldData, data));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Point getPosition() {
 		return position;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPosition(Point newPosition, NotificationChain msgs) {
 		Point oldPosition = position;
 		position = newPosition;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__POSITION, oldPosition, newPosition);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setPosition(Point newPosition) {
-		if(newPosition != position) {
+		if (newPosition != position) {
 			NotificationChain msgs = null;
-			if(position != null)
-				msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
-			if(newPosition != null)
-				msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
+			if (position != null) {
+				msgs = ((InternalEObject) position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
+			}
+			if (newPosition != null) {
+				msgs = ((InternalEObject) newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DGPackage.TEXT__POSITION, null, msgs);
+			}
 			msgs = basicSetPosition(newPosition, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__POSITION, newPosition, newPosition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public TextAnchor getAnchor() {
 		return anchor;
 	}
@@ -197,14 +208,16 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAnchor(TextAnchor newAnchor) {
 		TextAnchor oldAnchor = anchor;
 		anchor = newAnchor == null ? ANCHOR_EDEFAULT : newAnchor;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TEXT__ANCHOR, oldAnchor, anchor));
+		}
 	}
 
 	/**
@@ -212,7 +225,7 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 	 * <em>Data Cannot Be Empty</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #dataCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -221,21 +234,23 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean dataCannotBeEmpty(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.TEXT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
+		return DGValidator.validate(DGPackage.Literals.TEXT, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, DATA_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.TEXT__DATA_CANNOT_BE_EMPTY);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TEXT__POSITION:
 			return basicSetPosition(null, msgs);
 		}
@@ -244,12 +259,12 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TEXT__DATA:
 			return getData();
 		case DGPackage.TEXT__POSITION:
@@ -262,20 +277,20 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TEXT__DATA:
-			setData((String)newValue);
+			setData((String) newValue);
 			return;
 		case DGPackage.TEXT__POSITION:
-			setPosition((Point)newValue);
+			setPosition((Point) newValue);
 			return;
 		case DGPackage.TEXT__ANCHOR:
-			setAnchor((TextAnchor)newValue);
+			setAnchor((TextAnchor) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,17 +298,17 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TEXT__DATA:
 			setData(DATA_EDEFAULT);
 			return;
 		case DGPackage.TEXT__POSITION:
-			setPosition((Point)null);
+			setPosition((Point) null);
 			return;
 		case DGPackage.TEXT__ANCHOR:
 			setAnchor(ANCHOR_EDEFAULT);
@@ -304,12 +319,12 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TEXT__DATA:
 			return DATA_EDEFAULT == null ? data != null : !DATA_EDEFAULT.equals(data);
 		case DGPackage.TEXT__POSITION:
@@ -322,28 +337,29 @@ public class TextImpl extends GraphicalElementImpl implements Text {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case DGPackage.TEXT___DATA_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP:
-			return dataCannotBeEmpty((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return dataCannotBeEmpty((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data: ");
 		result.append(data);

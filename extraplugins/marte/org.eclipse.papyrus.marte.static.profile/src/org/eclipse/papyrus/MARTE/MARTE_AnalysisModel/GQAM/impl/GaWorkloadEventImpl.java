@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,12 +33,12 @@ import org.eclipse.uml2.uml.TimeEvent;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getGenerator <em>Generator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getTrace <em>Trace</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getEffect <em>Effect</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getTimedEvent <em>Timed Event</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getPattern <em>Pattern</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getGenerator <em>Generator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getTrace <em>Trace</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getEffect <em>Effect</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getTimedEvent <em>Timed Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadEventImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The default value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPattern()
 	 * @generated
 	 * @ordered
@@ -59,6 +60,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPattern()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerator()
 	 * @generated
 	 * @ordered
@@ -79,6 +82,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getTrace() <em>Trace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTrace()
 	 * @generated
 	 * @ordered
@@ -89,6 +93,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEffect()
 	 * @generated
 	 * @ordered
@@ -99,6 +104,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getTimedEvent() <em>Timed Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTimedEvent()
 	 * @generated
 	 * @ordered
@@ -109,6 +115,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -118,6 +125,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GaWorkloadEventImpl() {
@@ -127,6 +135,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,8 +146,10 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPattern() {
 		return pattern;
 	}
@@ -146,27 +157,33 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPattern(String newPattern) {
 		String oldPattern = pattern;
 		pattern = newPattern;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__PATTERN, oldPattern, pattern));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GaWorkloadGenerator getGenerator() {
 		if (generator != null && generator.eIsProxy()) {
-			InternalEObject oldGenerator = (InternalEObject)generator;
-			generator = (GaWorkloadGenerator)eResolveProxy(oldGenerator);
+			InternalEObject oldGenerator = (InternalEObject) generator;
+			generator = (GaWorkloadGenerator) eResolveProxy(oldGenerator);
 			if (generator != oldGenerator) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR, oldGenerator, generator));
+				}
 			}
 		}
 		return generator;
@@ -175,6 +192,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GaWorkloadGenerator basicGetGenerator() {
@@ -184,27 +202,33 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setGenerator(GaWorkloadGenerator newGenerator) {
 		GaWorkloadGenerator oldGenerator = generator;
 		generator = newGenerator;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR, oldGenerator, generator));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GaEventTrace getTrace() {
 		if (trace != null && trace.eIsProxy()) {
-			InternalEObject oldTrace = (InternalEObject)trace;
-			trace = (GaEventTrace)eResolveProxy(oldTrace);
+			InternalEObject oldTrace = (InternalEObject) trace;
+			trace = (GaEventTrace) eResolveProxy(oldTrace);
 			if (trace != oldTrace) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_EVENT__TRACE, oldTrace, trace));
+				}
 			}
 		}
 		return trace;
@@ -213,6 +237,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GaEventTrace basicGetTrace() {
@@ -222,27 +247,33 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTrace(GaEventTrace newTrace) {
 		GaEventTrace oldTrace = trace;
 		trace = newTrace;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__TRACE, oldTrace, trace));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GaScenario getEffect() {
 		if (effect != null && effect.eIsProxy()) {
-			InternalEObject oldEffect = (InternalEObject)effect;
-			effect = (GaScenario)eResolveProxy(oldEffect);
+			InternalEObject oldEffect = (InternalEObject) effect;
+			effect = (GaScenario) eResolveProxy(oldEffect);
 			if (effect != oldEffect) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_EVENT__EFFECT, oldEffect, effect));
+				}
 			}
 		}
 		return effect;
@@ -251,6 +282,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GaScenario basicGetEffect() {
@@ -260,27 +292,33 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setEffect(GaScenario newEffect) {
 		GaScenario oldEffect = effect;
 		effect = newEffect;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__EFFECT, oldEffect, effect));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimeEvent getTimedEvent() {
 		if (timedEvent != null && timedEvent.eIsProxy()) {
-			InternalEObject oldTimedEvent = (InternalEObject)timedEvent;
-			timedEvent = (TimeEvent)eResolveProxy(oldTimedEvent);
+			InternalEObject oldTimedEvent = (InternalEObject) timedEvent;
+			timedEvent = (TimeEvent) eResolveProxy(oldTimedEvent);
 			if (timedEvent != oldTimedEvent) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT, oldTimedEvent, timedEvent));
+				}
 			}
 		}
 		return timedEvent;
@@ -289,6 +327,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimeEvent basicGetTimedEvent() {
@@ -298,27 +337,33 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTimedEvent(TimeEvent newTimedEvent) {
 		TimeEvent oldTimedEvent = timedEvent;
 		timedEvent = newTimedEvent;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT, oldTimedEvent, timedEvent));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -327,6 +372,7 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -336,40 +382,54 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
-				return getPattern();
-			case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
-				if (resolve) return getGenerator();
-				return basicGetGenerator();
-			case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
-				if (resolve) return getTrace();
-				return basicGetTrace();
-			case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
-				if (resolve) return getEffect();
-				return basicGetEffect();
-			case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
-				if (resolve) return getTimedEvent();
-				return basicGetTimedEvent();
-			case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
-				if (resolve) return getBase_NamedElement();
-				return basicGetBase_NamedElement();
+		case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
+			return getPattern();
+		case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
+			if (resolve) {
+				return getGenerator();
+			}
+			return basicGetGenerator();
+		case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
+			if (resolve) {
+				return getTrace();
+			}
+			return basicGetTrace();
+		case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
+			if (resolve) {
+				return getEffect();
+			}
+			return basicGetEffect();
+		case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
+			if (resolve) {
+				return getTimedEvent();
+			}
+			return basicGetTimedEvent();
+		case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
+			if (resolve) {
+				return getBase_NamedElement();
+			}
+			return basicGetBase_NamedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -377,29 +437,30 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
-				setPattern((String)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
-				setGenerator((GaWorkloadGenerator)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
-				setTrace((GaEventTrace)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
-				setEffect((GaScenario)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
-				setTimedEvent((TimeEvent)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)newValue);
-				return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
+			setPattern((String) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
+			setGenerator((GaWorkloadGenerator) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
+			setTrace((GaEventTrace) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
+			setEffect((GaScenario) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
+			setTimedEvent((TimeEvent) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -407,29 +468,30 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
-				setPattern(PATTERN_EDEFAULT);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
-				setGenerator((GaWorkloadGenerator)null);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
-				setTrace((GaEventTrace)null);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
-				setEffect((GaScenario)null);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
-				setTimedEvent((TimeEvent)null);
-				return;
-			case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)null);
-				return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
+			setPattern(PATTERN_EDEFAULT);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
+			setGenerator((GaWorkloadGenerator) null);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
+			setTrace((GaEventTrace) null);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
+			setEffect((GaScenario) null);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
+			setTimedEvent((TimeEvent) null);
+			return;
+		case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -437,23 +499,24 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
-				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
-			case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
-				return generator != null;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
-				return trace != null;
-			case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
-				return effect != null;
-			case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
-				return timedEvent != null;
-			case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
-				return base_NamedElement != null;
+		case GQAMPackage.GA_WORKLOAD_EVENT__PATTERN:
+			return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
+		case GQAMPackage.GA_WORKLOAD_EVENT__GENERATOR:
+			return generator != null;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TRACE:
+			return trace != null;
+		case GQAMPackage.GA_WORKLOAD_EVENT__EFFECT:
+			return effect != null;
+		case GQAMPackage.GA_WORKLOAD_EVENT__TIMED_EVENT:
+			return timedEvent != null;
+		case GQAMPackage.GA_WORKLOAD_EVENT__BASE_NAMED_ELEMENT:
+			return base_NamedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -461,11 +524,14 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (pattern: ");
@@ -474,4 +540,4 @@ public class GaWorkloadEventImpl extends EObjectImpl implements GaWorkloadEvent 
 		return result.toString();
 	}
 
-} //GaWorkloadEventImpl
+} // GaWorkloadEventImpl

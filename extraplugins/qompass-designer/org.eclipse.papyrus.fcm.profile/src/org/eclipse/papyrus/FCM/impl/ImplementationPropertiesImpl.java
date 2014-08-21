@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM.impl;
 
@@ -38,12 +38,12 @@ import org.eclipse.papyrus.FCM.TargetArchitecture;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSizeRAM <em>Size RAM</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSupportedOS <em>Supported OS</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getArch <em>Arch</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSizeROM <em>Size ROM</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSupportedTargetArch <em>Supported Target Arch</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSizeRAM <em>Size RAM</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSupportedOS <em>Supported OS</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getArch <em>Arch</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSizeROM <em>Size ROM</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ImplementationPropertiesImpl#getSupportedTargetArch <em>Supported Target Arch</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The default value of the '{@link #getSizeRAM() <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSizeRAM()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSizeRAM() <em>Size RAM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSizeRAM()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSupportedOS() <em>Supported OS</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSupportedOS()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getArch() <em>Arch</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getArch()
 	 * @generated
 	 * @ordered
@@ -94,6 +98,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -104,6 +109,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The default value of the '{@link #getSizeROM() <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSizeROM()
 	 * @generated
 	 * @ordered
@@ -114,6 +120,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSizeROM() <em>Size ROM</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSizeROM()
 	 * @generated
 	 * @ordered
@@ -124,6 +131,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	 * The cached value of the '{@link #getSupportedTargetArch() <em>Supported Target Arch</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSupportedTargetArch()
 	 * @generated
 	 * @ordered
@@ -133,6 +141,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ImplementationPropertiesImpl() {
@@ -142,6 +151,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,8 +162,10 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getSizeRAM() {
 		return sizeRAM;
 	}
@@ -161,20 +173,25 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSizeRAM(int newSizeRAM) {
 		int oldSizeRAM = sizeRAM;
 		sizeRAM = newSizeRAM;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM, oldSizeRAM, sizeRAM));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<OperatingSystem> getSupportedOS() {
 		if (supportedOS == null) {
 			supportedOS = new EObjectResolvingEList<OperatingSystem>(OperatingSystem.class, this, FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS);
@@ -185,8 +202,10 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<TargetArchitecture> getArch() {
 		if (arch == null) {
 			arch = new EObjectResolvingEList<TargetArchitecture>(TargetArchitecture.class, this, FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH);
@@ -197,15 +216,18 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -214,6 +236,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -223,20 +246,25 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getSizeROM() {
 		return sizeROM;
 	}
@@ -244,27 +272,33 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSizeROM(int newSizeROM) {
 		int oldSizeROM = sizeROM;
 		sizeROM = newSizeROM;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM, oldSizeROM, sizeROM));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TargetArchitecture getSupportedTargetArch() {
 		if (supportedTargetArch != null && supportedTargetArch.eIsProxy()) {
-			InternalEObject oldSupportedTargetArch = (InternalEObject)supportedTargetArch;
-			supportedTargetArch = (TargetArchitecture)eResolveProxy(oldSupportedTargetArch);
+			InternalEObject oldSupportedTargetArch = (InternalEObject) supportedTargetArch;
+			supportedTargetArch = (TargetArchitecture) eResolveProxy(oldSupportedTargetArch);
 			if (supportedTargetArch != oldSupportedTargetArch) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH, oldSupportedTargetArch, supportedTargetArch));
+				}
 			}
 		}
 		return supportedTargetArch;
@@ -273,6 +307,7 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TargetArchitecture basicGetSupportedTargetArch() {
@@ -282,37 +317,45 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSupportedTargetArch(TargetArchitecture newSupportedTargetArch) {
 		TargetArchitecture oldSupportedTargetArch = supportedTargetArch;
 		supportedTargetArch = newSupportedTargetArch;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH, oldSupportedTargetArch, supportedTargetArch));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
-				return getSizeRAM();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
-				return getSupportedOS();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
-				return getArch();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
-				return getSizeROM();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
-				if (resolve) return getSupportedTargetArch();
-				return basicGetSupportedTargetArch();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
+			return getSizeRAM();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
+			return getSupportedOS();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
+			return getArch();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
+			return getSizeROM();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
+			if (resolve) {
+				return getSupportedTargetArch();
+			}
+			return basicGetSupportedTargetArch();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -320,32 +363,33 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
-				setSizeRAM((Integer)newValue);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
-				getSupportedOS().clear();
-				getSupportedOS().addAll((Collection<? extends OperatingSystem>)newValue);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
-				getArch().clear();
-				getArch().addAll((Collection<? extends TargetArchitecture>)newValue);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
-				setSizeROM((Integer)newValue);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
-				setSupportedTargetArch((TargetArchitecture)newValue);
-				return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
+			setSizeRAM((Integer) newValue);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
+			getSupportedOS().clear();
+			getSupportedOS().addAll((Collection<? extends OperatingSystem>) newValue);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
+			getArch().clear();
+			getArch().addAll((Collection<? extends TargetArchitecture>) newValue);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
+			setSizeROM((Integer) newValue);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
+			setSupportedTargetArch((TargetArchitecture) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -353,29 +397,30 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
-				setSizeRAM(SIZE_RAM_EDEFAULT);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
-				getSupportedOS().clear();
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
-				getArch().clear();
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
-				setSizeROM(SIZE_ROM_EDEFAULT);
-				return;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
-				setSupportedTargetArch((TargetArchitecture)null);
-				return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
+			setSizeRAM(SIZE_RAM_EDEFAULT);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
+			getSupportedOS().clear();
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
+			getArch().clear();
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
+			setSizeROM(SIZE_ROM_EDEFAULT);
+			return;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
+			setSupportedTargetArch((TargetArchitecture) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -383,23 +428,24 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
-				return sizeRAM != SIZE_RAM_EDEFAULT;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
-				return supportedOS != null && !supportedOS.isEmpty();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
-				return arch != null && !arch.isEmpty();
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
-				return base_Class != null;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
-				return sizeROM != SIZE_ROM_EDEFAULT;
-			case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
-				return supportedTargetArch != null;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_RAM:
+			return sizeRAM != SIZE_RAM_EDEFAULT;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_OS:
+			return supportedOS != null && !supportedOS.isEmpty();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__ARCH:
+			return arch != null && !arch.isEmpty();
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__BASE_CLASS:
+			return base_Class != null;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SIZE_ROM:
+			return sizeROM != SIZE_ROM_EDEFAULT;
+		case FCMPackage.IMPLEMENTATION_PROPERTIES__SUPPORTED_TARGET_ARCH:
+			return supportedTargetArch != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -407,11 +453,14 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sizeRAM: "); //$NON-NLS-1$
@@ -422,4 +471,4 @@ public class ImplementationPropertiesImpl extends EObjectImpl implements Impleme
 		return result.toString();
 	}
 
-} //ImplementationPropertiesImpl
+} // ImplementationPropertiesImpl

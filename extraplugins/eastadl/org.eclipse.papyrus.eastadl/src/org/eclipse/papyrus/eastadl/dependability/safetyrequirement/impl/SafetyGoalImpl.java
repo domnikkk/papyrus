@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.Requirement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getDerivedFrom <em>Derived From</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getRequirement <em>Requirement</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getHazardClassification <em>Hazard Classification</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getSafeState <em>Safe State</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getDerivedFrom <em>Derived From</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getRequirement <em>Requirement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getHazardClassification <em>Hazard Classification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.impl.SafetyGoalImpl#getSafeState <em>Safe State</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getDerivedFrom() <em>Derived From</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDerivedFrom()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRequirement()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The default value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -94,6 +98,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getHazardClassification() <em>Hazard Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHazardClassification()
 	 * @generated
 	 * @ordered
@@ -104,6 +109,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	 * The cached value of the '{@link #getSafeState() <em>Safe State</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSafeState()
 	 * @generated
 	 * @ordered
@@ -113,6 +119,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SafetyGoalImpl() {
@@ -122,22 +129,25 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
-				return getDerivedFrom();
-			case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
-				return getRequirement();
-			case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
-				return getHazardClassification();
-			case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
-				return getSafeState();
+		case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
+			return getDerivedFrom();
+		case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
+			return getRequirement();
+		case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
+			return getHazardClassification();
+		case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
+			return getSafeState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,21 +155,22 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
-				return derivedFrom != null && !derivedFrom.isEmpty();
-			case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
-				return base_Class != null;
-			case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
-				return requirement != null && !requirement.isEmpty();
-			case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
-				return hazardClassification != HAZARD_CLASSIFICATION_EDEFAULT;
-			case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
-				return safeState != null && !safeState.isEmpty();
+		case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
+			return derivedFrom != null && !derivedFrom.isEmpty();
+		case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
+			return base_Class != null;
+		case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
+			return requirement != null && !requirement.isEmpty();
+		case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
+			return hazardClassification != HAZARD_CLASSIFICATION_EDEFAULT;
+		case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
+			return safeState != null && !safeState.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -167,30 +178,31 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
-				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends HazardousEvent>)newValue);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
-				getRequirement().clear();
-				getRequirement().addAll((Collection<? extends Requirement>)newValue);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
-				setHazardClassification((ASILKind)newValue);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
-				getSafeState().clear();
-				getSafeState().addAll((Collection<? extends Mode>)newValue);
-				return;
+		case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
+			getDerivedFrom().clear();
+			getDerivedFrom().addAll((Collection<? extends HazardousEvent>) newValue);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
+			getRequirement().clear();
+			getRequirement().addAll((Collection<? extends Requirement>) newValue);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
+			setHazardClassification((ASILKind) newValue);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
+			getSafeState().clear();
+			getSafeState().addAll((Collection<? extends Mode>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,6 +210,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -208,26 +221,27 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
-				getDerivedFrom().clear();
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
-				getRequirement().clear();
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
-				setHazardClassification(HAZARD_CLASSIFICATION_EDEFAULT);
-				return;
-			case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
-				getSafeState().clear();
-				return;
+		case SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM:
+			getDerivedFrom().clear();
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT:
+			getRequirement().clear();
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION:
+			setHazardClassification(HAZARD_CLASSIFICATION_EDEFAULT);
+			return;
+		case SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE:
+			getSafeState().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -235,8 +249,10 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HazardousEvent> getDerivedFrom() {
 		if (derivedFrom == null) {
 			derivedFrom = new EObjectResolvingEList<HazardousEvent>(HazardousEvent.class, this, SafetyrequirementPackage.SAFETY_GOAL__DERIVED_FROM);
@@ -247,8 +263,10 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ASILKind getHazardClassification() {
 		return hazardClassification;
 	}
@@ -256,20 +274,25 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setHazardClassification(ASILKind newHazardClassification) {
 		ASILKind oldHazardClassification = hazardClassification;
 		hazardClassification = newHazardClassification == null ? HAZARD_CLASSIFICATION_EDEFAULT : newHazardClassification;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyrequirementPackage.SAFETY_GOAL__HAZARD_CLASSIFICATION, oldHazardClassification, hazardClassification));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Mode> getSafeState() {
 		if (safeState == null) {
 			safeState = new EObjectResolvingEList<Mode>(Mode.class, this, SafetyrequirementPackage.SAFETY_GOAL__SAFE_STATE);
@@ -280,8 +303,10 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Requirement> getRequirement() {
 		if (requirement == null) {
 			requirement = new EObjectResolvingEList<Requirement>(Requirement.class, this, SafetyrequirementPackage.SAFETY_GOAL__REQUIREMENT);
@@ -292,15 +317,18 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -309,6 +337,7 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -318,23 +347,29 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyrequirementPackage.SAFETY_GOAL__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (hazardClassification: ");
@@ -343,4 +378,4 @@ public class SafetyGoalImpl extends EAElementImpl implements SafetyGoal {
 		return result.toString();
 	}
 
-} //SafetyGoalImpl
+} // SafetyGoalImpl

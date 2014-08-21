@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,19 @@ import org.eclipse.uml2.uml.Parameter;
 
 public class CS_DispatchOperationOfInterfaceStrategy extends RedefinitionBasedDispatchStrategy {
 
+	@Override
 	public Boolean operationsMatch(Operation ownedOperation, Operation baseOperation) {
-		// Override operationsMatch, in the case where baseOperation belongs 
+		// Override operationsMatch, in the case where baseOperation belongs
 		// to an Interface.
 		// In this case, ownedOperation matches baseOperation if it has the same name and signature
 		// Otherwise, behaves like fUML RedefinitionBasedDispatchStrategy
 		boolean matches = true;
-		if(baseOperation.getNamespace() instanceof Interface) {
+		if (baseOperation.getNamespace() instanceof Interface) {
 			matches = (baseOperation.getName().equals(ownedOperation.getName()));
 			matches = matches && (baseOperation.getOwnedParameters().size() == ownedOperation.getOwnedParameters().size());
 			List<Parameter> ownedOperationParameters = ownedOperation.getOwnedParameters();
 			List<Parameter> baseOperationParameters = baseOperation.getOwnedParameters();
-			for(int i = 0; matches == true && i < ownedOperationParameters.size(); i++) {
+			for (int i = 0; matches == true && i < ownedOperationParameters.size(); i++) {
 				Parameter ownedParameter = ownedOperationParameters.get(i);
 				Parameter baseParameter = baseOperationParameters.get(i);
 				matches = (ownedParameter.getType() == baseParameter.getType());

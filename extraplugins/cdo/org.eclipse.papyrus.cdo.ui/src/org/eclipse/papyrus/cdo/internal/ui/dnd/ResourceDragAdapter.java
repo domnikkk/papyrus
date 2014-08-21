@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,14 +53,14 @@ public class ResourceDragAdapter extends DragSourceAdapter {
 	}
 
 	protected IStructuredSelection getViewerSelection() {
-		return (IStructuredSelection)viewer.getSelection();
+		return (IStructuredSelection) viewer.getSelection();
 	}
 
 	@Override
 	public void dragStart(DragSourceEvent event) {
 		IStructuredSelection selection = getViewerSelection();
 		event.doit = acceptSelection(selection.toList());
-		if(event.doit) {
+		if (event.doit) {
 			lastDragTimestamp = System.currentTimeMillis();
 			LocalSelectionTransfer.getTransfer().setSelection(selection);
 			LocalSelectionTransfer.getTransfer().setSelectionSetTime(lastDragTimestamp);
@@ -69,7 +69,7 @@ public class ResourceDragAdapter extends DragSourceAdapter {
 
 	@Override
 	public void dragFinished(DragSourceEvent event) {
-		if(LocalSelectionTransfer.getTransfer().getSelectionSetTime() == lastDragTimestamp) {
+		if (LocalSelectionTransfer.getTransfer().getSelectionSetTime() == lastDragTimestamp) {
 			// clear the selection
 			LocalSelectionTransfer.getTransfer().setSelection(null);
 		}
@@ -81,12 +81,12 @@ public class ResourceDragAdapter extends DragSourceAdapter {
 
 	@Override
 	public void dragSetData(DragSourceEvent event) {
-		for(Transfer transfer : TRANSFERS) {
-			if(transfer.isSupportedType(event.dataType)) {
-				if(transfer instanceof LocalSelectionTransfer) {
+		for (Transfer transfer : TRANSFERS) {
+			if (transfer.isSupportedType(event.dataType)) {
+				if (transfer instanceof LocalSelectionTransfer) {
 					// pass the selection along through the event
 					event.data = getViewerSelection();
-				} else if(transfer instanceof PluginTransfer) {
+				} else if (transfer instanceof PluginTransfer) {
 					CDOResourceURITransferData data = getResourceURIs(getViewerSelection());
 					event.data = new PluginTransferData(ResourceDropActionDelegate.DROP_ACTION_ID, data.serialize());
 				}
@@ -95,6 +95,6 @@ public class ResourceDragAdapter extends DragSourceAdapter {
 	}
 
 	protected CDOResourceURITransferData getResourceURIs(IStructuredSelection selection) {
-		return new CDOResourceURITransferData(Iterables.filter(Iterables.transform((List<?>)selection.toList(), CDOFunctions.adapt(CDOResourceNode.class)), Predicates.notNull()));
+		return new CDOResourceURITransferData(Iterables.filter(Iterables.transform((List<?>) selection.toList(), CDOFunctions.adapt(CDOResourceNode.class)), Predicates.notNull()));
 	}
 }

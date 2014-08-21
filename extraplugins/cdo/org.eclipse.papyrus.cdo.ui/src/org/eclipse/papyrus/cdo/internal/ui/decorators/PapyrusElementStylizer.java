@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,21 +34,21 @@ public class PapyrusElementStylizer
 		Image result;
 
 		switch (state) {
-			case LOCKED_LOCALLY :
-				result = SharedImages
+		case LOCKED_LOCALLY:
+			result = SharedImages
 					.getImage(Activator.ICON_SELF_LOCKED_OVERLAY16);
-				break;
-			case LOCKED_REMOTELY :
-				result = SharedImages
+			break;
+		case LOCKED_REMOTELY:
+			result = SharedImages
 					.getImage(Activator.ICON_OTHER_LOCKED_OVERLAY16);
-				break;
-			case CONFLICT :
-				result = SharedImages
+			break;
+		case CONFLICT:
+			result = SharedImages
 					.getImage(Activator.ICON_CONFLICTED_OVERLAY16);
-				break;
-			default :
-				result = super.getImage(element, state);
-				break;
+			break;
+		default:
+			result = super.getImage(element, state);
+			break;
 		}
 
 		return result;
@@ -77,15 +77,15 @@ public class PapyrusElementStylizer
 
 			DawnState state;
 			switch (type) {
-				case DawnAppearancer.TYPE_LOCKED_GLOBALLY :
-					state = DawnState.LOCKED_REMOTELY;
-					break;
-				case DawnAppearancer.TYPE_LOCKED_LOCALLY :
-					state = DawnState.LOCKED_LOCALLY;
-					break;
-				default :
-					state = DawnState.LOCKED_REMOTELY;
-					break;
+			case DawnAppearancer.TYPE_LOCKED_GLOBALLY:
+				state = DawnState.LOCKED_REMOTELY;
+				break;
+			case DawnAppearancer.TYPE_LOCKED_LOCALLY:
+				state = DawnState.LOCKED_LOCALLY;
+				break;
+			default:
+				state = DawnState.LOCKED_REMOTELY;
+				break;
 			}
 
 			setState(eObject, state);

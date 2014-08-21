@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel#getJavaProject <em>Java Project</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaModel#getJavaProject <em>Java Project</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +52,7 @@ public interface JDTJavaModel extends JDTParentJavaElement {
 	 * If the meaning of the '<em>Java Project</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Java Project</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTJavaModel_JavaProject()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaProject#getJavaModel

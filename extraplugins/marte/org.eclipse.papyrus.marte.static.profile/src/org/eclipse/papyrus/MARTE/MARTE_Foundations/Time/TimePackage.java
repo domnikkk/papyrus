@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,12 +24,13 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NFPsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimeFactory
  * @model kind="package"
  * @generated
@@ -39,6 +40,7 @@ public interface TimePackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "Time";
@@ -47,6 +49,7 @@ public interface TimePackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/Time/1";
@@ -55,6 +58,7 @@ public interface TimePackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "Time";
@@ -63,6 +67,7 @@ public interface TimePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	TimePackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl.init();
@@ -71,6 +76,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDomainImpl <em>Timed Domain</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDomainImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedDomain()
 	 * @generated
@@ -81,6 +87,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -90,6 +97,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +107,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockImpl <em>Clock</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClock()
 	 * @generated
@@ -109,6 +118,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Standard</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +128,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -127,6 +138,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +148,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -145,6 +158,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -154,6 +168,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +178,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -172,6 +188,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockTypeImpl <em>Clock Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockTypeImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClockType()
 	 * @generated
@@ -182,6 +199,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Nature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -191,6 +209,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Unit Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -200,6 +219,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Logical</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -209,6 +229,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Resol Attr</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -218,6 +239,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Max Val Attr</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -227,6 +249,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Offset Attr</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -236,6 +259,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Get Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -245,6 +269,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Set Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -254,6 +279,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Index To Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -263,6 +289,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -272,6 +299,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Clock Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -281,6 +309,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl <em>Timed Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedElement()
 	 * @generated
@@ -291,6 +320,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -300,6 +330,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -309,6 +340,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedValueSpecificationImpl <em>Timed Value Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedValueSpecificationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedValueSpecification()
 	 * @generated
@@ -319,6 +351,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -328,6 +361,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Interpretation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -337,6 +371,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Value Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -346,6 +381,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Value Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -355,6 +391,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl <em>Timed Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedConstraint()
 	 * @generated
@@ -365,6 +402,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -374,6 +412,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -383,6 +422,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -392,6 +432,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -401,6 +442,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Interpretation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -410,6 +452,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -419,6 +462,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClockConstraint()
 	 * @generated
@@ -429,6 +473,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -438,6 +483,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Constraint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -447,6 +493,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Mode</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -456,6 +503,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -465,6 +513,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Coincidence Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -474,6 +523,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Precedence Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -483,6 +533,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Is Chronometric Based</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -492,6 +543,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Clock Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -501,6 +553,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl <em>Timed Instant Observation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedInstantObservation()
 	 * @generated
@@ -511,6 +564,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -520,6 +574,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Obs Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -529,6 +584,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Time Observation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -538,6 +594,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Instant Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -547,6 +604,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl <em>Timed Duration Observation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedDurationObservation()
 	 * @generated
@@ -557,6 +615,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -566,6 +625,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Obs Kind</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -575,6 +635,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Duration Observation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -584,6 +645,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Duration Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -593,6 +655,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedEventImpl <em>Timed Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedEventImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedEvent()
 	 * @generated
@@ -603,6 +666,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -612,6 +676,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Repetition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -621,6 +686,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Time Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -630,6 +696,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Every</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -639,6 +706,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -648,6 +716,7 @@ public interface TimePackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedProcessingImpl <em>Timed Processing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedProcessingImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedProcessing()
 	 * @generated
@@ -658,6 +727,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>On</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -667,6 +737,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -676,6 +747,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -685,6 +757,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -694,6 +767,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -703,6 +777,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -712,6 +787,7 @@ public interface TimePackage extends EPackage {
 	 * The feature id for the '<em><b>Finish</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -721,6 +797,7 @@ public interface TimePackage extends EPackage {
 	 * The number of structural features of the '<em>Timed Processing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -731,6 +808,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDomain <em>Timed Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Domain</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDomain
 	 * @generated
@@ -741,6 +819,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDomain#getBase_Namespace <em>Base Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Namespace</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDomain#getBase_Namespace()
 	 * @see #getTimedDomain()
@@ -752,6 +831,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock <em>Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Clock</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock
 	 * @generated
@@ -762,6 +842,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getStandard <em>Standard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Standard</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getStandard()
 	 * @see #getClock()
@@ -773,6 +854,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_InstanceSpecification <em>Base Instance Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Instance Specification</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_InstanceSpecification()
 	 * @see #getClock()
@@ -784,6 +866,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getType()
 	 * @see #getClock()
@@ -795,6 +878,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getUnit()
 	 * @see #getClock()
@@ -806,6 +890,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Property()
 	 * @see #getClock()
@@ -817,6 +902,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Event <em>Base Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.Clock#getBase_Event()
 	 * @see #getClock()
@@ -828,6 +914,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType <em>Clock Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Clock Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType
 	 * @generated
@@ -838,6 +925,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getNature <em>Nature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Nature</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getNature()
 	 * @see #getClockType()
@@ -849,6 +937,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getUnitType <em>Unit Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Unit Type</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getUnitType()
 	 * @see #getClockType()
@@ -860,6 +949,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#isIsLogical <em>Is Logical</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Logical</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#isIsLogical()
 	 * @see #getClockType()
@@ -871,6 +961,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getResolAttr <em>Resol Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Resol Attr</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getResolAttr()
 	 * @see #getClockType()
@@ -882,6 +973,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getMaxValAttr <em>Max Val Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Max Val Attr</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getMaxValAttr()
 	 * @see #getClockType()
@@ -893,6 +985,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getOffsetAttr <em>Offset Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Offset Attr</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getOffsetAttr()
 	 * @see #getClockType()
@@ -904,6 +997,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getGetTime <em>Get Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Get Time</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getGetTime()
 	 * @see #getClockType()
@@ -915,6 +1009,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getSetTime <em>Set Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Set Time</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getSetTime()
 	 * @see #getClockType()
@@ -926,6 +1021,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getIndexToValue <em>Index To Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Index To Value</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getIndexToValue()
 	 * @see #getClockType()
@@ -937,6 +1033,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockType#getBase_Class()
 	 * @see #getClockType()
@@ -948,6 +1045,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement <em>Timed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Element</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement
 	 * @generated
@@ -958,6 +1056,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement#getOn <em>On</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>On</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement#getOn()
 	 * @see #getTimedElement()
@@ -969,6 +1068,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification <em>Timed Value Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Value Specification</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification
 	 * @generated
@@ -979,6 +1079,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getInterpretation <em>Interpretation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Interpretation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getInterpretation()
 	 * @see #getTimedValueSpecification()
@@ -990,6 +1091,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getBase_ValueSpecification <em>Base Value Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Value Specification</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedValueSpecification#getBase_ValueSpecification()
 	 * @see #getTimedValueSpecification()
@@ -1001,6 +1103,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedConstraint <em>Timed Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Constraint</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedConstraint
 	 * @generated
@@ -1011,6 +1114,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedConstraint#getInterpretation <em>Interpretation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Interpretation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedConstraint#getInterpretation()
 	 * @see #getTimedConstraint()
@@ -1022,6 +1126,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Clock Constraint</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint
 	 * @generated
@@ -1032,6 +1137,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsCoincidenceBased <em>Is Coincidence Based</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Coincidence Based</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsCoincidenceBased()
 	 * @see #getClockConstraint()
@@ -1043,6 +1149,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsPrecedenceBased <em>Is Precedence Based</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Precedence Based</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsPrecedenceBased()
 	 * @see #getClockConstraint()
@@ -1054,6 +1161,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsChronometricBased <em>Is Chronometric Based</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Chronometric Based</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.ClockConstraint#isIsChronometricBased()
 	 * @see #getClockConstraint()
@@ -1065,6 +1173,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation <em>Timed Instant Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Instant Observation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation
 	 * @generated
@@ -1075,6 +1184,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getObsKind <em>Obs Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Obs Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getObsKind()
 	 * @see #getTimedInstantObservation()
@@ -1086,6 +1196,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getBase_TimeObservation <em>Base Time Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Time Observation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedInstantObservation#getBase_TimeObservation()
 	 * @see #getTimedInstantObservation()
@@ -1097,6 +1208,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation <em>Timed Duration Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Duration Observation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation
 	 * @generated
@@ -1107,6 +1219,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getObsKind <em>Obs Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Obs Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getObsKind()
 	 * @see #getTimedDurationObservation()
@@ -1118,6 +1231,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation <em>Base Duration Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Duration Observation</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedDurationObservation#getBase_DurationObservation()
 	 * @see #getTimedDurationObservation()
@@ -1129,6 +1243,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent <em>Timed Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent
 	 * @generated
@@ -1139,6 +1254,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getRepetition <em>Repetition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Repetition</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getRepetition()
 	 * @see #getTimedEvent()
@@ -1150,6 +1266,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getBase_TimeEvent <em>Base Time Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Time Event</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getBase_TimeEvent()
 	 * @see #getTimedEvent()
@@ -1161,6 +1278,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getEvery <em>Every</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Every</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedEvent#getEvery()
 	 * @see #getTimedEvent()
@@ -1172,6 +1290,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing <em>Timed Processing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Timed Processing</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing
 	 * @generated
@@ -1182,6 +1301,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Action <em>Base Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Action</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Action()
 	 * @see #getTimedProcessing()
@@ -1193,6 +1313,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Behavior <em>Base Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Behavior</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Behavior()
 	 * @see #getTimedProcessing()
@@ -1204,6 +1325,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Message <em>Base Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Message</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getBase_Message()
 	 * @see #getTimedProcessing()
@@ -1215,6 +1337,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getDuration <em>Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Duration</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getDuration()
 	 * @see #getTimedProcessing()
@@ -1226,6 +1349,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getStart()
 	 * @see #getTimedProcessing()
@@ -1237,6 +1361,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getFinish <em>Finish</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Finish</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing#getFinish()
 	 * @see #getTimedProcessing()
@@ -1248,6 +1373,7 @@ public interface TimePackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1257,12 +1383,13 @@ public interface TimePackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -1270,6 +1397,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDomainImpl <em>Timed Domain</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDomainImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedDomain()
 		 * @generated
@@ -1280,6 +1408,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_DOMAIN__BASE_NAMESPACE = eINSTANCE.getTimedDomain_Base_Namespace();
@@ -1288,6 +1417,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockImpl <em>Clock</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClock()
 		 * @generated
@@ -1298,6 +1428,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Standard</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK__STANDARD = eINSTANCE.getClock_Standard();
@@ -1306,6 +1437,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Instance Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK__BASE_INSTANCE_SPECIFICATION = eINSTANCE.getClock_Base_InstanceSpecification();
@@ -1314,6 +1446,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK__TYPE = eINSTANCE.getClock_Type();
@@ -1322,6 +1455,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK__UNIT = eINSTANCE.getClock_Unit();
@@ -1330,6 +1464,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK__BASE_PROPERTY = eINSTANCE.getClock_Base_Property();
@@ -1338,6 +1473,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK__BASE_EVENT = eINSTANCE.getClock_Base_Event();
@@ -1346,6 +1482,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockTypeImpl <em>Clock Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockTypeImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClockType()
 		 * @generated
@@ -1356,6 +1493,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nature</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK_TYPE__NATURE = eINSTANCE.getClockType_Nature();
@@ -1364,6 +1502,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__UNIT_TYPE = eINSTANCE.getClockType_UnitType();
@@ -1372,6 +1511,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Logical</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK_TYPE__IS_LOGICAL = eINSTANCE.getClockType_IsLogical();
@@ -1380,6 +1520,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Resol Attr</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__RESOL_ATTR = eINSTANCE.getClockType_ResolAttr();
@@ -1388,6 +1529,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max Val Attr</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__MAX_VAL_ATTR = eINSTANCE.getClockType_MaxValAttr();
@@ -1396,6 +1538,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Offset Attr</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__OFFSET_ATTR = eINSTANCE.getClockType_OffsetAttr();
@@ -1404,6 +1547,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Time</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__GET_TIME = eINSTANCE.getClockType_GetTime();
@@ -1412,6 +1556,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Time</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__SET_TIME = eINSTANCE.getClockType_SetTime();
@@ -1420,6 +1565,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Index To Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__INDEX_TO_VALUE = eINSTANCE.getClockType_IndexToValue();
@@ -1428,6 +1574,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CLOCK_TYPE__BASE_CLASS = eINSTANCE.getClockType_Base_Class();
@@ -1436,6 +1583,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl <em>Timed Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedElementImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedElement()
 		 * @generated
@@ -1446,6 +1594,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>On</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_ELEMENT__ON = eINSTANCE.getTimedElement_On();
@@ -1454,6 +1603,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedValueSpecificationImpl <em>Timed Value Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedValueSpecificationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedValueSpecification()
 		 * @generated
@@ -1464,6 +1614,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Interpretation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TIMED_VALUE_SPECIFICATION__INTERPRETATION = eINSTANCE.getTimedValueSpecification_Interpretation();
@@ -1472,6 +1623,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Value Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_VALUE_SPECIFICATION__BASE_VALUE_SPECIFICATION = eINSTANCE.getTimedValueSpecification_Base_ValueSpecification();
@@ -1480,6 +1632,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl <em>Timed Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedConstraint()
 		 * @generated
@@ -1490,6 +1643,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Interpretation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TIMED_CONSTRAINT__INTERPRETATION = eINSTANCE.getTimedConstraint_Interpretation();
@@ -1498,6 +1652,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.ClockConstraintImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getClockConstraint()
 		 * @generated
@@ -1508,6 +1663,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Coincidence Based</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__IS_COINCIDENCE_BASED = eINSTANCE.getClockConstraint_IsCoincidenceBased();
@@ -1516,6 +1672,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Precedence Based</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__IS_PRECEDENCE_BASED = eINSTANCE.getClockConstraint_IsPrecedenceBased();
@@ -1524,6 +1681,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Chronometric Based</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__IS_CHRONOMETRIC_BASED = eINSTANCE.getClockConstraint_IsChronometricBased();
@@ -1532,6 +1690,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl <em>Timed Instant Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedInstantObservationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedInstantObservation()
 		 * @generated
@@ -1542,6 +1701,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Obs Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TIMED_INSTANT_OBSERVATION__OBS_KIND = eINSTANCE.getTimedInstantObservation_ObsKind();
@@ -1550,6 +1710,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Time Observation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_INSTANT_OBSERVATION__BASE_TIME_OBSERVATION = eINSTANCE.getTimedInstantObservation_Base_TimeObservation();
@@ -1558,6 +1719,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl <em>Timed Duration Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedDurationObservationImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedDurationObservation()
 		 * @generated
@@ -1568,6 +1730,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Obs Kind</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TIMED_DURATION_OBSERVATION__OBS_KIND = eINSTANCE.getTimedDurationObservation_ObsKind();
@@ -1576,6 +1739,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Duration Observation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_DURATION_OBSERVATION__BASE_DURATION_OBSERVATION = eINSTANCE.getTimedDurationObservation_Base_DurationObservation();
@@ -1584,6 +1748,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedEventImpl <em>Timed Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedEventImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedEvent()
 		 * @generated
@@ -1594,6 +1759,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Repetition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TIMED_EVENT__REPETITION = eINSTANCE.getTimedEvent_Repetition();
@@ -1602,6 +1768,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Time Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_EVENT__BASE_TIME_EVENT = eINSTANCE.getTimedEvent_Base_TimeEvent();
@@ -1610,6 +1777,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Every</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_EVENT__EVERY = eINSTANCE.getTimedEvent_Every();
@@ -1618,6 +1786,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedProcessingImpl <em>Timed Processing</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedProcessingImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimePackageImpl#getTimedProcessing()
 		 * @generated
@@ -1628,6 +1797,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Action</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__BASE_ACTION = eINSTANCE.getTimedProcessing_Base_Action();
@@ -1636,6 +1806,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__BASE_BEHAVIOR = eINSTANCE.getTimedProcessing_Base_Behavior();
@@ -1644,6 +1815,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Message</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__BASE_MESSAGE = eINSTANCE.getTimedProcessing_Base_Message();
@@ -1652,6 +1824,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Duration</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__DURATION = eINSTANCE.getTimedProcessing_Duration();
@@ -1660,6 +1833,7 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__START = eINSTANCE.getTimedProcessing_Start();
@@ -1668,10 +1842,11 @@ public interface TimePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Finish</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TIMED_PROCESSING__FINISH = eINSTANCE.getTimedProcessing_Finish();
 
 	}
 
-} //TimePackage
+} // TimePackage

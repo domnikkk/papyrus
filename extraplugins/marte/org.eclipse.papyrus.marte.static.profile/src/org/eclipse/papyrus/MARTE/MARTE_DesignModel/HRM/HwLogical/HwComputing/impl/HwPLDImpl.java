@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,13 +33,13 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMem
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getTechnology <em>Technology</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getOrganization <em>Organization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNbLUTs <em>Nb LU Ts</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNdLUT_Inputs <em>Nd LUT Inputs</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNbFlipFlops <em>Nb Flip Flops</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getBlocksRAM <em>Blocks RAM</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getBlocksComputing <em>Blocks Computing</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getTechnology <em>Technology</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getOrganization <em>Organization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNbLUTs <em>Nb LU Ts</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNdLUT_Inputs <em>Nd LUT Inputs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getNbFlipFlops <em>Nb Flip Flops</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getBlocksRAM <em>Blocks RAM</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwComputing.impl.HwPLDImpl#getBlocksComputing <em>Blocks Computing</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTechnology()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTechnology()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNbLUTs() <em>Nb LU Ts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbLUTs()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNbLUTs() <em>Nb LU Ts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbLUTs()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNdLUT_Inputs() <em>Nd LUT Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNdLUT_Inputs()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNdLUT_Inputs() <em>Nd LUT Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNdLUT_Inputs()
 	 * @generated
 	 * @ordered
@@ -130,6 +138,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The default value of the '{@link #getNbFlipFlops() <em>Nb Flip Flops</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbFlipFlops()
 	 * @generated
 	 * @ordered
@@ -140,6 +149,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getNbFlipFlops() <em>Nb Flip Flops</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNbFlipFlops()
 	 * @generated
 	 * @ordered
@@ -150,6 +160,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getBlocksRAM() <em>Blocks RAM</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBlocksRAM()
 	 * @generated
 	 * @ordered
@@ -160,6 +171,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	 * The cached value of the '{@link #getBlocksComputing() <em>Blocks Computing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBlocksComputing()
 	 * @generated
 	 * @ordered
@@ -169,6 +181,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwPLDImpl() {
@@ -178,6 +191,7 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,8 +202,10 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PLD_Technology getTechnology() {
 		return technology;
 	}
@@ -197,20 +213,25 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTechnology(PLD_Technology newTechnology) {
 		PLD_Technology oldTechnology = technology;
 		technology = newTechnology == null ? TECHNOLOGY_EDEFAULT : newTechnology;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PLD__TECHNOLOGY, oldTechnology, technology));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getOrganization() {
 		return organization;
 	}
@@ -218,20 +239,25 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOrganization(String newOrganization) {
 		String oldOrganization = organization;
 		organization = newOrganization;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PLD__ORGANIZATION, oldOrganization, organization));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNbLUTs() {
 		return nbLUTs;
 	}
@@ -239,20 +265,25 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNbLUTs(String newNbLUTs) {
 		String oldNbLUTs = nbLUTs;
 		nbLUTs = newNbLUTs;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PLD__NB_LU_TS, oldNbLUTs, nbLUTs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNdLUT_Inputs() {
 		return ndLUT_Inputs;
 	}
@@ -260,20 +291,25 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNdLUT_Inputs(String newNdLUT_Inputs) {
 		String oldNdLUT_Inputs = ndLUT_Inputs;
 		ndLUT_Inputs = newNdLUT_Inputs;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PLD__ND_LUT_INPUTS, oldNdLUT_Inputs, ndLUT_Inputs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getNbFlipFlops() {
 		return nbFlipFlops;
 	}
@@ -281,20 +317,25 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNbFlipFlops(String newNbFlipFlops) {
 		String oldNbFlipFlops = nbFlipFlops;
 		nbFlipFlops = newNbFlipFlops;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwComputingPackage.HW_PLD__NB_FLIP_FLOPS, oldNbFlipFlops, nbFlipFlops));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwRAM> getBlocksRAM() {
 		if (blocksRAM == null) {
 			blocksRAM = new EObjectResolvingEList<HwRAM>(HwRAM.class, this, HwComputingPackage.HW_PLD__BLOCKS_RAM);
@@ -305,8 +346,10 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwComputingResource> getBlocksComputing() {
 		if (blocksComputing == null) {
 			blocksComputing = new EObjectResolvingEList<HwComputingResource>(HwComputingResource.class, this, HwComputingPackage.HW_PLD__BLOCKS_COMPUTING);
@@ -317,25 +360,26 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PLD__TECHNOLOGY:
-				return getTechnology();
-			case HwComputingPackage.HW_PLD__ORGANIZATION:
-				return getOrganization();
-			case HwComputingPackage.HW_PLD__NB_LU_TS:
-				return getNbLUTs();
-			case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
-				return getNdLUT_Inputs();
-			case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
-				return getNbFlipFlops();
-			case HwComputingPackage.HW_PLD__BLOCKS_RAM:
-				return getBlocksRAM();
-			case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
-				return getBlocksComputing();
+		case HwComputingPackage.HW_PLD__TECHNOLOGY:
+			return getTechnology();
+		case HwComputingPackage.HW_PLD__ORGANIZATION:
+			return getOrganization();
+		case HwComputingPackage.HW_PLD__NB_LU_TS:
+			return getNbLUTs();
+		case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
+			return getNdLUT_Inputs();
+		case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
+			return getNbFlipFlops();
+		case HwComputingPackage.HW_PLD__BLOCKS_RAM:
+			return getBlocksRAM();
+		case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
+			return getBlocksComputing();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,35 +387,36 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PLD__TECHNOLOGY:
-				setTechnology((PLD_Technology)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__ORGANIZATION:
-				setOrganization((String)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__NB_LU_TS:
-				setNbLUTs((String)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
-				setNdLUT_Inputs((String)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
-				setNbFlipFlops((String)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__BLOCKS_RAM:
-				getBlocksRAM().clear();
-				getBlocksRAM().addAll((Collection<? extends HwRAM>)newValue);
-				return;
-			case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
-				getBlocksComputing().clear();
-				getBlocksComputing().addAll((Collection<? extends HwComputingResource>)newValue);
-				return;
+		case HwComputingPackage.HW_PLD__TECHNOLOGY:
+			setTechnology((PLD_Technology) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__ORGANIZATION:
+			setOrganization((String) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__NB_LU_TS:
+			setNbLUTs((String) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
+			setNdLUT_Inputs((String) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
+			setNbFlipFlops((String) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__BLOCKS_RAM:
+			getBlocksRAM().clear();
+			getBlocksRAM().addAll((Collection<? extends HwRAM>) newValue);
+			return;
+		case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
+			getBlocksComputing().clear();
+			getBlocksComputing().addAll((Collection<? extends HwComputingResource>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -379,32 +424,33 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PLD__TECHNOLOGY:
-				setTechnology(TECHNOLOGY_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PLD__ORGANIZATION:
-				setOrganization(ORGANIZATION_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PLD__NB_LU_TS:
-				setNbLUTs(NB_LU_TS_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
-				setNdLUT_Inputs(ND_LUT_INPUTS_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
-				setNbFlipFlops(NB_FLIP_FLOPS_EDEFAULT);
-				return;
-			case HwComputingPackage.HW_PLD__BLOCKS_RAM:
-				getBlocksRAM().clear();
-				return;
-			case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
-				getBlocksComputing().clear();
-				return;
+		case HwComputingPackage.HW_PLD__TECHNOLOGY:
+			setTechnology(TECHNOLOGY_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PLD__ORGANIZATION:
+			setOrganization(ORGANIZATION_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PLD__NB_LU_TS:
+			setNbLUTs(NB_LU_TS_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
+			setNdLUT_Inputs(ND_LUT_INPUTS_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
+			setNbFlipFlops(NB_FLIP_FLOPS_EDEFAULT);
+			return;
+		case HwComputingPackage.HW_PLD__BLOCKS_RAM:
+			getBlocksRAM().clear();
+			return;
+		case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
+			getBlocksComputing().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -412,25 +458,26 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwComputingPackage.HW_PLD__TECHNOLOGY:
-				return technology != TECHNOLOGY_EDEFAULT;
-			case HwComputingPackage.HW_PLD__ORGANIZATION:
-				return ORGANIZATION_EDEFAULT == null ? organization != null : !ORGANIZATION_EDEFAULT.equals(organization);
-			case HwComputingPackage.HW_PLD__NB_LU_TS:
-				return NB_LU_TS_EDEFAULT == null ? nbLUTs != null : !NB_LU_TS_EDEFAULT.equals(nbLUTs);
-			case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
-				return ND_LUT_INPUTS_EDEFAULT == null ? ndLUT_Inputs != null : !ND_LUT_INPUTS_EDEFAULT.equals(ndLUT_Inputs);
-			case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
-				return NB_FLIP_FLOPS_EDEFAULT == null ? nbFlipFlops != null : !NB_FLIP_FLOPS_EDEFAULT.equals(nbFlipFlops);
-			case HwComputingPackage.HW_PLD__BLOCKS_RAM:
-				return blocksRAM != null && !blocksRAM.isEmpty();
-			case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
-				return blocksComputing != null && !blocksComputing.isEmpty();
+		case HwComputingPackage.HW_PLD__TECHNOLOGY:
+			return technology != TECHNOLOGY_EDEFAULT;
+		case HwComputingPackage.HW_PLD__ORGANIZATION:
+			return ORGANIZATION_EDEFAULT == null ? organization != null : !ORGANIZATION_EDEFAULT.equals(organization);
+		case HwComputingPackage.HW_PLD__NB_LU_TS:
+			return NB_LU_TS_EDEFAULT == null ? nbLUTs != null : !NB_LU_TS_EDEFAULT.equals(nbLUTs);
+		case HwComputingPackage.HW_PLD__ND_LUT_INPUTS:
+			return ND_LUT_INPUTS_EDEFAULT == null ? ndLUT_Inputs != null : !ND_LUT_INPUTS_EDEFAULT.equals(ndLUT_Inputs);
+		case HwComputingPackage.HW_PLD__NB_FLIP_FLOPS:
+			return NB_FLIP_FLOPS_EDEFAULT == null ? nbFlipFlops != null : !NB_FLIP_FLOPS_EDEFAULT.equals(nbFlipFlops);
+		case HwComputingPackage.HW_PLD__BLOCKS_RAM:
+			return blocksRAM != null && !blocksRAM.isEmpty();
+		case HwComputingPackage.HW_PLD__BLOCKS_COMPUTING:
+			return blocksComputing != null && !blocksComputing.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -438,11 +485,14 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (technology: ");
@@ -459,4 +509,4 @@ public class HwPLDImpl extends HwComputingResourceImpl implements HwPLD {
 		return result.toString();
 	}
 
-} //HwPLDImpl
+} // HwPLDImpl

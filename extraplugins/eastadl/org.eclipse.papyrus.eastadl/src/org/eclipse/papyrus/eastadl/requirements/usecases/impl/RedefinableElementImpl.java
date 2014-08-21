@@ -17,7 +17,7 @@ import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.RedefinableElementImpl#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.impl.RedefinableElementImpl#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,6 +28,7 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	 * The cached value of the '{@link #getBase_RedefinableElement() <em>Base Redefinable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_RedefinableElement()
 	 * @generated
 	 * @ordered
@@ -37,6 +38,7 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RedefinableElementImpl() {
@@ -46,6 +48,7 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -56,15 +59,18 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.RedefinableElement getBase_RedefinableElement() {
 		if (base_RedefinableElement != null && base_RedefinableElement.eIsProxy()) {
-			InternalEObject oldBase_RedefinableElement = (InternalEObject)base_RedefinableElement;
-			base_RedefinableElement = (org.eclipse.uml2.uml.RedefinableElement)eResolveProxy(oldBase_RedefinableElement);
+			InternalEObject oldBase_RedefinableElement = (InternalEObject) base_RedefinableElement;
+			base_RedefinableElement = (org.eclipse.uml2.uml.RedefinableElement) eResolveProxy(oldBase_RedefinableElement);
 			if (base_RedefinableElement != oldBase_RedefinableElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
+				}
 			}
 		}
 		return base_RedefinableElement;
@@ -73,6 +79,7 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.RedefinableElement basicGetBase_RedefinableElement() {
@@ -82,26 +89,32 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_RedefinableElement(org.eclipse.uml2.uml.RedefinableElement newBase_RedefinableElement) {
 		org.eclipse.uml2.uml.RedefinableElement oldBase_RedefinableElement = base_RedefinableElement;
 		base_RedefinableElement = newBase_RedefinableElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				if (resolve) return getBase_RedefinableElement();
-				return basicGetBase_RedefinableElement();
+		case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			if (resolve) {
+				return getBase_RedefinableElement();
+			}
+			return basicGetBase_RedefinableElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,14 +122,15 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				setBase_RedefinableElement((org.eclipse.uml2.uml.RedefinableElement)newValue);
-				return;
+		case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			setBase_RedefinableElement((org.eclipse.uml2.uml.RedefinableElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,14 +138,15 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				setBase_RedefinableElement((org.eclipse.uml2.uml.RedefinableElement)null);
-				return;
+		case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			setBase_RedefinableElement((org.eclipse.uml2.uml.RedefinableElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,15 +154,16 @@ public abstract class RedefinableElementImpl extends EAElementImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				return base_RedefinableElement != null;
+		case UsecasesPackage.REDEFINABLE_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			return base_RedefinableElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RedefinableElementImpl
+} // RedefinableElementImpl

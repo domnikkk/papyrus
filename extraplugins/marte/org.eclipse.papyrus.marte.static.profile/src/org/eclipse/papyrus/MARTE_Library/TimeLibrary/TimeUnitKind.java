@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Time Unit Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.TimeLibrary.TimeLibraryPackage#getTimeUnitKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>S</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #S_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Ms</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MS_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Us</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #US_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Ns</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NS_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Min</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MIN_VALUE
 	 * @generated
 	 * @ordered
@@ -83,6 +89,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Hrs</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HRS_VALUE
 	 * @generated
 	 * @ordered
@@ -93,6 +100,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Day</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DAY_VALUE
 	 * @generated
 	 * @ordered
@@ -103,10 +111,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>S</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>S</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>S</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #S
 	 * @model name="s"
 	 * @generated
@@ -118,10 +126,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Ms</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Ms</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Ms</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MS
 	 * @model name="ms"
 	 * @generated
@@ -133,10 +141,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Us</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Us</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Us</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #US
 	 * @model name="us"
 	 * @generated
@@ -148,10 +156,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Ns</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Ns</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Ns</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #NS
 	 * @model name="ns"
 	 * @generated
@@ -163,10 +171,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Min</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Min</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Min</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #MIN
 	 * @model name="min"
 	 * @generated
@@ -178,10 +186,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Hrs</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Hrs</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Hrs</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #HRS
 	 * @model name="hrs"
 	 * @generated
@@ -193,10 +201,10 @@ public enum TimeUnitKind implements Enumerator {
 	 * The '<em><b>Day</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Day</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Day</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DAY
 	 * @model name="day"
 	 * @generated
@@ -208,23 +216,25 @@ public enum TimeUnitKind implements Enumerator {
 	 * An array of all the '<em><b>Time Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final TimeUnitKind[] VALUES_ARRAY =
-		new TimeUnitKind[] {
-			S,
-			MS,
-			US,
-			NS,
-			MIN,
-			HRS,
-			DAY,
-		};
+			new TimeUnitKind[] {
+					S,
+					MS,
+					US,
+					NS,
+					MIN,
+					HRS,
+					DAY,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Time Unit Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<TimeUnitKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -233,6 +243,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * Returns the '<em><b>Time Unit Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeUnitKind get(String literal) {
@@ -249,6 +260,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * Returns the '<em><b>Time Unit Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeUnitKind getByName(String name) {
@@ -265,17 +277,25 @@ public enum TimeUnitKind implements Enumerator {
 	 * Returns the '<em><b>Time Unit Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeUnitKind get(int value) {
 		switch (value) {
-			case S_VALUE: return S;
-			case MS_VALUE: return MS;
-			case US_VALUE: return US;
-			case NS_VALUE: return NS;
-			case MIN_VALUE: return MIN;
-			case HRS_VALUE: return HRS;
-			case DAY_VALUE: return DAY;
+		case S_VALUE:
+			return S;
+		case MS_VALUE:
+			return MS;
+		case US_VALUE:
+			return US;
+		case NS_VALUE:
+			return NS;
+		case MIN_VALUE:
+			return MIN;
+		case HRS_VALUE:
+			return HRS;
+		case DAY_VALUE:
+			return DAY;
 		}
 		return null;
 	}
@@ -283,6 +303,7 @@ public enum TimeUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -290,6 +311,7 @@ public enum TimeUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -297,6 +319,7 @@ public enum TimeUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -305,6 +328,7 @@ public enum TimeUnitKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private TimeUnitKind(int value, String name, String literal) {
@@ -316,39 +340,46 @@ public enum TimeUnitKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //TimeUnitKind
+
+} // TimeUnitKind

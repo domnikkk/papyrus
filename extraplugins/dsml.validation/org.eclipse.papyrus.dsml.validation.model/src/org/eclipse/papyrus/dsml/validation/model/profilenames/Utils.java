@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,8 @@ import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
  * Provision of functionality for management of constraints.
- * 
- * 
+ *
+ *
  */
 public class Utils {
 
@@ -42,7 +42,7 @@ public class Utils {
 
 	/**
 	 * This method returns the package for the specific constraint.
-	 * 
+	 *
 	 * @param constraint
 	 *            constraint for which the method will return name of its
 	 *            package
@@ -55,7 +55,7 @@ public class Utils {
 
 	/**
 	 * Retrieval of a java constraint body.
-	 * 
+	 *
 	 * @param valueSpecification
 	 *            ValueSpecification which contains specification of a java code
 	 *            validating the constraint.
@@ -64,13 +64,13 @@ public class Utils {
 	public static String getJavaConstraintBody(ValueSpecification valueSpecification) {
 
 		if (valueSpecification == null
-			|| !(valueSpecification instanceof OpaqueExpression)) {
+				|| !(valueSpecification instanceof OpaqueExpression)) {
 			return null;
 		}
 
 		int index = 0;
 		for (String language : ((OpaqueExpression) valueSpecification)
-			.getLanguages()) {
+				.getLanguages()) {
 			if (language.compareTo(JAVA_LANGUAGE) == 0) {
 				return ((OpaqueExpression) valueSpecification).getBodies().get(index);
 			}
@@ -83,7 +83,7 @@ public class Utils {
 	/**
 	 * This method performs check whether for specific constraint exists
 	 * specification of a java code.
-	 * 
+	 *
 	 * @param constraint
 	 *            constraint for which check for existing java code is performed
 	 * @return true if there is an existing specification of a java code
@@ -108,32 +108,32 @@ public class Utils {
 
 	/**
 	 * return the qualified name of the stereotype that is the context of the constraint.
-	 * @param constraint the constraint
+	 * 
+	 * @param constraint
+	 *            the constraint
 	 * @return the qualified name of the constraint or ""
 	 */
 	public static String getConstraintForStereotype(Constraint constraint) {
 
 		Namespace nameSpace = constraint.getContext();
-		if( nameSpace instanceof Stereotype){
-			return ((Stereotype)constraint.getContext()).getQualifiedName() ;
+		if (nameSpace instanceof Stereotype) {
+			return ((Stereotype) constraint.getContext()).getQualifiedName();
 		}
 		return "";
 	}
 
 	/**
-	
-	
-	
-
-	/**
+	 * /**
 	 * return true if the constraint is to validate something about a stereotype
-	 * @param constraint the constraint
+	 * 
+	 * @param constraint
+	 *            the constraint
 	 * @return true if the context of the constraint is a stereotype
 	 */
 	public static Boolean isConstraintForStereotype(Constraint constraint) {
 
 		Namespace nameSpace = constraint.getContext();
-		if( nameSpace instanceof Stereotype){
+		if (nameSpace instanceof Stereotype) {
 			return true;
 		}
 		return false;
@@ -142,7 +142,7 @@ public class Utils {
 
 	/**
 	 * Retrieval of an OCL constraint body.
-	 * 
+	 *
 	 * @param constraint
 	 *            constraint for which OCL body is retrieved
 	 * @return OCL constraint body
@@ -155,11 +155,11 @@ public class Utils {
 		if (valueSpec != null && valueSpec instanceof OpaqueExpression) {
 
 			for (String language : ((OpaqueExpression) valueSpec)
-				.getLanguages()) {
+					.getLanguages()) {
 
 				if (language.compareTo(OCL_LANGUAGE) == 0) {
 					return ((OpaqueExpression) valueSpec).getBodies()
-						.get(index);
+							.get(index);
 				}
 				index++;
 			}
@@ -171,7 +171,7 @@ public class Utils {
 
 	/**
 	 * Check whether there is specification of an OCL specification
-	 * 
+	 *
 	 * @param constraint
 	 *            constraint for which check is performed
 	 * @return true if there is an existing specification of an OCL expression
@@ -198,7 +198,7 @@ public class Utils {
 	/**
 	 * Method to insert the correspondence between the constraint and the
 	 * package in which the java class validating the constraint will be placed.
-	 * 
+	 *
 	 * @param constraint
 	 *            constraint for which the package is being assigned
 	 * @param pkg
@@ -208,12 +208,12 @@ public class Utils {
 	public static void putMappnig(Constraint constraint, String pkg) {
 
 		Utils.getConstraintToItsPackage().put(constraint.getQualifiedName(),
-			pkg);
+				pkg);
 	}
 
 	/**
 	 * Getter for constraintToItsPackage map.
-	 * 
+	 *
 	 * @return
 	 */
 	public static Map<String, String> getConstraintToItsPackage() {
@@ -222,21 +222,21 @@ public class Utils {
 
 	/**
 	 * Setter for constraintToItsPackage map.
-	 * 
+	 *
 	 * @param constraintToItsPackage
 	 */
 	public static void setConstraintToItsPackage(
-		Map<String, String> constraintToItsPackage) {
+			Map<String, String> constraintToItsPackage) {
 		Utils.constraintToItsPackage = constraintToItsPackage;
 	}
-	
+
 	public static String getPluginID() {
 		return pluginID;
 	}
-	
+
 	public static void setPluginID(String ID) {
 		pluginID = ID;
 	}
-	
+
 	private static String pluginID;
 }

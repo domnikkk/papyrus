@@ -12,9 +12,9 @@ package org.eclipse.papyrus.cpp.codegen;
 
 /**
  * String constants for the code generation
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class Constants {
 

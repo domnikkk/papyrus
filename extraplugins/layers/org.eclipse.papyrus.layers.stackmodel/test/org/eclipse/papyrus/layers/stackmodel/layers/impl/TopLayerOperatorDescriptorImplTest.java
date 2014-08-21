@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -50,7 +50,7 @@ public class TopLayerOperatorDescriptorImplTest {
 	public void testTopLayerOperatorDescriptorImpl() {
 		// Create an instance of the class
 		TopLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createTopLayerOperatorDescriptor();
-		
+
 		assertNotNull("object created", descriptor);
 	}
 
@@ -61,7 +61,7 @@ public class TopLayerOperatorDescriptorImplTest {
 	public void testGetName() {
 		// Create an instance of the class
 		TopLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createTopLayerOperatorDescriptor();
-		
+
 		// Do test
 		assertSame("name correctly set", "TopLayerOperator", descriptor.getName());
 	}
@@ -73,7 +73,7 @@ public class TopLayerOperatorDescriptorImplTest {
 	public void testCreateLayerOperator() {
 		// Create an instance of the class
 		TopLayerOperatorDescriptor descriptor = LayersFactory.eINSTANCE.createTopLayerOperatorDescriptor();
-		
+
 		AbstractLayerOperator layerOperator = descriptor.createLayerOperator();
 		assertNotNull("layer created", layerOperator);
 		assertTrue("right type", layerOperator instanceof TopLayerOperator);

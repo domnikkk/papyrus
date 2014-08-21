@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -52,8 +52,9 @@ public class LayersModelTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.model.LayersModel#LayersModel()}.
-	 * @throws CoreException 
-	 * @throws IOException 
+	 * 
+	 * @throws CoreException
+	 * @throws IOException
 	 */
 	@Test
 	public void testLayersModel() throws CoreException, IOException {
@@ -64,7 +65,7 @@ public class LayersModelTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		// Check if root exist
 		assertNotNull("layer model root created", layersModel.getLayerStackApplication());
 	}
@@ -81,10 +82,10 @@ public class LayersModelTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		// Check if application lookup
 		assertNull("lookup application return null", layersModel.lookupLayerStackApplication());
-		
+
 		// Get the application, this create it
 		assertNotNull("layer model root created", layersModel.getLayerStackApplication());
 		// lookup again, this found the application
@@ -103,10 +104,10 @@ public class LayersModelTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		// Check if root exist
 		assertNotNull("layer model root created", layersModel.getLayerStackApplication());
-		assertTrue("LayerStackApplication is found", layersModel.getLayerStackApplication() instanceof  LayersStackApplication);
+		assertTrue("LayerStackApplication is found", layersModel.getLayerStackApplication() instanceof LayersStackApplication);
 	}
 
 }

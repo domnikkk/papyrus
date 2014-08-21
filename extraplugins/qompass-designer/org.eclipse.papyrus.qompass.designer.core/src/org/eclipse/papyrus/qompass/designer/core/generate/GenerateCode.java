@@ -6,18 +6,18 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 // deactivated differential code generation for the moment.
 /*
-import org.eclipse.emf.compare.diff.metamodel.AttributeChange;
-import org.eclipse.emf.compare.diff.metamodel.DiffElement;
-import org.eclipse.emf.compare.diff.metamodel.DiffModel;
-import org.eclipse.emf.compare.diff.metamodel.DifferenceKind;
-import org.eclipse.emf.compare.diff.metamodel.ModelElementChangeLeftTarget;
-import org.eclipse.emf.compare.diff.metamodel.ModelElementChangeRightTarget;
-import org.eclipse.emf.compare.diff.service.DiffService;
-import org.eclipse.emf.compare.match.MatchOptions;
-import org.eclipse.emf.compare.match.metamodel.MatchModel;
-import org.eclipse.emf.compare.match.service.MatchService;
-import org.eclipse.emf.compare.util.ModelUtils;
-*/
+ import org.eclipse.emf.compare.diff.metamodel.AttributeChange;
+ import org.eclipse.emf.compare.diff.metamodel.DiffElement;
+ import org.eclipse.emf.compare.diff.metamodel.DiffModel;
+ import org.eclipse.emf.compare.diff.metamodel.DifferenceKind;
+ import org.eclipse.emf.compare.diff.metamodel.ModelElementChangeLeftTarget;
+ import org.eclipse.emf.compare.diff.metamodel.ModelElementChangeRightTarget;
+ import org.eclipse.emf.compare.diff.service.DiffService;
+ import org.eclipse.emf.compare.match.MatchOptions;
+ import org.eclipse.emf.compare.match.metamodel.MatchModel;
+ import org.eclipse.emf.compare.match.service.MatchService;
+ import org.eclipse.emf.compare.util.ModelUtils;
+ */
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.codegen.extensionpoints.ILangSupport;
 import org.eclipse.papyrus.qompass.designer.core.Messages;
@@ -39,75 +39,75 @@ public class GenerateCode {
 	}
 
 	public void generate(InstanceSpecification node, String targetLanguage, boolean differential)
-		throws TransformationException, InterruptedException
+			throws TransformationException, InterruptedException
 	{
 		String path = genMM.getPath(genProject, "model", null); //$NON-NLS-1$
 		Package genModel = genMM.getModel();
 		EObject oldGenModel = null;
-		if(differential) {
+		if (differential) {
 			/*
-			try {
-				oldGenModel = ModelUtils.load(URI.createURI(path), ModelManagement.getResourceSet());
-			} catch (IOException io) {
-			}
-			*/
+			 * try {
+			 * oldGenModel = ModelUtils.load(URI.createURI(path), ModelManagement.getResourceSet());
+			 * } catch (IOException io) {
+			 * }
+			 */
 		}
 		genMM.saveModel(path);
 
 		monitor.worked(1);
 
-		if(genProject == null) {
+		if (genProject == null) {
 			return;
 		}
 
-		if(oldGenModel != null) {
+		if (oldGenModel != null) {
 			// Matching model elements
 			/*
-			Map<String, Object> options = new HashMap<String, Object>();
-			options.put(MatchOptions.OPTION_IGNORE_XMI_ID, true);
-			monitor.setTaskName("generating " + targetLanguage + " code for node " + node.getName());
-			monitor.subTask("create difference model for node " + node.getName());
-			monitor.worked(1);
-			MatchModel match = MatchService.doMatch(genModel, oldGenModel, options);
-			// Computing differences
-			DiffModel diffModel = DiffService.doDiff(match, false);
-			deleteRemovedClasses(diffModel);
-
-			Map<PackageableElement, Boolean> alreadyGenerated = new HashMap<PackageableElement, Boolean>();
-			monitor.subTask("generate code");
-
-			for(DiffElement diff : diffModel.getDifferences()) {
-				if((diff.getKind() == DifferenceKind.ADDITION) ||
-					(diff.getKind() == DifferenceKind.CHANGE)) {
-					EObject modifiedEObj = null;
-					if(diff instanceof AttributeChange) {
-						modifiedEObj = ((AttributeChange)diff).getLeftElement();
-					}
-					else if(diff instanceof ModelElementChangeLeftTarget) {
-						modifiedEObj = ((ModelElementChangeLeftTarget)diff).getLeftElement();
-					}
-					if(modifiedEObj instanceof Element) {
-						PackageableElement modifiedPElement = getNearestClassifierOrPackage((Element)modifiedEObj);
-						Element modifiedElement = modifiedPElement;
-						// check whether code has already been generated for a parent
-						boolean found = false;
-						while(modifiedElement != null) {
-							modifiedElement = modifiedElement.getOwner();
-							if(alreadyGenerated.containsKey(modifiedElement)) {
-								found = true;
-							}
-						}
-						// TODO: re-create code for elements that depend on this one (e.g. if the modified element is a
-						// class and its name has changed, caller have to use a different name, even if the model reference
-						// has not changed.
-						if(!found) {
-							alreadyGenerated.put(modifiedPElement, true);
-							langSupport.generateCode(monitor, modifiedPElement);
-						}
-					}
-				}
-			}
-			*/
+			 * Map<String, Object> options = new HashMap<String, Object>();
+			 * options.put(MatchOptions.OPTION_IGNORE_XMI_ID, true);
+			 * monitor.setTaskName("generating " + targetLanguage + " code for node " + node.getName());
+			 * monitor.subTask("create difference model for node " + node.getName());
+			 * monitor.worked(1);
+			 * MatchModel match = MatchService.doMatch(genModel, oldGenModel, options);
+			 * // Computing differences
+			 * DiffModel diffModel = DiffService.doDiff(match, false);
+			 * deleteRemovedClasses(diffModel);
+			 * 
+			 * Map<PackageableElement, Boolean> alreadyGenerated = new HashMap<PackageableElement, Boolean>();
+			 * monitor.subTask("generate code");
+			 * 
+			 * for(DiffElement diff : diffModel.getDifferences()) {
+			 * if((diff.getKind() == DifferenceKind.ADDITION) ||
+			 * (diff.getKind() == DifferenceKind.CHANGE)) {
+			 * EObject modifiedEObj = null;
+			 * if(diff instanceof AttributeChange) {
+			 * modifiedEObj = ((AttributeChange)diff).getLeftElement();
+			 * }
+			 * else if(diff instanceof ModelElementChangeLeftTarget) {
+			 * modifiedEObj = ((ModelElementChangeLeftTarget)diff).getLeftElement();
+			 * }
+			 * if(modifiedEObj instanceof Element) {
+			 * PackageableElement modifiedPElement = getNearestClassifierOrPackage((Element)modifiedEObj);
+			 * Element modifiedElement = modifiedPElement;
+			 * // check whether code has already been generated for a parent
+			 * boolean found = false;
+			 * while(modifiedElement != null) {
+			 * modifiedElement = modifiedElement.getOwner();
+			 * if(alreadyGenerated.containsKey(modifiedElement)) {
+			 * found = true;
+			 * }
+			 * }
+			 * // TODO: re-create code for elements that depend on this one (e.g. if the modified element is a
+			 * // class and its name has changed, caller have to use a different name, even if the model reference
+			 * // has not changed.
+			 * if(!found) {
+			 * alreadyGenerated.put(modifiedPElement, true);
+			 * langSupport.generateCode(monitor, modifiedPElement);
+			 * }
+			 * }
+			 * }
+			 * }
+			 */
 		}
 		else {
 			if (node == null) {
@@ -124,7 +124,7 @@ public class GenerateCode {
 			}
 			langSupport.generateCode(monitor, genModel);
 		}
-		if(monitor.isCanceled()) {
+		if (monitor.isCanceled()) {
 			return;
 		}
 		monitor.worked(1);
@@ -135,12 +135,12 @@ public class GenerateCode {
 	 * @return
 	 */
 	public PackageableElement getNearestClassifierOrPackage(Element element) {
-		while(element != null) {
-			if(element instanceof Classifier) {
-				return (Classifier)element;
+		while (element != null) {
+			if (element instanceof Classifier) {
+				return (Classifier) element;
 			}
-			if(element instanceof Package) {
-				return (Package)element;
+			if (element instanceof Package) {
+				return (Package) element;
 			}
 			element = element.getOwner();
 		}
@@ -148,42 +148,42 @@ public class GenerateCode {
 	}
 
 	/*
-	public void deleteRemovedClasses(EObject diffModelOrElement) throws TransformationException {
-		EList<DiffElement> diffs;
-		if(diffModelOrElement instanceof DiffModel) {
-			diffs = ((DiffModel)diffModelOrElement).getDifferences();
-		}
-		else if(diffModelOrElement instanceof DiffElement) {
-			diffs = ((DiffElement)diffModelOrElement).getSubDiffElements();
-		}
-		else {
-			return;
-		}
-		for(DiffElement diff : diffs) {
-			EObject modifiedEObj = null;
-
-			if(diff.getKind() == DifferenceKind.DELETION) {
-				if(diff instanceof AttributeChange) {
-					modifiedEObj = ((AttributeChange)diff).getRightElement();
-				}
-				else if(diff instanceof ModelElementChangeRightTarget) {
-					modifiedEObj = ((ModelElementChangeRightTarget)diff).getRightElement();
-				}
-			}
-			else if(diff.getKind() == DifferenceKind.CHANGE) {
-				if(diff instanceof AttributeChange) {
-					modifiedEObj = ((AttributeChange)diff).getRightElement();
-				}
-			}
-			if(modifiedEObj instanceof PackageableElement) {
-				// => delete tree
-				langSupport.cleanCode(monitor, (PackageableElement)modifiedEObj);
-			}
-			// no recursion needed?
-			// deleteRemovedClasses(diff);
-		}
-	}
-	*/
+	 * public void deleteRemovedClasses(EObject diffModelOrElement) throws TransformationException {
+	 * EList<DiffElement> diffs;
+	 * if(diffModelOrElement instanceof DiffModel) {
+	 * diffs = ((DiffModel)diffModelOrElement).getDifferences();
+	 * }
+	 * else if(diffModelOrElement instanceof DiffElement) {
+	 * diffs = ((DiffElement)diffModelOrElement).getSubDiffElements();
+	 * }
+	 * else {
+	 * return;
+	 * }
+	 * for(DiffElement diff : diffs) {
+	 * EObject modifiedEObj = null;
+	 * 
+	 * if(diff.getKind() == DifferenceKind.DELETION) {
+	 * if(diff instanceof AttributeChange) {
+	 * modifiedEObj = ((AttributeChange)diff).getRightElement();
+	 * }
+	 * else if(diff instanceof ModelElementChangeRightTarget) {
+	 * modifiedEObj = ((ModelElementChangeRightTarget)diff).getRightElement();
+	 * }
+	 * }
+	 * else if(diff.getKind() == DifferenceKind.CHANGE) {
+	 * if(diff instanceof AttributeChange) {
+	 * modifiedEObj = ((AttributeChange)diff).getRightElement();
+	 * }
+	 * }
+	 * if(modifiedEObj instanceof PackageableElement) {
+	 * // => delete tree
+	 * langSupport.cleanCode(monitor, (PackageableElement)modifiedEObj);
+	 * }
+	 * // no recursion needed?
+	 * // deleteRemovedClasses(diff);
+	 * }
+	 * }
+	 */
 
 	private ModelManagement genMM;
 

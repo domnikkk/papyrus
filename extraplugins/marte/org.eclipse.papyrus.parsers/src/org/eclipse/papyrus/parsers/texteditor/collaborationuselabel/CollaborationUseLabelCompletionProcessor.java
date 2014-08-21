@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.CollaborationUse;
 /**
  * Completion processor for action language. <BR>
  * Main class to process the different completions given by the texteditor to its user
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.templates.TemplateCompletionProcessor
  * @see org.eclipse.jface.text.contentassist.IContentAssistProcessor
@@ -48,9 +48,9 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the parsed {@link CollaborationUse}
+	 *            the parsed {@link CollaborationUse}
 	 */
 	public CollaborationUseLabelCompletionProcessor(CollaborationUse collaborationUse) {
 		this.collaborationUse = collaborationUse;
@@ -64,10 +64,10 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 	 */
 	/**
 	 * This method computes completion proposal for currently edited CollaborationUse label.
-	 * 
+	 *
 	 * @param viewer
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return completion proposals
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 			result = computeCompletions(viewer, parser.getContext(), documentOffset, selectionRange);
 		}
 
-		return result.toArray(new ICompletionProposal[]{});
+		return result.toArray(new ICompletionProposal[] {});
 	}
 
 	/*
@@ -110,12 +110,12 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 	/**
 	 * Compute completion possibilities depending on existing edited label (prefix, it may not be
 	 * complete).
-	 * 
+	 *
 	 * @param viewer
 	 * @param selectionRange
 	 * @param context
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 		Vector<ICompletionProposal> v = new Vector<ICompletionProposal>();
 
 		String prefix = getPrefix(viewer, documentOffset);
-		switch(context) {
+		switch (context) {
 
 		// DEFAULT : visibility or name
 		case IContext.DEFAULT:
@@ -140,8 +140,8 @@ public class CollaborationUseLabelCompletionProcessor extends LabelCompletionPro
 
 		// NAME: either ':' or ":undefined"
 		case IContext.NAME:
-			v.addAll(createCompletionProposalsWithDifferentName(new String[]{ ": ", ": <Undefined>" }, new String[]{
-					"CollaborationUse type", "Undefined CollaborationUse type" }, new String[]{
+			v.addAll(createCompletionProposalsWithDifferentName(new String[] { ": ", ": <Undefined>" }, new String[] {
+					"CollaborationUse type", "Undefined CollaborationUse type" }, new String[] {
 					": <Collaboration Name>", ": <Undefined>" }, "", documentOffset));
 			break;
 

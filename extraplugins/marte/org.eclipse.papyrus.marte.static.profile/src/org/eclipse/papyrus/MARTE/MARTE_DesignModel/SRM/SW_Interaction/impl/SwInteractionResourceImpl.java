@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,10 @@ import org.eclipse.uml2.uml.TypedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#isIsIntraMemoryPartitionInteraction <em>Is Intra Memory Partition Interaction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingQueuePolicy <em>Waiting Queue Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingQueueCapacity <em>Waiting Queue Capacity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingPolicyElements <em>Waiting Policy Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#isIsIntraMemoryPartitionInteraction <em>Is Intra Memory Partition Interaction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingQueuePolicy <em>Waiting Queue Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingQueueCapacity <em>Waiting Queue Capacity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.impl.SwInteractionResourceImpl#getWaitingPolicyElements <em>Waiting Policy Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #isIsIntraMemoryPartitionInteraction() <em>Is Intra Memory Partition Interaction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsIntraMemoryPartitionInteraction()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #isIsIntraMemoryPartitionInteraction() <em>Is Intra Memory Partition Interaction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsIntraMemoryPartitionInteraction()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #getWaitingQueuePolicy() <em>Waiting Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWaitingQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -77,6 +80,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingQueuePolicy() <em>Waiting Queue Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWaitingQueuePolicy()
 	 * @generated
 	 * @ordered
@@ -87,6 +91,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The default value of the '{@link #getWaitingQueueCapacity() <em>Waiting Queue Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWaitingQueueCapacity()
 	 * @generated
 	 * @ordered
@@ -97,6 +102,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingQueueCapacity() <em>Waiting Queue Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWaitingQueueCapacity()
 	 * @generated
 	 * @ordered
@@ -107,6 +113,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	 * The cached value of the '{@link #getWaitingPolicyElements() <em>Waiting Policy Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWaitingPolicyElements()
 	 * @generated
 	 * @ordered
@@ -116,6 +123,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SwInteractionResourceImpl() {
@@ -125,6 +133,7 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,8 +144,10 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsIntraMemoryPartitionInteraction() {
 		return isIntraMemoryPartitionInteraction;
 	}
@@ -144,20 +155,25 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsIntraMemoryPartitionInteraction(boolean newIsIntraMemoryPartitionInteraction) {
 		boolean oldIsIntraMemoryPartitionInteraction = isIntraMemoryPartitionInteraction;
 		isIntraMemoryPartitionInteraction = newIsIntraMemoryPartitionInteraction;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION, oldIsIntraMemoryPartitionInteraction, isIntraMemoryPartitionInteraction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public QueuePolicyKind getWaitingQueuePolicy() {
 		return waitingQueuePolicy;
 	}
@@ -165,20 +181,25 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWaitingQueuePolicy(QueuePolicyKind newWaitingQueuePolicy) {
 		QueuePolicyKind oldWaitingQueuePolicy = waitingQueuePolicy;
 		waitingQueuePolicy = newWaitingQueuePolicy == null ? WAITING_QUEUE_POLICY_EDEFAULT : newWaitingQueuePolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY, oldWaitingQueuePolicy, waitingQueuePolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getWaitingQueueCapacity() {
 		return waitingQueueCapacity;
 	}
@@ -186,20 +207,25 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWaitingQueueCapacity(int newWaitingQueueCapacity) {
 		int oldWaitingQueueCapacity = waitingQueueCapacity;
 		waitingQueueCapacity = newWaitingQueueCapacity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY, oldWaitingQueueCapacity, waitingQueueCapacity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<TypedElement> getWaitingPolicyElements() {
 		if (waitingPolicyElements == null) {
 			waitingPolicyElements = new EObjectResolvingEList<TypedElement>(TypedElement.class, this, SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS);
@@ -210,19 +236,20 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
-				return isIsIntraMemoryPartitionInteraction();
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
-				return getWaitingQueuePolicy();
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
-				return getWaitingQueueCapacity();
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
-				return getWaitingPolicyElements();
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
+			return isIsIntraMemoryPartitionInteraction();
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
+			return getWaitingQueuePolicy();
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
+			return getWaitingQueueCapacity();
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
+			return getWaitingPolicyElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,25 +257,26 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
-				setIsIntraMemoryPartitionInteraction((Boolean)newValue);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
-				setWaitingQueuePolicy((QueuePolicyKind)newValue);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
-				setWaitingQueueCapacity((Integer)newValue);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
-				getWaitingPolicyElements().clear();
-				getWaitingPolicyElements().addAll((Collection<? extends TypedElement>)newValue);
-				return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
+			setIsIntraMemoryPartitionInteraction((Boolean) newValue);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
+			setWaitingQueuePolicy((QueuePolicyKind) newValue);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
+			setWaitingQueueCapacity((Integer) newValue);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
+			getWaitingPolicyElements().clear();
+			getWaitingPolicyElements().addAll((Collection<? extends TypedElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,23 +284,24 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
-				setIsIntraMemoryPartitionInteraction(IS_INTRA_MEMORY_PARTITION_INTERACTION_EDEFAULT);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
-				setWaitingQueuePolicy(WAITING_QUEUE_POLICY_EDEFAULT);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
-				setWaitingQueueCapacity(WAITING_QUEUE_CAPACITY_EDEFAULT);
-				return;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
-				getWaitingPolicyElements().clear();
-				return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
+			setIsIntraMemoryPartitionInteraction(IS_INTRA_MEMORY_PARTITION_INTERACTION_EDEFAULT);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
+			setWaitingQueuePolicy(WAITING_QUEUE_POLICY_EDEFAULT);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
+			setWaitingQueueCapacity(WAITING_QUEUE_CAPACITY_EDEFAULT);
+			return;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
+			getWaitingPolicyElements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,19 +309,20 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
-				return isIntraMemoryPartitionInteraction != IS_INTRA_MEMORY_PARTITION_INTERACTION_EDEFAULT;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
-				return waitingQueuePolicy != WAITING_QUEUE_POLICY_EDEFAULT;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
-				return waitingQueueCapacity != WAITING_QUEUE_CAPACITY_EDEFAULT;
-			case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
-				return waitingPolicyElements != null && !waitingPolicyElements.isEmpty();
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION:
+			return isIntraMemoryPartitionInteraction != IS_INTRA_MEMORY_PARTITION_INTERACTION_EDEFAULT;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY:
+			return waitingQueuePolicy != WAITING_QUEUE_POLICY_EDEFAULT;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY:
+			return waitingQueueCapacity != WAITING_QUEUE_CAPACITY_EDEFAULT;
+		case SW_InteractionPackage.SW_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
+			return waitingPolicyElements != null && !waitingPolicyElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -300,11 +330,14 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isIntraMemoryPartitionInteraction: ");
@@ -317,4 +350,4 @@ public abstract class SwInteractionResourceImpl extends SwResourceImpl implement
 		return result.toString();
 	}
 
-} //SwInteractionResourceImpl
+} // SwInteractionResourceImpl

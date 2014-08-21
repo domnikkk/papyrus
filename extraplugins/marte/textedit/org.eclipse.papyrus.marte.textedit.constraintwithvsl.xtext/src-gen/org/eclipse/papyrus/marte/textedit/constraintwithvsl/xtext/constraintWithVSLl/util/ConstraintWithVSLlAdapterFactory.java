@@ -20,6 +20,7 @@ import org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWith
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintWithVSLlPackage
  * @generated
  */
@@ -28,6 +29,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static ConstraintWithVSLlPackage modelPackage;
@@ -36,6 +38,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintWithVSLlAdapterFactory() {
@@ -49,6 +52,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -58,7 +62,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -67,35 +71,40 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintWithVSLlSwitch<Adapter> modelSwitch =
-		new ConstraintWithVSLlSwitch<Adapter>() {
-			@Override
-			public Adapter caseConstraintRule(ConstraintRule object) {
-				return createConstraintRuleAdapter();
-			}
-			@Override
-			public Adapter caseConstraintSpecification(ConstraintSpecification object) {
-				return createConstraintSpecificationAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new ConstraintWithVSLlSwitch<Adapter>() {
+				@Override
+				public Adapter caseConstraintRule(ConstraintRule object) {
+					return createConstraintRuleAdapter();
+				}
+
+				@Override
+				public Adapter caseConstraintSpecification(ConstraintSpecification object) {
+					return createConstraintSpecificationAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -105,6 +114,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintRule
 	 * @generated
@@ -119,6 +129,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.ConstraintSpecification
 	 * @generated
@@ -132,6 +143,7 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -139,4 +151,4 @@ public class ConstraintWithVSLlAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ConstraintWithVSLlAdapterFactory
+} // ConstraintWithVSLlAdapterFactory

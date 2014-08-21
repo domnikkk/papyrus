@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -122,12 +122,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SW_InteractionPackageImpl extends EPackageImpl implements SW_InteractionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass swInteractionResourceEClass = null;
@@ -135,6 +137,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass swCommunicationResourceEClass = null;
@@ -142,6 +145,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass swSynchronizationResourceEClass = null;
@@ -149,6 +153,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass sharedDataComResourceEClass = null;
@@ -156,6 +161,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass messageComResourceEClass = null;
@@ -163,6 +169,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass notificationResourceEClass = null;
@@ -170,6 +177,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass swMutualExclusionResourceEClass = null;
@@ -177,6 +185,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum queuePolicyKindEEnum = null;
@@ -184,6 +193,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum messageResourceKindEEnum = null;
@@ -191,6 +201,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum notificationKindEEnum = null;
@@ -198,6 +209,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum notificationResourceKindEEnum = null;
@@ -205,6 +217,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum mutualExclusionResourceKindEEnum = null;
@@ -212,20 +225,17 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum concurrentAccessProtocolKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Interaction.SW_InteractionPackage#eNS_URI
 	 * @see #init()
@@ -238,27 +248,30 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link SW_InteractionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * <p>This method is used to initialize {@link SW_InteractionPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static SW_InteractionPackage init() {
-		if (isInited) return (SW_InteractionPackage)EPackage.Registry.INSTANCE.getEPackage(SW_InteractionPackage.eNS_URI);
+		if (isInited) {
+			return (SW_InteractionPackage) EPackage.Registry.INSTANCE.getEPackage(SW_InteractionPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		SW_InteractionPackageImpl theSW_InteractionPackage = (SW_InteractionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SW_InteractionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SW_InteractionPackageImpl());
+		SW_InteractionPackageImpl theSW_InteractionPackage = (SW_InteractionPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SW_InteractionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SW_InteractionPackageImpl());
 
 		isInited = true;
 
@@ -266,47 +279,73 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		MARTEPackageImpl theMARTEPackage = (MARTEPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) instanceof MARTEPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) : MARTEPackage.eINSTANCE);
-		NFPsPackageImpl theNFPsPackage = (NFPsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) instanceof NFPsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) : NFPsPackage.eINSTANCE);
-		CoreElementsPackageImpl theCoreElementsPackage = (CoreElementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) instanceof CoreElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) : CoreElementsPackage.eINSTANCE);
-		AllocPackageImpl theAllocPackage = (AllocPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) instanceof AllocPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) : AllocPackage.eINSTANCE);
-		TimePackageImpl theTimePackage = (TimePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) instanceof TimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) : TimePackage.eINSTANCE);
-		GRMPackageImpl theGRMPackage = (GRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) instanceof GRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) : GRMPackage.eINSTANCE);
-		RSMPackageImpl theRSMPackage = (RSMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) instanceof RSMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) : RSMPackage.eINSTANCE);
-		VSLPackageImpl theVSLPackage = (VSLPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) : VSLPackage.eINSTANCE);
-		VariablesPackageImpl theVariablesPackage = (VariablesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) instanceof VariablesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) : VariablesPackage.eINSTANCE);
-		OperatorsPackageImpl theOperatorsPackage = (OperatorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) instanceof OperatorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) : OperatorsPackage.eINSTANCE);
-		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) : DataTypesPackage.eINSTANCE);
-		HLAMPackageImpl theHLAMPackage = (HLAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) instanceof HLAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) : HLAMPackage.eINSTANCE);
-		HRMPackageImpl theHRMPackage = (HRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) instanceof HRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) : HRMPackage.eINSTANCE);
-		HwLogicalPackageImpl theHwLogicalPackage = (HwLogicalPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) instanceof HwLogicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) : HwLogicalPackage.eINSTANCE);
-		HwComputingPackageImpl theHwComputingPackage = (HwComputingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) instanceof HwComputingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) : HwComputingPackage.eINSTANCE);
-		HwCommunicationPackageImpl theHwCommunicationPackage = (HwCommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) instanceof HwCommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) : HwCommunicationPackage.eINSTANCE);
-		HwStoragePackageImpl theHwStoragePackage = (HwStoragePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) instanceof HwStoragePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) : HwStoragePackage.eINSTANCE);
-		HwStorageManagerPackageImpl theHwStorageManagerPackage = (HwStorageManagerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) instanceof HwStorageManagerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) : HwStorageManagerPackage.eINSTANCE);
-		HwMemoryPackageImpl theHwMemoryPackage = (HwMemoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI) instanceof HwMemoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI) : HwMemoryPackage.eINSTANCE);
-		HwTimingPackageImpl theHwTimingPackage = (HwTimingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) instanceof HwTimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) : HwTimingPackage.eINSTANCE);
-		HwDevicePackageImpl theHwDevicePackage = (HwDevicePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) instanceof HwDevicePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) : HwDevicePackage.eINSTANCE);
-		HwGeneralPackageImpl theHwGeneralPackage = (HwGeneralPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) instanceof HwGeneralPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) : HwGeneralPackage.eINSTANCE);
-		HwPhysicalPackageImpl theHwPhysicalPackage = (HwPhysicalPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) instanceof HwPhysicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) : HwPhysicalPackage.eINSTANCE);
-		HwLayoutPackageImpl theHwLayoutPackage = (HwLayoutPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) instanceof HwLayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) : HwLayoutPackage.eINSTANCE);
-		HwPowerPackageImpl theHwPowerPackage = (HwPowerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) instanceof HwPowerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) : HwPowerPackage.eINSTANCE);
-		SRMPackageImpl theSRMPackage = (SRMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) instanceof SRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) : SRMPackage.eINSTANCE);
-		SW_ResourceCorePackageImpl theSW_ResourceCorePackage = (SW_ResourceCorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) instanceof SW_ResourceCorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) : SW_ResourceCorePackage.eINSTANCE);
-		SW_ConcurrencyPackageImpl theSW_ConcurrencyPackage = (SW_ConcurrencyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) instanceof SW_ConcurrencyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) : SW_ConcurrencyPackage.eINSTANCE);
-		SW_BrokeringPackageImpl theSW_BrokeringPackage = (SW_BrokeringPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) instanceof SW_BrokeringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) : SW_BrokeringPackage.eINSTANCE);
-		GCMPackageImpl theGCMPackage = (GCMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) instanceof GCMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) : GCMPackage.eINSTANCE);
-		GQAMPackageImpl theGQAMPackage = (GQAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) instanceof GQAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) : GQAMPackage.eINSTANCE);
-		SAMPackageImpl theSAMPackage = (SAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) instanceof SAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) : SAMPackage.eINSTANCE);
-		PAMPackageImpl thePAMPackage = (PAMPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) instanceof PAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) : PAMPackage.eINSTANCE);
-		MeasurementUnitsPackageImpl theMeasurementUnitsPackage = (MeasurementUnitsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) instanceof MeasurementUnitsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) : MeasurementUnitsPackage.eINSTANCE);
-		GRM_BasicTypesPackageImpl theGRM_BasicTypesPackage = (GRM_BasicTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) instanceof GRM_BasicTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) : GRM_BasicTypesPackage.eINSTANCE);
-		MARTE_DataTypesPackageImpl theMARTE_DataTypesPackage = (MARTE_DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) instanceof MARTE_DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) : MARTE_DataTypesPackage.eINSTANCE);
-		BasicNFP_TypesPackageImpl theBasicNFP_TypesPackage = (BasicNFP_TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) instanceof BasicNFP_TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) : BasicNFP_TypesPackage.eINSTANCE);
-		TimeTypesLibraryPackageImpl theTimeTypesLibraryPackage = (TimeTypesLibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) instanceof TimeTypesLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) : TimeTypesLibraryPackage.eINSTANCE);
-		TimeLibraryPackageImpl theTimeLibraryPackage = (TimeLibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) instanceof TimeLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) : TimeLibraryPackage.eINSTANCE);
-		RS_LibraryPackageImpl theRS_LibraryPackage = (RS_LibraryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) instanceof RS_LibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) : RS_LibraryPackage.eINSTANCE);
-		MARTE_PrimitivesTypesPackageImpl theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) instanceof MARTE_PrimitivesTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) : MARTE_PrimitivesTypesPackage.eINSTANCE);
+		MARTEPackageImpl theMARTEPackage = (MARTEPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) instanceof MARTEPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MARTEPackage.eNS_URI) : MARTEPackage.eINSTANCE);
+		NFPsPackageImpl theNFPsPackage = (NFPsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) instanceof NFPsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NFPsPackage.eNS_URI) : NFPsPackage.eINSTANCE);
+		CoreElementsPackageImpl theCoreElementsPackage = (CoreElementsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI) instanceof CoreElementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI)
+				: CoreElementsPackage.eINSTANCE);
+		AllocPackageImpl theAllocPackage = (AllocPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) instanceof AllocPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI) : AllocPackage.eINSTANCE);
+		TimePackageImpl theTimePackage = (TimePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) instanceof TimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI) : TimePackage.eINSTANCE);
+		GRMPackageImpl theGRMPackage = (GRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) instanceof GRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI) : GRMPackage.eINSTANCE);
+		RSMPackageImpl theRSMPackage = (RSMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) instanceof RSMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RSMPackage.eNS_URI) : RSMPackage.eINSTANCE);
+		VSLPackageImpl theVSLPackage = (VSLPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) instanceof VSLPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VSLPackage.eNS_URI) : VSLPackage.eINSTANCE);
+		VariablesPackageImpl theVariablesPackage = (VariablesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI) instanceof VariablesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariablesPackage.eNS_URI)
+				: VariablesPackage.eINSTANCE);
+		OperatorsPackageImpl theOperatorsPackage = (OperatorsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI) instanceof OperatorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OperatorsPackage.eNS_URI)
+				: OperatorsPackage.eINSTANCE);
+		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI)
+				: DataTypesPackage.eINSTANCE);
+		HLAMPackageImpl theHLAMPackage = (HLAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) instanceof HLAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HLAMPackage.eNS_URI) : HLAMPackage.eINSTANCE);
+		HRMPackageImpl theHRMPackage = (HRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) instanceof HRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HRMPackage.eNS_URI) : HRMPackage.eINSTANCE);
+		HwLogicalPackageImpl theHwLogicalPackage = (HwLogicalPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI) instanceof HwLogicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLogicalPackage.eNS_URI)
+				: HwLogicalPackage.eINSTANCE);
+		HwComputingPackageImpl theHwComputingPackage = (HwComputingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI) instanceof HwComputingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwComputingPackage.eNS_URI)
+				: HwComputingPackage.eINSTANCE);
+		HwCommunicationPackageImpl theHwCommunicationPackage = (HwCommunicationPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwCommunicationPackage.eNS_URI) instanceof HwCommunicationPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HwCommunicationPackage.eNS_URI) : HwCommunicationPackage.eINSTANCE);
+		HwStoragePackageImpl theHwStoragePackage = (HwStoragePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI) instanceof HwStoragePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwStoragePackage.eNS_URI)
+				: HwStoragePackage.eINSTANCE);
+		HwStorageManagerPackageImpl theHwStorageManagerPackage = (HwStorageManagerPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwStorageManagerPackage.eNS_URI) instanceof HwStorageManagerPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(HwStorageManagerPackage.eNS_URI) : HwStorageManagerPackage.eINSTANCE);
+		HwMemoryPackageImpl theHwMemoryPackage = (HwMemoryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI) instanceof HwMemoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwMemoryPackage.eNS_URI)
+				: HwMemoryPackage.eINSTANCE);
+		HwTimingPackageImpl theHwTimingPackage = (HwTimingPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI) instanceof HwTimingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwTimingPackage.eNS_URI)
+				: HwTimingPackage.eINSTANCE);
+		HwDevicePackageImpl theHwDevicePackage = (HwDevicePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI) instanceof HwDevicePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwDevicePackage.eNS_URI)
+				: HwDevicePackage.eINSTANCE);
+		HwGeneralPackageImpl theHwGeneralPackage = (HwGeneralPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI) instanceof HwGeneralPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwGeneralPackage.eNS_URI)
+				: HwGeneralPackage.eINSTANCE);
+		HwPhysicalPackageImpl theHwPhysicalPackage = (HwPhysicalPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI) instanceof HwPhysicalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPhysicalPackage.eNS_URI)
+				: HwPhysicalPackage.eINSTANCE);
+		HwLayoutPackageImpl theHwLayoutPackage = (HwLayoutPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI) instanceof HwLayoutPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwLayoutPackage.eNS_URI)
+				: HwLayoutPackage.eINSTANCE);
+		HwPowerPackageImpl theHwPowerPackage = (HwPowerPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) instanceof HwPowerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwPowerPackage.eNS_URI) : HwPowerPackage.eINSTANCE);
+		SRMPackageImpl theSRMPackage = (SRMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) instanceof SRMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SRMPackage.eNS_URI) : SRMPackage.eINSTANCE);
+		SW_ResourceCorePackageImpl theSW_ResourceCorePackage = (SW_ResourceCorePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI) instanceof SW_ResourceCorePackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SW_ResourceCorePackage.eNS_URI) : SW_ResourceCorePackage.eINSTANCE);
+		SW_ConcurrencyPackageImpl theSW_ConcurrencyPackage = (SW_ConcurrencyPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_ConcurrencyPackage.eNS_URI) instanceof SW_ConcurrencyPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(SW_ConcurrencyPackage.eNS_URI) : SW_ConcurrencyPackage.eINSTANCE);
+		SW_BrokeringPackageImpl theSW_BrokeringPackage = (SW_BrokeringPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI) instanceof SW_BrokeringPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SW_BrokeringPackage.eNS_URI)
+				: SW_BrokeringPackage.eINSTANCE);
+		GCMPackageImpl theGCMPackage = (GCMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) instanceof GCMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GCMPackage.eNS_URI) : GCMPackage.eINSTANCE);
+		GQAMPackageImpl theGQAMPackage = (GQAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) instanceof GQAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GQAMPackage.eNS_URI) : GQAMPackage.eINSTANCE);
+		SAMPackageImpl theSAMPackage = (SAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) instanceof SAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SAMPackage.eNS_URI) : SAMPackage.eINSTANCE);
+		PAMPackageImpl thePAMPackage = (PAMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) instanceof PAMPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PAMPackage.eNS_URI) : PAMPackage.eINSTANCE);
+		MeasurementUnitsPackageImpl theMeasurementUnitsPackage = (MeasurementUnitsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MeasurementUnitsPackage.eNS_URI) instanceof MeasurementUnitsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MeasurementUnitsPackage.eNS_URI) : MeasurementUnitsPackage.eINSTANCE);
+		GRM_BasicTypesPackageImpl theGRM_BasicTypesPackage = (GRM_BasicTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(GRM_BasicTypesPackage.eNS_URI) instanceof GRM_BasicTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(GRM_BasicTypesPackage.eNS_URI) : GRM_BasicTypesPackage.eINSTANCE);
+		MARTE_DataTypesPackageImpl theMARTE_DataTypesPackage = (MARTE_DataTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTE_DataTypesPackage.eNS_URI) instanceof MARTE_DataTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MARTE_DataTypesPackage.eNS_URI) : MARTE_DataTypesPackage.eINSTANCE);
+		BasicNFP_TypesPackageImpl theBasicNFP_TypesPackage = (BasicNFP_TypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BasicNFP_TypesPackage.eNS_URI) instanceof BasicNFP_TypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(BasicNFP_TypesPackage.eNS_URI) : BasicNFP_TypesPackage.eINSTANCE);
+		TimeTypesLibraryPackageImpl theTimeTypesLibraryPackage = (TimeTypesLibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimeTypesLibraryPackage.eNS_URI) instanceof TimeTypesLibraryPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TimeTypesLibraryPackage.eNS_URI) : TimeTypesLibraryPackage.eINSTANCE);
+		TimeLibraryPackageImpl theTimeLibraryPackage = (TimeLibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI) instanceof TimeLibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TimeLibraryPackage.eNS_URI)
+				: TimeLibraryPackage.eINSTANCE);
+		RS_LibraryPackageImpl theRS_LibraryPackage = (RS_LibraryPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI) instanceof RS_LibraryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RS_LibraryPackage.eNS_URI)
+				: RS_LibraryPackage.eINSTANCE);
+		MARTE_PrimitivesTypesPackageImpl theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) instanceof MARTE_PrimitivesTypesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI) : MARTE_PrimitivesTypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSW_InteractionPackage.createPackageContents();
@@ -399,7 +438,7 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 		// Mark meta-data to indicate it can't be changed
 		theSW_InteractionPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(SW_InteractionPackage.eNS_URI, theSW_InteractionPackage);
 		return theSW_InteractionPackage;
@@ -408,8 +447,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getSwInteractionResource() {
 		return swInteractionResourceEClass;
 	}
@@ -417,44 +458,54 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSwInteractionResource_IsIntraMemoryPartitionInteraction() {
-		return (EAttribute)swInteractionResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) swInteractionResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSwInteractionResource_WaitingQueuePolicy() {
-		return (EAttribute)swInteractionResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) swInteractionResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSwInteractionResource_WaitingQueueCapacity() {
-		return (EAttribute)swInteractionResourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) swInteractionResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSwInteractionResource_WaitingPolicyElements() {
-		return (EReference)swInteractionResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference) swInteractionResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getSwCommunicationResource() {
 		return swCommunicationResourceEClass;
 	}
@@ -462,8 +513,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getSwSynchronizationResource() {
 		return swSynchronizationResourceEClass;
 	}
@@ -471,8 +524,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getSharedDataComResource() {
 		return sharedDataComResourceEClass;
 	}
@@ -480,26 +535,32 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSharedDataComResource_ReadServices() {
-		return (EReference)sharedDataComResourceEClass.getEStructuralFeatures().get(0);
+		return (EReference) sharedDataComResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSharedDataComResource_WriteServices() {
-		return (EReference)sharedDataComResourceEClass.getEStructuralFeatures().get(1);
+		return (EReference) sharedDataComResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageComResource() {
 		return messageComResourceEClass;
 	}
@@ -507,71 +568,87 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageComResource_IsFixedMessageSize() {
-		return (EAttribute)messageComResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) messageComResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageComResource_Mechanism() {
-		return (EAttribute)messageComResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) messageComResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComResource_MessageSizeElements() {
-		return (EReference)messageComResourceEClass.getEStructuralFeatures().get(2);
+		return (EReference) messageComResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComResource_MessageQueueCapacityElements() {
-		return (EReference)messageComResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference) messageComResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageComResource_MessageQueuePolicy() {
-		return (EAttribute)messageComResourceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) messageComResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComResource_SendServices() {
-		return (EReference)messageComResourceEClass.getEStructuralFeatures().get(5);
+		return (EReference) messageComResourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComResource_ReceiveServices() {
-		return (EReference)messageComResourceEClass.getEStructuralFeatures().get(6);
+		return (EReference) messageComResourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getNotificationResource() {
 		return notificationResourceEClass;
 	}
@@ -579,80 +656,98 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNotificationResource_Occurence() {
-		return (EAttribute)notificationResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) notificationResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNotificationResource_Mechanism() {
-		return (EAttribute)notificationResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) notificationResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_OccurenceCountElements() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(2);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_MaskElements() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_FlushServices() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(4);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_SignalServices() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(5);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_WaitServices() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(6);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNotificationResource_ClearServices() {
-		return (EReference)notificationResourceEClass.getEStructuralFeatures().get(7);
+		return (EReference) notificationResourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getSwMutualExclusionResource() {
 		return swMutualExclusionResourceEClass;
 	}
@@ -660,53 +755,65 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSwMutualExclusionResource_Mechanism() {
-		return (EAttribute)swMutualExclusionResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) swMutualExclusionResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSwMutualExclusionResource_ConcurrentAccessProtocol() {
-		return (EAttribute)swMutualExclusionResourceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) swMutualExclusionResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSwMutualExclusionResource_AccessTokenElements() {
-		return (EReference)swMutualExclusionResourceEClass.getEStructuralFeatures().get(2);
+		return (EReference) swMutualExclusionResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSwMutualExclusionResource_ReleaseServices() {
-		return (EReference)swMutualExclusionResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference) swMutualExclusionResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getSwMutualExclusionResource_AcquireServices() {
-		return (EReference)swMutualExclusionResourceEClass.getEStructuralFeatures().get(4);
+		return (EReference) swMutualExclusionResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getQueuePolicyKind() {
 		return queuePolicyKindEEnum;
 	}
@@ -714,8 +821,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getMessageResourceKind() {
 		return messageResourceKindEEnum;
 	}
@@ -723,8 +832,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getNotificationKind() {
 		return notificationKindEEnum;
 	}
@@ -732,8 +843,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getNotificationResourceKind() {
 		return notificationResourceKindEEnum;
 	}
@@ -741,8 +854,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getMutualExclusionResourceKind() {
 		return mutualExclusionResourceKindEEnum;
 	}
@@ -750,8 +865,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getConcurrentAccessProtocolKind() {
 		return concurrentAccessProtocolKindEEnum;
 	}
@@ -759,28 +876,34 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public SW_InteractionFactory getSW_InteractionFactory() {
-		return (SW_InteractionFactory)getEFactoryInstance();
+		return (SW_InteractionFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -836,19 +959,23 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -857,10 +984,10 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SW_ResourceCorePackage theSW_ResourceCorePackage = (SW_ResourceCorePackage)EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI);
-		MARTE_PrimitivesTypesPackage theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackage)EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI);
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		GRMPackage theGRMPackage = (GRMPackage)EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI);
+		SW_ResourceCorePackage theSW_ResourceCorePackage = (SW_ResourceCorePackage) EPackage.Registry.INSTANCE.getEPackage(SW_ResourceCorePackage.eNS_URI);
+		MARTE_PrimitivesTypesPackage theMARTE_PrimitivesTypesPackage = (MARTE_PrimitivesTypesPackage) EPackage.Registry.INSTANCE.getEPackage(MARTE_PrimitivesTypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		GRMPackage theGRMPackage = (GRMPackage) EPackage.Registry.INSTANCE.getEPackage(GRMPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -880,44 +1007,66 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(swInteractionResourceEClass, SwInteractionResource.class, "SwInteractionResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSwInteractionResource_IsIntraMemoryPartitionInteraction(), ecorePackage.getEBoolean(), "isIntraMemoryPartitionInteraction", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSwInteractionResource_WaitingQueuePolicy(), this.getQueuePolicyKind(), "waitingQueuePolicy", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSwInteractionResource_WaitingQueueCapacity(), theMARTE_PrimitivesTypesPackage.getInteger(), "waitingQueueCapacity", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSwInteractionResource_WaitingPolicyElements(), theUMLPackage.getTypedElement(), null, "waitingPolicyElements", null, 0, -1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSwInteractionResource_IsIntraMemoryPartitionInteraction(), ecorePackage.getEBoolean(), "isIntraMemoryPartitionInteraction", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSwInteractionResource_WaitingQueuePolicy(), this.getQueuePolicyKind(), "waitingQueuePolicy", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getSwInteractionResource_WaitingQueueCapacity(), theMARTE_PrimitivesTypesPackage.getInteger(), "waitingQueueCapacity", null, 0, 1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSwInteractionResource_WaitingPolicyElements(), theUMLPackage.getTypedElement(), null, "waitingPolicyElements", null, 0, -1, SwInteractionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(swCommunicationResourceEClass, SwCommunicationResource.class, "SwCommunicationResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(swSynchronizationResourceEClass, SwSynchronizationResource.class, "SwSynchronizationResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sharedDataComResourceEClass, SharedDataComResource.class, "SharedDataComResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSharedDataComResource_ReadServices(), theUMLPackage.getBehavioralFeature(), null, "readServices", null, 0, -1, SharedDataComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSharedDataComResource_WriteServices(), theUMLPackage.getBehavioralFeature(), null, "writeServices", null, 0, -1, SharedDataComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSharedDataComResource_ReadServices(), theUMLPackage.getBehavioralFeature(), null, "readServices", null, 0, -1, SharedDataComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSharedDataComResource_WriteServices(), theUMLPackage.getBehavioralFeature(), null, "writeServices", null, 0, -1, SharedDataComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(messageComResourceEClass, MessageComResource.class, "MessageComResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMessageComResource_IsFixedMessageSize(), theMARTE_PrimitivesTypesPackage.getBoolean(), "isFixedMessageSize", null, 0, 1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getMessageComResource_IsFixedMessageSize(), theMARTE_PrimitivesTypesPackage.getBoolean(), "isFixedMessageSize", null, 0, 1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMessageComResource_Mechanism(), this.getMessageResourceKind(), "mechanism", null, 0, 1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMessageComResource_MessageSizeElements(), theUMLPackage.getTypedElement(), null, "messageSizeElements", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMessageComResource_MessageQueueCapacityElements(), theUMLPackage.getTypedElement(), null, "messageQueueCapacityElements", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageComResource_MessageSizeElements(), theUMLPackage.getTypedElement(), null, "messageSizeElements", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageComResource_MessageQueueCapacityElements(), theUMLPackage.getTypedElement(), null, "messageQueueCapacityElements", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMessageComResource_MessageQueuePolicy(), this.getQueuePolicyKind(), "messageQueuePolicy", null, 0, 1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMessageComResource_SendServices(), theUMLPackage.getBehavioralFeature(), null, "sendServices", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMessageComResource_ReceiveServices(), theUMLPackage.getBehavioralFeature(), null, "receiveServices", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageComResource_SendServices(), theUMLPackage.getBehavioralFeature(), null, "sendServices", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageComResource_ReceiveServices(), theUMLPackage.getBehavioralFeature(), null, "receiveServices", null, 0, -1, MessageComResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(notificationResourceEClass, NotificationResource.class, "NotificationResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNotificationResource_Occurence(), this.getNotificationKind(), "occurence", null, 0, 1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNotificationResource_Mechanism(), this.getNotificationResourceKind(), "mechanism", null, 0, 1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_OccurenceCountElements(), theUMLPackage.getTypedElement(), null, "occurenceCountElements", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_MaskElements(), theUMLPackage.getTypedElement(), null, "maskElements", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_FlushServices(), theUMLPackage.getBehavioralFeature(), null, "flushServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_SignalServices(), theUMLPackage.getBehavioralFeature(), null, "signalServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_WaitServices(), theUMLPackage.getBehavioralFeature(), null, "waitServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNotificationResource_ClearServices(), theUMLPackage.getBehavioralFeature(), null, "clearServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_OccurenceCountElements(), theUMLPackage.getTypedElement(), null, "occurenceCountElements", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_MaskElements(), theUMLPackage.getTypedElement(), null, "maskElements", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_FlushServices(), theUMLPackage.getBehavioralFeature(), null, "flushServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_SignalServices(), theUMLPackage.getBehavioralFeature(), null, "signalServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_WaitServices(), theUMLPackage.getBehavioralFeature(), null, "waitServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNotificationResource_ClearServices(), theUMLPackage.getBehavioralFeature(), null, "clearServices", null, 0, -1, NotificationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(swMutualExclusionResourceEClass, SwMutualExclusionResource.class, "SwMutualExclusionResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSwMutualExclusionResource_Mechanism(), this.getMutualExclusionResourceKind(), "mechanism", null, 0, 1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSwMutualExclusionResource_ConcurrentAccessProtocol(), this.getConcurrentAccessProtocolKind(), "concurrentAccessProtocol", null, 0, 1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSwMutualExclusionResource_AccessTokenElements(), theUMLPackage.getTypedElement(), null, "accessTokenElements", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSwMutualExclusionResource_ReleaseServices(), theUMLPackage.getBehavioralFeature(), null, "releaseServices", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSwMutualExclusionResource_AcquireServices(), theUMLPackage.getBehavioralFeature(), null, "acquireServices", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSwMutualExclusionResource_Mechanism(), this.getMutualExclusionResourceKind(), "mechanism", null, 0, 1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEAttribute(getSwMutualExclusionResource_ConcurrentAccessProtocol(), this.getConcurrentAccessProtocolKind(), "concurrentAccessProtocol", null, 0, 1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSwMutualExclusionResource_AccessTokenElements(), theUMLPackage.getTypedElement(), null, "accessTokenElements", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSwMutualExclusionResource_ReleaseServices(), theUMLPackage.getBehavioralFeature(), null, "releaseServices", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSwMutualExclusionResource_AcquireServices(), theUMLPackage.getBehavioralFeature(), null, "acquireServices", null, 0, -1, SwMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(queuePolicyKindEEnum, QueuePolicyKind.class, "QueuePolicyKind");
@@ -962,4 +1111,4 @@ public class SW_InteractionPackageImpl extends EPackageImpl implements SW_Intera
 		addEEnumLiteral(concurrentAccessProtocolKindEEnum, ConcurrentAccessProtocolKind.OTHER);
 	}
 
-} //SW_InteractionPackageImpl
+} // SW_InteractionPackageImpl

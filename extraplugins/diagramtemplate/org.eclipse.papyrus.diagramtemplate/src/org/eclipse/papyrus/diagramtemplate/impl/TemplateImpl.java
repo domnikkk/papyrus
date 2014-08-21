@@ -29,8 +29,8 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.TemplateImpl#getDiagramDefinitions <em>Diagram Definitions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.diagramtemplate.impl.TemplateImpl#getTargetRoot <em>Target Root</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.TemplateImpl#getDiagramDefinitions <em>Diagram Definitions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.diagramtemplate.impl.TemplateImpl#getTargetRoot <em>Target Root</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getDiagramDefinitions() <em>Diagram Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDiagramDefinitions()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	 * The cached value of the '{@link #getTargetRoot() <em>Target Root</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTargetRoot()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TemplateImpl() {
@@ -69,6 +72,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,6 +83,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<DiagramDefinition> getDiagramDefinitions() {
@@ -91,15 +96,17 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EObject getTargetRoot() {
 		if (targetRoot != null && targetRoot.eIsProxy()) {
-			InternalEObject oldTargetRoot = (InternalEObject)targetRoot;
+			InternalEObject oldTargetRoot = (InternalEObject) targetRoot;
 			targetRoot = eResolveProxy(oldTargetRoot);
 			if (targetRoot != oldTargetRoot) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiagramTemplatePackage.TEMPLATE__TARGET_ROOT, oldTargetRoot, targetRoot));
+				}
 			}
 		}
 		return targetRoot;
@@ -108,6 +115,7 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EObject basicGetTargetRoot() {
@@ -117,25 +125,28 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTargetRoot(EObject newTargetRoot) {
 		EObject oldTargetRoot = targetRoot;
 		targetRoot = newTargetRoot;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiagramTemplatePackage.TEMPLATE__TARGET_ROOT, oldTargetRoot, targetRoot));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
-				return ((InternalEList<?>)getDiagramDefinitions()).basicRemove(otherEnd, msgs);
+		case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
+			return ((InternalEList<?>) getDiagramDefinitions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,16 +154,19 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
-				return getDiagramDefinitions();
-			case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
-				if (resolve) return getTargetRoot();
-				return basicGetTargetRoot();
+		case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
+			return getDiagramDefinitions();
+		case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
+			if (resolve) {
+				return getTargetRoot();
+			}
+			return basicGetTargetRoot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,19 +174,20 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
-				getDiagramDefinitions().clear();
-				getDiagramDefinitions().addAll((Collection<? extends DiagramDefinition>)newValue);
-				return;
-			case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
-				setTargetRoot((EObject)newValue);
-				return;
+		case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
+			getDiagramDefinitions().clear();
+			getDiagramDefinitions().addAll((Collection<? extends DiagramDefinition>) newValue);
+			return;
+		case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
+			setTargetRoot((EObject) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,17 +195,18 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
-				getDiagramDefinitions().clear();
-				return;
-			case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
-				setTargetRoot((EObject)null);
-				return;
+		case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
+			getDiagramDefinitions().clear();
+			return;
+		case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
+			setTargetRoot((EObject) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,17 +214,18 @@ public class TemplateImpl extends EObjectImpl implements Template {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
-				return diagramDefinitions != null && !diagramDefinitions.isEmpty();
-			case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
-				return targetRoot != null;
+		case DiagramTemplatePackage.TEMPLATE__DIAGRAM_DEFINITIONS:
+			return diagramDefinitions != null && !diagramDefinitions.isEmpty();
+		case DiagramTemplatePackage.TEMPLATE__TARGET_ROOT:
+			return targetRoot != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TemplateImpl
+} // TemplateImpl

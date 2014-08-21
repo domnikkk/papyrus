@@ -26,6 +26,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RequirementsFactoryImpl extends EFactoryImpl implements RequirementsFactory {
@@ -33,16 +34,16 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static RequirementsFactory init() {
 		try {
-			RequirementsFactory theRequirementsFactory = (RequirementsFactory)EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
+			RequirementsFactory theRequirementsFactory = (RequirementsFactory) EPackage.Registry.INSTANCE.getEFactory(RequirementsPackage.eNS_URI);
 			if (theRequirementsFactory != null) {
 				return theRequirementsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RequirementsFactoryImpl();
@@ -52,6 +53,7 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RequirementsFactoryImpl() {
@@ -61,61 +63,76 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RequirementsPackage.REQUIREMENT: return createRequirement();
-			case RequirementsPackage.OPERATIONAL_SITUATION: return createOperationalSituation();
-			case RequirementsPackage.REQUIREMENTS_LINK: return createRequirementsLink();
-			case RequirementsPackage.REQUIREMENTS_MODEL: return createRequirementsModel();
-			case RequirementsPackage.REQUIREMENTS_RELATIONSHIP_GROUP: return createRequirementsRelationshipGroup();
-			case RequirementsPackage.SATISFY: return createSatisfy();
-			case RequirementsPackage.REFINE: return createRefine();
-			case RequirementsPackage.DERIVE_REQUIREMENT: return createDeriveRequirement();
-			case RequirementsPackage.QUALITY_REQUIREMENT: return createQualityRequirement();
-			case RequirementsPackage.REQUIREMENTS_HIERARCHY: return createRequirementsHierarchy();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case RequirementsPackage.REQUIREMENT:
+			return createRequirement();
+		case RequirementsPackage.OPERATIONAL_SITUATION:
+			return createOperationalSituation();
+		case RequirementsPackage.REQUIREMENTS_LINK:
+			return createRequirementsLink();
+		case RequirementsPackage.REQUIREMENTS_MODEL:
+			return createRequirementsModel();
+		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP_GROUP:
+			return createRequirementsRelationshipGroup();
+		case RequirementsPackage.SATISFY:
+			return createSatisfy();
+		case RequirementsPackage.REFINE:
+			return createRefine();
+		case RequirementsPackage.DERIVE_REQUIREMENT:
+			return createDeriveRequirement();
+		case RequirementsPackage.QUALITY_REQUIREMENT:
+			return createQualityRequirement();
+		case RequirementsPackage.REQUIREMENTS_HIERARCHY:
+			return createRequirementsHierarchy();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
-				return createQualityRequirementKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
+			return createQualityRequirementKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
-				return convertQualityRequirementKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RequirementsPackage.QUALITY_REQUIREMENT_KIND:
+			return convertQualityRequirementKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Requirement createRequirement() {
 		RequirementImpl requirement = new RequirementImpl();
 		return requirement;
@@ -124,8 +141,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public OperationalSituation createOperationalSituation() {
 		OperationalSituationImpl operationalSituation = new OperationalSituationImpl();
 		return operationalSituation;
@@ -134,8 +153,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RequirementsLink createRequirementsLink() {
 		RequirementsLinkImpl requirementsLink = new RequirementsLinkImpl();
 		return requirementsLink;
@@ -144,8 +165,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RequirementsModel createRequirementsModel() {
 		RequirementsModelImpl requirementsModel = new RequirementsModelImpl();
 		return requirementsModel;
@@ -154,8 +177,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RequirementsRelationshipGroup createRequirementsRelationshipGroup() {
 		RequirementsRelationshipGroupImpl requirementsRelationshipGroup = new RequirementsRelationshipGroupImpl();
 		return requirementsRelationshipGroup;
@@ -164,8 +189,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Satisfy createSatisfy() {
 		SatisfyImpl satisfy = new SatisfyImpl();
 		return satisfy;
@@ -174,8 +201,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Refine createRefine() {
 		RefineImpl refine = new RefineImpl();
 		return refine;
@@ -184,8 +213,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public DeriveRequirement createDeriveRequirement() {
 		DeriveRequirementImpl deriveRequirement = new DeriveRequirementImpl();
 		return deriveRequirement;
@@ -194,8 +225,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public QualityRequirement createQualityRequirement() {
 		QualityRequirementImpl qualityRequirement = new QualityRequirementImpl();
 		return qualityRequirement;
@@ -204,8 +237,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RequirementsHierarchy createRequirementsHierarchy() {
 		RequirementsHierarchyImpl requirementsHierarchy = new RequirementsHierarchyImpl();
 		return requirementsHierarchy;
@@ -214,17 +249,21 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public QualityRequirementKind createQualityRequirementKindFromString(EDataType eDataType, String initialValue) {
 		QualityRequirementKind result = QualityRequirementKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertQualityRequirementKindToString(EDataType eDataType, Object instanceValue) {
@@ -234,15 +273,18 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RequirementsPackage getRequirementsPackage() {
-		return (RequirementsPackage)getEPackage();
+		return (RequirementsPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -251,4 +293,4 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 		return RequirementsPackage.eINSTANCE;
 	}
 
-} //RequirementsFactoryImpl
+} // RequirementsFactoryImpl

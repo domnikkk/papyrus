@@ -38,13 +38,13 @@ public class CS_CreateObjectActionActivation extends CreateObjectActionActivatio
 		// to produce a CS_Object instead of an Object in the case where the class
 		// to be instantiated is not a behavior
 
-		CreateObjectAction action = (CreateObjectAction)(this.node);
+		CreateObjectAction action = (CreateObjectAction) (this.node);
 
 		Reference reference;
-		Object_ referent = ((CreateObjectActionStrategy)this.getExecutionLocus().factory.getStrategy("CreateObjectActionStrategy")).instantiate((Class)(action.getClassifier()), this.getExecutionLocus());
-		if(referent instanceof CS_Object) {
+		Object_ referent = ((CreateObjectActionStrategy) this.getExecutionLocus().factory.getStrategy("CreateObjectActionStrategy")).instantiate((Class) (action.getClassifier()), this.getExecutionLocus());
+		if (referent instanceof CS_Object) {
 			reference = new CS_Reference();
-			((CS_Reference)reference).compositeReferent = (CS_Object)referent;
+			((CS_Reference) reference).compositeReferent = (CS_Object) referent;
 		} else {
 			reference = new Reference();
 		}

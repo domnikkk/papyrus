@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,10 +14,6 @@
 package org.eclipse.papyrus.operation.editor.xtext.validation.typing;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.alf.validation.typing.SignatureFacade;
-import org.eclipse.papyrus.alf.validation.typing.SignatureFacadeFactory;
-import org.eclipse.papyrus.alf.validation.typing.TypeExpression;
-import org.eclipse.papyrus.alf.validation.typing.TypeExpressionFactory;
 import org.eclipse.papyrus.operation.editor.xtext.operation.FormalParameter;
 import org.eclipse.papyrus.operation.editor.xtext.operation.OperationDeclaration;
 
@@ -27,19 +23,19 @@ public class OperationEditorSignatureFacadeFactory extends
 	@Override
 	public SignatureFacade createSignatureFacade(EObject o) {
 		if (o instanceof OperationDeclaration) {
-			OperationDeclaration declaration = (OperationDeclaration)o ;
-			SignatureFacade signature = new SignatureFacade(null) ;
-			signature.setName(declaration.getName()) ;
+			OperationDeclaration declaration = (OperationDeclaration) o;
+			SignatureFacade signature = new SignatureFacade(null);
+			signature.setName(declaration.getName());
 			if (declaration.getReturnType() != null) {
-				signature.setReturnType(TypeExpressionFactory.eInstance.createTypeExpression(declaration.getReturnType())) ;
+				signature.setReturnType(TypeExpressionFactory.eInstance.createTypeExpression(declaration.getReturnType()));
 			}
 			if (declaration.getFormalParameters() != null && declaration.getFormalParameters().getFormalParameterList() != null) {
 				for (FormalParameter p : declaration.getFormalParameters().getFormalParameterList().getFormalParameter()) {
-					TypeExpression parameterFacade = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
-					signature.getParameters().add(parameterFacade) ;
+					TypeExpression parameterFacade = TypeExpressionFactory.eInstance.createTypeExpression(p);
+					signature.getParameters().add(parameterFacade);
 				}
 			}
-			return signature ;
+			return signature;
 		}
 		return super.createSignatureFacade(o);
 	}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -13,7 +13,6 @@ package org.eclipse.papyrus.layers.notationmodel.edit;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.gmf.runtime.notation.Connector;
-import org.eclipse.gmf.runtime.notation.Shape;
 
 
 
@@ -24,7 +23,7 @@ import org.eclipse.gmf.runtime.notation.Shape;
 public class ConnectorItemProvider extends org.eclipse.gmf.runtime.notation.provider.ConnectorItemProvider {
 
 	protected AdapterFactory domainAdapterFactory;
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -38,6 +37,7 @@ public class ConnectorItemProvider extends org.eclipse.gmf.runtime.notation.prov
 
 	/**
 	 * Return the text of the underlying UML element if any.
+	 * 
 	 * @see org.eclipse.gmf.runtime.notation.provider.ShapeItemProvider#getText(java.lang.Object)
 	 *
 	 * @param object
@@ -45,24 +45,24 @@ public class ConnectorItemProvider extends org.eclipse.gmf.runtime.notation.prov
 	 */
 	@Override
 	public String getText(Object object) {
-		
-//		System.err.println("getText()");
-		Connector shape = (Connector)object;
-		
+
+		// System.err.println("getText()");
+		Connector shape = (Connector) object;
+
 		Object domainObject = shape.getElement();
-		if( domainObject != null) {
-			IItemLabelProvider nestedProvider = (IItemLabelProvider)domainAdapterFactory.adapt(domainObject, IItemLabelProvider.class);
-			if(nestedProvider != null) {
+		if (domainObject != null) {
+			IItemLabelProvider nestedProvider = (IItemLabelProvider) domainAdapterFactory.adapt(domainObject, IItemLabelProvider.class);
+			if (nestedProvider != null) {
 				return nestedProvider.getText(domainObject);
 			}
 		}
 		return super.getText(object);
 	}
-	
+
 
 	/**
 	 * Return the image of the underlying UML element if any.
-	 * 
+	 *
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getImage(java.lang.String)
 	 *
 	 * @param key
@@ -70,13 +70,13 @@ public class ConnectorItemProvider extends org.eclipse.gmf.runtime.notation.prov
 	 */
 	@Override
 	public Object getImage(Object object) {
-//		System.err.println("getImage()");
-		Connector shape = (Connector)object;
-		
+		// System.err.println("getImage()");
+		Connector shape = (Connector) object;
+
 		Object domainObject = shape.getElement();
-		if( domainObject != null) {
-			IItemLabelProvider nestedProvider = (IItemLabelProvider)domainAdapterFactory.adapt(domainObject, IItemLabelProvider.class);
-			if(nestedProvider != null) {
+		if (domainObject != null) {
+			IItemLabelProvider nestedProvider = (IItemLabelProvider) domainAdapterFactory.adapt(domainObject, IItemLabelProvider.class);
+			if (nestedProvider != null) {
 				return nestedProvider.getImage(domainObject);
 			}
 		}

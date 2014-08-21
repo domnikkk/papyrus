@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getIncompatibleStereotypes <em>Incompatible Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getBase <em>Base</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition <em>Extension Definition</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getCompatibleStereotypes <em>Compatible Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#isPossible <em>Possible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getIncompatibleStereotypes <em>Incompatible Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getBase <em>Base</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition <em>Extension Definition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getCompatibleStereotypes <em>Compatible Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#isPossible <em>Possible</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,10 +43,10 @@ public interface BaseMetaclass extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.facade.extensiondefinition.Combination}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Incompatible Stereotypes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Incompatible Stereotypes</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Incompatible Stereotypes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getBaseMetaclass_IncompatibleStereotypes()
 	 * @model containment="true"
@@ -58,10 +58,10 @@ public interface BaseMetaclass extends EObject {
 	 * Returns the value of the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base</em>' reference.
 	 * @see #setBase(EObject)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getBaseMetaclass_Base()
@@ -74,7 +74,9 @@ public interface BaseMetaclass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getBase <em>Base</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base</em>' reference.
 	 * @see #getBase()
 	 * @generated
 	 */
@@ -85,10 +87,10 @@ public interface BaseMetaclass extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.facade.extensiondefinition.ExtensionDefinition#getBaseMetaclasses <em>Base Metaclasses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extension Definition</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Extension Definition</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Extension Definition</em>' container reference.
 	 * @see #setExtensionDefinition(ExtensionDefinition)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getBaseMetaclass_ExtensionDefinition()
@@ -102,7 +104,9 @@ public interface BaseMetaclass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#getExtensionDefinition <em>Extension Definition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Extension Definition</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Extension Definition</em>' container reference.
 	 * @see #getExtensionDefinition()
 	 * @generated
 	 */
@@ -113,10 +117,10 @@ public interface BaseMetaclass extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.facade.extensiondefinition.Combination}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Compatible Stereotypes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Compatible Stereotypes</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Compatible Stereotypes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getBaseMetaclass_CompatibleStereotypes()
 	 * @model containment="true"
@@ -128,10 +132,10 @@ public interface BaseMetaclass extends EObject {
 	 * Returns the value of the '<em><b>Possible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Possible</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Possible</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Possible</em>' attribute.
 	 * @see #setPossible(boolean)
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#getBaseMetaclass_Possible()
@@ -144,7 +148,9 @@ public interface BaseMetaclass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass#isPossible <em>Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Possible</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Possible</em>' attribute.
 	 * @see #isPossible()
 	 * @generated
 	 */

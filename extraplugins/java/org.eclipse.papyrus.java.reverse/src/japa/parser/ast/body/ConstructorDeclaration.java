@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -50,7 +50,8 @@ public final class ConstructorDeclaration extends BodyDeclaration {
 	public ConstructorDeclaration() {
 	}
 
-	public ConstructorDeclaration(int beginLine, int beginColumn, int endLine, int endColumn, JavadocComment javaDoc, int modifiers, List<AnnotationExpr> annotations, List<TypeParameter> typeParameters, String name, List<Parameter> parameters, List<NameExpr> throws_, BlockStmt block) {
+	public ConstructorDeclaration(int beginLine, int beginColumn, int endLine, int endColumn, JavadocComment javaDoc, int modifiers, List<AnnotationExpr> annotations, List<TypeParameter> typeParameters, String name, List<Parameter> parameters,
+			List<NameExpr> throws_, BlockStmt block) {
 		super(beginLine, beginColumn, endLine, endColumn, annotations, javaDoc);
 		this.modifiers = modifiers;
 		this.typeParameters = typeParameters;

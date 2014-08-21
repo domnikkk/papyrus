@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class GetReferenceTypeName_Reply extends ReplyMessage {
 
 	/**
 	 * Constructs a reply message from a string
-	 * 
+	 *
 	 * @param referenceTypeName
-	 *        a string representing the reference type name
+	 *            a string representing the reference type name
 	 */
 	public GetReferenceTypeName_Reply(String referenceTypeName) {
 		super();
@@ -41,7 +41,7 @@ public class GetReferenceTypeName_Reply extends ReplyMessage {
 
 	/**
 	 * Returns the string representing the reference type name associated with this message
-	 * 
+	 *
 	 * @return the string representing the reference type name associated with this message
 	 */
 	public String getReferenceTypeName() {
@@ -53,6 +53,7 @@ public class GetReferenceTypeName_Reply extends ReplyMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().getReferenceTypeName_reply_marshal(this);
 	}

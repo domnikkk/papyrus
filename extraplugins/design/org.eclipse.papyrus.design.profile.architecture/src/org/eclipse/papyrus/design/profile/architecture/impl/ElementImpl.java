@@ -23,8 +23,8 @@ import org.eclipse.papyrus.design.profile.architecture.Element;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.impl.ElementImpl#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.design.profile.architecture.impl.ElementImpl#getComment <em>Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.impl.ElementImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.design.profile.architecture.impl.ElementImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -55,6 +57,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -65,6 +68,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -74,6 +78,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ElementImpl() {
@@ -83,6 +88,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,8 +99,10 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDocumentation() {
 		return documentation;
 	}
@@ -102,20 +110,25 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.ELEMENT__DOCUMENTATION, oldDocumentation, documentation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getComment() {
 		return comment;
 	}
@@ -123,27 +136,31 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setComment(String newComment) {
 		String oldComment = comment;
 		comment = newComment;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.ELEMENT__COMMENT, oldComment, comment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ArchitecturePackage.ELEMENT__DOCUMENTATION:
-				return getDocumentation();
-			case ArchitecturePackage.ELEMENT__COMMENT:
-				return getComment();
+		case ArchitecturePackage.ELEMENT__DOCUMENTATION:
+			return getDocumentation();
+		case ArchitecturePackage.ELEMENT__COMMENT:
+			return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,17 +168,18 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ArchitecturePackage.ELEMENT__DOCUMENTATION:
-				setDocumentation((String)newValue);
-				return;
-			case ArchitecturePackage.ELEMENT__COMMENT:
-				setComment((String)newValue);
-				return;
+		case ArchitecturePackage.ELEMENT__DOCUMENTATION:
+			setDocumentation((String) newValue);
+			return;
+		case ArchitecturePackage.ELEMENT__COMMENT:
+			setComment((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,17 +187,18 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ArchitecturePackage.ELEMENT__DOCUMENTATION:
-				setDocumentation(DOCUMENTATION_EDEFAULT);
-				return;
-			case ArchitecturePackage.ELEMENT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
+		case ArchitecturePackage.ELEMENT__DOCUMENTATION:
+			setDocumentation(DOCUMENTATION_EDEFAULT);
+			return;
+		case ArchitecturePackage.ELEMENT__COMMENT:
+			setComment(COMMENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,15 +206,16 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ArchitecturePackage.ELEMENT__DOCUMENTATION:
-				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
-			case ArchitecturePackage.ELEMENT__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+		case ArchitecturePackage.ELEMENT__DOCUMENTATION:
+			return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+		case ArchitecturePackage.ELEMENT__COMMENT:
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -203,11 +223,14 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (documentation: ");
@@ -218,4 +241,4 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 		return result.toString();
 	}
 
-} //ElementImpl
+} // ElementImpl

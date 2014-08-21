@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GQAMPackage
  * @generated
  */
@@ -28,6 +29,7 @@ public interface GQAMFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	GQAMFactory eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GQAMFactoryImpl.init();
@@ -36,6 +38,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Workload Generator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Workload Generator</em>'.
 	 * @generated
 	 */
@@ -45,6 +48,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Event Trace</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Event Trace</em>'.
 	 * @generated
 	 */
@@ -54,6 +58,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Workload Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Workload Event</em>'.
 	 * @generated
 	 */
@@ -63,6 +68,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Scenario</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Scenario</em>'.
 	 * @generated
 	 */
@@ -72,6 +78,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Step</em>'.
 	 * @generated
 	 */
@@ -81,6 +88,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Exec Host</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Exec Host</em>'.
 	 * @generated
 	 */
@@ -90,6 +98,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Requested Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Requested Service</em>'.
 	 * @generated
 	 */
@@ -99,6 +108,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Timed Obs</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Timed Obs</em>'.
 	 * @generated
 	 */
@@ -108,6 +118,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Comm Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Comm Step</em>'.
 	 * @generated
 	 */
@@ -117,6 +128,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Acq Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Acq Step</em>'.
 	 * @generated
 	 */
@@ -126,6 +138,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Rel Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Rel Step</em>'.
 	 * @generated
 	 */
@@ -135,6 +148,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Latency Obs</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Latency Obs</em>'.
 	 * @generated
 	 */
@@ -144,6 +158,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Comm Host</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Comm Host</em>'.
 	 * @generated
 	 */
@@ -153,6 +168,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Comm Channel</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Comm Channel</em>'.
 	 * @generated
 	 */
@@ -162,6 +178,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Workload Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Workload Behavior</em>'.
 	 * @generated
 	 */
@@ -171,6 +188,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Analysis Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Analysis Context</em>'.
 	 * @generated
 	 */
@@ -180,6 +198,7 @@ public interface GQAMFactory extends EFactory {
 	 * Returns a new object of class '<em>Ga Resources Platform</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Ga Resources Platform</em>'.
 	 * @generated
 	 */
@@ -189,9 +208,10 @@ public interface GQAMFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	GQAMPackage getGQAMPackage();
 
-} //GQAMFactory
+} // GQAMFactory

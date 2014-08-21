@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>COVARIANCE TYPE</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getCOVARIANCE_TYPE()
  * @model
  * @generated
@@ -22,6 +23,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_UNKNOWN_VALUE
 	 * @generated
 	 * @ordered
@@ -32,6 +34,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_APPROXIMATED_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +45,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #_COVARIANCE_TYPE_DIAGONAL_KNOWN_VALUE
 	 * @generated
 	 * @ordered
@@ -52,6 +56,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE KNOWN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_KNOWN_VALUE
 	 * @generated
 	 * @ordered
@@ -62,10 +67,10 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_UNKNOWN
 	 * @model
 	 * @generated
@@ -77,10 +82,10 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_APPROXIMATED
 	 * @model
 	 * @generated
@@ -92,10 +97,10 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #_COVARIANCE_TYPE_DIAGONAL_KNOWN
 	 * @model
 	 * @generated
@@ -107,10 +112,10 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * The '<em><b>COVARIANCE TYPE KNOWN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COVARIANCE TYPE KNOWN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>COVARIANCE TYPE KNOWN</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #COVARIANCE_TYPE_KNOWN
 	 * @model
 	 * @generated
@@ -122,20 +127,22 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * An array of all the '<em><b>COVARIANCE TYPE</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final COVARIANCE_TYPE[] VALUES_ARRAY =
-		new COVARIANCE_TYPE[] {
-			COVARIANCE_TYPE_UNKNOWN,
-			COVARIANCE_TYPE_APPROXIMATED,
-			_COVARIANCE_TYPE_DIAGONAL_KNOWN,
-			COVARIANCE_TYPE_KNOWN,
-		};
+			new COVARIANCE_TYPE[] {
+					COVARIANCE_TYPE_UNKNOWN,
+					COVARIANCE_TYPE_APPROXIMATED,
+					_COVARIANCE_TYPE_DIAGONAL_KNOWN,
+					COVARIANCE_TYPE_KNOWN,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>COVARIANCE TYPE</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<COVARIANCE_TYPE> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -144,6 +151,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * Returns the '<em><b>COVARIANCE TYPE</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static COVARIANCE_TYPE get(String literal) {
@@ -160,6 +168,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * Returns the '<em><b>COVARIANCE TYPE</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static COVARIANCE_TYPE getByName(String name) {
@@ -176,14 +185,19 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * Returns the '<em><b>COVARIANCE TYPE</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static COVARIANCE_TYPE get(int value) {
 		switch (value) {
-			case COVARIANCE_TYPE_UNKNOWN_VALUE: return COVARIANCE_TYPE_UNKNOWN;
-			case COVARIANCE_TYPE_APPROXIMATED_VALUE: return COVARIANCE_TYPE_APPROXIMATED;
-			case _COVARIANCE_TYPE_DIAGONAL_KNOWN_VALUE: return _COVARIANCE_TYPE_DIAGONAL_KNOWN;
-			case COVARIANCE_TYPE_KNOWN_VALUE: return COVARIANCE_TYPE_KNOWN;
+		case COVARIANCE_TYPE_UNKNOWN_VALUE:
+			return COVARIANCE_TYPE_UNKNOWN;
+		case COVARIANCE_TYPE_APPROXIMATED_VALUE:
+			return COVARIANCE_TYPE_APPROXIMATED;
+		case _COVARIANCE_TYPE_DIAGONAL_KNOWN_VALUE:
+			return _COVARIANCE_TYPE_DIAGONAL_KNOWN;
+		case COVARIANCE_TYPE_KNOWN_VALUE:
+			return COVARIANCE_TYPE_KNOWN;
 		}
 		return null;
 	}
@@ -191,6 +205,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -198,6 +213,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -205,6 +221,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -213,6 +230,7 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private COVARIANCE_TYPE(int value, String name, String literal) {
@@ -224,39 +242,43 @@ public enum COVARIANCE_TYPE implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //COVARIANCE_TYPE
+
+} // COVARIANCE_TYPE

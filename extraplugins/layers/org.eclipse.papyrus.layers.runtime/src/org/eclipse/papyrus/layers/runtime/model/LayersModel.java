@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -21,11 +21,11 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * This class declare the model used by the layer.
  * This model is registered to Papyrus core ModelSet which take care to load the
  * corresponding EMF resource.
- * 
+ *
  * @author cedric dumoulin
  *
  */
-public class LayersModel extends AbstractModelWithSharedResource<LayersStackApplication>{
+public class LayersModel extends AbstractModelWithSharedResource<LayersStackApplication> {
 
 	/**
 	 * File extension used for notation.
@@ -39,9 +39,9 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Identifier used to retrieve the model from the ModelManager
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -51,9 +51,9 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Get the extension used for TraceModel resources
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 	/**
 	 * Return true if the provided object is a root of the model, false otherwise.
 	 * This method should be implemented by subclasses.
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -74,21 +74,23 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 	}
 
 	/**
-	 * Lookup for the {@link LayersStackApplication} instance 
+	 * Lookup for the {@link LayersStackApplication} instance
+	 * 
 	 * @return the {@link LayersStackApplication} or null if not found.
 	 */
 	public LayersStackApplication lookupLayerStackApplication() {
-		
+
 		return getModelRoot();
 	}
 
 	/**
 	 * Get the {@link LayersStackApplication} object. Create it if not found.
+	 * 
 	 * @return
 	 */
 	public LayersStackApplication getLayerStackApplication() {
 		LayersStackApplication application = getModelRoot();
-		if( application != null) {
+		if (application != null) {
 			return application;
 		}
 		// Not found, create it
@@ -100,28 +102,31 @@ public class LayersModel extends AbstractModelWithSharedResource<LayersStackAppl
 
 	/**
 	 * Remove the specified application from the model.
+	 * 
 	 * @param application
 	 */
 	public void removeRoot(LayersStackApplication application) {
 		getResource().getContents().remove(application);
-		
+
 	}
 
 	private LayersStackAndApplicationLifeCycleEventNotifier layersStackAndApplicationLifeCycleEventNotifier = null;
+
 	/**
 	 * Get the associated {@link LayersStackAndApplicationLifeCycleEventNotifier}.
 	 * There is only one such notifier associated to the model.
+	 * 
 	 * @return
 	 */
 	public LayersStackAndApplicationLifeCycleEventNotifier getLayersStackLifeCycleEventNotifier() {
 
 
 		// TODO Use an adapter to share a single instance in the model itself.
-		if( layersStackAndApplicationLifeCycleEventNotifier == null) {
+		if (layersStackAndApplicationLifeCycleEventNotifier == null) {
 			// Create it
 			layersStackAndApplicationLifeCycleEventNotifier = new LayersStackAndApplicationLifeCycleEventNotifier(this);
 		}
-		
+
 		return layersStackAndApplicationLifeCycleEventNotifier;
 	}
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -28,10 +28,10 @@ import japa.parser.ast.visitor.VoidVisitor;
  * <p>
  * AST node that represent line comments.
  * </p>
- * 
+ *
  * Line comments are started with "//" and finish at
  * the end of the line ("\n").
- * 
+ *
  * @author Julio Vilmar Gesser
  */
 public final class LineComment extends Comment {

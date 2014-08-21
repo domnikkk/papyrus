@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -47,18 +47,19 @@ public class LayerOperatorConfigImplTest {
 	 */
 	@Test
 	public void testLayerOperatorConfigImpl() {
-		
+
 		// Create object
 		LayerOperatorConfig config = LayersconfigFactory.eINSTANCE.createLayerOperatorConfig();
 		config.setClassname(LayersPackage.eINSTANCE.getLayerOperatorDescriptor().getName());
-		
+
 
 		assertNotNull("object created", config);
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.LayerOperatorConfigImpl#createLayersOperatorDescriptor()}.
-	 * @throws InstanciationException 
+	 * 
+	 * @throws InstanciationException
 	 */
 	@Test
 	public void testCreateLayersOperatorDescriptor() throws InstanciationException {
@@ -66,8 +67,8 @@ public class LayerOperatorConfigImplTest {
 		LayerOperatorConfig config = LayersconfigFactory.eINSTANCE.createLayerOperatorConfig();
 		config.setClassname(LayersPackage.eINSTANCE.getLayerOperatorDescriptor().getName());
 
-		// check creation 
-		LayerOperatorDescriptor desc =config.createLayersOperatorDescriptor();
+		// check creation
+		LayerOperatorDescriptor desc = config.createLayersOperatorDescriptor();
 		assertNotNull("desc created", desc);
 	}
 

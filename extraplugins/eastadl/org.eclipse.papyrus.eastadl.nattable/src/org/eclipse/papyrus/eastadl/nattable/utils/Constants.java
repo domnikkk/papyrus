@@ -3,7 +3,7 @@ package org.eclipse.papyrus.eastadl.nattable.utils;
 public class Constants {
 
 	private Constants() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 

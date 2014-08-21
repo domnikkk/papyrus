@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,8 +63,7 @@ public class RobotMLDiagramsEditPolicyProvider extends AbstractProvider
 			EObject element = ((View) editPart.getModel()).getElement();
 			if (element instanceof Element) {
 				if (((Element) element).getNearestPackage().getAppliedProfile(
-						ROBOTML_ID) != null)
-
+						ROBOTML_ID) != null) {
 					// System.err.println(list.get(i).getProfile().getName());
 					if (editPart instanceof PortEditPart) {
 						NotificationListener editPolicy = new PortNodeLabelDisplayEditPolicy();
@@ -85,6 +84,7 @@ public class RobotMLDiagramsEditPolicyProvider extends AbstractProvider
 							editPolicy.notifyChanged(notification);
 						}
 					}
+				}
 			}
 		}
 	}

@@ -12,13 +12,13 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getAmountOfSubstanceExp <em>Amount Of Substance Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getElectricCurrentExp <em>Electric Current Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLenghtExp <em>Lenght Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLuminousIntensityExp <em>Luminous Intensity Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getMassExp <em>Mass Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getThermodynamicTemperatureExp <em>Thermodynamic Temperature Exp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getTimeExp <em>Time Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getAmountOfSubstanceExp <em>Amount Of Substance Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getElectricCurrentExp <em>Electric Current Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLenghtExp <em>Lenght Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLuminousIntensityExp <em>Luminous Intensity Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getMassExp <em>Mass Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getThermodynamicTemperatureExp <em>Thermodynamic Temperature Exp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getTimeExp <em>Time Exp</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,10 +32,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Amount Of Substance Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Amount Of Substance Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Amount Of Substance Exp</em>' attribute.
 	 * @see #setAmountOfSubstanceExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_AmountOfSubstanceExp()
@@ -48,7 +48,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getAmountOfSubstanceExp <em>Amount Of Substance Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Amount Of Substance Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Amount Of Substance Exp</em>' attribute.
 	 * @see #getAmountOfSubstanceExp()
 	 * @generated
 	 */
@@ -59,10 +61,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Electric Current Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Electric Current Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Electric Current Exp</em>' attribute.
 	 * @see #setElectricCurrentExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_ElectricCurrentExp()
@@ -75,7 +77,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getElectricCurrentExp <em>Electric Current Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Electric Current Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Electric Current Exp</em>' attribute.
 	 * @see #getElectricCurrentExp()
 	 * @generated
 	 */
@@ -86,10 +90,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lenght Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Lenght Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Lenght Exp</em>' attribute.
 	 * @see #setLenghtExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_LenghtExp()
@@ -102,7 +106,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLenghtExp <em>Lenght Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lenght Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Lenght Exp</em>' attribute.
 	 * @see #getLenghtExp()
 	 * @generated
 	 */
@@ -113,10 +119,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Luminous Intensity Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Luminous Intensity Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Luminous Intensity Exp</em>' attribute.
 	 * @see #setLuminousIntensityExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_LuminousIntensityExp()
@@ -129,7 +135,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getLuminousIntensityExp <em>Luminous Intensity Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Luminous Intensity Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Luminous Intensity Exp</em>' attribute.
 	 * @see #getLuminousIntensityExp()
 	 * @generated
 	 */
@@ -140,10 +148,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mass Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Mass Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Mass Exp</em>' attribute.
 	 * @see #setMassExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_MassExp()
@@ -156,7 +164,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getMassExp <em>Mass Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mass Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Mass Exp</em>' attribute.
 	 * @see #getMassExp()
 	 * @generated
 	 */
@@ -167,10 +177,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Thermodynamic Temperature Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Thermodynamic Temperature Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Thermodynamic Temperature Exp</em>' attribute.
 	 * @see #setThermodynamicTemperatureExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_ThermodynamicTemperatureExp()
@@ -183,7 +193,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getThermodynamicTemperatureExp <em>Thermodynamic Temperature Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thermodynamic Temperature Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Thermodynamic Temperature Exp</em>' attribute.
 	 * @see #getThermodynamicTemperatureExp()
 	 * @generated
 	 */
@@ -194,10 +206,10 @@ public interface Quantity extends EAPackageableElement {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Time Exp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Time Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Time Exp</em>' attribute.
 	 * @see #setTimeExp(int)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getQuantity_TimeExp()
@@ -210,7 +222,9 @@ public interface Quantity extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Quantity#getTimeExp <em>Time Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Exp</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Time Exp</em>' attribute.
 	 * @see #getTimeExp()
 	 * @generated
 	 */

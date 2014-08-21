@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -41,7 +41,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 
 /**
  * This is an example of a EMF UML model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
@@ -54,9 +54,9 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 	protected CommandStackListener commandStackListener;
 
 	/**
-	 * 
+	 *
 	 * Constructor. Create an DiEditor using the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
 	public LayersTreeEditorDiagram(ServicesRegistry servicesRegistry) throws ServiceException, BackboneException {
@@ -67,7 +67,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 	/**
 	 * Init the editor from the specified context.
 	 * Set the editing domain used by the EMF editor.
-	 * 
+	 *
 	 * @param editorContext
 	 * @throws ServiceException
 	 */
@@ -84,33 +84,36 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 			/**
 			 * called when command stack has changed
+			 * 
 			 * @see org.eclipse.emf.common.command.CommandStackListener#commandStackChanged(java.util.EventObject)
 			 *
 			 * @param event
 			 */
+			@Override
 			public void commandStackChanged(final EventObject event) {
-				if(getContainer().isDisposed()) {
+				if (getContainer().isDisposed()) {
 					return;
 				}
 				getContainer().getDisplay().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						firePropertyChange(IEditorPart.PROP_DIRTY);
 
 						// Try to select the affected objects.
 						//
-						Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
-						if(mostRecentCommand != null) {
+						Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+						if (mostRecentCommand != null) {
 							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
-						
+
 						for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
 
 							PropertySheetPage propertySheetPage = i.next();
 
 							if ((propertySheetPage.getControl() == null)
-								|| propertySheetPage.getControl().isDisposed()) {
-								
+									|| propertySheetPage.getControl().isDisposed()) {
+
 								i.remove();
 							} else {
 								propertySheetPage.refresh();
@@ -141,7 +144,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 	 * This is the method called to load a resource into the editing domain's resource set based on
 	 * the editor's input. Put the existing model into the editingDomain. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +155,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 	/**
 	 * This is for implementing {@link IEditorPart} and simply saves the model file. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +164,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 	/**
 	 * This also changes the editor's input. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +173,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +188,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +203,7 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 
 	@Override
 	public void dispose() {
-		//super.dispose(); //FIXME: Fails on a ClassCastException: The ActionBarContributor is not accessible
+		// super.dispose(); //FIXME: Fails on a ClassCastException: The ActionBarContributor is not accessible
 		try {
 			TransactionalEditingDomain papyrusEditingDomain = servicesRegistry.getService(TransactionalEditingDomain.class);
 			CommandStack commandStack = papyrusEditingDomain.getCommandStack();
@@ -224,15 +227,16 @@ public class LayersTreeEditorDiagram extends LayersEditor implements IEditingDom
 	@Override
 	public IPropertySheetPage getPropertySheetPage() {
 
-//		return null;
+		// return null;
 		return super.getPropertySheetPage();
 	}
-	
+
 	protected DynamicContextMenu dynamicContextMenu;
+
 	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 
-		if( dynamicContextMenu == null) {
+		if (dynamicContextMenu == null) {
 			dynamicContextMenu = new DynamicContextMenu(this);
 		}
 		dynamicContextMenu.menuAboutToShow(menuManager);

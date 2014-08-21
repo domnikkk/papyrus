@@ -8,6 +8,8 @@ public abstract class AbstractEastadlCreateCommandHandler extends
 		AbstractCreateCommandHandler {
 
 	private static final ICommandFilter filter = EastadlCommandFilter.INSTANCE;
+
+	@Override
 	public ICommandFilter getCommandFilter() {
 		return filter;
 	}

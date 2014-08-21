@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -50,31 +50,31 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 
 	/**
 	 * Default Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param theElement
-	 *        the UML element to be modified
+	 *            the UML element to be modified
 	 */
 	public ChoosePorts(Shell parentShell, Class component, InterceptionRule rule) {
 		super(parentShell, "Available features", "Intercepted features");
 		labelProvider = new PortLabelProvider();
 		decoratedContentProposalProvider = new ConfigOptContentProposalProvider();
 
-		for(Feature feature : rule.getInterceptionSet()) {
+		for (Feature feature : rule.getInterceptionSet()) {
 			selectedElementList.addElement(feature);
 		}
 
 		visitedPackages = new BasicEList<Package>();
-		if(component != null) {
+		if (component != null) {
 			// local rule with intercept some policy: choose executor ports
-			for(Property current : component.getOwnedAttributes()) {
-				if(!selectedElementList.contains(current)) {
+			for (Property current : component.getOwnedAttributes()) {
+				if (!selectedElementList.contains(current)) {
 					possibleElementList.addElement(current);
 				}
 			}
-			for(Feature current : Utils.getAllElementsOfType(component, Feature.class)) {
-				if(!selectedElementList.contains(current)) {
+			for (Feature current : Utils.getAllElementsOfType(component, Feature.class)) {
+				if (!selectedElementList.contains(current)) {
 					possibleElementList.addElement(current);
 				}
 			}
@@ -82,8 +82,8 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 			// global rule with intercept some policy
 			// choose all ports vs. ports of "standard components"
 			Package top = Utils.getTop(rule.getBase_Property());
-			for(Feature current : Utils.getAllElementsOfType(top, Feature.class)) {
-				if(!selectedElementList.contains(current)) {
+			for (Feature current : Utils.getAllElementsOfType(top, Feature.class)) {
+				if (!selectedElementList.contains(current)) {
 					possibleElementList.addElement(current);
 				}
 			}
@@ -97,10 +97,10 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 	 */
 	/**
 	 * Creates the dialog area.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the control
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 		column = new TableColumn(possibleElementsTable, SWT.LEFT, 1);
 		column.setText("Type");
 		column.setWidth(100);
-		// Add listener to column so tasks are sorted by description when clicked 
+		// Add listener to column so tasks are sorted by description when clicked
 		column.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -136,7 +136,7 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 			}
 		});
 
-		// set sorter to the possible element table viewer 
+		// set sorter to the possible element table viewer
 		possibleElementsTableViewer.setSorter(new AlphabeticalViewerSorter(0));
 
 		return composite;
@@ -149,21 +149,21 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 	 */
 	/**
 	 * Run add element.
-	 * 
+	 *
 	 * @param name
-	 *        the name
+	 *            the name
 	 */
 	@Override
 	protected void runAddElement(String name) {
 		// find the stereotype in the list
 		Port port = null;
-		for(Object possibleElement : possibleElementList.getElements()) {
-			Port element = (Port)possibleElement;
-			if(name.equalsIgnoreCase(element.getName()) || name.equalsIgnoreCase(element.getQualifiedName())) {
+		for (Object possibleElement : possibleElementList.getElements()) {
+			Port element = (Port) possibleElement;
+			if (name.equalsIgnoreCase(element.getName()) || name.equalsIgnoreCase(element.getQualifiedName())) {
 				port = element;
 			}
 		}
-		if(port != null) {
+		if (port != null) {
 			runActionAdd(port);
 		}
 	}
@@ -175,18 +175,18 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 	 */
 	/**
 	 * Checks if is selectable element.
-	 * 
+	 *
 	 * @param text
-	 *        the text
-	 * 
+	 *            the text
+	 *
 	 * @return true, if is selectable element
 	 */
 	@Override
 	protected boolean isSelectableElement(String text) {
 		// iterate through all possibilities and return true if text corresponds
-		for(Object possibleElement : possibleElementList.getElements()) {
-			Port element = (Port)possibleElement;
-			if(text.equalsIgnoreCase(element.getName()) || text.equalsIgnoreCase(element.getQualifiedName())) {
+		for (Object possibleElement : possibleElementList.getElements()) {
+			Port element = (Port) possibleElement;
+			if (text.equalsIgnoreCase(element.getName()) || text.equalsIgnoreCase(element.getQualifiedName())) {
 				return true;
 			}
 		}
@@ -196,7 +196,7 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 	/**
 	 * Content Proposal provider for stereotypes dialog. Propose the simple
 	 * name of the stereotype and its qualified name.
-	 * 
+	 *
 	 * @author Remi Schnekenburger
 	 */
 	public class ConfigOptContentProposalProvider extends DecoratedContentProposalProvider {
@@ -208,29 +208,29 @@ public class ChoosePorts extends ChooseSetAssistedDialog implements IChooseDialo
 		 */
 		/**
 		 * Gets the proposals.
-		 * 
+		 *
 		 * @param contents
-		 *        the contents
+		 *            the contents
 		 * @param position
-		 *        the position
-		 * 
+		 *            the position
+		 *
 		 * @return the proposals
 		 */
 		@Override
 		public DecoratedContentProposal[] getProposals(String contents, int position) {
 			ArrayList<DecoratedContentProposal> proposals = new ArrayList<DecoratedContentProposal>();
 
-			if(possibleElementList != null) {
-				for(Object portObj : possibleElementList.getElements()) {
-					final Port port = (Port)portObj;
+			if (possibleElementList != null) {
+				for (Object portObj : possibleElementList.getElements()) {
+					final Port port = (Port) portObj;
 					final String simpleName = port.getName();
 					final String qualifiedName = port.getQualifiedName();
 
-					if(position < simpleName.length() && contents.substring(0, position).equalsIgnoreCase(simpleName.substring(0, position))) {
+					if (position < simpleName.length() && contents.substring(0, position).equalsIgnoreCase(simpleName.substring(0, position))) {
 						proposals.add(new DecoratedContentProposal(port, labelProvider));
 					}
 
-					if(position < qualifiedName.length() && contents.substring(0, position).equalsIgnoreCase(qualifiedName.substring(0, position))) {
+					if (position < qualifiedName.length() && contents.substring(0, position).equalsIgnoreCase(qualifiedName.substring(0, position))) {
 						proposals.add(new DecoratedContentProposal(port, qualifiedLabelProvider));
 					}
 				}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,11 +31,13 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * this handler is used to generate the architecture from workspace
- *@deprecated
+ *
+ * @deprecated
  */
+@Deprecated
 public class ModelPluginArchitectureFromWorkspaceHandler extends ADLToolAbstractHandler {
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -43,8 +45,8 @@ public class ModelPluginArchitectureFromWorkspaceHandler extends ADLToolAbstract
 	}
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		Element selectedElement=getSelection();
-		ServicesRegistry registry=null;
+		Element selectedElement = getSelection();
+		ServicesRegistry registry = null;
 		try {
 			registry = ServiceUtilsForHandlers.getInstance().getServiceRegistry(event);
 		} catch (ServiceException e1) {
@@ -56,19 +58,20 @@ public class ModelPluginArchitectureFromWorkspaceHandler extends ADLToolAbstract
 		} catch (ServiceException e) {
 			throw new ExecutionException("Can't get ModelSet", e);
 		}
-		PluginArchitectureWizard bWizard=new PluginArchitectureWizard(true);
-		WizardDialog wizardDialog = new WizardDialog(new Shell(),bWizard);
+		PluginArchitectureWizard bWizard = new PluginArchitectureWizard(true);
+		WizardDialog wizardDialog = new WizardDialog(new Shell(), bWizard);
 		if (wizardDialog.open() == Window.OK) {
 			TransactionalEditingDomain dom = modelSet.getTransactionalEditingDomain();
-			if( selectedElement instanceof Package){
-				SimplePluginsArchitectureSnapshotCommand comd= new SimplePluginsArchitectureSnapshotCommand(dom, (Package)selectedElement, bWizard.getSelectedBundle());
+			if (selectedElement instanceof Package) {
+				SimplePluginsArchitectureSnapshotCommand comd = new SimplePluginsArchitectureSnapshotCommand(dom, (Package) selectedElement, bWizard.getSelectedBundle());
 				dom.getCommandStack().execute(comd);
 			}
-		} 
+		}
 
 
 		return null;
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */

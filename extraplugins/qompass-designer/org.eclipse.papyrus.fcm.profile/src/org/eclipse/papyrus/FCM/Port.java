@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM;
 
@@ -22,10 +22,10 @@ import org.eclipse.uml2.uml.Interface;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.Port#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.Port#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.Port#getProvidedInterface <em>Provided Interface</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.Port#getRequiredInterface <em>Required Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Port#getBase_Port <em>Base Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Port#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Port#getProvidedInterface <em>Provided Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.Port#getRequiredInterface <em>Required Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +38,10 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns the value of the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Port</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(org.eclipse.uml2.uml.Port)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPort_Base_Port()
@@ -54,7 +54,9 @@ public interface Port extends ConfigurableElementInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Port#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Port</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Port</em>' reference.
 	 * @see #getBase_Port()
 	 * @generated
 	 */
@@ -64,10 +66,10 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns the value of the '<em><b>Kind</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Kind</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Kind</em>' reference.
 	 * @see #setKind(PortKind)
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPort_Kind()
@@ -80,7 +82,9 @@ public interface Port extends ConfigurableElementInstance {
 	 * Sets the value of the '{@link org.eclipse.papyrus.FCM.Port#getKind <em>Kind</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Kind</em>' reference.
 	 * @see #getKind()
 	 * @generated
 	 */
@@ -90,10 +94,10 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns the value of the '<em><b>Provided Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Provided Interface</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Provided Interface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Provided Interface</em>' reference.
 	 * @see #isSetProvidedInterface()
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPort_ProvidedInterface()
@@ -106,6 +110,7 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.FCM.Port#getProvidedInterface <em>Provided Interface</em>}' reference is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Provided Interface</em>' reference is set.
 	 * @see #getProvidedInterface()
 	 * @generated
@@ -116,10 +121,10 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns the value of the '<em><b>Required Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Required Interface</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Required Interface</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Required Interface</em>' reference.
 	 * @see #isSetRequiredInterface()
 	 * @see org.eclipse.papyrus.FCM.FCMPackage#getPort_RequiredInterface()
@@ -132,6 +137,7 @@ public interface Port extends ConfigurableElementInstance {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.FCM.Port#getRequiredInterface <em>Required Interface</em>}' reference is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Required Interface</em>' reference is set.
 	 * @see #getRequiredInterface()
 	 * @generated

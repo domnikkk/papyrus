@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,10 +23,10 @@ package org.eclipse.papyrus.eastadl.structure.hardwaremodeling;
  *
  * <!-- begin-model-doc -->
  * PowerHardwarePin represents a pin that is primarily intended for power supply, either providing or consuming energy.
- * 
+ *
  * Semantics:
- * A PowerHardwarePin is primarily intended to be a power supply. The direction attribute of the pin defines whether it is providing or consuming energy 
- * 
+ * A PowerHardwarePin is primarily intended to be a power supply. The direction attribute of the pin defines whether it is providing or consuming energy
+ *
  * Notation:
  * PowerHardwarePin is shown as a solid square with PWR inside. Its name may appear outside the square.
  * <!-- end-model-doc -->

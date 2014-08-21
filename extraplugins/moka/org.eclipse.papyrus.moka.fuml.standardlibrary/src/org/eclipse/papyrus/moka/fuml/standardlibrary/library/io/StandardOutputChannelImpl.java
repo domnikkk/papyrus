@@ -39,10 +39,10 @@ public class StandardOutputChannelImpl extends AbstractService {
 	protected IOConsoleOutputStream out = null;
 
 	public static IOConsole getConsole() {
-		if(console == null) {
+		if (console == null) {
 			console = new IOConsole(CONSOLE_NAME, null);
 			IConsoleManager conMan = ConsolePlugin.getDefault().getConsoleManager();
-			conMan.addConsoles(new IConsole[]{ console });
+			conMan.addConsoles(new IConsole[] { console });
 		}
 		return console;
 	}
@@ -54,9 +54,9 @@ public class StandardOutputChannelImpl extends AbstractService {
 
 	@Override
 	public Execution dispatch(Operation operation) {
-		if(operation.getName().equals("writeLine")) {
+		if (operation.getName().equals("writeLine")) {
 			return new WriteLineExecution(operation);
-		} else if(operation.getName().equals("write")) {
+		} else if (operation.getName().equals("write")) {
 			return new Write(operation);
 		}
 		// TODO complete with other operations
@@ -79,7 +79,7 @@ public class StandardOutputChannelImpl extends AbstractService {
 			// Supposed to have only one input argument, corresponding to parameter 'value'
 			try {
 				String message = "";
-				message = ((StringValue)inputParameters.get(0).values.get(0)).value;
+				message = ((StringValue) inputParameters.get(0).values.get(0)).value;
 				out.write(message + "\n");
 				out.flush();
 				// This implementation does not produce errorStatus information.

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.robotml.deployment.handlers;
 
 import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -40,10 +39,10 @@ public class ConfigureInstanceHandler extends CmdHandler {
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
-		if((selectedObj instanceof Class) ||
-			(selectedObj instanceof Connector) ||
-			(selectedObj instanceof Property) ||
-			(selectedObj instanceof InstanceSpecification)) {
+		if ((selectedObj instanceof Class) ||
+				(selectedObj instanceof Connector) ||
+				(selectedObj instanceof Property) ||
+				(selectedObj instanceof InstanceSpecification)) {
 			return true;
 		}
 		return false;
@@ -54,50 +53,53 @@ public class ConfigureInstanceHandler extends CmdHandler {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) {
-		if(!(getSelectedEObject() instanceof NamedElement)) {
+		if (!(getSelectedEObject() instanceof NamedElement)) {
 			return null;
 		}
 
-		final NamedElement element = (NamedElement)getSelectedEObject();
+		final NamedElement element = (NamedElement) getSelectedEObject();
 		final Shell shell = new Shell();
 
 		// 1. select possible connectors according to port types
 		// (only show compatible connectors check-box?)
 		// 2. select implementation group according to connector type
 
-		if(element instanceof Class) {
+		if (element instanceof Class) {
 			// container dialog: either extension, rule or interceptor
 			// howto select? which? (and howto add/remove?) - Std - dialog is good?
 			CommandSupport.exec("Configure associated component instance", new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					ConfigureInstanceDialog configureInstanceDialog =
-						new ConfigureInstanceDialog(shell);
-					if (configureInstanceDialog.init((Class)element)) {
+							new ConfigureInstanceDialog(shell);
+					if (configureInstanceDialog.init((Class) element)) {
 						configureInstanceDialog.setTitle("Configure instance");
 						configureInstanceDialog.setMessage("Configure instance for component " + element.getName());
 						configureInstanceDialog.open();
-						if(configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
+						if (configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
 							return CommandResult.newOKCommandResult();
 						}
 					}
 					return CommandResult.newCancelledCommandResult();
 				}
 			});
-		} else if(element instanceof Feature) {
+		} else if (element instanceof Feature) {
 			// container dialog: either extension, rule or interceptor
 			// howto select? which? (and howto add/remove?) - Std - dialog is good?
 			CommandSupport.exec("Configure associated instance", new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					ConfigureInstanceDialog configureInstanceDialog =
-						new ConfigureInstanceDialog(shell);
-					if (configureInstanceDialog.init((Feature)element)) {
+							new ConfigureInstanceDialog(shell);
+					if (configureInstanceDialog.init((Feature) element)) {
 						configureInstanceDialog.setTitle("Configure instance");
 						configureInstanceDialog.setMessage("Configure instance for property/connector " + element.getName());
 						configureInstanceDialog.open();
-						if(configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
+						if (configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
 							return CommandResult.newOKCommandResult();
 						}
 					}
@@ -105,18 +107,19 @@ public class ConfigureInstanceHandler extends CmdHandler {
 				}
 			});
 
-			
-		} else if(element instanceof InstanceSpecification) {
+
+		} else if (element instanceof InstanceSpecification) {
 
 			CommandSupport.exec("Configure instance", new RunnableWithResult() {
 
+				@Override
 				public CommandResult run() {
 					ConfigureInstanceDialog configureInstanceDialog =
-						new ConfigureInstanceDialog(shell);
-					if (configureInstanceDialog.init((InstanceSpecification)element)) {
+							new ConfigureInstanceDialog(shell);
+					if (configureInstanceDialog.init((InstanceSpecification) element)) {
 						configureInstanceDialog.setMessage("Configure instance " + element.getName());
 						configureInstanceDialog.open();
-						if(configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
+						if (configureInstanceDialog.getReturnCode() == IDialogConstants.OK_ID) {
 							return CommandResult.newOKCommandResult();
 						}
 					}

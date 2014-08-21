@@ -18,7 +18,7 @@ public class ReportNameSingleton {
 
 	/** Access for the unique instance of ReportNameSingleton */
 	public static ReportNameSingleton getInstance() {
-		if(INSTANCE == null) {
+		if (INSTANCE == null) {
 			INSTANCE = new ReportNameSingleton();
 		}
 		return INSTANCE;

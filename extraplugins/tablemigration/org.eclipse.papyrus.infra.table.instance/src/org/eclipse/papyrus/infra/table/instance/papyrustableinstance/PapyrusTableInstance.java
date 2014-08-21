@@ -10,8 +10,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.facet.infra.query.ModelQuery;
 
 import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance2.TableInstance2;
@@ -24,13 +22,13 @@ import org.eclipse.emf.facet.widgets.nattable.instance.tableinstance2.TableInsta
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#isIsSynchronized <em>Is Synchronized</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getTable <em>Table</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getFillingQueries <em>Filling Queries</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementId <em>Pasted Element Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#isIsSynchronized <em>Is Synchronized</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getTable <em>Table</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getFillingQueries <em>Filling Queries</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementId <em>Pasted Element Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +45,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * The name of the table.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_Name()
@@ -59,7 +58,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -73,6 +74,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * The type of the table
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_Type()
@@ -85,7 +87,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see #getType()
 	 * @generated
 	 */
@@ -99,6 +103,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * Indicates if the table is synchronized with its context or not. Synchronization is done with the filling queries.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Is Synchronized</em>' attribute.
 	 * @see #setIsSynchronized(boolean)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_IsSynchronized()
@@ -111,7 +116,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#isIsSynchronized <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Synchronized</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Synchronized</em>' attribute.
 	 * @see #isIsSynchronized()
 	 * @generated
 	 */
@@ -124,6 +131,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * The TableInstance
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Table</em>' reference.
 	 * @see #setTable(TableInstance2)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_Table()
@@ -136,7 +144,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getTable <em>Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Table</em>' reference.
 	 * @see #getTable()
 	 * @generated
 	 */
@@ -150,6 +160,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * The queries used to fill the table
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Filling Queries</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_FillingQueries()
 	 * @model
@@ -165,6 +176,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * <!-- begin-model-doc -->
 	 * This attribute stores the id of the element represented by the row during a paste action in the table.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Pasted Element Id</em>' attribute.
 	 * @see #setPastedElementId(String)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_PastedElementId()
@@ -177,7 +189,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementId <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pasted Element Id</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Pasted Element Id</em>' attribute.
 	 * @see #getPastedElementId()
 	 * @generated
 	 */
@@ -191,6 +205,7 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * This property reference the feature of the context of the table which is used as containement feature
 	 * for the pasted elements.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Pasted Element Containment Feature</em>' reference.
 	 * @see #setPastedElementContainmentFeature(EReference)
 	 * @see org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrustableinstancePackage#getPapyrusTableInstance_PastedElementContainmentFeature()
@@ -203,7 +218,9 @@ public interface PapyrusTableInstance extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.PapyrusTableInstance#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pasted Element Containment Feature</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Pasted Element Containment Feature</em>' reference.
 	 * @see #getPastedElementContainmentFeature()
 	 * @generated
 	 */

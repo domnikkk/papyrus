@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
@@ -51,7 +51,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
-	 * 
+	 *
 	 */
 
 	public void dispose() {
@@ -60,7 +60,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
@@ -72,7 +72,7 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
@@ -82,28 +82,28 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
-			if(element instanceof Combination) {
+			if (element instanceof Combination) {
 				return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/combinaison.png"); //$NON-NLS-1$
 			}
 			break;
 		case 1:
-			if(element instanceof Combination) {
+			if (element instanceof Combination) {
 				ISelection selection = FacadeSpecificEditor.getExtensionDefintionTreeViewer().getSelection();
-				if(selection instanceof IStructuredSelection) {
-					Object first = ((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					Object first = ((IStructuredSelection) selection).getFirstElement();
 
-					if(first instanceof BaseMetaclass) {
-						EList<Combination> incompatibleStereotypes = ((BaseMetaclass)first).getIncompatibleStereotypes();
-						if(incompatibleStereotypes.contains(element)) {
+					if (first instanceof BaseMetaclass) {
+						EList<Combination> incompatibleStereotypes = ((BaseMetaclass) first).getIncompatibleStereotypes();
+						if (incompatibleStereotypes.contains(element)) {
 							return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/unchecked.gif"); //$NON-NLS-1$
 						} else {
 							return ResourceManager.getPluginImage(FacadeDefinitionEditorActivator.getDefault(), "icons/checked.gif"); //$NON-NLS-1$
@@ -123,31 +123,31 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * Produce sibling list.
-	 * 
+	 *
 	 * @param stereotype
-	 *        the stereotype
+	 *            the stereotype
 	 * @return the string
 	 */
 	protected String produceSiblingList(Stereotype stereotype) {
 		String output = ""; //$NON-NLS-1$
 		HashSet<Stereotype> siblings = ProfileUtils.getSiblings(stereotype);
 		List<Classifier> siblingsList = new ArrayList<Classifier>(siblings);
-		if(siblingsList.size() > 1) {
+		if (siblingsList.size() > 1) {
 			output += "["; //$NON-NLS-1$
 		}
 
-		if(!siblingsList.isEmpty()) {
+		if (!siblingsList.isEmpty()) {
 			output += siblingsList.get(0).getQualifiedName();
 
-			if(siblingsList.size() > 1) {
-				for(int i = 1; i < siblingsList.size(); i++) {
+			if (siblingsList.size() > 1) {
+				for (int i = 1; i < siblingsList.size(); i++) {
 					output += ", "; //$NON-NLS-1$
 					output += siblingsList.get(i).getQualifiedName();
 				}
 			}
 		}
 
-		if(siblings.size() > 1) {
+		if (siblings.size() > 1) {
 			output += "]"; //$NON-NLS-1$
 		}
 		return output;
@@ -155,23 +155,23 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
-	 * 
+	 *
 	 * @param element
 	 * @param columnIndex
 	 * @return
 	 */
 
 	public String getColumnText(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			String name = ""; //$NON-NLS-1$
-			if(element instanceof Combination) {
+			if (element instanceof Combination) {
 
-				Combination combination = (Combination)element;
-				if(!combination.getMembers().isEmpty()) {
+				Combination combination = (Combination) element;
+				if (!combination.getMembers().isEmpty()) {
 					name += combination.getMembers().get(0).getExtensionDefinition().getStereotype().getName();
-					if(((Combination)element).getMembers().size() > 1) {
-						for(int i = 1; i < combination.getMembers().size(); i++) {
+					if (((Combination) element).getMembers().size() > 1) {
+						for (int i = 1; i < combination.getMembers().size(); i++) {
 							name += ", "; //$NON-NLS-1$
 							name += combination.getMembers().get(i).getExtensionDefinition().getStereotype().getName();
 						}
@@ -195,14 +195,14 @@ public class IncompatibilitiesLabelProvider implements ITableLabelProvider, IFon
 
 	/**
 	 * @see org.eclipse.jface.viewers.IFontProvider#getFont(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 
 	public Font getFont(Object element) {
-		if(element instanceof ExtensionDefinition) {
-			if(((ExtensionDefinition)element).getStereotype().isAbstract()) {
+		if (element instanceof ExtensionDefinition) {
+			if (((ExtensionDefinition) element).getStereotype().isAbstract()) {
 				return JFaceResources.getFontRegistry().getItalic(JFaceResources.DEFAULT_FONT);
 			}
 		}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,18 +35,19 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl#getTypedValue <em>Value</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl#getTypedKey <em>Key</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl#getTypedValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToPropertyIndexMapImpl#getTypedKey <em>Key</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String,PropertyIndex> {
+public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<String, PropertyIndex> {
 	/**
 	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -76,6 +79,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringToPropertyIndexMapImpl() {
@@ -85,6 +89,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,6 +100,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyIndex getTypedValue() {
@@ -104,6 +110,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetTypedValue(PropertyIndex newValue, NotificationChain msgs) {
@@ -111,7 +118,11 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, oldValue, newValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -119,25 +130,32 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypedValue(PropertyIndex newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, null, msgs);
+			if (value != null) {
+				msgs = ((InternalEObject) value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, null, msgs);
+			}
+			if (newValue != null) {
+				msgs = ((InternalEObject) newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, null, msgs);
+			}
 			msgs = basicSetTypedValue(newValue, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE, newValue, newValue));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTypedKey() {
@@ -147,25 +165,28 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypedKey(String newKey) {
 		String oldKey = key;
 		key = newKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY, oldKey, key));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
-				return basicSetTypedValue(null, msgs);
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
+			return basicSetTypedValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -173,15 +194,16 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
-				return getTypedValue();
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
-				return getTypedKey();
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
+			return getTypedValue();
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
+			return getTypedKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,17 +211,18 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
-				setTypedValue((PropertyIndex)newValue);
-				return;
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
-				setTypedKey((String)newValue);
-				return;
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
+			setTypedValue((PropertyIndex) newValue);
+			return;
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
+			setTypedKey((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -207,17 +230,18 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
-				setTypedValue((PropertyIndex)null);
-				return;
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
-				setTypedKey(KEY_EDEFAULT);
-				return;
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
+			setTypedValue((PropertyIndex) null);
+			return;
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
+			setTypedKey(KEY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -225,15 +249,16 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
-				return value != null;
-			case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
-				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__VALUE:
+			return value != null;
+		case LayersPackage.STRING_TO_PROPERTY_INDEX_MAP__KEY:
+			return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -241,11 +266,14 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
@@ -257,6 +285,7 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected int hash = -1;
@@ -264,8 +293,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getHash() {
 		if (hash == -1) {
 			Object theKey = getKey();
@@ -277,8 +308,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setHash(int hash) {
 		this.hash = hash;
 	}
@@ -286,8 +319,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getKey() {
 		return getTypedKey();
 	}
@@ -295,8 +330,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKey(String key) {
 		setTypedKey(key);
 	}
@@ -304,8 +341,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PropertyIndex getValue() {
 		return getTypedValue();
 	}
@@ -313,8 +352,10 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PropertyIndex setValue(PropertyIndex value) {
 		PropertyIndex oldValue = getValue();
 		setTypedValue(value);
@@ -324,12 +365,13 @@ public class StringToPropertyIndexMapImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	public EMap<String, PropertyIndex> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<String, PropertyIndex>)container.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<String, PropertyIndex>) container.eGet(eContainmentFeature());
 	}
 
-} //StringToPropertyIndexMapImpl
+} // StringToPropertyIndexMapImpl

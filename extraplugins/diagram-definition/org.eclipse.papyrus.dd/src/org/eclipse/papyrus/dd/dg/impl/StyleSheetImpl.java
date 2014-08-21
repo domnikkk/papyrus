@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.dd.dg.StyleSheet;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.StyleSheetImpl#getRules <em>Rule</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StyleSheetImpl extends MinimalEObjectImpl.Container implements StyleSheet {
@@ -45,7 +45,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * The cached value of the '{@link #getRules() <em>Rule</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StyleSheetImpl() {
@@ -63,7 +63,7 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,11 +73,12 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<StyleRule> getRules() {
-		if(rules == null) {
+		if (rules == null) {
 			rules = new EObjectContainmentEList<StyleRule>(StyleRule.class, this, DGPackage.STYLE_SHEET__RULE);
 		}
 		return rules;
@@ -85,26 +86,26 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
-			return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
 			return getRules();
 		}
@@ -113,16 +114,16 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
 			getRules().clear();
-			getRules().addAll((Collection<? extends StyleRule>)newValue);
+			getRules().addAll((Collection<? extends StyleRule>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,12 +131,12 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
 			getRules().clear();
 			return;
@@ -145,12 +146,12 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.STYLE_SHEET__RULE:
 			return rules != null && !rules.isEmpty();
 		}

@@ -14,28 +14,38 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * A multitude of different verification and validation (V&V) techniques, methods and tools are applied during the development of EE-Systems. Different techniques are applicable at different abstraction levels. Also, the technique of choice depends on the properties to validate and/or verify. Furthermore, each partner in a project may develop and employ his own V&V processes and activities. Hence it is impossible to introduce in the EAST-ADL2 a way to model all the objects that can be required by all the possible V&V techniques. As a consequence, EAST-ADL2 furnishes just the means for planning, organizing and describing V&V activities on a fairly abstract level, and for defining the links between those V&V activities, the satisfied and verified requirements, and the objects modeling the system (Functional Analysis Architecture, Functional components, Logical Tasks, etc.). The common parts of all V&V techniques are described by the EAST-ADL2, which includes: the results expected from the V&V activities, the actual results which were obtained when applying the V&V techniques, how the V&V activities are constrained. Information that is specific to an individual V&V technique is not described in EAST-ADL2, but a place for storing this information is provided.
- * 
+ * A multitude of different verification and validation (V&V) techniques, methods and tools are applied during the development of EE-Systems. Different techniques are applicable at different abstraction levels. Also, the technique of choice depends on the
+ * properties to validate and/or verify. Furthermore, each partner in a project may develop and employ his own V&V processes and activities. Hence it is impossible to introduce in the EAST-ADL2 a way to model all the objects that can be required by all the
+ * possible V&V techniques. As a consequence, EAST-ADL2 furnishes just the means for planning, organizing and describing V&V activities on a fairly abstract level, and for defining the links between those V&V activities, the satisfied and verified
+ * requirements, and the objects modeling the system (Functional Analysis Architecture, Functional components, Logical Tasks, etc.). The common parts of all V&V techniques are described by the EAST-ADL2, which includes: the results expected from the V&V
+ * activities, the actual results which were obtained when applying the V&V techniques, how the V&V activities are constrained. Information that is specific to an individual V&V technique is not described in EAST-ADL2, but a place for storing this information
+ * is provided.
+ *
  * Single V&V techniques may be used only once or at several stages during an overall V&V effort. Some of them are specific to one modeling design stage; others can be applied at various design stages.
- * 
- * A set of V&V techniques and activities is necessary in order to achieve a complete verification and validation of a given system. Often these techniques and activities are employed and performed by many different teams and departments, frequently even by different companies. This raises the demand for an overall planning and organization of all V&V related information.
- * 
+ *
+ * A set of V&V techniques and activities is necessary in order to achieve a complete verification and validation of a given system. Often these techniques and activities are employed and performed by many different teams and departments, frequently even by
+ * different companies. This raises the demand for an overall planning and organization of all V&V related information.
+ *
  * A very important notion of V&V support in EAST-ADL2 is the distinction of abstract and concrete V&V information:
- * 
+ *
  * (1) On the abstract level, verification and validation information is defined without referring to a concrete testing environment and without specifying stimuli and the expected outcome of a particular VVProcedure on a detailed technical level.
- * 
- * (2) On the concrete level, verification and validation information specifies a concrete testing environment and provides all necessary details for testing, e.g. stimuli and expected outcomes, on a concrete technical level applicable to that testing environment.
- * 
- * In accordance to the "what vs. how" definition of requirements one could say: the abstract level defines what needs to be done to verify and validate a certain system, but not precisely how this is done. Conversely, the concrete level defines the precise technical details for particular testing environments. So all abstract VVCases and VVProcedures for a certain system together form sort of a "to-do"-list, which describes what needs to be done when actually testing the system with a concrete testing environment, but in a form applicable to all conceivable testing environments to all conceivable testing environments.
+ *
+ * (2) On the concrete level, verification and validation information specifies a concrete testing environment and provides all necessary details for testing, e.g. stimuli and expected outcomes, on a concrete technical level applicable to that testing
+ * environment.
+ *
+ * In accordance to the "what vs. how" definition of requirements one could say: the abstract level defines what needs to be done to verify and validate a certain system, but not precisely how this is done. Conversely, the concrete level defines the precise
+ * technical details for particular testing environments. So all abstract VVCases and VVProcedures for a certain system together form sort of a "to-do"-list, which describes what needs to be done when actually testing the system with a concrete testing
+ * environment, but in a form applicable to all conceivable testing environments to all conceivable testing environments.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationFactory
  * @model kind="package"
  * @generated
@@ -45,6 +55,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "verificationvalidation";
@@ -53,6 +64,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Requirements/VerificationValidation/1";
@@ -61,6 +73,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "VerificationValidation";
@@ -69,6 +82,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	VerificationvalidationPackage eINSTANCE = org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl.init();
@@ -77,6 +91,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVStimuliImpl <em>VV Stimuli</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVStimuliImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVStimuli()
 	 * @generated
@@ -87,6 +102,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -96,6 +112,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -105,6 +122,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -114,6 +132,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -123,6 +142,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -132,6 +152,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -141,6 +162,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Stimuli</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -150,6 +172,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Stimuli</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -159,6 +182,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVIntendedOutcomeImpl <em>VV Intended Outcome</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVIntendedOutcomeImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVIntendedOutcome()
 	 * @generated
@@ -169,6 +193,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -178,6 +203,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -187,6 +213,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -196,6 +223,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -205,6 +233,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -214,6 +243,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -223,6 +253,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Intended Outcome</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -232,6 +263,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Intended Outcome</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -241,6 +273,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVActualOutcomeImpl <em>VV Actual Outcome</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVActualOutcomeImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVActualOutcome()
 	 * @generated
@@ -251,6 +284,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -260,6 +294,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -269,6 +304,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -278,6 +314,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -287,6 +324,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -296,6 +334,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -305,6 +344,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Intended Outcome</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -314,6 +354,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Actual Outcome</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -323,6 +364,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Actual Outcome</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -332,6 +374,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVCaseImpl <em>VV Case</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVCaseImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVCase()
 	 * @generated
@@ -342,6 +385,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -351,6 +395,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -360,6 +405,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -369,6 +415,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -378,6 +425,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -387,6 +435,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -396,6 +445,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Abstract VV Case</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -405,6 +455,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -414,6 +465,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Subject</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -423,6 +475,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Log</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -432,6 +485,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Procedure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -441,6 +495,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Case</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -450,6 +505,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Case</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -459,6 +515,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVTargetImpl <em>VV Target</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVTargetImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVTarget()
 	 * @generated
@@ -469,6 +526,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -478,6 +536,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -487,6 +546,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -496,6 +556,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -505,6 +566,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -514,6 +576,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -523,6 +586,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -532,6 +596,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -541,6 +606,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -550,6 +616,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVLogImpl <em>VV Log</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVLogImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVLog()
 	 * @generated
@@ -560,6 +627,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -569,6 +637,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -578,6 +647,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -587,6 +657,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -596,6 +667,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -605,6 +677,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -614,6 +687,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Actual Outcome</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -623,6 +697,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -632,6 +707,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Performed VV Procedure</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -641,6 +717,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Log</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -650,6 +727,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Log</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -659,6 +737,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl <em>VV Procedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVProcedure()
 	 * @generated
@@ -669,6 +748,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -678,6 +758,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -687,6 +768,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -696,6 +778,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -705,6 +788,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -714,6 +798,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -723,6 +808,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Abstract VV Procedure</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -732,6 +818,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Intended Outcome</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -741,6 +828,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Stimuli</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -750,6 +838,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>VV Procedure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -759,6 +848,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>VV Procedure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -768,6 +858,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationValidationImpl <em>Verification Validation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationValidationImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVerificationValidation()
 	 * @generated
@@ -778,6 +869,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -787,6 +879,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -796,6 +889,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -805,6 +899,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -814,6 +909,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -823,6 +919,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -832,6 +929,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -841,6 +939,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -850,6 +949,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Verify</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -859,6 +959,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Case</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -868,6 +969,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Vv Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -877,6 +979,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>Verification Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -886,6 +989,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>Verification Validation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -895,6 +999,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerifyImpl <em>Verify</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerifyImpl
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVerify()
 	 * @generated
@@ -905,6 +1010,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -914,6 +1020,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -923,6 +1030,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -932,6 +1040,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -941,6 +1050,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -950,6 +1060,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Verified By Procedure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -959,6 +1070,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Verified By Case</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -968,6 +1080,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The feature id for the '<em><b>Verified Requirement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -977,6 +1090,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of structural features of the '<em>Verify</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -986,6 +1100,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * The number of operations of the '<em>Verify</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -996,6 +1111,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVStimuli <em>VV Stimuli</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Stimuli</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVStimuli
 	 * @generated
@@ -1006,6 +1122,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVStimuli#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVStimuli#getBase_Class()
 	 * @see #getVVStimuli()
@@ -1017,6 +1134,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVIntendedOutcome <em>VV Intended Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Intended Outcome</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVIntendedOutcome
 	 * @generated
@@ -1027,6 +1145,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVIntendedOutcome#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVIntendedOutcome#getBase_Class()
 	 * @see #getVVIntendedOutcome()
@@ -1038,6 +1157,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome <em>VV Actual Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Actual Outcome</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome
 	 * @generated
@@ -1048,6 +1168,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getBase_Class()
 	 * @see #getVVActualOutcome()
@@ -1059,6 +1180,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getIntendedOutcome <em>Intended Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Intended Outcome</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVActualOutcome#getIntendedOutcome()
 	 * @see #getVVActualOutcome()
@@ -1070,6 +1192,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase <em>VV Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase
 	 * @generated
@@ -1080,6 +1203,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getBase_Class()
 	 * @see #getVVCase()
@@ -1091,6 +1215,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getAbstractVVCase <em>Abstract VV Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Abstract VV Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getAbstractVVCase()
 	 * @see #getVVCase()
@@ -1102,6 +1227,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvTarget <em>Vv Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvTarget()
 	 * @see #getVVCase()
@@ -1113,6 +1239,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvSubject <em>Vv Subject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Vv Subject</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvSubject()
 	 * @see #getVVCase()
@@ -1124,6 +1251,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvLog <em>Vv Log</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Log</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvLog()
 	 * @see #getVVCase()
@@ -1135,6 +1263,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvProcedure <em>Vv Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Procedure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVCase#getVvProcedure()
 	 * @see #getVVCase()
@@ -1146,6 +1275,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget <em>VV Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget
 	 * @generated
@@ -1156,6 +1286,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget#getBase_Class()
 	 * @see #getVVTarget()
@@ -1167,6 +1298,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVTarget#getElement()
 	 * @see #getVVTarget()
@@ -1178,6 +1310,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog <em>VV Log</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Log</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog
 	 * @generated
@@ -1188,6 +1321,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getDate <em>Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Date</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getDate()
 	 * @see #getVVLog()
@@ -1199,6 +1333,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getVvActualOutcome <em>Vv Actual Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Actual Outcome</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getVvActualOutcome()
 	 * @see #getVVLog()
@@ -1210,6 +1345,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getBase_Class()
 	 * @see #getVVLog()
@@ -1221,6 +1357,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getPerformedVVProcedure <em>Performed VV Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Performed VV Procedure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVLog#getPerformedVVProcedure()
 	 * @see #getVVLog()
@@ -1232,6 +1369,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure <em>VV Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>VV Procedure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure
 	 * @generated
@@ -1242,6 +1380,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getBase_Class()
 	 * @see #getVVProcedure()
@@ -1253,6 +1392,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getAbstractVVProcedure <em>Abstract VV Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Abstract VV Procedure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getAbstractVVProcedure()
 	 * @see #getVVProcedure()
@@ -1264,6 +1404,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getVvIntendedOutcome <em>Vv Intended Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Intended Outcome</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getVvIntendedOutcome()
 	 * @see #getVVProcedure()
@@ -1275,6 +1416,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getVvStimuli <em>Vv Stimuli</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Stimuli</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VVProcedure#getVvStimuli()
 	 * @see #getVVProcedure()
@@ -1286,6 +1428,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation <em>Verification Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Verification Validation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation
 	 * @generated
@@ -1296,6 +1439,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Class()
 	 * @see #getVerificationValidation()
@@ -1307,6 +1451,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Package <em>Base Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Package</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getBase_Package()
 	 * @see #getVerificationValidation()
@@ -1318,6 +1463,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVerify <em>Verify</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Verify</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVerify()
 	 * @see #getVerificationValidation()
@@ -1329,6 +1475,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVvCase <em>Vv Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVvCase()
 	 * @see #getVerificationValidation()
@@ -1340,6 +1487,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVvTarget <em>Vv Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Vv Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationValidation#getVvTarget()
 	 * @see #getVerificationValidation()
@@ -1351,6 +1499,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify <em>Verify</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Verify</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify
 	 * @generated
@@ -1361,6 +1510,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedByProcedure <em>Verified By Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Verified By Procedure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedByProcedure()
 	 * @see #getVerify()
@@ -1372,6 +1522,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedByCase <em>Verified By Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Verified By Case</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedByCase()
 	 * @see #getVerify()
@@ -1383,6 +1534,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedRequirement <em>Verified Requirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Verified Requirement</em>'.
 	 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.Verify#getVerifiedRequirement()
 	 * @see #getVerify()
@@ -1394,6 +1546,7 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1403,13 +1556,14 @@ public interface VerificationvalidationPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -1417,6 +1571,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVStimuliImpl <em>VV Stimuli</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVStimuliImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVStimuli()
 		 * @generated
@@ -1427,6 +1582,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_STIMULI__BASE_CLASS = eINSTANCE.getVVStimuli_Base_Class();
@@ -1435,6 +1591,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVIntendedOutcomeImpl <em>VV Intended Outcome</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVIntendedOutcomeImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVIntendedOutcome()
 		 * @generated
@@ -1445,6 +1602,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_INTENDED_OUTCOME__BASE_CLASS = eINSTANCE.getVVIntendedOutcome_Base_Class();
@@ -1453,6 +1611,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVActualOutcomeImpl <em>VV Actual Outcome</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVActualOutcomeImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVActualOutcome()
 		 * @generated
@@ -1463,6 +1622,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_ACTUAL_OUTCOME__BASE_CLASS = eINSTANCE.getVVActualOutcome_Base_Class();
@@ -1471,6 +1631,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Intended Outcome</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_ACTUAL_OUTCOME__INTENDED_OUTCOME = eINSTANCE.getVVActualOutcome_IntendedOutcome();
@@ -1479,6 +1640,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVCaseImpl <em>VV Case</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVCaseImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVCase()
 		 * @generated
@@ -1489,6 +1651,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__BASE_CLASS = eINSTANCE.getVVCase_Base_Class();
@@ -1497,6 +1660,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Abstract VV Case</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__ABSTRACT_VV_CASE = eINSTANCE.getVVCase_AbstractVVCase();
@@ -1505,6 +1669,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__VV_TARGET = eINSTANCE.getVVCase_VvTarget();
@@ -1513,6 +1678,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Subject</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__VV_SUBJECT = eINSTANCE.getVVCase_VvSubject();
@@ -1521,6 +1687,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Log</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__VV_LOG = eINSTANCE.getVVCase_VvLog();
@@ -1529,6 +1696,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Procedure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_CASE__VV_PROCEDURE = eINSTANCE.getVVCase_VvProcedure();
@@ -1537,6 +1705,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVTargetImpl <em>VV Target</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVTargetImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVTarget()
 		 * @generated
@@ -1547,6 +1716,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_TARGET__BASE_CLASS = eINSTANCE.getVVTarget_Base_Class();
@@ -1555,6 +1725,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_TARGET__ELEMENT = eINSTANCE.getVVTarget_Element();
@@ -1563,6 +1734,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVLogImpl <em>VV Log</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVLogImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVLog()
 		 * @generated
@@ -1573,6 +1745,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VV_LOG__DATE = eINSTANCE.getVVLog_Date();
@@ -1581,6 +1754,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Actual Outcome</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_LOG__VV_ACTUAL_OUTCOME = eINSTANCE.getVVLog_VvActualOutcome();
@@ -1589,6 +1763,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_LOG__BASE_CLASS = eINSTANCE.getVVLog_Base_Class();
@@ -1597,6 +1772,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Performed VV Procedure</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_LOG__PERFORMED_VV_PROCEDURE = eINSTANCE.getVVLog_PerformedVVProcedure();
@@ -1605,6 +1781,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl <em>VV Procedure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VVProcedureImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVVProcedure()
 		 * @generated
@@ -1615,6 +1792,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_PROCEDURE__BASE_CLASS = eINSTANCE.getVVProcedure_Base_Class();
@@ -1623,6 +1801,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Abstract VV Procedure</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_PROCEDURE__ABSTRACT_VV_PROCEDURE = eINSTANCE.getVVProcedure_AbstractVVProcedure();
@@ -1631,6 +1810,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Intended Outcome</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_PROCEDURE__VV_INTENDED_OUTCOME = eINSTANCE.getVVProcedure_VvIntendedOutcome();
@@ -1639,6 +1819,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Stimuli</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VV_PROCEDURE__VV_STIMULI = eINSTANCE.getVVProcedure_VvStimuli();
@@ -1647,6 +1828,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationValidationImpl <em>Verification Validation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationValidationImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVerificationValidation()
 		 * @generated
@@ -1657,6 +1839,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFICATION_VALIDATION__BASE_CLASS = eINSTANCE.getVerificationValidation_Base_Class();
@@ -1665,6 +1848,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFICATION_VALIDATION__BASE_PACKAGE = eINSTANCE.getVerificationValidation_Base_Package();
@@ -1673,6 +1857,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Verify</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFICATION_VALIDATION__VERIFY = eINSTANCE.getVerificationValidation_Verify();
@@ -1681,6 +1866,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Case</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFICATION_VALIDATION__VV_CASE = eINSTANCE.getVerificationValidation_VvCase();
@@ -1689,6 +1875,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vv Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFICATION_VALIDATION__VV_TARGET = eINSTANCE.getVerificationValidation_VvTarget();
@@ -1697,6 +1884,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerifyImpl <em>Verify</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerifyImpl
 		 * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationPackageImpl#getVerify()
 		 * @generated
@@ -1707,6 +1895,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Verified By Procedure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFY__VERIFIED_BY_PROCEDURE = eINSTANCE.getVerify_VerifiedByProcedure();
@@ -1715,6 +1904,7 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Verified By Case</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFY__VERIFIED_BY_CASE = eINSTANCE.getVerify_VerifiedByCase();
@@ -1723,10 +1913,11 @@ public interface VerificationvalidationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Verified Requirement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VERIFY__VERIFIED_REQUIREMENT = eINSTANCE.getVerify_VerifiedRequirement();
 
 	}
 
-} //VerificationvalidationPackage
+} // VerificationvalidationPackage

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.eastadl.variability.*;
 import org.eclipse.papyrus.eastadl.variability.ConfigurableContainer;
 import org.eclipse.papyrus.eastadl.variability.ConfigurationDecision;
 import org.eclipse.papyrus.eastadl.variability.ConfigurationDecisionFolder;
@@ -40,12 +39,14 @@ import org.eclipse.papyrus.eastadl.variability.VehicleLevelBinding;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -57,16 +58,16 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static VariabilityFactory init() {
 		try {
-			VariabilityFactory theVariabilityFactory = (VariabilityFactory)EPackage.Registry.INSTANCE.getEFactory(VariabilityPackage.eNS_URI);
+			VariabilityFactory theVariabilityFactory = (VariabilityFactory) EPackage.Registry.INSTANCE.getEFactory(VariabilityPackage.eNS_URI);
 			if (theVariabilityFactory != null) {
 				return theVariabilityFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new VariabilityFactoryImpl();
@@ -75,6 +76,7 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariabilityFactoryImpl() {
@@ -83,34 +85,50 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case VariabilityPackage.VARIATION_GROUP: return createVariationGroup();
-			case VariabilityPackage.VARIABLE_ELEMENT: return createVariableElement();
-			case VariabilityPackage.REUSE_META_INFORMATION: return createReuseMetaInformation();
-			case VariabilityPackage.CONFIGURABLE_CONTAINER: return createConfigurableContainer();
-			case VariabilityPackage.INTERNAL_BINDING: return createInternalBinding();
-			case VariabilityPackage.PRIVATE_CONTENT: return createPrivateContent();
-			case VariabilityPackage.VARIABILITY: return createVariability();
-			case VariabilityPackage.FEATURE_CONFIGURATION: return createFeatureConfiguration();
-			case VariabilityPackage.VEHICLE_LEVEL_BINDING: return createVehicleLevelBinding();
-			case VariabilityPackage.CONFIGURATION_DECISION: return createConfigurationDecision();
-			case VariabilityPackage.SELECTION_CRITERION: return createSelectionCriterion();
-			case VariabilityPackage.CONFIGURATION_DECISION_FOLDER: return createConfigurationDecisionFolder();
-			case VariabilityPackage.CONTAINER_CONFIGURATION: return createContainerConfiguration();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case VariabilityPackage.VARIATION_GROUP:
+			return createVariationGroup();
+		case VariabilityPackage.VARIABLE_ELEMENT:
+			return createVariableElement();
+		case VariabilityPackage.REUSE_META_INFORMATION:
+			return createReuseMetaInformation();
+		case VariabilityPackage.CONFIGURABLE_CONTAINER:
+			return createConfigurableContainer();
+		case VariabilityPackage.INTERNAL_BINDING:
+			return createInternalBinding();
+		case VariabilityPackage.PRIVATE_CONTENT:
+			return createPrivateContent();
+		case VariabilityPackage.VARIABILITY:
+			return createVariability();
+		case VariabilityPackage.FEATURE_CONFIGURATION:
+			return createFeatureConfiguration();
+		case VariabilityPackage.VEHICLE_LEVEL_BINDING:
+			return createVehicleLevelBinding();
+		case VariabilityPackage.CONFIGURATION_DECISION:
+			return createConfigurationDecision();
+		case VariabilityPackage.SELECTION_CRITERION:
+			return createSelectionCriterion();
+		case VariabilityPackage.CONFIGURATION_DECISION_FOLDER:
+			return createConfigurationDecisionFolder();
+		case VariabilityPackage.CONTAINER_CONFIGURATION:
+			return createContainerConfiguration();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConfigurableContainer createConfigurableContainer() {
 		ConfigurableContainerImpl configurableContainer = new ConfigurableContainerImpl();
 		return configurableContainer;
@@ -119,8 +137,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConfigurationDecision createConfigurationDecision() {
 		ConfigurationDecisionImpl configurationDecision = new ConfigurationDecisionImpl();
 		return configurationDecision;
@@ -129,8 +149,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConfigurationDecisionFolder createConfigurationDecisionFolder() {
 		ConfigurationDecisionFolderImpl configurationDecisionFolder = new ConfigurationDecisionFolderImpl();
 		return configurationDecisionFolder;
@@ -139,8 +161,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ContainerConfiguration createContainerConfiguration() {
 		ContainerConfigurationImpl containerConfiguration = new ContainerConfigurationImpl();
 		return containerConfiguration;
@@ -149,8 +173,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public FeatureConfiguration createFeatureConfiguration() {
 		FeatureConfigurationImpl featureConfiguration = new FeatureConfigurationImpl();
 		return featureConfiguration;
@@ -159,8 +185,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VehicleLevelBinding createVehicleLevelBinding() {
 		VehicleLevelBindingImpl vehicleLevelBinding = new VehicleLevelBindingImpl();
 		return vehicleLevelBinding;
@@ -169,8 +197,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public InternalBinding createInternalBinding() {
 		InternalBindingImpl internalBinding = new InternalBindingImpl();
 		return internalBinding;
@@ -179,8 +209,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PrivateContent createPrivateContent() {
 		PrivateContentImpl privateContent = new PrivateContentImpl();
 		return privateContent;
@@ -188,8 +220,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ReuseMetaInformation createReuseMetaInformation() {
 		ReuseMetaInformationImpl reuseMetaInformation = new ReuseMetaInformationImpl();
 		return reuseMetaInformation;
@@ -198,8 +232,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public SelectionCriterion createSelectionCriterion() {
 		SelectionCriterionImpl selectionCriterion = new SelectionCriterionImpl();
 		return selectionCriterion;
@@ -208,8 +244,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Variability createVariability() {
 		VariabilityImpl variability = new VariabilityImpl();
 		return variability;
@@ -218,8 +256,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VariableElement createVariableElement() {
 		VariableElementImpl variableElement = new VariableElementImpl();
 		return variableElement;
@@ -227,8 +267,10 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VariationGroup createVariationGroup() {
 		VariationGroupImpl variationGroup = new VariationGroupImpl();
 		return variationGroup;
@@ -236,10 +278,12 @@ public class VariabilityFactoryImpl extends EFactoryImpl implements VariabilityF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VariabilityPackage getVariabilityPackage() {
-		return (VariabilityPackage)getEPackage();
+		return (VariabilityPackage) getEPackage();
 	}
 
 } // VariabilityFactoryImpl

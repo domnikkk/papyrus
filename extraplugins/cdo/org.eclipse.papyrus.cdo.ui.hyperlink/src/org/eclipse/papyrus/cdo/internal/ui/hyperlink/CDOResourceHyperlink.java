@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,18 +50,18 @@ public class CDOResourceHyperlink extends HyperLinkObject {
 
 	/**
 	 * Gets the hyperlinked resource URI.
-	 * 
+	 *
 	 * @return the hyperlinked resource URI
 	 */
 	public URI getHyperlink() {
-		return (URI)super.getObject();
+		return (URI) super.getObject();
 	}
 
 	/**
 	 * Sets the hyperlinked resource URI.
-	 * 
+	 *
 	 * @param uri
-	 *        the new hyperlinked resource URI
+	 *            the new hyperlinked resource URI
 	 */
 	public void setHyperlink(URI uri) {
 		super.setObject(uri);
@@ -74,21 +74,21 @@ public class CDOResourceHyperlink extends HyperLinkObject {
 			URI uri = getHyperlink();
 
 			IInternalPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(uri, false);
-			if(repo == null) {
+			if (repo == null) {
 				MessageDialog.openError(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.CDOResourceHyperlink_openError, Messages.CDOResourceHyperlink_notConnected);
-			} else if(!repo.isConnected()) {
+			} else if (!repo.isConnected()) {
 				repo.connect();
-				if(!repo.isConnected()) {
+				if (!repo.isConnected()) {
 					MessageDialog.openError(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.CDOResourceHyperlink_openError, Messages.CDOResourceHyperlink_notConnected);
 				}
 			}
 
 			// we may have connected a previously disconnected repo, above
-			if((repo != null) && repo.isConnected()) {
+			if ((repo != null) && repo.isConnected()) {
 				CDOView master = repo.getMasterView();
 
 				String path = CDOURIUtil.extractResourcePath(uri);
-				if(!master.hasResource(path)) {
+				if (!master.hasResource(path)) {
 					MessageDialog.openError(UIUtil.getActiveWorkbenchWindow().getShell(), Messages.CDOResourceHyperlink_openError, NLS.bind(Messages.CDOResourceHyperlink_noSuchResource, path));
 				} else {
 					CDOResourceNode node = master.getResourceNode(path);
@@ -115,15 +115,15 @@ public class CDOResourceHyperlink extends HyperLinkObject {
 			@Override
 			public Void caseCDOResource(CDOResource object) {
 				try {
-					if(object.isRoot()) {
+					if (object.isRoot()) {
 						// the root resource is a proxy for the repository
 						IInternalPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(object.getURI());
-						ModelRepositoriesView reposView = (ModelRepositoriesView)page.showView(ModelRepositoriesView.ID);
+						ModelRepositoriesView reposView = (ModelRepositoriesView) page.showView(ModelRepositoriesView.ID);
 						reposView.selectReveal(new StructuredSelection(repo));
 					} else {
 						CDOResource diResource = DIResourceQuery.getAffiliateResource(object);
 
-						if(diResource == null) {
+						if (diResource == null) {
 							// open regular CDO model resource
 							CDOEditorUtil.openEditor(page, object);
 						} else {
@@ -144,7 +144,7 @@ public class CDOResourceHyperlink extends HyperLinkObject {
 	public void executeEditMousePressed(List<HyperLinkObject> list, EObject aModel) {
 		CDOResourceHyperlinkEditorShell editor = new CDOResourceHyperlinkEditorShell();
 		editor.setHyperlink(this);
-		if(editor.open()) {
+		if (editor.open()) {
 			int index = list.indexOf(this);
 			list.set(index, editor.getHyperlink());
 		}

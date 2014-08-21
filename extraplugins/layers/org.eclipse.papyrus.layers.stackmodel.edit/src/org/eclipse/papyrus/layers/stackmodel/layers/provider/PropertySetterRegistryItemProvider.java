@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -40,11 +40,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.PropertySetterRegistry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertySetterRegistryItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class PropertySetterRegistryItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertySetterRegistryItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class PropertySetterRegistryItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,11 +79,11 @@ public class PropertySetterRegistryItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,6 +99,7 @@ public class PropertySetterRegistryItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,6 +114,7 @@ public class PropertySetterRegistryItemProvider
 	 * This returns PropertySetterRegistry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +126,7 @@ public class PropertySetterRegistryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,6 +139,7 @@ public class PropertySetterRegistryItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,10 +147,10 @@ public class PropertySetterRegistryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PropertySetterRegistry.class)) {
-			case LayersPackage.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS:
-			case LayersPackage.PROPERTY_SETTER_REGISTRY__SETTER_MAP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS:
+		case LayersPackage.PROPERTY_SETTER_REGISTRY__SETTER_MAP:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -153,6 +160,7 @@ public class PropertySetterRegistryItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -160,50 +168,51 @@ public class PropertySetterRegistryItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createFillPropertySetter()));
+						LayersFactory.eINSTANCE.createFillPropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createIsValidPropertySetter()));
+						LayersFactory.eINSTANCE.createIsValidPropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createNullPropertySetter()));
+						LayersFactory.eINSTANCE.createNullPropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createLinePropertySetter()));
+						LayersFactory.eINSTANCE.createLinePropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createFontPropertySetter()));
+						LayersFactory.eINSTANCE.createFontPropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createIsVisiblePropertySetter()));
+						LayersFactory.eINSTANCE.createIsVisiblePropertySetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__PROPERTY_SETTERS,
-				 LayersFactory.eINSTANCE.createIsAbstractUmlSetter()));
+						LayersFactory.eINSTANCE.createIsAbstractUmlSetter()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.PROPERTY_SETTER_REGISTRY__SETTER_MAP,
-				 LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_PROPERTY_SETTER)));
+						LayersFactory.eINSTANCE.create(LayersPackage.Literals.STRING_TO_PROPERTY_SETTER)));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

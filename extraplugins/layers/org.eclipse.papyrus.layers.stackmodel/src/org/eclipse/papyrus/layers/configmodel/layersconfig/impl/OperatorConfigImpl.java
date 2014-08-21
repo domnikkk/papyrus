@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -44,6 +44,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OperatorConfigImpl() {
@@ -53,6 +54,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,15 +65,17 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyOperator createOperatorDescriptor() throws InstanciationException {
 
-		switch(getClassnameKind()) {
+		switch (getClassnameKind()) {
 		case UNDEFINED:
 			// Try to find the exact type of classname
 			PropertyOperator res;
-			
+
 			// Try as EMF instance
 			try {
 				res = createEmfInstance();
@@ -84,7 +88,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 				setClassnameKind(ClassnameKind.NOT_FOUND);
 				throw new InstanciationException("Can't create PropertyOperator for name '" + getClassname() + "'. Bad EMF type.");
 			}
-			
+
 			// Try as java pojo
 			try {
 				res = createPojoInstance();
@@ -94,19 +98,19 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 				setClassnameKind(ClassnameKind.NOT_FOUND);
 				throw e;
 			}
-			
+
 
 		case EMF_CLASSNAME:
 			return createEmfInstance();
-			
+
 		case POJO_CLASSNAME:
 			// Try to load a java class
 			return createPojoInstance();
-			
-			
+
+
 		case NOT_FOUND:
 			// We already are in error. Do nothing
-			
+
 			break;
 
 		default:
@@ -125,9 +129,9 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 		try {
 			Class<?> opClass = loadClass();
 			CustomPropertyOperator operator = LayersFactory.eINSTANCE.createCustomPropertyOperator();
-			operator.setOperatorInstance((CustomPropertyOperatorsInstance)opClass.newInstance() );
+			operator.setOperatorInstance((CustomPropertyOperatorsInstance) opClass.newInstance());
 			operator.setName(getName());
-			
+
 			return operator;
 		} catch (Exception e) {
 			setClassnameKind(ClassnameKind.NOT_FOUND);
@@ -137,18 +141,19 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 
 	/**
 	 * Create an EMF instance from the classname.
+	 * 
 	 * @return
 	 * @throws InstanciationException
 	 */
 	protected PropertyOperator createEmfInstance() throws InstanciationException {
 		// Try to load an EMF type
 		EClassifier classifier = LayersPackage.eINSTANCE.getEClassifier(getClassname());
-		if(classifier == null) {
+		if (classifier == null) {
 			throw new InstanciationException("Can't create PropertyOperator for name '" + getClassname() + "'. Bad classname.");
 		}
 		PropertyOperator res;
 		try {
-			res = (PropertyOperator)LayersFactory.eINSTANCE.create((EClass)classifier);
+			res = (PropertyOperator) LayersFactory.eINSTANCE.create((EClass) classifier);
 		} catch (ClassCastException e) {
 			// specified class name is of
 			throw new InstanciationException("Can't create PropertyOperator for name '" + getClassname() + "'. Bad type.");
@@ -159,18 +164,18 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersconfigPackage.OPERATOR_CONFIG___CREATE_OPERATOR_DESCRIPTOR:
-				try {
-					return createOperatorDescriptor();
-				}
-				catch (Throwable throwable) {
-					throw new InvocationTargetException(throwable);
-				}
+		case LayersconfigPackage.OPERATOR_CONFIG___CREATE_OPERATOR_DESCRIPTOR:
+			try {
+				return createOperatorDescriptor();
+			} catch (Throwable throwable) {
+				throw new InvocationTargetException(throwable);
+			}
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -178,7 +183,7 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 	/**
 	 * Load the Class object. Try from current ClassLoader, then try using the
 	 * plugin referenced in the serviceDescriptor.PluginId
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -196,14 +201,14 @@ public class OperatorConfigImpl extends InstanciableElementImpl implements Opera
 			} catch (ClassNotFoundException e2) {
 				throw new LayersException("Can't find class for the name '" + classname + "'.", e2);
 			} catch (NullPointerException e) {
-				throw new LayersException("Can't find bundle '"+ getBundleID() 
+				throw new LayersException("Can't find bundle '" + getBundleID()
 						+ "' for class for the name '" + classname + "'.", e);
 			}
 		}
-	
+
 		return classDesc;
 	}
 
-	
-	
-} //OperatorConfigImpl
+
+
+} // OperatorConfigImpl

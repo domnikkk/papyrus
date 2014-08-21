@@ -32,11 +32,12 @@ import org.eclipse.papyrus.diagramtemplate.DiagramTemplatePackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.diagramtemplate.diagramtemplate.DiagramDefinition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DiagramDefinitionItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -46,6 +47,7 @@ public class DiagramDefinitionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramDefinitionItemProvider(AdapterFactory adapterFactory) {
@@ -56,6 +58,7 @@ public class DiagramDefinitionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,140 +80,146 @@ public class DiagramDefinitionItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_description_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_description_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__DESCRIPTION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the From Root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addFromRootPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_fromRoot_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_fromRoot_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__FROM_ROOT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_fromRoot_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_fromRoot_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__FROM_ROOT,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Diagram Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDiagramKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_diagramKind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_diagramKind_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__DIAGRAM_KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_diagramKind_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_diagramKind_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__DIAGRAM_KIND,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Layout To Apply feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLayoutToApplyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_layoutToApply_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_layoutToApply_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_layoutToApply_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_layoutToApply_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_name_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_name_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Prefix feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addPrefixPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramDefinition_prefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_prefix_feature", "_UI_DiagramDefinition_type"),
-				 DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__PREFIX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_DiagramDefinition_prefix_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DiagramDefinition_prefix_feature", "_UI_DiagramDefinition_type"),
+						DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__PREFIX,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -225,6 +234,7 @@ public class DiagramDefinitionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -239,6 +249,7 @@ public class DiagramDefinitionItemProvider
 	 * This returns DiagramDefinition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -250,14 +261,15 @@ public class DiagramDefinitionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DiagramDefinition)object).getName();
+		String label = ((DiagramDefinition) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DiagramDefinition_type") :
-			getString("_UI_DiagramDefinition_type") + " " + label;
+				getString("_UI_DiagramDefinition_type") :
+				getString("_UI_DiagramDefinition_type") + " " + label;
 	}
 
 	/**
@@ -265,6 +277,7 @@ public class DiagramDefinitionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,16 +285,16 @@ public class DiagramDefinitionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiagramDefinition.class)) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DESCRIPTION:
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__DIAGRAM_KIND:
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__LAYOUT_TO_APPLY:
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__NAME:
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__PREFIX:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION__SELECTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -291,6 +304,7 @@ public class DiagramDefinitionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,15 +312,16 @@ public class DiagramDefinitionItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(DiagramTemplatePackage.Literals.DIAGRAM_DEFINITION__SELECTION,
-				 DiagramTemplateFactory.eINSTANCE.createSelection()));
+						DiagramTemplateFactory.eINSTANCE.createSelection()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

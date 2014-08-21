@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,17 +28,21 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * The EAST-ADL2 sub-package for error modeling provides support for safety engineering by representing possible, incorrect behaviors of a system in its operation (e.g., component errors and their propagations).
- * Abnormal behaviors of architectural elements as well as their instantiations in a particular product context can be represented, forming a basis for safety analysis through external techniques and tools. Through the integration with other language constructs, definitions of error behaviors and hazards can be traced to the specifications of safety requirements, and further to the subsequent functional and non-functional requirements on error handing and hazard mitigations as well as to the necessary V&V efforts. 
- * Error behaviors are treated as a separated view, orthogonal to the nominal architecture model. This separation of concern in modeling is considered necessary in order to avoid some undesired effects of error modeling, such as the risk of mixing nominal and erroneous behavior in regards to the comprehension, reuse, and system synthesis (e.g., code generation).
+ * Abnormal behaviors of architectural elements as well as their instantiations in a particular product context can be represented, forming a basis for safety analysis through external techniques and tools. Through the integration with other language
+ * constructs, definitions of error behaviors and hazards can be traced to the specifications of safety requirements, and further to the subsequent functional and non-functional requirements on error handing and hazard mitigations as well as to the necessary
+ * V&V efforts.
+ * Error behaviors are treated as a separated view, orthogonal to the nominal architecture model. This separation of concern in modeling is considered necessary in order to avoid some undesired effects of error modeling, such as the risk of mixing nominal and
+ * erroneous behavior in regards to the comprehension, reuse, and system synthesis (e.g., code generation).
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelFactory
  * @model kind="package"
  * @generated
@@ -48,12 +52,13 @@ public interface ErrormodelPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -61,6 +66,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorBehaviorImpl <em>Error Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorBehaviorImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorBehavior()
 		 * @generated
@@ -71,6 +77,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__BASE_BEHAVIOR = eINSTANCE.getErrorBehavior_Base_Behavior();
@@ -79,6 +86,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Failure Logic</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ERROR_BEHAVIOR__FAILURE_LOGIC = eINSTANCE.getErrorBehavior_FailureLogic();
@@ -87,6 +95,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ERROR_BEHAVIOR__TYPE = eINSTANCE.getErrorBehavior_Type();
@@ -95,6 +104,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Internal Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__INTERNAL_FAULT = eINSTANCE.getErrorBehavior_InternalFault();
@@ -103,6 +113,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>External Failure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__EXTERNAL_FAILURE = eINSTANCE.getErrorBehavior_ExternalFailure();
@@ -111,6 +122,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>External Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__EXTERNAL_FAULT = eINSTANCE.getErrorBehavior_ExternalFault();
@@ -119,6 +131,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Process Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__PROCESS_FAULT = eINSTANCE.getErrorBehavior_ProcessFault();
@@ -127,6 +140,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Internal Failure</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_BEHAVIOR__INTERNAL_FAILURE = eINSTANCE.getErrorBehavior_InternalFailure();
@@ -135,6 +149,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.AnomalyImpl <em>Anomaly</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.AnomalyImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getAnomaly()
 		 * @generated
@@ -145,6 +160,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ANOMALY__BASE_PROPERTY = eINSTANCE.getAnomaly_Base_Property();
@@ -153,6 +169,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ANOMALY__TYPE = eINSTANCE.getAnomaly_Type();
@@ -161,6 +178,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.InternalFaultPrototypeImpl <em>Internal Fault Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.InternalFaultPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getInternalFaultPrototype()
 		 * @generated
@@ -171,6 +189,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INTERNAL_FAULT_PROTOTYPE__BASE_CLASS = eINSTANCE.getInternalFaultPrototype_Base_Class();
@@ -179,6 +198,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INTERNAL_FAULT_PROTOTYPE__BASE_EVENT = eINSTANCE.getInternalFaultPrototype_Base_Event();
@@ -187,6 +207,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl <em>Error Model Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorModelType()
 		 * @generated
@@ -197,6 +218,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fault Failure Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR = eINSTANCE.getErrorModelType_FaultFailureConnector();
@@ -205,6 +227,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Part</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__PART = eINSTANCE.getErrorModelType_Part();
@@ -213,6 +236,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Failure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__FAILURE = eINSTANCE.getErrorModelType_Failure();
@@ -221,6 +245,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>External Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__EXTERNAL_FAULT = eINSTANCE.getErrorModelType_ExternalFault();
@@ -229,6 +254,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Internal Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__INTERNAL_FAULT = eINSTANCE.getErrorModelType_InternalFault();
@@ -237,6 +263,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Process Fault</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__PROCESS_FAULT = eINSTANCE.getErrorModelType_ProcessFault();
@@ -245,6 +272,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__TARGET = eINSTANCE.getErrorModelType_Target();
@@ -253,6 +281,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hw Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__HW_TARGET = eINSTANCE.getErrorModelType_HwTarget();
@@ -261,6 +290,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Error Behavior Description</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION = eINSTANCE.getErrorModelType_ErrorBehaviorDescription();
@@ -269,6 +299,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl <em>Fault Failure Propagation Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultFailurePropagationLink()
 		 * @generated
@@ -279,6 +310,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Immediate Propagation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FAULT_FAILURE_PROPAGATION_LINK__IMMEDIATE_PROPAGATION = eINSTANCE.getFaultFailurePropagationLink_ImmediatePropagation();
@@ -287,6 +319,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>To Port</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE_PROPAGATION_LINK__TO_PORT = eINSTANCE.getFaultFailurePropagationLink_ToPort();
@@ -295,6 +328,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>From Port</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE_PROPAGATION_LINK__FROM_PORT = eINSTANCE.getFaultFailurePropagationLink_FromPort();
@@ -303,6 +337,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePortImpl <em>Fault Failure Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePortImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultFailurePort()
 		 * @generated
@@ -313,6 +348,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Function Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE_PORT__FUNCTION_TARGET = eINSTANCE.getFaultFailurePort_FunctionTarget();
@@ -321,6 +357,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hw Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FAULT_FAILURE_PORT__HW_TARGET = eINSTANCE.getFaultFailurePort_HwTarget();
@@ -329,6 +366,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelPrototypeImpl <em>Error Model Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorModelPrototype()
 		 * @generated
@@ -339,6 +377,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_PROTOTYPE__TYPE = eINSTANCE.getErrorModelPrototype_Type();
@@ -347,6 +386,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_PROTOTYPE__TARGET = eINSTANCE.getErrorModelPrototype_Target();
@@ -355,6 +395,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Function Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_PROTOTYPE__FUNCTION_TARGET = eINSTANCE.getErrorModelPrototype_FunctionTarget();
@@ -363,6 +404,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hw Target</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ERROR_MODEL_PROTOTYPE__HW_TARGET = eINSTANCE.getErrorModelPrototype_HwTarget();
@@ -371,6 +413,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ProcessFaultPrototypeImpl <em>Process Fault Prototype</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ProcessFaultPrototypeImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getProcessFaultPrototype()
 		 * @generated
@@ -381,6 +424,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PROCESS_FAULT_PROTOTYPE__BASE_EVENT = eINSTANCE.getProcessFaultPrototype_Base_Event();
@@ -389,6 +433,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FailureOutPortImpl <em>Failure Out Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FailureOutPortImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFailureOutPort()
 		 * @generated
@@ -399,6 +444,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultInPortImpl <em>Fault In Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultInPortImpl
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultInPort()
 		 * @generated
@@ -409,6 +455,7 @@ public interface ErrormodelPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind <em>Error Behavior Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind
 		 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorBehaviorKind()
 		 * @generated
@@ -421,6 +468,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "errormodel";
@@ -429,6 +477,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.papyrusuml.org/EAST-ADL2/Dependability/ErrorModel/1";
@@ -437,6 +486,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "ErrorModel";
@@ -445,6 +495,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	ErrormodelPackage eINSTANCE = org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl.init();
@@ -453,6 +504,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorBehaviorImpl <em>Error Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorBehaviorImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorBehavior()
 	 * @generated
@@ -463,6 +515,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.InternalFaultPrototypeImpl <em>Internal Fault Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.InternalFaultPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getInternalFaultPrototype()
 	 * @generated
@@ -473,6 +526,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl <em>Error Model Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorModelType()
 	 * @generated
@@ -483,6 +537,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl <em>Fault Failure Propagation Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePropagationLinkImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultFailurePropagationLink()
 	 * @generated
@@ -493,6 +548,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelPrototypeImpl <em>Error Model Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorModelPrototype()
 	 * @generated
@@ -503,6 +559,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FailureOutPortImpl <em>Failure Out Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FailureOutPortImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFailureOutPort()
 	 * @generated
@@ -513,6 +570,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultInPortImpl <em>Fault In Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultInPortImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultInPort()
 	 * @generated
@@ -523,6 +581,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.AnomalyImpl <em>Anomaly</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.AnomalyImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getAnomaly()
 	 * @generated
@@ -533,6 +592,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -542,6 +602,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -551,6 +612,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -560,6 +622,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -569,6 +632,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -578,6 +642,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Anomaly</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -587,6 +652,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Anomaly</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -596,6 +662,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePortImpl <em>Fault Failure Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.FaultFailurePortImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getFaultFailurePort()
 	 * @generated
@@ -606,6 +673,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ProcessFaultPrototypeImpl <em>Process Fault Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ProcessFaultPrototypeImpl
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getProcessFaultPrototype()
 	 * @generated
@@ -616,6 +684,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -625,6 +694,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -634,6 +704,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -643,6 +714,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -652,6 +724,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -661,6 +734,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -670,6 +744,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -679,6 +754,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Hw Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -688,6 +764,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Error Model Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -697,6 +774,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Error Model Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -706,6 +784,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -715,6 +794,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -724,6 +804,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -733,6 +814,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Packageable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -742,6 +824,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -751,6 +834,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -760,6 +844,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Fault Failure Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -769,6 +854,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Part</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -778,6 +864,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Error Behavior Description</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -787,6 +874,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -796,6 +884,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>External Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -805,6 +894,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Internal Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -814,6 +904,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Process Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -823,6 +914,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -832,6 +924,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Hw Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -841,6 +934,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Error Model Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -850,6 +944,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Error Model Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -859,6 +954,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -868,6 +964,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -877,6 +974,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -886,6 +984,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -895,6 +994,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Immediate Propagation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -904,6 +1004,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>To Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -913,6 +1014,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>From Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -922,6 +1024,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Fault Failure Propagation Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -931,6 +1034,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Fault Failure Propagation Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -940,6 +1044,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -949,6 +1054,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -958,6 +1064,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -967,6 +1074,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -976,6 +1084,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Failure Logic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -985,6 +1094,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -994,6 +1104,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Internal Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1003,6 +1114,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>External Failure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1012,6 +1124,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>External Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1021,6 +1134,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Process Fault</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1030,6 +1144,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Internal Failure</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1039,6 +1154,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Error Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1048,6 +1164,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Error Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1057,6 +1174,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1066,6 +1184,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1075,6 +1194,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1084,6 +1204,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1093,6 +1214,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1102,6 +1224,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1111,6 +1234,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1120,6 +1244,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Internal Fault Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1129,6 +1254,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Internal Fault Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1138,6 +1264,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1147,6 +1274,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1156,6 +1284,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1165,6 +1294,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1174,6 +1304,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1183,6 +1314,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1192,6 +1324,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1201,6 +1334,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Hw Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1210,6 +1344,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Fault Failure Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1219,6 +1354,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Fault Failure Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1228,6 +1364,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1237,6 +1374,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1246,6 +1384,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1255,6 +1394,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1264,6 +1404,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1273,6 +1414,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1282,6 +1424,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1291,6 +1434,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Hw Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1300,6 +1444,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Failure Out Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1309,6 +1454,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Failure Out Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1318,6 +1464,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1327,6 +1474,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1336,6 +1484,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1345,6 +1494,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1354,6 +1504,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1363,6 +1514,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1372,6 +1524,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Function Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1381,6 +1534,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Hw Target</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1390,6 +1544,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Fault In Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1399,6 +1554,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Fault In Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1408,6 +1564,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1417,6 +1574,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1426,6 +1584,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Comment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1435,6 +1594,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1444,6 +1604,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1453,6 +1614,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1462,6 +1624,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of structural features of the '<em>Process Fault Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1471,6 +1634,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The number of operations of the '<em>Process Fault Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1480,6 +1644,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind <em>Error Behavior Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrormodelPackageImpl#getErrorBehaviorKind()
 	 * @generated
@@ -1491,6 +1656,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly <em>Anomaly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Anomaly</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly
 	 * @generated
@@ -1501,6 +1667,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly#getBase_Property <em>Base Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Property</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly#getBase_Property()
 	 * @see #getAnomaly()
@@ -1512,6 +1679,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly#getType()
 	 * @see #getAnomaly()
@@ -1523,6 +1691,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior <em>Error Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Error Behavior</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior
 	 * @generated
@@ -1533,6 +1702,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getBase_Behavior <em>Base Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Behavior</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getBase_Behavior()
 	 * @see #getErrorBehavior()
@@ -1544,6 +1714,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getExternalFailure <em>External Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>External Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getExternalFailure()
 	 * @see #getErrorBehavior()
@@ -1555,6 +1726,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getExternalFault <em>External Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>External Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getExternalFault()
 	 * @see #getErrorBehavior()
@@ -1566,6 +1738,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getFailureLogic <em>Failure Logic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Failure Logic</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getFailureLogic()
 	 * @see #getErrorBehavior()
@@ -1577,6 +1750,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getInternalFault <em>Internal Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Internal Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getInternalFault()
 	 * @see #getErrorBehavior()
@@ -1588,6 +1762,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getProcessFault <em>Process Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Process Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getProcessFault()
 	 * @see #getErrorBehavior()
@@ -1599,6 +1774,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getInternalFailure <em>Internal Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Internal Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getInternalFailure()
 	 * @see #getErrorBehavior()
@@ -1610,6 +1786,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior#getType()
 	 * @see #getErrorBehavior()
@@ -1621,6 +1798,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind <em>Error Behavior Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Error Behavior Kind</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehaviorKind
 	 * @generated
@@ -1631,6 +1809,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1640,6 +1819,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype <em>Error Model Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Error Model Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype
 	 * @generated
@@ -1650,6 +1830,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getFunctionTarget <em>Function Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Function Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getFunctionTarget()
 	 * @see #getErrorModelPrototype()
@@ -1661,6 +1842,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getHwTarget <em>Hw Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Hw Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getHwTarget()
 	 * @see #getErrorModelPrototype()
@@ -1672,6 +1854,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getTarget()
 	 * @see #getErrorModelPrototype()
@@ -1683,6 +1866,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype#getType()
 	 * @see #getErrorModelPrototype()
@@ -1694,6 +1878,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType <em>Error Model Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Error Model Type</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType
 	 * @generated
@@ -1704,6 +1889,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getErrorBehaviorDescription <em>Error Behavior Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Error Behavior Description</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getErrorBehaviorDescription()
 	 * @see #getErrorModelType()
@@ -1715,6 +1901,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getExternalFault <em>External Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>External Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getExternalFault()
 	 * @see #getErrorModelType()
@@ -1726,6 +1913,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getFailure <em>Failure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Failure</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getFailure()
 	 * @see #getErrorModelType()
@@ -1737,6 +1925,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getFaultFailureConnector <em>Fault Failure Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Fault Failure Connector</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getFaultFailureConnector()
 	 * @see #getErrorModelType()
@@ -1748,6 +1937,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getHwTarget <em>Hw Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Hw Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getHwTarget()
 	 * @see #getErrorModelType()
@@ -1759,6 +1949,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getInternalFault <em>Internal Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Internal Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getInternalFault()
 	 * @see #getErrorModelType()
@@ -1770,6 +1961,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Part</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getPart()
 	 * @see #getErrorModelType()
@@ -1781,6 +1973,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getProcessFault <em>Process Fault</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Process Fault</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getProcessFault()
 	 * @see #getErrorModelType()
@@ -1792,6 +1985,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType#getTarget()
 	 * @see #getErrorModelType()
@@ -1803,6 +1997,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FailureOutPort <em>Failure Out Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Failure Out Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FailureOutPort
 	 * @generated
@@ -1813,6 +2008,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort <em>Fault Failure Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fault Failure Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort
 	 * @generated
@@ -1823,6 +2019,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getFunctionTarget <em>Function Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Function Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getFunctionTarget()
 	 * @see #getFaultFailurePort()
@@ -1834,6 +2031,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getHwTarget <em>Hw Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Hw Target</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort#getHwTarget()
 	 * @see #getFaultFailurePort()
@@ -1845,6 +2043,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink <em>Fault Failure Propagation Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fault Failure Propagation Link</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink
 	 * @generated
@@ -1855,6 +2054,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getFromPort <em>From Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>From Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getFromPort()
 	 * @see #getFaultFailurePropagationLink()
@@ -1866,6 +2066,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#isImmediatePropagation <em>Immediate Propagation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Immediate Propagation</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#isImmediatePropagation()
 	 * @see #getFaultFailurePropagationLink()
@@ -1877,6 +2078,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getToPort <em>To Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>To Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink#getToPort()
 	 * @see #getFaultFailurePropagationLink()
@@ -1888,6 +2090,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.FaultInPort <em>Fault In Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fault In Port</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultInPort
 	 * @generated
@@ -1898,6 +2101,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype <em>Internal Fault Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Internal Fault Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype
 	 * @generated
@@ -1908,6 +2112,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype#getBase_Class()
 	 * @see #getInternalFaultPrototype()
@@ -1919,6 +2124,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype#getBase_Event <em>Base Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype#getBase_Event()
 	 * @see #getInternalFaultPrototype()
@@ -1930,6 +2136,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype <em>Process Fault Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Process Fault Prototype</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype
 	 * @generated
@@ -1940,6 +2147,7 @@ public interface ErrormodelPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event <em>Base Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Event</em>'.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype#getBase_Event()
 	 * @see #getProcessFaultPrototype()
@@ -1947,4 +2155,4 @@ public interface ErrormodelPackage extends EPackage {
 	 */
 	EReference getProcessFaultPrototype_Base_Event();
 
-} //ErrormodelPackage
+} // ErrormodelPackage

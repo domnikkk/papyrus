@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,8 +53,8 @@ public class CDOTextURIHandler extends URIHandlerImpl {
 	}
 
 	public static void uninstall(ResourceSet resourceSet) {
-		for(Iterator<URIHandler> iter = resourceSet.getURIConverter().getURIHandlers().iterator(); iter.hasNext();) {
-			if(iter.next() instanceof CDOTextURIHandler) {
+		for (Iterator<URIHandler> iter = resourceSet.getURIConverter().getURIHandlers().iterator(); iter.hasNext();) {
+			if (iter.next() instanceof CDOTextURIHandler) {
 				iter.remove();
 			}
 		}
@@ -85,8 +85,8 @@ public class CDOTextURIHandler extends URIHandlerImpl {
 		CDOView result = null;
 
 		CDOViewSet viewSet = CDOUtil.getViewSet(resourceSet);
-		if(viewSet != null) {
-			if(SCHEME.equals(uri.scheme())) {
+		if (viewSet != null) {
+			if (SCHEME.equals(uri.scheme())) {
 				uri = translate(uri);
 			}
 
@@ -104,7 +104,7 @@ public class CDOTextURIHandler extends URIHandlerImpl {
 	public InputStream createInputStream(URI uri, Map<?, ?> options) throws IOException {
 		URI translated = translate(uri);
 		CDOView view = getView(translated);
-		if(view == null) {
+		if (view == null) {
 			// try to delegate, but it probably won't work
 			return getDelegateHandler(translated).createInputStream(translated, options);
 		} else {
@@ -123,7 +123,7 @@ public class CDOTextURIHandler extends URIHandlerImpl {
 	public OutputStream createOutputStream(URI uri, Map<?, ?> options) throws IOException {
 		URI translated = translate(uri);
 		CDOView view = getView(translated);
-		if(view == null) {
+		if (view == null) {
 			// try to delegate, but it probably won't work
 			return getDelegateHandler(translated).createOutputStream(translated, options);
 		} else {

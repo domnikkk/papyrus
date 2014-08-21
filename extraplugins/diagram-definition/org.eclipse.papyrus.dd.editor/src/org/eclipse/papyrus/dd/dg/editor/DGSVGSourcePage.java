@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -46,7 +46,7 @@ public class DGSVGSourcePage extends DDEditorPage {
 
 	/**
 	 * Constructs a new SVG source page for a given DG editor
-	 * 
+	 *
 	 * @param editor
 	 *            The DG editor
 	 */
@@ -97,7 +97,7 @@ public class DGSVGSourcePage extends DDEditorPage {
 
 	/**
 	 * Gets an instance of <code>DGToSVGConverter</code>
-	 * 
+	 *
 	 * @return DGToSVGConverter
 	 */
 	protected DGToSVGConverter getConverter() {

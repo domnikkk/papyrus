@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class CDOStateLabelDecorator
 	private static Set<CDOStateLabelDecorator> instances = new CopyOnWriteArraySet<CDOStateLabelDecorator>();
 
 	private final ResourceManager manager = new LocalResourceManager(
-		JFaceResources.getResources());
+			JFaceResources.getResources());
 
 	private final ListenerList listeners = new ListenerList();
 
@@ -59,12 +59,14 @@ public class CDOStateLabelDecorator
 		instances.add(this);
 	}
 
+	@Override
 	public void dispose() {
 		manager.dispose();
 
 		instances.remove(this);
 	}
 
+	@Override
 	public Image decorateImage(Image image, Object element) {
 		EObject eObject = EMFHelper.getEObject(element);
 
@@ -72,15 +74,15 @@ public class CDOStateLabelDecorator
 			DawnState state = CDOStateAdapter.getState(eObject);
 			if (state != DawnState.CLEAN) {
 				DawnElementStylizer stylizer = DawnElementStylizerRegistry.instance
-					.getStylizer(eObject);
+						.getStylizer(eObject);
 
 				if (stylizer != null) {
 					ImageDescriptor decoration = ImageDescriptor
-						.createFromImage(stylizer.getImage(eObject, state));
+							.createFromImage(stylizer.getImage(eObject, state));
 
 					if (decoration != null) {
 						ImageDescriptor desc = new DecorationOverlayIcon(image,
-							decoration, IDecoration.BOTTOM_RIGHT);
+								decoration, IDecoration.BOTTOM_RIGHT);
 
 						return (Image) manager.get(desc);
 					}
@@ -91,18 +93,22 @@ public class CDOStateLabelDecorator
 		return image;
 	}
 
+	@Override
 	public String decorateText(String text, Object element) {
 		return text;
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		listeners.add(listener);
 	}
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		listeners.remove(listener);
 	}
@@ -116,15 +122,14 @@ public class CDOStateLabelDecorator
 
 		if (listeners.length > 0) {
 			LabelProviderChangedEvent event = new LabelProviderChangedEvent(
-				this);
+					this);
 
 			for (int i = 0; i < listeners.length; i++) {
 				try {
 					((ILabelProviderListener) listeners[i])
-						.labelProviderChanged(event);
+							.labelProviderChanged(event);
 				} catch (Exception e) {
-					Activator.log.error(
-						"Uncaught exception in label provider listener.", e); //$NON-NLS-1$
+					Activator.log.error("Uncaught exception in label provider listener.", e); //$NON-NLS-1$
 				}
 			}
 		}
@@ -164,7 +169,8 @@ public class CDOStateLabelDecorator
 						break;
 					}
 				}
-			};
+			}
+			;
 
 			return Status.OK_STATUS;
 		}

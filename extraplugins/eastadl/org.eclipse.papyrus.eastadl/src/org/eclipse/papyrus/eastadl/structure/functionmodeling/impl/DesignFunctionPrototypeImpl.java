@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.DesignFunctionPrototypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DesignFunctionPrototypeImpl() {
@@ -52,19 +53,20 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public DesignFunctionType basicGetType() {
 
 		DesignFunctionType type = null;
 
-		if(getBase_Property() != null) {
+		if (getBase_Property() != null) {
 			// Retrieve the type of the DesignFunctionPrototype
 			Type basicType = getBase_Property().getType();
 
-			if(basicType != null) {
-				type = (DesignFunctionType)UMLUtil.getStereotypeApplication(basicType, DesignFunctionType.class);
+			if (basicType != null) {
+				type = UMLUtil.getStereotypeApplication(basicType, DesignFunctionType.class);
 			}
 		}
 
@@ -73,33 +75,38 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+		case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE__TYPE:
-				return basicGetType() != null;
+		case FunctionmodelingPackage.DESIGN_FUNCTION_PROTOTYPE__TYPE:
+			return basicGetType() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,25 +116,26 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Image getIcon() {
 
 		Image ImageNotFound = null;
 
-		if(getBase_Property() != null) {
+		if (getBase_Property() != null) {
 			Stereotype st = getBase_Property().getAppliedStereotype(EASTResource.DESIGNFUNCTIONPROTOTYPE_ID);
 
 			Image defaultImage = st.getIcons().get(0);
 			Image typeImage = null;
 
 			FunctionType type = getType();
-			if((type != null) && (type.getBase_Class() != null)) {
+			if ((type != null) && (type.getBase_Class() != null)) {
 				typeImage = ElementUtil.getStereotypeImage(type.getBase_Class(), "icon");
 			}
 
-			if(typeImage != null) {
+			if (typeImage != null) {
 				return typeImage;
 			} else {
 				return defaultImage;
@@ -140,11 +148,13 @@ public class DesignFunctionPrototypeImpl extends FunctionPrototypeImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public DesignFunctionType getType() {
 		DesignFunctionType type = basicGetType();
-		return type != null && type.eIsProxy() ? (DesignFunctionType)eResolveProxy((InternalEObject)type) : type;
+		return type != null && type.eIsProxy() ? (DesignFunctionType) eResolveProxy((InternalEObject) type) : type;
 	}
 
 } // DesignFunctionPrototypeImpl

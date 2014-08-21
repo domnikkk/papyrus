@@ -7,20 +7,20 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-public  class ConstraintsUtil {
-	public static Boolean verifyRobotMLApplied(Element elt){
+public class ConstraintsUtil {
+	public static Boolean verifyRobotMLApplied(Element elt) {
 		Boolean isRobotmlModel = false;
 		Model model = elt.getModel();
-		if ((model != null)&& (model instanceof Package)){			
+		if ((model != null) && (model instanceof Package)) {
 
-				Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, model);
+			Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, model);
 
-				if(((Package)model).isProfileApplied(robotml)) {
-					isRobotmlModel = true;
-				}
-					
-			
-		
+			if (((Package) model).isProfileApplied(robotml)) {
+				isRobotmlModel = true;
+			}
+
+
+
 		}
 		return isRobotmlModel;
 	}

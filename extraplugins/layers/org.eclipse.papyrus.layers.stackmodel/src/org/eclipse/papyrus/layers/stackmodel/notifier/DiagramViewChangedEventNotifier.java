@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -25,13 +25,13 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
 
 /**
  * An EMF {@link Adapter} listening on notation::diagram::view added and removed.
- * 
+ *
  * This class listen to a {@link Diagram} and send following events to listeners:
  * <ul>
- *   <li>view removed</li>
- *   <li>view added</li>
+ * <li>view removed</li>
+ * <li>view added</li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -46,10 +46,12 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Something happen on the tree of object
+	 * 
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param msg
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 
 		// Self atttach
@@ -58,20 +60,20 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 		// We are only interested in views (from newValue if set, or oldValue if removed)
 		// TODO Use an appropriate filter / Predicate to filter views.
 		Object newValue = notification.getNewValue();
-		if( ! (newValue instanceof View || notification.getOldValue() instanceof View ) ) {
+		if (!(newValue instanceof View || notification.getOldValue() instanceof View)) {
 			return;
 		}
 		// Check diagram modification
 		// There is 4 sources: View::persistedChildren and View::transientChildren
 		// Diagram::persistedChildren and Diagram::transientChildren
 		Object feature = notification.getFeature();
-		if( feature == NotationPackage.eINSTANCE.getView_PersistedChildren() 
-				|| feature == NotationPackage.eINSTANCE.getView_TransientChildren() 
-				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges() 
-				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges() ) {
+		if (feature == NotationPackage.eINSTANCE.getView_PersistedChildren()
+				|| feature == NotationPackage.eINSTANCE.getView_TransientChildren()
+				|| feature == NotationPackage.eINSTANCE.getDiagram_PersistedEdges()
+				|| feature == NotationPackage.eINSTANCE.getDiagram_TransientEdges()) {
 			// LayerOperator::layers || LayersStack::layers
 			// check the event type.
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 
 				break;
@@ -90,7 +92,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * This Adapter is for {@link LayersTreeEventNotifier}.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#isAdapterForType(java.lang.Object)
 	 *
 	 * @param type
@@ -100,7 +102,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 	public boolean isAdapterForType(Object type) {
 		return type == DiagramViewChangedEventNotifier.class;
 	}
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -114,7 +116,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 	 */
 	public void dispose() {
 
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 
@@ -124,6 +126,7 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Return true if the object is disposed.
+	 * 
 	 * @return
 	 */
 	public boolean isDisposed() {
@@ -133,25 +136,26 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addEventListener(IDiagramViewEventListener listener) {
 
-		if(listener == null ) {
+		if (listener == null) {
 			return;
 		}
 
 		// Check if exist
-		if( listeners.contains(listener)) {
+		if (listeners.contains(listener)) {
 			return;
 		}
 
 		listeners.add(listener);
 	}
 
-	/** 
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 * 
 	 * @param listener
 	 */
 	public void removeEventListener(IDiagramViewEventListener listener) {
@@ -161,40 +165,44 @@ public class DiagramViewChangedEventNotifier extends EContentAdapter {
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
+	 * 
 	 * @param msg
 	 */
 	protected void fireDiagramViewAddedEvent(Notification msg) {
-		for(IDiagramViewEventListener listener : listeners) {
+		for (IDiagramViewEventListener listener : listeners) {
 			listener.diagramViewAdded(msg);
 		}
 	}
 
 	/**
 	 * Called by events when a {@link LayersStack} is added to the {@link LayersStackApplication}
+	 * 
 	 * @param msg
 	 */
 	protected void fireDiagramViewRemovedEvent(Notification msg) {
-		for(IDiagramViewEventListener listener : listeners) {
+		for (IDiagramViewEventListener listener : listeners) {
 			listener.diagramViewRemoved(msg);
 		}
 	}
 
 	/**
 	 * Get the removed diagram in case of diagramRemoved event
+	 * 
 	 * @param msg
 	 * @return
 	 */
 	public static View viewAddedEvent_getAddedView(Notification msg) {
-		return (View)msg.getNewValue();
+		return (View) msg.getNewValue();
 	}
 
 	/**
 	 * Get the removed diagram in case of diagramRemoved event
+	 * 
 	 * @param msg
 	 * @return
 	 */
 	public static View viewAddedEvent_getRemovedView(Notification msg) {
-		return (View)msg.getOldValue();
+		return (View) msg.getOldValue();
 	}
 
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.userattributes.UserattributesP
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UserattributesXMLProcessor extends XMLProcessor {
@@ -35,17 +36,19 @@ public class UserattributesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UserattributesXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		UserattributesPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the UserattributesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,4 +61,4 @@ public class UserattributesXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //UserattributesXMLProcessor
+} // UserattributesXMLProcessor

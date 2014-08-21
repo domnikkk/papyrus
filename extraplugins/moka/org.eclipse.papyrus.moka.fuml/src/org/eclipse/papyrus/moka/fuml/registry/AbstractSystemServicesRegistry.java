@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,8 +46,9 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 * @see org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry#init(java.lang.Object)
 	 */
 	public ISystemServicesRegistry init(Object parameters) {
-		if(parameters instanceof EObject)
-			this.contextEObject = (EObject)parameters;
+		if (parameters instanceof EObject) {
+			this.contextEObject = (EObject) parameters;
+		}
 		return this;
 	}
 
@@ -62,7 +63,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 		this.locus = locus;
 		List<Object_> services = this.instantiateServices();
 		// Guarantees that created services are added to the locus
-		for(Object_ o : services) {
+		for (Object_ o : services) {
 			o.locus = locus;
 			locus.extensionalValues.add(o);
 		}
@@ -72,7 +73,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 * Clients should implement this method by calling this.instantiateServices(libraryName, serviceQualifiedNames,
 	 * where libraryName is the name of a registered library containing the service classes to be instantiated,
 	 * and serviceQualifiedNames is the list of qualified names of service classes to be instantiated
-	 * 
+	 *
 	 * @return A List<Object_> containing instantiated services, to be added to a specific locus
 	 */
 	protected abstract List<Object_> instantiateServices();
@@ -82,30 +83,31 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 * for the library identified by the given libraryName.
 	 * libraryName shall refer to the name of a registered library (registered using the oep.uml.extensionpoints.UMLLibrary)
 	 * serviceQualifiedNames shall contain qualified names of classes defined in the library identified by libraryName
-	 * 
+	 *
 	 * @param libraryName
-	 *        The name of the registered library containing the service classes to be instantiated
+	 *            The name of the registered library containing the service classes to be instantiated
 	 * @param serviceQualifiedNames
-	 *        The list of qualified names of service classes to be instantiated
+	 *            The list of qualified names of service classes to be instantiated
 	 * @return A List<Object_> containing instantiated services, to be added to a specific locus
 	 */
 	protected List<Object_> instantiateServices(String libraryName, List<String> serviceQualifiedNames) {
 		List<Object_> serviceInstances = new ArrayList<Object_>();
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		IRegisteredLibrary library = null;
-		for(IRegisteredLibrary l : libraries) {
-			if(l.getName().equals(libraryName))
+		for (IRegisteredLibrary l : libraries) {
+			if (l.getName().equals(libraryName)) {
 				library = l;
+			}
 		}
-		if(library != null) {
+		if (library != null) {
 			URI libraryUri = library.getUri();
 			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
-			for(Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
+			for (Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
 				EObject cddService = i.next();
-				if(cddService instanceof Class) {
-					if(serviceQualifiedNames.contains(((Class)cddService).getQualifiedName())) {
-						serviceInstances.add(this.instantiateService((Class)cddService));
+				if (cddService instanceof Class) {
+					if (serviceQualifiedNames.contains(((Class) cddService).getQualifiedName())) {
+						serviceInstances.add(this.instantiateService((Class) cddService));
 					}
 				}
 			}
@@ -117,9 +119,9 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 * Constructs a service instance from a given service class.
 	 * The service instance is returned in the form of a fuml Object_.
 	 * The return Object_ typically overrids Objec_.dispatch(Operation)
-	 * 
+	 *
 	 * @param service
-	 *        The class representing the service to be instantiated
+	 *            The class representing the service to be instantiated
 	 * @return The instance of the service class, to be added at a specific locus
 	 */
 	protected abstract Object_ instantiateService(Class service);

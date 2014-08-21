@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,12 +35,12 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getIsSched <em>Is Sched</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getSchSlack <em>Sch Slack</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getEnd2EndT <em>End2 End T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getEnd2EndD <em>End2 End D</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getTiming <em>Timing</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getIsSched <em>Is Sched</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getSchSlack <em>Sch Slack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getEnd2EndT <em>End2 End T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getEnd2EndD <em>End2 End D</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getTiming <em>Timing</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.impl.SaEndtoEndFlowImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The default value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getIsSched() <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsSched()
 	 * @generated
 	 * @ordered
@@ -71,6 +73,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The default value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -81,6 +84,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getSchSlack() <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSchSlack()
 	 * @generated
 	 * @ordered
@@ -91,6 +95,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getEnd2EndT() <em>End2 End T</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEnd2EndT()
 	 * @generated
 	 * @ordered
@@ -101,6 +106,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getEnd2EndD() <em>End2 End D</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEnd2EndD()
 	 * @generated
 	 * @ordered
@@ -111,6 +117,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getTiming() <em>Timing</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTiming()
 	 * @generated
 	 * @ordered
@@ -121,6 +128,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
@@ -130,6 +138,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SaEndtoEndFlowImpl() {
@@ -139,6 +148,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,8 +159,10 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getIsSched() {
 		return isSched;
 	}
@@ -158,20 +170,25 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsSched(String newIsSched) {
 		String oldIsSched = isSched;
 		isSched = newIsSched;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED, oldIsSched, isSched));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getSchSlack() {
 		return schSlack;
 	}
@@ -179,20 +196,25 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSchSlack(String newSchSlack) {
 		String oldSchSlack = schSlack;
 		schSlack = newSchSlack;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK, oldSchSlack, schSlack));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getEnd2EndT() {
 		if (end2EndT == null) {
 			end2EndT = new EDataTypeUniqueEList<String>(String.class, this, SAMPackage.SA_ENDTO_END_FLOW__END2_END_T);
@@ -203,8 +225,10 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getEnd2EndD() {
 		if (end2EndD == null) {
 			end2EndD = new EDataTypeUniqueEList<String>(String.class, this, SAMPackage.SA_ENDTO_END_FLOW__END2_END_D);
@@ -215,8 +239,10 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<GaTimedObs> getTiming() {
 		if (timing == null) {
 			timing = new EObjectResolvingEList<GaTimedObs>(GaTimedObs.class, this, SAMPackage.SA_ENDTO_END_FLOW__TIMING);
@@ -227,15 +253,18 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
-			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
-			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			InternalEObject oldBase_NamedElement = (InternalEObject) base_NamedElement;
+			base_NamedElement = (NamedElement) eResolveProxy(oldBase_NamedElement);
 			if (base_NamedElement != oldBase_NamedElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+				}
 			}
 		}
 		return base_NamedElement;
@@ -244,6 +273,7 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NamedElement basicGetBase_NamedElement() {
@@ -253,36 +283,42 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
 		NamedElement oldBase_NamedElement = base_NamedElement;
 		base_NamedElement = newBase_NamedElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
-				return getIsSched();
-			case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
-				return getSchSlack();
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
-				return getEnd2EndT();
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
-				return getEnd2EndD();
-			case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
-				return getTiming();
-			case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
-				if (resolve) return getBase_NamedElement();
-				return basicGetBase_NamedElement();
+		case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
+			return getIsSched();
+		case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
+			return getSchSlack();
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
+			return getEnd2EndT();
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
+			return getEnd2EndD();
+		case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
+			return getTiming();
+		case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
+			if (resolve) {
+				return getBase_NamedElement();
+			}
+			return basicGetBase_NamedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,33 +326,34 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
-				setIsSched((String)newValue);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
-				setSchSlack((String)newValue);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
-				getEnd2EndT().clear();
-				getEnd2EndT().addAll((Collection<? extends String>)newValue);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
-				getEnd2EndD().clear();
-				getEnd2EndD().addAll((Collection<? extends String>)newValue);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
-				getTiming().clear();
-				getTiming().addAll((Collection<? extends GaTimedObs>)newValue);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)newValue);
-				return;
+		case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
+			setIsSched((String) newValue);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
+			setSchSlack((String) newValue);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
+			getEnd2EndT().clear();
+			getEnd2EndT().addAll((Collection<? extends String>) newValue);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
+			getEnd2EndD().clear();
+			getEnd2EndD().addAll((Collection<? extends String>) newValue);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
+			getTiming().clear();
+			getTiming().addAll((Collection<? extends GaTimedObs>) newValue);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -324,29 +361,30 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
-				setIsSched(IS_SCHED_EDEFAULT);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
-				setSchSlack(SCH_SLACK_EDEFAULT);
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
-				getEnd2EndT().clear();
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
-				getEnd2EndD().clear();
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
-				getTiming().clear();
-				return;
-			case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
-				setBase_NamedElement((NamedElement)null);
-				return;
+		case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
+			setIsSched(IS_SCHED_EDEFAULT);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
+			setSchSlack(SCH_SLACK_EDEFAULT);
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
+			getEnd2EndT().clear();
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
+			getEnd2EndD().clear();
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
+			getTiming().clear();
+			return;
+		case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
+			setBase_NamedElement((NamedElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -354,23 +392,24 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
-				return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
-			case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
-				return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
-				return end2EndT != null && !end2EndT.isEmpty();
-			case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
-				return end2EndD != null && !end2EndD.isEmpty();
-			case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
-				return timing != null && !timing.isEmpty();
-			case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
-				return base_NamedElement != null;
+		case SAMPackage.SA_ENDTO_END_FLOW__IS_SCHED:
+			return IS_SCHED_EDEFAULT == null ? isSched != null : !IS_SCHED_EDEFAULT.equals(isSched);
+		case SAMPackage.SA_ENDTO_END_FLOW__SCH_SLACK:
+			return SCH_SLACK_EDEFAULT == null ? schSlack != null : !SCH_SLACK_EDEFAULT.equals(schSlack);
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_T:
+			return end2EndT != null && !end2EndT.isEmpty();
+		case SAMPackage.SA_ENDTO_END_FLOW__END2_END_D:
+			return end2EndD != null && !end2EndD.isEmpty();
+		case SAMPackage.SA_ENDTO_END_FLOW__TIMING:
+			return timing != null && !timing.isEmpty();
+		case SAMPackage.SA_ENDTO_END_FLOW__BASE_NAMED_ELEMENT:
+			return base_NamedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -378,11 +417,14 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isSched: ");
@@ -397,4 +439,4 @@ public class SaEndtoEndFlowImpl extends EObjectImpl implements SaEndtoEndFlow {
 		return result.toString();
 	}
 
-} //SaEndtoEndFlowImpl
+} // SaEndtoEndFlowImpl

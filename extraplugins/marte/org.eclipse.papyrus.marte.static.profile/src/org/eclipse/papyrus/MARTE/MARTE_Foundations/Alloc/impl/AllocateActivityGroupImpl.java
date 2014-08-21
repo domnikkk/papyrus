@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.ActivityPartition;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateActivityGroupImpl#isIsUnique <em>Is Unique</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateActivityGroupImpl#getBase_ActivityPartition <em>Base Activity Partition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateActivityGroupImpl#isIsUnique <em>Is Unique</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.impl.AllocateActivityGroupImpl#getBase_ActivityPartition <em>Base Activity Partition</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	 * The cached value of the '{@link #getBase_ActivityPartition() <em>Base Activity Partition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_ActivityPartition()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AllocateActivityGroupImpl() {
@@ -79,6 +83,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsUnique() {
 		return isUnique;
 	}
@@ -98,27 +105,33 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsUnique(boolean newIsUnique) {
 		boolean oldIsUnique = isUnique;
 		isUnique = newIsUnique;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE, oldIsUnique, isUnique));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ActivityPartition getBase_ActivityPartition() {
 		if (base_ActivityPartition != null && base_ActivityPartition.eIsProxy()) {
-			InternalEObject oldBase_ActivityPartition = (InternalEObject)base_ActivityPartition;
-			base_ActivityPartition = (ActivityPartition)eResolveProxy(oldBase_ActivityPartition);
+			InternalEObject oldBase_ActivityPartition = (InternalEObject) base_ActivityPartition;
+			base_ActivityPartition = (ActivityPartition) eResolveProxy(oldBase_ActivityPartition);
 			if (base_ActivityPartition != oldBase_ActivityPartition) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION, oldBase_ActivityPartition, base_ActivityPartition));
+				}
 			}
 		}
 		return base_ActivityPartition;
@@ -127,6 +140,7 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ActivityPartition basicGetBase_ActivityPartition() {
@@ -136,28 +150,34 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_ActivityPartition(ActivityPartition newBase_ActivityPartition) {
 		ActivityPartition oldBase_ActivityPartition = base_ActivityPartition;
 		base_ActivityPartition = newBase_ActivityPartition;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION, oldBase_ActivityPartition, base_ActivityPartition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
-				return isIsUnique();
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
-				if (resolve) return getBase_ActivityPartition();
-				return basicGetBase_ActivityPartition();
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
+			return isIsUnique();
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
+			if (resolve) {
+				return getBase_ActivityPartition();
+			}
+			return basicGetBase_ActivityPartition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,17 +185,18 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
-				setIsUnique((Boolean)newValue);
-				return;
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
-				setBase_ActivityPartition((ActivityPartition)newValue);
-				return;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
+			setIsUnique((Boolean) newValue);
+			return;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
+			setBase_ActivityPartition((ActivityPartition) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +204,18 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
-				setIsUnique(IS_UNIQUE_EDEFAULT);
-				return;
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
-				setBase_ActivityPartition((ActivityPartition)null);
-				return;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
+			setIsUnique(IS_UNIQUE_EDEFAULT);
+			return;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
+			setBase_ActivityPartition((ActivityPartition) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +223,16 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
-				return isUnique != IS_UNIQUE_EDEFAULT;
-			case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
-				return base_ActivityPartition != null;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__IS_UNIQUE:
+			return isUnique != IS_UNIQUE_EDEFAULT;
+		case AllocPackage.ALLOCATE_ACTIVITY_GROUP__BASE_ACTIVITY_PARTITION:
+			return base_ActivityPartition != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +240,14 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isUnique: ");
@@ -230,4 +256,4 @@ public class AllocateActivityGroupImpl extends EObjectImpl implements AllocateAc
 		return result.toString();
 	}
 
-} //AllocateActivityGroupImpl
+} // AllocateActivityGroupImpl

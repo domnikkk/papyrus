@@ -22,11 +22,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.AllViewsDerivedLayer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class AllViewsDerivedLayerItemProvider
-	extends AbstractLayerItemProvider
-	implements
+		extends AbstractLayerItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -36,6 +37,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AllViewsDerivedLayerItemProvider(AdapterFactory adapterFactory) {
@@ -46,6 +48,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,6 +64,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * This returns AllViewsDerivedLayer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,14 +76,15 @@ public class AllViewsDerivedLayerItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AllViewsDerivedLayer)object).getName();
+		String label = ((AllViewsDerivedLayer) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AllViewsDerivedLayer_type") :
-			getString("_UI_AllViewsDerivedLayer_type") + " " + label;
+				getString("_UI_AllViewsDerivedLayer_type") :
+				getString("_UI_AllViewsDerivedLayer_type") + " " + label;
 	}
 
 	/**
@@ -87,6 +92,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,6 +106,7 @@ public class AllViewsDerivedLayerItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

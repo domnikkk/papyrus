@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,11 +70,11 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 
 	@Override
 	public void initialize(GraphicalEditor editor) {
-		if(editor instanceof DiagramDocumentEditor) {
-			DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor)editor;
+		if (editor instanceof DiagramDocumentEditor) {
+			DiagramDocumentEditor diagramEditor = (DiagramDocumentEditor) editor;
 
 			CDOView view = getCDOView();
-			if(view != null) {
+			if (view != null) {
 				initialize(diagramEditor, view);
 			}
 
@@ -99,8 +99,8 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 			@Override
 			public void run() {
 				DiagramEditPart diagramEP = diagramEditor.getDiagramEditPart();
-				if(diagramEP instanceof PapyrusDiagramEditPart) {
-					((PapyrusDiagramEditPart)diagramEP).setConflictingEditPartFilter(createConflictingEditPartFilter());
+				if (diagramEP instanceof PapyrusDiagramEditPart) {
+					((PapyrusDiagramEditPart) diagramEP).setConflictingEditPartFilter(createConflictingEditPartFilter());
 				}
 			}
 		});
@@ -109,7 +109,7 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 
 		// find and process objects locked remotely
 		final Map<Object, DawnState> remoteLocks = getRemoteLocks(diagramEditor);
-		if(!remoteLocks.isEmpty()) {
+		if (!remoteLocks.isEmpty()) {
 			// post for later because the editor isn't yet connected to its
 			// editor site in the workbench
 			UIUtil.later(new Runnable() {
@@ -118,8 +118,8 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 				public void run() {
 					dawnSupport.handleRemoteLockChanges(remoteLocks);
 
-					for(Object next : remoteLocks.keySet()) {
-						final EObject element = CDOUtil.getEObject((CDOObject)next);
+					for (Object next : remoteLocks.keySet()) {
+						final EObject element = CDOUtil.getEObject((CDOObject) next);
 						View view = DawnDiagramUpdater.findViewByContainer(element);
 
 						CDOStateAdapter.setState(view, remoteLocks.get(next));
@@ -134,8 +134,8 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 
 		try {
 			ModelSet modelSet = registry.getService(ModelSet.class);
-			if(modelSet instanceof CDOAwareModelSet) {
-				result = ((CDOAwareModelSet)modelSet).getCDOView();
+			if (modelSet instanceof CDOAwareModelSet) {
+				result = ((CDOAwareModelSet) modelSet).getCDOView();
 			}
 		} catch (ServiceException e) {
 			Activator.log.error(e);
@@ -149,12 +149,12 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 		Map<Object, DawnState> result = Maps.newHashMap();
 
 		Diagram diagram = diagramEditor.getDiagram();
-		if(diagram != null) {
+		if (diagram != null) {
 			Iterator<EObject> iter = EcoreUtil.getAllProperContents(Collections.singleton(diagram), false);
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				CDOObject next = CDOUtils.getCDOObject(iter.next());
-				if((next != null) && CDOUtils.isLocked(next, true)) {
+				if ((next != null) && CDOUtils.isLocked(next, true)) {
 					result.put(next, DawnState.LOCKED_REMOTELY);
 				}
 			}
@@ -169,7 +169,7 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 			@Override
 			public boolean isConflicting(EditPart editPart) {
 				Object model = editPart.getModel();
-				return (model instanceof EObject) && DawnConflictHelper.isConflicted((EObject)model);
+				return (model instanceof EObject) && DawnConflictHelper.isConflicted((EObject) model);
 			}
 		};
 	}
@@ -200,17 +200,17 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 				List<EObject> result = null;
 				CDOResourceURITransferData uriData = null;
 
-				if(PluginTransfer.getInstance().isSupportedType(getCurrentEvent().currentDataType) && !localTransferHasObjectFromThisRepo()) {
+				if (PluginTransfer.getInstance().isSupportedType(getCurrentEvent().currentDataType) && !localTransferHasObjectFromThisRepo()) {
 					Object data = getCurrentEvent().data;
-					if(data instanceof PluginTransferData) {
-						PluginTransferData ptData = (PluginTransferData)data;
-						if(ResourceDropActionDelegate.DROP_ACTION_ID.equals(ptData.getExtensionId())) {
+					if (data instanceof PluginTransferData) {
+						PluginTransferData ptData = (PluginTransferData) data;
+						if (ResourceDropActionDelegate.DROP_ACTION_ID.equals(ptData.getExtensionId())) {
 							uriData = CDOResourceURITransferData.deserialize(ptData.getData());
 						}
 					}
 				}
 
-				if(uriData == null) {
+				if (uriData == null) {
 					result = Collections.emptyList();
 				} else {
 					// convert the URI transfer data to an EObject so that the drag-and-drop
@@ -227,12 +227,12 @@ public class DawnGraphicalEditorSupport extends DefaultGraphicalEditorSupport {
 		boolean result = false;
 
 		CDOView view = getCDOView();
-		if(view != null) {
+		if (view != null) {
 			IStructuredSelection sel = CDOUtils.tryCast(LocalSelectionTransfer.getTransfer().getSelection(), IStructuredSelection.class);
-			if((sel != null) && !sel.isEmpty()) {
-				for(EObject next : Iterables.filter(sel.toList(), EObject.class)) {
+			if ((sel != null) && !sel.isEmpty()) {
+				for (EObject next : Iterables.filter(sel.toList(), EObject.class)) {
 					CDOObject cdo = CDOUtils.getCDOObject(next);
-					if((cdo != null) && (cdo.cdoView().getSession() == view.getSession())) {
+					if ((cdo != null) && (cdo.cdoView().getSession() == view.getSession())) {
 						result = true;
 						break;
 					}

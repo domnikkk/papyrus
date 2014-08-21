@@ -23,7 +23,7 @@ public class ExtendedURIUtil {
 
 	/**
 	 * Return true if all
-	 * 
+	 *
 	 * @param input
 	 * @param resourceExtendedURI
 	 * @param resourceSet
@@ -31,10 +31,10 @@ public class ExtendedURIUtil {
 	 */
 	protected static boolean isEObjectContainedResourceExtendedURI(EObject input, IExtendedURI resourceExtendedURI, ResourceSet resourceSet) {
 		URI uri = resourceExtendedURI.getUri();
-		if(resourceExtendedURI.isContainment()) {
+		if (resourceExtendedURI.isContainment()) {
 			Resource resource = resourceSet.getResource(uri, false);
-			for(EObject rootObject : resource.getContents()) {
-				if(EcoreUtil.isAncestor(rootObject, input)) {
+			for (EObject rootObject : resource.getContents()) {
+				if (EcoreUtil.isAncestor(rootObject, input)) {
 					return true;
 				}
 			}
@@ -43,23 +43,23 @@ public class ExtendedURIUtil {
 	}
 
 	public static boolean isIncluded(EObject input, IExtendedURI extendedURI) {
-		if(input != null) {
+		if (input != null) {
 			Resource eResource = input.eResource();
-			if(eResource != null) {
+			if (eResource != null) {
 				ResourceSet resourceSet = eResource.getResourceSet();
 				URI uri = extendedURI.getUri();
-				//If same URI ok
-				if(uri.equals(input.eResource().getURI())) {
+				// If same URI ok
+				if (uri.equals(input.eResource().getURI())) {
 					return true;
 				}
-				if(URIUtils.isResourceURI(uri, resourceSet)) {
-					//If resource
+				if (URIUtils.isResourceURI(uri, resourceSet)) {
+					// If resource
 					return ExtendedURIUtil.isEObjectContainedResourceExtendedURI(input, extendedURI, resourceSet);
-				} else if(URIUtils.isEObject(uri, resourceSet)) {
-					//If EObject
-					if(extendedURI.isContainment()) {
+				} else if (URIUtils.isEObject(uri, resourceSet)) {
+					// If EObject
+					if (extendedURI.isContainment()) {
 						EObject eObject = resourceSet.getEObject(uri, false);
-						if(EcoreUtil.isAncestor(eObject, input)) {
+						if (EcoreUtil.isAncestor(eObject, input)) {
 							return true;
 						}
 					}

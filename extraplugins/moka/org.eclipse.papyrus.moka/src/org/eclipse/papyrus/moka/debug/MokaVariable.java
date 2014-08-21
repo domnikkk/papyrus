@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 		super(target);
 	}
 
-	//////////////////////////////
+	// ////////////////////////////
 	// Implementation of IVariable
-	//////////////////////////////
+	// ////////////////////////////
 
 	/**
 	 * The value of this variable
@@ -57,8 +57,9 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 	 * @see org.eclipse.debug.core.model.IVariable#getValue()
 	 */
 	public IValue getValue() throws DebugException {
-		if(this.value != null)
+		if (this.value != null) {
 			return this.value;
+		}
 		// Delegates retrieval of the value to the owning debug target
 		this.value = this.debugTarget.getValue(this);
 		return this.value;
@@ -70,16 +71,17 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 	 * @see org.eclipse.debug.core.model.IVariable#getName()
 	 */
 	public String getName() throws DebugException {
-		if(this.name != null)
+		if (this.name != null) {
 			return this.name;
+		}
 		return "";
 	}
 
 	/**
 	 * Convenience method for setting the name of variable
-	 * 
+	 *
 	 * @param name
-	 *        The new name for this variable
+	 *            The new name for this variable
 	 */
 	public void setName(String name) {
 		this.name = name != null ? name : "";
@@ -91,8 +93,9 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 	 * @see org.eclipse.debug.core.model.IVariable#getReferenceTypeName()
 	 */
 	public String getReferenceTypeName() throws DebugException {
-		if(this.referenceTypeName != null)
+		if (this.referenceTypeName != null) {
 			return this.referenceTypeName;
+		}
 		// Delegates retrieval of the reference type name to the owning debug target
 		this.referenceTypeName = this.debugTarget.getReferenceTypeName(this);
 		return this.referenceTypeName;
@@ -100,9 +103,9 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 
 	/**
 	 * Convenience method for setting the reference type name of a variable
-	 * 
+	 *
 	 * @param referenceTypeName
-	 *        The new reference type name for this variable
+	 *            The new reference type name for this variable
 	 */
 	public void setReferenceTypeName(String referenceTypeName) {
 		this.referenceTypeName = referenceTypeName != null ? referenceTypeName : "";
@@ -117,17 +120,18 @@ public class MokaVariable extends MokaDebugElement implements IVariable {
 		return this.hasValueChanged; // In this implementation, it means that it always returns false
 	}
 
-	///////////////////////////////////////
+	// /////////////////////////////////////
 	// Implementation of IValueModification
-	///////////////////////////////////////
+	// /////////////////////////////////////
 
 	public void setValue(String expression) throws DebugException {
 		// Do nothing
 	}
 
 	public void setValue(IValue value) throws DebugException {
-		if(value instanceof MokaValue)
-			this.value = (MokaValue)value;
+		if (value instanceof MokaValue) {
+			this.value = (MokaValue) value;
+		}
 	}
 
 	public boolean supportsValueModification() {

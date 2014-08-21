@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.EADatatypePrototype;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl#getDatatypePrototype <em>Datatype Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.CompositeDatatypeImpl#getDatatypePrototype <em>Datatype Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	 * The cached value of the '{@link #getDatatypePrototype() <em>Datatype Prototype</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDatatypePrototype()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CompositeDatatypeImpl() {
@@ -64,13 +66,14 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
-				return getDatatypePrototype();
+		case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
+			return getDatatypePrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -78,13 +81,14 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
-				return datatypePrototype != null && !datatypePrototype.isEmpty();
+		case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
+			return datatypePrototype != null && !datatypePrototype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -92,16 +96,17 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
-				getDatatypePrototype().clear();
-				getDatatypePrototype().addAll((Collection<? extends EADatatypePrototype>)newValue);
-				return;
+		case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
+			getDatatypePrototype().clear();
+			getDatatypePrototype().addAll((Collection<? extends EADatatypePrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -109,6 +114,7 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,14 +125,15 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
-				getDatatypePrototype().clear();
-				return;
+		case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
+			getDatatypePrototype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -134,8 +141,10 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<EADatatypePrototype> getDatatypePrototype() {
 		if (datatypePrototype == null) {
 			datatypePrototype = new EObjectContainmentEList<EADatatypePrototype>(EADatatypePrototype.class, this, DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE);
@@ -146,15 +155,16 @@ public class CompositeDatatypeImpl extends EADatatypeImpl implements CompositeDa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
-				return ((InternalEList<?>)getDatatypePrototype()).basicRemove(otherEnd, msgs);
+		case DatatypesPackage.COMPOSITE_DATATYPE__DATATYPE_PROTOTYPE:
+			return ((InternalEList<?>) getDatatypePrototype()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-} //CompositeDatatypeImpl
+} // CompositeDatatypeImpl

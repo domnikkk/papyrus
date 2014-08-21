@@ -32,8 +32,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getPoses <em>Poses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getHeader <em>Header</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getPoses <em>Poses</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	 * The cached value of the '{@link #getPoses() <em>Poses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoses()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PathImpl() {
@@ -72,6 +75,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,6 +86,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -91,6 +96,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
@@ -98,7 +104,11 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 		header = newHeader;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.PATH__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,25 +116,32 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.PATH__HEADER, newHeader, newHeader));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<PoseStamped> getPoses() {
@@ -137,15 +154,16 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return basicSetHeader(null, msgs);
-			case Nav_datatypesPackage.PATH__POSES:
-				return ((InternalEList<?>)getPoses()).basicRemove(otherEnd, msgs);
+		case Nav_datatypesPackage.PATH__HEADER:
+			return basicSetHeader(null, msgs);
+		case Nav_datatypesPackage.PATH__POSES:
+			return ((InternalEList<?>) getPoses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,15 +171,16 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return getHeader();
-			case Nav_datatypesPackage.PATH__POSES:
-				return getPoses();
+		case Nav_datatypesPackage.PATH__HEADER:
+			return getHeader();
+		case Nav_datatypesPackage.PATH__POSES:
+			return getPoses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,19 +188,20 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				setHeader((Header)newValue);
-				return;
-			case Nav_datatypesPackage.PATH__POSES:
-				getPoses().clear();
-				getPoses().addAll((Collection<? extends PoseStamped>)newValue);
-				return;
+		case Nav_datatypesPackage.PATH__HEADER:
+			setHeader((Header) newValue);
+			return;
+		case Nav_datatypesPackage.PATH__POSES:
+			getPoses().clear();
+			getPoses().addAll((Collection<? extends PoseStamped>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -189,17 +209,18 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				setHeader((Header)null);
-				return;
-			case Nav_datatypesPackage.PATH__POSES:
-				getPoses().clear();
-				return;
+		case Nav_datatypesPackage.PATH__HEADER:
+			setHeader((Header) null);
+			return;
+		case Nav_datatypesPackage.PATH__POSES:
+			getPoses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,17 +228,18 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return header != null;
-			case Nav_datatypesPackage.PATH__POSES:
-				return poses != null && !poses.isEmpty();
+		case Nav_datatypesPackage.PATH__HEADER:
+			return header != null;
+		case Nav_datatypesPackage.PATH__POSES:
+			return poses != null && !poses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PathImpl
+} // PathImpl

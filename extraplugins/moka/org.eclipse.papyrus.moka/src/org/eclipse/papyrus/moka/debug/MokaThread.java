@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class MokaThread extends MokaDebugElement implements IThread {
 		super(debugTarget);
 	}
 
-	////////////////////////////
+	// //////////////////////////
 	// Implementation of IThread
-	////////////////////////////
+	// //////////////////////////
 
 	/**
 	 * The stack frames contained in this thread.
@@ -43,7 +43,7 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * The breakpoints this thread is suspended on.
 	 * This can be empty if the thread is not suspended, or it is not suspended on a breakpoint (e.g., suspended due to a step end)
 	 */
-	protected MokaBreakpoint[] breakpoints = new MokaBreakpoint[]{};
+	protected MokaBreakpoint[] breakpoints = new MokaBreakpoint[] {};
 
 	/**
 	 * The priority of this thread
@@ -61,7 +61,7 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * @see org.eclipse.debug.core.model.IThread#getStackFrames()
 	 */
 	public IStackFrame[] getStackFrames() throws DebugException {
-		if(stackFrames != null) {
+		if (stackFrames != null) {
 			return this.stackFrames;
 		}
 		// Delegates retrieval of stack frames to the owning debug target
@@ -71,9 +71,9 @@ public class MokaThread extends MokaDebugElement implements IThread {
 
 	/**
 	 * A convenience method for setting the stack frames of a MokaThread
-	 * 
+	 *
 	 * @param stackFrames
-	 *        The stack frames for this thread
+	 *            The stack frames for this thread
 	 */
 	public void setStackFrames(IStackFrame[] stackFrames) {
 		this.stackFrames = stackFrames;
@@ -99,9 +99,9 @@ public class MokaThread extends MokaDebugElement implements IThread {
 
 	/**
 	 * Convenience method for setting the priority of a MokaThread
-	 * 
+	 *
 	 * @param priority
-	 *        The priority of the thread
+	 *            The priority of the thread
 	 */
 	public void setPriority(int priority) {
 		this.priority = priority;
@@ -113,8 +113,9 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * @see org.eclipse.debug.core.model.IThread#getTopStackFrame()
 	 */
 	public IStackFrame getTopStackFrame() throws DebugException {
-		if(this.hasStackFrames())
+		if (this.hasStackFrames()) {
 			return this.stackFrames[0];
+		}
 		return null;
 	}
 
@@ -124,16 +125,17 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * @see org.eclipse.debug.core.model.IThread#getName()
 	 */
 	public String getName() throws DebugException {
-		if(this.name != null)
+		if (this.name != null) {
 			return this.name;
+		}
 		return "";
 	}
 
 	/**
 	 * Convenience method for setting the name of a thread
-	 * 
+	 *
 	 * @param name
-	 *        The new name for this thread
+	 *            The new name for this thread
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -145,27 +147,29 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * @see org.eclipse.debug.core.model.IThread#getBreakpoints()
 	 */
 	public IBreakpoint[] getBreakpoints() {
-		if(!this.isSuspended)
-			return new IBreakpoint[]{};
+		if (!this.isSuspended) {
+			return new IBreakpoint[] {};
+		}
 		return this.breakpoints;
 	}
 
 	/**
 	 * Convenience method for setting the breakpoints where a thread is suspended
-	 * 
+	 *
 	 * @param breakpoints
-	 *        The breakpoints on which the thread is suspended
+	 *            The breakpoints on which the thread is suspended
 	 */
 	public void setBreakpoints(MokaBreakpoint[] breakpoints) {
-		if(breakpoints != null)
+		if (breakpoints != null) {
 			this.breakpoints = breakpoints;
-		else
-			this.breakpoints = new MokaBreakpoint[]{};
+		} else {
+			this.breakpoints = new MokaBreakpoint[] {};
+		}
 	}
 
-	///////////////////////////////
+	// /////////////////////////////
 	// Implementation of ITerminate
-	///////////////////////////////
+	// /////////////////////////////
 
 	/*
 	 * (non-Javadoc)
@@ -198,9 +202,9 @@ public class MokaThread extends MokaDebugElement implements IThread {
 		this.debugTarget.terminate(this);
 	}
 
-	///////////////////////////////////
+	// /////////////////////////////////
 	// Implementation of ISuspendResume
-	///////////////////////////////////
+	// /////////////////////////////////
 
 	/**
 	 * Determines whether this element is currently suspended.
@@ -260,16 +264,16 @@ public class MokaThread extends MokaDebugElement implements IThread {
 
 	/**
 	 * Convenience method for setting the value of the isSuspended attribute
-	 * 
+	 *
 	 * @param isSuspended
 	 */
 	public void setSuspended(boolean isSuspended) {
 		this.isSuspended = isSuspended;
 	}
 
-	//////////////////////////
+	// ////////////////////////
 	// Implementation of IStep
-	//////////////////////////
+	// ////////////////////////
 
 	/**
 	 * A thread is considered to be stepping after the step is entered (resume event is emitted) and until the step is completed (suspend event is
@@ -321,7 +325,7 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * This is called by the debug target when suspend event occurs, with one of the following SUSPEND details:
 	 * - DebugEvent.STEP_END
 	 * - DebugEvent.BREAKPOINT
-	 * 
+	 *
 	 * @param isStepping
 	 */
 	public void stepEnded() {
@@ -349,7 +353,7 @@ public class MokaThread extends MokaDebugElement implements IThread {
 	 * @see org.eclipse.debug.core.model.IStep#stepOver()
 	 */
 	public void stepOver() throws DebugException {
-		// This thread enters stepping state. 
+		// This thread enters stepping state.
 		this.isStepping = true;
 		// Resuming is delegated to the owning debug target, with appropriate RESUME event details
 		// This will trigger a RESUME event for the target program.

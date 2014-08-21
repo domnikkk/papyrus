@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -25,11 +25,11 @@ import org.eclipse.uml2.uml.TemplateBinding;
 /**
  * Return information about the current values in the context of a transformation
  * e.g. the current instance, the current port (container transformation), ...
- * 
+ *
  * TODO: clean separation ContainerContext? (e.g. port should only be in the latter)
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class TransformationContext {
 
@@ -66,7 +66,7 @@ public class TransformationContext {
 
 	/**
 	 * Set sat and binding context for pkgTemplateParameter function
-	 * 
+	 *
 	 * @param sat
 	 * @param binding
 	 */
@@ -79,14 +79,14 @@ public class TransformationContext {
 	/**
 	 * Return actual (in the current binding context) from a named package template parameter
 	 * Used during template instantiation: code can access actual template parameter via formal
-	 * 
+	 *
 	 * @param formal
-	 *        the name of the formal parameter
+	 *            the name of the formal parameter
 	 * @return the actual
 	 */
 	public static String pkgTemplateParameter(String formal) {
 		Classifier actual = TemplateUtils.getActualFromBinding(ti.binding, formal);
-		if(actual != null) {
+		if (actual != null) {
 			return actual.getQualifiedName();
 		}
 		else {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,35 +42,35 @@ public class PropertiesMaxColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(Object element, Object value) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 
 			try {
 
-				if(((VirtualTypedElement)element).getRepresentedElement() instanceof MultiplicityElement || ((VirtualTypedElement)element).getRepresentedElement() instanceof ETypedElement) {
+				if (((VirtualTypedElement) element).getRepresentedElement() instanceof MultiplicityElement || ((VirtualTypedElement) element).getRepresentedElement() instanceof ETypedElement) {
 					boolean isOk = false;
-					int intValue = Integer.valueOf((String)value);
+					int intValue = Integer.valueOf((String) value);
 
-					if(intValue >= -1) {
+					if (intValue >= -1) {
 						int upperReference = 0;
 
-						if(((VirtualTypedElement)element).getRepresentedElement() instanceof MultiplicityElement) {
-							upperReference = ((MultiplicityElement)((VirtualTypedElement)element).getRepresentedElement()).getUpper();
+						if (((VirtualTypedElement) element).getRepresentedElement() instanceof MultiplicityElement) {
+							upperReference = ((MultiplicityElement) ((VirtualTypedElement) element).getRepresentedElement()).getUpper();
 
-						} else if(((VirtualTypedElement)element).getRepresentedElement() instanceof ETypedElement) {
-							upperReference = ((ETypedElement)((VirtualTypedElement)element).getRepresentedElement()).getUpperBound();
+						} else if (((VirtualTypedElement) element).getRepresentedElement() instanceof ETypedElement) {
+							upperReference = ((ETypedElement) ((VirtualTypedElement) element).getRepresentedElement()).getUpperBound();
 						}
 
-						if(upperReference != -1) {
-							if(intValue != -1) {
-								if(intValue <= upperReference) {
+						if (upperReference != -1) {
+							if (intValue != -1) {
+								if (intValue <= upperReference) {
 									isOk = true;
 								}
 							}
@@ -79,8 +79,8 @@ public class PropertiesMaxColumnEdintingSupport extends EditingSupport {
 							isOk = true;
 						}
 
-						if(isOk) {
-							SetCommand command = new SetCommand(editingDomain, (VirtualTypedElement)element, VirtualmetamodelPackage.eINSTANCE.getVirtualTypedElement_Upper(), intValue); //$NON-NLS-1$
+						if (isOk) {
+							SetCommand command = new SetCommand(editingDomain, (VirtualTypedElement) element, VirtualmetamodelPackage.eINSTANCE.getVirtualTypedElement_Upper(), intValue);
 							editingDomain.getCommandStack().execute(command);
 							getViewer().refresh();
 						} else {
@@ -98,32 +98,32 @@ public class PropertiesMaxColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 
-			return ((VirtualTypedElement)element).getUpper() + ""; //$NON-NLS-1$
+			return ((VirtualTypedElement) element).getUpper() + ""; //$NON-NLS-1$
 
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected CellEditor getCellEditor(Object element) {
-		if(element instanceof VirtualTypedElement) {
+		if (element instanceof VirtualTypedElement) {
 			return new TextCellEditor(parent);
 		}
 
@@ -131,15 +131,15 @@ public class PropertiesMaxColumnEdintingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected boolean canEdit(Object element) {
-		if(element instanceof VirtualProperty) {
+		if (element instanceof VirtualProperty) {
 			return true;
 		}
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -80,7 +80,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 
 	@Override
 	public void dispose() {
-		if(repositoryAdapter != null) {
+		if (repositoryAdapter != null) {
 			repositoryAdapter.uninstall(repoMan);
 			repositoryAdapter = null;
 
@@ -93,11 +93,13 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 		super.dispose();
 	}
 
+	@Override
 	public boolean providesFor(Context context) {
 		URI uri = EcoreUtil.getURI(context);
 		return (uri != null) && CDOUtils.isCDOURI(uri) || CDOTextURIHandler.SCHEME.equals(uri.scheme());
 	}
 
+	@Override
 	public Collection<? extends Context> loadContexts() throws CoreException {
 		return ImmutableList.copyOf(Iterables.concat(Iterables.transform(getRepositories(), getContexts())));
 	}
@@ -109,6 +111,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 	Function<IInternalPapyrusRepository, Iterable<? extends Context>> getContexts() {
 		return new Function<IInternalPapyrusRepository, Iterable<? extends Context>>() {
 
+			@Override
 			public Iterable<? extends Context> apply(IInternalPapyrusRepository input) {
 				return getContexts(input);
 			}
@@ -118,7 +121,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 	Iterable<? extends Context> getContexts(IInternalPapyrusRepository repository) {
 		Iterable<? extends Context> result;
 
-		if(!repository.isConnected()) {
+		if (!repository.isConnected()) {
 			result = Collections.emptyList();
 		} else {
 			CDOResourceFolder folder = null;
@@ -129,7 +132,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 				// normal consequence when the folder doesn't exist
 			}
 
-			if(folder == null) {
+			if (folder == null) {
 				result = Collections.emptyList();
 			} else {
 				Iterable<CDOTextResource> textNodes = Iterables.concat(Iterables.transform(folder.getNodes(), CDOFunctions.getFolderContents(CDOTextResource.class)));
@@ -145,18 +148,19 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 
 	Iterable<? extends Context> getContexts(Iterable<CDOTextResource> textResources) {
 		return Iterables.filter( // null filter
-		Iterables.transform( // root transform
-		Iterables.transform( // resource transform
-		Iterables.filter( // .ctx extension filter
-		textResources, CDOPredicates.hasExtension(CONTEXT_EXTENSION)), // filter
-			getContextResource()), // transform
-			CDOFunctions.getRoot(Context.class)), // transform
-			Predicates.notNull()); // filter
+				Iterables.transform( // root transform
+						Iterables.transform( // resource transform
+								Iterables.filter( // .ctx extension filter
+										textResources, CDOPredicates.hasExtension(CONTEXT_EXTENSION)), // filter
+								getContextResource()), // transform
+						CDOFunctions.getRoot(Context.class)), // transform
+				Predicates.notNull()); // filter
 	}
 
 	private Function<CDOTextResource, Resource> getContextResource() {
 		return new Function<CDOTextResource, Resource>() {
 
+			@Override
 			public Resource apply(CDOTextResource input) {
 				return resourceSet.getResource(CDOTextURIHandler.createURI(input.getURI()), true);
 			}
@@ -180,12 +184,12 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 
 		@Override
 		protected void onConnected(IPapyrusRepository repository) {
-			if(repository instanceof IInternalPapyrusRepository) {
+			if (repository instanceof IInternalPapyrusRepository) {
 				// attach a view on this repository to the resource set
 				repository.createReadOnlyView(resourceSet);
 
-				Collection<? extends Context> added = ImmutableList.copyOf(getContexts((IInternalPapyrusRepository)repository));
-				if(!added.isEmpty()) {
+				Collection<? extends Context> added = ImmutableList.copyOf(getContexts((IInternalPapyrusRepository) repository));
+				if (!added.isEmpty()) {
 					fireContextsAdded(added);
 				}
 			}
@@ -194,7 +198,7 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 		@Override
 		protected void onDisconnected(IPapyrusRepository repository) {
 			Collection<? extends Context> removed = ImmutableList.copyOf(contexts.get(repository));
-			if(!removed.isEmpty()) {
+			if (!removed.isEmpty()) {
 				contexts.removeAll(repository);
 				fireContextsRemoved(removed);
 			}
@@ -202,32 +206,32 @@ public class CDOContextStorageProvider extends AbstractContextStorageProvider {
 
 		@Override
 		protected void onInvalidation(IPapyrusRepository repository, CDOView view, CDOViewInvalidationEvent event) {
-			if(view.hasResource(CONTEXTS_PATH)) {
+			if (view.hasResource(CONTEXTS_PATH)) {
 				CDOResourceFolder folder = view.getResourceFolder(CONTEXTS_PATH);
 				URI prefix = folder.getURI();
-				if(!prefix.isPrefix()) {
+				if (!prefix.isPrefix()) {
 					prefix = prefix.appendSegment(""); // add a trailing slash
 				}
 
 				// usually, it is XWT resources that change, so we have to find the contexts that own them
 				Collection<CDOTextResource> contextResources = Lists.newArrayList();
 				Iterable<CDOTextResource> textResources = Iterables.filter(Iterables.filter(event.getDirtyObjects(), CDOTextResource.class), CDOPredicates.hasURIPrefix(prefix));
-				for(CDOTextResource next : textResources) {
+				for (CDOTextResource next : textResources) {
 					// get the context resource
 					URI relative = next.getURI().deresolve(prefix);
 					URI contextURI = prefix.appendSegment(relative.segment(0)).appendSegment(relative.segment(0)).appendFileExtension(CONTEXT_EXTENSION);
 					String path = CDOURIUtil.extractResourcePath(contextURI);
-					if(view.hasResource(path)) {
+					if (view.hasResource(path)) {
 						try {
 							contextResources.add(view.getTextResource(path));
 						} catch (Exception e) {
-							// it's not a text resource.  OK, there's something going on that we don't understand
+							// it's not a text resource. OK, there's something going on that we don't understand
 						}
 					}
 				}
 
 				Collection<Context> changed = ImmutableList.copyOf(getContexts(contextResources));
-				if(!changed.isEmpty()) {
+				if (!changed.isEmpty()) {
 					fireContextsChanged(changed);
 				}
 			}

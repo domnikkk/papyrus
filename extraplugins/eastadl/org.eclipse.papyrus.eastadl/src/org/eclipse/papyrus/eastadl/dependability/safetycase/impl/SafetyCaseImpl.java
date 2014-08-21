@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,13 +43,13 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getSafetyCase <em>Safety Case</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getStage <em>Stage</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getGround <em>Ground</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getWarrant <em>Warrant</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getClaim <em>Claim</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getSafetyCase <em>Safety Case</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getStage <em>Stage</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getContext <em>Context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getGround <em>Ground</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getWarrant <em>Warrant</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getClaim <em>Claim</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetycase.impl.SafetyCaseImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +60,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The default value of the '{@link #getStage() <em>Stage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStage()
 	 * @generated
 	 * @ordered
@@ -70,6 +71,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getStage() <em>Stage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStage()
 	 * @generated
 	 * @ordered
@@ -80,6 +82,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -90,6 +93,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -100,6 +104,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -109,6 +114,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SafetyCaseImpl() {
@@ -118,26 +124,29 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SafetycasePackage.SAFETY_CASE__SAFETY_CASE:
-				return getSafetyCase();
-			case SafetycasePackage.SAFETY_CASE__STAGE:
-				return getStage();
-			case SafetycasePackage.SAFETY_CASE__CONTEXT:
-				return getContext();
-			case SafetycasePackage.SAFETY_CASE__GROUND:
-				return getGround();
-			case SafetycasePackage.SAFETY_CASE__WARRANT:
-				return getWarrant();
-			case SafetycasePackage.SAFETY_CASE__CLAIM:
-				return getClaim();
-			case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
+		case SafetycasePackage.SAFETY_CASE__SAFETY_CASE:
+			return getSafetyCase();
+		case SafetycasePackage.SAFETY_CASE__STAGE:
+			return getStage();
+		case SafetycasePackage.SAFETY_CASE__CONTEXT:
+			return getContext();
+		case SafetycasePackage.SAFETY_CASE__GROUND:
+			return getGround();
+		case SafetycasePackage.SAFETY_CASE__WARRANT:
+			return getWarrant();
+		case SafetycasePackage.SAFETY_CASE__CLAIM:
+			return getClaim();
+		case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,25 +154,26 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SafetycasePackage.SAFETY_CASE__SAFETY_CASE:
-				return !getSafetyCase().isEmpty();
-			case SafetycasePackage.SAFETY_CASE__STAGE:
-				return stage != STAGE_EDEFAULT;
-			case SafetycasePackage.SAFETY_CASE__CONTEXT:
-				return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
-			case SafetycasePackage.SAFETY_CASE__GROUND:
-				return !getGround().isEmpty();
-			case SafetycasePackage.SAFETY_CASE__WARRANT:
-				return !getWarrant().isEmpty();
-			case SafetycasePackage.SAFETY_CASE__CLAIM:
-				return !getClaim().isEmpty();
-			case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
-				return base_Class != null;
+		case SafetycasePackage.SAFETY_CASE__SAFETY_CASE:
+			return !getSafetyCase().isEmpty();
+		case SafetycasePackage.SAFETY_CASE__STAGE:
+			return stage != STAGE_EDEFAULT;
+		case SafetycasePackage.SAFETY_CASE__CONTEXT:
+			return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
+		case SafetycasePackage.SAFETY_CASE__GROUND:
+			return !getGround().isEmpty();
+		case SafetycasePackage.SAFETY_CASE__WARRANT:
+			return !getWarrant().isEmpty();
+		case SafetycasePackage.SAFETY_CASE__CLAIM:
+			return !getClaim().isEmpty();
+		case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
+			return base_Class != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -171,25 +181,26 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SafetycasePackage.SAFETY_CASE__STAGE:
-				setStage((LifecycleStageKind)newValue);
-				return;
-			case SafetycasePackage.SAFETY_CASE__CONTEXT:
-				setContext((String)newValue);
-				return;
-			case SafetycasePackage.SAFETY_CASE__WARRANT:
-				getWarrant().clear();
-				getWarrant().addAll((Collection<? extends Warrant>)newValue);
-				return;
-			case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
+		case SafetycasePackage.SAFETY_CASE__STAGE:
+			setStage((LifecycleStageKind) newValue);
+			return;
+		case SafetycasePackage.SAFETY_CASE__CONTEXT:
+			setContext((String) newValue);
+			return;
+		case SafetycasePackage.SAFETY_CASE__WARRANT:
+			getWarrant().clear();
+			getWarrant().addAll((Collection<? extends Warrant>) newValue);
+			return;
+		case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,6 +208,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,23 +219,24 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SafetycasePackage.SAFETY_CASE__STAGE:
-				setStage(STAGE_EDEFAULT);
-				return;
-			case SafetycasePackage.SAFETY_CASE__CONTEXT:
-				setContext(CONTEXT_EDEFAULT);
-				return;
-			case SafetycasePackage.SAFETY_CASE__WARRANT:
-				getWarrant().clear();
-				return;
-			case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
+		case SafetycasePackage.SAFETY_CASE__STAGE:
+			setStage(STAGE_EDEFAULT);
+			return;
+		case SafetycasePackage.SAFETY_CASE__CONTEXT:
+			setContext(CONTEXT_EDEFAULT);
+			return;
+		case SafetycasePackage.SAFETY_CASE__WARRANT:
+			getWarrant().clear();
+			return;
+		case SafetycasePackage.SAFETY_CASE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -231,37 +244,43 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Claim> getClaim() {
 		EList<Claim> results = new BasicEList<Claim>();
 		Claim adlClaim = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlClaim = (Claim )UMLUtil.getStereotypeApplication(element, Claim.class);
-				if (adlClaim != null)
+				adlClaim = UMLUtil.getStereotypeApplication(element, Claim.class);
+				if (adlClaim != null) {
 					results.add(adlClaim);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<Claim>(Claim.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafetycasePackage.SAFETY_CASE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -270,6 +289,7 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -279,20 +299,25 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetycasePackage.SAFETY_CASE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getContext() {
 		return context;
 	}
@@ -300,52 +325,60 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Ground> getGround() {
 		EList<Ground> results = new BasicEList<Ground>();
 		Ground adlGround = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlGround = (Ground )UMLUtil.getStereotypeApplication(element, Ground.class);
-				if (adlGround != null)
+				adlGround = UMLUtil.getStereotypeApplication(element, Ground.class);
+				if (adlGround != null) {
 					results.add(adlGround);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<Ground>(Ground.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<SafetyCase> getSafetyCase() {
 		EList<SafetyCase> results = new BasicEList<SafetyCase>();
 		SafetyCase adlSafetyCase = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlSafetyCase = (SafetyCase )UMLUtil.getStereotypeApplication(element, SafetyCase.class);
-				if (adlSafetyCase != null)
+				adlSafetyCase = UMLUtil.getStereotypeApplication(element, SafetyCase.class);
+				if (adlSafetyCase != null) {
 					results.add(adlSafetyCase);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<SafetyCase>(SafetyCase.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public LifecycleStageKind getStage() {
 		return stage;
 	}
@@ -353,57 +386,69 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Warrant> getWarrant() {
 		EList<Warrant> results = new BasicEList<Warrant>();
 		Warrant adlWarrant = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlWarrant = (Warrant )UMLUtil.getStereotypeApplication(element, Warrant.class);
-				if (adlWarrant != null)
+				adlWarrant = UMLUtil.getStereotypeApplication(element, Warrant.class);
+				if (adlWarrant != null) {
 					results.add(adlWarrant);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<Warrant>(Warrant.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setContext(String newContext) {
 		String oldContext = context;
 		context = newContext;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetycasePackage.SAFETY_CASE__CONTEXT, oldContext, context));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStage(LifecycleStageKind newStage) {
 		LifecycleStageKind oldStage = stage;
 		stage = newStage == null ? STAGE_EDEFAULT : newStage;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetycasePackage.SAFETY_CASE__STAGE, oldStage, stage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stage: ");
@@ -414,4 +459,4 @@ public class SafetyCaseImpl extends TraceableSpecificationImpl implements Safety
 		return result.toString();
 	}
 
-} //SafetyCaseImpl
+} // SafetyCaseImpl

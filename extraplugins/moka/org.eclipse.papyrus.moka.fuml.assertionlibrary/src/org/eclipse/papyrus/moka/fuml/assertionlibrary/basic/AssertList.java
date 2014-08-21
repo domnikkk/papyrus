@@ -29,11 +29,11 @@ public class AssertList extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		Classifier executionContext = AssertionExecutionContextHelper.getExecutionContext(this);
-		StringValue label = (StringValue)inputParameters.get(0).values.get(0);
+		StringValue label = (StringValue) inputParameters.get(0).values.get(0);
 		boolean equal = true;
-		if(inputParameters.get(1).values.size() == inputParameters.get(2).values.size()) {
+		if (inputParameters.get(1).values.size() == inputParameters.get(2).values.size()) {
 			Integer i = 0;
-			while(equal == true && i < inputParameters.get(1).values.size()) {
+			while (equal == true && i < inputParameters.get(1).values.size()) {
 				equal = inputParameters.get(1).values.get(i).equals(inputParameters.get(2).values.get(i));
 				i++;
 			}

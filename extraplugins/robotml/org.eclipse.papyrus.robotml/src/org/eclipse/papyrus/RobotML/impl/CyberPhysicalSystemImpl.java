@@ -20,6 +20,7 @@ public class CyberPhysicalSystemImpl extends SystemImpl implements CyberPhysical
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CyberPhysicalSystemImpl() {
@@ -29,6 +30,7 @@ public class CyberPhysicalSystemImpl extends SystemImpl implements CyberPhysical
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class CyberPhysicalSystemImpl extends SystemImpl implements CyberPhysical
 		return RobotMLPackage.Literals.CYBER_PHYSICAL_SYSTEM;
 	}
 
-} //CyberPhysicalSystemImpl
+} // CyberPhysicalSystemImpl

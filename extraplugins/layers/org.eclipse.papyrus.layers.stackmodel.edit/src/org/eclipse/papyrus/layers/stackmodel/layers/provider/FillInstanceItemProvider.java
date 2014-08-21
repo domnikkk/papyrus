@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -39,11 +39,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.FillInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FillInstanceItemProvider
-	extends TypeInstanceItemProvider
-	implements
+		extends TypeInstanceItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +54,7 @@ public class FillInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FillInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +65,7 @@ public class FillInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,30 +82,31 @@ public class FillInstanceItemProvider
 	 * This adds a property descriptor for the Transparency feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addTransparencyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FillInstance_transparency_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FillInstance_transparency_feature", "_UI_FillInstance_type"),
-				 LayersPackage.Literals.FILL_INSTANCE__TRANSPARENCY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FillInstance_transparency_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FillInstance_transparency_feature", "_UI_FillInstance_type"),
+						LayersPackage.Literals.FILL_INSTANCE__TRANSPARENCY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,6 +121,7 @@ public class FillInstanceItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,6 +136,7 @@ public class FillInstanceItemProvider
 	 * This returns FillInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,21 +148,23 @@ public class FillInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		FillInstance fillInstance = (FillInstance)object;
+		FillInstance fillInstance = (FillInstance) object;
 		String propertyName = getInstancePropertyName(object);
-		return  ("".equals(propertyName)?getString("_UI_FillInstance_type"):"'" + propertyName+"'") + "=" + fillInstance.getTransparency();
+		return ("".equals(propertyName) ? getString("_UI_FillInstance_type") : "'" + propertyName + "'") + "=" + fillInstance.getTransparency();
 	}
 
-	
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,12 +172,12 @@ public class FillInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FillInstance.class)) {
-			case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case LayersPackage.FILL_INSTANCE__FILL_COLOR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.FILL_INSTANCE__TRANSPARENCY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case LayersPackage.FILL_INSTANCE__FILL_COLOR:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -179,6 +187,7 @@ public class FillInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,9 +195,9 @@ public class FillInstanceItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.FILL_INSTANCE__FILL_COLOR,
-				 LayersFactory.eINSTANCE.createColorInstance()));
+						LayersFactory.eINSTANCE.createColorInstance()));
 	}
 
 }

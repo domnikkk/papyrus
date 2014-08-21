@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,6 +44,7 @@ public class RepositorySelectionPage extends ModelImportWizardPage {
 		super("repository", Messages.RepositorySelectionPage_2, null, bus, MESSAGE); //$NON-NLS-1$
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 
@@ -63,7 +64,7 @@ public class RepositorySelectionPage extends ModelImportWizardPage {
 		repoBlock.createControl(group);
 		repoBlock.setEditable(false);
 
-		if(repository != null) {
+		if (repository != null) {
 			repoSelectionBlock.setSelectedRepository(repository);
 			repoBlock.setRepository(repository);
 		}
@@ -85,11 +86,11 @@ public class RepositorySelectionPage extends ModelImportWizardPage {
 	public void selected(IPapyrusRepository repository) {
 		this.repository = repository;
 
-		if((repoSelectionBlock != null) && (repoSelectionBlock.getSelectedRepository() != repository)) {
+		if ((repoSelectionBlock != null) && (repoSelectionBlock.getSelectedRepository() != repository)) {
 			repoSelectionBlock.setSelectedRepository(repository);
 		}
 
-		if(repoBlock != null) {
+		if (repoBlock != null) {
 			repoBlock.setRepository(repository);
 			validatePage();
 		}
@@ -99,7 +100,7 @@ public class RepositorySelectionPage extends ModelImportWizardPage {
 	protected Diagnostic doValidatePage() {
 		Diagnostic result = Diagnostic.CANCEL_INSTANCE;
 
-		if(getSelectedRepository() != null) {
+		if (getSelectedRepository() != null) {
 			result = Diagnostic.OK_INSTANCE;
 		}
 

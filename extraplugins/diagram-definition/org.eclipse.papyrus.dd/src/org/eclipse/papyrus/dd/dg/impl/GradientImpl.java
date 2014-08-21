@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.dd.dg.GradientStop;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.GradientImpl#getStops <em>Stop</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class GradientImpl extends PaintServerImpl implements Gradient {
@@ -38,7 +38,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 	/**
 	 * The cached value of the '{@link #getStops() <em>Stop</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStops()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GradientImpl() {
@@ -56,7 +56,7 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,11 +66,12 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GradientStop> getStops() {
-		if(stops == null) {
+		if (stops == null) {
 			stops = new EObjectContainmentEList<GradientStop>(GradientStop.class, this, DGPackage.GRADIENT__STOP);
 		}
 		return stops;
@@ -78,26 +79,26 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
-			return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getStops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
 			return getStops();
 		}
@@ -106,16 +107,16 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
 			getStops().clear();
-			getStops().addAll((Collection<? extends GradientStop>)newValue);
+			getStops().addAll((Collection<? extends GradientStop>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,12 +124,12 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
 			getStops().clear();
 			return;
@@ -138,12 +139,12 @@ public abstract class GradientImpl extends PaintServerImpl implements Gradient {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GRADIENT__STOP:
 			return stops != null && !stops.isEmpty();
 		}

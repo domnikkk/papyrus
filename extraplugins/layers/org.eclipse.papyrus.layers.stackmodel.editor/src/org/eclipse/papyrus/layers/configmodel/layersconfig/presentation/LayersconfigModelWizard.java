@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -83,7 +83,6 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigFactory;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
 import org.eclipse.papyrus.layers.configmodel.layersconfig.provider.LayersconfigEditPlugin;
 
-
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -99,6 +98,7 @@ import org.eclipse.ui.PartInitException;
  * This is a simple wizard for creating a new model file.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayersconfigModelWizard extends Wizard implements INewWizard {
@@ -106,24 +106,27 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(LayersconfigEditorPlugin.INSTANCE.getString("_UI_LayersconfigEditorFilenameExtensions").split("\\s*,\\s*")));
+			Collections.unmodifiableList(Arrays.asList(LayersconfigEditorPlugin.INSTANCE.getString("_UI_LayersconfigEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		LayersconfigEditorPlugin.INSTANCE.getString("_UI_LayersconfigEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+			LayersconfigEditorPlugin.INSTANCE.getString("_UI_LayersconfigEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersconfigPackage layersconfigPackage = LayersconfigPackage.eINSTANCE;
@@ -132,6 +135,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This caches an instance of the model factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersconfigFactory layersconfigFactory = layersconfigPackage.getLayersconfigFactory();
@@ -140,6 +144,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This is the file creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersconfigModelWizardNewFileCreationPage newFileCreationPage;
@@ -148,6 +153,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This is the initial object creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayersconfigModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -156,6 +162,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Remember the selection during initialization for populating the default container.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
@@ -164,6 +171,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Remember the workbench during initialization.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -172,6 +180,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Caches the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
@@ -180,8 +189,10 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -193,6 +204,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
@@ -200,7 +212,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 			initialObjectNames = new ArrayList<String>();
 			for (EClassifier eClassifier : layersconfigPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
-					EClass eClass = (EClass)eClassifier;
+					EClass eClass = (EClass) eClassifier;
 					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
@@ -215,10 +227,11 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)layersconfigPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EClass eClass = (EClass) layersconfigPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = layersconfigFactory.create(eClass);
 		return rootObject;
 	}
@@ -227,6 +240,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -239,43 +253,43 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 			// Do the work within an operation.
 			//
 			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation() {
-					@Override
-					protected void execute(IProgressMonitor progressMonitor) {
-						try {
-							// Create a resource set
-							//
-							ResourceSet resourceSet = new ResourceSetImpl();
+					new WorkspaceModifyOperation() {
+						@Override
+						protected void execute(IProgressMonitor progressMonitor) {
+							try {
+								// Create a resource set
+								//
+								ResourceSet resourceSet = new ResourceSetImpl();
 
-							// Get the URI of the model file.
-							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+								// Get the URI of the model file.
+								//
+								URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-							// Create a resource for this file.
-							//
-							Resource resource = resourceSet.createResource(fileURI);
+								// Create a resource for this file.
+								//
+								Resource resource = resourceSet.createResource(fileURI);
 
-							// Add the initial model object to the contents.
-							//
-							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
-								resource.getContents().add(rootObject);
+								// Add the initial model object to the contents.
+								//
+								EObject rootObject = createInitialModel();
+								if (rootObject != null) {
+									resource.getContents().add(rootObject);
+								}
+
+								// Save the contents of the resource to the file system.
+								//
+								Map<Object, Object> options = new HashMap<Object, Object>();
+								options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+								resource.save(options);
 							}
-
-							// Save the contents of the resource to the file system.
-							//
-							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							resource.save(options);
+							catch (Exception exception) {
+								LayersconfigEditorPlugin.INSTANCE.log(exception);
+							}
+							finally {
+								progressMonitor.done();
+							}
 						}
-						catch (Exception exception) {
-							LayersconfigEditorPlugin.INSTANCE.log(exception);
-						}
-						finally {
-							progressMonitor.done();
-						}
-					}
-				};
+					};
 
 			getContainer().run(false, false, operation);
 
@@ -287,28 +301,27 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
 				getShell().getDisplay().asyncExec
-					(new Runnable() {
-						 public void run() {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
+						(new Runnable() {
+							@Override
+							public void run() {
+								((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+							}
+						});
 			}
 
 			// Open an editor on the new file.
 			//
 			try {
 				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception) {
+						(new FileEditorInput(modelFile),
+								workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception) {
 				MessageDialog.openError(workbenchWindow.getShell(), LayersconfigEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			LayersconfigEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
@@ -318,6 +331,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This is the one page of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public class LayersconfigModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
@@ -325,6 +339,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public LayersconfigModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -335,6 +350,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		 * The framework calls this to see if the file is correct.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		@Override
@@ -343,7 +359,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(LayersconfigEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(LayersconfigEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -354,6 +370,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -365,26 +382,29 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * This is the page where the type of object to create is selected.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public class LayersconfigModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected Combo initialObjectField;
 
 		/**
 		 * @generated
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 *            <!-- begin-user-doc -->
+		 *            <!-- end-user-doc -->
 		 */
 		protected List<String> encodings;
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected Combo encodingField;
@@ -393,6 +413,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public LayersconfigModelWizardInitialObjectCreationPage(String pageId) {
@@ -402,10 +423,13 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
+		@Override
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -474,18 +498,21 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected ModifyListener validator =
-			new ModifyListener() {
-				public void modifyText(ModifyEvent e) {
-					setPageComplete(validatePage());
-				}
-			};
+				new ModifyListener() {
+					@Override
+					public void modifyText(ModifyEvent e) {
+						setPageComplete(validatePage());
+					}
+				};
 
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -495,6 +522,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		@Override
@@ -515,6 +543,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -531,6 +560,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -541,13 +571,13 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		 * Returns the label for the specified type name.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
 			try {
 				return LayersconfigEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-			}
-			catch(MissingResourceException mre) {
+			} catch (MissingResourceException mre) {
 				LayersconfigEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
@@ -556,12 +586,13 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(LayersconfigEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(LayersconfigEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -573,9 +604,10 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-		@Override
+	@Override
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
@@ -594,7 +626,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource)selectedElement;
+				IResource selectedResource = (IResource) selectedElement;
 				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
@@ -611,7 +643,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 					String defaultModelBaseFilename = LayersconfigEditorPlugin.INSTANCE.getString("_UI_LayersconfigEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
@@ -628,6 +660,7 @@ public class LayersconfigModelWizard extends Wizard implements INewWizard {
 	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IFile getModelFile() {

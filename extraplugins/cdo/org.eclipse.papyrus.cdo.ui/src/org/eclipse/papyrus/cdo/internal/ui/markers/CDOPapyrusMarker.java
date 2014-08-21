@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,49 +56,57 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 
 		return new Function<EProblem, CDOPapyrusMarker>() {
 
+			@Override
 			public CDOPapyrusMarker apply(EProblem input) {
 				return new CDOPapyrusMarker(input, util);
 			}
 		};
 	}
 
+	@Override
 	public Resource getResource() {
 		return resource;
 	}
 
+	@Override
 	public EObject getEObject() {
 		return problem.getElement();
 	}
 
+	@Override
 	public boolean exists() {
 		EObject element = getEObject();
 		return (element != null) && (element.eResource() != null);
 	}
 
+	@Override
 	public String getType() {
 		String result = problem.getType();
 		return (result != null) ? result : EValidator.MARKER;
 	}
 
+	@Override
 	public String getTypeLabel() throws CoreException {
 		String result = MarkerListenerUtils.getMarkerTypeLabel(getType());
 		return ((result != null) && (result.length() > 0)) ? result : util.getProblemType(problem);
 	}
 
+	@Override
 	public void delete() {
 		ProblemsManager.delete(problem);
 	}
 
+	@Override
 	public Object getAttribute(String name) throws CoreException {
 		Object result = null;
 
-		if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			result = EcoreUtil.getURI(getEObject()).toString();
-		} else if(name.equals(SEVERITY)) {
+		} else if (name.equals(SEVERITY)) {
 			result = getMarkerSeverity();
-		} else if(name.equals(MESSAGE)) {
+		} else if (name.equals(MESSAGE)) {
 			result = problem.getMessage();
-		} else if(problem.getAttributes().containsKey(name)) {
+		} else if (problem.getAttributes().containsKey(name)) {
 			result = coerce(problem.getAttributes().get(name));
 		} else {
 			throw new CoreException(error("No such marker attribute: " + name)); //$NON-NLS-1$
@@ -110,11 +118,11 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected Object coerce(String value) {
 		Object result;
 
-		if(value == null) {
+		if (value == null) {
 			result = value;
-		} else if(isBoolean(value)) {
+		} else if (isBoolean(value)) {
 			result = Boolean.parseBoolean(value);
-		} else if(isInteger(value)) {
+		} else if (isInteger(value)) {
 			result = Integer.parseInt(value);
 		} else {
 			result = value;
@@ -130,7 +138,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	static boolean isInteger(String s) {
 		boolean result = (s != null) && (s.length() > 0);
 
-		for(int i = 0; result && (i < s.length()); i++) {
+		for (int i = 0; result && (i < s.length()); i++) {
 			result = Character.isDigit(s.charAt(i));
 		}
 
@@ -144,7 +152,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected int getMarkerSeverity() {
 		int result;
 
-		switch(problem.getSeverity()) {
+		switch (problem.getSeverity()) {
 		case OK:
 		case INFO:
 			result = SEVERITY_INFO;
@@ -160,14 +168,15 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 		return result;
 	}
 
+	@Override
 	public String getAttribute(String name, String defaultValue) {
 		String result = null;
 
-		if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			result = EcoreUtil.getURI(getEObject()).toString();
-		} else if(name.equals(MESSAGE)) {
+		} else if (name.equals(MESSAGE)) {
 			result = problem.getMessage();
-		} else if(problem.getAttributes().containsKey(name)) {
+		} else if (problem.getAttributes().containsKey(name)) {
 			result = coerce(problem.getAttributes().get(name), defaultValue);
 		} else {
 			result = defaultValue;
@@ -179,9 +188,9 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected String coerce(String value, String defaultValue) {
 		String result;
 
-		if(value == null) {
+		if (value == null) {
 			result = defaultValue;
-		} else if(isBoolean(value) || isInteger(value)) {
+		} else if (isBoolean(value) || isInteger(value)) {
 			throw new IllegalArgumentException("Not a string value: " + value); //$NON-NLS-1$
 		} else {
 			result = value;
@@ -190,10 +199,11 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 		return result;
 	}
 
+	@Override
 	public boolean getAttribute(String name, boolean defaultValue) {
 		boolean result;
 
-		if(problem.getAttributes().containsKey(name)) {
+		if (problem.getAttributes().containsKey(name)) {
 			result = coerce(problem.getAttributes().get(name), defaultValue);
 		} else {
 			result = defaultValue;
@@ -205,9 +215,9 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected boolean coerce(String value, boolean defaultValue) {
 		boolean result;
 
-		if(value == null) {
+		if (value == null) {
 			result = defaultValue;
-		} else if(!isBoolean(value)) {
+		} else if (!isBoolean(value)) {
 			throw new IllegalArgumentException("Not a boolean value: " + value); //$NON-NLS-1$
 		} else {
 			result = Boolean.parseBoolean(value);
@@ -216,12 +226,13 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 		return result;
 	}
 
+	@Override
 	public int getAttribute(String name, int defaultValue) {
 		int result;
 
-		if(name.equals(SEVERITY)) {
+		if (name.equals(SEVERITY)) {
 			result = getMarkerSeverity();
-		} else if(problem.getAttributes().containsKey(name)) {
+		} else if (problem.getAttributes().containsKey(name)) {
 			result = coerce(problem.getAttributes().get(name), defaultValue);
 		} else {
 			result = defaultValue;
@@ -233,9 +244,9 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected int coerce(String value, int defaultValue) {
 		int result;
 
-		if(value == null) {
+		if (value == null) {
 			result = defaultValue;
-		} else if(!isInteger(value)) {
+		} else if (!isInteger(value)) {
 			throw new IllegalArgumentException("Not an integer value: " + value); //$NON-NLS-1$
 		} else {
 			result = Integer.parseInt(value);
@@ -244,6 +255,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 		return result;
 	}
 
+	@Override
 	public Map<String, ?> getAttributes() throws CoreException {
 		Map<String, Object> result = coerce(problem.getAttributes());
 
@@ -257,21 +269,22 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	protected Map<String, Object> coerce(EMap<String, String> attributes) {
 		Map<String, Object> result = Maps.newHashMap();
 
-		for(Map.Entry<String, String> next : attributes) {
+		for (Map.Entry<String, String> next : attributes) {
 			result.put(next.getKey(), coerce(next.getValue()));
 		}
 
 		return result;
 	}
 
+	@Override
 	public void setAttribute(String name, Object value) throws CoreException {
-		if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			throw new CoreException(error("Cannot set URI of a CDOPapyrusMarker.")); //$NON-NLS-1$
-		} else if(name.equals(SEVERITY)) {
-			setMarkerSeverity(((Number)value).intValue());
-		} else if(name.equals(MESSAGE)) {
-			problem.setMessage((String)value);
-		} else if(value == null) {
+		} else if (name.equals(SEVERITY)) {
+			setMarkerSeverity(((Number) value).intValue());
+		} else if (name.equals(MESSAGE)) {
+			problem.setMessage((String) value);
+		} else if (value == null) {
 			problem.getAttributes().removeKey(name);
 		} else {
 			problem.getAttributes().put(name, value.toString());
@@ -279,7 +292,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 	}
 
 	protected void setMarkerSeverity(int severity) throws CoreException {
-		switch(severity) {
+		switch (severity) {
 		case SEVERITY_INFO:
 			problem.setSeverity(ESeverity.INFO);
 			break;
@@ -291,60 +304,64 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 			break;
 		default:
 			throw new CoreException(error("Invalid marker severity: " //$NON-NLS-1$
-				+ severity));
+					+ severity));
 		}
 	}
 
+	@Override
 	public void setAttribute(String name, String value) throws CoreException {
-		if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			throw new CoreException(error("Cannot set URI of a CDOPapyrusMarker.")); //$NON-NLS-1$
-		} else if(name.equals(MESSAGE)) {
+		} else if (name.equals(MESSAGE)) {
 			problem.setMessage(value);
-		} else if(name.equals(SEVERITY)) {
+		} else if (name.equals(SEVERITY)) {
 			throw new CoreException(error("Severity of a CDOPapyrusMarker is not a string.")); //$NON-NLS-1$
-		} else if(value == null) {
+		} else if (value == null) {
 			problem.getAttributes().removeKey(name);
 		} else {
 			problem.getAttributes().put(name, value);
 		}
 	}
 
+	@Override
 	public void setAttribute(String name, boolean value) throws CoreException {
-		if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			throw new CoreException(error("URI of a CDOPapyrusMarker is not a boolean.")); //$NON-NLS-1$
-		} else if(name.equals(SEVERITY)) {
+		} else if (name.equals(SEVERITY)) {
 			throw new CoreException(error("Severity of a CDOPapyrusMarker is not a boolean.")); //$NON-NLS-1$
-		} else if(name.equals(MESSAGE)) {
+		} else if (name.equals(MESSAGE)) {
 			throw new CoreException(error("Message of a CDOPapyrusMarker is not a boolean.")); //$NON-NLS-1$
 		} else {
 			problem.getAttributes().put(name, Boolean.toString(value));
 		}
 	}
 
+	@Override
 	public void setAttribute(String name, int value) throws CoreException {
-		if(name.equals(SEVERITY)) {
+		if (name.equals(SEVERITY)) {
 			setMarkerSeverity(value);
-		} else if(name.equals(EValidator.URI_ATTRIBUTE)) {
+		} else if (name.equals(EValidator.URI_ATTRIBUTE)) {
 			throw new CoreException(error("URI of a CDOPapyrusMarker is not an integer.")); //$NON-NLS-1$
-		} else if(name.equals(MESSAGE)) {
+		} else if (name.equals(MESSAGE)) {
 			throw new CoreException(error("Message of a CDOPapyrusMarker is not an integer.")); //$NON-NLS-1$
 		} else {
 			problem.getAttributes().put(name, Integer.toString(value));
 		}
 	}
 
+	@Override
 	public void setAttributes(Map<String, ?> attributes) throws CoreException {
-		for(Map.Entry<String, ?> next : attributes.entrySet()) {
+		for (Map.Entry<String, ?> next : attributes.entrySet()) {
 			String name = next.getKey();
 			Object value = next.getValue();
 
-			if(name.equals(EValidator.URI_ATTRIBUTE)) {
+			if (name.equals(EValidator.URI_ATTRIBUTE)) {
 				throw new CoreException(error("Cannot set URI of a CDOPapyrusMarker.")); //$NON-NLS-1$
-			} else if(name.equals(SEVERITY)) {
-				setMarkerSeverity(((Number)value).intValue());
-			} else if(name.equals(MESSAGE)) {
-				problem.setMessage((String)value);
-			} else if(value != null) {
+			} else if (name.equals(SEVERITY)) {
+				setMarkerSeverity(((Number) value).intValue());
+			} else if (name.equals(MESSAGE)) {
+				problem.setMessage((String) value);
+			} else if (value != null) {
 				problem.getAttributes().put(name, value.toString());
 			}
 		}
@@ -352,7 +369,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 
 	@Override
 	public boolean equals(Object obj) {
-		return (obj instanceof CDOPapyrusMarker) && Objects.equal(((CDOPapyrusMarker)obj).problem, problem);
+		return (obj instanceof CDOPapyrusMarker) && Objects.equal(((CDOPapyrusMarker) obj).problem, problem);
 	}
 
 	@Override
@@ -365,6 +382,7 @@ public class CDOPapyrusMarker implements IPapyrusMarker {
 		return String.format("CDOPapyrusMarker:%s:%s", getResource(), hashCode()); //$NON-NLS-1$
 	}
 
+	@Override
 	public boolean isSubtypeOf(String type) throws CoreException {
 		return (type == null) || MarkerListenerUtils.isMarkerTypeSubtypeOf(getType(), type);
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,11 +43,11 @@ import org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getIncompatibleStereotypes <em>Incompatible Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getBase <em>Base</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getExtensionDefinition <em>Extension Definition</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getCompatibleStereotypes <em>Compatible Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#isPossible <em>Possible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getIncompatibleStereotypes <em>Incompatible Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getBase <em>Base</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getExtensionDefinition <em>Extension Definition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#getCompatibleStereotypes <em>Compatible Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.extensiondefinition.impl.BaseMetaclassImpl#isPossible <em>Possible</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +58,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getIncompatibleStereotypes() <em>Incompatible Stereotypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIncompatibleStereotypes()
 	 * @generated
 	 * @ordered
@@ -68,6 +69,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase()
 	 * @generated
 	 * @ordered
@@ -78,6 +80,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #getCompatibleStereotypes() <em>Compatible Stereotypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCompatibleStereotypes()
 	 * @generated
 	 * @ordered
@@ -88,6 +91,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The default value of the '{@link #isPossible() <em>Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isPossible()
 	 * @generated
 	 * @ordered
@@ -98,6 +102,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	 * The cached value of the '{@link #isPossible() <em>Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isPossible()
 	 * @generated
 	 * @ordered
@@ -107,6 +112,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BaseMetaclassImpl() {
@@ -116,6 +122,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,8 +133,10 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Combination> getIncompatibleStereotypes() {
 		if (incompatibleStereotypes == null) {
 			incompatibleStereotypes = new EObjectContainmentEList<Combination>(Combination.class, this, ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES);
@@ -138,15 +147,18 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EObject getBase() {
 		if (base != null && base.eIsProxy()) {
-			InternalEObject oldBase = (InternalEObject)base;
+			InternalEObject oldBase = (InternalEObject) base;
 			base = eResolveProxy(oldBase);
 			if (base != oldBase) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtensiondefinitionPackage.BASE_METACLASS__BASE, oldBase, base));
+				}
 			}
 		}
 		return base;
@@ -155,6 +167,7 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EObject basicGetBase() {
@@ -164,61 +177,79 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase(EObject newBase) {
 		EObject oldBase = base;
 		base = newBase;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.BASE_METACLASS__BASE, oldBase, base));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ExtensionDefinition getExtensionDefinition() {
-		if (eContainerFeatureID() != ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION) return null;
-		return (ExtensionDefinition)eInternalContainer();
+		if (eContainerFeatureID() != ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION) {
+			return null;
+		}
+		return (ExtensionDefinition) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetExtensionDefinition(ExtensionDefinition newExtensionDefinition, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newExtensionDefinition, ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newExtensionDefinition, ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setExtensionDefinition(ExtensionDefinition newExtensionDefinition) {
 		if (newExtensionDefinition != eInternalContainer() || (eContainerFeatureID() != ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION && newExtensionDefinition != null)) {
-			if (EcoreUtil.isAncestor(this, newExtensionDefinition))
+			if (EcoreUtil.isAncestor(this, newExtensionDefinition)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newExtensionDefinition != null)
-				msgs = ((InternalEObject)newExtensionDefinition).eInverseAdd(this, ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES, ExtensionDefinition.class, msgs);
+			}
+			if (newExtensionDefinition != null) {
+				msgs = ((InternalEObject) newExtensionDefinition).eInverseAdd(this, ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES, ExtensionDefinition.class, msgs);
+			}
 			msgs = basicSetExtensionDefinition(newExtensionDefinition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION, newExtensionDefinition, newExtensionDefinition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Combination> getCompatibleStereotypes() {
 		if (compatibleStereotypes == null) {
 			compatibleStereotypes = new EObjectContainmentEList<Combination>(Combination.class, this, ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES);
@@ -229,8 +260,10 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isPossible() {
 		return possible;
 	}
@@ -238,27 +271,32 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPossible(boolean newPossible) {
 		boolean oldPossible = possible;
 		possible = newPossible;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE, oldPossible, possible));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetExtensionDefinition((ExtensionDefinition)otherEnd, msgs);
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetExtensionDefinition((ExtensionDefinition) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -266,17 +304,18 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-				return ((InternalEList<?>)getIncompatibleStereotypes()).basicRemove(otherEnd, msgs);
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				return basicSetExtensionDefinition(null, msgs);
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				return ((InternalEList<?>)getCompatibleStereotypes()).basicRemove(otherEnd, msgs);
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+			return ((InternalEList<?>) getIncompatibleStereotypes()).basicRemove(otherEnd, msgs);
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			return basicSetExtensionDefinition(null, msgs);
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			return ((InternalEList<?>) getCompatibleStereotypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -284,13 +323,14 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				return eInternalContainer().eInverseRemove(this, ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES, ExtensionDefinition.class, msgs);
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			return eInternalContainer().eInverseRemove(this, ExtensiondefinitionPackage.EXTENSION_DEFINITION__BASE_METACLASSES, ExtensionDefinition.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -298,22 +338,25 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-				return getIncompatibleStereotypes();
-			case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
-				if (resolve) return getBase();
-				return basicGetBase();
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				return getExtensionDefinition();
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				return getCompatibleStereotypes();
-			case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
-				return isPossible();
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+			return getIncompatibleStereotypes();
+		case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
+			if (resolve) {
+				return getBase();
+			}
+			return basicGetBase();
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			return getExtensionDefinition();
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			return getCompatibleStereotypes();
+		case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
+			return isPossible();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -321,29 +364,30 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-				getIncompatibleStereotypes().clear();
-				getIncompatibleStereotypes().addAll((Collection<? extends Combination>)newValue);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
-				setBase((EObject)newValue);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				setExtensionDefinition((ExtensionDefinition)newValue);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				getCompatibleStereotypes().clear();
-				getCompatibleStereotypes().addAll((Collection<? extends Combination>)newValue);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
-				setPossible((Boolean)newValue);
-				return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+			getIncompatibleStereotypes().clear();
+			getIncompatibleStereotypes().addAll((Collection<? extends Combination>) newValue);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
+			setBase((EObject) newValue);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			setExtensionDefinition((ExtensionDefinition) newValue);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			getCompatibleStereotypes().clear();
+			getCompatibleStereotypes().addAll((Collection<? extends Combination>) newValue);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
+			setPossible((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -351,26 +395,27 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-				getIncompatibleStereotypes().clear();
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
-				setBase((EObject)null);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				setExtensionDefinition((ExtensionDefinition)null);
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				getCompatibleStereotypes().clear();
-				return;
-			case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
-				setPossible(POSSIBLE_EDEFAULT);
-				return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+			getIncompatibleStereotypes().clear();
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
+			setBase((EObject) null);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			setExtensionDefinition((ExtensionDefinition) null);
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			getCompatibleStereotypes().clear();
+			return;
+		case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
+			setPossible(POSSIBLE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -378,21 +423,22 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
-				return incompatibleStereotypes != null && !incompatibleStereotypes.isEmpty();
-			case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
-				return base != null;
-			case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
-				return getExtensionDefinition() != null;
-			case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
-				return compatibleStereotypes != null && !compatibleStereotypes.isEmpty();
-			case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
-				return possible != POSSIBLE_EDEFAULT;
+		case ExtensiondefinitionPackage.BASE_METACLASS__INCOMPATIBLE_STEREOTYPES:
+			return incompatibleStereotypes != null && !incompatibleStereotypes.isEmpty();
+		case ExtensiondefinitionPackage.BASE_METACLASS__BASE:
+			return base != null;
+		case ExtensiondefinitionPackage.BASE_METACLASS__EXTENSION_DEFINITION:
+			return getExtensionDefinition() != null;
+		case ExtensiondefinitionPackage.BASE_METACLASS__COMPATIBLE_STEREOTYPES:
+			return compatibleStereotypes != null && !compatibleStereotypes.isEmpty();
+		case ExtensiondefinitionPackage.BASE_METACLASS__POSSIBLE:
+			return possible != POSSIBLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -400,11 +446,14 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (possible: ");
@@ -413,4 +462,4 @@ public class BaseMetaclassImpl extends MinimalEObjectImpl.Container implements B
 		return result.toString();
 	}
 
-} //BaseMetaclassImpl
+} // BaseMetaclassImpl

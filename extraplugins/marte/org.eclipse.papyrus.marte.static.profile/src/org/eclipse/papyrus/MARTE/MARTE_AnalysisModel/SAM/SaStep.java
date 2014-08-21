@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.uml2.uml.BehavioralFeature;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSpareCap <em>Spare Cap</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSchSlack <em>Sch Slack</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getPreemptT <em>Preempt T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getReadyT <em>Ready T</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNonpreemptionBlocking <em>Nonpreemption Blocking</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSharedRes <em>Shared Res</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSelfSuspensionBlocking <em>Self Suspension Blocking</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNumberSelfSuspensions <em>Number Self Suspensions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getDeadline <em>Deadline</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSpareCap <em>Spare Cap</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSchSlack <em>Sch Slack</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getPreemptT <em>Preempt T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getReadyT <em>Ready T</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNonpreemptionBlocking <em>Nonpreemption Blocking</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSharedRes <em>Shared Res</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSelfSuspensionBlocking <em>Self Suspension Blocking</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNumberSelfSuspensions <em>Number Self Suspensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,10 +47,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Base Behavioral Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Behavioral Feature</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #setBase_BehavioralFeature(BehavioralFeature)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_Base_BehavioralFeature()
@@ -63,7 +63,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getBase_BehavioralFeature <em>Base Behavioral Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Behavioral Feature</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Behavioral Feature</em>' reference.
 	 * @see #getBase_BehavioralFeature()
 	 * @generated
 	 */
@@ -73,10 +75,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Deadline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Deadline</em>' attribute.
 	 * @see #setDeadline(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_Deadline()
@@ -89,7 +91,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getDeadline <em>Deadline</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deadline</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Deadline</em>' attribute.
 	 * @see #getDeadline()
 	 * @generated
 	 */
@@ -99,10 +103,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Spare Cap</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Spare Cap</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Spare Cap</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Spare Cap</em>' attribute.
 	 * @see #setSpareCap(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_SpareCap()
@@ -115,7 +119,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSpareCap <em>Spare Cap</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spare Cap</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Spare Cap</em>' attribute.
 	 * @see #getSpareCap()
 	 * @generated
 	 */
@@ -125,10 +131,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Sch Slack</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sch Slack</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sch Slack</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Sch Slack</em>' attribute.
 	 * @see #setSchSlack(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_SchSlack()
@@ -141,7 +147,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSchSlack <em>Sch Slack</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sch Slack</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Sch Slack</em>' attribute.
 	 * @see #getSchSlack()
 	 * @generated
 	 */
@@ -151,10 +159,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Preempt T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Preempt T</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Preempt T</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Preempt T</em>' attribute.
 	 * @see #setPreemptT(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_PreemptT()
@@ -167,7 +175,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getPreemptT <em>Preempt T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Preempt T</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Preempt T</em>' attribute.
 	 * @see #getPreemptT()
 	 * @generated
 	 */
@@ -177,10 +187,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Ready T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ready T</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Ready T</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ready T</em>' attribute.
 	 * @see #setReadyT(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_ReadyT()
@@ -193,7 +203,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getReadyT <em>Ready T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ready T</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Ready T</em>' attribute.
 	 * @see #getReadyT()
 	 * @generated
 	 */
@@ -203,10 +215,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Nonpreemption Blocking</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nonpreemption Blocking</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nonpreemption Blocking</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Nonpreemption Blocking</em>' attribute.
 	 * @see #setNonpreemptionBlocking(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_NonpreemptionBlocking()
@@ -219,7 +231,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNonpreemptionBlocking <em>Nonpreemption Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nonpreemption Blocking</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nonpreemption Blocking</em>' attribute.
 	 * @see #getNonpreemptionBlocking()
 	 * @generated
 	 */
@@ -230,10 +244,10 @@ public interface SaStep extends GaStep {
 	 * The list contents are of type {@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaSharedResource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Shared Res</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Shared Res</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Shared Res</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_SharedRes()
 	 * @model ordered="false"
@@ -245,10 +259,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Self Suspension Blocking</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Self Suspension Blocking</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Self Suspension Blocking</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Self Suspension Blocking</em>' attribute.
 	 * @see #setSelfSuspensionBlocking(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_SelfSuspensionBlocking()
@@ -261,7 +275,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getSelfSuspensionBlocking <em>Self Suspension Blocking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Self Suspension Blocking</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Self Suspension Blocking</em>' attribute.
 	 * @see #getSelfSuspensionBlocking()
 	 * @generated
 	 */
@@ -271,10 +287,10 @@ public interface SaStep extends GaStep {
 	 * Returns the value of the '<em><b>Number Self Suspensions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number Self Suspensions</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Number Self Suspensions</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Number Self Suspensions</em>' attribute.
 	 * @see #setNumberSelfSuspensions(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaStep_NumberSelfSuspensions()
@@ -287,7 +303,9 @@ public interface SaStep extends GaStep {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep#getNumberSelfSuspensions <em>Number Self Suspensions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number Self Suspensions</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Number Self Suspensions</em>' attribute.
 	 * @see #getNumberSelfSuspensions()
 	 * @generated
 	 */

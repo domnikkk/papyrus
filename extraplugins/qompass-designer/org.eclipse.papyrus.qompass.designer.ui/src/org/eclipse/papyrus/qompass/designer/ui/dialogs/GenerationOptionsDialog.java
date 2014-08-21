@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -28,7 +28,7 @@ import org.eclipse.ui.dialogs.SelectionStatusDialog;
 
 /**
  * Select options for code generation.
- * 
+ *
  * @author ansgar
  */
 public class GenerationOptionsDialog extends SelectionStatusDialog implements GenerationOptions {
@@ -50,30 +50,34 @@ public class GenerationOptionsDialog extends SelectionStatusDialog implements Ge
 	/**
 	 * @see SelectionStatusDialog#computeResult()
 	 */
+	@Override
 	protected void computeResult() {
 		int resultInt = (isRewriteSettings() ? REWRITE_SETTINGS : 0) +
-			(isOnlyChanged() ? ONLY_CHANGED : 0) +
-			(isModelOnly() ? MODEL_ONLY : 0) +
-			(isCACOnly() ? CAC_ONLY : 0);
+				(isOnlyChanged() ? ONLY_CHANGED : 0) +
+				(isModelOnly() ? MODEL_ONLY : 0) +
+				(isCACOnly() ? CAC_ONLY : 0);
 		oldResultInt = resultInt;
-		Object[] result = new Object[]{
-			resultInt
+		Object[] result = new Object[] {
+				resultInt
 		};
 		setResult(Arrays.asList(result));
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 		// (parent, "Container rules", "Avail. extensions/interceptors");
 
 		fButtonCACOnly = new Button(contents, SWT.CHECK);
 		fButtonCACOnly.setText("Only perform container and connector expansion (intermediate model without code generation)");
 		fButtonCACOnly.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				updateButtonEnableStatus();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -83,12 +87,14 @@ public class GenerationOptionsDialog extends SelectionStatusDialog implements Ge
 		fButtonModelOnly.setText("Only generate model (not code)");
 		fButtonModelOnly.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// only write types that have changed does not make sense, if the whole directory is cleaned
 				boolean modelOnly = fButtonModelOnly.getSelection();
 				fButtonOnlyChanged.setEnabled(!modelOnly);
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});

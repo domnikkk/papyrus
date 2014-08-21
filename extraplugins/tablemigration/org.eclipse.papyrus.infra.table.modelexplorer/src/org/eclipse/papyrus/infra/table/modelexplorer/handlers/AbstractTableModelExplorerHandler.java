@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public abstract class AbstractTableModelExplorerHandler extends AbstractCommandH
 
 	/**
 	 * Returns the list of selected tables
-	 * 
+	 *
 	 * @return
 	 *         the list of selected tables
 	 */
@@ -42,15 +42,15 @@ public abstract class AbstractTableModelExplorerHandler extends AbstractCommandH
 		selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
 
 		// Get first element if the selection is an IStructuredSelection
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Iterator<?> iter = structuredSelection.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Object current = iter.next();
-				if(current instanceof IAdaptable){
-					EObject table = (EObject)((IAdaptable)current).getAdapter(EObject.class);
-					if(table instanceof PapyrusTableInstance){
-						tables.add((PapyrusTableInstance)table);
+				if (current instanceof IAdaptable) {
+					EObject table = (EObject) ((IAdaptable) current).getAdapter(EObject.class);
+					if (table instanceof PapyrusTableInstance) {
+						tables.add((PapyrusTableInstance) table);
 					}
 				}
 			}

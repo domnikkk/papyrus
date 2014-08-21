@@ -28,15 +28,15 @@ public class ExternalGenerator {
 	public static final String IEXTERNAL_GENERATOR_ID = Activator.PLUGIN_ID + ".externalGenerator"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param iConfiguratorName
 	 * @param component
-	 *        containing composite (container)
+	 *            containing composite (container)
 	 * @param instance
 	 */
 	public static EList<Classifier> generate(String iGeneratorID, Classifier source) {
 		IExternalGenerator iExternalGenerator = getExternalGenerator(iGeneratorID);
-		if(iExternalGenerator != null) {
+		if (iExternalGenerator != null) {
 			return iExternalGenerator.generate(source);
 		}
 		return null;
@@ -45,14 +45,14 @@ public class ExternalGenerator {
 	private static IExternalGenerator getExternalGenerator(String iGeneratorID) {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(IEXTERNAL_GENERATOR_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String iConfiguratorIDext = configElement.getAttribute("extGeneratorID"); //$NON-NLS-1$
-				if(iConfiguratorIDext.equals(iGeneratorID)) {
+				if (iConfiguratorIDext.equals(iGeneratorID)) {
 					// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof IExternalGenerator) {
-						return (IExternalGenerator)obj;
+					if (obj instanceof IExternalGenerator) {
+						return (IExternalGenerator) obj;
 					}
 				}
 			} catch (CoreException exception) {

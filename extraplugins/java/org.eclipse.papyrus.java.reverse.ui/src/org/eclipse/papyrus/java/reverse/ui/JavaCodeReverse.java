@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.java.reverse.ui;
 
@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * @author dumoulin
- * 
+ *
  */
 public class JavaCodeReverse {
 
@@ -41,7 +41,7 @@ public class JavaCodeReverse {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param model
 	 */
 	public JavaCodeReverse(Resource model) {
@@ -50,7 +50,7 @@ public class JavaCodeReverse {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param model
 	 */
 	public JavaCodeReverse(Package rootPackage, String generatedPackageName, List<String> searchPaths) {
@@ -61,24 +61,24 @@ public class JavaCodeReverse {
 	/**
 	 * @throws CoreException
 	 * @throws ParseException
-	 * 
+	 *
 	 */
 	public void reverseResource(IResource resource) throws ParseException, CoreException {
 		System.out.println("reverseResource(" + resource.getName() + ")");
 
-		if(resource instanceof IFile) {
-			reverseFile((IFile)resource);
-		} else if(resource instanceof IFolder) {
-			reverseFolder((IFolder)resource);
-		} else if(resource instanceof IProject) {
-			reverseProject((IProject)resource);
+		if (resource instanceof IFile) {
+			reverseFile((IFile) resource);
+		} else if (resource instanceof IFolder) {
+			reverseFolder((IFolder) resource);
+		} else if (resource instanceof IProject) {
+			reverseProject((IProject) resource);
 		}
 
 	}
 
 	/**
 	 * Walk throw each file in folder
-	 * 
+	 *
 	 * @param resource
 	 * @param model
 	 * @throws CoreException
@@ -86,7 +86,7 @@ public class JavaCodeReverse {
 	 */
 	private void reverseFolder(IFolder folder) throws CoreException, ParseException {
 
-		for(IResource resource : folder.members()) {
+		for (IResource resource : folder.members()) {
 			reverseResource(resource);
 		}
 
@@ -94,7 +94,7 @@ public class JavaCodeReverse {
 
 	/**
 	 * Walk throw each file in folder
-	 * 
+	 *
 	 * @param resource
 	 * @param model
 	 * @throws CoreException
@@ -102,7 +102,7 @@ public class JavaCodeReverse {
 	 */
 	private void reverseProject(IProject folder) throws CoreException, ParseException {
 
-		for(IResource resource : folder.members()) {
+		for (IResource resource : folder.members()) {
 			reverseResource(resource);
 		}
 
@@ -110,14 +110,14 @@ public class JavaCodeReverse {
 
 	/**
 	 * Reverse a file
-	 * 
+	 *
 	 * @param resource
 	 * @throws CoreException
 	 * @throws ParseException
 	 */
 	private void reverseFile(IFile file) throws ParseException, CoreException {
 		System.out.println("try to reverseFile(" + file.getName() + ")");
-		if(!"java".equals(file.getFileExtension())) {
+		if (!"java".equals(file.getFileExtension())) {
 			return;
 		}
 
@@ -126,112 +126,113 @@ public class JavaCodeReverse {
 		CompilationUnit cu = JavaParser.parse(file.getContents());
 		javaAnalyser.processCompilationUnit(cu);
 	}
-	
-	/**
-	 * @throws CoreException 
-	 * @throws ParseException 
-	 * 
-	 */
-	public void reverseJavaElement( IJavaElement element) throws ParseException, CoreException
-	{
-		System.out.println("reverseJavaElement("+element.getElementName()+")");
 
-		if(element instanceof ITypeRoot)
+	/**
+	 * @throws CoreException
+	 * @throws ParseException
+	 *
+	 */
+	public void reverseJavaElement(IJavaElement element) throws ParseException, CoreException
+	{
+		System.out.println("reverseJavaElement(" + element.getElementName() + ")");
+
+		if (element instanceof ITypeRoot)
 		{
-			reverseCompilationUnit((ITypeRoot)element);
+			reverseCompilationUnit((ITypeRoot) element);
 		}
-		else if(element instanceof IPackageFragment)
+		else if (element instanceof IPackageFragment)
 		{
-			reversePackageFragment((IPackageFragment)element);
+			reversePackageFragment((IPackageFragment) element);
 		}
-		else if(element instanceof IPackageFragmentRoot)
+		else if (element instanceof IPackageFragmentRoot)
 		{
-			reversePackageFragmentRoot((IPackageFragmentRoot)element);
+			reversePackageFragmentRoot((IPackageFragmentRoot) element);
 		}
 		else
 		{
 			System.err.println("Can't reverse Java Element " + element);
 		}
-		
+
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 * @throws ParseException
 	 * @throws CoreException
 	 */
 	private void reversePackageFragmentRoot(IPackageFragmentRoot element) throws ParseException, CoreException {
 
-		System.out.println("reversePackageFragmentRoot("+element.getElementName()+")");
+		System.out.println("reversePackageFragmentRoot(" + element.getElementName() + ")");
 
 		IJavaElement[] children = element.getChildren();
-		for( IJavaElement child : children) {
+		for (IJavaElement child : children) {
 			reverseJavaElement(child);
 		}
-		
+
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 * @throws ParseException
 	 * @throws CoreException
 	 */
 	private void reversePackageFragment(IPackageFragment element) throws ParseException, CoreException {
-		
-		System.out.println("reversePackageFragment("+element.getElementName()+")");
+
+		System.out.println("reversePackageFragment(" + element.getElementName() + ")");
 
 		IJavaElement[] children = element.getChildren();
-		for( IJavaElement child : children) {
+		for (IJavaElement child : children) {
 			reverseJavaElement(child);
 		}
 	}
 
 	/**
 	 * Reverse a file
+	 * 
 	 * @param resource
-	 * @throws CoreException 
-	 * @throws ParseException 
+	 * @throws CoreException
+	 * @throws ParseException
 	 */
 	private void reverseCompilationUnit(ITypeRoot unit) throws ParseException, CoreException {
-		System.out.println("try to reverseUnit("+unit.getElementName()+")");
-		System.out.println("file type=("+unit.getElementType()+")");
-		
+		System.out.println("try to reverseUnit(" + unit.getElementName() + ")");
+		System.out.println("file type=(" + unit.getElementType() + ")");
+
 		String source = unit.getSource();
-		if( source == null)
+		if (source == null)
 		{
 			System.err.println("No source attached to unit '" + unit.getElementName() + "'");
 			return;
 		}
-		
-		
+
+
 		CompilationUnit cu = JavaParser.parse(new StringReader(source));
 		javaAnalyser.processCompilationUnit(cu);
 	}
 
 	/**
 	 * Real Implementation of the command.
-	 * 
+	 *
 	 * @param generationPackageName
 	 * @param searchPaths
 	 */
 	public void executeCodeReverse(Resource umlResource, String generationPackageName, List<String> searchPaths) {
 		System.out.println("executeCodeReverse()");
-		
+
 		// Get current selection
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		ISelection selection = page.getSelection();
 
-		TreeSelection treeSelection = (TreeSelection)selection;
-		//        String filename = treeSelection.
+		TreeSelection treeSelection = (TreeSelection) selection;
+		// String filename = treeSelection.
 		@SuppressWarnings("rawtypes")
 		Iterator iter = treeSelection.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			Object obj = iter.next();
 			// Translate java ICompilationUnit to Iresource
-			if(obj instanceof ICompilationUnit) {
-				ICompilationUnit u = (ICompilationUnit)obj;
+			if (obj instanceof ICompilationUnit) {
+				ICompilationUnit u = (ICompilationUnit) obj;
 				try {
 					obj = u.getCorrespondingResource();
 				} catch (JavaModelException e) {
@@ -239,35 +240,36 @@ public class JavaCodeReverse {
 					e.printStackTrace();
 				}
 			}
-        	if(obj instanceof IPackageFragment)
-        	{
-				IPackageFragment u = (IPackageFragment)obj;
+			if (obj instanceof IPackageFragment)
+			{
+				IPackageFragment u = (IPackageFragment) obj;
 				try {
 					IResource res = u.getCorrespondingResource();
-					if(res != null)
+					if (res != null) {
 						obj = res;
+					}
 				} catch (JavaModelException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-        	// This happen when selection is an element from a jar
-        	if(obj instanceof IJavaElement)
-        	{
-        		IJavaElement u = (IJavaElement)obj;
+			// This happen when selection is an element from a jar
+			if (obj instanceof IJavaElement)
+			{
+				IJavaElement u = (IJavaElement) obj;
 				try {
-        			
-				reverseJavaElement(u);
+
+					reverseJavaElement(u);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-        	}
-        	// This is a regular java file
-         	if(obj instanceof IResource )
-        	{
-        		try {
-					reverseResource((IResource)obj);
+			}
+			// This is a regular java file
+			if (obj instanceof IResource)
+			{
+				try {
+					reverseResource((IResource) obj);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -278,7 +280,7 @@ public class JavaCodeReverse {
 			}
 		}
 
-    	System.out.println("reverse done");
+		System.out.println("reverse done");
 
 	}
 

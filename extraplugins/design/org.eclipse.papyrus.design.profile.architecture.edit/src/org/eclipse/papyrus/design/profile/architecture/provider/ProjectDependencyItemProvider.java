@@ -30,11 +30,12 @@ import org.eclipse.papyrus.design.profile.architecture.ProjectDependency;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.design.profile.architecture.ProjectDependency} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ProjectDependencyItemProvider
-	extends ElementItemProvider
-	implements
+		extends ElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class ProjectDependencyItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ProjectDependencyItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class ProjectDependencyItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,72 +75,76 @@ public class ProjectDependencyItemProvider
 	 * This adds a property descriptor for the Deprecated Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDeprecatedCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProjectDependency_deprecatedComment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_deprecatedComment_feature", "_UI_ProjectDependency_type"),
-				 ArchitecturePackage.Literals.PROJECT_DEPENDENCY__DEPRECATED_COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ProjectDependency_deprecatedComment_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_deprecatedComment_feature", "_UI_ProjectDependency_type"),
+						ArchitecturePackage.Literals.PROJECT_DEPENDENCY__DEPRECATED_COMMENT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Is Deprecated feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addIsDeprecatedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProjectDependency_isDeprecated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_isDeprecated_feature", "_UI_ProjectDependency_type"),
-				 ArchitecturePackage.Literals.PROJECT_DEPENDENCY__IS_DEPRECATED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ProjectDependency_isDeprecated_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_isDeprecated_feature", "_UI_ProjectDependency_type"),
+						ArchitecturePackage.Literals.PROJECT_DEPENDENCY__IS_DEPRECATED,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Dependency feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addBase_DependencyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProjectDependency_base_Dependency_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_base_Dependency_feature", "_UI_ProjectDependency_type"),
-				 ArchitecturePackage.Literals.PROJECT_DEPENDENCY__BASE_DEPENDENCY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ProjectDependency_base_Dependency_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ProjectDependency_base_Dependency_feature", "_UI_ProjectDependency_type"),
+						ArchitecturePackage.Literals.PROJECT_DEPENDENCY__BASE_DEPENDENCY,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns ProjectDependency.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,14 +156,15 @@ public class ProjectDependencyItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ProjectDependency)object).getDocumentation();
+		String label = ((ProjectDependency) object).getDocumentation();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ProjectDependency_type") :
-			getString("_UI_ProjectDependency_type") + " " + label;
+				getString("_UI_ProjectDependency_type") :
+				getString("_UI_ProjectDependency_type") + " " + label;
 	}
 
 	/**
@@ -164,6 +172,7 @@ public class ProjectDependencyItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,10 +180,10 @@ public class ProjectDependencyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ProjectDependency.class)) {
-			case ArchitecturePackage.PROJECT_DEPENDENCY__DEPRECATED_COMMENT:
-			case ArchitecturePackage.PROJECT_DEPENDENCY__IS_DEPRECATED:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ArchitecturePackage.PROJECT_DEPENDENCY__DEPRECATED_COMMENT:
+		case ArchitecturePackage.PROJECT_DEPENDENCY__IS_DEPRECATED:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -184,6 +193,7 @@ public class ProjectDependencyItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

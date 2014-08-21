@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.dd.dg.Group;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.GroupImpl#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class GroupImpl extends GraphicalElementImpl implements Group {
@@ -46,7 +46,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * The cached value of the '{@link #getMembers() <em>Member</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMembers()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	 * The default value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GroupImpl() {
@@ -86,7 +86,7 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,11 +96,12 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<GraphicalElement> getMembers() {
-		if(members == null) {
+		if (members == null) {
 			members = new EObjectContainmentWithInverseEList<GraphicalElement>(GraphicalElement.class, this, DGPackage.GROUP__MEMBER, DGPackage.GRAPHICAL_ELEMENT__GROUP);
 		}
 		return members;
@@ -109,9 +110,10 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getLayout() {
 		return layout;
 	}
@@ -119,53 +121,55 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLayout(String newLayout) {
 		String oldLayout = layout;
 		layout = newLayout;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.GROUP__LAYOUT, oldLayout, layout));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getMembers()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMembers()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
-			return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getMembers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
 			return getMembers();
 		case DGPackage.GROUP__LAYOUT:
@@ -176,19 +180,19 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
 			getMembers().clear();
-			getMembers().addAll((Collection<? extends GraphicalElement>)newValue);
+			getMembers().addAll((Collection<? extends GraphicalElement>) newValue);
 			return;
 		case DGPackage.GROUP__LAYOUT:
-			setLayout((String)newValue);
+			setLayout((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,12 +200,12 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
 			getMembers().clear();
 			return;
@@ -214,12 +218,12 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.GROUP__MEMBER:
 			return members != null && !members.isEmpty();
 		case DGPackage.GROUP__LAYOUT:
@@ -231,13 +235,14 @@ public class GroupImpl extends GraphicalElementImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (layout: ");
 		result.append(layout);

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.uml2.uml.RedefinableElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.RTRExcludedElementImpl#getBase_RedefinableElement <em>Base Redefinable Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getBase_RedefinableElement() <em>Base Redefinable Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_RedefinableElement()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RTRExcludedElementImpl() {
@@ -72,6 +74,7 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,15 +85,18 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RedefinableElement getBase_RedefinableElement() {
 		if (base_RedefinableElement != null && base_RedefinableElement.eIsProxy()) {
-			InternalEObject oldBase_RedefinableElement = (InternalEObject)base_RedefinableElement;
-			base_RedefinableElement = (RedefinableElement)eResolveProxy(oldBase_RedefinableElement);
+			InternalEObject oldBase_RedefinableElement = (InternalEObject) base_RedefinableElement;
+			base_RedefinableElement = (RedefinableElement) eResolveProxy(oldBase_RedefinableElement);
 			if (base_RedefinableElement != oldBase_RedefinableElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
+				}
 			}
 		}
 		return base_RedefinableElement;
@@ -99,6 +105,7 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RedefinableElement basicGetBase_RedefinableElement() {
@@ -108,20 +115,25 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_RedefinableElement(RedefinableElement newBase_RedefinableElement) {
 		RedefinableElement oldBase_RedefinableElement = base_RedefinableElement;
 		base_RedefinableElement = newBase_RedefinableElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT, oldBase_RedefinableElement, base_RedefinableElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean ExclusioncanonlybeappliedtosomeUMLRTmodelelements(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -130,12 +142,12 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.RTR_EXCLUDED_ELEMENT__EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ExclusioncanonlybeappliedtosomeUMLRTmodelelements", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.RTR_EXCLUDED_ELEMENT__EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ExclusioncanonlybeappliedtosomeUMLRTmodelelements", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -145,14 +157,17 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				if (resolve) return getBase_RedefinableElement();
-				return basicGetBase_RedefinableElement();
+		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			if (resolve) {
+				return getBase_RedefinableElement();
+			}
+			return basicGetBase_RedefinableElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,14 +175,15 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				setBase_RedefinableElement((RedefinableElement)newValue);
-				return;
+		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			setBase_RedefinableElement((RedefinableElement) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -175,14 +191,15 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				setBase_RedefinableElement((RedefinableElement)null);
-				return;
+		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			setBase_RedefinableElement((RedefinableElement) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,13 +207,14 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
-				return base_RedefinableElement != null;
+		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT__BASE_REDEFINABLE_ELEMENT:
+			return base_RedefinableElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -204,16 +222,17 @@ public class RTRExcludedElementImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT___EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS__DIAGNOSTICCHAIN_MAP:
-				return ExclusioncanonlybeappliedtosomeUMLRTmodelelements((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		case UMLRealTimePackage.RTR_EXCLUDED_ELEMENT___EXCLUSIONCANONLYBEAPPLIEDTOSOME_UMLR_TMODELELEMENTS__DIAGNOSTICCHAIN_MAP:
+			return ExclusioncanonlybeappliedtosomeUMLRTmodelelements((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //RTRExcludedElementImpl
+} // RTRExcludedElementImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,27 +40,32 @@ public class CS_InteractionPoint extends Reference {
 	 */
 	public Port definingPort;
 
+	@Override
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		// Overriden to do nothing
 	}
 
+	@Override
 	public Execution dispatch(Operation operation) {
 		// Delegates dispatching to the owning object
 		return this.owner.dispatchIn(operation, this);
 	}
 
+	@Override
 	public void send(SignalInstance signalInstance) {
 		// Delegates sending to the owning object
 		this.owner.sendIn(signalInstance, this);
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new interaction point with the same referent as this interaction point.
-		CS_InteractionPoint newValue = (CS_InteractionPoint)(super.copy());
+		CS_InteractionPoint newValue = (CS_InteractionPoint) (super.copy());
 		newValue.referent = this.referent;
 		return newValue;
 	}
 
+	@Override
 	public Value new_() {
 		// Create a new interaction point with no referent.
 		return new CS_InteractionPoint();

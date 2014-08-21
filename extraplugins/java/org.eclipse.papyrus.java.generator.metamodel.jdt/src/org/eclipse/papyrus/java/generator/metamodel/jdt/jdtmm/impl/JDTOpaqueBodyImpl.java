@@ -22,7 +22,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTOpaqueBodyImpl#get_body <em>body</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.impl.JDTOpaqueBodyImpl#get_body <em>body</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	 * The default value of the '{@link #get_body() <em>body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #get_body()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	 * The cached value of the '{@link #get_body() <em>body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #get_body()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JDTOpaqueBodyImpl() {
@@ -61,6 +64,7 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,8 +75,10 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String get_body() {
 		return _body;
 	}
@@ -80,20 +86,25 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void set_body(String new_body) {
 		String old_body = _body;
 		_body = new_body;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JdtmmPackage.JDT_OPAQUE_BODY__BODY, old_body, _body));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public String asText() {
 		return get_body();
 	}
@@ -102,13 +113,14 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
-				return get_body();
+		case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
+			return get_body();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,14 +128,15 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
-				set_body((String)newValue);
-				return;
+		case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
+			set_body((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,14 +144,15 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
-				set_body(_BODY_EDEFAULT);
-				return;
+		case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
+			set_body(_BODY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,13 +160,14 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
-				return _BODY_EDEFAULT == null ? _body != null : !_BODY_EDEFAULT.equals(_body);
+		case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
+			return _BODY_EDEFAULT == null ? _body != null : !_BODY_EDEFAULT.equals(_body);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -160,11 +175,14 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (_body: ");
@@ -173,4 +191,4 @@ public class JDTOpaqueBodyImpl extends JDTMethodBodyImpl implements JDTOpaqueBod
 		return result.toString();
 	}
 
-} //JDTOpaqueBodyImpl
+} // JDTOpaqueBodyImpl

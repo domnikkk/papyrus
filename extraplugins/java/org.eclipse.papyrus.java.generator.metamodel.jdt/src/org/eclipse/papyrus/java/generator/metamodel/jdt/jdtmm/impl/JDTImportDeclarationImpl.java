@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -41,6 +41,7 @@ public class JDTImportDeclarationImpl extends JDTJavaElementImpl implements JDTI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JDTImportDeclarationImpl() {
@@ -50,6 +51,7 @@ public class JDTImportDeclarationImpl extends JDTJavaElementImpl implements JDTI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -57,4 +59,4 @@ public class JDTImportDeclarationImpl extends JDTJavaElementImpl implements JDTI
 		return JdtmmPackage.Literals.JDT_IMPORT_DECLARATION;
 	}
 
-} //JDTImportDeclarationImpl
+} // JDTImportDeclarationImpl

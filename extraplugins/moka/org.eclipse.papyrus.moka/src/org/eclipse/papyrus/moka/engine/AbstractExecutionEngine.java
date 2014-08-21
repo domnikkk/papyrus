@@ -179,7 +179,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 * Starts the execution and the request dispatch loop.
 	 */
 	public void start() throws IOException {
-		if(eObjectToExecute != null) {
+		if (eObjectToExecute != null) {
 			String request = "";
 			// First accepts connection of the request socket (from the moka debug target) and initializes reader/writer
 			requestSocket = requestServer.accept();
@@ -192,41 +192,41 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 			eventWriter = new PrintWriter(eventSocket.getOutputStream());
 			// Communication protocol starts by notifying the moka debug target that execution has started
 			this.sendEvent(new Start_Event(this.debugTarget, this.getThreads()));
-			while(!this.isTerminated && request != null) {
+			while (!this.isTerminated && request != null) {
 				try {
 					request = requestReader.readLine();
-					if(request != null) {
-						if(request.startsWith(MokaConstants.request_addBreakpoint)) {
+					if (request != null) {
+						if (request.startsWith(MokaConstants.request_addBreakpoint)) {
 							// Add breakpoint request
 							this.addBreakpoint_reply(request);
-						} else if(request.startsWith(MokaConstants.request_removeBreakpoint)) {
+						} else if (request.startsWith(MokaConstants.request_removeBreakpoint)) {
 							// Remove breakpoint request
 							this.removeBreakpoint_reply(request);
-						} else if(request.startsWith(MokaConstants.request_disconnect)) {
+						} else if (request.startsWith(MokaConstants.request_disconnect)) {
 							// Disconnection requested
 							this.disconnect_reply();
-						} else if(request.startsWith(MokaConstants.request_resume)) {
+						} else if (request.startsWith(MokaConstants.request_resume)) {
 							// Resume requested
 							this.resume_reply(request);
-						} else if(request.startsWith(MokaConstants.request_suspend)) {
+						} else if (request.startsWith(MokaConstants.request_suspend)) {
 							// Suspend requested
 							this.suspend_reply(request);
-						} else if(request.startsWith(MokaConstants.request_terminate)) {
+						} else if (request.startsWith(MokaConstants.request_terminate)) {
 							// Terminate requested
 							this.terminate_reply(request);
-						} else if(request.startsWith(MokaConstants.request_getStackFrames)) {
+						} else if (request.startsWith(MokaConstants.request_getStackFrames)) {
 							// Stack frames requested
 							this.getStackFrames_reply(request);
-						} else if(request.startsWith(MokaConstants.request_getVariables)) {
+						} else if (request.startsWith(MokaConstants.request_getVariables)) {
 							// Variables requested
 							this.getVariables_reply(request);
-						} else if(request.startsWith(MokaConstants.request_getValue)) {
+						} else if (request.startsWith(MokaConstants.request_getValue)) {
 							// Variable value requested
 							this.getValue_reply(request);
-						} else if(request.startsWith(MokaConstants.request_getReferenceTypeName)) {
+						} else if (request.startsWith(MokaConstants.request_getReferenceTypeName)) {
 							// Reference type name of a variable requested
 							this.getReferenceTypeName_reply(request);
-						} else if(request.startsWith(MokaConstants.request_getValueString)) {
+						} else if (request.startsWith(MokaConstants.request_getValueString)) {
 							// String representation of a value requested
 							this.getValueString_reply(request);
 						}
@@ -377,7 +377,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 * start()
 	 *
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.moka.engine.IExecutionEngine#terminate(org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request)
 	 */
 	public abstract void terminate(Terminate_Request request);
@@ -411,7 +411,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	protected void getVariables_reply(String message) {
 		GetVariables_Request request = Marshaller.getInstance().getVariables_request_unmarshal(message);
-		GetVariables_Reply reply = new GetVariables_Reply((MokaVariable[])this.getVariables(request.getStackFrameOrValue()));
+		GetVariables_Reply reply = new GetVariables_Reply((MokaVariable[]) this.getVariables(request.getStackFrameOrValue()));
 		this.reply(reply);
 	}
 
@@ -422,7 +422,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	public IVariable[] getVariables(IDebugElement stackFrameOrValue) {
 		// By default, returns an empty array of variables
-		return new IVariable[]{};
+		return new IVariable[] {};
 	}
 
 	/*
@@ -432,7 +432,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	public IRegisterGroup[] getRegisterGroups(IStackFrame stackFrame) {
 		// Not supported
-		return new IRegisterGroup[]{};
+		return new IRegisterGroup[] {};
 	}
 
 	// **************************************
@@ -444,7 +444,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	protected void getValue_reply(String message) {
 		GetValue_Request request = Marshaller.getInstance().getValue_request_unmarshal(message);
-		GetValue_Reply reply = new GetValue_Reply((MokaValue)this.getValue(request.getVariable()));
+		GetValue_Reply reply = new GetValue_Reply((MokaValue) this.getValue(request.getVariable()));
 		this.reply(reply);
 	}
 
@@ -512,10 +512,10 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 * Convenience method for marshalling a Reply, and writing it on the replySocket so that it can be accessed by the debug target
 	 *
 	 * @param reply
-	 *        The Reply object to be marshalled and written on the replySocket
+	 *            The Reply object to be marshalled and written on the replySocket
 	 */
 	protected void reply(ReplyMessage reply) {
-		synchronized(replySocket) {
+		synchronized (replySocket) {
 			replyWriter.println(reply.marshal());
 			replyWriter.flush();
 		}
@@ -525,10 +525,10 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 * Convenience method for marshalling an Event, and writing it on the eventSocket so that it can be accessed by the debug target
 	 *
 	 * @param reply
-	 *        The Event object to be marshalled and written on the eventSocket
+	 *            The Event object to be marshalled and written on the eventSocket
 	 */
 	public void sendEvent(EventMessage event) {
-		synchronized(eventSocket) {
+		synchronized (eventSocket) {
 			eventWriter.println(event.marshal());
 			eventWriter.flush();
 		}

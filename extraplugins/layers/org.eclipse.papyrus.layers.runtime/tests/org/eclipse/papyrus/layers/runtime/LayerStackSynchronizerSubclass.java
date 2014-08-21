@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -18,6 +18,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStack;
 /**
  * A subclass registering events
  * For tests purpose.
+ * 
  * @author cedric dumoulin
  *
  */
@@ -26,8 +27,8 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	/**
 	 * List of recorded events.
 	 */
-	public TriggeredEventTraces traces ;
-	
+	public TriggeredEventTraces traces;
+
 	/**
 	 * Constructor.
 	 *
@@ -45,7 +46,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void propertyValueAdded(Notification notification) {
-		traces.addTrace( "propertyValueAdded", notification);
+		traces.addTrace("propertyValueAdded", notification);
 		super.propertyValueAdded(notification);
 	}
 
@@ -56,7 +57,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void propertyValueRemoved(Notification notification) {
-		traces.addTrace( "propertyValueRemoved", notification);
+		traces.addTrace("propertyValueRemoved", notification);
 		super.propertyValueRemoved(notification);
 	}
 
@@ -67,7 +68,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void propertyValueChanged(Notification notification) {
-		traces.addTrace( "propertyValueChanged", notification);
+		traces.addTrace("propertyValueChanged", notification);
 		super.propertyValueChanged(notification);
 	}
 
@@ -78,7 +79,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void layerAdded(Notification notification) {
-		traces.addTrace( "layerAdded", notification);
+		traces.addTrace("layerAdded", notification);
 		super.layerAdded(notification);
 	}
 
@@ -89,7 +90,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void layerRemoved(Notification notification) {
-		traces.addTrace( "layerRemoved", notification);
+		traces.addTrace("layerRemoved", notification);
 		super.layerRemoved(notification);
 	}
 
@@ -100,7 +101,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void layerMoved(Notification notification) {
-		traces.addTrace( "layerMoved", notification);
+		traces.addTrace("layerMoved", notification);
 		super.layerMoved(notification);
 	}
 
@@ -111,7 +112,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void layerSet(Notification notification) {
-		traces.addTrace( "layerSet", notification);
+		traces.addTrace("layerSet", notification);
 		super.layerSet(notification);
 	}
 
@@ -122,7 +123,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void viewAddedToLayer(Notification notification) {
-		traces.addTrace( "viewAddedToLayer", notification);
+		traces.addTrace("viewAddedToLayer", notification);
 		super.viewAddedToLayer(notification);
 	}
 
@@ -133,7 +134,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void viewRemovedFromLayer(Notification notification) {
-		traces.addTrace( "viewRemovedFromLayer", notification);
+		traces.addTrace("viewRemovedFromLayer", notification);
 		super.viewRemovedFromLayer(notification);
 	}
 
@@ -144,7 +145,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void viewMovedBetweenLayer(Notification notification) {
-		traces.addTrace( "viewMovedBetweenLayer", notification);
+		traces.addTrace("viewMovedBetweenLayer", notification);
 		super.viewMovedBetweenLayer(notification);
 	}
 
@@ -155,7 +156,7 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void diagramViewAdded(Notification msg) {
-		traces.addTrace( "diagramViewAdded", msg);
+		traces.addTrace("diagramViewAdded", msg);
 		super.diagramViewAdded(msg);
 	}
 
@@ -166,19 +167,19 @@ public class LayerStackSynchronizerSubclass extends LayerStackSynchronizer {
 	 */
 	@Override
 	public void diagramViewRemoved(Notification msg) {
-		traces.addTrace( "diagramViewRemoved", msg);
+		traces.addTrace("diagramViewRemoved", msg);
 		super.diagramViewRemoved(msg);
 	}
 
 	@Override
 	public void multiViewsAddedToLayer(Notification notification) {
-		traces.addTrace( "multiViewsAddedToLayer", notification);
+		traces.addTrace("multiViewsAddedToLayer", notification);
 		super.multiViewsAddedToLayer(notification);
 	}
-	
+
 	@Override
 	public void multiViewsRemovedFromLayer(Notification notification) {
-		traces.addTrace( "multiViewsRemovedFromLayer", notification);
+		traces.addTrace("multiViewsRemovedFromLayer", notification);
 		super.multiViewsRemovedFromLayer(notification);
 	}
 }

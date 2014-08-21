@@ -22,7 +22,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Abstract class for Collaborative handler which are enable only if the project is collaborative.
- * 
+ *
  * @author adaussy
  */
 public abstract class AbstractCollabHandler extends AbstractHandler {
@@ -35,7 +35,7 @@ public abstract class AbstractCollabHandler extends AbstractHandler {
 	@Override
 	public boolean isEnabled() {
 		EObject firstSelection = UIUtils.getFirstSelection();
-		if(firstSelection != null) {
+		if (firstSelection != null) {
 			return CollabUtils.isCollab(firstSelection);
 		}
 		return false;
@@ -43,8 +43,8 @@ public abstract class AbstractCollabHandler extends AbstractHandler {
 
 	protected ResourceSet getResourceSet() {
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editor instanceof CoreMultiDiagramEditor) {
-			CoreMultiDiagramEditor papyrusEditor = (CoreMultiDiagramEditor)editor;
+		if (editor instanceof CoreMultiDiagramEditor) {
+			CoreMultiDiagramEditor papyrusEditor = (CoreMultiDiagramEditor) editor;
 			return papyrusEditor.getEditingDomain().getResourceSet();
 		} else {
 			return null;

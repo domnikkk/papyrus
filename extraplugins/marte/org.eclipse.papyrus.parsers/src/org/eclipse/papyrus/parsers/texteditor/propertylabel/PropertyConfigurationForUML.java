@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,6 +39,7 @@ public class PropertyConfigurationForUML extends DefaultDirectEditorConfiguratio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public SourceViewerConfiguration getSourceViewerConfiguration() {
 		return configuration;
 	}
@@ -46,6 +47,7 @@ public class PropertyConfigurationForUML extends DefaultDirectEditorConfiguratio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getTextToEdit(Object editedObject) {
 		if (editedObject instanceof Property) {
 			return PropertyUtil.getLabel((Property) editedObject);
@@ -67,6 +69,7 @@ public class PropertyConfigurationForUML extends DefaultDirectEditorConfiguratio
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object postEditAction(Object editedObject, String text) {
 		// should undo the various creations done in the property edition
 		// (template binding, etc...)

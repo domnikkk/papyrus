@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.dd.dg.util.DGValidator;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.DefinitionImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implements Definition {
@@ -43,7 +43,7 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DefinitionImpl() {
@@ -71,7 +71,7 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,23 +81,26 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.DEFINITION__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -105,7 +108,7 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 	 * <em>Id Cannot Be Empty</em>}' invariant operation.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #idCannotBeEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -114,21 +117,23 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean idCannotBeEmpty(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DGValidator.validate(DGPackage.Literals.DEFINITION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP, ID_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.DEFINITION__ID_CANNOT_BE_EMPTY);
+		return DGValidator.validate(DGPackage.Literals.DEFINITION, this, diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL", DGPackage.Literals.DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP,
+				ID_CANNOT_BE_EMPTY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR, DGValidator.DIAGNOSTIC_SOURCE, DGValidator.DEFINITION__ID_CANNOT_BE_EMPTY);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.DEFINITION__ID:
 			return getId();
 		}
@@ -137,14 +142,14 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.DEFINITION__ID:
-			setId((String)newValue);
+			setId((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,12 +157,12 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.DEFINITION__ID:
 			setId(ID_EDEFAULT);
 			return;
@@ -167,12 +172,12 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.DEFINITION__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
@@ -181,28 +186,29 @@ public abstract class DefinitionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case DGPackage.DEFINITION___ID_CANNOT_BE_EMPTY__DIAGNOSTICCHAIN_MAP:
-			return idCannotBeEmpty((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			return idCannotBeEmpty((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);

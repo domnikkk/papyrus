@@ -27,6 +27,7 @@ public class ExtendedURIToURI implements Function<ExtendedURI, URI> {
 	 * 
 	 * @see com.google.common.base.Function#apply(java.lang.Object)
 	 */
+	@Override
 	public URI apply(ExtendedURI from) {
 		return from.getUri();
 	}

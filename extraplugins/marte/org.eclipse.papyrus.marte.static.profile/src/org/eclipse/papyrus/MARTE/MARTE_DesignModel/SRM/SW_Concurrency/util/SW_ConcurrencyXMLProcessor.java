@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_Concurr
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SW_ConcurrencyXMLProcessor extends XMLProcessor {
@@ -32,17 +33,19 @@ public class SW_ConcurrencyXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SW_ConcurrencyXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		SW_ConcurrencyPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the SW_ConcurrencyResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -55,4 +58,4 @@ public class SW_ConcurrencyXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //SW_ConcurrencyXMLProcessor
+} // SW_ConcurrencyXMLProcessor

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.uml2.uml.Constraint;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getBase_Constraint <em>Base Constraint</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getMode <em>Mode</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getBase_Constraint <em>Base Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpConstraintImpl#getMode <em>Mode</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getBase_Constraint() <em>Base Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Constraint()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	 * The cached value of the '{@link #getMode() <em>Mode</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMode()
 	 * @generated
 	 * @ordered
@@ -87,6 +91,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NfpConstraintImpl() {
@@ -96,6 +101,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,8 +112,10 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConstraintKind getKind() {
 		return kind;
 	}
@@ -115,27 +123,33 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(ConstraintKind newKind) {
 		ConstraintKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.NFP_CONSTRAINT__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Constraint getBase_Constraint() {
 		if (base_Constraint != null && base_Constraint.eIsProxy()) {
-			InternalEObject oldBase_Constraint = (InternalEObject)base_Constraint;
-			base_Constraint = (Constraint)eResolveProxy(oldBase_Constraint);
+			InternalEObject oldBase_Constraint = (InternalEObject) base_Constraint;
+			base_Constraint = (Constraint) eResolveProxy(oldBase_Constraint);
 			if (base_Constraint != oldBase_Constraint) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+				}
 			}
 		}
 		return base_Constraint;
@@ -144,6 +158,7 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Constraint basicGetBase_Constraint() {
@@ -153,20 +168,25 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Constraint(Constraint newBase_Constraint) {
 		Constraint oldBase_Constraint = base_Constraint;
 		base_Constraint = newBase_Constraint;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT, oldBase_Constraint, base_Constraint));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Mode> getMode() {
 		if (mode == null) {
 			mode = new EObjectResolvingEList<Mode>(Mode.class, this, NFPsPackage.NFP_CONSTRAINT__MODE);
@@ -177,18 +197,21 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NFPsPackage.NFP_CONSTRAINT__KIND:
-				return getKind();
-			case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
-				if (resolve) return getBase_Constraint();
-				return basicGetBase_Constraint();
-			case NFPsPackage.NFP_CONSTRAINT__MODE:
-				return getMode();
+		case NFPsPackage.NFP_CONSTRAINT__KIND:
+			return getKind();
+		case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
+			if (resolve) {
+				return getBase_Constraint();
+			}
+			return basicGetBase_Constraint();
+		case NFPsPackage.NFP_CONSTRAINT__MODE:
+			return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,22 +219,23 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NFPsPackage.NFP_CONSTRAINT__KIND:
-				setKind((ConstraintKind)newValue);
-				return;
-			case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
-				setBase_Constraint((Constraint)newValue);
-				return;
-			case NFPsPackage.NFP_CONSTRAINT__MODE:
-				getMode().clear();
-				getMode().addAll((Collection<? extends Mode>)newValue);
-				return;
+		case NFPsPackage.NFP_CONSTRAINT__KIND:
+			setKind((ConstraintKind) newValue);
+			return;
+		case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
+			setBase_Constraint((Constraint) newValue);
+			return;
+		case NFPsPackage.NFP_CONSTRAINT__MODE:
+			getMode().clear();
+			getMode().addAll((Collection<? extends Mode>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -219,20 +243,21 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.NFP_CONSTRAINT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
-			case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
-				setBase_Constraint((Constraint)null);
-				return;
-			case NFPsPackage.NFP_CONSTRAINT__MODE:
-				getMode().clear();
-				return;
+		case NFPsPackage.NFP_CONSTRAINT__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
+		case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
+			setBase_Constraint((Constraint) null);
+			return;
+		case NFPsPackage.NFP_CONSTRAINT__MODE:
+			getMode().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,17 +265,18 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.NFP_CONSTRAINT__KIND:
-				return kind != KIND_EDEFAULT;
-			case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
-				return base_Constraint != null;
-			case NFPsPackage.NFP_CONSTRAINT__MODE:
-				return mode != null && !mode.isEmpty();
+		case NFPsPackage.NFP_CONSTRAINT__KIND:
+			return kind != KIND_EDEFAULT;
+		case NFPsPackage.NFP_CONSTRAINT__BASE_CONSTRAINT:
+			return base_Constraint != null;
+		case NFPsPackage.NFP_CONSTRAINT__MODE:
+			return mode != null && !mode.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -258,11 +284,14 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
@@ -271,4 +300,4 @@ public class NfpConstraintImpl extends EObjectImpl implements NfpConstraint {
 		return result.toString();
 	}
 
-} //NfpConstraintImpl
+} // NfpConstraintImpl

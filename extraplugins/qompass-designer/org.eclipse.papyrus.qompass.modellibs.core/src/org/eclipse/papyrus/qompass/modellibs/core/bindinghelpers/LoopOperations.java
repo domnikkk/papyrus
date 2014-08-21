@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -43,36 +43,37 @@ import org.eclipse.uml2.uml.Type;
 public class LoopOperations implements IBindingHelper, PreCopyListener {
 
 	private TemplateBinding binding;
-	
+
+	@Override
 	public EObject preCopyEObject(LazyCopier copy, EObject sourceEObj) {
-		
-		if(sourceEObj instanceof Operation) {
-			Operation operation = (Operation)sourceEObj;
+
+		if (sourceEObj instanceof Operation) {
+			Operation operation = (Operation) sourceEObj;
 
 			Classifier actual = TemplateUtils.getFirstActualFromBinding(binding);
-			
-			if(!(actual instanceof Interface)) {
+
+			if (!(actual instanceof Interface)) {
 				return sourceEObj;
 			}
-			Interface passedActualIntf = (Interface)actual;
+			Interface passedActualIntf = (Interface) actual;
 			Operation last = null;
 			EList<Element> removalList = new BasicEList<Element>();
-			for(Operation intfOperation : passedActualIntf.getAllOperations()) {
-				for(Element removalElement : removalList) {
+			for (Operation intfOperation : passedActualIntf.getAllOperations()) {
+				for (Element removalElement : removalList) {
 					copy.removeForCopy(removalElement); // enable subsequent instantiations
 				}
 				removalList.clear();
 				last = BindingUtils.instantiateOperation(copy, intfOperation, operation);
 				removalList.add(operation);
-				for(Behavior method : operation.getMethods()) {
-					if(method instanceof OpaqueBehavior) {
+				for (Behavior method : operation.getMethods()) {
+					if (method instanceof OpaqueBehavior) {
 						try {
 							Behavior newBehavior =
-								BindingUtils.instantiateBehavior(copy, intfOperation, (OpaqueBehavior)method);
+									BindingUtils.instantiateBehavior(copy, intfOperation, (OpaqueBehavior) method);
 							newBehavior.setSpecification(last);
-						}
-						catch (TransformationException e) {
-							Activator.log.error(e);;
+						} catch (TransformationException e) {
+							Activator.log.error(e);
+							;
 						}
 						// removalList.add(method);
 						copy.removeForCopy(method); // enable subsequent instantiations
@@ -84,36 +85,35 @@ public class LoopOperations implements IBindingHelper, PreCopyListener {
 			copy.put(operation, last);
 			return last;
 			/*
-			else { // not LOOP_OPERATIONS
-			Operation newOperation = instantiateOperation(actual, template, operation, boundClass);
-			for(Behavior method : operation.getMethods()) {
-				if(method instanceof OpaqueBehavior) {
-					Behavior newBehavior =
-						instantiateBehavior(actual, template, (OpaqueBehavior)method);
-					newBehavior.setSpecification(newOperation);
-				}
-			}
-			return newOperation;
-			*/
+			 * else { // not LOOP_OPERATIONS
+			 * Operation newOperation = instantiateOperation(actual, template, operation, boundClass);
+			 * for(Behavior method : operation.getMethods()) {
+			 * if(method instanceof OpaqueBehavior) {
+			 * Behavior newBehavior =
+			 * instantiateBehavior(actual, template, (OpaqueBehavior)method);
+			 * newBehavior.setSpecification(newOperation);
+			 * }
+			 * }
+			 * return newOperation;
+			 */
 		}
-		else if(sourceEObj instanceof EnumerationLiteral) {
-			EnumerationLiteral literal = (EnumerationLiteral)sourceEObj;
+		else if (sourceEObj instanceof EnumerationLiteral) {
+			EnumerationLiteral literal = (EnumerationLiteral) sourceEObj;
 			Classifier actual = TemplateUtils.getFirstActualFromBinding(binding);
 			// Type passedActual = getPassedActual(template, actual, boundClass);
 			Type passedActual = actual;
-			if(!(passedActual instanceof Interface)) {
+			if (!(passedActual instanceof Interface)) {
 				return sourceEObj;
 			}
-			Interface passedActualIntf = (Interface)passedActual;
+			Interface passedActualIntf = (Interface) passedActual;
 			EnumerationLiteral newLiteral = null;
-			for(Operation intfOperation : passedActualIntf.getAllOperations()) {
+			for (Operation intfOperation : passedActualIntf.getAllOperations()) {
 				copy.removeForCopy(literal);
 				newLiteral = copy.getCopy(literal);
 				try {
 					String newName = AcceleoDriverWrapper.evaluate(literal.getName(), intfOperation, null);
 					newLiteral.setName(newName);
-				}
-				catch (TransformationException e) {
+				} catch (TransformationException e) {
 					Activator.log.error(e);
 					newLiteral.setName("none"); //$NON-NLS-1$
 				}

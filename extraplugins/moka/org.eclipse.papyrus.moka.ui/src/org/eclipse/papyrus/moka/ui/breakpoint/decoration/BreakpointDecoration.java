@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator = org.eclipse.papyrus.infra.widgets.Activator.getDefault();
 		ImageDescriptor overlay = null;
 		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false);
-		if(isEnabled) {
+		if (isEnabled) {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16);
 		} else {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);
@@ -62,7 +62,7 @@ public class BreakpointDecoration implements IDecorationSpecificFunctions {
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator = org.eclipse.papyrus.infra.widgets.Activator.getDefault();
 		ImageDescriptor overlay = null;
 		boolean isEnabled = marker.getAttribute(IBreakpoint.ENABLED, false);
-		if(isEnabled) {
+		if (isEnabled) {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16);
 		} else {
 			overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -65,12 +65,12 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 
-	    // Check other instances creation
-		assertNotNull("propertyRegistry created", application.getPropertyRegistry()	);
-		assertNotNull("layerDescriptorRegistry created", application.getLayerDescriptorRegistry()	);
-		assertNotNull("propertySetterRegistry  created", application.getPropertySetterRegistry()	);
-		assertNotNull("LayerOperatorDescriptorRegistry  created", application.getLayerOperatorDescriptorRegistry()	);
-		
+		// Check other instances creation
+		assertNotNull("propertyRegistry created", application.getPropertyRegistry());
+		assertNotNull("layerDescriptorRegistry created", application.getLayerDescriptorRegistry());
+		assertNotNull("propertySetterRegistry  created", application.getPropertySetterRegistry());
+		assertNotNull("LayerOperatorDescriptorRegistry  created", application.getLayerOperatorDescriptorRegistry());
+
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 
-	    // Check other instances creation
-		assertNotNull("stacks list created", application.getLayersStacks()	);
+		// Check other instances creation
+		assertNotNull("stacks list created", application.getLayersStacks());
 	}
 
 	/**
@@ -93,8 +93,8 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 
-	    // Check other instances creation
-		assertNotNull("propertyRegistry created", application.getPropertyRegistry()	);
+		// Check other instances creation
+		assertNotNull("propertyRegistry created", application.getPropertyRegistry());
 	}
 
 	/**
@@ -105,8 +105,8 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 
-	    // Check other instances creation
-		assertNotNull("layerDescriptorRegistry created", application.getLayerDescriptorRegistry()	);
+		// Check other instances creation
+		assertNotNull("layerDescriptorRegistry created", application.getLayerDescriptorRegistry());
 	}
 
 	/**
@@ -117,10 +117,10 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		// try to get a layer stack
 		application.getLayersStackFor(diagram);
-		
+
 		// Create a second stack
 		Diagram diagram2 = NotationFactory.eINSTANCE.createDiagram();
 		LayersStack stack2 = application.getLayersStackFor(diagram2);
@@ -141,38 +141,39 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		// check if there is a stack
-		assertFalse( "no stack is found", application.isLayersStackAttachedFor(diagram) );
-		
+		assertFalse("no stack is found", application.isLayersStackAttachedFor(diagram));
+
 		// try to get a layer stack
 		LayersStack stack = application.getLayersStackFor(diagram);
 		assertNotNull("stack is created", stack);
-		
+
 		assertTrue("stack is attached", application.isLayersStackAttachedFor(diagram));
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LayersStackApplicationImpl#lookupLayersStackFor(org.eclipse.gmf.runtime.notation.Diagram)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testLookupLayersStackFor() throws NotFoundException {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		// Try to lookup. Should found nothing
 		try {
 			application.lookupLayersStackFor(diagram);
 			fail("An NotFoundException should be throw");
 		} catch (NotFoundException e) {
 		}
-		
+
 		// try to get a layer stack
 		LayersStack stack = application.getLayersStackFor(diagram);
 		assertNotNull("stack is created", stack);
-		
+
 		assertSame("lookup found stack", stack, application.lookupLayersStackFor(diagram));
 	}
 
@@ -184,11 +185,11 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		// try to get a layer stack
 		LayersStack stack = application.getLayersStackFor(diagram);
 		assertNotNull("stack is created", stack);
-		
+
 		// Create a second stack
 		Diagram diagram2 = NotationFactory.eINSTANCE.createDiagram();
 		LayersStack stack2 = application.getLayersStackFor(diagram2);
@@ -197,7 +198,7 @@ public class LayersStackApplicationImplTest {
 		// Get them again
 		assertSame("get found previuous stack", stack, application.getLayersStackFor(diagram));
 		assertSame("get found previuous stack", stack2, application.getLayersStackFor(diagram2));
-		
+
 	}
 
 	/**
@@ -208,11 +209,11 @@ public class LayersStackApplicationImplTest {
 		// Create instance
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
-		
+
 		// try to get a layer stack
 		LayersStack stack = application.createLayersStackFor(diagram);
 		assertNotNull("stack is created", stack);
-		
+
 	}
 
 }

@@ -1,8 +1,8 @@
 /*******************************************************************************
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *******************************************************************************/
@@ -31,10 +31,11 @@ public class AllocateHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isEnabled() {
 		updateSelectedEObject();
-		if(selectedEObject instanceof Package) {
-			return (StereotypeUtil.isApplied((Package)selectedEObject, DeploymentPlan.class));
+		if (selectedEObject instanceof Package) {
+			return (StereotypeUtil.isApplied((Package) selectedEObject, DeploymentPlan.class));
 		}
 		return false;
 	}
@@ -42,19 +43,20 @@ public class AllocateHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event)
-		throws ExecutionException {
-		if(!(selectedEObject instanceof Package)) {
+			throws ExecutionException {
+		if (!(selectedEObject instanceof Package)) {
 			return null;
 		}
 
-		final Package cdp = (Package)selectedEObject;
+		final Package cdp = (Package) selectedEObject;
 		final Shell shell = new Shell();
 
 		// org.eclipse.papyrus.qompass.designer.vsl.ParseVSL.test();
-		if(DepUtils.getMainInstance(cdp) == null) {
+		if (DepUtils.getMainInstance(cdp) == null) {
 			MessageDialog.openInformation(shell, "Error",
-				"Deployment plan has no main instance (check stereotype attribute mainInstance)");
+					"Deployment plan has no main instance (check stereotype attribute mainInstance)");
 			return null;
 		}
 
@@ -66,12 +68,13 @@ public class AllocateHandler extends CmdHandler {
 		// howto select? which? (and howto add/remove?) - Std - dialog is good?
 		CommandSupport.exec("Instance allocation", event, new RunnableWithResult() {
 
+			@Override
 			public CommandResult run() {
 				AllocationDialog allocDialog =
-					new AllocationDialog(shell, cdp);
+						new AllocationDialog(shell, cdp);
 				allocDialog.setTitle("Allocate instances");
 				allocDialog.open();
-				if(allocDialog.getReturnCode() == IDialogConstants.OK_ID) {
+				if (allocDialog.getReturnCode() == IDialogConstants.OK_ID) {
 					return CommandResult.newOKCommandResult();
 				}
 				else {

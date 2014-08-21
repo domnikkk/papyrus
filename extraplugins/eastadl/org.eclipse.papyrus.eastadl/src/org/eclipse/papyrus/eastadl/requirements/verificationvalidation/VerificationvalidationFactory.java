@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.requirements.verificationvalidation.VerificationvalidationPackage
  * @generated
  */
@@ -17,6 +18,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	VerificationvalidationFactory eINSTANCE = org.eclipse.papyrus.eastadl.requirements.verificationvalidation.impl.VerificationvalidationFactoryImpl.init();
@@ -25,6 +27,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Stimuli</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Stimuli</em>'.
 	 * @generated
 	 */
@@ -34,6 +37,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Intended Outcome</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Intended Outcome</em>'.
 	 * @generated
 	 */
@@ -43,6 +47,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Actual Outcome</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Actual Outcome</em>'.
 	 * @generated
 	 */
@@ -52,6 +57,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Case</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Case</em>'.
 	 * @generated
 	 */
@@ -61,6 +67,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Target</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Target</em>'.
 	 * @generated
 	 */
@@ -70,6 +77,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Log</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Log</em>'.
 	 * @generated
 	 */
@@ -79,6 +87,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>VV Procedure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>VV Procedure</em>'.
 	 * @generated
 	 */
@@ -88,6 +97,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>Verification Validation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Verification Validation</em>'.
 	 * @generated
 	 */
@@ -97,6 +107,7 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns a new object of class '<em>Verify</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Verify</em>'.
 	 * @generated
 	 */
@@ -106,9 +117,10 @@ public interface VerificationvalidationFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	VerificationvalidationPackage getVerificationvalidationPackage();
 
-} //VerificationvalidationFactory
+} // VerificationvalidationFactory

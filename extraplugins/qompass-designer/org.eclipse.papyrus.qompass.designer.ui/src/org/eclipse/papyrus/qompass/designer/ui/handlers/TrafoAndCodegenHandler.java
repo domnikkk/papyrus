@@ -24,11 +24,12 @@ public class TrafoAndCodegenHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// only one model is selected
 		selectedPkg = null;
-		if(selectedEObject instanceof Package) {
-			selectedPkg = (Package)selectedEObject;
+		if (selectedEObject instanceof Package) {
+			selectedPkg = (Package) selectedEObject;
 		} else {
 			return null;
 		}
@@ -46,11 +47,11 @@ public class TrafoAndCodegenHandler extends CmdHandler {
 		};
 		job.setUser(true);
 		job.schedule();
-	
+
 		return null;
 	}
 
 	protected Package selectedPkg;
-	
+
 	protected IProject project;
 }

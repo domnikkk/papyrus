@@ -15,10 +15,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * LogicalBusKind is an enumeration type representing different kinds of busses.
- * 
- * Extension: 
+ *
+ * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.structure.hardwaremodeling.HardwaremodelingPackage#getHardwareBusKind()
  * @model
  * @generated
@@ -28,6 +29,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * The '<em><b>Time Triggered</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TIME_TRIGGERED_VALUE
 	 * @generated
 	 * @ordered
@@ -38,6 +40,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * The '<em><b>Event Triggered</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #EVENT_TRIGGERED_VALUE
 	 * @generated
 	 * @ordered
@@ -48,6 +51,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * The '<em><b>Timeand Event Triggered</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TIMEAND_EVENT_TRIGGERED_VALUE
 	 * @generated
 	 * @ordered
@@ -58,6 +62,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OTHER_VALUE
 	 * @generated
 	 * @ordered
@@ -71,6 +76,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Bus is time-triggered
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #TIME_TRIGGERED
 	 * @model name="TimeTriggered"
 	 * @generated
@@ -85,6 +91,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Bus is event-triggered
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #EVENT_TRIGGERED
 	 * @model name="EventTriggered"
 	 * @generated
@@ -99,6 +106,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Bus is both time and event-triggered
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #TIMEAND_EVENT_TRIGGERED
 	 * @model name="TimeandEventTriggered"
 	 * @generated
@@ -113,6 +121,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * Another type of bus communication
 	 * <!-- end-model-doc -->
+	 * 
 	 * @see #OTHER
 	 * @model name="other"
 	 * @generated
@@ -124,20 +133,22 @@ public enum HardwareBusKind implements Enumerator {
 	 * An array of all the '<em><b>Hardware Bus Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final HardwareBusKind[] VALUES_ARRAY =
-		new HardwareBusKind[] {
-			TIME_TRIGGERED,
-			EVENT_TRIGGERED,
-			TIMEAND_EVENT_TRIGGERED,
-			OTHER,
-		};
+			new HardwareBusKind[] {
+					TIME_TRIGGERED,
+					EVENT_TRIGGERED,
+					TIMEAND_EVENT_TRIGGERED,
+					OTHER,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Hardware Bus Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<HardwareBusKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -146,6 +157,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * Returns the '<em><b>Hardware Bus Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static HardwareBusKind get(String literal) {
@@ -162,6 +174,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * Returns the '<em><b>Hardware Bus Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static HardwareBusKind getByName(String name) {
@@ -178,14 +191,19 @@ public enum HardwareBusKind implements Enumerator {
 	 * Returns the '<em><b>Hardware Bus Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static HardwareBusKind get(int value) {
 		switch (value) {
-			case TIME_TRIGGERED_VALUE: return TIME_TRIGGERED;
-			case EVENT_TRIGGERED_VALUE: return EVENT_TRIGGERED;
-			case TIMEAND_EVENT_TRIGGERED_VALUE: return TIMEAND_EVENT_TRIGGERED;
-			case OTHER_VALUE: return OTHER;
+		case TIME_TRIGGERED_VALUE:
+			return TIME_TRIGGERED;
+		case EVENT_TRIGGERED_VALUE:
+			return EVENT_TRIGGERED;
+		case TIMEAND_EVENT_TRIGGERED_VALUE:
+			return TIMEAND_EVENT_TRIGGERED;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
@@ -193,6 +211,7 @@ public enum HardwareBusKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -200,6 +219,7 @@ public enum HardwareBusKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -207,6 +227,7 @@ public enum HardwareBusKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -215,6 +236,7 @@ public enum HardwareBusKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private HardwareBusKind(int value, String name, String literal) {
@@ -226,39 +248,46 @@ public enum HardwareBusKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //HardwareBusKind
+
+} // HardwareBusKind

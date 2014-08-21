@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter#canGenerate(java.lang.Object, java.lang.Object)
 	 */
 	@Override
@@ -53,31 +53,30 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter#doGenerate(java.lang.Object, java.lang.Object,
-	 *      org.eclipse.emf.common.util.Monitor)
+	 *
+	 * @see org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter#doGenerate(java.lang.Object, java.lang.Object, org.eclipse.emf.common.util.Monitor)
 	 */
 	@Override
 	protected Diagnostic doGenerate(Object object, Object projectType, Monitor monitor) throws Exception {
-		GenModel genmodel = (GenModel)object;
+		GenModel genmodel = (GenModel) object;
 		IFolder folder = null;
 		final IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
-		if(projectType == GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE) {
+		if (projectType == GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE) {
 			final Object codeFormatter = createCodeFormatter(null, URI.createPlatformResourceURI(genmodel.getModelDirectory(), true));
 			folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(new Path(genmodel.getModelDirectory())); // path);
-			if(folder != null && folder.isAccessible()) {
+			if (folder != null && folder.isAccessible()) {
 				folder.accept(new ResourceVisitorFormatter(codeFormatter, progressMonitor));
 			}
-		} else if(projectType == GenBaseGeneratorAdapter.EDIT_PROJECT_TYPE) {
+		} else if (projectType == GenBaseGeneratorAdapter.EDIT_PROJECT_TYPE) {
 			final Object codeFormatter = createCodeFormatter(null, URI.createPlatformResourceURI(genmodel.getEditDirectory(), true));
 			folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(new Path(genmodel.getEditDirectory()));
-			if(folder != null && folder.isAccessible()) {
+			if (folder != null && folder.isAccessible()) {
 				folder.accept(new ResourceVisitorFormatter(codeFormatter, progressMonitor));
 			}
-		} else if(projectType == GenBaseGeneratorAdapter.EDITOR_PROJECT_TYPE) {
+		} else if (projectType == GenBaseGeneratorAdapter.EDITOR_PROJECT_TYPE) {
 			final Object codeFormatter = createCodeFormatter(null, URI.createPlatformResourceURI(genmodel.getEditorDirectory(), true));
 			folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(new Path(genmodel.getEditorDirectory()));
-			if(folder != null && folder.isAccessible()) {
+			if (folder != null && folder.isAccessible()) {
 				folder.accept(new ResourceVisitorFormatter(codeFormatter, progressMonitor));
 			}
 		}
@@ -102,7 +101,7 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 	 */
 	protected IPath buildProviderPath(GenModel genmodel, GenPackage genPack) {
 		String pathStr = genmodel.getEditDirectory();
-		if(genPack.getProviderPackageName() != null && !genPack.getProviderPackageName().equals("")) { //$NON-NLS-1$
+		if (genPack.getProviderPackageName() != null && !genPack.getProviderPackageName().equals("")) { //$NON-NLS-1$
 			pathStr += "/" + genPack.getProviderPackageName().replaceAll("\\.", "/"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		IPath path = new Path(pathStr);
@@ -116,7 +115,7 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 	 */
 	protected IPath buildPresentationPath(GenModel genmodel, GenPackage genPack) {
 		String pathStr = genmodel.getEditorDirectory();
-		if(genPack.getPresentationPackageName() != null && !genPack.getPresentationPackageName().equals("")) { //$NON-NLS-1$
+		if (genPack.getPresentationPackageName() != null && !genPack.getPresentationPackageName().equals("")) { //$NON-NLS-1$
 			pathStr += "/" + genPack.getPresentationPackageName().replaceAll("\\.", "/"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		IPath path = new Path(pathStr);
@@ -125,7 +124,7 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 
 	/**
 	 * IResourceVisitor responsible to format all java code in a given folder.
-	 * 
+	 *
 	 * @author <a href="mailto:goulwen.lefur@obeo.fr">Goulwen Le Fur</a>
 	 */
 	private final class ResourceVisitorFormatter implements IResourceVisitor {
@@ -139,12 +138,13 @@ public class EEFGeneratorAdapter extends AbstractGeneratorAdapter {
 			this.progressMonitor = progressMonitor;
 		}
 
+		@Override
 		public boolean visit(IResource resource) throws CoreException {
 			try {
-				String fileExtension = ((IFile)resource).getFileExtension();
-				if(fileExtension != null) {
-					if(resource instanceof IFile && fileExtension.equals(JAVA_EXT_FILE)) {
-						formatFile((IFile)resource, codeFormatter, progressMonitor);
+				String fileExtension = ((IFile) resource).getFileExtension();
+				if (fileExtension != null) {
+					if (resource instanceof IFile && fileExtension.equals(JAVA_EXT_FILE)) {
+						formatFile((IFile) resource, codeFormatter, progressMonitor);
 					}
 				}
 				return true;

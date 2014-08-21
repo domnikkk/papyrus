@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp.impl;
 
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.C_Cpp.Template;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl#getDeclaration <em>Declaration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl#getBase_class <em>Base class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl#getDeclaration <em>Declaration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl#getBase_class <em>Base class</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The default value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The cached value of the '{@link #getDeclaration() <em>Declaration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaration()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	 * The cached value of the '{@link #getBase_class() <em>Base class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_class()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TemplateImpl() {
@@ -77,6 +81,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,8 +92,10 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDeclaration() {
 		return declaration;
 	}
@@ -96,27 +103,33 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDeclaration(String newDeclaration) {
 		String oldDeclaration = declaration;
 		declaration = newDeclaration;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.TEMPLATE__DECLARATION, oldDeclaration, declaration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_class() {
 		if (base_class != null && base_class.eIsProxy()) {
-			InternalEObject oldBase_class = (InternalEObject)base_class;
-			base_class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_class);
+			InternalEObject oldBase_class = (InternalEObject) base_class;
+			base_class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_class);
 			if (base_class != oldBase_class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, C_CppPackage.TEMPLATE__BASE_CLASS, oldBase_class, base_class));
+				}
 			}
 		}
 		return base_class;
@@ -125,6 +138,7 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_class() {
@@ -134,28 +148,34 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_class(org.eclipse.uml2.uml.Class newBase_class) {
 		org.eclipse.uml2.uml.Class oldBase_class = base_class;
 		base_class = newBase_class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, C_CppPackage.TEMPLATE__BASE_CLASS, oldBase_class, base_class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE__DECLARATION:
-				return getDeclaration();
-			case C_CppPackage.TEMPLATE__BASE_CLASS:
-				if (resolve) return getBase_class();
-				return basicGetBase_class();
+		case C_CppPackage.TEMPLATE__DECLARATION:
+			return getDeclaration();
+		case C_CppPackage.TEMPLATE__BASE_CLASS:
+			if (resolve) {
+				return getBase_class();
+			}
+			return basicGetBase_class();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,17 +183,18 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE__DECLARATION:
-				setDeclaration((String)newValue);
-				return;
-			case C_CppPackage.TEMPLATE__BASE_CLASS:
-				setBase_class((org.eclipse.uml2.uml.Class)newValue);
-				return;
+		case C_CppPackage.TEMPLATE__DECLARATION:
+			setDeclaration((String) newValue);
+			return;
+		case C_CppPackage.TEMPLATE__BASE_CLASS:
+			setBase_class((org.eclipse.uml2.uml.Class) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -181,17 +202,18 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE__DECLARATION:
-				setDeclaration(DECLARATION_EDEFAULT);
-				return;
-			case C_CppPackage.TEMPLATE__BASE_CLASS:
-				setBase_class((org.eclipse.uml2.uml.Class)null);
-				return;
+		case C_CppPackage.TEMPLATE__DECLARATION:
+			setDeclaration(DECLARATION_EDEFAULT);
+			return;
+		case C_CppPackage.TEMPLATE__BASE_CLASS:
+			setBase_class((org.eclipse.uml2.uml.Class) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,15 +221,16 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case C_CppPackage.TEMPLATE__DECLARATION:
-				return DECLARATION_EDEFAULT == null ? declaration != null : !DECLARATION_EDEFAULT.equals(declaration);
-			case C_CppPackage.TEMPLATE__BASE_CLASS:
-				return base_class != null;
+		case C_CppPackage.TEMPLATE__DECLARATION:
+			return DECLARATION_EDEFAULT == null ? declaration != null : !DECLARATION_EDEFAULT.equals(declaration);
+		case C_CppPackage.TEMPLATE__BASE_CLASS:
+			return base_class != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,11 +238,14 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaration: "); //$NON-NLS-1$
@@ -228,4 +254,4 @@ public class TemplateImpl extends MinimalEObjectImpl.Container implements Templa
 		return result.toString();
 	}
 
-} //TemplateImpl
+} // TemplateImpl

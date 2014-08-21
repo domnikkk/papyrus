@@ -20,6 +20,7 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ActuatorHardwareImpl() {
@@ -29,6 +30,7 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ActuatorHardwareImpl extends HardwareImpl implements ActuatorHardwa
 		return RobotMLPackage.Literals.ACTUATOR_HARDWARE;
 	}
 
-} //ActuatorHardwareImpl
+} // ActuatorHardwareImpl

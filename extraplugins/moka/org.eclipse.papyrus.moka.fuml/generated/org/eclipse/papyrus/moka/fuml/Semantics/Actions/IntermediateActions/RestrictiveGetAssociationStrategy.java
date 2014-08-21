@@ -24,10 +24,10 @@ public class RestrictiveGetAssociationStrategy extends DefaultGetAssociationStra
 		// then get the associated association,
 		// ONLY IF THIS FEATURE IS OWNED BY THE ASSOCIATION
 		Association association = null;
-		if(feature instanceof Property) {
-			association = ((Property)feature).getAssociation();
+		if (feature instanceof Property) {
+			association = ((Property) feature).getAssociation();
 		}
-		if(association != null && !association.getOwnedEnds().contains(feature)) {
+		if (association != null && !association.getOwnedEnds().contains(feature)) {
 			association = null;
 		}
 		return association;

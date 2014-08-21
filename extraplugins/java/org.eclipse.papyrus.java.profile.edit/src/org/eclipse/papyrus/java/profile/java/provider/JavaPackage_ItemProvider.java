@@ -30,11 +30,12 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage_;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.profile.java.JavaPackage_} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JavaPackage_ItemProvider
-	extends JavaGenItemProvider
-	implements
+		extends JavaGenItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class JavaPackage_ItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaPackage_ItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class JavaPackage_ItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,50 +74,53 @@ public class JavaPackage_ItemProvider
 	 * This adds a property descriptor for the Package Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addPackageNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JavaPackage__packageName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JavaPackage__packageName_feature", "_UI_JavaPackage__type"),
-				 JavaPackage.Literals.JAVA_PACKAGE___PACKAGE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JavaPackage__packageName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JavaPackage__packageName_feature", "_UI_JavaPackage__type"),
+						JavaPackage.Literals.JAVA_PACKAGE___PACKAGE_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addBase_PackagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JavaPackage__base_Package_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JavaPackage__base_Package_feature", "_UI_JavaPackage__type"),
-				 JavaPackage.Literals.JAVA_PACKAGE___BASE_PACKAGE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JavaPackage__base_Package_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JavaPackage__base_Package_feature", "_UI_JavaPackage__type"),
+						JavaPackage.Literals.JAVA_PACKAGE___BASE_PACKAGE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns JavaPackage_.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,14 +132,15 @@ public class JavaPackage_ItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JavaPackage_)object).getName();
+		String label = ((JavaPackage_) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JavaPackage__type") :
-			getString("_UI_JavaPackage__type") + " " + label;
+				getString("_UI_JavaPackage__type") :
+				getString("_UI_JavaPackage__type") + " " + label;
 	}
 
 	/**
@@ -141,6 +148,7 @@ public class JavaPackage_ItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,9 +156,9 @@ public class JavaPackage_ItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JavaPackage_.class)) {
-			case JavaPackage.JAVA_PACKAGE___PACKAGE_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case JavaPackage.JAVA_PACKAGE___PACKAGE_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -160,6 +168,7 @@ public class JavaPackage_ItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -33,20 +33,20 @@ public class CppPanelView extends AbstractCppPanelView {
 	 * Creates the new panel, when switching UI.
 	 * <p>
 	 * This class should be overloaded when working with RSA or other tools, using a new PanelFactory
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the new panel
+	 *            the parent of the new panel
 	 * @param style
-	 *        the SWT style of this panel
+	 *            the SWT style of this panel
 	 * @param element
-	 *        the element for which the panel is created
+	 *            the element for which the panel is created
 	 * @return the newly created panel
 	 */
 	@Override
 	protected CppAbstractPanel createPanel(Composite parent, int style,
-		Element element) {
+			Element element) {
 		return org.eclipse.papyrus.views.panels.PanelFactory.eINSTANCE
-			.createPanel(parent, 0, currentTarget);
+				.createPanel(parent, 0, currentTarget);
 	}
 
 	/*
@@ -55,21 +55,22 @@ public class CppPanelView extends AbstractCppPanelView {
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart,
 	 * org.eclipse.jface.viewers.ISelection)
 	 */
+	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
 		IStructuredSelection sSelection = null;
-		if(selection instanceof IStructuredSelection) {
-			sSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			sSelection = (IStructuredSelection) selection;
 		}
 
 		// exclude case of an empty selection which is not a Tree selection, since changing views provokes an
 		// empty selection (selection gets lost, although same element remains selected)
-		if((selection != null) && (sSelection != null) && sSelection.isEmpty()) {
+		if ((selection != null) && (sSelection != null) && sSelection.isEmpty()) {
 			return;
 		}
 
 		// No available selection: switch to default panel
-		if((sSelection == null) || (sSelection.size() != 1)) {
+		if ((sSelection == null) || (sSelection.size() != 1)) {
 			currentTarget = null;
 			switchUI();
 			return;
@@ -77,10 +78,10 @@ public class CppPanelView extends AbstractCppPanelView {
 
 		// Retrieve selected object
 		EObject currentObject = EMFHelper.getEObject(sSelection.getFirstElement());
-	
-		if(currentObject instanceof Element) {
-			if(currentTarget != currentObject) {
-				currentTarget = (Element)currentObject;
+
+		if (currentObject instanceof Element) {
+			if (currentTarget != currentObject) {
+				currentTarget = currentObject;
 				switchUI();
 			}
 		}

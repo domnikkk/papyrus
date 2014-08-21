@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,8 +26,8 @@ import org.eclipse.uml2.uml.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate <em>Take Rate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate <em>Take Rate</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface TakeRateConstraint extends GenericConstraint {
 	 * The list contents are of type {@link org.eclipse.uml2.uml.NamedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Source</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Source</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getTakeRateConstraint_Source()
 	 * @model ordered="false"
@@ -56,10 +56,10 @@ public interface TakeRateConstraint extends GenericConstraint {
 	 * Returns the value of the '<em><b>Take Rate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Take Rate</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Take Rate</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Take Rate</em>' attribute.
 	 * @see #setTakeRate(Float)
 	 * @see org.eclipse.papyrus.eastadl.genericconstraints.GenericconstraintsPackage#getTakeRateConstraint_TakeRate()
@@ -72,7 +72,9 @@ public interface TakeRateConstraint extends GenericConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint#getTakeRate <em>Take Rate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Take Rate</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Take Rate</em>' attribute.
 	 * @see #getTakeRate()
 	 * @generated
 	 */

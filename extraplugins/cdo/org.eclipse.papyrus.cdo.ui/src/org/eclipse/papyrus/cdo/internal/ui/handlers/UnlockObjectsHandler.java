@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,12 +24,13 @@ import org.eclipse.papyrus.cdo.internal.ui.Activator;
 public class UnlockObjectsHandler
 		extends AbstractHandler {
 
+	@Override
 	public Object execute(ExecutionEvent event)
 			throws ExecutionException {
 
 		List<Object> selected = UIHandlerUtil.getSelection(event);
 		Activator.getActiveDawnEditor().getDawnEditorSupport()
-			.unlockObjects(selected);
+				.unlockObjects(selected);
 
 		return null;
 	}

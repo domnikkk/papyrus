@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,14 +27,15 @@ import org.eclipse.ui.handlers.HandlerUtil;
  */
 public class ImportModelsHandler extends AbstractHandler {
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
 
-			if(window != null) {
-				importModels(window, (IStructuredSelection)selection, null);
+			if (window != null) {
+				importModels(window, (IStructuredSelection) selection, null);
 			}
 		}
 
@@ -45,7 +46,7 @@ public class ImportModelsHandler extends AbstractHandler {
 		ModelImportWizard wizard = new ModelImportWizard();
 		wizard.init(window.getWorkbench(), selection);
 
-		if(repository != null) {
+		if (repository != null) {
 			wizard.setRepository(repository);
 		}
 

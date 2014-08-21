@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,17 +37,17 @@ public class MetaclassIsAbstractColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected CellEditor getCellEditor(Object element) {
-		if(element instanceof VirtualMetaclass) {
+		if (element instanceof VirtualMetaclass) {
 
-			if(MetamodelUtils.canBeAbstract((VirtualMetaclass)element)) {
+			if (MetamodelUtils.canBeAbstract((VirtualMetaclass) element)) {
 				return new CheckboxCellEditor(parent);
 			}
 		}
@@ -56,9 +56,9 @@ public class MetaclassIsAbstractColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -68,32 +68,32 @@ public class MetaclassIsAbstractColumnEditingSupport extends EditingSupport {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof VirtualMetaclass) {
-			return Boolean.valueOf(((VirtualMetaclass)element).isAbstract());
+		if (element instanceof VirtualMetaclass) {
+			return Boolean.valueOf(((VirtualMetaclass) element).isAbstract());
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(Object element, Object value) {
-		if(element instanceof VirtualMetaclass) {
+		if (element instanceof VirtualMetaclass) {
 
-			SetCommand command = new SetCommand(editingDomain, (VirtualMetaclass)element, VirtualmetamodelPackage.eINSTANCE.getVirtualMetaclass_Abstract(), (Boolean)value); //$NON-NLS-1$
+			SetCommand command = new SetCommand(editingDomain, (VirtualMetaclass) element, VirtualmetamodelPackage.eINSTANCE.getVirtualMetaclass_Abstract(), (Boolean) value);
 			editingDomain.getCommandStack().execute(command);
 			getViewer().refresh();
 

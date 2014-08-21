@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.dd.dg.Translate;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.TranslateImpl#getDeltaY <em>Delta Y</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class TranslateImpl extends TransformImpl implements Translate {
@@ -37,7 +37,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	/**
 	 * The default value of the '{@link #getDeltaX() <em>Delta X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeltaX()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	/**
 	 * The cached value of the '{@link #getDeltaX() <em>Delta X</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeltaX()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	/**
 	 * The default value of the '{@link #getDeltaY() <em>Delta Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeltaY()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 	/**
 	 * The cached value of the '{@link #getDeltaY() <em>Delta Y</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDeltaY()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TranslateImpl() {
@@ -85,7 +85,7 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,54 +95,60 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getDeltaX() {
 		return deltaX;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDeltaX(double newDeltaX) {
 		double oldDeltaX = deltaX;
 		deltaX = newDeltaX;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TRANSLATE__DELTA_X, oldDeltaX, deltaX));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getDeltaY() {
 		return deltaY;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDeltaY(double newDeltaY) {
 		double oldDeltaY = deltaY;
 		deltaY = newDeltaY;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.TRANSLATE__DELTA_Y, oldDeltaY, deltaY));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			return getDeltaX();
 		case DGPackage.TRANSLATE__DELTA_Y:
@@ -153,17 +159,17 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
-			setDeltaX((Double)newValue);
+			setDeltaX((Double) newValue);
 			return;
 		case DGPackage.TRANSLATE__DELTA_Y:
-			setDeltaY((Double)newValue);
+			setDeltaY((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -171,12 +177,12 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			setDeltaX(DELTA_X_EDEFAULT);
 			return;
@@ -189,12 +195,12 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.TRANSLATE__DELTA_X:
 			return deltaX != DELTA_X_EDEFAULT;
 		case DGPackage.TRANSLATE__DELTA_Y:
@@ -205,13 +211,14 @@ public class TranslateImpl extends TransformImpl implements Translate {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (deltaX: ");
 		result.append(deltaX);

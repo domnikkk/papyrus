@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.SecondaryScheduler;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SecondarySchedulerImpl#getVirtualProcessingUnits <em>Virtual Processing Units</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.impl.SecondarySchedulerImpl#getVirtualProcessingUnits <em>Virtual Processing Units</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	 * The cached value of the '{@link #getVirtualProcessingUnits() <em>Virtual Processing Units</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVirtualProcessingUnits()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SecondarySchedulerImpl() {
@@ -61,6 +63,7 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,8 +74,10 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<SchedulableResource> getVirtualProcessingUnits() {
 		if (virtualProcessingUnits == null) {
 			virtualProcessingUnits = new EObjectWithInverseResolvingEList<SchedulableResource>(SchedulableResource.class, this, GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS, GRMPackage.SCHEDULABLE_RESOURCE__DEPENDENT_SCHEDULER);
@@ -83,14 +88,15 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVirtualProcessingUnits()).basicAdd(otherEnd, msgs);
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVirtualProcessingUnits()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,13 +104,14 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				return ((InternalEList<?>)getVirtualProcessingUnits()).basicRemove(otherEnd, msgs);
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			return ((InternalEList<?>) getVirtualProcessingUnits()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,13 +119,14 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				return getVirtualProcessingUnits();
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			return getVirtualProcessingUnits();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,16 +134,17 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				getVirtualProcessingUnits().clear();
-				getVirtualProcessingUnits().addAll((Collection<? extends SchedulableResource>)newValue);
-				return;
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			getVirtualProcessingUnits().clear();
+			getVirtualProcessingUnits().addAll((Collection<? extends SchedulableResource>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -143,14 +152,15 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				getVirtualProcessingUnits().clear();
-				return;
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			getVirtualProcessingUnits().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,15 +168,16 @@ public class SecondarySchedulerImpl extends SchedulerImpl implements SecondarySc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
-				return virtualProcessingUnits != null && !virtualProcessingUnits.isEmpty();
+		case GRMPackage.SECONDARY_SCHEDULER__VIRTUAL_PROCESSING_UNITS:
+			return virtualProcessingUnits != null && !virtualProcessingUnits.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SecondarySchedulerImpl
+} // SecondarySchedulerImpl

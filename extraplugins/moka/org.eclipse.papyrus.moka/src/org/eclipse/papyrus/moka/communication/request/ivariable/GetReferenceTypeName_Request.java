@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class GetReferenceTypeName_Request extends RequestMessage {
 	/**
 	 * Constructs a request message from the given debug element.
 	 * This debug element can be a variable or a value
-	 * 
+	 *
 	 * @param debugElement
-	 *        The debug element from which the reference type name is requested
+	 *            The debug element from which the reference type name is requested
 	 */
 	public GetReferenceTypeName_Request(IDebugElement debugElement) {
 		this.debugElement = debugElement;
@@ -43,7 +43,7 @@ public class GetReferenceTypeName_Request extends RequestMessage {
 
 	/**
 	 * Returns the debug element from which the reference type name is requested
-	 * 
+	 *
 	 * @return The debug element from which the reference type name is requested
 	 */
 	public IDebugElement getVariableOrValue() {
@@ -55,6 +55,7 @@ public class GetReferenceTypeName_Request extends RequestMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.request.RequestMessage#marshall()
 	 */
+	@Override
 	public String marshall() {
 		return Marshaller.getInstance().getReferenceTypeName_request_marshal(this);
 	}

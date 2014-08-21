@@ -32,14 +32,14 @@ import org.eclipse.papyrus.eastadl.timing.EventChain;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getStrand <em>Strand</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getSegment <em>Segment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getTransformationOccurrence <em>Transformation Occurrence</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getPrecedingExecutionEventChain <em>Preceding Execution Event Chain</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getSucceedingExecutionEventChain <em>Succeeding Execution Event Chain</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getCorrespondingExecutionEventChain <em>Corresponding Execution Event Chain</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getLogicalResponse <em>Logical Response</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getLogicalStimulus <em>Logical Stimulus</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getStrand <em>Strand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getSegment <em>Segment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getTransformationOccurrence <em>Transformation Occurrence</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getPrecedingExecutionEventChain <em>Preceding Execution Event Chain</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getSucceedingExecutionEventChain <em>Succeeding Execution Event Chain</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getCorrespondingExecutionEventChain <em>Corresponding Execution Event Chain</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getLogicalResponse <em>Logical Response</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.computationconstraint.impl.LogicalPathImpl#getLogicalStimulus <em>Logical Stimulus</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getStrand() <em>Strand</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStrand()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getSegment() <em>Segment</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSegment()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getTransformationOccurrence() <em>Transformation Occurrence</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTransformationOccurrence()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getPrecedingExecutionEventChain() <em>Preceding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPrecedingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getSucceedingExecutionEventChain() <em>Succeeding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSucceedingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getCorrespondingExecutionEventChain() <em>Corresponding Execution Event Chain</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCorrespondingExecutionEventChain()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getLogicalResponse() <em>Logical Response</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLogicalResponse()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	 * The cached value of the '{@link #getLogicalStimulus() <em>Logical Stimulus</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLogicalStimulus()
 	 * @generated
 	 * @ordered
@@ -129,6 +137,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LogicalPathImpl() {
@@ -138,6 +147,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,8 +158,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalPath> getStrand() {
 		if (strand == null) {
 			strand = new EObjectResolvingEList<LogicalPath>(LogicalPath.class, this, ComputationconstraintPackage.LOGICAL_PATH__STRAND);
@@ -160,8 +172,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalPath> getSegment() {
 		if (segment == null) {
 			segment = new EObjectResolvingEList<LogicalPath>(LogicalPath.class, this, ComputationconstraintPackage.LOGICAL_PATH__SEGMENT);
@@ -172,15 +186,18 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TransformationOccurrence getTransformationOccurrence() {
 		if (transformationOccurrence != null && transformationOccurrence.eIsProxy()) {
-			InternalEObject oldTransformationOccurrence = (InternalEObject)transformationOccurrence;
-			transformationOccurrence = (TransformationOccurrence)eResolveProxy(oldTransformationOccurrence);
+			InternalEObject oldTransformationOccurrence = (InternalEObject) transformationOccurrence;
+			transformationOccurrence = (TransformationOccurrence) eResolveProxy(oldTransformationOccurrence);
 			if (transformationOccurrence != oldTransformationOccurrence) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE, oldTransformationOccurrence, transformationOccurrence));
+				}
 			}
 		}
 		return transformationOccurrence;
@@ -189,6 +206,7 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TransformationOccurrence basicGetTransformationOccurrence() {
@@ -198,20 +216,25 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTransformationOccurrence(TransformationOccurrence newTransformationOccurrence) {
 		TransformationOccurrence oldTransformationOccurrence = transformationOccurrence;
 		transformationOccurrence = newTransformationOccurrence;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE, oldTransformationOccurrence, transformationOccurrence));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<EventChain> getPrecedingExecutionEventChain() {
 		if (precedingExecutionEventChain == null) {
 			precedingExecutionEventChain = new EObjectResolvingEList<EventChain>(EventChain.class, this, ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN);
@@ -222,8 +245,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<EventChain> getSucceedingExecutionEventChain() {
 		if (succeedingExecutionEventChain == null) {
 			succeedingExecutionEventChain = new EObjectResolvingEList<EventChain>(EventChain.class, this, ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN);
@@ -234,8 +259,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<EventChain> getCorrespondingExecutionEventChain() {
 		if (correspondingExecutionEventChain == null) {
 			correspondingExecutionEventChain = new EObjectResolvingEList<EventChain>(EventChain.class, this, ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN);
@@ -246,8 +273,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalEvent> getLogicalResponse() {
 		if (logicalResponse == null) {
 			logicalResponse = new EObjectResolvingEList<LogicalEvent>(LogicalEvent.class, this, ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE);
@@ -258,8 +287,10 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<LogicalEvent> getLogicalStimulus() {
 		if (logicalStimulus == null) {
 			logicalStimulus = new EObjectResolvingEList<LogicalEvent>(LogicalEvent.class, this, ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS);
@@ -270,28 +301,31 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
-				return getStrand();
-			case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
-				return getSegment();
-			case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
-				if (resolve) return getTransformationOccurrence();
-				return basicGetTransformationOccurrence();
-			case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
-				return getPrecedingExecutionEventChain();
-			case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
-				return getSucceedingExecutionEventChain();
-			case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
-				return getCorrespondingExecutionEventChain();
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
-				return getLogicalResponse();
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
-				return getLogicalStimulus();
+		case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
+			return getStrand();
+		case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
+			return getSegment();
+		case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
+			if (resolve) {
+				return getTransformationOccurrence();
+			}
+			return basicGetTransformationOccurrence();
+		case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
+			return getPrecedingExecutionEventChain();
+		case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
+			return getSucceedingExecutionEventChain();
+		case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
+			return getCorrespondingExecutionEventChain();
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
+			return getLogicalResponse();
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
+			return getLogicalStimulus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,43 +333,44 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
-				getStrand().clear();
-				getStrand().addAll((Collection<? extends LogicalPath>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
-				getSegment().clear();
-				getSegment().addAll((Collection<? extends LogicalPath>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
-				setTransformationOccurrence((TransformationOccurrence)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
-				getPrecedingExecutionEventChain().clear();
-				getPrecedingExecutionEventChain().addAll((Collection<? extends EventChain>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
-				getSucceedingExecutionEventChain().clear();
-				getSucceedingExecutionEventChain().addAll((Collection<? extends EventChain>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
-				getCorrespondingExecutionEventChain().clear();
-				getCorrespondingExecutionEventChain().addAll((Collection<? extends EventChain>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
-				getLogicalResponse().clear();
-				getLogicalResponse().addAll((Collection<? extends LogicalEvent>)newValue);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
-				getLogicalStimulus().clear();
-				getLogicalStimulus().addAll((Collection<? extends LogicalEvent>)newValue);
-				return;
+		case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
+			getStrand().clear();
+			getStrand().addAll((Collection<? extends LogicalPath>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
+			getSegment().clear();
+			getSegment().addAll((Collection<? extends LogicalPath>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
+			setTransformationOccurrence((TransformationOccurrence) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
+			getPrecedingExecutionEventChain().clear();
+			getPrecedingExecutionEventChain().addAll((Collection<? extends EventChain>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
+			getSucceedingExecutionEventChain().clear();
+			getSucceedingExecutionEventChain().addAll((Collection<? extends EventChain>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
+			getCorrespondingExecutionEventChain().clear();
+			getCorrespondingExecutionEventChain().addAll((Collection<? extends EventChain>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
+			getLogicalResponse().clear();
+			getLogicalResponse().addAll((Collection<? extends LogicalEvent>) newValue);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
+			getLogicalStimulus().clear();
+			getLogicalStimulus().addAll((Collection<? extends LogicalEvent>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -343,35 +378,36 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
-				getStrand().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
-				getSegment().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
-				setTransformationOccurrence((TransformationOccurrence)null);
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
-				getPrecedingExecutionEventChain().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
-				getSucceedingExecutionEventChain().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
-				getCorrespondingExecutionEventChain().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
-				getLogicalResponse().clear();
-				return;
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
-				getLogicalStimulus().clear();
-				return;
+		case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
+			getStrand().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
+			getSegment().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
+			setTransformationOccurrence((TransformationOccurrence) null);
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
+			getPrecedingExecutionEventChain().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
+			getSucceedingExecutionEventChain().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
+			getCorrespondingExecutionEventChain().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
+			getLogicalResponse().clear();
+			return;
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
+			getLogicalStimulus().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,29 +415,30 @@ public class LogicalPathImpl extends EAElementImpl implements LogicalPath {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
-				return strand != null && !strand.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
-				return segment != null && !segment.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
-				return transformationOccurrence != null;
-			case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
-				return precedingExecutionEventChain != null && !precedingExecutionEventChain.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
-				return succeedingExecutionEventChain != null && !succeedingExecutionEventChain.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
-				return correspondingExecutionEventChain != null && !correspondingExecutionEventChain.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
-				return logicalResponse != null && !logicalResponse.isEmpty();
-			case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
-				return logicalStimulus != null && !logicalStimulus.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__STRAND:
+			return strand != null && !strand.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__SEGMENT:
+			return segment != null && !segment.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__TRANSFORMATION_OCCURRENCE:
+			return transformationOccurrence != null;
+		case ComputationconstraintPackage.LOGICAL_PATH__PRECEDING_EXECUTION_EVENT_CHAIN:
+			return precedingExecutionEventChain != null && !precedingExecutionEventChain.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__SUCCEEDING_EXECUTION_EVENT_CHAIN:
+			return succeedingExecutionEventChain != null && !succeedingExecutionEventChain.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__CORRESPONDING_EXECUTION_EVENT_CHAIN:
+			return correspondingExecutionEventChain != null && !correspondingExecutionEventChain.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_RESPONSE:
+			return logicalResponse != null && !logicalResponse.isEmpty();
+		case ComputationconstraintPackage.LOGICAL_PATH__LOGICAL_STIMULUS:
+			return logicalStimulus != null && !logicalStimulus.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //LogicalPathImpl
+} // LogicalPathImpl

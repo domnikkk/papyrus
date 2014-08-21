@@ -25,7 +25,7 @@ public interface IAsyncEventPool {
 	 * Send.
 	 *
 	 * @param signalInstance
-	 *        the signal instance
+	 *            the signal instance
 	 * @return true, if successful
 	 */
 	public boolean send(SignalInstance signalInstance);

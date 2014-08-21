@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-	 * 
+	 *
 	 */
 
 	public void dispose() {
@@ -36,7 +36,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param viewer
 	 * @param oldInput
 	 * @param newInput
@@ -48,19 +48,19 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
 
 	public Object[] getElements(Object inputElement) {
 		ArrayList<VirtualElement> output = new ArrayList<VirtualElement>();
-		if(inputElement instanceof VirtualMetaclass) {
-			output.addAll(((VirtualMetaclass)inputElement).getProperties());
-			output.addAll(((VirtualMetaclass)inputElement).getOperations());
+		if (inputElement instanceof VirtualMetaclass) {
+			output.addAll(((VirtualMetaclass) inputElement).getProperties());
+			output.addAll(((VirtualMetaclass) inputElement).getOperations());
 		}
-		if(inputElement instanceof VirtualEnum) {
-			output.addAll(((VirtualEnum)inputElement).getLiterals());
+		if (inputElement instanceof VirtualEnum) {
+			output.addAll(((VirtualEnum) inputElement).getLiterals());
 		}
 
 		return output.toArray();
@@ -68,8 +68,8 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 
 	public Object[] getChildren(Object parentElement) {
 		List<Object> result = new ArrayList<Object>();
-		if(parentElement instanceof VirtualOperation) {
-			result.addAll(((VirtualOperation)parentElement).getParameters());
+		if (parentElement instanceof VirtualOperation) {
+			result.addAll(((VirtualOperation) parentElement).getParameters());
 		}
 
 		return result.toArray();
@@ -80,7 +80,7 @@ public class TypedElementContentProvider implements ITreeContentProvider {
 	}
 
 	public boolean hasChildren(Object element) {
-		if(getChildren(element).length == 0) {
+		if (getChildren(element).length == 0) {
 			return false;
 		} else {
 			return true;

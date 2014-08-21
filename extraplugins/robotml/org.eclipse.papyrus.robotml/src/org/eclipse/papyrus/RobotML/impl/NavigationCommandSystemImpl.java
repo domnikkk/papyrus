@@ -20,6 +20,7 @@ public class NavigationCommandSystemImpl extends ManMachineInterfaceSystemImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NavigationCommandSystemImpl() {
@@ -29,6 +30,7 @@ public class NavigationCommandSystemImpl extends ManMachineInterfaceSystemImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class NavigationCommandSystemImpl extends ManMachineInterfaceSystemImpl i
 		return RobotMLPackage.Literals.NAVIGATION_COMMAND_SYSTEM;
 	}
 
-} //NavigationCommandSystemImpl
+} // NavigationCommandSystemImpl

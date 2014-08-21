@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,13 +36,13 @@ import org.junit.Test;
 
 /**
  * Sample test for cut in model explorer
- * 
+ *
  * @author bmaggi
  */
 public class IsActiveEntityRuleValidationTest extends AbstractValidationEditorTest {
 
 	public static final String CONSTRAINT_PLUGIN = "org.eclipse.papyrus.umlrt.validation"; //$NON-NLS-1$
-	
+
 	public static final String CONSTRAINT_ID = "isActiveEntity"; //$NON-NLS-1$
 
 	public static final String RESOURCES_PATH = "resources/"; //$NON-NLS-1$
@@ -55,24 +55,24 @@ public class IsActiveEntityRuleValidationTest extends AbstractValidationEditorTe
 
 	@Before
 	public void initModelForCutTest() throws Exception {
-			initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle()); 
+		initModel(PROJECT_NAME, MODEL_NAME, Activator.getDefault().getBundle());
 	}
 
 	@Override
 	protected String getSourcePath() {
 		return RESOURCES_PATH;
 	}
-	
+
 	/**
 	 * Simple failing validation for IsActiveEntityRule
 	 */
 	@Test
 	public void validateIsActiveEntityRule() throws Exception {
 
-		//get the rootModel
+		// get the rootModel
 		Assert.assertNotNull("RootModel is null", getRootUMLModel()); //$NON-NLS-1$
-		//get all semantic element that will handled
-		Model model = (Model)getRootUMLModel();
+		// get all semantic element that will handled
+		Model model = (Model) getRootUMLModel();
 
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
@@ -82,26 +82,26 @@ public class IsActiveEntityRuleValidationTest extends AbstractValidationEditorTe
 		elements.add(getRootUMLModel());
 		modelExplorerView.revealSemanticElement(elements);
 
-		org.eclipse.uml2.uml.Class capsule1 = (org.eclipse.uml2.uml.Class)model.getPackagedElement(CAPSULE1_NAME);
-	
+		org.eclipse.uml2.uml.Class capsule1 = (org.eclipse.uml2.uml.Class) model.getPackagedElement(CAPSULE1_NAME);
+
 		elements.clear();
 		elements.add(capsule1);
-	
+
 		modelExplorerView.revealSemanticElement(elements);
-		Object capsule1TreeObject = ((IStructuredSelection)selectionService.getSelection()).getFirstElement();
+		Object capsule1TreeObject = ((IStructuredSelection) selectionService.getSelection()).getFirstElement();
 		Assert.assertNotNull("Capsule1 TreeElement is null", capsule1TreeObject); //$NON-NLS-1$
 
-		EditingDomain domain = TransactionUtil.getEditingDomain(capsule1);	
+		EditingDomain domain = TransactionUtil.getEditingDomain(capsule1);
 		ValidateModelCommand validateModelCommand = new ValidateModelCommand(getRootUMLModel(), new UMLDiagnostician());
 		domain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(validateModelCommand));
-	
+
 		// check that the constraint exist
-		ConstraintRegistry instance = ConstraintRegistry.getInstance();		
+		ConstraintRegistry instance = ConstraintRegistry.getInstance();
 		IConstraintDescriptor descriptor = instance.getDescriptor(CONSTRAINT_PLUGIN, CONSTRAINT_ID);
-		Assert.assertNotNull("Constraint is missing", descriptor);			
-	
+		Assert.assertNotNull("Constraint is missing", descriptor);
+
 		Diagnostic globalDiagnostic = validateModelCommand.getDiagnostic();
-		List<Diagnostic> findDiagnosticBySource = findDiagnosticBySource(globalDiagnostic, CONSTRAINT_PLUGIN+"."+CONSTRAINT_ID);
+		List<Diagnostic> findDiagnosticBySource = findDiagnosticBySource(globalDiagnostic, CONSTRAINT_PLUGIN + "." + CONSTRAINT_ID);
 		Assert.assertNotNull("Validation should have raised an error", findDiagnosticBySource); //$NON-NLS-1$
 		Assert.assertEquals("Validation should have raised an error", 1, findDiagnosticBySource.size()); //$NON-NLS-1$
 

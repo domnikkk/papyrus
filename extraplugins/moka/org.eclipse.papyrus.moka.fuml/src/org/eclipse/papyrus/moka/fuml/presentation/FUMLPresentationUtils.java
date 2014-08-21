@@ -51,15 +51,15 @@ public class FUMLPresentationUtils {
 
 	public static Image getImage(Object element) {
 		try {
-			if(element instanceof EObject && ((EObject)element).eIsProxy()) {
+			if (element instanceof EObject && ((EObject) element).eIsProxy()) {
 				labelProvider = null;
 				servicesRegistry = null;
 			}
-			if(labelProvider == null) {
-				if(servicesRegistry == null) {
-					if(contextEObject.eIsProxy()) {
+			if (labelProvider == null) {
+				if (servicesRegistry == null) {
+					if (contextEObject.eIsProxy()) {
 						IEditorPart part = EditorUtils.getEditorPart(contextEObject);
-						ServicesRegistry servicesRegistry = (ServicesRegistry)part.getAdapter(ServicesRegistry.class);
+						ServicesRegistry servicesRegistry = (ServicesRegistry) part.getAdapter(ServicesRegistry.class);
 						ResourceSet resourceSet = null;
 						try {
 							resourceSet = servicesRegistry.getService(ModelSet.class);
@@ -67,7 +67,7 @@ public class FUMLPresentationUtils {
 							resourceSet = new ResourceSetImpl();
 							Activator.log.error(e1);
 						}
-						contextEObject = (Behavior)EcoreUtil.resolve(contextEObject, resourceSet);
+						contextEObject = EcoreUtil.resolve(contextEObject, resourceSet);
 					} else {
 						servicesRegistry = ServiceUtilsForResource.getInstance().getServiceRegistry(contextEObject.eResource());
 					}
@@ -84,10 +84,10 @@ public class FUMLPresentationUtils {
 	}
 
 	public static MokaStackFrame getMokaStackFrame(Object baseElement) {
-		if(baseElement instanceof ActivityNodeActivation)
-			return getMokaStackFrame((ActivityNodeActivation)baseElement);
-		else if(baseElement instanceof ActivityEdgeInstance) {
-			return getMokaStackFrame((ActivityEdgeInstance)baseElement);
+		if (baseElement instanceof ActivityNodeActivation) {
+			return getMokaStackFrame((ActivityNodeActivation) baseElement);
+		} else if (baseElement instanceof ActivityEdgeInstance) {
+			return getMokaStackFrame((ActivityEdgeInstance) baseElement);
 		} else {
 			Activator.log.error(new Exception("Unexpected base element for construction of a MokaStackFrame"));
 			return null;
@@ -103,9 +103,10 @@ public class FUMLPresentationUtils {
 	}
 
 	public static String getValueString(Value value) {
-		if(value == null)
+		if (value == null) {
 			return "null";
-		if(value instanceof Object_ || value instanceof Reference) {
+		}
+		if (value instanceof Object_ || value instanceof Reference) {
 			String className = value.getClass().getSimpleName();
 			String id = "" + value.hashCode();
 			return className + " (id=" + id + ")";
@@ -116,7 +117,7 @@ public class FUMLPresentationUtils {
 	public static String getValueString(FeatureValue featureValue) {
 		StructuralFeature f = featureValue.feature;
 		String valueString = "";
-		if(isCollection(featureValue)) {
+		if (isCollection(featureValue)) {
 			valueString += f.getType() != null ? f.getType().getName() : "any";
 			valueString += "[] (size=" + featureValue.values.size();
 			valueString += (")");

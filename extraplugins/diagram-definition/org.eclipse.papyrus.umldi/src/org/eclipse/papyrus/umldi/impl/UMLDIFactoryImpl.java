@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.umldi.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
@@ -35,13 +35,13 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UMLDIFactory init() {
 		try {
-			UMLDIFactory theUMLDIFactory = (UMLDIFactory)EPackage.Registry.INSTANCE.getEFactory(UMLDIPackage.eNS_URI);
-			if(theUMLDIFactory != null) {
+			UMLDIFactory theUMLDIFactory = (UMLDIFactory) EPackage.Registry.INSTANCE.getEFactory(UMLDIPackage.eNS_URI);
+			if (theUMLDIFactory != null) {
 				return theUMLDIFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLDIFactoryImpl() {
@@ -64,12 +64,12 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case UMLDIPackage.UML_DIAGRAM:
 			return createUmlDiagram();
 		case UMLDIPackage.UML_SHAPE:
@@ -90,12 +90,12 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case UMLDIPackage.UML_COMPARTMENT_KIND:
 			return createUmlCompartmentKindFromString(eDataType, initialValue);
 		case UMLDIPackage.UML_LABEL_KIND:
@@ -108,12 +108,12 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case UMLDIPackage.UML_COMPARTMENT_KIND:
 			return convertUmlCompartmentKindToString(eDataType, instanceValue);
 		case UMLDIPackage.UML_LABEL_KIND:
@@ -126,9 +126,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlDiagram createUmlDiagram() {
 		UmlDiagramImpl umlDiagram = new UmlDiagramImpl();
 		return umlDiagram;
@@ -137,9 +138,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlStyle createUmlStyle() {
 		UmlStyleImpl umlStyle = new UmlStyleImpl();
 		return umlStyle;
@@ -148,9 +150,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlEdge createUmlEdge() {
 		UmlEdgeImpl umlEdge = new UmlEdgeImpl();
 		return umlEdge;
@@ -159,9 +162,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlCompartment createUmlCompartment() {
 		UmlCompartmentImpl umlCompartment = new UmlCompartmentImpl();
 		return umlCompartment;
@@ -170,9 +174,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlLabel createUmlLabel() {
 		UmlLabelImpl umlLabel = new UmlLabelImpl();
 		return umlLabel;
@@ -181,20 +186,21 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlCompartmentKind createUmlCompartmentKindFromString(EDataType eDataType, String initialValue) {
 		UmlCompartmentKind result = UmlCompartmentKind.get(initialValue);
-		if(result == null)
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUmlCompartmentKindToString(EDataType eDataType, Object instanceValue) {
@@ -204,20 +210,21 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlLabelKind createUmlLabelKindFromString(EDataType eDataType, String initialValue) {
 		UmlLabelKind result = UmlLabelKind.get(initialValue);
-		if(result == null)
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUmlLabelKindToString(EDataType eDataType, Object instanceValue) {
@@ -227,9 +234,10 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlShape createUmlShape() {
 		UmlShapeImpl umlShape = new UmlShapeImpl();
 		return umlShape;
@@ -238,17 +246,18 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UMLDIPackage getUMLDIPackage() {
-		return (UMLDIPackage)getEPackage();
+		return (UMLDIPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -256,4 +265,4 @@ public class UMLDIFactoryImpl extends EFactoryImpl implements UMLDIFactory {
 	public static UMLDIPackage getPackage() {
 		return UMLDIPackage.eINSTANCE;
 	}
-} //UMLDIFactoryImpl
+} // UMLDIFactoryImpl

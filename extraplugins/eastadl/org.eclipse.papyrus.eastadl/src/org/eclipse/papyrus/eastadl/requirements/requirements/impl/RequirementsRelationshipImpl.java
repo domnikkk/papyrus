@@ -17,7 +17,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.RequirementsRelationshipImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,6 +28,7 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -37,6 +38,7 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RequirementsRelationshipImpl() {
@@ -46,6 +48,7 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -56,15 +59,18 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -73,6 +79,7 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -82,26 +89,32 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
+		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,14 +122,15 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
+		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,14 +138,15 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
+		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,15 +154,16 @@ public abstract class RequirementsRelationshipImpl extends RelationshipImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
-				return base_Class != null;
+		case RequirementsPackage.REQUIREMENTS_RELATIONSHIP__BASE_CLASS:
+			return base_Class != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RequirementsRelationshipImpl
+} // RequirementsRelationshipImpl

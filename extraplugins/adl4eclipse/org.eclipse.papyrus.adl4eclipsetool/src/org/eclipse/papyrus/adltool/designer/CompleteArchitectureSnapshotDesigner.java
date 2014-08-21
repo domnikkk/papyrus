@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,28 +18,29 @@ import java.util.ArrayList;
 import org.eclipse.uml2.uml.Package;
 
 /**
- * import the list of plugins from all loading plugins 
+ * import the list of plugins from all loading plugins
  *
  */
-  public class CompleteArchitectureSnapshotDesigner extends ArchitectureSnapshotDesigner {
- 
+public class CompleteArchitectureSnapshotDesigner extends ArchitectureSnapshotDesigner {
+
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param rootPackage
 	 * @param bundleInitialList
 	 */
-	public CompleteArchitectureSnapshotDesigner(Package rootPackage, ArrayList<Object>bundleInitialList) {
+	public CompleteArchitectureSnapshotDesigner(Package rootPackage, ArrayList<Object> bundleInitialList) {
 		super(rootPackage, bundleInitialList);
-		dependencyLevelMax=30;
+		dependencyLevelMax = 30;
 	}
+
 	@Override
 	protected void initModel() {
 		super.initModel();
 	}
-	
+
 	@Override
 	public void runImportBundles() {
 		initModel();

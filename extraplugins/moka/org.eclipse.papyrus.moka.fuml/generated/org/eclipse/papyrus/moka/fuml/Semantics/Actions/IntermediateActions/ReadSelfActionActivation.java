@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.ReadSelfAction;
 
 public class ReadSelfActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the context object of the activity execution containing this
 		// action activation and place a reference to it on the result output
@@ -29,7 +30,7 @@ public class ReadSelfActionActivation extends ActionActivation {
 		context.referent = this.getExecutionContext();
 		// Debug.println("[ReadSelfActionActivation] context object = " +
 		// context.referent);
-		OutputPin resultPin = ((ReadSelfAction)(this.node)).getResult();
+		OutputPin resultPin = ((ReadSelfAction) (this.node)).getResult();
 		this.putToken(resultPin, context);
 	}
 }

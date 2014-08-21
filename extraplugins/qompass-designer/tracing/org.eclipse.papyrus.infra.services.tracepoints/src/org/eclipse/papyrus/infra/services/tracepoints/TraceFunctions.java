@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,23 +43,24 @@ public class TraceFunctions implements IDecorationSpecificFunctions {
 	/**
 	 * Return the image descriptor associated with a trace or breakpoint marker
 	 */
+	@Override
 	public ImageDescriptor getImageDescriptorForGE(IPapyrusMarker marker) {
 
 
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator =
-			org.eclipse.papyrus.infra.widgets.Activator.getDefault();
+				org.eclipse.papyrus.infra.widgets.Activator.getDefault();
 		ImageDescriptor overlay = null;
 		boolean isActive = marker.getAttribute(TracepointConstants.isActive, false);
 		boolean isTracepoint = marker.getAttribute(TracepointConstants.isTracepoint, false);
-		if(isTracepoint) {
+		if (isTracepoint) {
 			overlay = isActive ?
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeTracepoint16) :
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveTracepoint16);
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeTracepoint16) :
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveTracepoint16);
 		}
 		else {
 			overlay = isActive ?
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16) :
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint16) :
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint16);
 		}
 
 		return overlay;
@@ -68,45 +69,50 @@ public class TraceFunctions implements IDecorationSpecificFunctions {
 	/**
 	 * Return the image descriptor associated with a trace or breakpoint marker
 	 */
+	@Override
 	public ImageDescriptor getImageDescriptorForME(IPapyrusMarker marker) {
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator =
-			org.eclipse.papyrus.infra.widgets.Activator.getDefault();
+				org.eclipse.papyrus.infra.widgets.Activator.getDefault();
 		ImageDescriptor overlay = null;
 		boolean isActive = marker.getAttribute(TracepointConstants.isActive, false);
 		boolean isTracepoint = marker.getAttribute(TracepointConstants.isTracepoint, false);
-		if(isTracepoint) {
+		if (isTracepoint) {
 			overlay = isActive ?
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeTracepoint11) :
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveTracepoint11);
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeTracepoint11) :
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveTracepoint11);
 		}
 		else {
 			overlay = isActive ?
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint9) :
-				widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint9);
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, activeBreakpoint9) :
+					widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, inActiveBreakpoint9);
 		}
 
 		return overlay;
 	}
 
+	@Override
 	public PreferedPosition getPreferedPosition(IPapyrusMarker marker) {
 		return PreferedPosition.SOUTH_EAST;
 	}
 
+	@Override
 	public String getMessage(IPapyrusMarker marker) {
 		boolean isActive = marker.getAttribute(TracepointConstants.isActive, false);
 		boolean isTracepoint = marker.getAttribute(TracepointConstants.isTracepoint, false);
-		return (isActive ? "active" : "inactive") + " " +   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
-			(isTracepoint ? "trace point" : "break point");  //$NON-NLS-1$//$NON-NLS-2$
+		return (isActive ? "active" : "inactive") + " " + //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
+				(isTracepoint ? "trace point" : "break point"); //$NON-NLS-1$//$NON-NLS-2$
 	}
 
 	public int getPriority(IMarker marker) {
-		return 0; // all markers have same priority (and we should not have multiple markers on the same model element). 
+		return 0; // all markers have same priority (and we should not have multiple markers on the same model element).
 	}
 
+	@Override
 	public IPapyrusDecoration markerPropagation(EList<IPapyrusDecoration> childDecorations) {
 		return null;
 	}
 
+	@Override
 	public MarkChildren supportsMarkerPropagation() {
 		return MarkChildren.NO;
 	}

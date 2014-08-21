@@ -28,9 +28,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getBase_Abstraction <em>Base Abstraction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getDerived <em>Derived</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getDerivedFrom <em>Derived From</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getBase_Abstraction <em>Base Abstraction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getDerived <em>Derived</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.requirements.impl.DeriveRequirementImpl#getDerivedFrom <em>Derived From</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	 * The cached value of the '{@link #getBase_Abstraction() <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DeriveRequirementImpl() {
@@ -59,6 +61,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,15 +72,18 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Abstraction getBase_Abstraction() {
 		if (base_Abstraction != null && base_Abstraction.eIsProxy()) {
-			InternalEObject oldBase_Abstraction = (InternalEObject)base_Abstraction;
-			base_Abstraction = (Abstraction)eResolveProxy(oldBase_Abstraction);
+			InternalEObject oldBase_Abstraction = (InternalEObject) base_Abstraction;
+			base_Abstraction = (Abstraction) eResolveProxy(oldBase_Abstraction);
 			if (base_Abstraction != oldBase_Abstraction) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+				}
 			}
 		}
 		return base_Abstraction;
@@ -86,6 +92,7 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Abstraction basicGetBase_Abstraction() {
@@ -95,34 +102,40 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Abstraction(Abstraction newBase_Abstraction) {
 		Abstraction oldBase_Abstraction = base_Abstraction;
 		base_Abstraction = newBase_Abstraction;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION, oldBase_Abstraction, base_Abstraction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Requirement> getDerived() {
 		EList<Requirement> results = new BasicEList<Requirement>();
 		Requirement requirement;
-		
+
 		if (getBase_Abstraction() != null) {
-			//Parse owned Properties
+			// Parse owned Properties
 			Iterator<Element> it = getBase_Abstraction().getSources().iterator();
 			while (it.hasNext()) {
 				Element current = it.next();
-				
-				//Test if currentProperty is sterotyped ADLRequirement
-				requirement = (Requirement) UMLUtil.getStereotypeApplication(current, Requirement.class);
-				if (requirement != null)
+
+				// Test if currentProperty is sterotyped ADLRequirement
+				requirement = UMLUtil.getStereotypeApplication(current, Requirement.class);
+				if (requirement != null) {
 					results.add(requirement);
+				}
 			}
 		}
 		// Convert to InternalEList<?>
@@ -132,22 +145,24 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Requirement> getDerivedFrom() {
 		EList<Requirement> results = new BasicEList<Requirement>();
 		Requirement requirement;
 
-		if(getBase_Abstraction() != null) {
+		if (getBase_Abstraction() != null) {
 			// Parse owned Properties
 			Iterator<Element> it = getBase_Abstraction().getTargets().iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Element current = it.next();
 
 				// Test if currentProperty is stereotyped ADLRequirement
-				requirement = (Requirement)UMLUtil.getStereotypeApplication(current, Requirement.class);
+				requirement = UMLUtil.getStereotypeApplication(current, Requirement.class);
 
-				if(requirement != null) {
+				if (requirement != null) {
 					results.add(requirement);
 				}
 			}
@@ -160,18 +175,21 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
-				if (resolve) return getBase_Abstraction();
-				return basicGetBase_Abstraction();
-			case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED:
-				return getDerived();
-			case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED_FROM:
-				return getDerivedFrom();
+		case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
+			if (resolve) {
+				return getBase_Abstraction();
+			}
+			return basicGetBase_Abstraction();
+		case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED:
+			return getDerived();
+		case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED_FROM:
+			return getDerivedFrom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,14 +197,15 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
-				setBase_Abstraction((Abstraction)newValue);
-				return;
+		case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
+			setBase_Abstraction((Abstraction) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -194,14 +213,15 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
-				setBase_Abstraction((Abstraction)null);
-				return;
+		case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
+			setBase_Abstraction((Abstraction) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -209,17 +229,18 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
-				return base_Abstraction != null;
-			case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED:
-				return !getDerived().isEmpty();
-			case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED_FROM:
-				return !getDerivedFrom().isEmpty();
+		case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
+			return base_Abstraction != null;
+		case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED:
+			return !getDerived().isEmpty();
+		case RequirementsPackage.DERIVE_REQUIREMENT__DERIVED_FROM:
+			return !getDerivedFrom().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -227,19 +248,23 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Trace.class) {
 			switch (derivedFeatureID) {
-				case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION: return StandardPackage.TRACE__BASE_ABSTRACTION;
-				default: return -1;
+			case RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION:
+				return StandardPackage.TRACE__BASE_ABSTRACTION;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == DeriveReqt.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -248,22 +273,26 @@ public class DeriveRequirementImpl extends RequirementsRelationshipImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Trace.class) {
 			switch (baseFeatureID) {
-				case StandardPackage.TRACE__BASE_ABSTRACTION: return RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION;
-				default: return -1;
+			case StandardPackage.TRACE__BASE_ABSTRACTION:
+				return RequirementsPackage.DERIVE_REQUIREMENT__BASE_ABSTRACTION;
+			default:
+				return -1;
 			}
 		}
 		if (baseClass == DeriveReqt.class) {
 			switch (baseFeatureID) {
-				default: return -1;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //DeriveRequirementImpl
+} // DeriveRequirementImpl

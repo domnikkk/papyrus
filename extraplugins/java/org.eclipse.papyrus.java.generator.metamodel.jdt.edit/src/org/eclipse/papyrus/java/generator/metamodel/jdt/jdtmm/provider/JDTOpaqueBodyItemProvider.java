@@ -30,11 +30,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTOpaqueBody} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JDTOpaqueBodyItemProvider
-	extends JDTMethodBodyItemProvider
-	implements
+		extends JDTMethodBodyItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class JDTOpaqueBodyItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JDTOpaqueBodyItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class JDTOpaqueBodyItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,28 +73,30 @@ public class JDTOpaqueBodyItemProvider
 	 * This adds a property descriptor for the body feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void add_bodyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTOpaqueBody__body_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTOpaqueBody__body_feature", "_UI_JDTOpaqueBody_type"),
-				 JdtmmPackage.Literals.JDT_OPAQUE_BODY__BODY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTOpaqueBody__body_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTOpaqueBody__body_feature", "_UI_JDTOpaqueBody_type"),
+						JdtmmPackage.Literals.JDT_OPAQUE_BODY__BODY,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns JDTOpaqueBody.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,14 +108,15 @@ public class JDTOpaqueBodyItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTOpaqueBody)object).get_body();
+		String label = ((JDTOpaqueBody) object).get_body();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTOpaqueBody_type") :
-			getString("_UI_JDTOpaqueBody_type") + " " + label;
+				getString("_UI_JDTOpaqueBody_type") :
+				getString("_UI_JDTOpaqueBody_type") + " " + label;
 	}
 
 	/**
@@ -118,6 +124,7 @@ public class JDTOpaqueBodyItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,9 +132,9 @@ public class JDTOpaqueBodyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JDTOpaqueBody.class)) {
-			case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case JdtmmPackage.JDT_OPAQUE_BODY__BODY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -137,6 +144,7 @@ public class JDTOpaqueBodyItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

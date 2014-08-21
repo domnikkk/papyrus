@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.importer;
 
@@ -36,20 +36,20 @@ public interface IModelTransferNode {
 
 	/**
 	 * Queries whether an{@code other} node represents a model sub-unit of me.
-	 * 
+	 *
 	 * @param other
-	 *        another model unit
-	 * 
+	 *            another model unit
+	 *
 	 * @return whether the {@code other} it is a logical model sub-unit of me
 	 */
 	boolean isModelSubUnit(IModelTransferNode other);
 
 	/**
 	 * Queries whether an{@code other} node represents my model super-unit.
-	 * 
+	 *
 	 * @param other
-	 *        another model unit
-	 * 
+	 *            another model unit
+	 *
 	 * @return whether the {@code other} it is the logical model super-unit of me
 	 */
 	boolean isModelParentUnit(IModelTransferNode other);

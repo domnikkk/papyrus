@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.AnalysisFunctionPrototypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AnalysisFunctionPrototypeImpl() {
@@ -52,20 +53,21 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public AnalysisFunctionType basicGetType() {
 
 		AnalysisFunctionType type = null;
 
-		if(getBase_Property() != null) {
+		if (getBase_Property() != null) {
 			// Retrieve the type of the ADLFunctionPrototype
 			Type basicType = getBase_Property().getType();
 
-			
-			if(basicType != null) {
-				type = (AnalysisFunctionType)UMLUtil.getStereotypeApplication(basicType, AnalysisFunctionType.class);
+
+			if (basicType != null) {
+				type = UMLUtil.getStereotypeApplication(basicType, AnalysisFunctionType.class);
 			}
 		}
 
@@ -74,33 +76,38 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+		case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE__TYPE:
+			if (resolve) {
+				return getType();
+			}
+			return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE__TYPE:
-				return basicGetType() != null;
+		case FunctionmodelingPackage.ANALYSIS_FUNCTION_PROTOTYPE__TYPE:
+			return basicGetType() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,25 +117,26 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Image getIcon() {
 
 		Image ImageNotFound = null;
 
-		if(getBase_Property() != null) {
+		if (getBase_Property() != null) {
 			Stereotype st = getBase_Property().getAppliedStereotype(EASTResource.ANALYSISFUNCTIONPROTOTYPE_ID);
 
 			Image defaultImage = st.getIcons().get(0);
 			Image typeImage = null;
 
 			FunctionType type = getType();
-			if((type != null) && (type.getBase_Class() != null)) {
+			if ((type != null) && (type.getBase_Class() != null)) {
 				typeImage = ElementUtil.getStereotypeImage(type.getBase_Class(), "icon");
 			}
 
-			if(typeImage != null) {
+			if (typeImage != null) {
 				return typeImage;
 			} else {
 				return defaultImage;
@@ -141,11 +149,13 @@ public class AnalysisFunctionPrototypeImpl extends FunctionPrototypeImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public AnalysisFunctionType getType() {
 		AnalysisFunctionType type = basicGetType();
-		return type != null && type.eIsProxy() ? (AnalysisFunctionType)eResolveProxy((InternalEObject)type) : type;
+		return type != null && type.eIsProxy() ? (AnalysisFunctionType) eResolveProxy((InternalEObject) type) : type;
 	}
 
 } // AnalysisFunctionPrototypeImpl

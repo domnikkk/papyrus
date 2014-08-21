@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import japa.parser.ast.body.JavadocComment;
 
 /**
  * Abstract class for all AST nodes that represent comments.
- * 
+ *
  * @see BlockComment
  * @see LineComment
  * @see JavadocComment
@@ -45,7 +45,7 @@ public abstract class Comment extends Node {
 
 	/**
 	 * Return the text of the comment.
-	 * 
+	 *
 	 * @return text of the comment
 	 */
 	public final String getContent() {
@@ -54,9 +54,9 @@ public abstract class Comment extends Node {
 
 	/**
 	 * Sets the text of the comment.
-	 * 
+	 *
 	 * @param content
-	 *        the text of the comment to set
+	 *            the text of the comment to set
 	 */
 	public void setContent(String content) {
 		this.content = content;

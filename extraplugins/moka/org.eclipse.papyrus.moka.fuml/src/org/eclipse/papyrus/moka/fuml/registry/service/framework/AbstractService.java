@@ -34,7 +34,7 @@ public abstract class AbstractService extends Object_ {
 
 	private void initializeOperations(Class classifier) {
 		this.ownedOperation = new HashMap<Operation, OpaqueBehavior>();
-		for(Operation op : classifier.getAllOperations()) {
+		for (Operation op : classifier.getAllOperations()) {
 			this.ownedOperation.put(op, SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(op));
 		}
 	}
@@ -48,7 +48,7 @@ public abstract class AbstractService extends Object_ {
 
 	@Override
 	public Execution dispatch(Operation operation) {
-		if(this.operationExecution.containsKey(operation)) {
+		if (this.operationExecution.containsKey(operation)) {
 			return this.operationExecution.get(operation);
 		}
 		throw new NotImplementedException("Not any ServiceOperationExecution implemented/registered for this operation");

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,11 +47,12 @@ public class RepositorySelectionPart
 		this.bus = bus;
 	}
 
+	@Override
 	public Control createControl(Composite parent) {
 		bus.register(this);
 
 		repoSelectionBlock = new RepositorySelectionBlock(repoMan, bus,
-			runnableContext);
+				runnableContext);
 
 		return repoSelectionBlock.createControl(parent);
 	}
@@ -63,8 +64,8 @@ public class RepositorySelectionPart
 
 	public IPapyrusRepository getSelectedRepository() {
 		return (repoSelectionBlock == null)
-			? null
-			: repoSelectionBlock.getSelectedRepository();
+				? null
+				: repoSelectionBlock.getSelectedRepository();
 	}
 
 	@Subscribe
@@ -72,9 +73,10 @@ public class RepositorySelectionPart
 		firePartCompleteChanged();
 	}
 
+	@Override
 	public boolean isPartComplete() {
 		return (getSelectedRepository() != null)
-			&& getSelectedRepository().isConnected();
+				&& getSelectedRepository().isConnected();
 	}
 
 }

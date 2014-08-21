@@ -20,7 +20,7 @@ import org.eclipse.papyrus.team.collaborative.core.utils.CollabUtils;
 
 /**
  * Tester to check if the selection belong to a collaborative model.
- * 
+ *
  * @author adaussy
  */
 public class IsCollabPropertyTest extends PropertyTester {
@@ -39,15 +39,16 @@ public class IsCollabPropertyTest extends PropertyTester {
 	 * 
 	 * @see org.eclipse.core.expressions.IPropertyTester#test(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Object)
 	 */
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_COLLAB_PROPERTY.equals(property)) {
-			if(receiver instanceof ISelection) {
-				ISelection selection = (ISelection)receiver;
-				if(selection instanceof IStructuredSelection) {
-					IStructuredSelection structurSelection = (IStructuredSelection)selection;
+		if (IS_COLLAB_PROPERTY.equals(property)) {
+			if (receiver instanceof ISelection) {
+				ISelection selection = (ISelection) receiver;
+				if (selection instanceof IStructuredSelection) {
+					IStructuredSelection structurSelection = (IStructuredSelection) selection;
 					Object first = structurSelection.getFirstElement();
 					EObject eObject = EMFHelper.getEObject(first);
-					if(eObject != null) {
+					if (eObject != null) {
 						return CollabUtils.isCollab(eObject);
 					}
 				}

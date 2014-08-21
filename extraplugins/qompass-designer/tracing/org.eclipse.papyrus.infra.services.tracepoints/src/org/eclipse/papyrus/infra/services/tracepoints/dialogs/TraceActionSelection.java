@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -89,45 +89,49 @@ public class TraceActionSelection extends SelectionStatusDialog {
 	 * @see SelectionStatusDialog#computeResult()
 	 *      need to return two values: trace action & mechanism
 	 */
+	@Override
 	protected void computeResult() {
 		// nothing to do
 		String traceActionValue = null;
-		if(m_me instanceof State) {
+		if (m_me instanceof State) {
 			traceActionValue = stateOptions.getResult();
 		}
-		else if(m_me instanceof Class) {
+		else if (m_me instanceof Class) {
 			traceActionValue = TraceActions.compositeClassOption(
-				classOptions.getIntResult(),
-				stateOptions.getIntResult(),
-				operationOptions.getIntResult());
+					classOptions.getIntResult(),
+					stateOptions.getIntResult(),
+					operationOptions.getIntResult());
 		}
-		else if(m_me instanceof State) {
+		else if (m_me instanceof State) {
 			traceActionValue = stateOptions.getResult();
 		}
-		else if(m_me instanceof Operation) {
+		else if (m_me instanceof Operation) {
 			traceActionValue = operationOptions.getResult();
 		}
 		String traceMechanism = ""; //$NON-NLS-1$
-		for(Object tableElement : fTraceImplementations.getCheckedElements()) {
-			traceMechanism = (String)tableElement;
-		};
+		for (Object tableElement : fTraceImplementations.getCheckedElements()) {
+			traceMechanism = (String) tableElement;
+		}
+		;
 
-		Object[] result = new Object[]{
-			traceActionValue,
-			traceMechanism
+		Object[] result = new Object[] {
+				traceActionValue,
+				traceMechanism
 		};
 		setResult(Arrays.asList(result));
 	}
 
 	class EnumLabelProvider extends LabelProvider implements ITableLabelProvider {
 
+		@Override
 		public String getColumnText(Object obj, int index) {
-			if(obj instanceof Enum) {
-				return ((Enum<?>)obj).name();
+			if (obj instanceof Enum) {
+				return ((Enum<?>) obj).name();
 			}
 			return obj.toString();
 		}
 
+		@Override
 		public Image getColumnImage(Object obj, int index) {
 			return null;
 		}
@@ -135,12 +139,15 @@ public class TraceActionSelection extends SelectionStatusDialog {
 
 	class TraceMechanismsCP implements IStructuredContentProvider {
 
+		@Override
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
 		}
 
+		@Override
 		public void dispose() {
 		}
 
+		@Override
 		public Object[] getElements(Object parent) {
 			Object items[] = null;
 			//
@@ -149,13 +156,13 @@ public class TraceActionSelection extends SelectionStatusDialog {
 			// extension mechanism.
 
 			EList<ITraceMechanism> mechanisms = TraceMechanism.getTraceMechanisms();
-			if(mechanisms.size() == 0) {
-				items = new String[]{ Messages.TraceActionSelection_NoPluginsProvideTraceExt };
+			if (mechanisms.size() == 0) {
+				items = new String[] { Messages.TraceActionSelection_NoPluginsProvideTraceExt };
 			}
 			else {
 				EList<String> idList = new BasicEList<String>();
-				for(ITraceMechanism mechanism : mechanisms) {
-					for(String id : mechanism.getTraceMechanismIDs(m_me)) {
+				for (ITraceMechanism mechanism : mechanisms) {
+					for (String id : mechanism.getTraceMechanismIDs(m_me)) {
 						idList.add(id);
 					}
 				}
@@ -165,8 +172,9 @@ public class TraceActionSelection extends SelectionStatusDialog {
 		}
 	}
 
+	@Override
 	public Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Label label = new Label(contents, SWT.NONE);
 		label.setText(Messages.TraceActionSelection_SelectTraceAction);
@@ -181,11 +189,11 @@ public class TraceActionSelection extends SelectionStatusDialog {
 		String actionString = m_marker.getAttribute(TracepointConstants.traceAction, ""); //$NON-NLS-1$
 		String mechanismID = m_marker.getAttribute(TracepointConstants.traceMechanism, ""); //$NON-NLS-1$
 
-		if(m_me instanceof State) {
+		if (m_me instanceof State) {
 			stateOptions = new BinaryEncodedMChoiceFieldEditor(Messages.TraceActionSelection_StateOptions, 3, taStateOptions, contents, true);
 			stateOptions.setupViaString(actionString);
 		}
-		else if(m_me instanceof Class) {
+		else if (m_me instanceof Class) {
 			classOptions = new BinaryEncodedMChoiceFieldEditor(Messages.TraceActionSelection_ClassOptions, 3, taClassOptions, contents, true);
 			stateOptions = new BinaryEncodedMChoiceFieldEditor(Messages.TraceActionSelection_StateOptions, 3, taStateOptions, contents, true);
 			operationOptions = new BinaryEncodedMChoiceFieldEditor(Messages.TraceActionSelection_OperationOptions, 3, taOperationOptions, contents, true);
@@ -193,7 +201,7 @@ public class TraceActionSelection extends SelectionStatusDialog {
 			stateOptions.setupViaString(TraceActions.getOptions(actionString, TraceFeature.State));
 			operationOptions.setupViaString(TraceActions.getOptions(actionString, TraceFeature.Operation));
 		}
-		else if(m_me instanceof Operation) {
+		else if (m_me instanceof Operation) {
 			operationOptions = new BinaryEncodedMChoiceFieldEditor(Messages.TraceActionSelection_OperationOptions, 3, taOperationOptions, contents, true);
 			operationOptions.setupViaString(actionString);
 		}
@@ -210,13 +218,14 @@ public class TraceActionSelection extends SelectionStatusDialog {
 
 		fTraceImplementations.addCheckStateListener(new ICheckStateListener() {
 
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				Object element = event.getElement();
 				boolean isChecked = event.getChecked();
 				// assure radio button functionality
-				if(isChecked) {
-					for(Object checkedElement : fTraceImplementations.getCheckedElements()) {
-						if(checkedElement != element) {
+				if (isChecked) {
+					for (Object checkedElement : fTraceImplementations.getCheckedElements()) {
+						if (checkedElement != element) {
 							fTraceImplementations.setChecked(checkedElement, false);
 						}
 					}
@@ -226,22 +235,23 @@ public class TraceActionSelection extends SelectionStatusDialog {
 
 		fTraceImplementations.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = event.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					Object first = ((IStructuredSelection)selection).getFirstElement();
-					if(first instanceof String) {
+				if (selection instanceof IStructuredSelection) {
+					Object first = ((IStructuredSelection) selection).getFirstElement();
+					if (first instanceof String) {
 						EList<ITraceMechanism> mechanisms = TraceMechanism.getTraceMechanisms();
 						boolean noDesc = true;
-						for(ITraceMechanism mechanism : mechanisms) {
-							String description = mechanism.getTraceMechanismDescription(m_me, (String)first);
-							if(description != null) {
+						for (ITraceMechanism mechanism : mechanisms) {
+							String description = mechanism.getTraceMechanismDescription(m_me, (String) first);
+							if (description != null) {
 								fDescription.setText(description);
 								noDesc = false;
 								break;
 							}
 						}
-						if(noDesc) {
+						if (noDesc) {
 							fDescription.setText(Messages.TraceActionSelection_NotAvail);
 						}
 					}
@@ -280,14 +290,14 @@ public class TraceActionSelection extends SelectionStatusDialog {
 	// obtain name and explicit/implicit node Allocation
 	protected void setTextFromData(TreeItem ti) {
 		Object data = ti.getData();
-		if(data instanceof InstanceSpecification) {
+		if (data instanceof InstanceSpecification) {
 			// ti.setText(new String[]{ name, nodeName, "[" + list + "]" });
 		}
 	}
 
 	protected void refreshTree(TreeItem ti) {
 		setTextFromData(ti);
-		for(TreeItem subItem : ti.getItems()) {
+		for (TreeItem subItem : ti.getItems()) {
 			refreshTree(subItem);
 		}
 	}

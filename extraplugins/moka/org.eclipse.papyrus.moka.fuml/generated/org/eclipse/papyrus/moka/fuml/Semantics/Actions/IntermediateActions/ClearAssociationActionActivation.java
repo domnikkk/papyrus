@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,17 +23,18 @@ import org.eclipse.uml2.uml.ClearAssociationAction;
 
 public class ClearAssociationActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the extent, at the current execution locus, of the given
 		// association.
 		// Read the object input pin. Destroy all links in which the object
 		// participates.
-		ClearAssociationAction action = (ClearAssociationAction)(this.node);
+		ClearAssociationAction action = (ClearAssociationAction) (this.node);
 		List<ExtensionalValue> extent = this.getExecutionLocus().getExtent(action.getAssociation());
 		Value objectValue = this.takeTokens(action.getObject()).get(0);
-		for(int i = 0; i < extent.size(); i++) {
-			Link link = (Link)(extent.get(i));
-			if(this.valueParticipatesInLink(objectValue, link)) {
+		for (int i = 0; i < extent.size(); i++) {
+			Link link = (Link) (extent.get(i));
+			if (this.valueParticipatesInLink(objectValue, link)) {
 				link.destroy();
 			}
 		}

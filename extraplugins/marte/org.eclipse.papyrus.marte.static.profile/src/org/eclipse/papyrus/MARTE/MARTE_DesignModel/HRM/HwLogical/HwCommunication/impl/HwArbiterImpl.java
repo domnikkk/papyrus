@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl#getControlledMedias <em>Controlled Medias</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwArbiterImpl#getControlledMedias <em>Controlled Medias</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	 * The cached value of the '{@link #getControlledMedias() <em>Controlled Medias</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getControlledMedias()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwArbiterImpl() {
@@ -61,6 +63,7 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,8 +74,10 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwMedia> getControlledMedias() {
 		if (controlledMedias == null) {
 			controlledMedias = new EObjectWithInverseResolvingEList.ManyInverse<HwMedia>(HwMedia.class, this, HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS, HwCommunicationPackage.HW_MEDIA__ARBITERS);
@@ -83,14 +88,15 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getControlledMedias()).basicAdd(otherEnd, msgs);
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getControlledMedias()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,13 +104,14 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				return ((InternalEList<?>)getControlledMedias()).basicRemove(otherEnd, msgs);
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			return ((InternalEList<?>) getControlledMedias()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,13 +119,14 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				return getControlledMedias();
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			return getControlledMedias();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,16 +134,17 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				getControlledMedias().clear();
-				getControlledMedias().addAll((Collection<? extends HwMedia>)newValue);
-				return;
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			getControlledMedias().clear();
+			getControlledMedias().addAll((Collection<? extends HwMedia>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -143,14 +152,15 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				getControlledMedias().clear();
-				return;
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			getControlledMedias().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,15 +168,16 @@ public class HwArbiterImpl extends HwCommunicationResourceImpl implements HwArbi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
-				return controlledMedias != null && !controlledMedias.isEmpty();
+		case HwCommunicationPackage.HW_ARBITER__CONTROLLED_MEDIAS:
+			return controlledMedias != null && !controlledMedias.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //HwArbiterImpl
+} // HwArbiterImpl

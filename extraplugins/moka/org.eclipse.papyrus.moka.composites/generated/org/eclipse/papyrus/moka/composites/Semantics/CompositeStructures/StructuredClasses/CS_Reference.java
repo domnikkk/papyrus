@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class CS_Reference extends Reference {
 	public CS_Object compositeReferent;
 
 	public Execution dispatchIn(Operation operation, CS_InteractionPoint interactionPoint) {
-		//Delegates dispatching to composite referent
+		// Delegates dispatching to composite referent
 		return this.compositeReferent.dispatchIn(operation, interactionPoint);
 	}
 
@@ -60,22 +60,22 @@ public class CS_Reference extends Reference {
 	}
 
 	public Execution dispatchOut(Operation operation, CS_InteractionPoint interactionPoint) {
-		// Delegates dispatching (through the interaction point, to the environment) 
+		// Delegates dispatching (through the interaction point, to the environment)
 		// to compositeReferent
 		return this.compositeReferent.dispatchOut(operation, interactionPoint);
 	}
 
 	public void sendOut(SignalInstance signalInstance, CS_InteractionPoint interactionPoint) {
-		// Delegates sending (through the interaction point, to the environment) 
+		// Delegates sending (through the interaction point, to the environment)
 		// to compositeReferent
 		this.compositeReferent.sendOut(signalInstance, interactionPoint);
 	}
-	
+
 	@Override
 	public Value copy() {
 		// Create a new reference with the same referent and composite referent as this reference.
-		CS_Reference newValue = new CS_Reference() ;
-		newValue.referent = this.referent ;
+		CS_Reference newValue = new CS_Reference();
+		newValue.referent = this.referent;
 		newValue.compositeReferent = this.compositeReferent;
 		return newValue;
 	}

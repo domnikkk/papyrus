@@ -7,8 +7,8 @@ import org.eclipse.papyrus.uml.diagram.wizards.ModelCopyWizard;
  */
 
 public class ClientServerTraceTestModelWizard extends ModelCopyWizard {
-	
-	public ClientServerTraceTestModelWizard () {
+
+	public ClientServerTraceTestModelWizard() {
 		super("ClientServerTraceTest"); //$NON-NLS-1$
 	}
 }

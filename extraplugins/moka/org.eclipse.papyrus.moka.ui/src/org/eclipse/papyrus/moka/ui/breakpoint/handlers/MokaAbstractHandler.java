@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,12 +28,12 @@ public abstract class MokaAbstractHandler extends AbstractHandler {
 
 	/**
 	 * <pre>
-	 * Get the selected element, the first selected element if several are selected or null 
-	 * if no selection or the selection is not an {@link EObject}. 
+	 * Get the selected element, the first selected element if several are selected or null
+	 * if no selection or the selection is not an {@link EObject}.
 	 * 
 	 * @return selected {@link EObject} or null
 	 * </pre>
-	 * 
+	 *
 	 */
 	protected EObject getSelectedElement() {
 		EObject eObject = null;
@@ -43,20 +43,20 @@ public abstract class MokaAbstractHandler extends AbstractHandler {
 		selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
 
 		// Get first element if the selection is an IStructuredSelection
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			selection = structuredSelection.getFirstElement();
 		}
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(selection != null) {
-			if(selection instanceof IAdaptable) {
-				selection = ((IAdaptable)selection).getAdapter(EObject.class);
+		if (selection != null) {
+			if (selection instanceof IAdaptable) {
+				selection = ((IAdaptable) selection).getAdapter(EObject.class);
 			}
 
 			Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(selection);
-			if(businessObject instanceof EObject) {
-				eObject = (EObject)businessObject;
+			if (businessObject instanceof EObject) {
+				eObject = (EObject) businessObject;
 			}
 		}
 		return eObject;

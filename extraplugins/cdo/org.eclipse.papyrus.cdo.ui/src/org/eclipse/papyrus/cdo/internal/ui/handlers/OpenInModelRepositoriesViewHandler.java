@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,12 +43,12 @@ public class OpenInModelRepositoriesViewHandler extends AbstractHandler {
 
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		CDOAdminClientRepository adminRepository = UIUtil.adaptElement(selection, CDOAdminClientRepository.class);
-		if(adminRepository != null) {
+		if (adminRepository != null) {
 			CDOAdminClient client = adminRepository.getAdmin();
 			String url = String.format("%s?repositoryName=%s", client.getURL(), adminRepository.getName()); //$NON-NLS-1$
 
 			IPapyrusRepository repository = manager.getRepository(url);
-			if(repository == null) {
+			if (repository == null) {
 				repository = manager.createRepository(url);
 				repository.setName(adminRepository.getName());
 				manager.saveRepositories();
@@ -56,11 +56,11 @@ public class OpenInModelRepositoriesViewHandler extends AbstractHandler {
 
 			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
 
-			if(window != null) {
+			if (window != null) {
 				selectReveal(window, repository);
 			}
 
-			if(!repository.isConnected()) {
+			if (!repository.isConnected()) {
 				new ConnectRepositoryAction(HandlerUtil.getActivePart(event)).run(repository);
 			}
 		}
@@ -70,7 +70,7 @@ public class OpenInModelRepositoriesViewHandler extends AbstractHandler {
 
 	protected void selectReveal(IWorkbenchWindow window, IPapyrusRepository repository) {
 		IWorkbenchPage page = window.getActivePage();
-		if(page != null) {
+		if (page != null) {
 			try {
 				IViewPart view = page.showView(ModelRepositoriesView.ID);
 				view.getSite().getSelectionProvider().setSelection(new StructuredSelection(repository));

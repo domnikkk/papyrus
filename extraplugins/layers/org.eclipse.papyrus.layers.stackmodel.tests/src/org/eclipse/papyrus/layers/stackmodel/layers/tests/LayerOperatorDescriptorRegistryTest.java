@@ -16,14 +16,15 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addLayerOperatorDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor) <em>Add Layer Operator Descriptor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String) <em>Get Layer Operator Descriptor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Add Property Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String) <em>Get Property Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String) <em>Attach Operator To Descriptor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String) <em>Create Layer Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addLayerOperatorDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor) <em>Add Layer Operator Descriptor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String) <em>Get Layer Operator Descriptor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Add Property Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String) <em>Get Property Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String) <em>Attach Operator To Descriptor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String) <em>Create Layer Operator</em>}</li>
  * </ul>
  * </p>
+ * 
  * @generated
  */
 public class LayerOperatorDescriptorRegistryTest extends TestCase {
@@ -32,6 +33,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * The fixture for this Layer Operator Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorRegistry fixture = null;
@@ -39,6 +41,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -49,6 +52,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Constructs a new Layer Operator Descriptor Registry test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerOperatorDescriptorRegistryTest(String name) {
@@ -59,6 +63,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Sets the fixture for this Layer Operator Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(LayerOperatorDescriptorRegistry fixture) {
@@ -69,6 +74,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Returns the fixture for this Layer Operator Descriptor Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayerOperatorDescriptorRegistry getFixture() {
@@ -78,6 +84,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -89,6 +96,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -101,6 +109,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addLayerOperatorDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor) <em>Add Layer Operator Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addLayerOperatorDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptor)
 	 * @generated
 	 */
@@ -114,6 +123,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String) <em>Get Layer Operator Descriptor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getLayerOperatorDescriptor(java.lang.String)
 	 * @generated
 	 */
@@ -127,6 +137,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator) <em>Add Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#addPropertyOperator(org.eclipse.papyrus.layers.stackmodel.layers.PropertyOperator)
 	 * @generated
 	 */
@@ -140,6 +151,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String) <em>Get Property Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#getPropertyOperator(java.lang.String)
 	 * @generated
 	 */
@@ -150,9 +162,11 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String) <em>Attach Operator To Descriptor</em>}' operation.
+	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String) <em>Attach Operator To Descriptor</em>}'
+	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#attachOperatorToDescriptor(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.String, java.lang.String)
 	 * @generated
 	 */
@@ -166,6 +180,7 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String) <em>Create Layer Operator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.LayerOperatorDescriptorRegistry#createLayerOperator(java.lang.String)
 	 * @generated
 	 */
@@ -175,4 +190,4 @@ public class LayerOperatorDescriptorRegistryTest extends TestCase {
 		fail();
 	}
 
-} //LayerOperatorDescriptorRegistryTest
+} // LayerOperatorDescriptorRegistryTest

@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.facet.infra.query.ModelQuery;
@@ -36,24 +34,25 @@ import org.eclipse.papyrus.infra.table.instance.papyrustableinstance.Papyrustabl
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#isIsSynchronized <em>Is Synchronized</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getTable <em>Table</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getFillingQueries <em>Filling Queries</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getPastedElementId <em>Pasted Element Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#isIsSynchronized <em>Is Synchronized</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getTable <em>Table</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getFillingQueries <em>Filling Queries</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getPastedElementId <em>Pasted Element Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.table.instance.papyrustableinstance.impl.PapyrusTableInstanceImpl#getPastedElementContainmentFeature <em>Pasted Element Containment Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PapyrusTableInstanceImpl extends 
-EModelElementImpl implements PapyrusTableInstance {
+public class PapyrusTableInstanceImpl extends
+		EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,6 +63,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -74,6 +74,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -84,6 +85,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -94,6 +96,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The default value of the '{@link #isIsSynchronized() <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsSynchronized()
 	 * @generated
 	 * @ordered
@@ -104,6 +107,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #isIsSynchronized() <em>Is Synchronized</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsSynchronized()
 	 * @generated
 	 * @ordered
@@ -114,6 +118,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTable()
 	 * @generated
 	 * @ordered
@@ -124,6 +129,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getFillingQueries() <em>Filling Queries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFillingQueries()
 	 * @generated
 	 * @ordered
@@ -134,6 +140,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The default value of the '{@link #getPastedElementId() <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPastedElementId()
 	 * @generated
 	 * @ordered
@@ -144,6 +151,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getPastedElementId() <em>Pasted Element Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPastedElementId()
 	 * @generated
 	 * @ordered
@@ -154,6 +162,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	 * The cached value of the '{@link #getPastedElementContainmentFeature() <em>Pasted Element Containment Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPastedElementContainmentFeature()
 	 * @generated
 	 * @ordered
@@ -163,6 +172,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PapyrusTableInstanceImpl() {
@@ -172,6 +182,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,8 +193,10 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -191,20 +204,25 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -212,20 +230,25 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE, oldType, type));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsSynchronized() {
 		return isSynchronized;
 	}
@@ -233,27 +256,33 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsSynchronized(boolean newIsSynchronized) {
 		boolean oldIsSynchronized = isSynchronized;
 		isSynchronized = newIsSynchronized;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED, oldIsSynchronized, isSynchronized));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TableInstance2 getTable() {
 		if (table != null && table.eIsProxy()) {
-			InternalEObject oldTable = (InternalEObject)table;
-			table = (TableInstance2)eResolveProxy(oldTable);
+			InternalEObject oldTable = (InternalEObject) table;
+			table = (TableInstance2) eResolveProxy(oldTable);
 			if (table != oldTable) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE, oldTable, table));
+				}
 			}
 		}
 		return table;
@@ -262,6 +291,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TableInstance2 basicGetTable() {
@@ -271,20 +301,25 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTable(TableInstance2 newTable) {
 		TableInstance2 oldTable = table;
 		table = newTable;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE, oldTable, table));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ModelQuery> getFillingQueries() {
 		if (fillingQueries == null) {
 			fillingQueries = new EObjectResolvingEList<ModelQuery>(ModelQuery.class, this, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES);
@@ -295,8 +330,10 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPastedElementId() {
 		return pastedElementId;
 	}
@@ -304,27 +341,33 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPastedElementId(String newPastedElementId) {
 		String oldPastedElementId = pastedElementId;
 		pastedElementId = newPastedElementId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID, oldPastedElementId, pastedElementId));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getPastedElementContainmentFeature() {
 		if (pastedElementContainmentFeature != null && pastedElementContainmentFeature.eIsProxy()) {
-			InternalEObject oldPastedElementContainmentFeature = (InternalEObject)pastedElementContainmentFeature;
-			pastedElementContainmentFeature = (EReference)eResolveProxy(oldPastedElementContainmentFeature);
+			InternalEObject oldPastedElementContainmentFeature = (InternalEObject) pastedElementContainmentFeature;
+			pastedElementContainmentFeature = (EReference) eResolveProxy(oldPastedElementContainmentFeature);
 			if (pastedElementContainmentFeature != oldPastedElementContainmentFeature) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE, oldPastedElementContainmentFeature, pastedElementContainmentFeature));
+				}
 			}
 		}
 		return pastedElementContainmentFeature;
@@ -333,6 +376,7 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference basicGetPastedElementContainmentFeature() {
@@ -342,39 +386,47 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPastedElementContainmentFeature(EReference newPastedElementContainmentFeature) {
 		EReference oldPastedElementContainmentFeature = pastedElementContainmentFeature;
 		pastedElementContainmentFeature = newPastedElementContainmentFeature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE, oldPastedElementContainmentFeature, pastedElementContainmentFeature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
-				return getName();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
-				return getType();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
-				return isIsSynchronized();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
-				if (resolve) return getTable();
-				return basicGetTable();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
-				return getFillingQueries();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
-				return getPastedElementId();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
-				if (resolve) return getPastedElementContainmentFeature();
-				return basicGetPastedElementContainmentFeature();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
+			return getName();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
+			return getType();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
+			return isIsSynchronized();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
+			if (resolve) {
+				return getTable();
+			}
+			return basicGetTable();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
+			return getFillingQueries();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
+			return getPastedElementId();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
+			if (resolve) {
+				return getPastedElementContainmentFeature();
+			}
+			return basicGetPastedElementContainmentFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -382,34 +434,35 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
-				setName((String)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
-				setType((String)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
-				setIsSynchronized((Boolean)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
-				setTable((TableInstance2)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
-				getFillingQueries().clear();
-				getFillingQueries().addAll((Collection<? extends ModelQuery>)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
-				setPastedElementId((String)newValue);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
-				setPastedElementContainmentFeature((EReference)newValue);
-				return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
+			setName((String) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
+			setType((String) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
+			setIsSynchronized((Boolean) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
+			setTable((TableInstance2) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
+			getFillingQueries().clear();
+			getFillingQueries().addAll((Collection<? extends ModelQuery>) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
+			setPastedElementId((String) newValue);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
+			setPastedElementContainmentFeature((EReference) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -417,32 +470,33 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
-				setIsSynchronized(IS_SYNCHRONIZED_EDEFAULT);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
-				setTable((TableInstance2)null);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
-				getFillingQueries().clear();
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
-				setPastedElementId(PASTED_ELEMENT_ID_EDEFAULT);
-				return;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
-				setPastedElementContainmentFeature((EReference)null);
-				return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
+			setIsSynchronized(IS_SYNCHRONIZED_EDEFAULT);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
+			setTable((TableInstance2) null);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
+			getFillingQueries().clear();
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
+			setPastedElementId(PASTED_ELEMENT_ID_EDEFAULT);
+			return;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
+			setPastedElementContainmentFeature((EReference) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -450,25 +504,26 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
-				return isSynchronized != IS_SYNCHRONIZED_EDEFAULT;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
-				return table != null;
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
-				return fillingQueries != null && !fillingQueries.isEmpty();
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
-				return PASTED_ELEMENT_ID_EDEFAULT == null ? pastedElementId != null : !PASTED_ELEMENT_ID_EDEFAULT.equals(pastedElementId);
-			case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
-				return pastedElementContainmentFeature != null;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__IS_SYNCHRONIZED:
+			return isSynchronized != IS_SYNCHRONIZED_EDEFAULT;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__TABLE:
+			return table != null;
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__FILLING_QUERIES:
+			return fillingQueries != null && !fillingQueries.isEmpty();
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_ID:
+			return PASTED_ELEMENT_ID_EDEFAULT == null ? pastedElementId != null : !PASTED_ELEMENT_ID_EDEFAULT.equals(pastedElementId);
+		case PapyrustableinstancePackage.PAPYRUS_TABLE_INSTANCE__PASTED_ELEMENT_CONTAINMENT_FEATURE:
+			return pastedElementContainmentFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -476,11 +531,14 @@ EModelElementImpl implements PapyrusTableInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -495,4 +553,4 @@ EModelElementImpl implements PapyrusTableInstance {
 		return result.toString();
 	}
 
-} //PapyrusTableInstanceImpl
+} // PapyrusTableInstanceImpl

@@ -48,12 +48,12 @@ public class OpenTextualEditorForStereotypeApplications extends AbstractHandler 
 	public Object execute(ExecutionEvent event) {
 		Display current = Display.getCurrent();
 
-		if(current == null) {
+		if (current == null) {
 			current = Display.getDefault();
 		}
 		Shell shell = current.getActiveShell();
 
-		if(shell != null) {
+		if (shell != null) {
 			updateSelectedEObject();
 		} else {
 			// Activator.log.error("impossible to find a shell to open the message dialog", null);
@@ -73,34 +73,34 @@ public class OpenTextualEditorForStereotypeApplications extends AbstractHandler 
 
 		// Retrieve selected elements
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow != null){
-			IStructuredSelection selection = (IStructuredSelection)activeWorkbenchWindow.getSelectionService().getSelection();
+		if (activeWorkbenchWindow != null) {
+			IStructuredSelection selection = (IStructuredSelection) activeWorkbenchWindow.getSelectionService().getSelection();
 			Iterator<?> eltIt = selection.iterator();
 
-			while(eltIt.hasNext()) {
+			while (eltIt.hasNext()) {
 				Object currentObject = eltIt.next();
 
 				// If the object is an edit part, try to get semantic bridge
-				if(currentObject instanceof GraphicalEditPart) {
-					GraphicalEditPart editPart = (GraphicalEditPart)currentObject;
+				if (currentObject instanceof GraphicalEditPart) {
+					GraphicalEditPart editPart = (GraphicalEditPart) currentObject;
 					EObject semantic = EMFHelper.getEObject(editPart);
-					if(semantic instanceof Element) {
-						//FIXME: The new XText integration doesn't support direct dialog creation on an edit part (The TextAwareEditPart is supposed to handle this case itself)
-						//DirectEditManager manager = new StereotypeApplicationPopupEditorConfigurationContribution().createDirectEditManager(editPart);
+					if (semantic instanceof Element) {
+						// FIXME: The new XText integration doesn't support direct dialog creation on an edit part (The TextAwareEditPart is supposed to handle this case itself)
+						// DirectEditManager manager = new StereotypeApplicationPopupEditorConfigurationContribution().createDirectEditManager(editPart);
 					}
 				}
 
 				// check whether part of model explorer
-				if(currentObject instanceof IAdaptable) {
+				if (currentObject instanceof IAdaptable) {
 					// modisco ModelElementItem supports IAdaptable (cleaner than cast / dependency with modisco)
-					currentObject = ((IAdaptable)currentObject).getAdapter(EObject.class);
+					currentObject = ((IAdaptable) currentObject).getAdapter(EObject.class);
 				}
 
 				// If element is a UML Element
-				if(currentObject instanceof Element) {
-					currentSelectedEObjects.add((EObject)currentObject);
+				if (currentObject instanceof Element) {
+					currentSelectedEObjects.add((EObject) currentObject);
 				}
-			}			
+			}
 		}
 
 		selectedEObjects = currentSelectedEObjects;
@@ -113,7 +113,7 @@ public class OpenTextualEditorForStereotypeApplications extends AbstractHandler 
 	 * @return list of EObject
 	 */
 	public EObject getSelectedEObject() {
-		if(selectedEObjects.size() > 0) {
+		if (selectedEObjects.size() > 0) {
 			return selectedEObjects.get(0);
 		}
 		return null;

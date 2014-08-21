@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ abstract class ModelImportWizardPage
 
 	protected Diagnostic report(int severity, String message) {
 		return new BasicDiagnostic(severity, Activator.PLUGIN_ID, 0, message,
-			null);
+				null);
 	}
 
 	Diagnostic mostSevere(Diagnostic diagnostic) {
@@ -72,32 +72,32 @@ abstract class ModelImportWizardPage
 		String message;
 
 		switch (diagnostic.getSeverity()) {
-			case Diagnostic.OK :
-				messageType = IMessageProvider.NONE;
-				message = this.message;
-				break;
-			case Diagnostic.INFO :
-				messageType = IMessageProvider.INFORMATION;
-				message = diagnostic.getMessage();
-				break;
-			case Diagnostic.WARNING :
-				messageType = IMessageProvider.WARNING;
-				message = diagnostic.getMessage();
-				break;
-			case Diagnostic.CANCEL :
-				// an OK condition, but we can't finish the page even so
-				messageType = IMessageProvider.INFORMATION;
-				message = diagnostic.getMessage();
-				break;
-			default :
-				messageType = IMessageProvider.ERROR;
-				message = diagnostic.getMessage();
-				break;
+		case Diagnostic.OK:
+			messageType = IMessageProvider.NONE;
+			message = this.message;
+			break;
+		case Diagnostic.INFO:
+			messageType = IMessageProvider.INFORMATION;
+			message = diagnostic.getMessage();
+			break;
+		case Diagnostic.WARNING:
+			messageType = IMessageProvider.WARNING;
+			message = diagnostic.getMessage();
+			break;
+		case Diagnostic.CANCEL:
+			// an OK condition, but we can't finish the page even so
+			messageType = IMessageProvider.INFORMATION;
+			message = diagnostic.getMessage();
+			break;
+		default:
+			messageType = IMessageProvider.ERROR;
+			message = diagnostic.getMessage();
+			break;
 		}
 
 		// OK_INSTANCE and CANCEL_INSTANCE have useless messages
 		if ((diagnostic == Diagnostic.OK_INSTANCE)
-			|| (diagnostic == Diagnostic.CANCEL_INSTANCE)) {
+				|| (diagnostic == Diagnostic.CANCEL_INSTANCE)) {
 
 			message = this.message;
 		}
@@ -109,7 +109,7 @@ abstract class ModelImportWizardPage
 	protected void post(Object event) {
 		bus.post(event);
 	}
-	
+
 	protected EventBus getEventBus() {
 		return bus;
 	}

@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.profile.standard.Trace;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsPackage
  * @generated
  */
@@ -39,6 +40,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static RequirementsPackage modelPackage;
@@ -47,6 +49,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RequirementsAdapterFactory() {
@@ -60,6 +63,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -69,7 +73,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -78,111 +82,135 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RequirementsSwitch<Adapter> modelSwitch =
-		new RequirementsSwitch<Adapter>() {
-			@Override
-			public Adapter caseRequirementsRelationship(RequirementsRelationship object) {
-				return createRequirementsRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseRequirement(Requirement object) {
-				return createRequirementAdapter();
-			}
-			@Override
-			public Adapter caseOperationalSituation(OperationalSituation object) {
-				return createOperationalSituationAdapter();
-			}
-			@Override
-			public Adapter caseRequirementsLink(RequirementsLink object) {
-				return createRequirementsLinkAdapter();
-			}
-			@Override
-			public Adapter caseRequirementsModel(RequirementsModel object) {
-				return createRequirementsModelAdapter();
-			}
-			@Override
-			public Adapter caseRequirementsRelationshipGroup(RequirementsRelationshipGroup object) {
-				return createRequirementsRelationshipGroupAdapter();
-			}
-			@Override
-			public Adapter caseSatisfy(Satisfy object) {
-				return createSatisfyAdapter();
-			}
-			@Override
-			public Adapter caseRefine(Refine object) {
-				return createRefineAdapter();
-			}
-			@Override
-			public Adapter caseDeriveRequirement(DeriveRequirement object) {
-				return createDeriveRequirementAdapter();
-			}
-			@Override
-			public Adapter caseQualityRequirement(QualityRequirement object) {
-				return createQualityRequirementAdapter();
-			}
-			@Override
-			public Adapter caseRequirementsHierarchy(RequirementsHierarchy object) {
-				return createRequirementsHierarchyAdapter();
-			}
-			@Override
-			public Adapter caseEAElement(EAElement object) {
-				return createEAElementAdapter();
-			}
-			@Override
-			public Adapter caseRelationship(Relationship object) {
-				return createRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseRequirements_Requirement(org.eclipse.papyrus.sysml.requirements.Requirement object) {
-				return createRequirements_RequirementAdapter();
-			}
-			@Override
-			public Adapter caseEAPackageableElement(EAPackageableElement object) {
-				return createEAPackageableElementAdapter();
-			}
-			@Override
-			public Adapter caseTraceableSpecification(TraceableSpecification object) {
-				return createTraceableSpecificationAdapter();
-			}
-			@Override
-			public Adapter caseContext(Context object) {
-				return createContextAdapter();
-			}
-			@Override
-			public Adapter caseTrace(Trace object) {
-				return createTraceAdapter();
-			}
-			@Override
-			public Adapter caseRequirements_Satisfy(org.eclipse.papyrus.sysml.requirements.Satisfy object) {
-				return createRequirements_SatisfyAdapter();
-			}
-			@Override
-			public Adapter caseStandard_Refine(org.eclipse.uml2.uml.profile.standard.Refine object) {
-				return createStandard_RefineAdapter();
-			}
-			@Override
-			public Adapter caseDeriveReqt(DeriveReqt object) {
-				return createDeriveReqtAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new RequirementsSwitch<Adapter>() {
+				@Override
+				public Adapter caseRequirementsRelationship(RequirementsRelationship object) {
+					return createRequirementsRelationshipAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirement(Requirement object) {
+					return createRequirementAdapter();
+				}
+
+				@Override
+				public Adapter caseOperationalSituation(OperationalSituation object) {
+					return createOperationalSituationAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirementsLink(RequirementsLink object) {
+					return createRequirementsLinkAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirementsModel(RequirementsModel object) {
+					return createRequirementsModelAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirementsRelationshipGroup(RequirementsRelationshipGroup object) {
+					return createRequirementsRelationshipGroupAdapter();
+				}
+
+				@Override
+				public Adapter caseSatisfy(Satisfy object) {
+					return createSatisfyAdapter();
+				}
+
+				@Override
+				public Adapter caseRefine(Refine object) {
+					return createRefineAdapter();
+				}
+
+				@Override
+				public Adapter caseDeriveRequirement(DeriveRequirement object) {
+					return createDeriveRequirementAdapter();
+				}
+
+				@Override
+				public Adapter caseQualityRequirement(QualityRequirement object) {
+					return createQualityRequirementAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirementsHierarchy(RequirementsHierarchy object) {
+					return createRequirementsHierarchyAdapter();
+				}
+
+				@Override
+				public Adapter caseEAElement(EAElement object) {
+					return createEAElementAdapter();
+				}
+
+				@Override
+				public Adapter caseRelationship(Relationship object) {
+					return createRelationshipAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirements_Requirement(org.eclipse.papyrus.sysml.requirements.Requirement object) {
+					return createRequirements_RequirementAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPackageableElement(EAPackageableElement object) {
+					return createEAPackageableElementAdapter();
+				}
+
+				@Override
+				public Adapter caseTraceableSpecification(TraceableSpecification object) {
+					return createTraceableSpecificationAdapter();
+				}
+
+				@Override
+				public Adapter caseContext(Context object) {
+					return createContextAdapter();
+				}
+
+				@Override
+				public Adapter caseTrace(Trace object) {
+					return createTraceAdapter();
+				}
+
+				@Override
+				public Adapter caseRequirements_Satisfy(org.eclipse.papyrus.sysml.requirements.Satisfy object) {
+					return createRequirements_SatisfyAdapter();
+				}
+
+				@Override
+				public Adapter caseStandard_Refine(org.eclipse.uml2.uml.profile.standard.Refine object) {
+					return createStandard_RefineAdapter();
+				}
+
+				@Override
+				public Adapter caseDeriveReqt(DeriveReqt object) {
+					return createDeriveReqtAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -192,6 +220,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationship
 	 * @generated
@@ -206,6 +235,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Requirement
 	 * @generated
@@ -220,6 +250,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.OperationalSituation
 	 * @generated
@@ -234,6 +265,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsLink
 	 * @generated
@@ -248,6 +280,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsModel
 	 * @generated
@@ -262,6 +295,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsRelationshipGroup
 	 * @generated
@@ -276,6 +310,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Satisfy
 	 * @generated
@@ -290,6 +325,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.Refine
 	 * @generated
@@ -304,6 +340,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.DeriveRequirement
 	 * @generated
@@ -318,6 +355,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.QualityRequirement
 	 * @generated
@@ -332,6 +370,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarchy
 	 * @generated
@@ -346,6 +385,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -360,6 +400,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.Relationship
 	 * @generated
@@ -374,6 +415,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.sysml.requirements.Requirement
 	 * @generated
@@ -388,6 +430,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -402,6 +445,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -416,6 +460,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.Context
 	 * @generated
@@ -430,6 +475,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.uml2.uml.profile.standard.Trace
 	 * @generated
@@ -444,6 +490,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.sysml.requirements.Satisfy
 	 * @generated
@@ -458,6 +505,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.uml2.uml.profile.standard.Refine
 	 * @generated
@@ -472,6 +520,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.sysml.requirements.DeriveReqt
 	 * @generated
@@ -485,6 +534,7 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -492,4 +542,4 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //RequirementsAdapterFactory
+} // RequirementsAdapterFactory

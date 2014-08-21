@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.functionmodeling.impl.FunctionPrototypeImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,13 +51,16 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
 	 */
 	protected Property base_Property;
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FunctionPrototypeImpl() {
@@ -66,20 +69,20 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public FunctionType basicGetType() {
 
 		FunctionType type = null;
 
-		if(getBase_Property() != null) {
+		if (getBase_Property() != null) {
 			// Retrieve the type of the FunctionPrototype
 			Type basicType = getBase_Property().getType();
 
-			if(basicType != null) {
-				
-				type = (FunctionType)UMLUtil.getStereotypeApplication(basicType, FunctionType.class);
+			if (basicType != null) {
+
+				type = UMLUtil.getStereotypeApplication(basicType, FunctionType.class);
 			}
 		}
 
@@ -88,27 +91,31 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
-				if (resolve) return getBase_Property();
-				return basicGetBase_Property();
+		case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
+			if (resolve) {
+				return getBase_Property();
+			}
+			return basicGetBase_Property();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
-				return base_Property != null;
+		case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
+			return base_Property != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -116,14 +123,17 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EAPrototype.class) {
 			switch (derivedFeatureID) {
-				case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY: return ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY;
-				default: return -1;
+			case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
+				return ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -132,14 +142,17 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EAPrototype.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY: return FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY;
-				default: return -1;
+			case ElementsPackage.EA_PROTOTYPE__BASE_PROPERTY:
+				return FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -148,34 +161,37 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FunctionmodelingPackage.FUNCTION_PROTOTYPE___GET_ICON:
-				return getIcon();
+		case FunctionmodelingPackage.FUNCTION_PROTOTYPE___GET_ICON:
+			return getIcon();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	
+
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
-				setBase_Property((Property)newValue);
-				return;
+		case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
+			setBase_Property((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,15 +202,18 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -203,6 +222,7 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -212,34 +232,39 @@ public abstract class FunctionPrototypeImpl extends EAElementImpl implements Fun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
-				setBase_Property((Property)null);
-				return;
+		case FunctionmodelingPackage.FUNCTION_PROTOTYPE__BASE_PROPERTY:
+			setBase_Property((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public Image getIcon() {
 		return null;
 	}

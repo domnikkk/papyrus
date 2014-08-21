@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -29,12 +29,13 @@ import org.eclipse.papyrus.layers.stackmodel.layers.Layer;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.Layer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayerItemProvider
-	extends 
-AbstractLayerItemProvider
-	implements
+		extends
+		AbstractLayerItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ AbstractLayerItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ AbstractLayerItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,6 +72,7 @@ AbstractLayerItemProvider
 	 * This returns Layer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,14 +84,15 @@ AbstractLayerItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Layer)object).getName();
+		String label = ((Layer) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Layer_type") :
-			getString("_UI_Layer_type") + " " + label;
+				getString("_UI_Layer_type") :
+				getString("_UI_Layer_type") + " " + label;
 	}
 
 	/**
@@ -95,6 +100,7 @@ AbstractLayerItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,6 +114,7 @@ AbstractLayerItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

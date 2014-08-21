@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.umlrt.UMLRealTime.util.UMLRealTimeValidator;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.umlrt.UMLRealTime.impl.CapsuleImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +52,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CapsuleImpl() {
@@ -70,6 +72,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,15 +83,18 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UMLRealTimePackage.CAPSULE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -97,6 +103,7 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -106,20 +113,25 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLRealTimePackage.CAPSULE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Capsulesarealwaysactive(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -128,12 +140,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__CAPSULESAREALWAYSACTIVE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsulesarealwaysactive", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__CAPSULESAREALWAYSACTIVE,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsulesarealwaysactive", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -143,8 +155,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean AcapsulecannothaveReceptionfeatures(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -153,12 +167,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ACAPSULECANNOTHAVE_RECEPTIONFEATURES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcapsulecannothaveReceptionfeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ACAPSULECANNOTHAVE_RECEPTIONFEATURES,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcapsulecannothaveReceptionfeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -168,8 +182,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Acapsuleclasscanalwaysbesubclassed(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -178,12 +194,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANALWAYSBESUBCLASSED,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscanalwaysbesubclassed", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANALWAYSBESUBCLASSED,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscanalwaysbesubclassed", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -193,8 +209,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Acapsulecanhaveatmostonesuperclass(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -203,12 +221,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ACAPSULECANHAVEATMOSTONESUPERCLASS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsulecanhaveatmostonesuperclass", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ACAPSULECANHAVEATMOSTONESUPERCLASS,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsulecanhaveatmostonesuperclass", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -218,8 +236,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Capsuleclassesarealwayssubstitutable(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -228,12 +248,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__CAPSULECLASSESAREALWAYSSUBSTITUTABLE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsuleclassesarealwayssubstitutable", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__CAPSULECLASSESAREALWAYSSUBSTITUTABLE,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Capsuleclassesarealwayssubstitutable", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -243,8 +263,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Allattributesofacapsuleclasshaveexactlyonetype(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -253,12 +275,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ALLATTRIBUTESOFACAPSULECLASSHAVEEXACTLYONETYPE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Allattributesofacapsuleclasshaveexactlyonetype", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ALLATTRIBUTESOFACAPSULECLASSHAVEEXACTLYONETYPE,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Allattributesofacapsuleclasshaveexactlyonetype", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -268,8 +290,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Privatevisibilityisnotsupportedoncapsulefeatures(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -278,12 +302,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__PRIVATEVISIBILITYISNOTSUPPORTEDONCAPSULEFEATURES,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Privatevisibilityisnotsupportedoncapsulefeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__PRIVATEVISIBILITYISNOTSUPPORTEDONCAPSULEFEATURES,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Privatevisibilityisnotsupportedoncapsulefeatures", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -293,8 +317,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Acapsuleclasscannothavenestedclassifiers(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -303,12 +329,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANNOTHAVENESTEDCLASSIFIERS,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscannothavenestedclassifiers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ACAPSULECLASSCANNOTHAVENESTEDCLASSIFIERS,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Acapsuleclasscannothavenestedclassifiers", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -318,8 +344,10 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean Alloperationsofacapsulearesequential(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -328,12 +356,12 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+						(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
-						 UMLRealTimeValidator.CAPSULE__ALLOPERATIONSOFACAPSULEARESEQUENTIAL,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Alloperationsofacapsulearesequential", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
-						 new Object [] { this }));
+								UMLRealTimeValidator.DIAGNOSTIC_SOURCE,
+								UMLRealTimeValidator.CAPSULE__ALLOPERATIONSOFACAPSULEARESEQUENTIAL,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Alloperationsofacapsulearesequential", EObjectValidator.getObjectLabel(this, context) }), //$NON-NLS-1$ //$NON-NLS-2$
+								new Object[] { this }));
 			}
 			return false;
 		}
@@ -343,14 +371,17 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
+		case UMLRealTimePackage.CAPSULE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,14 +389,15 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
+		case UMLRealTimePackage.CAPSULE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -373,14 +405,15 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
+		case UMLRealTimePackage.CAPSULE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -388,13 +421,14 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UMLRealTimePackage.CAPSULE__BASE_CLASS:
-				return base_Class != null;
+		case UMLRealTimePackage.CAPSULE__BASE_CLASS:
+			return base_Class != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -402,32 +436,33 @@ public class CapsuleImpl extends MinimalEObjectImpl.Container implements Capsule
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case UMLRealTimePackage.CAPSULE___CAPSULESAREALWAYSACTIVE__DIAGNOSTICCHAIN_MAP:
-				return Capsulesarealwaysactive((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ACAPSULECANNOTHAVE_RECEPTIONFEATURES__DIAGNOSTICCHAIN_MAP:
-				return AcapsulecannothaveReceptionfeatures((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ACAPSULECLASSCANALWAYSBESUBCLASSED__DIAGNOSTICCHAIN_MAP:
-				return Acapsuleclasscanalwaysbesubclassed((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ACAPSULECANHAVEATMOSTONESUPERCLASS__DIAGNOSTICCHAIN_MAP:
-				return Acapsulecanhaveatmostonesuperclass((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___CAPSULECLASSESAREALWAYSSUBSTITUTABLE__DIAGNOSTICCHAIN_MAP:
-				return Capsuleclassesarealwayssubstitutable((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ALLATTRIBUTESOFACAPSULECLASSHAVEEXACTLYONETYPE__DIAGNOSTICCHAIN_MAP:
-				return Allattributesofacapsuleclasshaveexactlyonetype((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___PRIVATEVISIBILITYISNOTSUPPORTEDONCAPSULEFEATURES__DIAGNOSTICCHAIN_MAP:
-				return Privatevisibilityisnotsupportedoncapsulefeatures((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ACAPSULECLASSCANNOTHAVENESTEDCLASSIFIERS__DIAGNOSTICCHAIN_MAP:
-				return Acapsuleclasscannothavenestedclassifiers((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case UMLRealTimePackage.CAPSULE___ALLOPERATIONSOFACAPSULEARESEQUENTIAL__DIAGNOSTICCHAIN_MAP:
-				return Alloperationsofacapsulearesequential((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___CAPSULESAREALWAYSACTIVE__DIAGNOSTICCHAIN_MAP:
+			return Capsulesarealwaysactive((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ACAPSULECANNOTHAVE_RECEPTIONFEATURES__DIAGNOSTICCHAIN_MAP:
+			return AcapsulecannothaveReceptionfeatures((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ACAPSULECLASSCANALWAYSBESUBCLASSED__DIAGNOSTICCHAIN_MAP:
+			return Acapsuleclasscanalwaysbesubclassed((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ACAPSULECANHAVEATMOSTONESUPERCLASS__DIAGNOSTICCHAIN_MAP:
+			return Acapsulecanhaveatmostonesuperclass((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___CAPSULECLASSESAREALWAYSSUBSTITUTABLE__DIAGNOSTICCHAIN_MAP:
+			return Capsuleclassesarealwayssubstitutable((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ALLATTRIBUTESOFACAPSULECLASSHAVEEXACTLYONETYPE__DIAGNOSTICCHAIN_MAP:
+			return Allattributesofacapsuleclasshaveexactlyonetype((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___PRIVATEVISIBILITYISNOTSUPPORTEDONCAPSULEFEATURES__DIAGNOSTICCHAIN_MAP:
+			return Privatevisibilityisnotsupportedoncapsulefeatures((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ACAPSULECLASSCANNOTHAVENESTEDCLASSIFIERS__DIAGNOSTICCHAIN_MAP:
+			return Acapsuleclasscannothavenestedclassifiers((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case UMLRealTimePackage.CAPSULE___ALLOPERATIONSOFACAPSULEARESEQUENTIAL__DIAGNOSTICCHAIN_MAP:
+			return Alloperationsofacapsulearesequential((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //CapsuleImpl
+} // CapsuleImpl

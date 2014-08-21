@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -128,7 +128,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Helper method to create the Ecore file for the actual metamodel for the facade
-	 * 
+	 *
 	 * @return
 	 *         the root of the ecore metamodel
 	 */
@@ -154,7 +154,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Helper method to create the mapping file between UML + profile and the facade metamodel
-	 * 
+	 *
 	 * @return
 	 *         the root of the mapping model
 	 */
@@ -191,31 +191,31 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Store a mapping in the mapping model
-	 * 
+	 *
 	 * @param element
 	 * @param representingElement
 	 * @param facadeMappingModel
 	 */
 	protected void setRepresenting(VirtualElement element, EObject representingElement, FacadeMappping facadeMappingModel) {
 
-		if(element instanceof VirtualMetaclass) {
-			if(!((VirtualMetaclass)element).getAppliedStereotypes().isEmpty()) {
+		if (element instanceof VirtualMetaclass) {
+			if (!((VirtualMetaclass) element).getAppliedStereotypes().isEmpty()) {
 
 				StereotypedMapping mappingToEdit = FacademappingFactory.eINSTANCE.createStereotypedMapping();
 
 				List<Stereotype> stereotypes = new ArrayList<Stereotype>();
 
-				for(BaseMetaclass baseMetaclass : ((VirtualMetaclass)element).getAppliedStereotypes()) {
+				for (BaseMetaclass baseMetaclass : ((VirtualMetaclass) element).getAppliedStereotypes()) {
 					stereotypes.add(baseMetaclass.getExtensionDefinition().getStereotype());
 				}
 
-				if(MetamodelUtils.onlyOneKind(((VirtualMetaclass)element).getAppliedStereotypes(), ExtensionDefinitionKind.ASSOCIATION)) {
+				if (MetamodelUtils.onlyOneKind(((VirtualMetaclass) element).getAppliedStereotypes(), ExtensionDefinitionKind.ASSOCIATION)) {
 					mappingToEdit.setKind(org.eclipse.papyrus.facademapping.ExtensionDefinitionKind.ASSOCIATION);
-				} else if(MetamodelUtils.onlyOneKind(((VirtualMetaclass)element).getAppliedStereotypes(), ExtensionDefinitionKind.GENERALIZATION)) {
+				} else if (MetamodelUtils.onlyOneKind(((VirtualMetaclass) element).getAppliedStereotypes(), ExtensionDefinitionKind.GENERALIZATION)) {
 					mappingToEdit.setKind(org.eclipse.papyrus.facademapping.ExtensionDefinitionKind.GENERALIZATION);
-				} else if(MetamodelUtils.onlyOneKind(((VirtualMetaclass)element).getAppliedStereotypes(), ExtensionDefinitionKind.MULTI_GENERALIZATION)) {
+				} else if (MetamodelUtils.onlyOneKind(((VirtualMetaclass) element).getAppliedStereotypes(), ExtensionDefinitionKind.MULTI_GENERALIZATION)) {
 					mappingToEdit.setKind(org.eclipse.papyrus.facademapping.ExtensionDefinitionKind.MULTI_GENERALIZATION);
-				} else if(MetamodelUtils.onlyOneKind(((VirtualMetaclass)element).getAppliedStereotypes(), ExtensionDefinitionKind.FUSION)) {
+				} else if (MetamodelUtils.onlyOneKind(((VirtualMetaclass) element).getAppliedStereotypes(), ExtensionDefinitionKind.FUSION)) {
 					mappingToEdit.setKind(org.eclipse.papyrus.facademapping.ExtensionDefinitionKind.FUSION);
 				} else {
 					org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_3 + element.getRepresentedElement());
@@ -223,7 +223,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 				mappingToEdit.setUmlElement(element.getRepresentedElement());
 				mappingToEdit.setSpecificDomainElement(representingElement);
-				((StereotypedMapping)mappingToEdit).getAppliedStereotypes().addAll(stereotypes);
+				mappingToEdit.getAppliedStereotypes().addAll(stereotypes);
 
 				facadeMappingModel.getMappings().add(mappingToEdit);
 
@@ -240,23 +240,23 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Create an EEnum from an VirtualEnum in the facade metamodel
-	 * 
+	 *
 	 * @param virtualEnum
 	 * @param ecoreRoot
 	 * @param facadeMappping
 	 */
 	protected void createEnum(VirtualEnum virtualEnum, EPackage ecoreRoot, FacadeMappping facadeMappping) {
-		if(virtualEnum.getRepresentedElement() instanceof EEnum) {
+		if (virtualEnum.getRepresentedElement() instanceof EEnum) {
 
 			EEnum enumeration = EcoreFactory.eINSTANCE.createEEnum();
 			enumeration.setName(virtualEnum.getAliasName());
 
-			for(VirtualLiteral literal : virtualEnum.getLiterals()) {
-				if(literal.getRepresentedElement() instanceof EEnumLiteral) {
+			for (VirtualLiteral literal : virtualEnum.getLiterals()) {
+				if (literal.getRepresentedElement() instanceof EEnumLiteral) {
 					EEnumLiteral enumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
 					enumLiteral.setName(literal.getAliasName());
 
-					enumLiteral.setValue(((EEnumLiteral)literal.getRepresentedElement()).getValue());
+					enumLiteral.setValue(((EEnumLiteral) literal.getRepresentedElement()).getValue());
 					enumeration.getELiterals().add(enumLiteral);
 					setRepresenting(literal, enumLiteral, facadeMappping);
 					processedLiteral.put(literal, enumLiteral);
@@ -269,13 +269,13 @@ public class EcoreGenerator extends MouseAdapter {
 			setRepresenting(virtualEnum, enumeration, facadeMappping);
 			processedClassifier.put(virtualEnum, enumeration);
 
-		} else if(virtualEnum.getRepresentedElement() instanceof Enumeration) {
+		} else if (virtualEnum.getRepresentedElement() instanceof Enumeration) {
 			EEnum enumeration = EcoreFactory.eINSTANCE.createEEnum();
 			enumeration.setName(virtualEnum.getAliasName());
 
 			int i = 0;
-			for(VirtualLiteral literal : virtualEnum.getLiterals()) {
-				if(literal.getRepresentedElement() instanceof EnumerationLiteral) {
+			for (VirtualLiteral literal : virtualEnum.getLiterals()) {
+				if (literal.getRepresentedElement() instanceof EnumerationLiteral) {
 					EEnumLiteral enumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
 					enumLiteral.setName(literal.getAliasName());
 
@@ -299,30 +299,30 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Create an EDatatype from an VirtualDatatype in the facade metamodel
-	 * 
+	 *
 	 * @param datatype
 	 * @param ecoreRoot
 	 * @param facadeMappping
 	 */
 	protected void createDatatype(VirtualDatatype datatype, EPackage ecoreRoot, FacadeMappping facadeMappping) {
-		if(datatype.getRepresentedElement() instanceof EDataType) {
+		if (datatype.getRepresentedElement() instanceof EDataType) {
 			EDataType eDataType = EcoreFactory.eINSTANCE.createEDataType();
 			eDataType.setName(datatype.getAliasName());
-			eDataType.setInstanceTypeName(((EDataType)datatype.getRepresentedElement()).getInstanceTypeName());
+			eDataType.setInstanceTypeName(((EDataType) datatype.getRepresentedElement()).getInstanceTypeName());
 
 			ecoreRoot.getEClassifiers().add(eDataType);
 			setRepresenting(datatype, eDataType, facadeMappping);
 			processedClassifier.put(datatype, eDataType);
 		}
-		if(datatype.getRepresentedElement() instanceof PrimitiveType) {
+		if (datatype.getRepresentedElement() instanceof PrimitiveType) {
 			EDataType eDataType = EcoreFactory.eINSTANCE.createEDataType();
 			eDataType.setName(datatype.getAliasName());
 
-			Stereotype stereotype = ((PrimitiveType)datatype.getRepresentedElement()).getAppliedStereotype("Ecore::EDataType"); //$NON-NLS-1$
-			if(stereotype != null) {
-				Object value = ((PrimitiveType)datatype.getRepresentedElement()).getValue(stereotype, "instanceClassName"); //$NON-NLS-1$
-				if(value instanceof String) {
-					eDataType.setInstanceTypeName((String)value);
+			Stereotype stereotype = ((PrimitiveType) datatype.getRepresentedElement()).getAppliedStereotype("Ecore::EDataType"); //$NON-NLS-1$
+			if (stereotype != null) {
+				Object value = ((PrimitiveType) datatype.getRepresentedElement()).getValue(stereotype, "instanceClassName"); //$NON-NLS-1$
+				if (value instanceof String) {
+					eDataType.setInstanceTypeName((String) value);
 				}
 			}
 
@@ -336,14 +336,14 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Create an EClass from an VirtualMetaclass in the facade metamodel
-	 * 
+	 *
 	 * @param metaclass
 	 * @param ecoreRoot
 	 * @param facadeMappping
 	 */
 	protected void createMetaclass(VirtualMetaclass metaclass, EPackage ecoreRoot, FacadeMappping facadeMappping) {
 
-		if(!processedClassifier.containsKey(metaclass)) {
+		if (!processedClassifier.containsKey(metaclass)) {
 			EClass eClass = EcoreFactory.eINSTANCE.createEClass();
 			eClass.setName(metaclass.getAliasName());
 			eClass.setAbstract(metaclass.isAbstract());
@@ -357,7 +357,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Add a boolean attribute to a representingElement in the facade metamodel
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
@@ -376,7 +376,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Add a String attribute to a representingElement in the facade metamodel
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
@@ -395,7 +395,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Add an integer attribute to a representingElement in the facade metamodel
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
@@ -414,7 +414,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Add an unlimitedNatural attribute to a representingElement in the facade metamodel
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
@@ -425,7 +425,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Add a real attribute to a representingElement in the facade metamodel
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
@@ -444,47 +444,47 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Generate a eAttribute of eReference in the facade metamodel to represent a virtualProperty
-	 * 
+	 *
 	 * @param virtualProperty
 	 * @param representingElement
 	 * @param facadeMappping
 	 */
 	protected void processPropertyFeature(VirtualProperty virtualProperty, EClass representingElement, FacadeMappping facadeMappping) {
 
-		if(!processedPropertyFeature.containsKey(virtualProperty)) {
-			Property property = (Property)virtualProperty.getRepresentedElement();
+		if (!processedPropertyFeature.containsKey(virtualProperty)) {
+			Property property = (Property) virtualProperty.getRepresentedElement();
 
-			EObject eType = StereotypeUtils.findEClass((Classifier)((Property)property).getType());
+			EObject eType = StereotypeUtils.findEClass((Classifier) property.getType());
 
-			if(eType == TypesPackage.eINSTANCE.getBoolean()) {
+			if (eType == TypesPackage.eINSTANCE.getBoolean()) {
 				createBooleanAttribute(virtualProperty, representingElement, facadeMappping);
-			} else if(eType == TypesPackage.eINSTANCE.getString()) {
+			} else if (eType == TypesPackage.eINSTANCE.getString()) {
 				createStringAttribute(virtualProperty, representingElement, facadeMappping);
-			} else if(eType == TypesPackage.eINSTANCE.getInteger()) {
+			} else if (eType == TypesPackage.eINSTANCE.getInteger()) {
 				createIntegerAttribute(virtualProperty, representingElement, facadeMappping);
-			} else if(eType == TypesPackage.eINSTANCE.getUnlimitedNatural()) {
+			} else if (eType == TypesPackage.eINSTANCE.getUnlimitedNatural()) {
 				createUnlimitedNaturalAttribute(virtualProperty, representingElement, facadeMappping);
-			} else if(eType == TypesPackage.eINSTANCE.getReal()) {
+			} else if (eType == TypesPackage.eINSTANCE.getReal()) {
 				createRealAttribute(virtualProperty, representingElement, facadeMappping);
 			} else {
 				EClassifier representingType = null;
-				if(eType != null) {
-					if(eType instanceof EClassifier) {
+				if (eType != null) {
+					if (eType instanceof EClassifier) {
 						VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(eType, facade);
 						representingType = processedClassifier.get(typeVirtualMetaclass);
 					}
-				} else if(property instanceof ExtensionEnd) {
-					Property otherEnd = ((ExtensionEnd)property).getOtherEnd();
-					VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findMetaclassThatMatch(StereotypeUtils.findEClass((Classifier)otherEnd.getType()), (Stereotype)property.getType(), facade);
+				} else if (property instanceof ExtensionEnd) {
+					Property otherEnd = ((ExtensionEnd) property).getOtherEnd();
+					VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findMetaclassThatMatch(StereotypeUtils.findEClass((Classifier) otherEnd.getType()), (Stereotype) property.getType(), facade);
 					representingType = processedClassifier.get(typeVirtualMetaclass);
 				} else {
 					VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(property.getType(), facade);
 					representingType = processedClassifier.get(typeVirtualMetaclass);
 				}
 
-				if(representingType != null) {
+				if (representingType != null) {
 					EStructuralFeature attrib;
-					if(representingType instanceof EDataType) {
+					if (representingType instanceof EDataType) {
 						attrib = EcoreFactory.eINSTANCE.createEAttribute();
 					} else {
 						attrib = EcoreFactory.eINSTANCE.createEReference();
@@ -494,25 +494,25 @@ public class EcoreGenerator extends MouseAdapter {
 					attrib.setLowerBound(virtualProperty.getLower());
 					attrib.setUpperBound(virtualProperty.getUpper());
 
-					if(attrib instanceof EReference) {
-						if(virtualProperty.getRepresentedElement() instanceof Property) {
-							if(((Property)virtualProperty.getRepresentedElement()).getClass_() instanceof Stereotype) {
-								if(!(((Property)virtualProperty.getRepresentedElement()).getType() instanceof Stereotype) && !(((Property)virtualProperty.getRepresentedElement()).getAssociation() instanceof Extension)) {
-									if(((Property)virtualProperty.getRepresentedElement()).getType().eClass().getEPackage() != UMLPackage.eINSTANCE) {
-										((EReference)attrib).setContainment(true);
+					if (attrib instanceof EReference) {
+						if (virtualProperty.getRepresentedElement() instanceof Property) {
+							if (((Property) virtualProperty.getRepresentedElement()).getClass_() instanceof Stereotype) {
+								if (!(((Property) virtualProperty.getRepresentedElement()).getType() instanceof Stereotype) && !(((Property) virtualProperty.getRepresentedElement()).getAssociation() instanceof Extension)) {
+									if (((Property) virtualProperty.getRepresentedElement()).getType().eClass().getEPackage() != UMLPackage.eINSTANCE) {
+										((EReference) attrib).setContainment(true);
 									}
 								}
 							}
 
-							if(virtualProperty.getRepresentedElement() instanceof ExtensionEnd) {
-								((EReference)attrib).setContainment(true);
+							if (virtualProperty.getRepresentedElement() instanceof ExtensionEnd) {
+								((EReference) attrib).setContainment(true);
 							}
 						}
 					}
 
-					if(property.getAssociation() != null) {
-						if(property.getAssociation().getOwnedEnds().size() == 1) {
-							if(property.getAssociation().getMemberEnds().size() == 2) {
+					if (property.getAssociation() != null) {
+						if (property.getAssociation().getOwnedEnds().size() == 1) {
+							if (property.getAssociation().getMemberEnds().size() == 2) {
 								// Do nothing
 							} else {
 								org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_10 + property.getAssociation());
@@ -526,7 +526,7 @@ public class EcoreGenerator extends MouseAdapter {
 
 					representingElement.getEStructuralFeatures().add(attrib);
 					setRepresenting(virtualProperty, attrib, facadeMappping);
-					//					updateRepresenting(property, attrib, facadeMappping);
+					// updateRepresenting(property, attrib, facadeMappping);
 					processedPropertyFeature.put(virtualProperty, attrib);
 				} else {
 					org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_12 + property);
@@ -541,25 +541,25 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Create the generalization relationships of a representingElement of a virtualMetaclass
-	 * 
+	 *
 	 * @param metaclass
 	 * @param root
 	 * @param facadeMappping
 	 */
 	protected void createGeneralisations(VirtualMetaclass metaclass, EPackage root, FacadeMappping facadeMappping) {
 
-		if(!generalizationProcessed.contains(metaclass)) {
+		if (!generalizationProcessed.contains(metaclass)) {
 			EObject representingElement = processedClassifier.get(metaclass);
-			if(representingElement != null) {
+			if (representingElement != null) {
 
 				generalizationProcessed.add(metaclass);
 
 				// Add generalization
-				for(VirtualMetaclass father : metaclass.getParents()) {
+				for (VirtualMetaclass father : metaclass.getParents()) {
 					EObject elementReprensentingFather = processedClassifier.get(father);
-					if(representingElement instanceof EClass) {
-						if(elementReprensentingFather instanceof EClass) {
-							((EClass)representingElement).getESuperTypes().add((EClass)elementReprensentingFather);
+					if (representingElement instanceof EClass) {
+						if (elementReprensentingFather instanceof EClass) {
+							((EClass) representingElement).getESuperTypes().add((EClass) elementReprensentingFather);
 						} else {
 							org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_14 + elementReprensentingFather);
 						}
@@ -577,56 +577,56 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Generate the properties in the facade metamodel from virtualmetaclass
-	 * 
+	 *
 	 * @param metaclass
 	 * @param root
 	 * @param facadeMappping
 	 */
 	protected void createProperties(VirtualMetaclass metaclass, EPackage root, FacadeMappping facadeMappping) {
 
-		if(!propertiesProcessed.contains(metaclass)) {
+		if (!propertiesProcessed.contains(metaclass)) {
 			EObject representingElement = processedClassifier.get(metaclass);
-			if(representingElement != null) {
+			if (representingElement != null) {
 
 				propertiesProcessed.add(metaclass);
 
 				// Create features
-				if(representingElement instanceof EClass) {
-					for(VirtualProperty property : metaclass.getProperties()) {
-						if(property.isKept()) {
+				if (representingElement instanceof EClass) {
+					for (VirtualProperty property : metaclass.getProperties()) {
+						if (property.isKept()) {
 
-							if(property.getRepresentedElement() instanceof EAttribute) {
-								VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(((EAttribute)property.getRepresentedElement()).getEType(), facade);
+							if (property.getRepresentedElement() instanceof EAttribute) {
+								VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(((EAttribute) property.getRepresentedElement()).getEType(), facade);
 								EClassifier representingType = processedClassifier.get(typeVirtualMetaclass);
-								if(representingType != null) {
-									EAttribute attrib = (EAttribute)EcoreUtil.copy(property.getRepresentedElement());
+								if (representingType != null) {
+									EAttribute attrib = (EAttribute) EcoreUtil.copy(property.getRepresentedElement());
 									attrib.setName(property.getAliasName());
 									attrib.setEType(representingType);
 
-									((EClass)representingElement).getEStructuralFeatures().add(attrib);
+									((EClass) representingElement).getEStructuralFeatures().add(attrib);
 
 									setRepresenting(property, attrib, facadeMappping);
 									processedProperty.put(property, attrib);
 								} else {
 									org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_18 + property);
 								}
-							} else if(property.getRepresentedElement() instanceof EReference) {
-								VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(((EReference)property.getRepresentedElement()).getEType(), facade);
+							} else if (property.getRepresentedElement() instanceof EReference) {
+								VirtualClassifier typeVirtualMetaclass = MetamodelUtils.findClassifierThatMatch(((EReference) property.getRepresentedElement()).getEType(), facade);
 								EClassifier representingType = processedClassifier.get(typeVirtualMetaclass);
-								if(representingType != null) {
-									EReference attrib = (EReference)EcoreUtil.copy(property.getRepresentedElement());
+								if (representingType != null) {
+									EReference attrib = (EReference) EcoreUtil.copy(property.getRepresentedElement());
 									attrib.setName(property.getAliasName());
 									attrib.setEType(representingType);
 
-									((EClass)representingElement).getEStructuralFeatures().add(attrib);
+									((EClass) representingElement).getEStructuralFeatures().add(attrib);
 
 									setRepresenting(property, attrib, facadeMappping);
 									processedProperty.put(property, attrib);
 								} else {
 									org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_19 + property);
 								}
-							} else if(property.getRepresentedElement() instanceof Property) {
-								processPropertyFeature(property, (EClass)representingElement, facadeMappping);
+							} else if (property.getRepresentedElement() instanceof Property) {
+								processPropertyFeature(property, (EClass) representingElement, facadeMappping);
 							} else {
 								org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_20 + property.getRepresentedElement());
 							}
@@ -646,29 +646,29 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Generate the operations in the facade metamodel from virtualmetaclass
-	 * 
+	 *
 	 * @param metaclass
 	 * @param root
 	 * @param facadeMappping
 	 */
 	protected void createOperations(VirtualMetaclass metaclass, EPackage root, FacadeMappping facadeMappping) {
-		for(VirtualOperation virtualOperation : metaclass.getOperations()) {
-			if(virtualOperation.isKept()) {
+		for (VirtualOperation virtualOperation : metaclass.getOperations()) {
+			if (virtualOperation.isKept()) {
 				EClassifier representing = processedClassifier.get(metaclass);
 
-				if(representing instanceof EClass) {
-					if(virtualOperation.getRepresentedElement() instanceof EOperation) {
-						EOperation eOperation = (EOperation)EcoreUtil.copy(virtualOperation.getRepresentedElement());
+				if (representing instanceof EClass) {
+					if (virtualOperation.getRepresentedElement() instanceof EOperation) {
+						EOperation eOperation = (EOperation) EcoreUtil.copy(virtualOperation.getRepresentedElement());
 						eOperation.getEParameters().clear();
 						eOperation.setName(virtualOperation.getAliasName());
-						((EClass)representing).getEOperations().add(eOperation);
+						((EClass) representing).getEOperations().add(eOperation);
 
 						setRepresenting(virtualOperation, eOperation, facadeMappping);
 
-						if(eOperation.getEType() != null) {
-							if(eOperation.getEType().getEPackage() == UMLPackage.eINSTANCE || eOperation.getEType().getEPackage() == TypesPackage.eINSTANCE) {
+						if (eOperation.getEType() != null) {
+							if (eOperation.getEType().getEPackage() == UMLPackage.eINSTANCE || eOperation.getEType().getEPackage() == TypesPackage.eINSTANCE) {
 								VirtualClassifier virtualClassifier = MetamodelUtils.findClassifierThatMatch(eOperation.getEType(), facade);
-								if(virtualClassifier != null) {
+								if (virtualClassifier != null) {
 									eOperation.setEType(processedClassifier.get(virtualClassifier));
 								} else {
 									org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_24 + eOperation.getEType());
@@ -676,17 +676,17 @@ public class EcoreGenerator extends MouseAdapter {
 							}
 						}
 
-						for(VirtualParameter virtualParameter : virtualOperation.getParameters()) {
-							EParameter eParameter = (EParameter)EcoreUtil.copy(virtualParameter.getRepresentedElement());
+						for (VirtualParameter virtualParameter : virtualOperation.getParameters()) {
+							EParameter eParameter = (EParameter) EcoreUtil.copy(virtualParameter.getRepresentedElement());
 
 							eParameter.setName(virtualParameter.getAliasName());
 							eParameter.setLowerBound(virtualParameter.getLower());
 							eParameter.setUpperBound(virtualParameter.getUpper());
 							setRepresenting(virtualParameter, eParameter, facadeMappping);
-							if(eParameter.getEType() != null) {
-								if(eParameter.getEType().getEPackage() == UMLPackage.eINSTANCE || eParameter.getEType().getEPackage() == TypesPackage.eINSTANCE) {
+							if (eParameter.getEType() != null) {
+								if (eParameter.getEType().getEPackage() == UMLPackage.eINSTANCE || eParameter.getEType().getEPackage() == TypesPackage.eINSTANCE) {
 									VirtualClassifier virtualClassifier = MetamodelUtils.findClassifierThatMatch(eParameter.getEType(), facade);
-									if(virtualClassifier != null) {
+									if (virtualClassifier != null) {
 										eParameter.setEType(processedClassifier.get(virtualClassifier));
 									} else {
 										org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_25 + eOperation.getEType());
@@ -696,8 +696,8 @@ public class EcoreGenerator extends MouseAdapter {
 							eOperation.getEParameters().add(eParameter);
 						}
 
-						EList<EAnnotation> annotation = ((EModelElement)virtualOperation.getRepresentedElement()).getEAnnotations();
-						for(EAnnotation eAnnotation : annotation) {
+						EList<EAnnotation> annotation = ((EModelElement) virtualOperation.getRepresentedElement()).getEAnnotations();
+						for (EAnnotation eAnnotation : annotation) {
 							eOperation.getEAnnotations().add(EcoreUtil.copy(eAnnotation));
 						}
 					}
@@ -708,35 +708,35 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Find the representing eReference that is the eOpposite of a eReference
-	 * 
+	 *
 	 * @param reference
 	 * @return
 	 */
 	protected EReference findEOpposite(EReference reference) {
-		VirtualMetaclass oppositeTypeVirtualMetaclass = MetamodelUtils.findMetaclassWithNoRealStereoThatMatch((EClassifier)reference.eContainer(), facade);
+		VirtualMetaclass oppositeTypeVirtualMetaclass = MetamodelUtils.findMetaclassWithNoRealStereoThatMatch(reference.eContainer(), facade);
 
 		VirtualProperty oppositeVirtualProperty = null;
 
-		if(oppositeTypeVirtualMetaclass != null) {
-			for(VirtualProperty virtualProperty : oppositeTypeVirtualMetaclass.getProperties()) {
+		if (oppositeTypeVirtualMetaclass != null) {
+			for (VirtualProperty virtualProperty : oppositeTypeVirtualMetaclass.getProperties()) {
 				EObject virtualPropertyRepresentedElement = virtualProperty.getRepresentedElement();
 
-				if(virtualPropertyRepresentedElement instanceof ENamedElement) {
-					if(((ENamedElement)virtualPropertyRepresentedElement).getName().equals(reference.getName())) {
+				if (virtualPropertyRepresentedElement instanceof ENamedElement) {
+					if (((ENamedElement) virtualPropertyRepresentedElement).getName().equals(reference.getName())) {
 						oppositeVirtualProperty = virtualProperty;
 						break;
 					}
-				} else if(virtualPropertyRepresentedElement instanceof ExtensionEnd) {
+				} else if (virtualPropertyRepresentedElement instanceof ExtensionEnd) {
 
 				} else {
 					org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_26 + virtualPropertyRepresentedElement);
 				}
 			}
 
-			if(oppositeVirtualProperty != null) {
-				if(processedProperty.containsKey(oppositeVirtualProperty)) {
-					if(processedProperty.get(oppositeVirtualProperty) instanceof EReference) {
-						return (EReference)processedProperty.get(oppositeVirtualProperty);
+			if (oppositeVirtualProperty != null) {
+				if (processedProperty.containsKey(oppositeVirtualProperty)) {
+					if (processedProperty.get(oppositeVirtualProperty) instanceof EReference) {
+						return (EReference) processedProperty.get(oppositeVirtualProperty);
 					}
 				}
 			}
@@ -747,14 +747,14 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Find the facade element that represents a umlElement
-	 * 
+	 *
 	 * @param umlElement
 	 * @param facadeMappping
 	 * @return
 	 */
 	protected EObject findRepresenting(EObject umlElement, FacadeMappping facadeMappping) {
-		for(Mapping mapping : facadeMappping.getMappings()) {
-			if(mapping.getUmlElement() == umlElement) {
+		for (Mapping mapping : facadeMappping.getMappings()) {
+			if (mapping.getUmlElement() == umlElement) {
 				return mapping.getSpecificDomainElement();
 			}
 		}
@@ -763,35 +763,35 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Update the eOpposite among eReferences in the facade metamodel
-	 * 
+	 *
 	 * @param root
 	 * @param facadeMappping
 	 */
 	protected void processEOpposites(EPackage root, FacadeMappping facadeMappping) {
 		TreeIterator<EObject> it = root.eAllContents();
-		while(it.hasNext()) {
-			EObject eObject = (EObject)it.next();
-			if(eObject instanceof EReference) {
-				EReference reference = (EReference)eObject;
+		while (it.hasNext()) {
+			EObject eObject = it.next();
+			if (eObject instanceof EReference) {
+				EReference reference = (EReference) eObject;
 
 				EReference eOpposite = reference.getEOpposite();
 
-				if(eOpposite != null) {
+				if (eOpposite != null) {
 					EReference representingEOpposite = findEOpposite(eOpposite);
-					if(representingEOpposite == null) {
+					if (representingEOpposite == null) {
 						org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_27 + eOpposite);
 					}
 					reference.setEOpposite(representingEOpposite);
 				} else {
-					for(Mapping mapping : facadeMappping.getMappings()) {
-						if(mapping.getSpecificDomainElement() == eObject) {
+					for (Mapping mapping : facadeMappping.getMappings()) {
+						if (mapping.getSpecificDomainElement() == eObject) {
 							EObject umlElement = mapping.getUmlElement();
-							if(umlElement instanceof Property) {
-								Property otherEnd = ((Property)umlElement).getOtherEnd();
-								if(otherEnd != null) {
+							if (umlElement instanceof Property) {
+								Property otherEnd = ((Property) umlElement).getOtherEnd();
+								if (otherEnd != null) {
 									EObject otherEndRepresenting = findRepresenting(otherEnd, facadeMappping);
-									if(otherEndRepresenting instanceof EReference) {
-										reference.setEOpposite((EReference)otherEndRepresenting);
+									if (otherEndRepresenting instanceof EReference) {
+										reference.setEOpposite((EReference) otherEndRepresenting);
 									}
 
 								}
@@ -805,28 +805,28 @@ public class EcoreGenerator extends MouseAdapter {
 
 	/**
 	 * Copy significant EAnnotations from represented element to representing elements in the facade metamodel
-	 * 
+	 *
 	 * @param root
 	 */
 	protected void processEAnnotations(EPackage root) {
 		TreeIterator<EObject> it = root.eAllContents();
-		while(it.hasNext()) {
-			EObject eObject = (EObject)it.next();
+		while (it.hasNext()) {
+			EObject eObject = it.next();
 
-			if(eObject instanceof EAnnotation) {
-				String source = ((EAnnotation)eObject).getSource();
-				if(source.equals("subsets") || source.equals("redefines")) { //$NON-NLS-1$ //$NON-NLS-2$
+			if (eObject instanceof EAnnotation) {
+				String source = ((EAnnotation) eObject).getSource();
+				if (source.equals("subsets") || source.equals("redefines")) { //$NON-NLS-1$ //$NON-NLS-2$
 					ArrayList<EObject> newList = new ArrayList<EObject>();
-					for(EObject reference : ((EAnnotation)eObject).getReferences()) {
+					for (EObject reference : ((EAnnotation) eObject).getReferences()) {
 
 						VirtualProperty correspondingVirtualProperty = MetamodelUtils.findProperty(reference, facade);
-						if(correspondingVirtualProperty != null) {
+						if (correspondingVirtualProperty != null) {
 							EObject representing = processedProperty.get(correspondingVirtualProperty);
-							if(representing != null) {
+							if (representing != null) {
 								newList.add(representing);
 							} else {
 								representing = processedPropertyFeature.get(correspondingVirtualProperty);
-								if(representing != null) {
+								if (representing != null) {
 									newList.add(representing);
 								} else {
 									org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_30 + correspondingVirtualProperty);
@@ -837,22 +837,22 @@ public class EcoreGenerator extends MouseAdapter {
 						}
 					}
 
-					((EAnnotation)eObject).getReferences().clear();
-					((EAnnotation)eObject).getReferences().addAll(newList);
+					((EAnnotation) eObject).getReferences().clear();
+					((EAnnotation) eObject).getReferences().addAll(newList);
 				}
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.MouseAdapter#mouseUp(org.eclipse.swt.events.MouseEvent)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
 	public void mouseUp(MouseEvent event) {
-		if(!facade.getVirtualmetamodel().getName().equals("") && !facade.getVirtualmetamodel().getNsPrefix().equals("") && !facade.getVirtualmetamodel().getNsURI().equals("")) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		if (!facade.getVirtualmetamodel().getName().equals("") && !facade.getVirtualmetamodel().getNsPrefix().equals("") && !facade.getVirtualmetamodel().getNsURI().equals("")) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 			ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
 			try {
@@ -872,21 +872,21 @@ public class EcoreGenerator extends MouseAdapter {
 						EObject ecoreModel = createEcoreFile();
 						EObject facadeMapppingModel = createMappingFile();
 
-						if(ecoreModel instanceof EPackage) {
-							EPackage root = (EPackage)ecoreModel;
-							if(facadeMapppingModel instanceof FacadeMappping) {
-								FacadeMappping facadeMappping = (FacadeMappping)facadeMapppingModel;
+						if (ecoreModel instanceof EPackage) {
+							EPackage root = (EPackage) ecoreModel;
+							if (facadeMapppingModel instanceof FacadeMappping) {
+								FacadeMappping facadeMappping = (FacadeMappping) facadeMapppingModel;
 
 								// Create metaclasses first
-								for(VirtualClassifier classifier : facade.getVirtualmetamodel().getVirtualClassifiers()) {
-									if(classifier.isKept()) {
-										if(!classifier.isUseRepresented()) {
-											if(classifier instanceof VirtualMetaclass) {
-												createMetaclass((VirtualMetaclass)classifier, root, facadeMappping);
-											} else if(classifier instanceof VirtualEnum) {
-												createEnum((VirtualEnum)classifier, root, facadeMappping);
-											} else if(classifier instanceof VirtualDatatype) {
-												createDatatype((VirtualDatatype)classifier, root, facadeMappping);
+								for (VirtualClassifier classifier : facade.getVirtualmetamodel().getVirtualClassifiers()) {
+									if (classifier.isKept()) {
+										if (!classifier.isUseRepresented()) {
+											if (classifier instanceof VirtualMetaclass) {
+												createMetaclass((VirtualMetaclass) classifier, root, facadeMappping);
+											} else if (classifier instanceof VirtualEnum) {
+												createEnum((VirtualEnum) classifier, root, facadeMappping);
+											} else if (classifier instanceof VirtualDatatype) {
+												createDatatype((VirtualDatatype) classifier, root, facadeMappping);
 											} else {
 												org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_36 + classifier);
 											}
@@ -895,7 +895,7 @@ public class EcoreGenerator extends MouseAdapter {
 								}
 
 								// Hierarchy and features among metaclasses
-								for(VirtualMetaclass metaclass : MetamodelUtils.getOnlyVirtualMetaclasses(processedClassifier.keySet())) {
+								for (VirtualMetaclass metaclass : MetamodelUtils.getOnlyVirtualMetaclasses(processedClassifier.keySet())) {
 									createGeneralisations(metaclass, root, facadeMappping);
 									createProperties(metaclass, root, facadeMappping);
 									createOperations(metaclass, root, facadeMappping);
@@ -904,16 +904,16 @@ public class EcoreGenerator extends MouseAdapter {
 								// Process eOpposites
 								processEOpposites(root, facadeMappping);
 
-								//Clean eAnnotations
+								// Clean eAnnotations
 								processEAnnotations(root);
 
 								Diagnostic diagnostic = Diagnostician.INSTANCE.validate(root);
 
-								for(Diagnostic child : diagnostic.getChildren()) {
-									if(child.getCode() == EcoreValidator.DISJOINT_FEATURE_AND_OPERATION_SIGNATURES) {
-										for(Object dataElement : child.getData()) {
-											if(dataElement instanceof EOperation) {
-												EcoreUtil.setSuppressedVisibility((EOperation)dataElement, true);
+								for (Diagnostic child : diagnostic.getChildren()) {
+									if (child.getCode() == EcoreValidator.DISJOINT_FEATURE_AND_OPERATION_SIGNATURES) {
+										for (Object dataElement : child.getData()) {
+											if (dataElement instanceof EOperation) {
+												EcoreUtil.setSuppressedVisibility((EOperation) dataElement, true);
 											}
 										}
 									}
@@ -923,10 +923,10 @@ public class EcoreGenerator extends MouseAdapter {
 
 								// Sanity check
 								TreeIterator<EObject> it = facade.eAllContents();
-								while(it.hasNext()) {
-									EObject eObject = (EObject)it.next();
-									if(eObject instanceof VirtualElement) {
-										if(((VirtualElement)eObject).getRepresentedElement() == null) {
+								while (it.hasNext()) {
+									EObject eObject = it.next();
+									if (eObject instanceof VirtualElement) {
+										if (((VirtualElement) eObject).getRepresentedElement() == null) {
 											org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.EcoreGenerator_37 + eObject);
 										}
 									}
@@ -935,11 +935,12 @@ public class EcoreGenerator extends MouseAdapter {
 								// Save
 								save();
 
-								if(diagnostic.getSeverity() == Diagnostic.OK) {
+								if (diagnostic.getSeverity() == Diagnostic.OK) {
 									MessageDialog.openInformation(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), Messages.EcoreGenerator_40, Messages.EcoreGenerator_41);
 
 								} else {
-									DiagnosticDialog dialog = new DiagnosticDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), Messages.EcoreGenerator_42, Messages.EcoreGenerator_43, diagnostic, Diagnostic.OK | Diagnostic.INFO | Diagnostic.WARNING | Diagnostic.ERROR);
+									DiagnosticDialog dialog = new DiagnosticDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), Messages.EcoreGenerator_42, Messages.EcoreGenerator_43, diagnostic, Diagnostic.OK | Diagnostic.INFO
+											| Diagnostic.WARNING | Diagnostic.ERROR);
 									dialog.open();
 								}
 								monitor.done();

@@ -24,6 +24,7 @@ import org.eclipse.papyrus.diagramtemplate.Template;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramTemplateFactory {
@@ -31,16 +32,16 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static DiagramTemplateFactory init() {
 		try {
-			DiagramTemplateFactory theDiagramTemplateFactory = (DiagramTemplateFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/diagramtemplate"); 
+			DiagramTemplateFactory theDiagramTemplateFactory = (DiagramTemplateFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/diagramtemplate");
 			if (theDiagramTemplateFactory != null) {
 				return theDiagramTemplateFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DiagramTemplateFactoryImpl();
@@ -50,6 +51,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramTemplateFactoryImpl() {
@@ -59,53 +61,61 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DiagramTemplatePackage.DIAGRAM_DEFINITION: return createDiagramDefinition();
-			case DiagramTemplatePackage.SELECTION: return createSelection();
-			case DiagramTemplatePackage.SELECTION_REF: return createSelectionRef();
-			case DiagramTemplatePackage.TEMPLATE: return createTemplate();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case DiagramTemplatePackage.DIAGRAM_DEFINITION:
+			return createDiagramDefinition();
+		case DiagramTemplatePackage.SELECTION:
+			return createSelection();
+		case DiagramTemplatePackage.SELECTION_REF:
+			return createSelectionRef();
+		case DiagramTemplatePackage.TEMPLATE:
+			return createTemplate();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case DiagramTemplatePackage.SELECTION_KIND:
-				return createSelectionKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case DiagramTemplatePackage.SELECTION_KIND:
+			return createSelectionKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case DiagramTemplatePackage.SELECTION_KIND:
-				return convertSelectionKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case DiagramTemplatePackage.SELECTION_KIND:
+			return convertSelectionKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramDefinition createDiagramDefinition() {
@@ -116,6 +126,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Selection createSelection() {
@@ -126,6 +137,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SelectionRef createSelectionRef() {
@@ -136,6 +148,7 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Template createTemplate() {
@@ -146,17 +159,21 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SelectionKind createSelectionKindFromString(EDataType eDataType, String initialValue) {
 		SelectionKind result = SelectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertSelectionKindToString(EDataType eDataType, Object instanceValue) {
@@ -166,15 +183,17 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiagramTemplatePackage getDiagramTemplatePackage() {
-		return (DiagramTemplatePackage)getEPackage();
+		return (DiagramTemplatePackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -183,4 +202,4 @@ public class DiagramTemplateFactoryImpl extends EFactoryImpl implements DiagramT
 		return DiagramTemplatePackage.eINSTANCE;
 	}
 
-} //DiagramTemplateFactoryImpl
+} // DiagramTemplateFactoryImpl

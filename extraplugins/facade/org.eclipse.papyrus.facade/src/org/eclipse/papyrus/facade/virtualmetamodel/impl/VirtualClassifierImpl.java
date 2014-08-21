@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl#getMetamodel <em>Metamodel</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualClassifierImpl#getMetamodel <em>Metamodel</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected VirtualClassifierImpl() {
@@ -53,6 +54,7 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,56 +65,71 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VirtualMetamodel getMetamodel() {
-		if (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL) return null;
-		return (VirtualMetamodel)eInternalContainer();
+		if (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL) {
+			return null;
+		}
+		return (VirtualMetamodel) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetMetamodel(VirtualMetamodel newMetamodel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newMetamodel, VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newMetamodel, VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMetamodel(VirtualMetamodel newMetamodel) {
 		if (newMetamodel != eInternalContainer() || (eContainerFeatureID() != VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL && newMetamodel != null)) {
-			if (EcoreUtil.isAncestor(this, newMetamodel))
+			if (EcoreUtil.isAncestor(this, newMetamodel)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newMetamodel != null)
-				msgs = ((InternalEObject)newMetamodel).eInverseAdd(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS, VirtualMetamodel.class, msgs);
+			}
+			if (newMetamodel != null) {
+				msgs = ((InternalEObject) newMetamodel).eInverseAdd(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS, VirtualMetamodel.class, msgs);
+			}
 			msgs = basicSetMetamodel(newMetamodel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL, newMetamodel, newMetamodel));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetMetamodel((VirtualMetamodel)otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetMetamodel((VirtualMetamodel) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -120,13 +137,14 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				return basicSetMetamodel(null, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			return basicSetMetamodel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -134,13 +152,14 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				return eInternalContainer().eInverseRemove(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS, VirtualMetamodel.class, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			return eInternalContainer().eInverseRemove(this, VirtualmetamodelPackage.VIRTUAL_METAMODEL__VIRTUAL_CLASSIFIERS, VirtualMetamodel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -148,13 +167,14 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				return getMetamodel();
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			return getMetamodel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,14 +182,15 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				setMetamodel((VirtualMetamodel)newValue);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			setMetamodel((VirtualMetamodel) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -177,14 +198,15 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				setMetamodel((VirtualMetamodel)null);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			setMetamodel((VirtualMetamodel) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,15 +214,16 @@ public abstract class VirtualClassifierImpl extends VirtualElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
-				return getMetamodel() != null;
+		case VirtualmetamodelPackage.VIRTUAL_CLASSIFIER__METAMODEL:
+			return getMetamodel() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //VirtualClassifierImpl
+} // VirtualClassifierImpl

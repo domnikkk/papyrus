@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -41,6 +41,7 @@ public class NotationDiagramMngrTest {
 	 * ModelSet created for each test
 	 */
 	protected ModelSet modelSet;
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -53,7 +54,7 @@ public class NotationDiagramMngrTest {
 		// Do create resources
 		URI uri = URI.createPlatformResourceURI(PROJECT_MODEL_URI, true);
 		mngr.createModels(uri);
-		
+
 		modelSet = mngr;
 	}
 
@@ -63,10 +64,10 @@ public class NotationDiagramMngrTest {
 	@After
 	public void tearDown() throws Exception {
 		modelSet.unload();
-		
+
 	}
 
-	
+
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.runtime.NotationDiagramHelper#NotationDiagramMngr(org.eclipse.gmf.runtime.notation.Diagram)}.
 	 */
@@ -76,7 +77,7 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 		// Check creation
 		NotationDiagramHelper diagramHelper = new NotationDiagramHelper(layersModel, diagram);
@@ -91,7 +92,7 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 
 		// Create mngr
@@ -100,8 +101,8 @@ public class NotationDiagramMngrTest {
 		// Do dispose
 		diagramHelper.dispose();
 		// Check disposal
-		assertNull( "disposed", diagramHelper.getDiagram());
-		
+		assertNull("disposed", diagramHelper.getDiagram());
+
 	}
 
 	/**
@@ -112,15 +113,15 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 
 		// Create mngr
 		NotationDiagramHelper diagramHelper = new NotationDiagramHelper(layersModel, diagram);
 
 		// check
-	    assertNotNull("getDiagram", diagramHelper.getDiagram());
-	    assertSame("getDiagram", diagram, diagramHelper.getDiagram());
+		assertNotNull("getDiagram", diagramHelper.getDiagram());
+		assertSame("getDiagram", diagram, diagramHelper.getDiagram());
 	}
 
 	/**
@@ -131,15 +132,15 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 
 		// Create mngr
 		NotationDiagramHelper diagramHelper = new NotationDiagramHelper(layersModel, diagram);
-		
+
 		diagramHelper.attachLayersStack();
-		
-		assertTrue("LayerStack is attached to diagram", diagramHelper.isLayersStackAttached() );
+
+		assertTrue("LayerStack is attached to diagram", diagramHelper.isLayersStackAttached());
 	}
 
 	/**
@@ -150,20 +151,20 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 
 		// Create mngr
 		NotationDiagramHelper diagramHelper = new NotationDiagramHelper(layersModel, diagram);
-		
+
 		diagramHelper.attachLayersStack();
-		assertTrue("LayerStack is attached to diagram", diagramHelper.isLayersStackAttached() );
+		assertTrue("LayerStack is attached to diagram", diagramHelper.isLayersStackAttached());
 
 		// Try to remove LayerStack
-		diagramHelper.removeLayersStack();	
-		assertFalse("LayerStack is detached from diagram", diagramHelper.isLayersStackAttached() );
-		
-		
+		diagramHelper.removeLayersStack();
+		assertFalse("LayerStack is detached from diagram", diagramHelper.isLayersStackAttached());
+
+
 	}
 
 	/**
@@ -174,7 +175,7 @@ public class NotationDiagramMngrTest {
 		// Create a Diagram
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		// Get LayersModel
-		LayersModel layersModel = (LayersModel)modelSet.getModel(LayersModel.MODEL_ID);
+		LayersModel layersModel = (LayersModel) modelSet.getModel(LayersModel.MODEL_ID);
 
 
 		// Create mngr

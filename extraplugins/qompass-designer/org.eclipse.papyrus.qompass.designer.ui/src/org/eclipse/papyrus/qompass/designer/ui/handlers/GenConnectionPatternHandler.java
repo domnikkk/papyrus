@@ -2,6 +2,7 @@ package org.eclipse.papyrus.qompass.designer.ui.handlers;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.papyrus.FCM.InteractionComponent;
@@ -20,13 +21,14 @@ public class GenConnectionPatternHandler extends CmdHandler {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		return null;
 	}
-	
+
 	/**
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
@@ -34,13 +36,13 @@ public class GenConnectionPatternHandler extends CmdHandler {
 
 	/**
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	public void run(IAction action) {
-		//only one model is selected
-		Class selectedClass = (Class)selectedEObject;
-		Log.log(Status.INFO, Log.DIALOGS, "GenConnectionPattern.run: " + selectedClass.getName());
+		// only one model is selected
+		Class selectedClass = (Class) selectedEObject;
+		Log.log(IStatus.INFO, Log.DIALOGS, "GenConnectionPattern.run: " + selectedClass.getName());
 		InteractionComponent connType = UMLUtil.getStereotypeApplication(selectedClass, InteractionComponent.class);
 		FCMUtil.generateDefaultConnectionPattern(connType);
 	}

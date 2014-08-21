@@ -20,6 +20,7 @@ public class BuildingImpl extends PhysicalObjectImpl implements Building {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BuildingImpl() {
@@ -29,6 +30,7 @@ public class BuildingImpl extends PhysicalObjectImpl implements Building {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class BuildingImpl extends PhysicalObjectImpl implements Building {
 		return RobotMLPackage.Literals.BUILDING;
 	}
 
-} //BuildingImpl
+} // BuildingImpl

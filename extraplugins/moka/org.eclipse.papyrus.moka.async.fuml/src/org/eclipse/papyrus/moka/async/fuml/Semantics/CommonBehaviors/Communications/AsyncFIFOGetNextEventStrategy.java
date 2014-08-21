@@ -22,7 +22,7 @@ public class AsyncFIFOGetNextEventStrategy extends AsyncGetNextEventStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncGetNextEventStrategy#getNextEvent(org.eclipse.papyrus.moka
 	 * .async.fuml.Semantics.CommonBehaviors.Communications.AsyncEventPool)

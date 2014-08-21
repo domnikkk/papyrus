@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,15 +40,15 @@ public class ImportedLibrary {
 
 	/**
 	 * Instantiates a new imported library.
-	 * 
+	 *
 	 * @param libraryModel
-	 *        the library model
+	 *            the library model
 	 * @param newUri
-	 *        the new uri
+	 *            the new uri
 	 * @param oldURI
-	 *        the old uri
+	 *            the old uri
 	 * @param libraryName
-	 *        the library name
+	 *            the library name
 	 */
 	public ImportedLibrary(EObject libraryModel, String newUri, URI oldURI, String libraryName) {
 		super();
@@ -62,7 +62,7 @@ public class ImportedLibrary {
 
 	/**
 	 * Gets the library model.
-	 * 
+	 *
 	 * @return the library model
 	 */
 	public EObject getLibraryModel() {
@@ -71,9 +71,9 @@ public class ImportedLibrary {
 
 	/**
 	 * Sets the library model.
-	 * 
+	 *
 	 * @param libraryModel
-	 *        the new library model
+	 *            the new library model
 	 */
 	public void setLibraryModel(EObject libraryModel) {
 		this.libraryModel = libraryModel;
@@ -81,7 +81,7 @@ public class ImportedLibrary {
 
 	/**
 	 * Gets the uri.
-	 * 
+	 *
 	 * @return the uri
 	 */
 	public String getUri() {
@@ -90,9 +90,9 @@ public class ImportedLibrary {
 
 	/**
 	 * Sets the uri.
-	 * 
+	 *
 	 * @param uri
-	 *        the new uri
+	 *            the new uri
 	 */
 	public void setUri(String uri) {
 		this.newUri = uri;
@@ -101,7 +101,7 @@ public class ImportedLibrary {
 
 	/**
 	 * Gets the name.
-	 * 
+	 *
 	 * @return the name
 	 */
 	public String getName() {
@@ -111,9 +111,9 @@ public class ImportedLibrary {
 
 	/**
 	 * Sets the name.
-	 * 
+	 *
 	 * @param name
-	 *        the new name
+	 *            the new name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -122,7 +122,7 @@ public class ImportedLibrary {
 
 	/**
 	 * Gets the old uri.
-	 * 
+	 *
 	 * @return the old uri
 	 */
 	public URI getOldURI() {
@@ -132,9 +132,9 @@ public class ImportedLibrary {
 
 	/**
 	 * Sets the old uri.
-	 * 
+	 *
 	 * @param oldURI
-	 *        the new old uri
+	 *            the new old uri
 	 */
 	public void setOldURI(URI oldURI) {
 		this.oldURI = oldURI;

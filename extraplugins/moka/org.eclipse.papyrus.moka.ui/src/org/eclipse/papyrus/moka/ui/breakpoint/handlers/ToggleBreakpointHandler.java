@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,24 +41,24 @@ public class ToggleBreakpointHandler extends MokaAbstractHandler implements IHan
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		EObject selectedElement = this.getSelectedElement();
 		String selectedElementURI = EcoreUtil.getURI(selectedElement).toString();
-		if(selectedElement != null) {
+		if (selectedElement != null) {
 			IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager();
 			IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
 			IBreakpoint alreadyDefinedBreakpoint = null;
-			for(int i = 0; i < breakpoints.length && alreadyDefinedBreakpoint == null; i++) {
-				MokaBreakpoint breakpoint = (MokaBreakpoint)breakpoints[i];
+			for (int i = 0; i < breakpoints.length && alreadyDefinedBreakpoint == null; i++) {
+				MokaBreakpoint breakpoint = (MokaBreakpoint) breakpoints[i];
 				String eObjectOfBreakpointUri = null;
 				try {
-					eObjectOfBreakpointUri = (String)breakpoint.getMarker().getAttribute(EValidator.URI_ATTRIBUTE);
+					eObjectOfBreakpointUri = (String) breakpoint.getMarker().getAttribute(EValidator.URI_ATTRIBUTE);
 				} catch (CoreException e) {
 					Activator.log.error(e);
 				}
-				if(eObjectOfBreakpointUri.equals(selectedElementURI)) {
+				if (eObjectOfBreakpointUri.equals(selectedElementURI)) {
 					alreadyDefinedBreakpoint = breakpoint;
 				}
 			}
 			try {
-				if(alreadyDefinedBreakpoint != null) {
+				if (alreadyDefinedBreakpoint != null) {
 					breakpointManager.removeBreakpoint(alreadyDefinedBreakpoint, true);
 				} else {
 					MokaBreakpoint breakpoint = new MokaBreakpoint();

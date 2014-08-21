@@ -19,15 +19,15 @@ import org.eclipse.uml2.uml.Classifier;
 
 /**
  * A set of utility functions related to classes.
- * 
+ *
  * @author ansgar (ansgar.radermacher@cea.fr)
- * 
+ *
  */
 public class ClassUtils {
 
 	/**
 	 * Calculate the list of classifiers that needs to be included
-	 * 
+	 *
 	 * @param currentClass
 	 * @return
 	 */
@@ -38,10 +38,10 @@ public class ClassUtils {
 
 		// class attributes dependencies
 		usedClasses.addAll(GenUtils.getOwnedAttributeTypes(currentClass));
-		// operation parameters dependencies	
+		// operation parameters dependencies
 		usedClasses.addAll(GenUtils.getTypesViaOperations(currentClass));
 		// realized interface dependencies
-		if(currentClass instanceof Class) {
+		if (currentClass instanceof Class) {
 			Class clazz = (Class) currentClass;
 			usedClasses.addAll(clazz.getImplementedInterfaces());
 		}

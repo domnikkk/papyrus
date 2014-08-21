@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -38,8 +38,8 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#getProperty <em>Property</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#getProperty <em>Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#getPropertyName <em>Property Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertySetterImpl() {
@@ -87,6 +91,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -97,15 +102,18 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getProperty() {
 		if (property != null && property.eIsProxy()) {
-			InternalEObject oldProperty = (InternalEObject)property;
-			property = (Property)eResolveProxy(oldProperty);
+			InternalEObject oldProperty = (InternalEObject) property;
+			property = (Property) eResolveProxy(oldProperty);
 			if (property != oldProperty) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersPackage.PROPERTY_SETTER__PROPERTY, oldProperty, property));
+				}
 			}
 		}
 		return property;
@@ -114,6 +122,7 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetProperty() {
@@ -123,20 +132,25 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setProperty(Property newProperty) {
 		Property oldProperty = property;
 		property = newProperty;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_SETTER__PROPERTY, oldProperty, property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPropertyName() {
 		return propertyName;
 	}
@@ -144,20 +158,25 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPropertyName(String newPropertyName) {
 		String oldPropertyName = propertyName;
 		propertyName = newPropertyName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.PROPERTY_SETTER__PROPERTY_NAME, oldPropertyName, propertyName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValue(View view, TypeInstance value) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -167,16 +186,19 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_SETTER__PROPERTY:
-				if (resolve) return getProperty();
-				return basicGetProperty();
-			case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
-				return getPropertyName();
+		case LayersPackage.PROPERTY_SETTER__PROPERTY:
+			if (resolve) {
+				return getProperty();
+			}
+			return basicGetProperty();
+		case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
+			return getPropertyName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,17 +206,18 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_SETTER__PROPERTY:
-				setProperty((Property)newValue);
-				return;
-			case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
-				setPropertyName((String)newValue);
-				return;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY:
+			setProperty((Property) newValue);
+			return;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
+			setPropertyName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -202,17 +225,18 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_SETTER__PROPERTY:
-				setProperty((Property)null);
-				return;
-			case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
-				setPropertyName(PROPERTY_NAME_EDEFAULT);
-				return;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY:
+			setProperty((Property) null);
+			return;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
+			setPropertyName(PROPERTY_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -220,15 +244,16 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.PROPERTY_SETTER__PROPERTY:
-				return property != null;
-			case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
-				return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
+		case LayersPackage.PROPERTY_SETTER__PROPERTY:
+			return property != null;
+		case LayersPackage.PROPERTY_SETTER__PROPERTY_NAME:
+			return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -236,14 +261,15 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LayersPackage.PROPERTY_SETTER___SET_VALUE__VIEW_TYPEINSTANCE:
-				setValue((View)arguments.get(0), (TypeInstance)arguments.get(1));
-				return null;
+		case LayersPackage.PROPERTY_SETTER___SET_VALUE__VIEW_TYPEINSTANCE:
+			setValue((View) arguments.get(0), (TypeInstance) arguments.get(1));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -251,11 +277,14 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (propertyName: ");
@@ -264,4 +293,4 @@ public abstract class PropertySetterImpl extends MinimalEObjectImpl.Container im
 		return result.toString();
 	}
 
-} //PropertySetterImpl
+} // PropertySetterImpl

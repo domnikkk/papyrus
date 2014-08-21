@@ -1,4 +1,3 @@
-
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
@@ -22,23 +21,23 @@ import org.eclipse.uml2.uml.Stereotype;
  * This class is introduced to check the following constraints:
  * A non-abstract operation shall have a method
  * See 439646: [Moka] [Validation] A non-abstract operation shall have a method https://bugs.eclipse.org/bugs/show_bug.cgi?id=439646
- * 
+ *
  */
 public class NonAbstractOperationShallHaveMethod_Constraint extends AbstractModelConstraint {
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-		Operation operation = (Operation)ctx.getTarget();
+		Operation operation = (Operation) ctx.getTarget();
 		if (operation.getMethods().isEmpty()) {
 			// if it is empty, need to check that the operation is not a constructor,
 			// because PSCS defines semantics for invocation of constructor operations without
 			// methods
 			for (Stereotype applied : operation.getAppliedStereotypes()) {
 				if (applied.getName().equals("Create")) {
-					return ctx.createSuccessStatus() ;
+					return ctx.createSuccessStatus();
 				}
 			}
-			return ctx.createFailureStatus("A non-abstract Operation shall have a method") ;
+			return ctx.createFailureStatus("A non-abstract Operation shall have a method");
 		}
 		return ctx.createSuccessStatus();
 	}

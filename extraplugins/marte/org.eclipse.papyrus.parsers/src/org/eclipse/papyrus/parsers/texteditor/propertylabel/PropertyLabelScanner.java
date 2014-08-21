@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.Color;
  * Scanner for the action language.<BR>
  * It implements the interface IALKeywords, which contains the different keywords available in the
  * action language
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.rules.RuleBasedScanner
  * @see com.cea.actionlanguage.sharedresources.texteditor.IRTActionKeywords
@@ -40,19 +40,19 @@ public class PropertyLabelScanner extends RuleBasedScanner implements IPropertyL
 
 	// Color for the default token
 	/**
-     * 
+     *
      */
 	private Color defaultColor;
 
 	// Color for keywords
 	/**
-     * 
+     *
      */
 	private Color keywordColor;
 
 	// Color for special chars
 	/**
-     * 
+     *
      */
 	private Color symbolColor;
 
@@ -71,13 +71,13 @@ public class PropertyLabelScanner extends RuleBasedScanner implements IPropertyL
 		IRule[] rules = new IRule[2];
 
 		WordRule wordRule = new WordRule(new PropertyWordDetector(), other);
-		for(int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
+		for (int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
 			// wordRule.addWord(getWordWithoutQuotes(visibilityStrings[i]), keyword);
 		}
-		for(int i = 0; i < DerivedPropertyCompletionProposal.derivedPropertyStrings.length; i++) {
+		for (int i = 0; i < DerivedPropertyCompletionProposal.derivedPropertyStrings.length; i++) {
 			// wordRule.addWord(getWordWithoutQuotes(isDerivedStrings[i]), keyword);
 		}
-		for(int i = 0; i < PropertyModifierProposal.modifiersStrings.length; i++) {
+		for (int i = 0; i < PropertyModifierProposal.modifiersStrings.length; i++) {
 			wordRule.addWord(PropertyModifierProposal.modifiersStrings[i].trim(), keyword);
 		}
 
@@ -99,9 +99,9 @@ public class PropertyLabelScanner extends RuleBasedScanner implements IPropertyL
 
 	/**
 	 * returns the word for the scanner, without quotes.
-	 * 
+	 *
 	 * @param word
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getWordWithoutQuotes(String word) {

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -24,13 +24,13 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersStackApplication;
  * The class take care to check if the {@link LayersStackApplication} exist or not.
  * So, it can be used in all cases, even if the {@link LayersStackApplication} is not
  * created.
- * 
+ *
  * The following events are fired:
  * <ul>
- *   <li>LayerStack added</li>
- *   <li>LayerStack removed</li>
+ * <li>LayerStack added</li>
+ * <li>LayerStack removed</li>
  * </ul>
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -39,16 +39,19 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 	/**
 	 * States used in the state machine.
 	 */
-	protected enum State {NoApplication, ApplicationCreated, disposed};
+	protected enum State {
+		NoApplication, ApplicationCreated, disposed
+	};
+
 	protected State state;
-	
+
 	protected LayersModel layersModel;
 
 	/**
 	 * Notifier on {@link LayersStack} life cycle events
 	 */
 	protected LayersStackApplicationEventNotifier layersStackApplicationEventNotifier;
-	
+
 	/**
 	 * Notifier on {@link LayersStackApplication} life cycle events.
 	 */
@@ -58,22 +61,22 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 	 * Listener on {@link LayersStackApplication} life cycle events
 	 */
 	protected ILayersModelRootEventListener layersStackApplicationLifeCycleEventListener = new ILayersModelRootEventListener() {
-		
+
 		@Override
 		public void layersModelRootRemoved(Notification msg) {
-			if( state == State.ApplicationCreated) {
+			if (state == State.ApplicationCreated) {
 				transitionApplicationCreatedToNoApplicationState();
 			}
 		}
-		
+
 		@Override
 		public void layersModelRootAdded(Notification msg) {
-			if( state == State.NoApplication) {
+			if (state == State.NoApplication) {
 				transitionNoApplicationToApplicationCreatedState();
 			}
 		}
 	};
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -89,15 +92,15 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 	 * Init the state of the object
 	 */
 	private void initState() {
-		
-		if( layersModel.lookupLayerStackApplication() != null) {
+
+		if (layersModel.lookupLayerStackApplication() != null) {
 			transitionInitToApplicationCreatedState();
 		}
 		else {
 			transitionInitToNoApplicationState();
 		}
 	}
-	
+
 	/**
 	 * Initialize the class for the NoApplication state:
 	 * - listen on LayersModel notifiers for application creation
@@ -138,10 +141,10 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 
 	/**
 	 * Activate the notifier.
-	 * 
+	 *
 	 */
 	protected void activate() {
-		createListeners();		
+		createListeners();
 	}
 
 	/**
@@ -150,7 +153,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 	protected void deactivate() {
 		deleteListeners();
 	}
-	
+
 	/**
 	 * Dispose the synchronizer
 	 */
@@ -160,21 +163,22 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 		layersModel = null;
 		state = State.disposed;
 	}
-	
+
 	/**
 	 * Return true if the object is disposed.
+	 * 
 	 * @return
 	 */
 	protected boolean isDisposed() {
 		return state == State.disposed;
 	}
-	
+
 	/**
 	 * Activate the notifier.
 	 */
 	private void activateLayersStackLifeCycleEventNotifier() {
 		layersStackApplicationEventNotifier.activate();
-		
+
 	}
 
 	/**
@@ -182,7 +186,7 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 	 */
 	private void deactivateLayersStackLifeCycleEventNotifier() {
 		layersStackApplicationEventNotifier.deactivate();
-		
+
 	}
 
 
@@ -201,102 +205,104 @@ public class LayersStackAndApplicationLifeCycleEventNotifier {
 		deleteLayersModelAndDiagramDeletionNotifiers();
 		deleteLayersModelRootNotifier();
 	}
-	
+
 	/**
 	 * Activate the listeners.
-	 * 
+	 *
 	 */
 	private void createLayersModelRootNotifier() {
-		/** 
+		/**
 		 * Listen on layersModel to be inform when the application object is created.
 		 * When it is created, we can listen on it.
 		 */
-		
+
 		layersModelEventRootNotifier = new LayersModelEventRootNotifier(layersModel);
-		layersModelEventRootNotifier.addEventListener(layersStackApplicationLifeCycleEventListener);	
+		layersModelEventRootNotifier.addEventListener(layersStackApplicationLifeCycleEventListener);
 	}
 
 
 	/**
 	 * Deactivate the listeners.
-	 * 
+	 *
 	 */
 	private void deleteLayersModelRootNotifier() {
-		/** 
+		/**
 		 * Listen on layersModel to be inform when the application object is created.
 		 * When it is created, we can listen on it.
 		 */
-		if( layersModelEventRootNotifier != null ) {
+		if (layersModelEventRootNotifier != null) {
 			layersModelEventRootNotifier.removeEventListener(layersStackApplicationLifeCycleEventListener);
 			layersModelEventRootNotifier.dispose();
-			layersModelEventRootNotifier = null;	
+			layersModelEventRootNotifier = null;
 		}
 	}
 
 	/**
 	 * Activate the listeners.
-	 * 
+	 *
 	 */
 	private void createLayersModelAndDiagramDeletionNotifiers() {
-		/** 
+		/**
 		 * Listen on layersModel to be inform when the application object is created.
 		 * When it is created, we can listen on it.
 		 */
 		layersStackApplicationEventNotifier = new LayersStackApplicationEventNotifier(layersModel, false);
-//		layersStackApplicationEventNotifier.addLayersModelEventListener(layersStackLifeCycleEventListener);	
+		// layersStackApplicationEventNotifier.addLayersModelEventListener(layersStackLifeCycleEventListener);
 	}
 
 	/**
 	 * Deactivate listeners
 	 */
 	protected void deleteLayersModelAndDiagramDeletionNotifiers() {
-		if(layersStackApplicationEventNotifier!=null) {
-//			layersStackApplicationEventNotifier.removeLayersModelEventListener(layersStackLifeCycleEventListener);
+		if (layersStackApplicationEventNotifier != null) {
+			// layersStackApplicationEventNotifier.removeLayersModelEventListener(layersStackLifeCycleEventListener);
 			layersStackApplicationEventNotifier.dispose();
 			layersStackApplicationEventNotifier = null;
 		}
 	}
-	
+
 
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addLayersModelEventListener(ILayersStackApplicationEventListener listener) {
 		// Add to the inner notifier
 		layersStackApplicationEventNotifier.addLayersModelEventListener(listener);
 	}
-	
-	/** 
+
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 * 
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersStackApplicationEventListener listener) {
 
 		layersStackApplicationEventNotifier.removeLayersModelEventListener(listener);
 	}
-	
+
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addLayersStackApplicationLifeCycleEventListener(ILayersModelRootEventListener listener) {
 		// Add to the inner notifier
 		layersModelEventRootNotifier.addEventListener(listener);
 	}
-	
-	/** 
+
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 * 
 	 * @param listener
 	 */
 	public void removeLayersStackApplicationLifeCycleEventListener(ILayersModelRootEventListener listener) {
 
 		layersModelEventRootNotifier.removeEventListener(listener);
 	}
-	
+
 
 }

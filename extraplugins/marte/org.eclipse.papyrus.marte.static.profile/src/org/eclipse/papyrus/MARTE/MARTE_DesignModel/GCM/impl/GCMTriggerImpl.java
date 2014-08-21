@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,8 @@ import org.eclipse.uml2.uml.Trigger;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl#getBase_Trigger <em>Base Trigger</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl#getFeature <em>Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl#getBase_Trigger <em>Base Trigger</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.GCM.impl.GCMTriggerImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	 * The cached value of the '{@link #getBase_Trigger() <em>Base Trigger</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Trigger()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFeature()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GCMTriggerImpl() {
@@ -70,6 +73,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,15 +84,18 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Trigger getBase_Trigger() {
 		if (base_Trigger != null && base_Trigger.eIsProxy()) {
-			InternalEObject oldBase_Trigger = (InternalEObject)base_Trigger;
-			base_Trigger = (Trigger)eResolveProxy(oldBase_Trigger);
+			InternalEObject oldBase_Trigger = (InternalEObject) base_Trigger;
+			base_Trigger = (Trigger) eResolveProxy(oldBase_Trigger);
 			if (base_Trigger != oldBase_Trigger) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.GCM_TRIGGER__BASE_TRIGGER, oldBase_Trigger, base_Trigger));
+				}
 			}
 		}
 		return base_Trigger;
@@ -97,6 +104,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Trigger basicGetBase_Trigger() {
@@ -106,27 +114,33 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Trigger(Trigger newBase_Trigger) {
 		Trigger oldBase_Trigger = base_Trigger;
 		base_Trigger = newBase_Trigger;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.GCM_TRIGGER__BASE_TRIGGER, oldBase_Trigger, base_Trigger));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Feature getFeature() {
 		if (feature != null && feature.eIsProxy()) {
-			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Feature)eResolveProxy(oldFeature);
+			InternalEObject oldFeature = (InternalEObject) feature;
+			feature = (Feature) eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GCMPackage.GCM_TRIGGER__FEATURE, oldFeature, feature));
+				}
 			}
 		}
 		return feature;
@@ -135,6 +149,7 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Feature basicGetFeature() {
@@ -144,29 +159,37 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFeature(Feature newFeature) {
 		Feature oldFeature = feature;
 		feature = newFeature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GCMPackage.GCM_TRIGGER__FEATURE, oldFeature, feature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
-				if (resolve) return getBase_Trigger();
-				return basicGetBase_Trigger();
-			case GCMPackage.GCM_TRIGGER__FEATURE:
-				if (resolve) return getFeature();
-				return basicGetFeature();
+		case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
+			if (resolve) {
+				return getBase_Trigger();
+			}
+			return basicGetBase_Trigger();
+		case GCMPackage.GCM_TRIGGER__FEATURE:
+			if (resolve) {
+				return getFeature();
+			}
+			return basicGetFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,17 +197,18 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
-				setBase_Trigger((Trigger)newValue);
-				return;
-			case GCMPackage.GCM_TRIGGER__FEATURE:
-				setFeature((Feature)newValue);
-				return;
+		case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
+			setBase_Trigger((Trigger) newValue);
+			return;
+		case GCMPackage.GCM_TRIGGER__FEATURE:
+			setFeature((Feature) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,17 +216,18 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
-				setBase_Trigger((Trigger)null);
-				return;
-			case GCMPackage.GCM_TRIGGER__FEATURE:
-				setFeature((Feature)null);
-				return;
+		case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
+			setBase_Trigger((Trigger) null);
+			return;
+		case GCMPackage.GCM_TRIGGER__FEATURE:
+			setFeature((Feature) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,17 +235,18 @@ public class GCMTriggerImpl extends EObjectImpl implements GCMTrigger {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
-				return base_Trigger != null;
-			case GCMPackage.GCM_TRIGGER__FEATURE:
-				return feature != null;
+		case GCMPackage.GCM_TRIGGER__BASE_TRIGGER:
+			return base_Trigger != null;
+		case GCMPackage.GCM_TRIGGER__FEATURE:
+			return feature != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //GCMTriggerImpl
+} // GCMTriggerImpl

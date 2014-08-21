@@ -38,9 +38,10 @@ public class UnlockStrategyItemProvider extends org.eclipse.ui.actions.CompoundC
 	 */
 	@Override
 	protected IContributionItem[] getContributionItems() {
-		if(isEnabled()) {
+		if (isEnabled()) {
 			Collection<ActionContributionItem> contribution = Collections2.transform(ICollaborativeManager.INSTANCE.getStrategies().values(), new Function<ILockingStrategy.Descriptor, ActionContributionItem>() {
 
+				@Override
 				public ActionContributionItem apply(final ILockingStrategy.Descriptor from) {
 
 					Action action = new UnlockAction(from);
@@ -62,9 +63,10 @@ public class UnlockStrategyItemProvider extends org.eclipse.ui.actions.CompoundC
 	 * 
 	 * @see org.eclipse.jface.action.ContributionItem#isEnabled()
 	 */
+	@Override
 	public boolean isEnabled() {
 		EObject firstSelection = UIUtils.getFirstSelection();
-		if(firstSelection != null) {
+		if (firstSelection != null) {
 			return CollabUtils.isCollab(firstSelection);
 		}
 		return false;

@@ -27,10 +27,10 @@ public class Floor extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			Double x = ((RealValue)inputParameters.get(0).values.get(0)).value;
+			Double x = ((RealValue) inputParameters.get(0).values.get(0)).value;
 			IntegerValue result = new IntegerValue();
-			result.value = (int)Math.floor(x);
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Real");
+			result.value = (int) Math.floor(x);
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

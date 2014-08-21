@@ -13,8 +13,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef#getFunctionPrototype <em>Function Prototype</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef#getFunctionPrototype_context <em>Function Prototype context</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef#getFunctionPrototype <em>Function Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef#getFunctionPrototype_context <em>Function Prototype context</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,10 +27,10 @@ public interface ErrorModelPrototype_functionTargetInstanceRef extends InstanceR
 	 * Returns the value of the '<em><b>Function Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function Prototype</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Function Prototype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Function Prototype</em>' reference.
 	 * @see #setFunctionPrototype(FunctionPrototype)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype()
@@ -43,7 +43,9 @@ public interface ErrorModelPrototype_functionTargetInstanceRef extends InstanceR
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.ErrorModelPrototype_functionTargetInstanceRef#getFunctionPrototype <em>Function Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Function Prototype</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Function Prototype</em>' reference.
 	 * @see #getFunctionPrototype()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface ErrorModelPrototype_functionTargetInstanceRef extends InstanceR
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPrototype}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function Prototype context</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Function Prototype context</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Function Prototype context</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage#getErrorModelPrototype_functionTargetInstanceRef_FunctionPrototype_context()
 	 * @model ordered="false"

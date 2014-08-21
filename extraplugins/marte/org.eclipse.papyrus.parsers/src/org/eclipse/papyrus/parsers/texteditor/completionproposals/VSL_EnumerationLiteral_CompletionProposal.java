@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class VSL_EnumerationLiteral_CompletionProposal implements ICompletionPro
 	private static Enumeration enumeration;
 
 	public void setDataType(DataType datatype) {
-		enumeration = (Enumeration)datatype;
+		enumeration = (Enumeration) datatype;
 	}
 
 	// /** Text inserted in the editor */
@@ -51,9 +51,9 @@ public class VSL_EnumerationLiteral_CompletionProposal implements ICompletionPro
 	public static void computeTVL_Enumeration_String() {
 		enumLiterals = new ArrayList<String>();
 
-		if(enumeration != null) {
+		if (enumeration != null) {
 			Iterator<EnumerationLiteral> iter = enumeration.getOwnedLiterals().iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				EnumerationLiteral enumLiteral = iter.next();
 				enumLiterals.add(enumLiteral.getName());
 			}
@@ -77,8 +77,8 @@ public class VSL_EnumerationLiteral_CompletionProposal implements ICompletionPro
 		computeTVL_Enumeration_String();
 
 		// adds all name (static strings...)
-		for(int i = 0; i < enumLiterals.size(); i++) {
-			if(enumLiterals.get(i).startsWith(prefix)) {
+		for (int i = 0; i < enumLiterals.size(); i++) {
+			if (enumLiterals.get(i).startsWith(prefix)) {
 				proposal = new CompletionProposal(enumLiterals.get(i), documentOffset - prefix.length(), prefix
 						.length()
 						+ selectionRange, enumLiterals.get(i).length(), null, enumLiterals.get(i), null,

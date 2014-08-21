@@ -11,18 +11,18 @@ package org.eclipse.papyrus.RobotML;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbLayers <em>Nb Layers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleMin <em>Layer Angle Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleStep <em>Layer Angle Step</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#isNoise <em>Noise</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getSigmaNoise <em>Sigma Noise</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_min <em>Angle min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_max <em>Angle max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getTime_increment <em>Time increment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getScan_time <em>Scan time</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_min <em>Range min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_max <em>Range max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbRays <em>Nb Rays</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbLayers <em>Nb Layers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleMin <em>Layer Angle Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleStep <em>Layer Angle Step</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#isNoise <em>Noise</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getSigmaNoise <em>Sigma Noise</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_min <em>Angle min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_max <em>Angle max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getTime_increment <em>Time increment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getScan_time <em>Scan time</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_min <em>Range min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_max <em>Range max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbRays <em>Nb Rays</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,10 +35,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Nb Layers</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nb Layers</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nb Layers</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Nb Layers</em>' attribute.
 	 * @see #setNbLayers(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_NbLayers()
@@ -51,7 +51,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbLayers <em>Nb Layers</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nb Layers</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nb Layers</em>' attribute.
 	 * @see #getNbLayers()
 	 * @generated
 	 */
@@ -61,10 +63,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Layer Angle Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layer Angle Min</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layer Angle Min</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layer Angle Min</em>' attribute.
 	 * @see #setLayerAngleMin(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_LayerAngleMin()
@@ -77,7 +79,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleMin <em>Layer Angle Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layer Angle Min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Layer Angle Min</em>' attribute.
 	 * @see #getLayerAngleMin()
 	 * @generated
 	 */
@@ -87,10 +91,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Layer Angle Step</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layer Angle Step</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Layer Angle Step</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Layer Angle Step</em>' attribute.
 	 * @see #setLayerAngleStep(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_LayerAngleStep()
@@ -103,7 +107,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getLayerAngleStep <em>Layer Angle Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layer Angle Step</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Layer Angle Step</em>' attribute.
 	 * @see #getLayerAngleStep()
 	 * @generated
 	 */
@@ -113,10 +119,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Noise</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Noise</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Noise</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Noise</em>' attribute.
 	 * @see #setNoise(boolean)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Noise()
@@ -129,7 +135,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#isNoise <em>Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Noise</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Noise</em>' attribute.
 	 * @see #isNoise()
 	 * @generated
 	 */
@@ -139,10 +147,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Sigma Noise</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sigma Noise</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Sigma Noise</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Sigma Noise</em>' attribute.
 	 * @see #setSigmaNoise(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_SigmaNoise()
@@ -155,7 +163,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getSigmaNoise <em>Sigma Noise</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sigma Noise</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Sigma Noise</em>' attribute.
 	 * @see #getSigmaNoise()
 	 * @generated
 	 */
@@ -165,10 +175,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Angle min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Angle min</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Angle min</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Angle min</em>' attribute.
 	 * @see #setAngle_min(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Angle_min()
@@ -181,7 +191,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_min <em>Angle min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Angle min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Angle min</em>' attribute.
 	 * @see #getAngle_min()
 	 * @generated
 	 */
@@ -191,10 +203,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Angle max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Angle max</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Angle max</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Angle max</em>' attribute.
 	 * @see #setAngle_max(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Angle_max()
@@ -207,7 +219,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getAngle_max <em>Angle max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Angle max</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Angle max</em>' attribute.
 	 * @see #getAngle_max()
 	 * @generated
 	 */
@@ -217,10 +231,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Time increment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Time increment</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Time increment</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Time increment</em>' attribute.
 	 * @see #setTime_increment(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Time_increment()
@@ -233,7 +247,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getTime_increment <em>Time increment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time increment</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Time increment</em>' attribute.
 	 * @see #getTime_increment()
 	 * @generated
 	 */
@@ -243,10 +259,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Scan time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Scan time</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Scan time</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Scan time</em>' attribute.
 	 * @see #setScan_time(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Scan_time()
@@ -259,7 +275,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getScan_time <em>Scan time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scan time</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Scan time</em>' attribute.
 	 * @see #getScan_time()
 	 * @generated
 	 */
@@ -269,10 +287,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Range min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Range min</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Range min</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Range min</em>' attribute.
 	 * @see #setRange_min(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Range_min()
@@ -285,7 +303,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_min <em>Range min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Range min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Range min</em>' attribute.
 	 * @see #getRange_min()
 	 * @generated
 	 */
@@ -295,10 +315,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Range max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Range max</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Range max</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Range max</em>' attribute.
 	 * @see #setRange_max(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_Range_max()
@@ -311,7 +331,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getRange_max <em>Range max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Range max</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Range max</em>' attribute.
 	 * @see #getRange_max()
 	 * @generated
 	 */
@@ -321,10 +343,10 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Returns the value of the '<em><b>Nb Rays</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nb Rays</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nb Rays</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Nb Rays</em>' attribute.
 	 * @see #setNbRays(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getLidarSystem_NbRays()
@@ -337,7 +359,9 @@ public interface LidarSystem extends ObjectDetectionSensorSystem, ObjectTracking
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbRays <em>Nb Rays</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nb Rays</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nb Rays</em>' attribute.
 	 * @see #getNbRays()
 	 * @generated
 	 */

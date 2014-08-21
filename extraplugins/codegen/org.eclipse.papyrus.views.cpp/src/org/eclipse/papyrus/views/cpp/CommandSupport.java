@@ -33,46 +33,48 @@ public class CommandSupport
 {
 	/**
 	 * Execute the passed Runnable within a command
+	 * 
 	 * @param label
 	 * @param command
 	 */
-	public static void exec (String label, final Runnable command)
+	public static void exec(String label, final Runnable command)
 	{
 		TransactionalEditingDomain domain = EditorUtils.getTransactionalEditingDomain();
 		IOperationHistory history = OperationHistoryFactory.getOperationHistory();
 		try {
-			history.execute ( new AbstractTransactionalCommand (domain, label, Collections.EMPTY_LIST) {
-				public CommandResult doExecuteWithResult (IProgressMonitor dummy, IAdaptable info) {
-					command.run ();
-	                return CommandResult.newOKCommandResult();
+			history.execute(new AbstractTransactionalCommand(domain, label, Collections.EMPTY_LIST) {
+				@Override
+				public CommandResult doExecuteWithResult(IProgressMonitor dummy, IAdaptable info) {
+					command.run();
+					return CommandResult.newOKCommandResult();
 				}
 			}, null, null);
-		}
-		catch (ExecutionException e) {
-			e.printStackTrace ();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Execute the passed Runnable within a command
+	 * 
 	 * @param label
 	 * @param command
 	 */
-	public static void exec (TransactionalEditingDomain domain, String label, final Runnable command)
+	public static void exec(TransactionalEditingDomain domain, String label, final Runnable command)
 	{
 		// do works, undo does not (but is selectable in Papyrus Model explorer)
 		IOperationHistory history = OperationHistoryFactory.getOperationHistory();
 		try {
-			history.execute ( new AbstractTransactionalCommand (domain, label, Collections.EMPTY_LIST) {
-				public CommandResult doExecuteWithResult (IProgressMonitor dummy, IAdaptable info) {
-					command.run ();
-		               return CommandResult.newOKCommandResult();
+			history.execute(new AbstractTransactionalCommand(domain, label, Collections.EMPTY_LIST) {
+				@Override
+				public CommandResult doExecuteWithResult(IProgressMonitor dummy, IAdaptable info) {
+					command.run();
+					return CommandResult.newOKCommandResult();
 				}
 			}, null, null);
-		}
-		catch (ExecutionException e) {
-			e.printStackTrace ();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
 		}
 	}
-	
+
 }

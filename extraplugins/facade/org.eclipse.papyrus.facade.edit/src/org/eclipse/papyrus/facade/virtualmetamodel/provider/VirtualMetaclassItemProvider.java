@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,11 +40,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualMetaclassItemProvider
-	extends VirtualClassifierItemProvider
-	implements
+		extends VirtualClassifierItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -54,6 +55,7 @@ public class VirtualMetaclassItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualMetaclassItemProvider(AdapterFactory adapterFactory) {
@@ -64,6 +66,7 @@ public class VirtualMetaclassItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,96 +86,100 @@ public class VirtualMetaclassItemProvider
 	 * This adds a property descriptor for the Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addAbstractPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetaclass_abstract_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_abstract_feature", "_UI_VirtualMetaclass_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__ABSTRACT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetaclass_abstract_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_abstract_feature", "_UI_VirtualMetaclass_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__ABSTRACT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Applied Stereotypes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addAppliedStereotypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetaclass_appliedStereotypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_appliedStereotypes_feature", "_UI_VirtualMetaclass_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__APPLIED_STEREOTYPES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetaclass_appliedStereotypes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_appliedStereotypes_feature", "_UI_VirtualMetaclass_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__APPLIED_STEREOTYPES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Parents feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addParentsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetaclass_parents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_parents_feature", "_UI_VirtualMetaclass_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__PARENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetaclass_parents_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_parents_feature", "_UI_VirtualMetaclass_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__PARENTS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Stereotype Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addStereotypeInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VirtualMetaclass_stereotypeInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_stereotypeInterface_feature", "_UI_VirtualMetaclass_type"),
-				 VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_VirtualMetaclass_stereotypeInterface_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VirtualMetaclass_stereotypeInterface_feature", "_UI_VirtualMetaclass_type"),
+						VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,6 +195,7 @@ public class VirtualMetaclassItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,6 +210,7 @@ public class VirtualMetaclassItemProvider
 	 * This returns VirtualMetaclass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,22 +222,24 @@ public class VirtualMetaclassItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualMetaclass)object).getAliasName();
+		String label = ((VirtualMetaclass) object).getAliasName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualMetaclass_type") :
-			getString("_UI_VirtualMetaclass_type") + " " + label;
+				getString("_UI_VirtualMetaclass_type") :
+				getString("_UI_VirtualMetaclass_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,14 +247,14 @@ public class VirtualMetaclassItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(VirtualMetaclass.class)) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -253,6 +264,7 @@ public class VirtualMetaclassItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -260,14 +272,14 @@ public class VirtualMetaclassItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__OPERATIONS,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualOperation()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualOperation()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(VirtualmetamodelPackage.Literals.VIRTUAL_METACLASS__PROPERTIES,
-				 VirtualmetamodelFactory.eINSTANCE.createVirtualProperty()));
+						VirtualmetamodelFactory.eINSTANCE.createVirtualProperty()));
 	}
 
 }

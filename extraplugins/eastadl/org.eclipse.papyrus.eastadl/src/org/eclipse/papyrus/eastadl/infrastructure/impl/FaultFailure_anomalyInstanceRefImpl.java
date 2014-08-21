@@ -22,8 +22,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.InfrastructurePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailure_anomalyInstanceRefImpl#getAnomaly <em>Anomaly</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailure_anomalyInstanceRefImpl#getErrorModelPrototype <em>Error Model Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailure_anomalyInstanceRefImpl#getAnomaly <em>Anomaly</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.impl.FaultFailure_anomalyInstanceRefImpl#getErrorModelPrototype <em>Error Model Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	 * The cached value of the '{@link #getAnomaly() <em>Anomaly</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAnomaly()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	 * The cached value of the '{@link #getErrorModelPrototype() <em>Error Model Prototype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getErrorModelPrototype()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FaultFailure_anomalyInstanceRefImpl() {
@@ -62,6 +65,7 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,15 +76,18 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Anomaly getAnomaly() {
 		if (anomaly != null && anomaly.eIsProxy()) {
-			InternalEObject oldAnomaly = (InternalEObject)anomaly;
-			anomaly = (Anomaly)eResolveProxy(oldAnomaly);
+			InternalEObject oldAnomaly = (InternalEObject) anomaly;
+			anomaly = (Anomaly) eResolveProxy(oldAnomaly);
 			if (anomaly != oldAnomaly) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY, oldAnomaly, anomaly));
+				}
 			}
 		}
 		return anomaly;
@@ -89,6 +96,7 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Anomaly basicGetAnomaly() {
@@ -98,20 +106,25 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAnomaly(Anomaly newAnomaly) {
 		Anomaly oldAnomaly = anomaly;
 		anomaly = newAnomaly;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY, oldAnomaly, anomaly));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ErrorModelPrototype> getErrorModelPrototype() {
 		if (errorModelPrototype == null) {
 			errorModelPrototype = new EObjectResolvingEList<ErrorModelPrototype>(ErrorModelPrototype.class, this, InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE);
@@ -122,16 +135,19 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
-				if (resolve) return getAnomaly();
-				return basicGetAnomaly();
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
-				return getErrorModelPrototype();
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
+			if (resolve) {
+				return getAnomaly();
+			}
+			return basicGetAnomaly();
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
+			return getErrorModelPrototype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +155,20 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
-				setAnomaly((Anomaly)newValue);
-				return;
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
-				getErrorModelPrototype().clear();
-				getErrorModelPrototype().addAll((Collection<? extends ErrorModelPrototype>)newValue);
-				return;
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
+			setAnomaly((Anomaly) newValue);
+			return;
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
+			getErrorModelPrototype().clear();
+			getErrorModelPrototype().addAll((Collection<? extends ErrorModelPrototype>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +176,18 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
-				setAnomaly((Anomaly)null);
-				return;
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
-				getErrorModelPrototype().clear();
-				return;
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
+			setAnomaly((Anomaly) null);
+			return;
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
+			getErrorModelPrototype().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,17 +195,18 @@ public class FaultFailure_anomalyInstanceRefImpl extends InstanceRefImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
-				return anomaly != null;
-			case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
-				return errorModelPrototype != null && !errorModelPrototype.isEmpty();
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ANOMALY:
+			return anomaly != null;
+		case InfrastructurePackage.FAULT_FAILURE_ANOMALY_INSTANCE_REF__ERROR_MODEL_PROTOTYPE:
+			return errorModelPrototype != null && !errorModelPrototype.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FaultFailure_anomalyInstanceRefImpl
+} // FaultFailure_anomalyInstanceRefImpl

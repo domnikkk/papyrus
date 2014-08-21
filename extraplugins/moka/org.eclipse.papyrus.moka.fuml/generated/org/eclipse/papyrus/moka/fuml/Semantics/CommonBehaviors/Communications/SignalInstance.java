@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ public class SignalInstance extends CompoundValue {
 
 	public Signal type;
 
+	@Override
 	public List<Classifier> getTypes() {
 		// Return the single type of this signal instance.
 		List<Classifier> types = new ArrayList<Classifier>();
@@ -32,15 +33,17 @@ public class SignalInstance extends CompoundValue {
 		return types;
 	}
 
+	@Override
 	public Value new_() {
 		// Create a new signal instance with no type or feature values.
 		return new SignalInstance();
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new signal instance with the same type and feature values as
 		// this signal instance.
-		SignalInstance newValue = (SignalInstance)(super.copy());
+		SignalInstance newValue = (SignalInstance) (super.copy());
 		newValue.type = this.type;
 		return newValue;
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 323802
  *   Christian W. Damus (CEA) - bug 415639
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -51,7 +51,7 @@ public class CDOAwareTransactionalEditingDomain extends PapyrusROTransactionalEd
 				// Append to the transaction first
 				super.appendNotification(notification);
 
-				if(!NotificationFilter.READ.matches(notification)) {
+				if (!NotificationFilter.READ.matches(notification)) {
 					// Check whether we are modifying a read-only object
 					assertNotReadOnly(notification.getNotifier());
 				} else {
@@ -74,12 +74,12 @@ public class CDOAwareTransactionalEditingDomain extends PapyrusROTransactionalEd
 
 			@Override
 			public void run() {
-				for(ResourceSetListener element : listeners) {
+				for (ResourceSetListener element : listeners) {
 					try {
 						element.resourceSetChanged(new ResourceSetChangeEvent(CDOAwareTransactionalEditingDomain.this, transaction, notifications));
 					} catch (Exception e) {
 						Activator.log.error("Uncaught exception in resource set change listener.", //$NON-NLS-1$
-							e);
+								e);
 					}
 				}
 			}

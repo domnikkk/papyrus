@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,13 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_ResourceCore.SW_Resour
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.SW_BrokeringFactory
  * @model kind="package"
  * @generated
@@ -40,6 +41,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "SW_Brokering";
@@ -48,6 +50,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/SW_Brokering/1";
@@ -56,6 +59,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "SW_Brokering";
@@ -64,6 +68,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	SW_BrokeringPackage eINSTANCE = org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl.init();
@@ -72,6 +77,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl <em>Device Broker</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getDeviceBroker()
 	 * @generated
@@ -82,6 +88,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -91,6 +98,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +108,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -109,6 +118,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +128,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -127,6 +138,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -136,6 +148,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -145,6 +158,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -154,6 +168,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +178,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -172,6 +188,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -181,6 +198,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -190,6 +208,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -199,6 +218,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +228,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Access Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -217,6 +238,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Buffered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -226,6 +248,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Devices</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +258,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Close Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -244,6 +268,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Control Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -253,6 +278,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Open Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -262,6 +288,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Read Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -271,6 +298,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Write Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -280,6 +308,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The number of structural features of the '<em>Device Broker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -289,6 +318,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.MemoryBrokerImpl <em>Memory Broker</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.MemoryBrokerImpl
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getMemoryBroker()
 	 * @generated
@@ -299,6 +329,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -308,6 +339,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -317,6 +349,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -326,6 +359,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -335,6 +369,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Instance Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -344,6 +379,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -353,6 +389,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Lifeline</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -362,6 +399,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Connectable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -371,6 +409,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -380,6 +419,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>State Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -389,6 +429,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -398,6 +439,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -407,6 +449,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -416,6 +459,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -425,6 +469,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Access Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -434,6 +479,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Memories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -443,6 +489,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Block Adress Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -452,6 +499,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Memory Block Size Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -461,6 +509,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Lock Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -470,6 +519,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Unlock Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -479,6 +529,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Map Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -488,6 +539,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The feature id for the '<em><b>Un Map Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -497,6 +549,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The number of structural features of the '<em>Memory Broker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -506,6 +559,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind <em>Access Policy Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getAccessPolicyKind()
 	 * @generated
@@ -517,6 +571,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker <em>Device Broker</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Device Broker</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker
 	 * @generated
@@ -527,6 +582,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getAccessPolicy <em>Access Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Access Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getAccessPolicy()
 	 * @see #getDeviceBroker()
@@ -538,6 +594,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#isIsBuffered <em>Is Buffered</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Is Buffered</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#isIsBuffered()
 	 * @see #getDeviceBroker()
@@ -549,6 +606,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getDevices <em>Devices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Devices</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getDevices()
 	 * @see #getDeviceBroker()
@@ -560,6 +618,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getCloseServices <em>Close Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Close Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getCloseServices()
 	 * @see #getDeviceBroker()
@@ -571,6 +630,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getControlServices <em>Control Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Control Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getControlServices()
 	 * @see #getDeviceBroker()
@@ -582,6 +642,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getOpenServices <em>Open Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Open Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getOpenServices()
 	 * @see #getDeviceBroker()
@@ -593,6 +654,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getReadServices <em>Read Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Read Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getReadServices()
 	 * @see #getDeviceBroker()
@@ -604,6 +666,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getWriteServices <em>Write Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Write Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.DeviceBroker#getWriteServices()
 	 * @see #getDeviceBroker()
@@ -615,6 +678,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker <em>Memory Broker</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Memory Broker</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker
 	 * @generated
@@ -625,6 +689,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getAccessPolicy <em>Access Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Access Policy</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getAccessPolicy()
 	 * @see #getMemoryBroker()
@@ -636,6 +701,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemories <em>Memories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Memories</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemories()
 	 * @see #getMemoryBroker()
@@ -647,6 +713,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemoryBlockAdressElements <em>Memory Block Adress Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Memory Block Adress Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemoryBlockAdressElements()
 	 * @see #getMemoryBroker()
@@ -658,6 +725,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemoryBlockSizeElements <em>Memory Block Size Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Memory Block Size Elements</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMemoryBlockSizeElements()
 	 * @see #getMemoryBroker()
@@ -669,6 +737,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getLockServices <em>Lock Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Lock Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getLockServices()
 	 * @see #getMemoryBroker()
@@ -680,6 +749,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getUnlockServices <em>Unlock Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Unlock Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getUnlockServices()
 	 * @see #getMemoryBroker()
@@ -691,6 +761,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMapServices <em>Map Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Map Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getMapServices()
 	 * @see #getMemoryBroker()
@@ -702,6 +773,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getUnMapServices <em>Un Map Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference list '<em>Un Map Services</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.MemoryBroker#getUnMapServices()
 	 * @see #getMemoryBroker()
@@ -713,6 +785,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind <em>Access Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Access Policy Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind
 	 * @generated
@@ -723,6 +796,7 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -732,12 +806,13 @@ public interface SW_BrokeringPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -745,6 +820,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl <em>Device Broker</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.DeviceBrokerImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getDeviceBroker()
 		 * @generated
@@ -755,6 +831,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Access Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEVICE_BROKER__ACCESS_POLICY = eINSTANCE.getDeviceBroker_AccessPolicy();
@@ -763,6 +840,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Buffered</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEVICE_BROKER__IS_BUFFERED = eINSTANCE.getDeviceBroker_IsBuffered();
@@ -771,6 +849,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Devices</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__DEVICES = eINSTANCE.getDeviceBroker_Devices();
@@ -779,6 +858,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Close Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__CLOSE_SERVICES = eINSTANCE.getDeviceBroker_CloseServices();
@@ -787,6 +867,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Control Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__CONTROL_SERVICES = eINSTANCE.getDeviceBroker_ControlServices();
@@ -795,6 +876,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Open Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__OPEN_SERVICES = eINSTANCE.getDeviceBroker_OpenServices();
@@ -803,6 +885,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Read Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__READ_SERVICES = eINSTANCE.getDeviceBroker_ReadServices();
@@ -811,6 +894,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Write Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DEVICE_BROKER__WRITE_SERVICES = eINSTANCE.getDeviceBroker_WriteServices();
@@ -819,6 +903,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.MemoryBrokerImpl <em>Memory Broker</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.MemoryBrokerImpl
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getMemoryBroker()
 		 * @generated
@@ -829,6 +914,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Access Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MEMORY_BROKER__ACCESS_POLICY = eINSTANCE.getMemoryBroker_AccessPolicy();
@@ -837,6 +923,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__MEMORIES = eINSTANCE.getMemoryBroker_Memories();
@@ -845,6 +932,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memory Block Adress Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__MEMORY_BLOCK_ADRESS_ELEMENTS = eINSTANCE.getMemoryBroker_MemoryBlockAdressElements();
@@ -853,6 +941,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Memory Block Size Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__MEMORY_BLOCK_SIZE_ELEMENTS = eINSTANCE.getMemoryBroker_MemoryBlockSizeElements();
@@ -861,6 +950,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lock Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__LOCK_SERVICES = eINSTANCE.getMemoryBroker_LockServices();
@@ -869,6 +959,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unlock Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__UNLOCK_SERVICES = eINSTANCE.getMemoryBroker_UnlockServices();
@@ -877,6 +968,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Map Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__MAP_SERVICES = eINSTANCE.getMemoryBroker_MapServices();
@@ -885,6 +977,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Un Map Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MEMORY_BROKER__UN_MAP_SERVICES = eINSTANCE.getMemoryBroker_UnMapServices();
@@ -893,6 +986,7 @@ public interface SW_BrokeringPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind <em>Access Policy Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.AccessPolicyKind
 		 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Brokering.impl.SW_BrokeringPackageImpl#getAccessPolicyKind()
 		 * @generated
@@ -901,4 +995,4 @@ public interface SW_BrokeringPackage extends EPackage {
 
 	}
 
-} //SW_BrokeringPackage
+} // SW_BrokeringPackage

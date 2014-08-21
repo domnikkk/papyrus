@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,11 +16,8 @@ package org.eclipse.papyrus.adl4eclipsetool.assistant;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
@@ -47,12 +44,12 @@ import org.eclipse.uml2.uml.Package;
 public class SimplePluginImport extends Wizard implements IImportWizard {
 
 	protected BundleSelectionPage bundleSelectionPage;
-	protected TransactionalEditingDomain transactionalEditingDomain=null;
+	protected TransactionalEditingDomain transactionalEditingDomain = null;
 	protected PapyrusMultiDiagramEditor papyrusEditor;
 	protected ModelSet modelSet;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
@@ -63,32 +60,33 @@ public class SimplePluginImport extends Wizard implements IImportWizard {
 
 	@Override
 	public void addPages() {
-		//look for all plugins from the workspace
-		ArrayList<Object> bundleList= new ArrayList<Object>();
+		// look for all plugins from the workspace
+		ArrayList<Object> bundleList = new ArrayList<Object>();
 		bundleList.addAll(ArchitectureSnapshotDesigner.getWorkspaceBundle());
 		bundleSelectionPage = new BundleSelectionPage(bundleList);
 		addPage(bundleSelectionPage);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the list of selected bundle from the page
 	 */
-	public ArrayList<Object> getSelectedBundle(){
+	public ArrayList<Object> getSelectedBundle() {
 		return bundleSelectionPage.getResult();
 	}
+
 	@Override
 	public boolean performFinish() {
-		
+
 		// one bundle must be selected
-		if(getSelectedBundle().size()>0){
+		if (getSelectedBundle().size() > 0) {
 			// get the domain in order to launche the command
 			TransactionalEditingDomain dom = modelSet.getTransactionalEditingDomain();
-			ArrayList<Element> selection=getSelectionSet();
-			
-			if( (selection.size()==1) &&(selection.get(0)instanceof Package)){
-				//launch the simple retro engineering
-				SimplePluginsArchitectureSnapshotCommand comd= new SimplePluginsArchitectureSnapshotCommand(dom, (Package)selection.get(0),getSelectedBundle());
+			ArrayList<Element> selection = getSelectionSet();
+
+			if ((selection.size() == 1) && (selection.get(0) instanceof Package)) {
+				// launch the simple retro engineering
+				SimplePluginsArchitectureSnapshotCommand comd = new SimplePluginsArchitectureSnapshotCommand(dom, (Package) selection.get(0), getSelectedBundle());
 				dom.getCommandStack().execute(comd);
 			}
 			return true;
@@ -97,9 +95,9 @@ public class SimplePluginImport extends Wizard implements IImportWizard {
 	}
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		
-		//get the service registry of papyrus from the selection
-		ServicesRegistry registry=null;
+
+		// get the service registry of papyrus from the selection
+		ServicesRegistry registry = null;
 		try {
 			registry = ServiceUtilsForSelection.getInstance().getServiceRegistry(selection);
 		} catch (ServiceException e1) {
@@ -110,31 +108,32 @@ public class SimplePluginImport extends Wizard implements IImportWizard {
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	/**
 	 * getSelected element in the diagram or in the model explorer
+	 * 
 	 * @return Element or null
 	 */
-	protected ArrayList<Element> getSelectionSet(){
-		ArrayList<Element> selectedSet =new ArrayList<Element>();
+	protected ArrayList<Element> getSelectionSet() {
+		ArrayList<Element> selectedSet = new ArrayList<Element>();
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 
 
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 			@SuppressWarnings("rawtypes")
-			Iterator selectedobjectIteractor = ((IStructuredSelection)selection).iterator();
+			Iterator selectedobjectIteractor = ((IStructuredSelection) selection).iterator();
 			while (selectedobjectIteractor.hasNext()) {
 				Object currentSelection = selectedobjectIteractor.next();
-				
-					EObject selectedEObject = EMFHelper.getEObject(currentSelection);
-					if (selectedEObject instanceof org.eclipse.uml2.uml.Element){
-						selectedSet.add((Element)selectedEObject);
-					}
+
+				EObject selectedEObject = EMFHelper.getEObject(currentSelection);
+				if (selectedEObject instanceof org.eclipse.uml2.uml.Element) {
+					selectedSet.add((Element) selectedEObject);
 				}
 			}
+		}
 
 		return selectedSet;
 	}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.LayersconfigPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl#getFolderElements <em>Folder Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.FolderImpl#getFolderElements <em>Folder Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	 * The cached value of the '{@link #getFolderElements() <em>Folder Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFolderElements()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FolderImpl() {
@@ -64,6 +66,7 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,8 +77,10 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FolderElement> getFolderElements() {
 		if (folderElements == null) {
 			folderElements = new EObjectContainmentEList<FolderElement>(FolderElement.class, this, LayersconfigPackage.FOLDER__FOLDER_ELEMENTS);
@@ -86,13 +91,14 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
-				return ((InternalEList<?>)getFolderElements()).basicRemove(otherEnd, msgs);
+		case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
+			return ((InternalEList<?>) getFolderElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,13 +106,14 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
-				return getFolderElements();
+		case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
+			return getFolderElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,16 +121,17 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
-				getFolderElements().clear();
-				getFolderElements().addAll((Collection<? extends FolderElement>)newValue);
-				return;
+		case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
+			getFolderElements().clear();
+			getFolderElements().addAll((Collection<? extends FolderElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,14 +139,15 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
-				getFolderElements().clear();
-				return;
+		case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
+			getFolderElements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,15 +155,16 @@ public class FolderImpl extends FolderElementImpl implements Folder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
-				return folderElements != null && !folderElements.isEmpty();
+		case LayersconfigPackage.FOLDER__FOLDER_ELEMENTS:
+			return folderElements != null && !folderElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //FolderImpl
+} // FolderImpl

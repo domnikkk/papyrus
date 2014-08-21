@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,7 +60,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 
 	public void run() {
 		// Run the activation of this node.
-		if(this.node != null) {
+		if (this.node != null) {
 			Debug.println("[run] node = " + this.node.getName());
 		} else {
 			Debug.println("[run] Anonymous activation of type " + this.getClass().getName());
@@ -75,14 +75,15 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		_beginIsolation();
 		boolean ready = this.isReady();
 		List<Token> tokens = new ArrayList<Token>();
-		if(ready) {
+		if (ready) {
 			Debug.println("[receiveOffer] Firing.");
 			tokens = this.takeOfferedTokens();
 		}
 		_endIsolation();
-		if(ready) {
-			if(FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) // Added for connection with debug API
+		if (ready) {
+			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) {
 				this.fire(tokens);
+			}
 		}
 	}
 
@@ -90,10 +91,10 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		// Get tokens from all incoming edges.
 		List<Token> allTokens = new ArrayList<Token>();
 		List<ActivityEdgeInstance> incomingEdges = this.incomingEdges;
-		for(int i = 0; i < incomingEdges.size(); i++) {
+		for (int i = 0; i < incomingEdges.size(); i++) {
 			ActivityEdgeInstance incomingEdge = incomingEdges.get(i);
 			List<Token> tokens = incomingEdge.takeOfferedTokens();
-			for(int j = 0; j < tokens.size(); j++) {
+			for (int j = 0; j < tokens.size(); j++) {
 				Token token = tokens.get(j);
 				allTokens.add(token);
 			}
@@ -106,10 +107,10 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 	public void sendOffers(List<Token> tokens) {
 		// Send offers for the given set of tokens over all outgoing edges (if
 		// there are any tokens actually being offered).
-		if(tokens.size() > 0) {
+		if (tokens.size() > 0) {
 			// *** Send all outgoing offers concurrently. ***
 			List<ActivityEdgeInstance> outgoingEdges = this.outgoingEdges;
-			for(Iterator<ActivityEdgeInstance> i = outgoingEdges.iterator(); i.hasNext();) {
+			for (Iterator<ActivityEdgeInstance> i = outgoingEdges.iterator(); i.hasNext();) {
 				ActivityEdgeInstance outgoingEdge = i.next();
 				// Debug.println("[sendOffers] Sending offer to " +
 				// outgoingEdge.target.node.getName() + ".");
@@ -120,8 +121,8 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 
 	public void terminate() {
 		// Terminate the activation of this node.
-		if(this.running) {
-			if(this.node != null) {
+		if (this.running) {
+			if (this.node != null) {
 				Debug.println("[terminate] node = " + this.node.getName());
 			} else {
 				Debug.println("[terminate] Anonymous activation of type " + this.getClass().getName());
@@ -197,7 +198,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		// By default, return this activity node activation, if it is for the
 		// given node, otherwise return nothing.
 		ActivityNodeActivation activation = null;
-		if(node == this.node) {
+		if (node == this.node) {
 			activation = this;
 		}
 		return activation;
@@ -205,7 +206,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 
 	public void addToken(Token token) {
 		// Transfer the given token to be held by this node.
-		if(this.node == null) {
+		if (this.node == null) {
 			Debug.println("[addToken] ...");
 		} else {
 			Debug.println("[addToken] node = " + this.node.getName());
@@ -222,9 +223,9 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		// there is none removed).
 		boolean notFound = true;
 		int i = 1;
-		while(notFound & i <= this.heldTokens.size()) {
-			if(this.heldTokens.get(i - 1) == token) {
-				if(this.node == null) {
+		while (notFound & i <= this.heldTokens.size()) {
+			if (this.heldTokens.get(i - 1) == token) {
+				if (this.node == null) {
 					Debug.println("[removeToken] ...");
 				} else {
 					Debug.println("[removeToken] node = " + this.node.getName());
@@ -234,7 +235,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 			}
 			i = i + 1;
 		}
-		if(notFound) {
+		if (notFound) {
 			i = 0;
 		} else {
 			i = i - 1;
@@ -249,7 +250,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		// } else {
 		// Debug.println("[addTokens] node = " + this.node.getName());
 		// }
-		for(int i = 0; i < tokens.size(); i++) {
+		for (int i = 0; i < tokens.size(); i++) {
 			Token token = tokens.get(i);
 			this.addToken(token);
 		}
@@ -264,7 +265,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 
 	public void clearTokens() {
 		// Remove all held tokens.
-		while(this.heldTokens.size() > 0) {
+		while (this.heldTokens.size() > 0) {
 			this.heldTokens.get(0).withdraw();
 		}
 	}
@@ -274,7 +275,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		// Debug.println("[getTokens] node = " + this.node.getName());
 		List<Token> tokens = new ArrayList<Token>();
 		List<Token> heldTokens = this.heldTokens;
-		for(int i = 0; i < heldTokens.size(); i++) {
+		for (int i = 0; i < heldTokens.size(); i++) {
 			Token heldToken = heldTokens.get(i);
 			// Debug.println("[getTokens] token value = " +
 			// heldTokens.get());

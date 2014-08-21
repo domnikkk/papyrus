@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarc
  *
  * <!-- begin-model-doc -->
  * TechnicalSafetyConcept represents the set of technical safety requirements that together fulfils a FunctionalSafetyConcept and SafetyGoal in accordance with ISO 26262.
- * 
+ *
  * These are derived from FunctionalSafetyConcepts i.e. TechnicalSafetyRequirements are derived from FunctionalSafetyRequirements.
- * 
- * 
+ *
+ *
  * Semantics:
  * The TechnicalSafetyConcept consists of the technical safety requirements and details the functional safety concept considering the functional concept and the preliminary architectural design. It corresponds to the Technical Safety Concept of ISO26262.
  * <!-- end-model-doc -->
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.eastadl.requirements.requirements.RequirementsHierarc
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept#getTechnicalSafetyRequirement <em>Technical Safety Requirement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.safetyrequirement.TechnicalSafetyConcept#getTechnicalSafetyRequirement <em>Technical Safety Requirement</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +55,7 @@ public interface TechnicalSafetyConcept extends RequirementsHierarchy {
 	 * <!-- begin-model-doc -->
 	 * technicalSafety Requirements.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Technical Safety Requirement</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.dependability.safetyrequirement.SafetyrequirementPackage#getTechnicalSafetyConcept_TechnicalSafetyRequirement()
 	 * @model

@@ -46,23 +46,23 @@ public interface IExecutionEngine {
 	 * eventPort indicates the address of the socket through which messages corresponding to debug events occurring in the execution engine flow.
 	 *
 	 * @param eObjectToExecute
-	 *        The object to be executed by the engine
+	 *            The object to be executed by the engine
 	 * @param additionalSemantics
-	 *        The resource containing the model defining extension of the fUML execution engine
+	 *            The resource containing the model defining extension of the fUML execution engine
 	 * @param args
-	 *        Optional arguments for the execution of the object
+	 *            Optional arguments for the execution of the object
 	 * @param debugTarget
-	 *        the debugTarget communicating with this execution engine
+	 *            the debugTarget communicating with this execution engine
 	 * @param requestPort
-	 *        the address of the socket through which requests emitted from the debug target flow.
+	 *            the address of the socket through which requests emitted from the debug target flow.
 	 * @param replyPort
-	 *        the address of the socket through which replies (emitted from the execution engine) flow.
+	 *            the address of the socket through which replies (emitted from the execution engine) flow.
 	 * @param eventPort
-	 *        indicates the address of the socket through which messages corresponding to debug events occurring in the execution engine flow.
+	 *            indicates the address of the socket through which messages corresponding to debug events occurring in the execution engine flow.
 	 * @throws UnknownHostException
-	 *         when problems occur while establishing connection with the sockets
+	 *             when problems occur while establishing connection with the sockets
 	 * @throws IOException
-	 *         when problems occur while reading/writing on sockets
+	 *             when problems occur while reading/writing on sockets
 	 */
 	public void init(EObject eObjectToExecute, String[] args, MokaDebugTarget debugTarget, int requestPort, int replyPort, int eventPort) throws UnknownHostException, IOException;
 
@@ -71,7 +71,7 @@ public interface IExecutionEngine {
 	 * methods
 	 *
 	 * @param args
-	 *        The arguments for the initialization of the execution engine, before starting execution
+	 *            The arguments for the initialization of the execution engine, before starting execution
 	 */
 	public void initializeArguments(String[] args);
 
@@ -93,7 +93,7 @@ public interface IExecutionEngine {
 	 * Registers the given breakpoint in the execution engine
 	 *
 	 * @param breakpoint
-	 *        the breakpoint to be registered
+	 *            the breakpoint to be registered
 	 */
 	public void addBreakpoint(MokaBreakpoint breakpoint);
 
@@ -101,7 +101,7 @@ public interface IExecutionEngine {
 	 * Unregister the given breakpoint in the execution engine
 	 *
 	 * @param breakpoint
-	 *        the breakpoint to be unregistered
+	 *            the breakpoint to be unregistered
 	 */
 	public void removeBreakpoint(MokaBreakpoint breakpoint);
 
@@ -114,9 +114,9 @@ public interface IExecutionEngine {
 	 * Gets the memory block at the given startAddress, for the given length
 	 *
 	 * @param startAddress
-	 *        The startAddress for the memory block
+	 *            The startAddress for the memory block
 	 * @param length
-	 *        The length of the memory block
+	 *            The length of the memory block
 	 * @return the memory block corresponding to the given startAddress and length
 	 */
 	public IMemoryBlock getMemoryBlock(long startAddress, long length);
@@ -125,7 +125,7 @@ public interface IExecutionEngine {
 	 * Resumes execution according to the given Resume_Request
 	 *
 	 * @param request
-	 *        The Resume_Request indicating how execution has to be resumed
+	 *            The Resume_Request indicating how execution has to be resumed
 	 */
 	public void resume(Resume_Request request);
 
@@ -133,7 +133,7 @@ public interface IExecutionEngine {
 	 * Suspends execution according to the given Suspend_Request
 	 *
 	 * @param request
-	 *        The Suspend_Request indicating how execution has to be suspended
+	 *            The Suspend_Request indicating how execution has to be suspended
 	 */
 	public void suspend(Suspend_Request request);
 
@@ -141,7 +141,7 @@ public interface IExecutionEngine {
 	 * Terminates execution according to the given Terminate_Request
 	 *
 	 * @param request
-	 *        The Terminate_Request indicating how execution has to be terminated
+	 *            The Terminate_Request indicating how execution has to be terminated
 	 */
 	public void terminate(Terminate_Request request);
 
@@ -149,7 +149,7 @@ public interface IExecutionEngine {
 	 * Returns the stack frames of the given thread
 	 *
 	 * @param thread
-	 *        The thread for which stack frames have to be retrieved
+	 *            The thread for which stack frames have to be retrieved
 	 * @return The stack frames of the given thread
 	 */
 	public IStackFrame[] getStackFrames(IThread thread);
@@ -159,7 +159,7 @@ public interface IExecutionEngine {
 	 * stackFrameOrValue must be an IStackFrame or an IValue
 	 *
 	 * @param stackFrameOrValue
-	 *        The stack frame or value for which variables have to be retrieved
+	 *            The stack frame or value for which variables have to be retrieved
 	 * @return The visible variables of the given stack frame or value
 	 */
 	public IVariable[] getVariables(IDebugElement stackFrameOrValue);
@@ -168,7 +168,7 @@ public interface IExecutionEngine {
 	 * Returns the register groups of the given stack frame
 	 *
 	 * @param stackFrame
-	 *        The stack frame for which register groups have to be retrieved
+	 *            The stack frame for which register groups have to be retrieved
 	 * @return The register groups of the given stack frame
 	 */
 	public IRegisterGroup[] getRegisterGroups(IStackFrame stackFrame);
@@ -177,7 +177,7 @@ public interface IExecutionEngine {
 	 * Returns the value (if any) for the given variable
 	 *
 	 * @param variable
-	 *        The variable for which value has to be retrieved
+	 *            The variable for which value has to be retrieved
 	 * @return The value (if any) for the given variable
 	 */
 	public IValue getValue(IVariable variable);
@@ -187,7 +187,7 @@ public interface IExecutionEngine {
 	 * debugElement must be a IVariable or IValue
 	 *
 	 * @param variable
-	 *        The variable or value for which the reference type name has to be retrieved
+	 *            The variable or value for which the reference type name has to be retrieved
 	 * @return The reference type name of the given variable or value
 	 */
 	public String getReferenceTypeName(IDebugElement debugElement);
@@ -196,7 +196,7 @@ public interface IExecutionEngine {
 	 * Returns the string representation of the given value
 	 *
 	 * @param value
-	 *        The value for which a textual representation has to be retrieved
+	 *            The value for which a textual representation has to be retrieved
 	 * @return The string representation of the given value
 	 */
 	public String getValueString(IValue value);

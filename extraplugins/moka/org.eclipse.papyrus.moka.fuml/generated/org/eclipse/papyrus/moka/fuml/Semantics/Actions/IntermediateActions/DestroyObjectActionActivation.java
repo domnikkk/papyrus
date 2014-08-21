@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Property;
 
 public class DestroyObjectActionActivation extends ActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the value on the target input pin.
 		// If the value is not a reference, then the action has no effect.
@@ -37,7 +38,7 @@ public class DestroyObjectActionActivation extends ActionActivation {
 		// If isDestroyOwnedObjects is true, destroy all objects owned by the
 		// referent via composition links.
 		// Destroy the referent object.
-		DestroyObjectAction action = (DestroyObjectAction)(this.node);
+		DestroyObjectAction action = (DestroyObjectAction) (this.node);
 		Value value = this.takeTokens(action.getTarget()).get(0);
 		this.destroyObject(value, action.isDestroyLinks(), action.isDestroyOwnedObjects());
 	}
@@ -46,17 +47,17 @@ public class DestroyObjectActionActivation extends ActionActivation {
 		// If the given value is a reference, then destroy the referenced
 		// object, per the given destroy action attribute values.
 		// Debug.println("[destroyObject] object = " + value.objectId());
-		if(value instanceof Reference) {
-			Reference reference = (Reference)value;
-			if(isDestroyLinks | isDestroyOwnedObjects) {
+		if (value instanceof Reference) {
+			Reference reference = (Reference) value;
+			if (isDestroyLinks | isDestroyOwnedObjects) {
 				Debug.println("[destroyObject] Destroying links...");
 				List<ExtensionalValue> extensionalValues = this.getExecutionLocus().extensionalValues;
-				for(int i = 0; i < extensionalValues.size(); i++) {
+				for (int i = 0; i < extensionalValues.size(); i++) {
 					ExtensionalValue extensionalValue = extensionalValues.get(i);
-					if(extensionalValue instanceof Link) {
-						Link link = (Link)extensionalValue;
-						if(this.valueParticipatesInLink(reference, link)) {
-							if(isDestroyLinks | this.objectIsComposite(reference, link)) {
+					if (extensionalValue instanceof Link) {
+						Link link = (Link) extensionalValue;
+						if (this.valueParticipatesInLink(reference, link)) {
+							if (isDestroyLinks | this.objectIsComposite(reference, link)) {
 								// Debug.println("[destroyObject] Destroying link "
 								// + link.objectId());
 								link.destroy();
@@ -65,14 +66,14 @@ public class DestroyObjectActionActivation extends ActionActivation {
 					}
 				}
 			}
-			if(isDestroyOwnedObjects) {
+			if (isDestroyOwnedObjects) {
 				Debug.println("[destroyObject] Destroying owned objects...");
 				List<FeatureValue> objectFeatureValues = reference.getFeatureValues();
-				for(int i = 0; i < objectFeatureValues.size(); i++) {
+				for (int i = 0; i < objectFeatureValues.size(); i++) {
 					FeatureValue featureValue = objectFeatureValues.get(i);
-					if(((Property)featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+					if (((Property) featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 						List<Value> values = featureValue.values;
-						for(int j = 0; j < values.size(); j++) {
+						for (int j = 0; j < values.size(); j++) {
 							Value ownedValue = values.get(j);
 							this.destroyObject(ownedValue, isDestroyLinks, isDestroyOwnedObjects);
 						}
@@ -89,9 +90,9 @@ public class DestroyObjectActionActivation extends ActionActivation {
 		List<FeatureValue> linkFeatureValues = link.getFeatureValues();
 		boolean isComposite = false;
 		int i = 1;
-		while(!isComposite & i <= linkFeatureValues.size()) {
+		while (!isComposite & i <= linkFeatureValues.size()) {
 			FeatureValue featureValue = linkFeatureValues.get(i - 1);
-			if(!featureValue.values.get(0).equals(reference) & ((Property)featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+			if (!featureValue.values.get(0).equals(reference) & ((Property) featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 				isComposite = true;
 			}
 			i = i + 1;

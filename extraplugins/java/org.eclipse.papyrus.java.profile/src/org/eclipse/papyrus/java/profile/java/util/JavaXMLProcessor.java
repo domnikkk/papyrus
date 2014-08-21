@@ -20,6 +20,7 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JavaXMLProcessor extends XMLProcessor {
@@ -28,17 +29,19 @@ public class JavaXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JavaXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		JavaPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the JavaResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -51,4 +54,4 @@ public class JavaXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //JavaXMLProcessor
+} // JavaXMLProcessor

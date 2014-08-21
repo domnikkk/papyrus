@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.InternalEObject.EStore;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -80,14 +81,17 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		super();
 	}
 
+	@Override
 	public String getID() {
 		return CDOControlModeParticipant.class.getName();
 	}
 
+	@Override
 	public int getPriority() {
 		return 255;
 	}
 
+	@Override
 	public boolean provideControlCommand(ControlModeRequest request) {
 		return isCDOResource(request);
 	}
@@ -96,14 +100,17 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		return CDOUtils.isCDOURI(request.getSourceURI());
 	}
 
+	@Override
 	public boolean provideUnControlCommand(ControlModeRequest request) {
 		return isCDOResource(request);
 	}
 
+	@Override
 	public ICommand getPreControlCommand(ControlModeRequest request) {
 		return IdentityCommand.INSTANCE;
 	}
 
+	@Override
 	public ICommand getPostControlCommand(ControlModeRequest request) {
 		return new AbstractCDOControlCommand(request) {
 
@@ -117,10 +124,10 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	/**
 	 * Obtains an {@linkplain IUpdate update} operation that converts external cross-references to the elements
 	 * in a logical model unit indicated by the given representative {@code resource} to proxies.
-	 * 
+	 *
 	 * @param resource
-	 *        a resource that is a component of a logical model unit
-	 * 
+	 *            a resource that is a component of a logical model unit
+	 *
 	 * @return an operation that, when {@linkplain IUpdate#apply() applied}, will convert incoming cross-references to proxies
 	 */
 	public IUpdate getProxyCrossReferencesUpdate(Resource resource) {
@@ -132,11 +139,11 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	}
 
 	private void collectProxyCrossReferenceUpdates(IUpdate.Collector updates, ResourceSet resourceSet, URI unitURI) {
-		for(final EObject object : getAllPersistentSubunitContents(resourceSet, unitURI)) {
+		for (final EObject object : getAllPersistentSubunitContents(resourceSet, unitURI)) {
 			// replace references to the element by a proxy
 			CDOID proxy = null;
-			for(EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
-				if(proxy == null) {
+			for (EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
+				if (proxy == null) {
 					proxy = CDOIDUtil.createExternal(CDOProxyManager.createPapyrusCDOURI(object));
 				}
 				updates.add(new ControlUpdate(next, object, proxy));
@@ -148,19 +155,20 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		IUpdate result = IUpdate.EMPTY;
 		final CDOStore[] store = { null };
 
-		for(ListIterator<? extends EObject> xrefs = CDOUtils.iterator(owner, crossReference, false); xrefs.hasNext();) {
+		for (ListIterator<? extends EObject> xrefs = CDOUtils.iterator(owner, crossReference, false); xrefs.hasNext();) {
 			final int index = xrefs.nextIndex();
 			final EObject referent = xrefs.next();
 
-			if(!referent.eIsProxy() && !inSameUnit(owner, referent) && inSameModel(owner, referent)) {
-				if(store[0] == null) {
-					store[0] = ((InternalCDOView)CDOUtils.getCDOObject(owner).cdoView()).getStore();
+			if (!referent.eIsProxy() && !inSameUnit(owner, referent) && inSameModel(owner, referent)) {
+				if (store[0] == null) {
+					store[0] = ((InternalCDOView) CDOUtils.getCDOObject(owner).cdoView()).getStore();
 				}
 
 				result = result.chain(new OneWayUpdate() {
 
+					@Override
 					public void apply() {
-						store[0].set((InternalEObject)owner, crossReference, index, CDOIDUtil.createExternal(createPapyrusCDOURI(referent)));
+						store[0].set((InternalEObject) owner, crossReference, index, CDOIDUtil.createExternal(createPapyrusCDOURI(referent)));
 					}
 				});
 			}
@@ -169,6 +177,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		return result;
 	}
 
+	@Override
 	public ICommand getPreUncontrolCommand(ControlModeRequest request) {
 		return new AbstractCDOControlCommand(request) {
 
@@ -186,7 +195,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 				IUpdate resolveProxies = IUpdate.EMPTY;
 
 				// update references from other units to the unit being re-integrated
-				for(final EObject object : getAllPersistentSubunitContents(getRequest().getModelSet(), sourceURI)) {
+				for (final EObject object : getAllPersistentSubunitContents(getRequest().getModelSet(), sourceURI)) {
 					// replace proxy references to the element by the element or an updated proxy
 					// which will be located in the destination resource
 					CDOID sourceProxy = null;
@@ -194,21 +203,22 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 					CDOID proxy = null;
 
 					// internal cross-references within the unit won't be affected, as they are all moving
-					for(final EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
-						if(next.getEObject().eIsProxy()) {
+					for (final EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
+						if (next.getEObject().eIsProxy()) {
 							// the cross-reference will be from a proxy only when it is a proxy owned by the cross-referenced object,
-							// by virtue of an opposite reference.  In this case, it's only interesting if the proxy targets the
+							// by virtue of an opposite reference. In this case, it's only interesting if the proxy targets the
 							// parent (re-integrated-into) resource. So, resolve this proxy because we need to update the
 							// reference, below
 							resolveProxies = resolveProxies.chain(new OneWayUpdate() {
 
+								@Override
 								public void apply() {
-									resolve(object, (EReference)next.getEStructuralFeature(), next.getEObject());
+									resolve(object, (EReference) next.getEStructuralFeature(), next.getEObject());
 								}
 							});
 
 						} else {
-							if(sourceProxy == null) {
+							if (sourceProxy == null) {
 								// create the source proxy
 								sourceProxy = CDOIDUtil.createExternal(CDOProxyManager.createPapyrusCDOURI(object));
 
@@ -222,9 +232,9 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 					}
 
 					// upon removal from their resources, root elements will nonetheless retain a
-					// reference to the resource that formerly contained them.  We need to force
+					// reference to the resource that formerly contained them. We need to force
 					// clearing of this reference in the CDO store
-					if(((InternalEObject)object).eDirectResource() != null) {
+					if (((InternalEObject) object).eDirectResource() != null) {
 						objectsToClearResource.add(object);
 					}
 				}
@@ -233,16 +243,16 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 				resolveProxies.apply();
 
 				// update references from the unit being re-integrated to the unit it is re-integrating into
-				for(final EObject object : getAllPersistentSubunitContents(getRequest().getModelSet(), getRequest().getNewURI())) {
+				for (final EObject object : getAllPersistentSubunitContents(getRequest().getModelSet(), getRequest().getNewURI())) {
 					// replace proxy references to the element by the element or an updated proxy
 					// which will be located in the destination resource
 					CDOID targetProxy = null;
 
-					for(EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
-						if(inUnit(next.getEObject(), sourceURI)) {
+					for (EStructuralFeature.Setting next : getExternalCrossReferences(object)) {
+						if (inUnit(next.getEObject(), sourceURI)) {
 							// replace proxy references from the sub-unit into the parent with a direct reference, as this will
 							// no longer be a cross-unit reference
-							if(targetProxy == null) {
+							if (targetProxy == null) {
 								targetProxy = CDOIDUtil.createExternal(CDOProxyManager.createPapyrusCDOURI(object));
 							}
 							updates.add(new UncontrolUpdate(next, object, targetProxy));
@@ -255,11 +265,11 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 	void resolve(EObject object, EReference reference, EObject proxy) {
 		EReference opposite = reference.getEOpposite();
-		if(opposite != null) {
-			if(opposite.isMany()) {
-				InternalEList<?> list = (InternalEList<?>)object.eGet(opposite, false);
+		if (opposite != null) {
+			if (opposite.isMany()) {
+				InternalEList<?> list = (InternalEList<?>) object.eGet(opposite, false);
 				int index = list.basicIndexOf(proxy);
-				if(index >= 0) {
+				if (index >= 0) {
 					list.get(index); // resolve just this index
 				}
 			} else {
@@ -268,6 +278,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		}
 	}
 
+	@Override
 	public ICommand getPostUncontrolCommand(ControlModeRequest request) {
 		return new AbstractCDOControlCommand(request) {
 
@@ -282,9 +293,9 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 			@Override
 			protected void buildUpdates(ControlModeRequest request, IUpdate.Collector updates) {
-				for(EObject next : objectsToClearResource) {
+				for (EObject next : objectsToClearResource) {
 					// some former resource roots may not be reattached (e.g., SashWindowsMgr)
-					if(CDOUtil.getCDOObject(next).cdoState() != CDOState.TRANSIENT) {
+					if (CDOUtil.getCDOObject(next).cdoState() != CDOState.TRANSIENT) {
 						updates.add(new ClearResourceUpdate(next));
 					}
 				}
@@ -295,19 +306,20 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	/**
 	 * Get all cross-references to an {@code object} from outside of its own controlled unit <em>within</em> the same model (cross-model references do
 	 * not count).
-	 * 
+	 *
 	 * @param object
-	 *        an object being controlled
+	 *            an object being controlled
 	 * @return references to it from outside of its (new) controlled unit
 	 */
 	Iterable<EStructuralFeature.Setting> getExternalCrossReferences(final EObject object) {
 		return Iterables.filter(CDOUtils.crossReference(object), new Predicate<EStructuralFeature.Setting>() {
 
+			@Override
 			public boolean apply(EStructuralFeature.Setting input) {
 				boolean result = false;
 
 				EStructuralFeature ref = input.getEStructuralFeature();
-				if((ref != EresourcePackage.Literals.CDO_RESOURCE__CONTENTS) && ref.isChangeable() && !ref.isDerived()) {
+				if ((ref != EresourcePackage.Literals.CDO_RESOURCE__CONTENTS) && ref.isChangeable() && !ref.isDerived()) {
 					result = !inSameUnit(input.getEObject(), object) && inSameModel(input.getEObject(), object);
 				}
 
@@ -320,7 +332,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	static boolean isPersistentObject(EObject object) {
 		boolean result = !object.eIsProxy();
 
-		if(result) {
+		if (result) {
 			CDOObject cdo = CDOUtils.getCDOObject(object);
 			result = (cdo != null) && !TEMPORARY_ID_STATES.contains(cdo.cdoState());
 		}
@@ -339,8 +351,8 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	private static URI getResourceURI(EObject object) {
 		URI result;
 
-		if(object.eIsProxy()) {
-			result = ((InternalEObject)object).eProxyURI().trimFragment();
+		if (object.eIsProxy()) {
+			result = ((InternalEObject) object).eProxyURI().trimFragment();
 		} else {
 			Resource res = object.eResource();
 			result = (res == null) ? null : res.getURI();
@@ -358,13 +370,13 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	private static boolean inUnit(EObject object, URI unit) {
 		boolean result = false;
 
-		if(unit != null) {
-		// get the extension-less model URIs
+		if (unit != null) {
+			// get the extension-less model URIs
 			URI uri = getResourceURI(object);
 
-			if(uri != null) {
-		uri = uri.trimFileExtension();
-		URI otherURI = unit.trimFileExtension();
+			if (uri != null) {
+				uri = uri.trimFileExtension();
+				URI otherURI = unit.trimFileExtension();
 
 				result = uri.equals(otherURI);
 			}
@@ -376,18 +388,19 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 	/**
 	 * Iterates all of the proper contents of the resources comprising the logical model unit
 	 * indicated by the representative {@code unitURI}.
-	 * 
+	 *
 	 * @param rset
-	 *        a resource set in which to load and/or iterate the resource contents
+	 *            a resource set in which to load and/or iterate the resource contents
 	 * @param unitURI
-	 *        the URI of one of the resources in the logical model unit, which therefore is representative of the unit
-	 * 
+	 *            the URI of one of the resources in the logical model unit, which therefore is representative of the unit
+	 *
 	 * @return an iterator over the entire logical model unit's proper contents
 	 */
 	static Iterable<EObject> getAllPersistentSubunitContents(ResourceSet rset, URI unitURI) {
 		final URI base = unitURI.trimFileExtension();
 		Iterable<Resource> resources = filter(rset.getResources(), new Predicate<Resource>() {
 
+			@Override
 			public boolean apply(Resource input) {
 				return input.getURI().trimFileExtension().equals(base);
 			}
@@ -395,9 +408,11 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 		Iterable<EObject> result = concat(transform(resources, new Function<Resource, Iterable<EObject>>() {
 
+			@Override
 			public Iterable<EObject> apply(final Resource input) {
 				return new Iterable<EObject>() {
 
+					@Override
 					public Iterator<EObject> iterator() {
 						return EcoreUtil.getAllProperContents(input, false);
 					}
@@ -407,6 +422,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 		result = filter(result, new Predicate<EObject>() {
 
+			@Override
 			public boolean apply(EObject input) {
 				return isPersistentObject(input);
 			}
@@ -426,18 +442,22 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		 */
 		IUpdate EMPTY = new IUpdate() {
 
+			@Override
 			public boolean isEmpty() {
 				return true;
 			}
 
+			@Override
 			public void apply() {
 				// pass
 			}
 
+			@Override
 			public void revert() {
 				// revert
 			}
 
+			@Override
 			public IUpdate chain(IUpdate update) {
 				return (update == null) ? this : update;
 			}
@@ -446,7 +466,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 		/**
 		 * Queries whether I have nothing to do on {@link #apply() apply}.
-		 * 
+		 *
 		 * @return whether I am empty
 		 */
 		boolean isEmpty();
@@ -472,30 +492,35 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 		private final List<IUpdate> updates = Lists.newArrayList();
 
+		@Override
 		public void add(IUpdate update) {
 			updates.add(update);
 		}
 
+		@Override
 		public Compound chain(IUpdate update) {
-			if((update != null) && !update.isEmpty()) {
+			if ((update != null) && !update.isEmpty()) {
 				add(update);
 			}
 
 			return this;
 		}
 
+		@Override
 		public boolean isEmpty() {
 			return updates.isEmpty();
 		}
 
+		@Override
 		public void apply() {
-			for(IUpdate next : updates) {
+			for (IUpdate next : updates) {
 				next.apply();
 			}
 		}
 
+		@Override
 		public void revert() {
-			for(ListIterator<IUpdate> iter = updates.listIterator(updates.size()); iter.hasPrevious();) {
+			for (ListIterator<IUpdate> iter = updates.listIterator(updates.size()); iter.hasPrevious();) {
 				iter.previous().revert();
 			}
 		}
@@ -503,9 +528,9 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		static IUpdate compose(IUpdate first, IUpdate second) {
 			IUpdate result;
 
-			if((second == null) || second.isEmpty()) {
+			if ((second == null) || second.isEmpty()) {
 				result = (first == null) ? IUpdate.EMPTY : first;
-			} else if((first == null) || first.isEmpty()) {
+			} else if ((first == null) || first.isEmpty()) {
 				// we already know it's not null or empty
 				result = second;
 			} else {
@@ -521,14 +546,17 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 	private static abstract class OneWayUpdate implements IUpdate {
 
+		@Override
 		public void revert() {
 			throw new UnsupportedOperationException("OneWayUpdate cannot be reverted"); //$NON-NLS-1$
 		}
 
+		@Override
 		public IUpdate chain(IUpdate update) {
 			return CompoundUpdate.compose(this, update);
 		}
 
+		@Override
 		public boolean isEmpty() {
 			return false;
 		}
@@ -543,10 +571,10 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		Update(EStructuralFeature.Setting setting) {
 			this.setting = setting;
 
-			InternalEObject owner = (InternalEObject)setting.getEObject();
+			InternalEObject owner = (InternalEObject) setting.getEObject();
 			CDOObject cdoOwner = CDOUtil.getCDOObject(owner);
 
-			InternalCDOView view = (InternalCDOView)cdoOwner.cdoView();
+			InternalCDOView view = (InternalCDOView) cdoOwner.cdoView();
 			store = view.getStore();
 		}
 
@@ -555,13 +583,15 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 			CDOObject cdo = CDOUtil.getCDOObject(object);
 			CDOView view = cdo.cdoView();
-			this.store = (view instanceof InternalCDOView) ? ((InternalCDOView)view).getStore() : null;
+			this.store = (view instanceof InternalCDOView) ? ((InternalCDOView) view).getStore() : null;
 		}
 
+		@Override
 		public IUpdate chain(IUpdate update) {
 			return CompoundUpdate.compose(this, update);
 		}
 
+		@Override
 		public boolean isEmpty() {
 			// a leaf update is, by definition, not empty
 			return false;
@@ -582,34 +612,36 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			this.proxy = proxy;
 
 			EStructuralFeature feature = setting.getEStructuralFeature();
-			InternalEObject owner = (InternalEObject)setting.getEObject();
+			InternalEObject owner = (InternalEObject) setting.getEObject();
 
-			if(!feature.isMany()) {
-				index = CDOStore.NO_INDEX;
+			if (!feature.isMany()) {
+				index = EStore.NO_INDEX;
 			} else {
 				// don't go directly to the store because it may have proxies.
 				// Use the resolved view in the EObject, instead
-				index = ((EList<?>)owner.eGet(feature)).indexOf(originalObject);
-				if(index < 0) {
+				index = ((EList<?>) owner.eGet(feature)).indexOf(originalObject);
+				if (index < 0) {
 					Activator.log.error("Setting does not include the object being replaced by a proxy.", null); //$NON-NLS-1$
 				}
 			}
 		}
 
+		@Override
 		public void apply() {
 			EStructuralFeature feature = setting.getEStructuralFeature();
 
-			if((index >= 0) || !feature.isMany()) {
-				InternalEObject owner = (InternalEObject)setting.getEObject();
+			if ((index >= 0) || !feature.isMany()) {
+				InternalEObject owner = (InternalEObject) setting.getEObject();
 				store.set(owner, feature, index, proxy);
 			}
 		}
 
+		@Override
 		public void revert() {
 			EStructuralFeature feature = setting.getEStructuralFeature();
 
-			if(index >= 0 || !feature.isMany()) {
-				InternalEObject owner = (InternalEObject)setting.getEObject();
+			if (index >= 0 || !feature.isMany()) {
+				InternalEObject owner = (InternalEObject) setting.getEObject();
 				store.set(owner, feature, index, CDOUtils.getCDOID(originalObject));
 			}
 		}
@@ -635,15 +667,15 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			this.destinationProxy = destinationProxy;
 
 			EStructuralFeature feature = setting.getEStructuralFeature();
-			InternalEObject owner = (InternalEObject)setting.getEObject();
+			InternalEObject owner = (InternalEObject) setting.getEObject();
 
-			if(!feature.isMany()) {
-				index = CDOStore.NO_INDEX;
+			if (!feature.isMany()) {
+				index = EStore.NO_INDEX;
 			} else {
 				// don't go directly to the store because it may have proxies.
 				// Use the resolved view in the EObject, instead
-				index = ((EList<?>)owner.eGet(feature)).indexOf(originalObject);
-				if(index < 0) {
+				index = ((EList<?>) owner.eGet(feature)).indexOf(originalObject);
+				if (index < 0) {
 					Activator.log.error("Setting does not include the object being replaced by a proxy.", null); //$NON-NLS-1$
 				}
 			}
@@ -653,13 +685,14 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			this(setting, originalObject, originalProxy, null, null);
 		}
 
+		@Override
 		public void apply() {
 			EStructuralFeature feature = setting.getEStructuralFeature();
 
-			if((index >= 0) || !feature.isMany()) {
-				InternalEObject owner = (InternalEObject)setting.getEObject();
+			if ((index >= 0) || !feature.isMany()) {
+				InternalEObject owner = (InternalEObject) setting.getEObject();
 
-				if((destinationURI == null) || inUnit(owner, destinationURI)) {
+				if ((destinationURI == null) || inUnit(owner, destinationURI)) {
 					// direct reference
 					store.set(owner, feature, index, CDOUtils.getCDOID(originalObject));
 				} else {
@@ -669,11 +702,12 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			}
 		}
 
+		@Override
 		public void revert() {
 			EStructuralFeature feature = setting.getEStructuralFeature();
 
-			if(index >= 0 || !feature.isMany()) {
-				InternalEObject owner = (InternalEObject)setting.getEObject();
+			if (index >= 0 || !feature.isMany()) {
+				InternalEObject owner = (InternalEObject) setting.getEObject();
 
 				// on reversion, we are processing only references that were external
 				// to the unit that was to be re-integrated, so necessarily all
@@ -693,11 +727,13 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			this.object = CDOUtil.getCDOObject(object);
 		}
 
+		@Override
 		public void apply() {
-			InternalEObject object = (InternalEObject)CDOUtil.getEObject(this.object);
+			InternalEObject object = (InternalEObject) CDOUtil.getEObject(this.object);
 			store.setContainer(object, null, object.eInternalContainer(), object.eContainerFeatureID());
 		}
 
+		@Override
 		public void revert() {
 			// there is no need to revert clearing the resource reference; it will be
 			// reestablished naturally by undo of the base command
@@ -731,7 +767,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			IStatus result = super.doUndo(monitor, info);
 
-			if(result.isOK()) {
+			if (result.isOK()) {
 				// setting proxies in the way we did is not recorded by EMF, so we have to undo it ourselves
 				revert();
 			}
@@ -743,7 +779,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 		protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			IStatus result = super.doRedo(monitor, info);
 
-			if(result.isOK()) {
+			if (result.isOK()) {
 				// setting proxies in the way we did is not recorded by EMF, so we have to redo it ourselves
 				apply();
 			}
@@ -751,26 +787,31 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 			return result;
 		}
 
+		@Override
 		public boolean isEmpty() {
 			return (updates == null) || updates.isEmpty();
 		}
 
+		@Override
 		public void apply() {
-			for(IUpdate next : updates) {
+			for (IUpdate next : updates) {
 				next.apply();
 			}
 		}
 
+		@Override
 		public void revert() {
-			for(ListIterator<IUpdate> iter = updates.listIterator(updates.size()); iter.hasPrevious();) {
+			for (ListIterator<IUpdate> iter = updates.listIterator(updates.size()); iter.hasPrevious();) {
 				iter.previous().revert();
 			}
 		}
 
+		@Override
 		public void add(IUpdate update) {
 			throw new UnsupportedOperationException("AbtsractCDOControlCommand is not externally modifiable"); //$NON-NLS-1$
 		}
 
+		@Override
 		public Compound chain(IUpdate update) {
 			throw new UnsupportedOperationException("AbtsractCDOControlCommand is not externally modifiable"); //$NON-NLS-1$
 		}
@@ -780,6 +821,7 @@ public class CDOControlModeParticipant implements IControlCommandParticipant, IU
 
 		private final ImmutableList.Builder<IUpdate> builder = ImmutableList.builder();
 
+		@Override
 		public void add(IUpdate update) {
 			builder.add(update);
 		}

@@ -32,12 +32,11 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * we can use the field support built into JFace that allows us to create a page
  * that is small and knows how to save, restore and apply itself.
  * <p>
- * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences
- * can be accessed directly via the preference store.
+ * This page is used to modify preferences only. They are stored in the preference store that belongs to the main plug-in class. That way, preferences can be accessed directly via the preference store.
  */
 
 public class CodegenPreferencePage extends FieldEditorPreferencePage implements
-	IWorkbenchPreferencePage {
+		IWorkbenchPreferencePage {
 
 	private Document pCommentDoc = new Document();
 
@@ -61,7 +60,7 @@ public class CodegenPreferencePage extends FieldEditorPreferencePage implements
 
 		// Text area
 		SourceViewer txtViewer = new SourceViewer(txtGroup, null, SWT.MULTI
-			| SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
+				| SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 
 		txtViewer.setDocument(currentDoc);
 
@@ -83,17 +82,18 @@ public class CodegenPreferencePage extends FieldEditorPreferencePage implements
 	public void createFieldEditors() {
 
 		addField(new StringFieldEditor(CppCodeGenConstants.P_HEADER_SUFFIX,
-			"Suffix for C++ header files ", getFieldEditorParent()));
+				"Suffix for C++ header files ", getFieldEditorParent()));
 		addField(new StringFieldEditor(CppCodeGenConstants.P_IMPLEM_SUFFIX,
-			"Suffix for C++ implementation files ", getFieldEditorParent()));
+				"Suffix for C++ implementation files ", getFieldEditorParent()));
 		addField(new StringFieldEditor(CppCodeGenConstants.P_PROJECT_PREFIX,
 				"Prefix for generated C++ (CDT) projects ", getFieldEditorParent()));
 
 		// Add P_COMMENT_HEADER
 		addTextField(CppCodeGenConstants.P_COMMENT_HEADER, "Header for generated files",
-			pCommentDoc);
+				pCommentDoc);
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 	}
 

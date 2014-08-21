@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,25 +33,26 @@ public class PropertyValueFactory {
 
 	/**
 	 * Create an instance of the specified class, located in the specified plugin.
-	 * 
+	 *
 	 * @param pluginId
 	 * @param classname
 	 * @return
-	 * @throws ClassNotFoundException 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
+	 * @throws ClassNotFoundException
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
 	 */
 	public Object newInstance(String pluginId, String classname) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		
-		
+
+
 		Class<?> classType = loadClass(pluginId, classname);
-		
+
 		return classType.newInstance();
 	}
-	
+
 	/**
 	 * Load requested class from the current classloader. If not found, try to get it from the
 	 * specified plugin.
+	 * 
 	 * @param declaringID
 	 * @param className
 	 * @return
@@ -67,19 +68,20 @@ public class PropertyValueFactory {
 				Bundle bundle = Platform.getBundle(declaringID);
 				factoryClass = bundle.loadClass(className);
 			} catch (ClassNotFoundException e1) {
-				throw new ClassNotFoundException("Can't find class " + className 
-						             + "in plugin " + declaringID
-						             , e1);
+				throw new ClassNotFoundException("Can't find class " + className
+						+ "in plugin " + declaringID
+						, e1);
 			} catch (NullPointerException e1) {
 				throw new ClassNotFoundException("Can't find plugin " + declaringID, e1);
-}
+			}
 		}
 		return factoryClass;
 
 	}
-	
+
 	/**
 	 * Create an instance of the specified model concept.
+	 * 
 	 * @param nsURI
 	 * @param propertyName
 	 * @return
@@ -88,22 +90,22 @@ public class PropertyValueFactory {
 	 * @throws IllegalAccessException
 	 */
 	public EObject newEClassInstance(String nsURI, String propertyName) throws ClassNotFoundException {
-		
-		
-		
+
+
+
 		EPackage modelPackage = EPackage.Registry.INSTANCE.getEPackage(nsURI);
-		if( modelPackage == null) {
+		if (modelPackage == null) {
 			throw new ClassNotFoundException("Can't get EPAckage for model '" + nsURI + "'");
 		}
-	
-		EClass classifier = (EClass)modelPackage.getEClassifier(propertyName);
-		if( classifier == null) {
+
+		EClass classifier = (EClass) modelPackage.getEClassifier(propertyName);
+		if (classifier == null) {
 			throw new ClassNotFoundException("Can't get classifier '" + propertyName + "' in model '" + nsURI + "'");
 		}
-		
+
 		return modelPackage.getEFactoryInstance().create(classifier);
 	}
-	
+
 	public Object getEObjectPropertyValue(EObject eObject, String propertyName) {
 		return eObject.eGet(eObject.eClass().getEStructuralFeature(propertyName));
 	}

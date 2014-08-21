@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQuery;
 
 /** Get the collection of all contained tables */
-//FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
+// FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
 public class GetContainedTables extends AbstractEditorContainerQuery implements IJavaModelQuery<EObject, Collection<PapyrusTableInstance>> {
 
 	/**
@@ -38,7 +38,7 @@ public class GetContainedTables extends AbstractEditorContainerQuery implements 
 		List<PapyrusTableInstance> result = new ArrayList<PapyrusTableInstance>();
 		Iterator<EObject> diRoots = NavigatorUtils.getDiRoots(context);
 		Iterator<EObject> notationRoots = NavigatorUtils.getNotationRoots(context);
-		if(diRoots == null && notationRoots == null) {
+		if (diRoots == null && notationRoots == null) {
 			return result;
 		}
 
@@ -49,12 +49,12 @@ public class GetContainedTables extends AbstractEditorContainerQuery implements 
 	}
 
 	private void findTablesInIterator(Iterator<EObject> iterator, Collection<PapyrusTableInstance> result, EObject context) {
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			EObject root = iterator.next();
-			if(root instanceof PapyrusTableInstance) {
-				PapyrusTableInstance tableInstance = (PapyrusTableInstance)root;
-				if(tableInstance.getTable() != null) {
-					if(EcoreUtil.equals(tableInstance.getTable().getContext(), context)) {
+			if (root instanceof PapyrusTableInstance) {
+				PapyrusTableInstance tableInstance = (PapyrusTableInstance) root;
+				if (tableInstance.getTable() != null) {
+					if (EcoreUtil.equals(tableInstance.getTable().getContext(), context)) {
 						result.add(tableInstance);
 					}
 				}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.uml2.uml.Parameter;
 /**
  * Completion processor for action language. <BR>
  * Main class to process the different completions given by the texteditor to its user
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.templates.TemplateCompletionProcessor
  * @see org.eclipse.jface.text.contentassist.IContentAssistProcessor
@@ -62,9 +62,9 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param parameter
-	 *        the parsed {@link Parameter}
+	 *            the parsed {@link Parameter}
 	 */
 	public ParameterLabelCompletionProcessor(Parameter parameter) {
 		this.parameter = parameter;
@@ -73,11 +73,11 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param property
-	 *        the property
+	 *            the property
 	 * @param iCompletionFilter
-	 *        the i completion filter
+	 *            the i completion filter
 	 */
 	public ParameterLabelCompletionProcessor(Parameter parameter, ICompletionFilter iCompletionFilter) {
 		this.parameter = parameter;
@@ -92,10 +92,10 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 	 */
 	/**
 	 * This method computes completion proposal for currently edited Parameter label.
-	 * 
+	 *
 	 * @param viewer
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return completion proposals
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 			result = computeCompletions(viewer, parser.getContext(), documentOffset, selectionRange);
 		}
 
-		return result.toArray(new ICompletionProposal[]{});
+		return result.toArray(new ICompletionProposal[] {});
 	}
 
 	/*
@@ -142,12 +142,12 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 	/**
 	 * Compute completion possibilities depending on existing edited label (prefix, it may not be
 	 * complete).
-	 * 
+	 *
 	 * @param viewer
 	 * @param selectionRange
 	 * @param context
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 		modifierProposalComputer.setModifiersUsed(modifiersUsed);
 
 		String prefix = getPrefix(viewer, documentOffset);
-		switch(context) {
+		switch (context) {
 
 		// DEFAULT : visibility or direction or name
 		case IContext.DEFAULT:
@@ -179,7 +179,7 @@ public class ParameterLabelCompletionProcessor extends LabelCompletionProcessor 
 
 		// NAME: either ':' or ":undefined"
 		case IContext.NAME:
-			v.addAll(createCompletionProposalsWithDifferentName(new String[]{ ": ", ": <Undefined>" }, new String[]{ "Parameter type", "Undefined Parameter type" }, new String[]{ ": <Type Name>", ": <Undefined>" }, "", documentOffset));
+			v.addAll(createCompletionProposalsWithDifferentName(new String[] { ": ", ": <Undefined>" }, new String[] { "Parameter type", "Undefined Parameter type" }, new String[] { ": <Type Name>", ": <Undefined>" }, "", documentOffset));
 			break;
 
 		// PROPERTY TYPE (after ":") model types or undefined

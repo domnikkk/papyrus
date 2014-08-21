@@ -25,7 +25,7 @@ public class Activator extends Plugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		
+
 		// register the log helper
 		log.setPlugin(plugin);
 	}
@@ -39,7 +39,7 @@ public class Activator extends Plugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {

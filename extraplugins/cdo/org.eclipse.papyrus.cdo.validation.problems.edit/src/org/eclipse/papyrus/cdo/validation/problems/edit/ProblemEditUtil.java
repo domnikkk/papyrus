@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,10 +40,10 @@ public class ProblemEditUtil {
 
 	protected IProblemTypeProvider getProblemTypeProvider(EProblem problem) {
 		Adapter provider = adapterFactory.adapt(problem,
-			IProblemTypeProvider.class);
+				IProblemTypeProvider.class);
 		IProblemTypeProvider result = provider instanceof IProblemTypeProvider
-			? (IProblemTypeProvider) provider
-			: null;
+				? (IProblemTypeProvider) provider
+				: null;
 
 		if (result == null) {
 			for (Adapter next : problem.eAdapters()) {
@@ -73,6 +73,7 @@ public class ProblemEditUtil {
 	protected class DefaultProblemTypeProviderAdapter
 			implements Adapter, IProblemTypeProvider {
 
+		@Override
 		public String getProblemType(Object object) {
 			String result = null;
 
@@ -82,7 +83,7 @@ public class ProblemEditUtil {
 				if (element != null) {
 					EPackage model = element.eClass().getEPackage();
 					IItemLabelProvider labels = (IItemLabelProvider) adapterFactory
-						.adapt(model, IItemLabelProvider.class);
+							.adapt(model, IItemLabelProvider.class);
 					if (labels != null) {
 						result = labels.getText(model);
 					} else {
@@ -94,19 +95,23 @@ public class ProblemEditUtil {
 			return result;
 		}
 
+		@Override
 		public boolean isAdapterForType(Object type) {
 			return false;
 		}
 
+		@Override
 		public Notifier getTarget() {
 			// I am stateless, so I am re-used on multiple targets
 			return null;
 		}
 
+		@Override
 		public void setTarget(Notifier newTarget) {
 			// pass
 		}
 
+		@Override
 		public void notifyChanged(Notification notification) {
 			// pass
 		}

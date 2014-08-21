@@ -4,7 +4,7 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.infra.services.tracepoints.messages"; //$NON-NLS-1$
-	
+
 	public static String TraceActionSelection_ClassOptions;
 	public static String TraceActionSelection_ImplementationOptions;
 	public static String TraceActionSelection_NoPluginsProvideTraceExt;
@@ -12,7 +12,7 @@ public class Messages extends NLS {
 	public static String TraceActionSelection_OperationOptions;
 	public static String TraceActionSelection_SelectTraceAction;
 	public static String TraceActionSelection_StateOptions;
-	
+
 	public static String TPPreferencePage_ClassOptions;
 	public static String TPPreferencePage_OperationOptions;
 	public static String TPPreferencePage_StateOptions;

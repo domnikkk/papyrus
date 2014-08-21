@@ -22,6 +22,7 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PoseWithCovarianceStampedImpl() {
@@ -31,6 +32,7 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -38,4 +40,4 @@ public class PoseWithCovarianceStampedImpl extends MinimalEObjectImpl.Container 
 		return Geometry_datatypesPackage.Literals.POSE_WITH_COVARIANCE_STAMPED;
 	}
 
-} //PoseWithCovarianceStampedImpl
+} // PoseWithCovarianceStampedImpl

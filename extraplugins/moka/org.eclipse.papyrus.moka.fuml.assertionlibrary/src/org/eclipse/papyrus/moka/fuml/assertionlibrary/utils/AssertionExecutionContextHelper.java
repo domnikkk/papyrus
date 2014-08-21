@@ -19,11 +19,11 @@ public class AssertionExecutionContextHelper {
 
 	public static Classifier getExecutionContext(Execution assertionExecution) {
 		Classifier context = null;
-		if(assertionExecution.context != null && assertionExecution != assertionExecution.context) {
-			if(assertionExecution.context instanceof Execution) {
-				context = getExecutionContext((Execution)assertionExecution.context);
+		if (assertionExecution.context != null && assertionExecution != assertionExecution.context) {
+			if (assertionExecution.context instanceof Execution) {
+				context = getExecutionContext((Execution) assertionExecution.context);
 			} else {
-				if(assertionExecution.context.objectActivation != null) {
+				if (assertionExecution.context.objectActivation != null) {
 					context = assertionExecution.context.objectActivation.classifierBehaviorExecutions.get(0).classifier;
 				} else {
 					context = assertionExecution.context.types.get(0);

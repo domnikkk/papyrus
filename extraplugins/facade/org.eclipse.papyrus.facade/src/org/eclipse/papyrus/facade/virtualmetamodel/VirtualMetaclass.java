@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,12 @@ import org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isAbstract <em>Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getOperations <em>Operations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getParents <em>Parents</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getProperties <em>Properties</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isStereotypeInterface <em>Stereotype Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isAbstract <em>Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getOperations <em>Operations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getParents <em>Parents</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#getProperties <em>Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isStereotypeInterface <em>Stereotype Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,10 +43,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * Returns the value of the '<em><b>Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Abstract</em>' attribute.
 	 * @see #setAbstract(boolean)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_Abstract()
@@ -59,7 +59,9 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isAbstract <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Abstract</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Abstract</em>' attribute.
 	 * @see #isAbstract()
 	 * @generated
 	 */
@@ -70,10 +72,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * The list contents are of type {@link org.eclipse.papyrus.facade.extensiondefinition.BaseMetaclass}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Applied Stereotypes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Applied Stereotypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Applied Stereotypes</em>' reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_AppliedStereotypes()
 	 * @model
@@ -86,10 +88,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * The list contents are of type {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualOperation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_Operations()
 	 * @model containment="true"
@@ -102,10 +104,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * The list contents are of type {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parents</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parents</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parents</em>' reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_Parents()
 	 * @model
@@ -119,10 +121,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty#getVirtualMetaclass <em>Virtual Metaclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_Properties()
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualProperty#getVirtualMetaclass
@@ -135,10 +137,10 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * Returns the value of the '<em><b>Stereotype Interface</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stereotype Interface</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Stereotype Interface</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Stereotype Interface</em>' attribute.
 	 * @see #setStereotypeInterface(boolean)
 	 * @see org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage#getVirtualMetaclass_StereotypeInterface()
@@ -151,7 +153,9 @@ public interface VirtualMetaclass extends VirtualClassifier {
 	 * Sets the value of the '{@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualMetaclass#isStereotypeInterface <em>Stereotype Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stereotype Interface</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Stereotype Interface</em>' attribute.
 	 * @see #isStereotypeInterface()
 	 * @generated
 	 */

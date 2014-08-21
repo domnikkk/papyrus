@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getBase_Package <em>Base Package</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getRootFeature <em>Root Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getFeatureLink <em>Feature Link</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getFeatureConstraint <em>Feature Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getBase_Package <em>Base Package</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getRootFeature <em>Root Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getFeatureLink <em>Feature Link</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.structure.featuremodeling.impl.FeatureModelImpl#getFeatureConstraint <em>Feature Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +58,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	 * The cached value of the '{@link #getBase_Package() <em>Base Package</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Package()
 	 * @generated
 	 * @ordered
@@ -68,6 +69,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -77,6 +79,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * The cached value of the '{@link #getFeatureLink() <em>Feature Link</em>}' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getFeatureLink()
 	 * @generated
 	 * @ordered
@@ -85,6 +88,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FeatureModelImpl() {
@@ -93,80 +97,88 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
-				if (resolve) return getBase_Package();
-				return basicGetBase_Package();
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
-				return getRootFeature();
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
-				return getFeatureLink();
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
-				return getFeatureConstraint();
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
+			if (resolve) {
+				return getBase_Package();
+			}
+			return basicGetBase_Package();
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
+			return getRootFeature();
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
+			return getFeatureLink();
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
+			return getFeatureConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
-				return base_Package != null;
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
-				return base_Class != null;
-			case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
-				return !getRootFeature().isEmpty();
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
-				return featureLink != null && !featureLink.isEmpty();
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
-				return !getFeatureConstraint().isEmpty();
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
+			return base_Package != null;
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
+			return base_Class != null;
+		case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
+			return !getRootFeature().isEmpty();
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
+			return featureLink != null && !featureLink.isEmpty();
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
+			return !getFeatureConstraint().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
-				getRootFeature().clear();
-				getRootFeature().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
-				getFeatureLink().clear();
-				getFeatureLink().addAll((Collection<? extends FeatureLink>)newValue);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
-				getFeatureConstraint().clear();
-				getFeatureConstraint().addAll((Collection<? extends FeatureConstraint>)newValue);
-				return;
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) newValue);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
+			getRootFeature().clear();
+			getRootFeature().addAll((Collection<? extends Feature>) newValue);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
+			getFeatureLink().clear();
+			getFeatureLink().addAll((Collection<? extends FeatureLink>) newValue);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
+			getFeatureConstraint().clear();
+			getFeatureConstraint().addAll((Collection<? extends FeatureConstraint>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,15 +189,18 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Package getBase_Package() {
 		if (base_Package != null && base_Package.eIsProxy()) {
-			InternalEObject oldBase_Package = (InternalEObject)base_Package;
-			base_Package = (org.eclipse.uml2.uml.Package)eResolveProxy(oldBase_Package);
+			InternalEObject oldBase_Package = (InternalEObject) base_Package;
+			base_Package = (org.eclipse.uml2.uml.Package) eResolveProxy(oldBase_Package);
 			if (base_Package != oldBase_Package) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
+				}
 			}
 		}
 		return base_Package;
@@ -194,6 +209,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Package basicGetBase_Package() {
@@ -203,27 +219,33 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Package(org.eclipse.uml2.uml.Package newBase_Package) {
 		org.eclipse.uml2.uml.Package oldBase_Package = base_Package;
 		base_Package = newBase_Package;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE, oldBase_Package, base_Package));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -232,6 +254,7 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -241,66 +264,75 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
-				setBase_Package((org.eclipse.uml2.uml.Package)null);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
-				getRootFeature().clear();
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
-				getFeatureLink().clear();
-				return;
-			case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
-				getFeatureConstraint().clear();
-				return;
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_PACKAGE:
+			setBase_Package((org.eclipse.uml2.uml.Package) null);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__ROOT_FEATURE:
+			getRootFeature().clear();
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK:
+			getFeatureLink().clear();
+			return;
+		case FeaturemodelingPackage.FEATURE_MODEL__FEATURE_CONSTRAINT:
+			getFeatureConstraint().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<FeatureConstraint> getFeatureConstraint() {
 		EList<FeatureConstraint> results = new BasicEList<FeatureConstraint>();
 		FeatureConstraint adlFeatureConstraint = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlFeatureConstraint = (FeatureConstraint )UMLUtil.getStereotypeApplication(element, FeatureConstraint.class);
-				if (adlFeatureConstraint != null)
+				adlFeatureConstraint = UMLUtil.getStereotypeApplication(element, FeatureConstraint.class);
+				if (adlFeatureConstraint != null) {
 					results.add(adlFeatureConstraint);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<FeatureConstraint>(FeatureConstraint.class, results.size(), results.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FeatureLink> getFeatureLink() {
 		if (featureLink == null) {
 			featureLink = new EObjectResolvingEList<FeatureLink>(FeatureLink.class, this, FeaturemodelingPackage.FEATURE_MODEL__FEATURE_LINK);
@@ -310,22 +342,25 @@ public class FeatureModelImpl extends ContextImpl implements FeatureModel {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public EList<Feature> getRootFeature() {
 		EList<Feature> results = new BasicEList<Feature>();
 		Feature adlFeature = null;
 		if (getBase_NamedElement() != null) {
 			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
+
 			while (it.hasNext()) {
 				Element element = it.next();
-				adlFeature = (Feature )UMLUtil.getStereotypeApplication(element, Feature.class);
-				if (adlFeature != null)
+				adlFeature = UMLUtil.getStereotypeApplication(element, Feature.class);
+				if (adlFeature != null) {
 					results.add(adlFeature);
+				}
 			}
 		}
-		
+
 		return new BasicInternalEList<Feature>(Feature.class, results.size(), results.toArray());
 	}
 

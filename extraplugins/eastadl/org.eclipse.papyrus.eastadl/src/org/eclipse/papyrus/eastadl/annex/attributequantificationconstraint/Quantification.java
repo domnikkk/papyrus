@@ -14,7 +14,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.EAExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification#getOperand <em>Operand</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification#getOperand <em>Operand</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface Quantification extends EAElement, EAExpression {
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operand</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Operand</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Operand</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getQuantification_Operand()
 	 * @model required="true" ordered="false"

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,6 +54,7 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup {
 	 */
 	public Integer index;
 
+	@Override
 	public ActivityNodeActivation getNodeActivation(ActivityNode node) {
 		// If the given node is an input pin of the expansion region, then
 		// return the corresponding region-input output-pin activation.
@@ -64,58 +65,61 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup {
 		// activation.
 		// Otherwise return the node activation from the activation group, as
 		// usual.
-		ExpansionRegion region = (ExpansionRegion)(this.regionActivation.node);
+		ExpansionRegion region = (ExpansionRegion) (this.regionActivation.node);
 		// List<InputPin> inputs = region.getInputs();
 		ActivityNodeActivation activation = null;
 		int i = 1;
-		while(activation == null & i <= region.getInputs().size()) {
-			if(node == region.getInputs().get(i - 1)) {
+		while (activation == null & i <= region.getInputs().size()) {
+			if (node == region.getInputs().get(i - 1)) {
 				activation = this.regionInputs.get(i - 1);
 			}
 			i = i + 1;
 		}
 		int j = 1;
-		while(activation == null & j <= region.getInputElements().size()) {
-			if(node == region.getInputElements().get(j - 1)) {
+		while (activation == null & j <= region.getInputElements().size()) {
+			if (node == region.getInputElements().get(j - 1)) {
 				activation = this.groupInputs.get(j - 1);
 			}
 			j = j + 1;
 		}
 		int k = 1;
-		while(activation == null & k <= region.getOutputElements().size()) {
-			if(node == region.getOutputElements().get(k - 1)) {
+		while (activation == null & k <= region.getOutputElements().size()) {
+			if (node == region.getOutputElements().get(k - 1)) {
 				activation = this.groupOutputs.get(k - 1);
 			}
 			k = k + 1;
 		}
-		if(activation == null) {
+		if (activation == null) {
 			activation = super.getNodeActivation(node);
 		}
 		return activation;
 	}
 
+	@Override
 	public ActivityExecution getActivityExecution() {
 		// Get the activity execution that contains the expansion region
 		// activation for this activation group.
 		return this.regionActivation.getActivityExecution();
 	}
 
+	@Override
 	public void suspend(ActivityNodeActivation activation) {
 		// Suspend the given activation in this activation group. If this is
 		// the only suspended activation, then suspend the associated region
 		// activation.
-		if(!this.isSuspended()) {
+		if (!this.isSuspended()) {
 			this.regionActivation.suspend();
 		}
 		super.suspend(activation);
 	}
 
+	@Override
 	public void resume(ActivityNodeActivation activation) {
 		// Resume the given activation in this activation group. If this is the
 		// last suspended activation, then resume the associated region
 		// activation.
 		super.resume(activation);
-		if(!this.isSuspended()) {
+		if (!this.isSuspended()) {
 			this.regionActivation.resume(this);
 		}
 	}

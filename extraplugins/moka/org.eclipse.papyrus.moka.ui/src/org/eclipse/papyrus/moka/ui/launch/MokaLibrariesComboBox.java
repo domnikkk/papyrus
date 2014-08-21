@@ -14,7 +14,6 @@ package org.eclipse.papyrus.moka.ui.launch;
 import java.util.Iterator;
 
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.swt.widgets.Composite;
 
 public class MokaLibrariesComboBox extends MokaComboBox<String, IRegisteredLibrary> {
@@ -38,13 +37,13 @@ public class MokaLibrariesComboBox extends MokaComboBox<String, IRegisteredLibra
 	public void selectByUri(String libraryUri) {
 		Iterator<IRegisteredLibrary> librariesIterator = this.population.values().iterator();
 		IRegisteredLibrary targetLib = null;
-		while(targetLib == null && librariesIterator.hasNext()) {
+		while (targetLib == null && librariesIterator.hasNext()) {
 			IRegisteredLibrary current = librariesIterator.next();
-			if(current.getUri().toString().equals(libraryUri)) {
+			if (current.getUri().toString().equals(libraryUri)) {
 				targetLib = current;
 			}
 		}
-		if(targetLib != null) {
+		if (targetLib != null) {
 			this.selectById(this.generateLabel(targetLib));
 		}
 	}

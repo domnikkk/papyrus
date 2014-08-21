@@ -14,7 +14,7 @@ public class EastAdlNattableCreateMenu extends AbstractCreateEastadlChildMenu {
 	@Override
 	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
 		IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
-		if(tester.test(part, NattableWidgetPropertyTester.IS_NATTABLE_WIDGET, null, Boolean.TRUE)) {
+		if (tester.test(part, NattableWidgetPropertyTester.IS_NATTABLE_WIDGET, null, Boolean.TRUE)) {
 			super.createContributionItems(serviceLocator, additions);
 		}
 	}

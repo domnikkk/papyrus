@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ public class GetValue_Reply extends ReplyMessage {
 
 	/**
 	 * Constructs a GetValue_Reply from the given value
-	 * 
+	 *
 	 * @param value
-	 *        The value associated with this reply message
+	 *            The value associated with this reply message
 	 */
 	public GetValue_Reply(MokaValue value) {
 		super();
@@ -42,7 +42,7 @@ public class GetValue_Reply extends ReplyMessage {
 
 	/**
 	 * Returns the value associated with this reply message
-	 * 
+	 *
 	 * @return The value associated with this reply message
 	 */
 	public MokaValue getValue() {
@@ -54,6 +54,7 @@ public class GetValue_Reply extends ReplyMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.reply.ReplyMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().getValue_reply_marshal(this);
 	}

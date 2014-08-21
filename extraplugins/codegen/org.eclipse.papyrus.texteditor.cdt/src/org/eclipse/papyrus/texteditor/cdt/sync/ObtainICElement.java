@@ -27,21 +27,24 @@ import org.eclipse.uml2.uml.Transition;
 public class ObtainICElement {
 	/**
 	 * Return the ICelement associated with a UML element. Currently, only methods are supported.
-	 * @param parent the parent (typically the translation unit of a CDT file)  
-	 * @param element A named UML element
+	 * 
+	 * @param parent
+	 *            the parent (typically the translation unit of a CDT file)
+	 * @param element
+	 *            A named UML element
 	 * @throws CoreException
 	 */
 	public static ICElement getICElement(IParent parent, NamedElement element) {
-		try {	
-			for(ICElement child : parent.getChildren()) {
-				if(child instanceof IParent) {
-					return getICElement((IParent)child, element);
+		try {
+			for (ICElement child : parent.getChildren()) {
+				if (child instanceof IParent) {
+					return getICElement((IParent) child, element);
 				}
-				if(child instanceof IFunctionDeclaration) {
+				if (child instanceof IFunctionDeclaration) {
 					IFunctionDeclaration function = (IFunctionDeclaration) child;
-					
+
 					if (element instanceof Operation) {
-						if (child.getElementName().endsWith(Namespace.SEPARATOR + element.getName())) {
+						if (child.getElementName().endsWith(NamedElement.SEPARATOR + element.getName())) {
 							// check, if number of parameter matches. TODO: this only handles a part of possible overloading cases
 							if (function.getNumberOfParameters() == countParameters(((Operation) element).getOwnedParameters())) {
 								return child;
@@ -50,7 +53,7 @@ public class ObtainICElement {
 					}
 					else if (element instanceof Transition) {
 						Transition transition = (Transition) element;
-						if (child.getElementName().endsWith(Namespace.SEPARATOR + transition.getEffect().getName())) {
+						if (child.getElementName().endsWith(NamedElement.SEPARATOR + transition.getEffect().getName())) {
 							if (function.getNumberOfParameters() == countParameters(transition.getEffect().getOwnedParameters())) {
 								return child;
 							}
@@ -58,8 +61,7 @@ public class ObtainICElement {
 					}
 				}
 			}
-		}
-		catch (CoreException e) {
+		} catch (CoreException e) {
 		}
 		return null;
 	}

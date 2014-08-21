@@ -39,7 +39,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
 			String init_uri = configuration.getAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, "");
-			if(!init_uri.equals("")) {
+			if (!init_uri.equals("")) {
 				this.projectSelectionComp.projectSelectionText.setText(init_uri);
 				String init_fragment = configuration.getAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, "");
 				this.executableSelectionComp.eligibleExecutableElement.selectByURIFragment(init_fragment);
@@ -52,7 +52,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, this.projectSelectionComp.projectSelectionText.getText());
 		EObject selected = this.executableSelectionComp.eligibleExecutableElement.getSelected();
-		if(selected != null) {
+		if (selected != null) {
 			configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, selected.eResource().getURIFragment(selected));
 		}
 	}
@@ -87,7 +87,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 
 	@Override
 	public Image getImage() {
-		if(this.image == null) {
+		if (this.image == null) {
 			this.image = new Image(Display.getCurrent(), getClass().getResourceAsStream("/icons/moka_icon.png"));
 		}
 		return this.image;

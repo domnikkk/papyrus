@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualParameterItemProvider
-	extends VirtualTypedElementItemProvider
-	implements
+		extends VirtualTypedElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class VirtualParameterItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualParameterItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class VirtualParameterItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +75,7 @@ public class VirtualParameterItemProvider
 	 * This returns VirtualParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,22 +87,24 @@ public class VirtualParameterItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualParameter)object).getAliasName();
+		String label = ((VirtualParameter) object).getAliasName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualParameter_type") :
-			getString("_UI_VirtualParameter_type") + " " + label;
+				getString("_UI_VirtualParameter_type") :
+				getString("_UI_VirtualParameter_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,6 +118,7 @@ public class VirtualParameterItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

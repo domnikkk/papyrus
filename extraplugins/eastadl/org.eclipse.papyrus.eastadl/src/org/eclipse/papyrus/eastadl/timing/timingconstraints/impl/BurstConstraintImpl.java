@@ -19,10 +19,10 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getMaxOccurrences <em>Max Occurrences</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getEvent <em>Event</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getLenght <em>Lenght</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getMinimum <em>Minimum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getMaxOccurrences <em>Max Occurrences</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getEvent <em>Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getLenght <em>Lenght</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.BurstConstraintImpl#getMinimum <em>Minimum</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The default value of the '{@link #getMaxOccurrences() <em>Max Occurrences</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaxOccurrences()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getMaxOccurrences() <em>Max Occurrences</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaxOccurrences()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -63,6 +66,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getLenght() <em>Lenght</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLenght()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -82,6 +87,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BurstConstraintImpl() {
@@ -91,6 +97,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,8 +108,10 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurrences() {
 		return maxOccurrences;
 	}
@@ -110,27 +119,33 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurrences(int newMaxOccurrences) {
 		int oldMaxOccurrences = maxOccurrences;
 		maxOccurrences = newMaxOccurrences;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES, oldMaxOccurrences, maxOccurrences));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getEvent() {
 		if (event != null && event.eIsProxy()) {
-			InternalEObject oldEvent = (InternalEObject)event;
-			event = (Event)eResolveProxy(oldEvent);
+			InternalEObject oldEvent = (InternalEObject) event;
+			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__EVENT, oldEvent, event));
+				}
 			}
 		}
 		return event;
@@ -139,6 +154,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -148,27 +164,33 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__EVENT, oldEvent, event));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getLenght() {
 		if (lenght != null && lenght.eIsProxy()) {
-			InternalEObject oldLenght = (InternalEObject)lenght;
-			lenght = (TimingExpression)eResolveProxy(oldLenght);
+			InternalEObject oldLenght = (InternalEObject) lenght;
+			lenght = (TimingExpression) eResolveProxy(oldLenght);
 			if (lenght != oldLenght) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT, oldLenght, lenght));
+				}
 			}
 		}
 		return lenght;
@@ -177,6 +199,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetLenght() {
@@ -186,27 +209,33 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLenght(TimingExpression newLenght) {
 		TimingExpression oldLenght = lenght;
 		lenght = newLenght;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT, oldLenght, lenght));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getMinimum() {
 		if (minimum != null && minimum.eIsProxy()) {
-			InternalEObject oldMinimum = (InternalEObject)minimum;
-			minimum = (TimingExpression)eResolveProxy(oldMinimum);
+			InternalEObject oldMinimum = (InternalEObject) minimum;
+			minimum = (TimingExpression) eResolveProxy(oldMinimum);
 			if (minimum != oldMinimum) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM, oldMinimum, minimum));
+				}
 			}
 		}
 		return minimum;
@@ -215,6 +244,7 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetMinimum() {
@@ -224,34 +254,44 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMinimum(TimingExpression newMinimum) {
 		TimingExpression oldMinimum = minimum;
 		minimum = newMinimum;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM, oldMinimum, minimum));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
-				return getMaxOccurrences();
-			case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
-				if (resolve) return getEvent();
-				return basicGetEvent();
-			case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
-				if (resolve) return getLenght();
-				return basicGetLenght();
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
-				if (resolve) return getMinimum();
-				return basicGetMinimum();
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
+			return getMaxOccurrences();
+		case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
+			if (resolve) {
+				return getEvent();
+			}
+			return basicGetEvent();
+		case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
+			if (resolve) {
+				return getLenght();
+			}
+			return basicGetLenght();
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
+			if (resolve) {
+				return getMinimum();
+			}
+			return basicGetMinimum();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,23 +299,24 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
-				setMaxOccurrences((Integer)newValue);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
-				setEvent((Event)newValue);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
-				setLenght((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
-				setMinimum((TimingExpression)newValue);
-				return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
+			setMaxOccurrences((Integer) newValue);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
+			setEvent((Event) newValue);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
+			setLenght((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
+			setMinimum((TimingExpression) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,23 +324,24 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
-				setMaxOccurrences(MAX_OCCURRENCES_EDEFAULT);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
-				setEvent((Event)null);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
-				setLenght((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
-				setMinimum((TimingExpression)null);
-				return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
+			setMaxOccurrences(MAX_OCCURRENCES_EDEFAULT);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
+			setEvent((Event) null);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
+			setLenght((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
+			setMinimum((TimingExpression) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -307,19 +349,20 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
-				return maxOccurrences != MAX_OCCURRENCES_EDEFAULT;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
-				return event != null;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
-				return lenght != null;
-			case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
-				return minimum != null;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MAX_OCCURRENCES:
+			return maxOccurrences != MAX_OCCURRENCES_EDEFAULT;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__EVENT:
+			return event != null;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__LENGHT:
+			return lenght != null;
+		case TimingconstraintsPackage.BURST_CONSTRAINT__MINIMUM:
+			return minimum != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,11 +370,14 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (maxOccurrences: ");
@@ -340,4 +386,4 @@ public class BurstConstraintImpl extends TimingConstraintImpl implements BurstCo
 		return result.toString();
 	}
 
-} //BurstConstraintImpl
+} // BurstConstraintImpl

@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getTypeName <em>Type Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getMultiplicity <em>Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getTypeName <em>Type Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,56 +27,60 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TypePart extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Type Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type Name</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Name</em>' containment reference.
-   * @see #setTypeName(TypeName)
-   * @see org.eclipse.papyrus.operation.editor.xtext.operation.OperationPackage#getTypePart_TypeName()
-   * @model containment="true"
-   * @generated
-   */
-  TypeName getTypeName();
+	/**
+	 * Returns the value of the '<em><b>Type Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Name</em>' containment reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Type Name</em>' containment reference.
+	 * @see #setTypeName(TypeName)
+	 * @see org.eclipse.papyrus.operation.editor.xtext.operation.OperationPackage#getTypePart_TypeName()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TypeName getTypeName();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getTypeName <em>Type Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Name</em>' containment reference.
-   * @see #getTypeName()
-   * @generated
-   */
-  void setTypeName(TypeName value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getTypeName <em>Type Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type Name</em>' containment reference.
+	 * @see #getTypeName()
+	 * @generated
+	 */
+	void setTypeName(TypeName value);
 
-  /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Multiplicity</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' containment reference.
-   * @see #setMultiplicity(Multiplicity)
-   * @see org.eclipse.papyrus.operation.editor.xtext.operation.OperationPackage#getTypePart_Multiplicity()
-   * @model containment="true"
-   * @generated
-   */
-  Multiplicity getMultiplicity();
+	/**
+	 * Returns the value of the '<em><b>Multiplicity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Multiplicity</em>' containment reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Multiplicity</em>' containment reference.
+	 * @see #setMultiplicity(Multiplicity)
+	 * @see org.eclipse.papyrus.operation.editor.xtext.operation.OperationPackage#getTypePart_Multiplicity()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Multiplicity getMultiplicity();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getMultiplicity <em>Multiplicity</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multiplicity</em>' containment reference.
-   * @see #getMultiplicity()
-   * @generated
-   */
-  void setMultiplicity(Multiplicity value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.operation.editor.xtext.operation.TypePart#getMultiplicity <em>Multiplicity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Multiplicity</em>' containment reference.
+	 * @see #getMultiplicity()
+	 * @generated
+	 */
+	void setMultiplicity(Multiplicity value);
 
 } // TypePart

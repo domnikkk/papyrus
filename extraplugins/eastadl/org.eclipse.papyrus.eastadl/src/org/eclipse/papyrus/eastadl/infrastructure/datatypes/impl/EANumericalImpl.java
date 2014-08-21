@@ -17,9 +17,9 @@ import org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getUnit <em>Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.impl.EANumericalImpl#getUnit <em>Unit</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -50,6 +52,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -60,6 +63,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -70,6 +74,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -79,6 +84,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EANumericalImpl() {
@@ -88,6 +94,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,8 +105,10 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Float getMax() {
 		return max;
 	}
@@ -107,20 +116,25 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMax(Float newMax) {
 		Float oldMax = max;
 		max = newMax;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__MAX, oldMax, max));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Float getMin() {
 		return min;
 	}
@@ -128,27 +142,33 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setMin(Float newMin) {
 		Float oldMin = min;
 		min = newMin;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__MIN, oldMin, min));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Unit getUnit() {
 		if (unit != null && unit.eIsProxy()) {
-			InternalEObject oldUnit = (InternalEObject)unit;
-			unit = (Unit)eResolveProxy(oldUnit);
+			InternalEObject oldUnit = (InternalEObject) unit;
+			unit = (Unit) eResolveProxy(oldUnit);
 			if (unit != oldUnit) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatatypesPackage.EA_NUMERICAL__UNIT, oldUnit, unit));
+				}
 			}
 		}
 		return unit;
@@ -157,6 +177,7 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Unit basicGetUnit() {
@@ -166,30 +187,36 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUnit(Unit newUnit) {
 		Unit oldUnit = unit;
 		unit = newUnit;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.EA_NUMERICAL__UNIT, oldUnit, unit));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.EA_NUMERICAL__MAX:
-				return getMax();
-			case DatatypesPackage.EA_NUMERICAL__MIN:
-				return getMin();
-			case DatatypesPackage.EA_NUMERICAL__UNIT:
-				if (resolve) return getUnit();
-				return basicGetUnit();
+		case DatatypesPackage.EA_NUMERICAL__MAX:
+			return getMax();
+		case DatatypesPackage.EA_NUMERICAL__MIN:
+			return getMin();
+		case DatatypesPackage.EA_NUMERICAL__UNIT:
+			if (resolve) {
+				return getUnit();
+			}
+			return basicGetUnit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,20 +224,21 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.EA_NUMERICAL__MAX:
-				setMax((Float)newValue);
-				return;
-			case DatatypesPackage.EA_NUMERICAL__MIN:
-				setMin((Float)newValue);
-				return;
-			case DatatypesPackage.EA_NUMERICAL__UNIT:
-				setUnit((Unit)newValue);
-				return;
+		case DatatypesPackage.EA_NUMERICAL__MAX:
+			setMax((Float) newValue);
+			return;
+		case DatatypesPackage.EA_NUMERICAL__MIN:
+			setMin((Float) newValue);
+			return;
+		case DatatypesPackage.EA_NUMERICAL__UNIT:
+			setUnit((Unit) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -218,20 +246,21 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.EA_NUMERICAL__MAX:
-				setMax(MAX_EDEFAULT);
-				return;
-			case DatatypesPackage.EA_NUMERICAL__MIN:
-				setMin(MIN_EDEFAULT);
-				return;
-			case DatatypesPackage.EA_NUMERICAL__UNIT:
-				setUnit((Unit)null);
-				return;
+		case DatatypesPackage.EA_NUMERICAL__MAX:
+			setMax(MAX_EDEFAULT);
+			return;
+		case DatatypesPackage.EA_NUMERICAL__MIN:
+			setMin(MIN_EDEFAULT);
+			return;
+		case DatatypesPackage.EA_NUMERICAL__UNIT:
+			setUnit((Unit) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,17 +268,18 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.EA_NUMERICAL__MAX:
-				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
-			case DatatypesPackage.EA_NUMERICAL__MIN:
-				return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
-			case DatatypesPackage.EA_NUMERICAL__UNIT:
-				return unit != null;
+		case DatatypesPackage.EA_NUMERICAL__MAX:
+			return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
+		case DatatypesPackage.EA_NUMERICAL__MIN:
+			return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
+		case DatatypesPackage.EA_NUMERICAL__UNIT:
+			return unit != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -257,11 +287,14 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (max: ");
@@ -272,4 +305,4 @@ public class EANumericalImpl extends EADatatypeImpl implements EANumerical {
 		return result.toString();
 	}
 
-} //EANumericalImpl
+} // EANumericalImpl

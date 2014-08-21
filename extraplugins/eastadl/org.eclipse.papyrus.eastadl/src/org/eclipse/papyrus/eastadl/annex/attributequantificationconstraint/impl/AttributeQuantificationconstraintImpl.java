@@ -20,8 +20,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.impl.EAElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeQuantificationconstraintImpl#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeQuantificationconstraintImpl#getQuantification <em>Quantification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeQuantificationconstraintImpl#getAttribute <em>Attribute</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.AttributeQuantificationconstraintImpl#getQuantification <em>Quantification</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAttribute()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	 * The cached value of the '{@link #getQuantification() <em>Quantification</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantification()
 	 * @generated
 	 * @ordered
@@ -51,6 +53,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AttributeQuantificationconstraintImpl() {
@@ -60,6 +63,7 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,8 +74,10 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttribute() {
 		if (attribute == null) {
 			attribute = new EObjectResolvingEList<Attribute>(Attribute.class, this, AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE);
@@ -82,8 +88,10 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Quantification> getQuantification() {
 		if (quantification == null) {
 			quantification = new EObjectResolvingEList<Quantification>(Quantification.class, this, AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION);
@@ -94,15 +102,16 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
-				return getAttribute();
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
-				return getQuantification();
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
+			return getAttribute();
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
+			return getQuantification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,20 +119,21 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
-				getAttribute().clear();
-				getAttribute().addAll((Collection<? extends Attribute>)newValue);
-				return;
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
-				getQuantification().clear();
-				getQuantification().addAll((Collection<? extends Quantification>)newValue);
-				return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
+			getAttribute().clear();
+			getAttribute().addAll((Collection<? extends Attribute>) newValue);
+			return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
+			getQuantification().clear();
+			getQuantification().addAll((Collection<? extends Quantification>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,17 +141,18 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
-				getAttribute().clear();
-				return;
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
-				getQuantification().clear();
-				return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
+			getAttribute().clear();
+			return;
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
+			getQuantification().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,17 +160,18 @@ public class AttributeQuantificationconstraintImpl extends EAElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
-				return attribute != null && !attribute.isEmpty();
-			case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
-				return quantification != null && !quantification.isEmpty();
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__ATTRIBUTE:
+			return attribute != null && !attribute.isEmpty();
+		case AttributequantificationconstraintPackage.ATTRIBUTE_QUANTIFICATIONCONSTRAINT__QUANTIFICATION:
+			return quantification != null && !quantification.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AttributeQuantificationconstraintImpl
+} // AttributeQuantificationconstraintImpl

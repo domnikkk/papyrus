@@ -62,10 +62,11 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof Generalization) {
-			this.selectedGeneralization = (Generalization)newElement;
-		} else
+		if (newElement instanceof Generalization) {
+			this.selectedGeneralization = (Generalization) newElement;
+		} else {
 			throw new RuntimeException("bad selection: " + newElement + " should be a UML2 generalization");
+		}
 	}
 
 	/*
@@ -73,6 +74,7 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContent()
 	 */
+	@Override
 	public Control createContent()
 	{
 		// creates a composite
@@ -92,6 +94,7 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 		vPropCombo.setItems(items);
 		vPropCombo.addSelectionListener(new SelectionAdapter() {
 
+			@Override
 			public void widgetSelected(SelectionEvent event) {
 				checkVirtual();
 			}
@@ -110,7 +113,7 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 		int comboSelected = vPropCombo.getSelectionIndex();
 
 		final String visibilityVal;
-		switch(comboSelected) {
+		switch (comboSelected) {
 		case 0: /* public */
 			visibilityVal = "public";
 			break;
@@ -125,11 +128,12 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 			break;
 		}
 		final Visibility visibility = UMLUtil.getStereotypeApplication(selectedGeneralization, Visibility.class);
-		if(visibility != null) {
+		if (visibility != null) {
 			String vis = visibility.getValue();
-			if(!vis.equals(visibilityVal)) {
+			if (!vis.equals(visibilityVal)) {
 				CommandSupport.exec("Set visibility for generalization", new Runnable() {
 
+					@Override
 					public void run() {
 						visibility.setValue(visibilityVal);
 					}
@@ -143,12 +147,14 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
 	}
 
 	// Required by super class
+	@Override
 	public void save() {
 	}
 
@@ -171,16 +177,16 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	@Override
 	protected void refreshPanel()
 	{
-		if(selectedGeneralization != null) {
+		if (selectedGeneralization != null) {
 			final Visibility visibility = UMLUtil.getStereotypeApplication(selectedGeneralization, Visibility.class);
-			if(visibility != null) {
+			if (visibility != null) {
 				String vis = visibility.getValue();
 
-				if(vis.equals("public")) {
+				if (vis.equals("public")) {
 					vPropCombo.select(0);
-				} else if(vis.equals("protected")) {
+				} else if (vis.equals("protected")) {
 					vPropCombo.select(1);
-				} else if(vis.equals("private")) {
+				} else if (vis.equals("private")) {
 					vPropCombo.select(2);
 				} else {
 					Activator.log(new RuntimeException("Generalization: should never happen, model should be corrected before"));
@@ -201,15 +207,15 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	@Override
 	protected boolean isModelValid()
 	{
-		if(selectedGeneralization == null) {
+		if (selectedGeneralization == null) {
 			return true;
 		}
 
 		final Visibility visibility = UMLUtil.getStereotypeApplication(selectedGeneralization, Visibility.class);
-		if(visibility != null) {
+		if (visibility != null) {
 			String vis = visibility.getValue();
 
-			if(!(vis.equals("public")) || !(vis.equals("protected")) || !(vis.equals("private"))) {
+			if (!(vis.equals("public")) || !(vis.equals("protected")) || !(vis.equals("private"))) {
 				return false;
 			}
 			else {
@@ -229,16 +235,17 @@ public class CppGeneralizationPanel extends CppAbstractPanel {
 	@Override
 	protected void updateModel() {
 		super.updateModel();
-		if(selectedGeneralization == null) {
+		if (selectedGeneralization == null) {
 			return;
 		}
 
 		final Visibility visibility = UMLUtil.getStereotypeApplication(selectedGeneralization, Visibility.class);
-		if(visibility != null) {
+		if (visibility != null) {
 			String vis = visibility.getValue();
-			if(!(vis.equals("public")) || !(vis.equals("protected")) || !(vis.equals("private"))) {
+			if (!(vis.equals("public")) || !(vis.equals("protected")) || !(vis.equals("private"))) {
 				CommandSupport.exec("Correct illegal visibility value", new Runnable() {
 
+					@Override
 					public void run() {
 						visibility.setValue("public");
 					}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,9 @@ public class Terminate_Event extends EventMessage {
 	/**
 	 * Construct a terminate event from the given source.
 	 * The source is usually the debug target. See Start_Event for the rationale.
-	 * 
+	 *
 	 * @param source
-	 *        The source for the terminate event
+	 *            The source for the terminate event
 	 */
 	public Terminate_Event(IDebugElement source, IThread[] threads) {
 		this.source = source;
@@ -52,6 +52,7 @@ public class Terminate_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().terminate_event_marshal(this);
 	}
@@ -61,15 +62,17 @@ public class Terminate_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.Event#getDebugEvent()
 	 */
+	@Override
 	public DebugEvent getDebugEvent() {
-		if(this.debugEvent == null)
+		if (this.debugEvent == null) {
 			this.debugEvent = new DebugEvent(source, eventKind);
+		}
 		return this.debugEvent;
 	}
 
 	/**
 	 * Returns the source of this terminate event
-	 * 
+	 *
 	 * @return the source of this terminate event
 	 */
 	public IDebugElement getSource() {
@@ -78,7 +81,7 @@ public class Terminate_Event extends EventMessage {
 
 	/**
 	 * Returns the threads available at the execution engine when it emitted this Terminate_Event message
-	 * 
+	 *
 	 * @return The threads available at the execution engine when it emitted this Terminate_Event message
 	 */
 	public IThread[] getThreads() {

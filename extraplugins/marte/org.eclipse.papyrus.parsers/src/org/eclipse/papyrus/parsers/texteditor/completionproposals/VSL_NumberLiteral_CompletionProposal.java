@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,8 +48,8 @@ public class VSL_NumberLiteral_CompletionProposal implements ICompletionProposal
 		ICompletionProposal proposal = null;
 
 		// adds all name (static strings...)
-		for(int i = 0; i < TVL_NumberLiteral_Strings.length; i++) {
-			if(TVL_NumberLiteral_Strings[i].startsWith(prefix)) {
+		for (int i = 0; i < TVL_NumberLiteral_Strings.length; i++) {
+			if (TVL_NumberLiteral_Strings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(TVL_NumberLiteral_Strings[i], documentOffset - prefix.length(),
 						prefix.length() + selectionRange, TVL_NumberLiteral_Strings[i].length(), null,
 						TVL_NumberLiteral_StringName[i], null, TVL_NumberLiteral_StringsInfo[i]);

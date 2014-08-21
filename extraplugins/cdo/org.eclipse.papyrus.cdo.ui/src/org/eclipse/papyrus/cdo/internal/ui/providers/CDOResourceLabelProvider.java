@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - adapt to source-incompatible API change in CDO Luna M6
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.providers;
 
@@ -53,7 +53,7 @@ public class CDOResourceLabelProvider extends LabelProvider implements IFiltered
 
 	@Override
 	public boolean accept(Object element) {
-		return (element instanceof CDOResourceNode) || (element instanceof URI) && CDOUtils.isCDOURI((URI)element);
+		return (element instanceof CDOResourceNode) || (element instanceof URI) && CDOUtils.isCDOURI((URI) element);
 	}
 
 	@Override
@@ -72,15 +72,15 @@ public class CDOResourceLabelProvider extends LabelProvider implements IFiltered
 	public String getText(Object element) {
 		String result = null;
 
-		URI uri = (element instanceof URI) ? (URI)element : ((CDOResourceNode)element).getURI();
+		URI uri = (element instanceof URI) ? (URI) element : ((CDOResourceNode) element).getURI();
 
-		if(uri != null) {
-			String nodeType = element instanceof CDOResourceNode ? nodeTypeSwitch.doSwitch((CDOResource)element) : Messages.CDOResLabels_node;
+		if (uri != null) {
+			String nodeType = element instanceof CDOResourceNode ? nodeTypeSwitch.doSwitch((CDOResource) element) : Messages.CDOResLabels_node;
 			String path = CDOURIUtil.extractResourcePath(uri);
 			IPapyrusRepository repo = PapyrusRepositoryManager.INSTANCE.getRepositoryForURI(uri);
 			String repoName = (repo == null) ? Messages.CDOResLabels_unknown : repo.getName();
 
-			result = NLS.bind(Messages.CDOResLabels_pattern, new Object[]{ nodeType, path, repoName });
+			result = NLS.bind(Messages.CDOResLabels_pattern, new Object[] { nodeType, path, repoName });
 		}
 
 		return result;

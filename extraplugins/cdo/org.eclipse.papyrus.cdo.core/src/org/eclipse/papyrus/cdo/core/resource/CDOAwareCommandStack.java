@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 402525
  *   Christian W. Damus (CEA) - bug 432813
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -44,7 +44,7 @@ public class CDOAwareCommandStack extends NestingNotifyingWorkspaceCommandStack 
 	@Override
 	public void dispose() {
 		IOperationHistory history = getOperationHistory();
-		if(history != null) {
+		if (history != null) {
 			CDOUndoContext.flushAll(history);
 		}
 
@@ -61,22 +61,22 @@ public class CDOAwareCommandStack extends NestingNotifyingWorkspaceCommandStack 
 		super.hookUndoContexts(operation, event);
 
 		Set<EObject> affectedObjects = Sets.newHashSet();
-		for(Notification next : event.getNotifications()) {
+		for (Notification next : event.getNotifications()) {
 			Object notifier = next.getNotifier();
 
 			// don't exclude CDOResources, which are EObjects as well as Resources, unless the change
 			// is in some other property than the contents
-			if(notifier instanceof EObject) {
-				EObject object = (EObject)notifier;
-				if(object.eClass() != EresourcePackage.Literals.CDO_RESOURCE) {
+			if (notifier instanceof EObject) {
+				EObject object = (EObject) notifier;
+				if (object.eClass() != EresourcePackage.Literals.CDO_RESOURCE) {
 					affectedObjects.add(object);
-				} else if(next.getFeature() == EresourcePackage.Literals.CDO_RESOURCE__CONTENTS) {
+				} else if (next.getFeature() == EresourcePackage.Literals.CDO_RESOURCE__CONTENTS) {
 					affectedObjects.add(object);
 				}
 			}
 		}
 
-		if(!affectedObjects.isEmpty()) {
+		if (!affectedObjects.isEmpty()) {
 			operation.addContext(new CDOUndoContext(affectedObjects));
 		}
 	}

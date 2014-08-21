@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,7 +71,7 @@ public class RepositoryCredentialsDialog extends TitleAreaDialog {
 		setMessage(message);
 		setTitleImage(SharedImages.getImage(Activator.ICON_PAPYRUS_CDO_WIZARD));
 
-		Composite result = (Composite)super.createDialogArea(parent);
+		Composite result = (Composite) super.createDialogArea(parent);
 
 		Composite main = new Composite(result, SWT.NONE);
 		main.setLayout(new GridLayout(2, false));
@@ -89,11 +89,11 @@ public class RepositoryCredentialsDialog extends TitleAreaDialog {
 		rememberCheckbox.setText(Messages.RepositoryCredentialsDialog_4);
 		GridDataFactory.fillDefaults().span(2, 1).applyTo(rememberCheckbox);
 
-		if(repository.getUsername() != null) {
+		if (repository.getUsername() != null) {
 			usernameText.setText(repository.getUsername());
 		}
 
-		if(repository.getPassword() != null) {
+		if (repository.getPassword() != null) {
 			passwordText.setText(repository.getPassword());
 		}
 
@@ -116,7 +116,7 @@ public class RepositoryCredentialsDialog extends TitleAreaDialog {
 		String password = passwordText.getText().trim();
 		credentials = new PasswordCredentials(username, password.toCharArray());
 
-		if(rememberCheckbox.getSelection()) {
+		if (rememberCheckbox.getSelection()) {
 			repository.setUsername(username);
 			repository.setPassword(password);
 			PapyrusRepositoryManager.INSTANCE.saveRepositories();

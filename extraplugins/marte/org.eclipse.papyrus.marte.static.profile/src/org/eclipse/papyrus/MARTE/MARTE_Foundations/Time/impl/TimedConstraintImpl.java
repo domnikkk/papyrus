@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,8 +34,8 @@ import org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeInterpretationKind
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl#getOn <em>On</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl#getInterpretation <em>Interpretation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl#getOn <em>On</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.impl.TimedConstraintImpl#getInterpretation <em>Interpretation</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The cached value of the '{@link #getOn() <em>On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOn()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The default value of the '{@link #getInterpretation() <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInterpretation()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	 * The cached value of the '{@link #getInterpretation() <em>Interpretation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInterpretation()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TimedConstraintImpl() {
@@ -84,6 +88,7 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,8 +99,10 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Clock> getOn() {
 		if (on == null) {
 			on = new EObjectResolvingEList<Clock>(Clock.class, this, TimePackage.TIMED_CONSTRAINT__ON);
@@ -106,8 +113,10 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimeInterpretationKind getInterpretation() {
 		return interpretation;
 	}
@@ -115,27 +124,31 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setInterpretation(TimeInterpretationKind newInterpretation) {
 		TimeInterpretationKind oldInterpretation = interpretation;
 		interpretation = newInterpretation == null ? INTERPRETATION_EDEFAULT : newInterpretation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimePackage.TIMED_CONSTRAINT__INTERPRETATION, oldInterpretation, interpretation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimePackage.TIMED_CONSTRAINT__ON:
-				return getOn();
-			case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
-				return getInterpretation();
+		case TimePackage.TIMED_CONSTRAINT__ON:
+			return getOn();
+		case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
+			return getInterpretation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,19 +156,20 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimePackage.TIMED_CONSTRAINT__ON:
-				getOn().clear();
-				getOn().addAll((Collection<? extends Clock>)newValue);
-				return;
-			case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
-				setInterpretation((TimeInterpretationKind)newValue);
-				return;
+		case TimePackage.TIMED_CONSTRAINT__ON:
+			getOn().clear();
+			getOn().addAll((Collection<? extends Clock>) newValue);
+			return;
+		case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
+			setInterpretation((TimeInterpretationKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,17 +177,18 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_CONSTRAINT__ON:
-				getOn().clear();
-				return;
-			case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
-				setInterpretation(INTERPRETATION_EDEFAULT);
-				return;
+		case TimePackage.TIMED_CONSTRAINT__ON:
+			getOn().clear();
+			return;
+		case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
+			setInterpretation(INTERPRETATION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -181,15 +196,16 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimePackage.TIMED_CONSTRAINT__ON:
-				return on != null && !on.isEmpty();
-			case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
-				return interpretation != INTERPRETATION_EDEFAULT;
+		case TimePackage.TIMED_CONSTRAINT__ON:
+			return on != null && !on.isEmpty();
+		case TimePackage.TIMED_CONSTRAINT__INTERPRETATION:
+			return interpretation != INTERPRETATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -197,14 +213,17 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (derivedFeatureID) {
-				case TimePackage.TIMED_CONSTRAINT__ON: return TimePackage.TIMED_ELEMENT__ON;
-				default: return -1;
+			case TimePackage.TIMED_CONSTRAINT__ON:
+				return TimePackage.TIMED_ELEMENT__ON;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -213,14 +232,17 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == TimedElement.class) {
 			switch (baseFeatureID) {
-				case TimePackage.TIMED_ELEMENT__ON: return TimePackage.TIMED_CONSTRAINT__ON;
-				default: return -1;
+			case TimePackage.TIMED_ELEMENT__ON:
+				return TimePackage.TIMED_CONSTRAINT__ON;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -229,11 +251,14 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (interpretation: ");
@@ -242,4 +267,4 @@ public class TimedConstraintImpl extends NfpConstraintImpl implements TimedConst
 		return result.toString();
 	}
 
-} //TimedConstraintImpl
+} // TimedConstraintImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,6 +79,7 @@ public class ActionButton {
 
 		button.addDisposeListener(new DisposeListener() {
 
+			@Override
 			public void widgetDisposed(DisposeEvent e) {
 				dispose();
 			}
@@ -88,20 +89,20 @@ public class ActionButton {
 	}
 
 	public void attach(StructuredViewer viewer) {
-		if(dependentViewers == null) {
+		if (dependentViewers == null) {
 			dependentViewers = Lists.newArrayListWithExpectedSize(1);
 			dependentViewers.add(viewer);
 			viewer.addSelectionChangedListener(getSelectionListener());
-		} else if(!dependentViewers.contains(viewer)) {
+		} else if (!dependentViewers.contains(viewer)) {
 			dependentViewers.add(viewer);
 			viewer.addSelectionChangedListener(getSelectionListener());
 		}
 	}
 
 	private void refreshViewers(IStructuredSelection objectsToUpdate) {
-		if(dependentViewers != null) {
-			for(StructuredViewer next : dependentViewers) {
-				for(Iterator<?> iter = objectsToUpdate.iterator(); iter.hasNext();) {
+		if (dependentViewers != null) {
+			for (StructuredViewer next : dependentViewers) {
+				for (Iterator<?> iter = objectsToUpdate.iterator(); iter.hasNext();) {
 					next.refresh(iter.next());
 				}
 			}
@@ -109,12 +110,13 @@ public class ActionButton {
 	}
 
 	private ISelectionChangedListener getSelectionListener() {
-		if(selectionListener == null) {
+		if (selectionListener == null) {
 			selectionListener = new ISelectionChangedListener() {
 
+				@Override
 				public void selectionChanged(SelectionChangedEvent event) {
-					selection.selectionChanged((IStructuredSelection)event.getSelection());
-					if(button != null) {
+					selection.selectionChanged((IStructuredSelection) event.getSelection());
+					if (button != null) {
 						button.setEnabled(action.isEnabled());
 					}
 				}
@@ -125,8 +127,8 @@ public class ActionButton {
 	}
 
 	private void dispose() {
-		if((dependentViewers != null) && (selectionListener != null)) {
-			for(StructuredViewer next : dependentViewers) {
+		if ((dependentViewers != null) && (selectionListener != null)) {
+			for (StructuredViewer next : dependentViewers) {
 				next.removeSelectionChangedListener(selectionListener);
 			}
 		}
@@ -152,6 +154,7 @@ public class ActionButton {
 			this.action = action;
 		}
 
+		@Override
 		public void selectionChanged(IStructuredSelection selection) {
 			action.selectionChanged(selection);
 		}
@@ -167,6 +170,7 @@ public class ActionButton {
 			this.adapter = adapter;
 		}
 
+		@Override
 		public void selectionChanged(IStructuredSelection selection) {
 			// stash the selection
 			this.selection = selection;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ public class PowerHardwarePinImpl extends HardwarePinImpl implements PowerHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PowerHardwarePinImpl() {
@@ -42,6 +43,7 @@ public class PowerHardwarePinImpl extends HardwarePinImpl implements PowerHardwa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -49,4 +51,4 @@ public class PowerHardwarePinImpl extends HardwarePinImpl implements PowerHardwa
 		return HardwaremodelingPackage.Literals.POWER_HARDWARE_PIN;
 	}
 
-} //PowerHardwarePinImpl
+} // PowerHardwarePinImpl

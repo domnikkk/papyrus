@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,17 +23,19 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 	 */
 	public Integer offeredTokenCount;
 
+	@Override
 	public void run() {
 		// Initialize the offered token count to zero.
 		super.run();
 		this.offeredTokenCount = 0;
 	}
 
+	@Override
 	public void sendOffers(List<Token> tokens) {
 		// If the set of tokens to be sent is empty, then offer a null token
 		// instead.
 		// Otherwise, offer the given tokens as usual.
-		if(tokens.size() == 0) {
+		if (tokens.size() == 0) {
 			ObjectToken token = new ObjectToken();
 			token.holder = this;
 			tokens.add(token);
@@ -41,33 +43,37 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 		super.sendOffers(tokens);
 	}
 
+	@Override
 	public void terminate() {
 		// Remove any offered tokens and terminate.
 		this.clearTokens();
 		super.terminate();
 	}
 
+	@Override
 	public void addToken(Token token) {
 		// Transfer the given token to be held by this node only if it is a
 		// non-null object token.
 		// If it is a control token or a null token, consume it without holding
 		// it.
-		if(token.getValue() == null) {
+		if (token.getValue() == null) {
 			token.withdraw();
 		} else {
 			super.addToken(token);
 		}
 	}
 
+	@Override
 	public Integer removeToken(Token token) {
 		// Remove the given token, if it is held by this node activation.
 		int i = super.removeToken(token);
-		if(i > 0 & i <= this.offeredTokenCount) {
+		if (i > 0 & i <= this.offeredTokenCount) {
 			this.offeredTokenCount = this.offeredTokenCount - 1;
 		}
 		return i;
 	}
 
+	@Override
 	public void clearTokens() {
 		// Remove all held tokens.
 		super.clearTokens();
@@ -79,7 +85,7 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 		// this node activation.
 		int totalValueCount = 0;
 		int i = 1;
-		while(i <= this.incomingEdges.size()) {
+		while (i <= this.incomingEdges.size()) {
 			totalValueCount = totalValueCount + this.incomingEdges.get(i - 1).countOfferedValues();
 			i = i + 1;
 		}
@@ -97,7 +103,7 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 	public Integer countUnofferedTokens() {
 		// Return the number of unoffered tokens that are to be offered next.
 		// (By default, this is all unoffered tokens.)
-		if(this.heldTokens.size() == 0) {
+		if (this.heldTokens.size() == 0) {
 			this.offeredTokenCount = 0;
 		}
 		return this.heldTokens.size() - this.offeredTokenCount;
@@ -110,7 +116,7 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 		// superstructure semantics.]
 		List<Token> tokens = new ArrayList<Token>();
 		int i = 1;
-		while(i <= this.countUnofferedTokens()) {
+		while (i <= this.countUnofferedTokens()) {
 			tokens.add(this.heldTokens.get(this.offeredTokenCount + i - 1));
 			i = i + 1;
 		}
@@ -121,7 +127,7 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation {
 		// Take the next set of unoffered tokens to be offered from this node
 		// activation and return them.
 		List<Token> tokens = this.getUnofferedTokens();
-		for(int i = 0; i < tokens.size(); i++) {
+		for (int i = 0; i < tokens.size(); i++) {
 			Token token = tokens.get(i);
 			token.withdraw();
 		}

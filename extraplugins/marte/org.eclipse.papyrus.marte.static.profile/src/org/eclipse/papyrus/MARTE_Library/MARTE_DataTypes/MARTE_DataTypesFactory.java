@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.MARTE_DataTypesPackage
  * @generated
  */
@@ -28,6 +29,7 @@ public interface MARTE_DataTypesFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	MARTE_DataTypesFactory eINSTANCE = org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesFactoryImpl.init();
@@ -36,9 +38,10 @@ public interface MARTE_DataTypesFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	MARTE_DataTypesPackage getMARTE_DataTypesPackage();
 
-} //MARTE_DataTypesFactory
+} // MARTE_DataTypesFactory

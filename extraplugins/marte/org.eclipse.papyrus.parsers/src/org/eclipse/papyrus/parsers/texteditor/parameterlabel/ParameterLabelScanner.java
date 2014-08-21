@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.Color;
  * Scanner for the action language.<BR>
  * It implements the interface IALKeywords, which contains the different keywords available in the
  * action language
- * 
+ *
  * @author Remi SCHNEKENBURGER
  * @see org.eclipse.jface.text.rules.RuleBasedScanner
  * @see com.cea.actionlanguage.sharedresources.texteditor.IRTActionKeywords
@@ -62,11 +62,11 @@ public class ParameterLabelScanner extends RuleBasedScanner implements IParamete
 		IRule[] rules = new IRule[2];
 
 		WordRule wordRule = new WordRule(new ParameterWordDetector(), other);
-		for(int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
+		for (int i = 0; i < VisibilityCompletionProposal.visibilityStrings.length; i++) {
 			// wordRule.addWord(getWordWithoutQuotes(visibilityStrings[i]), keyword);
 		}
 
-		for(int i = 0; i < ParameterModifierProposal.modifiersStrings.length; i++) {
+		for (int i = 0; i < ParameterModifierProposal.modifiersStrings.length; i++) {
 			wordRule.addWord(ParameterModifierProposal.modifiersStrings[i].trim(), keyword);
 		}
 
@@ -92,9 +92,9 @@ public class ParameterLabelScanner extends RuleBasedScanner implements IParamete
 
 	/**
 	 * returns the word for the scanner, without quotes.
-	 * 
+	 *
 	 * @param word
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getWordWithoutQuotes(String word) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ public class GetTextEditorIcon extends AbstractGetEditorIconQuery implements IJa
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String evaluate(final TextEditorModel textInstance, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		return "/" + getEditorRegistry(textInstance).getEditorURLIcon(textInstance); //$NON-NLS-1$
 	}

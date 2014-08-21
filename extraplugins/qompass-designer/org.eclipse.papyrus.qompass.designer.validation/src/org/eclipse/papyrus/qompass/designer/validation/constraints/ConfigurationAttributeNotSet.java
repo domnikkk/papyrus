@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2008-2010 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -19,20 +19,21 @@ import org.eclipse.papyrus.uml.tools.utils.StereotypeUtil;
 
 /**
  * Verify if all configuration attribute have a (user-provided) value.
+ * 
  * @author ansgar
  *
- * TODO: implementation assumes that at least the slot exists
+ *         TODO: implementation assumes that at least the slot exists
  */
 public class ConfigurationAttributeNotSet extends AbstractModelConstraint {
-	
+
 	@Override
-	public IStatus validate (IValidationContext ctx)
+	public IStatus validate(IValidationContext ctx)
 	{
 		Slot slot = (Slot) ctx.getTarget();
-		StructuralFeature feature = slot.getDefiningFeature ();
-		if ((feature != null) && (StereotypeUtil.isApplied (feature, ConfigurationProperty.class))) {
-			if (slot.getValues ().size () == 0) {
-				return ctx.createFailureStatus ("The attribute '" + feature.getName () + "' is tagged as a configuration property, but the associated slot has no value.");
+		StructuralFeature feature = slot.getDefiningFeature();
+		if ((feature != null) && (StereotypeUtil.isApplied(feature, ConfigurationProperty.class))) {
+			if (slot.getValues().size() == 0) {
+				return ctx.createFailureStatus("The attribute '" + feature.getName() + "' is tagged as a configuration property, but the associated slot has no value.");
 			}
 		}
 		return ctx.createSuccessStatus();

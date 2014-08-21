@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ public class MissionImpl extends ConceptImpl implements Mission {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MissionImpl() {
@@ -42,6 +43,7 @@ public class MissionImpl extends ConceptImpl implements Mission {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -49,4 +51,4 @@ public class MissionImpl extends ConceptImpl implements Mission {
 		return NeedsPackage.Literals.MISSION;
 	}
 
-} //MissionImpl
+} // MissionImpl

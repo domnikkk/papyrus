@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,9 @@ public final class CDOResourceURITransferData {
 
 	private static final String NS_URI = "http://www.eclipse.org/papyrus/1.0.0/cdo/private/dnd"; //$NON-NLS-1$
 
-	private static final EClass ECLASS = (EClass)EPackage.Registry.INSTANCE.getEPackage(NS_URI).getEClassifier(CDOResourceURITransferData.class.getSimpleName());
+	private static final EClass ECLASS = (EClass) EPackage.Registry.INSTANCE.getEPackage(NS_URI).getEClassifier(CDOResourceURITransferData.class.getSimpleName());
 
-	private static final EAttribute URIS = (EAttribute)ECLASS.getEStructuralFeature("resourceURIs"); //$NON-NLS-1$
+	private static final EAttribute URIS = (EAttribute) ECLASS.getEStructuralFeature("resourceURIs"); //$NON-NLS-1$
 
 	private final List<URI> uris;
 
@@ -65,7 +65,7 @@ public final class CDOResourceURITransferData {
 		ByteArrayDataOutput data = ByteStreams.newDataOutput();
 
 		data.writeInt(uris.size());
-		for(URI next : uris) {
+		for (URI next : uris) {
 			data.writeUTF(next.toString());
 		}
 
@@ -77,7 +77,7 @@ public final class CDOResourceURITransferData {
 		ByteArrayDataInput data = ByteStreams.newDataInput(serial);
 
 		final int count = data.readInt();
-		for(int i = 0; i < count; i++) {
+		for (int i = 0; i < count; i++) {
 			uris.add(URI.createURI(data.readUTF()));
 		}
 
@@ -90,7 +90,7 @@ public final class CDOResourceURITransferData {
 
 	public static CDOResourceURITransferData fromEObject(EObject object) {
 		@SuppressWarnings("unchecked")
-		List<URI> uris = isCDOResourceURITransferData(object) ? (List<URI>)object.eGet(URIS) : Collections.<URI> emptyList();
+		List<URI> uris = isCDOResourceURITransferData(object) ? (List<URI>) object.eGet(URIS) : Collections.<URI> emptyList();
 
 		return new CDOResourceURITransferData(uris);
 	}

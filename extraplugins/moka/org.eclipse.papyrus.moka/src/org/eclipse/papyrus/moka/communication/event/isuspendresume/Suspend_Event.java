@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,13 +50,13 @@ public class Suspend_Event extends EventMessage {
 	 * correspond to the fact that the execution engine encountered a breakpoint, or ended a step.
 	 * threads represent the threads available at the execution engine when
 	 * it suspended and emitted this event message.
-	 * 
+	 *
 	 * @param source
-	 *        The source for this Suspend_Event
+	 *            The source for this Suspend_Event
 	 * @param suspendDetail
-	 *        The reason/detail of this Suspend_Event
+	 *            The reason/detail of this Suspend_Event
 	 * @param threads
-	 *        The threads available at the execution engine when it emitted this Suspend_Event message
+	 *            The threads available at the execution engine when it emitted this Suspend_Event message
 	 */
 	public Suspend_Event(IDebugElement source, int suspendDetail, MokaThread[] threads) {
 		this.source = source;
@@ -70,6 +70,7 @@ public class Suspend_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().suspend_event_marshal(this);
 	}
@@ -79,15 +80,17 @@ public class Suspend_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#getDebugEvent()
 	 */
+	@Override
 	public DebugEvent getDebugEvent() {
-		if(this.debugEvent == null)
+		if (this.debugEvent == null) {
 			this.debugEvent = new DebugEvent(source, eventKind, suspendDetail);
+		}
 		return this.debugEvent;
 	}
 
 	/**
 	 * Returns the threads available at the execution engine when it emitted this Suspend_Event message
-	 * 
+	 *
 	 * @return The threads available at the execution engine when it emitted this Suspend_Event message
 	 */
 	public MokaThread[] getThreads() {

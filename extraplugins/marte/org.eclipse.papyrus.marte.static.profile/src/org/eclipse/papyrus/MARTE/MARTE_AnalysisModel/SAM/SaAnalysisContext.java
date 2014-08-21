@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,8 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getIsSched <em>Is Sched</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getOptCriterion <em>Opt Criterion</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getIsSched <em>Is Sched</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getOptCriterion <em>Opt Criterion</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface SaAnalysisContext extends GaAnalysisContext {
 	 * Returns the value of the '<em><b>Is Sched</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Sched</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Sched</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Sched</em>' attribute.
 	 * @see #setIsSched(String)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage#getSaAnalysisContext_IsSched()
@@ -53,7 +53,9 @@ public interface SaAnalysisContext extends GaAnalysisContext {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getIsSched <em>Is Sched</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Sched</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Sched</em>' attribute.
 	 * @see #getIsSched()
 	 * @generated
 	 */
@@ -64,10 +66,10 @@ public interface SaAnalysisContext extends GaAnalysisContext {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.OptimallityCriterionKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Opt Criterion</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Opt Criterion</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Opt Criterion</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.OptimallityCriterionKind
 	 * @see #setOptCriterion(OptimallityCriterionKind)
@@ -81,7 +83,9 @@ public interface SaAnalysisContext extends GaAnalysisContext {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext#getOptCriterion <em>Opt Criterion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Opt Criterion</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Opt Criterion</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.OptimallityCriterionKind
 	 * @see #getOptCriterion()
 	 * @generated

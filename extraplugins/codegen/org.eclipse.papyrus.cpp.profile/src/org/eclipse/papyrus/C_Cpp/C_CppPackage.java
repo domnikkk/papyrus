@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.C_Cpp;
 
@@ -23,12 +23,13 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.C_Cpp.C_CppFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface C_CppPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "C_Cpp"; //$NON-NLS-1$
@@ -46,6 +48,7 @@ public interface C_CppPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/C_Cpp/1"; //$NON-NLS-1$
@@ -54,6 +57,7 @@ public interface C_CppPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "C_Cpp"; //$NON-NLS-1$
@@ -62,6 +66,7 @@ public interface C_CppPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	C_CppPackage eINSTANCE = org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl.init();
@@ -70,6 +75,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl <em>Ptr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.PtrImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getPtr()
 	 * @generated
@@ -80,6 +86,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +106,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Declaration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +116,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Ptr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -116,6 +126,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Ptr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +136,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.IncludeImpl <em>Include</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.IncludeImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getInclude()
 	 * @generated
@@ -135,6 +147,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -144,6 +157,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Pre Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -153,6 +167,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -162,6 +177,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -171,6 +187,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -180,6 +197,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Package Import</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -189,6 +207,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -198,6 +217,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Include</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -207,6 +227,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ManualGenerationImpl <em>Manual Generation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ManualGenerationImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getManualGeneration()
 	 * @generated
@@ -217,6 +238,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Extension Body</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -226,6 +248,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -235,6 +258,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Manual Generation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -244,6 +268,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Manual Generation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -253,6 +278,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ExternLibraryImpl <em>Extern Library</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ExternLibraryImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getExternLibrary()
 	 * @generated
@@ -263,6 +289,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Include Paths</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -272,6 +299,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -281,6 +309,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Lib Paths</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -290,6 +319,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Macros</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -299,6 +329,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Libs</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -308,6 +339,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Includes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -317,6 +349,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Extern Library</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -326,6 +359,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Extern Library</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -335,6 +369,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl <em>No Code Gen</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getNoCodeGen()
 	 * @generated
@@ -345,6 +380,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -354,6 +390,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>No Code Gen</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -363,6 +400,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>No Code Gen</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +410,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.CppRootImpl <em>Cpp Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.CppRootImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getCppRoot()
 	 * @generated
@@ -382,6 +421,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -391,6 +431,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Cpp Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -400,6 +441,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Cpp Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -409,6 +451,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ArrayImpl <em>Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ArrayImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getArray()
 	 * @generated
@@ -419,6 +462,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -428,6 +472,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Definition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -437,6 +482,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -446,6 +492,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -455,6 +502,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -464,6 +512,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -473,6 +522,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ConstImpl <em>Const</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ConstImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getConst()
 	 * @generated
@@ -483,6 +533,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -492,6 +543,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -501,6 +553,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -510,6 +563,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Const</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -519,6 +573,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Const</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -528,6 +583,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.RefImpl <em>Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.RefImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getRef()
 	 * @generated
@@ -538,6 +594,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -547,6 +604,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -556,6 +614,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -565,6 +624,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -574,6 +634,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ExternalImpl <em>External</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ExternalImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getExternal()
 	 * @generated
@@ -584,6 +645,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -593,6 +655,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -602,6 +665,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>External</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -611,6 +675,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>External</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -620,6 +685,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.ConstInitImpl <em>Const Init</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.ConstInitImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getConstInit()
 	 * @generated
@@ -630,6 +696,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Initialisation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -639,6 +706,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -648,6 +716,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Const Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -657,6 +726,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Const Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -666,6 +736,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.FriendImpl <em>Friend</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.FriendImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getFriend()
 	 * @generated
@@ -676,6 +747,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -685,6 +757,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -694,6 +767,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Friend</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -703,6 +777,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Friend</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -712,6 +787,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.InlineImpl <em>Inline</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.InlineImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getInline()
 	 * @generated
@@ -722,6 +798,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -731,6 +808,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Inline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -740,6 +818,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Inline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -749,6 +828,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.VirtualImpl <em>Virtual</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.VirtualImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVirtual()
 	 * @generated
@@ -759,6 +839,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -768,6 +849,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Virtual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -777,6 +859,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Virtual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -786,6 +869,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.TypedefImpl <em>Typedef</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.TypedefImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTypedef()
 	 * @generated
@@ -796,6 +880,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Definition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -805,6 +890,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base primitivetype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -814,6 +900,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Typedef</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -823,6 +910,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Typedef</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -832,6 +920,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.VisibilityImpl <em>Visibility</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.VisibilityImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVisibility()
 	 * @generated
@@ -842,6 +931,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -851,6 +941,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base generalization</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -860,6 +951,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Visibility</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -869,6 +961,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Visibility</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -878,6 +971,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl <em>Cpp Init</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.CppInitImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getCppInit()
 	 * @generated
@@ -888,6 +982,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -897,6 +992,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base enumerationliteral</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -906,6 +1002,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Cpp Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -915,6 +1012,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Cpp Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -924,6 +1022,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl <em>Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplate()
 	 * @generated
@@ -934,6 +1033,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Declaration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -943,6 +1043,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -952,6 +1053,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -961,6 +1063,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -970,6 +1073,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl <em>Template Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplateBinding()
 	 * @generated
@@ -980,6 +1084,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Binding</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -989,6 +1094,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base templatebinding</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -998,6 +1104,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Template Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1007,6 +1114,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Template Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1016,6 +1124,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateParameterImpl <em>Template Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateParameterImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplateParameter()
 	 * @generated
@@ -1026,6 +1135,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1035,6 +1145,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base templateparameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1044,6 +1155,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Template Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1053,6 +1165,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Template Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1062,6 +1175,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.UnionImpl <em>Union</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.UnionImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getUnion()
 	 * @generated
@@ -1072,6 +1186,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1081,6 +1196,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Union</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1090,6 +1206,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Union</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1099,6 +1216,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.StorageClassImpl <em>Storage Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.StorageClassImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getStorageClass()
 	 * @generated
@@ -1109,6 +1227,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Storage Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1118,6 +1237,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Storage Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1127,6 +1247,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Storage Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1136,6 +1257,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.impl.VolatileImpl <em>Volatile</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.impl.VolatileImpl
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVolatile()
 	 * @generated
@@ -1146,6 +1268,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1155,6 +1278,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1164,6 +1288,7 @@ public interface C_CppPackage extends EPackage {
 	 * The feature id for the '<em><b>Base operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1173,6 +1298,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of structural features of the '<em>Volatile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1182,6 +1308,7 @@ public interface C_CppPackage extends EPackage {
 	 * The number of operations of the '<em>Volatile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1191,6 +1318,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.VisibilityKind
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVisibilityKind()
 	 * @generated
@@ -1201,6 +1329,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.EAccessKind <em>EAccess Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.EAccessKind
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEAccessKind()
 	 * @generated
@@ -1211,6 +1340,7 @@ public interface C_CppPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.C_Cpp.EStorageClass <em>EStorage Class</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.C_Cpp.EStorageClass
 	 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEStorageClass()
 	 * @generated
@@ -1222,6 +1352,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Ptr <em>Ptr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Ptr</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ptr
 	 * @generated
@@ -1232,6 +1363,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Ptr#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ptr#getBase_parameter()
 	 * @see #getPtr()
@@ -1243,6 +1375,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Ptr#getBase_property <em>Base property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base property</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ptr#getBase_property()
 	 * @see #getPtr()
@@ -1254,6 +1387,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Ptr#getDeclaration <em>Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declaration</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ptr#getDeclaration()
 	 * @see #getPtr()
@@ -1265,6 +1399,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Include <em>Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Include</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include
 	 * @generated
@@ -1275,6 +1410,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Include#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Body</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getBody()
 	 * @see #getInclude()
@@ -1286,6 +1422,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Include#getPreBody <em>Pre Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Pre Body</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getPreBody()
 	 * @see #getInclude()
@@ -1297,6 +1434,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Include#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getHeader()
 	 * @see #getInclude()
@@ -1308,6 +1446,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_package <em>Base package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base package</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getBase_package()
 	 * @see #getInclude()
@@ -1319,6 +1458,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_class <em>Base class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getBase_class()
 	 * @see #getInclude()
@@ -1330,6 +1470,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Include#getBase_PackageImport <em>Base Package Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Package Import</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Include#getBase_PackageImport()
 	 * @see #getInclude()
@@ -1341,6 +1482,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.ManualGeneration <em>Manual Generation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Manual Generation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ManualGeneration
 	 * @generated
@@ -1351,6 +1493,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.ManualGeneration#getExtensionBody <em>Extension Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Extension Body</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ManualGeneration#getExtensionBody()
 	 * @see #getManualGeneration()
@@ -1362,6 +1505,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.ManualGeneration#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ManualGeneration#getBase_Class()
 	 * @see #getManualGeneration()
@@ -1373,6 +1517,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary <em>Extern Library</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Extern Library</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary
 	 * @generated
@@ -1383,6 +1528,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getIncludePaths <em>Include Paths</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Include Paths</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getIncludePaths()
 	 * @see #getExternLibrary()
@@ -1394,6 +1540,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getBase_package <em>Base package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base package</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getBase_package()
 	 * @see #getExternLibrary()
@@ -1405,6 +1552,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getLibPaths <em>Lib Paths</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Lib Paths</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getLibPaths()
 	 * @see #getExternLibrary()
@@ -1416,6 +1564,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getMacros <em>Macros</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Macros</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getMacros()
 	 * @see #getExternLibrary()
@@ -1427,6 +1576,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getLibs <em>Libs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Libs</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getLibs()
 	 * @see #getExternLibrary()
@@ -1438,6 +1588,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.C_Cpp.ExternLibrary#getIncludes <em>Includes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Includes</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ExternLibrary#getIncludes()
 	 * @see #getExternLibrary()
@@ -1449,6 +1600,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.NoCodeGen <em>No Code Gen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>No Code Gen</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.NoCodeGen
 	 * @generated
@@ -1459,6 +1611,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.NoCodeGen#getBase_element <em>Base element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base element</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.NoCodeGen#getBase_element()
 	 * @see #getNoCodeGen()
@@ -1470,6 +1623,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.CppRoot <em>Cpp Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Cpp Root</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.CppRoot
 	 * @generated
@@ -1480,6 +1634,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.CppRoot#getBase_package <em>Base package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base package</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.CppRoot#getBase_package()
 	 * @see #getCppRoot()
@@ -1491,6 +1646,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Array <em>Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Array</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Array
 	 * @generated
@@ -1501,6 +1657,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Array#getBase_parameter()
 	 * @see #getArray()
@@ -1512,6 +1669,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Array#getDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Definition</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Array#getDefinition()
 	 * @see #getArray()
@@ -1523,6 +1681,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_property <em>Base property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base property</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Array#getBase_property()
 	 * @see #getArray()
@@ -1534,6 +1693,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Array#getBase_association <em>Base association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base association</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Array#getBase_association()
 	 * @see #getArray()
@@ -1545,6 +1705,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Const <em>Const</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Const</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Const
 	 * @generated
@@ -1555,6 +1716,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Const#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Const#getBase_parameter()
 	 * @see #getConst()
@@ -1566,6 +1728,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Const#getBase_property <em>Base property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base property</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Const#getBase_property()
 	 * @see #getConst()
@@ -1577,6 +1740,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Const#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Const#getBase_operation()
 	 * @see #getConst()
@@ -1588,6 +1752,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Ref <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ref
 	 * @generated
@@ -1598,6 +1763,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Ref#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ref#getBase_parameter()
 	 * @see #getRef()
@@ -1609,6 +1775,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Ref#getBase_property <em>Base property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base property</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Ref#getBase_property()
 	 * @see #getRef()
@@ -1620,6 +1787,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.External <em>External</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>External</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.External
 	 * @generated
@@ -1630,6 +1798,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.External#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.External#getName()
 	 * @see #getExternal()
@@ -1641,6 +1810,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.External#getBase_Classifier <em>Base Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Classifier</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.External#getBase_Classifier()
 	 * @see #getExternal()
@@ -1652,6 +1822,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.ConstInit <em>Const Init</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Const Init</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ConstInit
 	 * @generated
@@ -1662,6 +1833,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.ConstInit#getInitialisation <em>Initialisation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Initialisation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ConstInit#getInitialisation()
 	 * @see #getConstInit()
@@ -1673,6 +1845,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.ConstInit#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.ConstInit#getBase_operation()
 	 * @see #getConstInit()
@@ -1684,6 +1857,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Friend <em>Friend</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Friend</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Friend
 	 * @generated
@@ -1694,6 +1868,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Friend#getBase_dependency <em>Base dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base dependency</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Friend#getBase_dependency()
 	 * @see #getFriend()
@@ -1705,6 +1880,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Friend#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Friend#getBase_operation()
 	 * @see #getFriend()
@@ -1716,6 +1892,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Inline <em>Inline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Inline</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Inline
 	 * @generated
@@ -1726,6 +1903,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Inline#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Inline#getBase_operation()
 	 * @see #getInline()
@@ -1737,6 +1915,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Virtual <em>Virtual</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Virtual</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Virtual
 	 * @generated
@@ -1747,6 +1926,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Virtual#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Virtual#getBase_operation()
 	 * @see #getVirtual()
@@ -1758,6 +1938,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Typedef <em>Typedef</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Typedef</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Typedef
 	 * @generated
@@ -1768,6 +1949,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Typedef#getDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Definition</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Typedef#getDefinition()
 	 * @see #getTypedef()
@@ -1779,6 +1961,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Typedef#getBase_primitivetype <em>Base primitivetype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base primitivetype</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Typedef#getBase_primitivetype()
 	 * @see #getTypedef()
@@ -1790,6 +1973,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Visibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Visibility
 	 * @generated
@@ -1800,6 +1984,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Visibility#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Visibility#getValue()
 	 * @see #getVisibility()
@@ -1811,6 +1996,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Visibility#getBase_generalization <em>Base generalization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base generalization</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Visibility#getBase_generalization()
 	 * @see #getVisibility()
@@ -1822,6 +2008,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.CppInit <em>Cpp Init</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Cpp Init</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.CppInit
 	 * @generated
@@ -1832,6 +2019,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.CppInit#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.CppInit#getValue()
 	 * @see #getCppInit()
@@ -1843,6 +2031,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.CppInit#getBase_enumerationliteral <em>Base enumerationliteral</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base enumerationliteral</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.CppInit#getBase_enumerationliteral()
 	 * @see #getCppInit()
@@ -1854,6 +2043,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Template <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Template</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Template
 	 * @generated
@@ -1864,6 +2054,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.Template#getDeclaration <em>Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declaration</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Template#getDeclaration()
 	 * @see #getTemplate()
@@ -1875,6 +2066,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Template#getBase_class <em>Base class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Template#getBase_class()
 	 * @see #getTemplate()
@@ -1886,6 +2078,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.TemplateBinding <em>Template Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Template Binding</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateBinding
 	 * @generated
@@ -1896,6 +2089,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.TemplateBinding#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Binding</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateBinding#getBinding()
 	 * @see #getTemplateBinding()
@@ -1907,6 +2101,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.TemplateBinding#getBase_templatebinding <em>Base templatebinding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base templatebinding</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateBinding#getBase_templatebinding()
 	 * @see #getTemplateBinding()
@@ -1918,6 +2113,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.TemplateParameter <em>Template Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Template Parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateParameter
 	 * @generated
@@ -1928,6 +2124,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.TemplateParameter#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateParameter#getName()
 	 * @see #getTemplateParameter()
@@ -1939,6 +2136,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.TemplateParameter#getBase_templateparameter <em>Base templateparameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base templateparameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.TemplateParameter#getBase_templateparameter()
 	 * @see #getTemplateParameter()
@@ -1950,6 +2148,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Union <em>Union</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Union</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Union
 	 * @generated
@@ -1960,6 +2159,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Union#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Union#getBase_DataType()
 	 * @see #getUnion()
@@ -1971,6 +2171,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.StorageClass <em>Storage Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Storage Class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.StorageClass
 	 * @generated
@@ -1981,6 +2182,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.C_Cpp.StorageClass#getStorageClass <em>Storage Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Storage Class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.StorageClass#getStorageClass()
 	 * @see #getStorageClass()
@@ -1992,6 +2194,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.C_Cpp.Volatile <em>Volatile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Volatile</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Volatile
 	 * @generated
@@ -2002,6 +2205,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_parameter <em>Base parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base parameter</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_parameter()
 	 * @see #getVolatile()
@@ -2013,6 +2217,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_property <em>Base property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base property</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_property()
 	 * @see #getVolatile()
@@ -2024,6 +2229,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.C_Cpp.Volatile#getBase_operation <em>Base operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Base operation</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.Volatile#getBase_operation()
 	 * @see #getVolatile()
@@ -2035,6 +2241,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Visibility Kind</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.VisibilityKind
 	 * @generated
@@ -2045,6 +2252,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.C_Cpp.EAccessKind <em>EAccess Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>EAccess Kind</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.EAccessKind
 	 * @generated
@@ -2055,6 +2263,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.C_Cpp.EStorageClass <em>EStorage Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>EStorage Class</em>'.
 	 * @see org.eclipse.papyrus.C_Cpp.EStorageClass
 	 * @generated
@@ -2065,6 +2274,7 @@ public interface C_CppPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2074,12 +2284,13 @@ public interface C_CppPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -2087,6 +2298,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.PtrImpl <em>Ptr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.PtrImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getPtr()
 		 * @generated
@@ -2097,6 +2309,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PTR__BASE_PARAMETER = eINSTANCE.getPtr_Base_parameter();
@@ -2105,6 +2318,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference PTR__BASE_PROPERTY = eINSTANCE.getPtr_Base_property();
@@ -2113,6 +2327,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declaration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PTR__DECLARATION = eINSTANCE.getPtr_Declaration();
@@ -2121,6 +2336,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.IncludeImpl <em>Include</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.IncludeImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getInclude()
 		 * @generated
@@ -2131,6 +2347,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INCLUDE__BODY = eINSTANCE.getInclude_Body();
@@ -2139,6 +2356,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pre Body</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INCLUDE__PRE_BODY = eINSTANCE.getInclude_PreBody();
@@ -2147,6 +2365,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INCLUDE__HEADER = eINSTANCE.getInclude_Header();
@@ -2155,6 +2374,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INCLUDE__BASE_PACKAGE = eINSTANCE.getInclude_Base_package();
@@ -2163,6 +2383,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INCLUDE__BASE_CLASS = eINSTANCE.getInclude_Base_class();
@@ -2171,6 +2392,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Package Import</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INCLUDE__BASE_PACKAGE_IMPORT = eINSTANCE.getInclude_Base_PackageImport();
@@ -2179,6 +2401,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ManualGenerationImpl <em>Manual Generation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ManualGenerationImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getManualGeneration()
 		 * @generated
@@ -2189,6 +2412,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extension Body</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MANUAL_GENERATION__EXTENSION_BODY = eINSTANCE.getManualGeneration_ExtensionBody();
@@ -2197,6 +2421,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MANUAL_GENERATION__BASE_CLASS = eINSTANCE.getManualGeneration_Base_Class();
@@ -2205,6 +2430,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ExternLibraryImpl <em>Extern Library</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ExternLibraryImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getExternLibrary()
 		 * @generated
@@ -2215,6 +2441,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Include Paths</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERN_LIBRARY__INCLUDE_PATHS = eINSTANCE.getExternLibrary_IncludePaths();
@@ -2223,6 +2450,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference EXTERN_LIBRARY__BASE_PACKAGE = eINSTANCE.getExternLibrary_Base_package();
@@ -2231,6 +2459,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Lib Paths</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERN_LIBRARY__LIB_PATHS = eINSTANCE.getExternLibrary_LibPaths();
@@ -2239,6 +2468,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Macros</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERN_LIBRARY__MACROS = eINSTANCE.getExternLibrary_Macros();
@@ -2247,6 +2477,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Libs</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERN_LIBRARY__LIBS = eINSTANCE.getExternLibrary_Libs();
@@ -2255,6 +2486,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Includes</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERN_LIBRARY__INCLUDES = eINSTANCE.getExternLibrary_Includes();
@@ -2263,6 +2495,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl <em>No Code Gen</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.NoCodeGenImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getNoCodeGen()
 		 * @generated
@@ -2273,6 +2506,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference NO_CODE_GEN__BASE_ELEMENT = eINSTANCE.getNoCodeGen_Base_element();
@@ -2281,6 +2515,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.CppRootImpl <em>Cpp Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.CppRootImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getCppRoot()
 		 * @generated
@@ -2291,6 +2526,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base package</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CPP_ROOT__BASE_PACKAGE = eINSTANCE.getCppRoot_Base_package();
@@ -2299,6 +2535,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ArrayImpl <em>Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ArrayImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getArray()
 		 * @generated
@@ -2309,6 +2546,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARRAY__BASE_PARAMETER = eINSTANCE.getArray_Base_parameter();
@@ -2317,6 +2555,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ARRAY__DEFINITION = eINSTANCE.getArray_Definition();
@@ -2325,6 +2564,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARRAY__BASE_PROPERTY = eINSTANCE.getArray_Base_property();
@@ -2333,6 +2573,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ARRAY__BASE_ASSOCIATION = eINSTANCE.getArray_Base_association();
@@ -2341,6 +2582,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ConstImpl <em>Const</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ConstImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getConst()
 		 * @generated
@@ -2351,6 +2593,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONST__BASE_PARAMETER = eINSTANCE.getConst_Base_parameter();
@@ -2359,6 +2602,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONST__BASE_PROPERTY = eINSTANCE.getConst_Base_property();
@@ -2367,6 +2611,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONST__BASE_OPERATION = eINSTANCE.getConst_Base_operation();
@@ -2375,6 +2620,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.RefImpl <em>Ref</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.RefImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getRef()
 		 * @generated
@@ -2385,6 +2631,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference REF__BASE_PARAMETER = eINSTANCE.getRef_Base_parameter();
@@ -2393,6 +2640,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference REF__BASE_PROPERTY = eINSTANCE.getRef_Base_property();
@@ -2401,6 +2649,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ExternalImpl <em>External</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ExternalImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getExternal()
 		 * @generated
@@ -2411,6 +2660,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute EXTERNAL__NAME = eINSTANCE.getExternal_Name();
@@ -2419,6 +2669,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference EXTERNAL__BASE_CLASSIFIER = eINSTANCE.getExternal_Base_Classifier();
@@ -2427,6 +2678,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.ConstInitImpl <em>Const Init</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.ConstInitImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getConstInit()
 		 * @generated
@@ -2437,6 +2689,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Initialisation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CONST_INIT__INITIALISATION = eINSTANCE.getConstInit_Initialisation();
@@ -2445,6 +2698,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CONST_INIT__BASE_OPERATION = eINSTANCE.getConstInit_Base_operation();
@@ -2453,6 +2707,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.FriendImpl <em>Friend</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.FriendImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getFriend()
 		 * @generated
@@ -2463,6 +2718,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base dependency</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FRIEND__BASE_DEPENDENCY = eINSTANCE.getFriend_Base_dependency();
@@ -2471,6 +2727,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FRIEND__BASE_OPERATION = eINSTANCE.getFriend_Base_operation();
@@ -2479,6 +2736,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.InlineImpl <em>Inline</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.InlineImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getInline()
 		 * @generated
@@ -2489,6 +2747,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INLINE__BASE_OPERATION = eINSTANCE.getInline_Base_operation();
@@ -2497,6 +2756,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.VirtualImpl <em>Virtual</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.VirtualImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVirtual()
 		 * @generated
@@ -2507,6 +2767,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VIRTUAL__BASE_OPERATION = eINSTANCE.getVirtual_Base_operation();
@@ -2515,6 +2776,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.TypedefImpl <em>Typedef</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.TypedefImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTypedef()
 		 * @generated
@@ -2525,6 +2787,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TYPEDEF__DEFINITION = eINSTANCE.getTypedef_Definition();
@@ -2533,6 +2796,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base primitivetype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TYPEDEF__BASE_PRIMITIVETYPE = eINSTANCE.getTypedef_Base_primitivetype();
@@ -2541,6 +2805,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.VisibilityImpl <em>Visibility</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.VisibilityImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVisibility()
 		 * @generated
@@ -2551,6 +2816,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute VISIBILITY__VALUE = eINSTANCE.getVisibility_Value();
@@ -2559,6 +2825,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base generalization</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VISIBILITY__BASE_GENERALIZATION = eINSTANCE.getVisibility_Base_generalization();
@@ -2567,6 +2834,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.CppInitImpl <em>Cpp Init</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.CppInitImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getCppInit()
 		 * @generated
@@ -2577,6 +2845,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CPP_INIT__VALUE = eINSTANCE.getCppInit_Value();
@@ -2585,6 +2854,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base enumerationliteral</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CPP_INIT__BASE_ENUMERATIONLITERAL = eINSTANCE.getCppInit_Base_enumerationliteral();
@@ -2593,6 +2863,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateImpl <em>Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplate()
 		 * @generated
@@ -2603,6 +2874,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declaration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TEMPLATE__DECLARATION = eINSTANCE.getTemplate_Declaration();
@@ -2611,6 +2883,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TEMPLATE__BASE_CLASS = eINSTANCE.getTemplate_Base_class();
@@ -2619,6 +2892,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl <em>Template Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateBindingImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplateBinding()
 		 * @generated
@@ -2629,6 +2903,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Binding</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TEMPLATE_BINDING__BINDING = eINSTANCE.getTemplateBinding_Binding();
@@ -2637,6 +2912,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base templatebinding</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TEMPLATE_BINDING__BASE_TEMPLATEBINDING = eINSTANCE.getTemplateBinding_Base_templatebinding();
@@ -2645,6 +2921,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.TemplateParameterImpl <em>Template Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.TemplateParameterImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getTemplateParameter()
 		 * @generated
@@ -2655,6 +2932,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TEMPLATE_PARAMETER__NAME = eINSTANCE.getTemplateParameter_Name();
@@ -2663,6 +2941,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base templateparameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TEMPLATE_PARAMETER__BASE_TEMPLATEPARAMETER = eINSTANCE.getTemplateParameter_Base_templateparameter();
@@ -2671,6 +2950,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.UnionImpl <em>Union</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.UnionImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getUnion()
 		 * @generated
@@ -2681,6 +2961,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UNION__BASE_DATA_TYPE = eINSTANCE.getUnion_Base_DataType();
@@ -2689,6 +2970,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.StorageClassImpl <em>Storage Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.StorageClassImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getStorageClass()
 		 * @generated
@@ -2699,6 +2981,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Storage Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STORAGE_CLASS__STORAGE_CLASS = eINSTANCE.getStorageClass_StorageClass();
@@ -2707,6 +2990,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.impl.VolatileImpl <em>Volatile</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.impl.VolatileImpl
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVolatile()
 		 * @generated
@@ -2717,6 +3001,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VOLATILE__BASE_PARAMETER = eINSTANCE.getVolatile_Base_parameter();
@@ -2725,6 +3010,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VOLATILE__BASE_PROPERTY = eINSTANCE.getVolatile_Base_property();
@@ -2733,6 +3019,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VOLATILE__BASE_OPERATION = eINSTANCE.getVolatile_Base_operation();
@@ -2741,6 +3028,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.VisibilityKind <em>Visibility Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.VisibilityKind
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getVisibilityKind()
 		 * @generated
@@ -2751,6 +3039,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.EAccessKind <em>EAccess Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.EAccessKind
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEAccessKind()
 		 * @generated
@@ -2761,6 +3050,7 @@ public interface C_CppPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.C_Cpp.EStorageClass <em>EStorage Class</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.C_Cpp.EStorageClass
 		 * @see org.eclipse.papyrus.C_Cpp.impl.C_CppPackageImpl#getEStorageClass()
 		 * @generated
@@ -2769,4 +3059,4 @@ public interface C_CppPackage extends EPackage {
 
 	}
 
-} //C_CppPackage
+} // C_CppPackage

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -35,6 +35,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected LinePropertySetterImpl() {
@@ -45,6 +46,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -54,6 +56,7 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 
 	/**
 	 * Set the property of the specified view.
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertySetterImpl#setValue(org.eclipse.gmf.runtime.notation.View, org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance)
 	 *
 	 * @param view
@@ -65,20 +68,20 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 
 		// Try to get the FontStyle object to modify
 		LineStyle style;
-		if(view instanceof FontStyle) {
+		if (view instanceof FontStyle) {
 			// Try directly (case of Shape ...)
-			style = (LineStyle)view;
-		} 
+			style = (LineStyle) view;
+		}
 		else {
 			// Try as additionnal style
-			style = (LineStyle)view.getStyle(NotationPackage.eINSTANCE.getLineStyle() );
+			style = (LineStyle) view.getStyle(NotationPackage.eINSTANCE.getLineStyle());
 		}
 
 		// Set values
-		if( style != null ) {
+		if (style != null) {
 
 
-			LineInstance lineValue = (LineInstance)value;
+			LineInstance lineValue = (LineInstance) value;
 
 			style.setLineColor(lineValue.getLineColor());
 			style.setLineWidth(lineValue.getLineWith());
@@ -86,4 +89,4 @@ public class LinePropertySetterImpl extends PropertySetterImpl implements LinePr
 
 	}
 
-} //LinePropertySetterImpl
+} // LinePropertySetterImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,33 +41,35 @@ public class PapyrusCDTEditorFactory extends AbstractEditorFactory {
 
 	/**
 	 * Create the IPageModel that is used by the SashWindows to manage the editor.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#createIPageModel(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
-	 *        The model pushed in the sashmodel by the creation command
+	 *            The model pushed in the sashmodel by the creation command
 	 * @return A model implementing the IPageModel
 	 */
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 		return new TextEditorModelDelegate(pageIdentifier);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#isPageModelFactoryFor(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
-		if(pageIdentifier instanceof TextEditorModel) {
-			return ((TextEditorModel)pageIdentifier).getType().equals(this.getExpectedType());
+		if (pageIdentifier instanceof TextEditorModel) {
+			return ((TextEditorModel) pageIdentifier).getType().equals(this.getExpectedType());
 		}
 		return false;
 	}
 
 	/**
 	 * IEditorModel used internally by the SashContainer. This model know how to handle IEditor creation.
-	 * 
+	 *
 	 */
 	class TextEditorModelDelegate implements IEditorModel {
 
@@ -82,28 +84,29 @@ public class PapyrusCDTEditorFactory extends AbstractEditorFactory {
 		private TextEditorModel rawEditorModel;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
 		 */
 		public TextEditorModelDelegate(Object pageIdentifier) {
-			rawEditorModel = (TextEditorModel)pageIdentifier;
+			rawEditorModel = (TextEditorModel) pageIdentifier;
 		}
 
 		/**
 		 * Create the IEditor for the diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#createIEditorPart()
 		 * @return
 		 * @throws PartInitException
-		 * 
+		 *
 		 */
+		@Override
 		public IEditorPart createIEditorPart() throws PartInitException {
 			try {
-				//we use this way when there is one factory for several editor types
-				//				Constructor<?> c = getDiagramClass().getConstructor(ServicesRegistry.class, TextEditorModel.class);
-				//				editor = (IEditorPart)c.newInstance(servicesRegistry, rawModel);
+				// we use this way when there is one factory for several editor types
+				// Constructor<?> c = getDiagramClass().getConstructor(ServicesRegistry.class, TextEditorModel.class);
+				// editor = (IEditorPart)c.newInstance(servicesRegistry, rawModel);
 
-				//we use this way when there is only one editor type
+				// we use this way when there is only one editor type
 				editor = new PapyrusCDTEditor(getServiceRegistry(), rawEditorModel);
 				return editor;
 
@@ -117,17 +120,18 @@ public class PapyrusCDTEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the action bar requested by the Editor.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#getActionBarContributor()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public EditorActionBarContributor getActionBarContributor() {
 
 			String actionBarId = editorDescriptor.getActionBarContributorId();
 
 			// Do nothing if no EditorActionBarContributor is specify.
-			if(actionBarId == null || actionBarId.length() == 0) {
+			if (actionBarId == null || actionBarId.length() == 0) {
 				return null;
 			}
 
@@ -154,31 +158,33 @@ public class PapyrusCDTEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the underlying RawModel. Return the TextEditor (normally returns a diagram)
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getRawModel()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Object getRawModel() {
 			return rawEditorModel;
 		}
 
 		/**
 		 * Get the icon to be shown by Tabs
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabIcon()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Image getTabIcon() {
 			org.eclipse.papyrus.infra.widgets.Activator widgetsActivator =
-				org.eclipse.papyrus.infra.widgets.Activator.getDefault();
-			if(widgetsActivator == null) {
+					org.eclipse.papyrus.infra.widgets.Activator.getDefault();
+			if (widgetsActivator == null) {
 				return null;
 			}
 			String path = getEditorDescriptor().getIconURL();
 			if (path.startsWith(Activator.PLUGIN_ID)) {
-				// remove PLUGIN-ID prefix from the path (since the image will be searched relative to plugin) 
+				// remove PLUGIN-ID prefix from the path (since the image will be searched relative to plugin)
 				path = path.substring(Activator.PLUGIN_ID.length());
 			}
 			return widgetsActivator.getImage(Activator.PLUGIN_ID, path);
@@ -186,15 +192,16 @@ public class PapyrusCDTEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the title of the Diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabTitle()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public String getTabTitle() {
 			return rawEditorModel.getName();
 		}
-		
+
 		@Override
 		public void dispose() {
 			// Pass. The tab icon is a plugin-shared image

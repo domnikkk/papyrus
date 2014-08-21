@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.papyrus.facademapping.util.FacademappingAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FacademappingItemProviderAdapterFactory extends FacademappingAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -48,6 +49,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -56,6 +58,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -64,6 +67,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -72,6 +76,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FacademappingItemProviderAdapterFactory() {
@@ -86,6 +91,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facademapping.Mapping} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MappingItemProvider mappingItemProvider;
@@ -94,6 +100,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facademapping.Mapping}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,6 +116,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facademapping.StereotypedMapping} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StereotypedMappingItemProvider stereotypedMappingItemProvider;
@@ -117,6 +125,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facademapping.StereotypedMapping}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,6 +141,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.facademapping.FacadeMappping} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FacadeMapppingItemProvider facadeMapppingItemProvider;
@@ -140,6 +150,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.facademapping.FacadeMappping}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,8 +166,10 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -165,8 +178,10 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -174,6 +189,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,6 +201,7 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,13 +212,14 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -213,8 +231,10 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -223,8 +243,10 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -233,8 +255,10 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -244,15 +268,23 @@ public class FacademappingItemProviderAdapterFactory extends FacademappingAdapte
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (mappingItemProvider != null) mappingItemProvider.dispose();
-		if (stereotypedMappingItemProvider != null) stereotypedMappingItemProvider.dispose();
-		if (facadeMapppingItemProvider != null) facadeMapppingItemProvider.dispose();
+		if (mappingItemProvider != null) {
+			mappingItemProvider.dispose();
+		}
+		if (stereotypedMappingItemProvider != null) {
+			stereotypedMappingItemProvider.dispose();
+		}
+		if (facadeMapppingItemProvider != null) {
+			facadeMapppingItemProvider.dispose();
+		}
 	}
 
 }

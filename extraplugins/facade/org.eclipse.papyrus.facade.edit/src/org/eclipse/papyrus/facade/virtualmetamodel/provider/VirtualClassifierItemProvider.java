@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.facade.virtualmetamodel.VirtualClassifier} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class VirtualClassifierItemProvider
-	extends VirtualElementItemProvider
-	implements
+		extends VirtualElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class VirtualClassifierItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VirtualClassifierItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class VirtualClassifierItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,22 +75,24 @@ public class VirtualClassifierItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VirtualClassifier)object).getAliasName();
+		String label = ((VirtualClassifier) object).getAliasName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_VirtualClassifier_type") :
-			getString("_UI_VirtualClassifier_type") + " " + label;
+				getString("_UI_VirtualClassifier_type") :
+				getString("_UI_VirtualClassifier_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,6 +106,7 @@ public class VirtualClassifierItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

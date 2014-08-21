@@ -41,19 +41,19 @@ public class AddProfileAndModelLibsHandler {
 
 	/**
 	 * Retrieve a model library from the repository
-	 * 
+	 *
 	 * @param uri
-	 *        the URI of the repository
-	 * 
+	 *            the URI of the repository
+	 *
 	 * @return
 	 */
 	public PackageImport getModelLibraryImportFromURI(URI uri, EditingDomain domain) {
 		// Try to reach model
 		Element root = getContent(uri, domain);
-		if(root instanceof Package) {
+		if (root instanceof Package) {
 
 			// Import model library
-			Package libToImport = (Package)root;
+			Package libToImport = (Package) root;
 			// create import package
 			PackageImport modelLibImport = UMLFactory.eINSTANCE.createPackageImport();
 			modelLibImport.setImportedPackage(libToImport);
@@ -71,31 +71,31 @@ public class AddProfileAndModelLibsHandler {
 
 	public static Element getContent(Resource resource) {
 		EList<EObject> contentObj = resource.getContents();
-		if((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
-			return (Element)contentObj.get(0);
+		if ((contentObj.size() > 0) && (contentObj.get(0) instanceof Element)) {
+			return (Element) contentObj.get(0);
 		}
 		return null;
 	}
 
 	/**
 	 * Check whether a package import is already done
-	 * 
+	 *
 	 * @param selectedPkg
 	 * @param pi
 	 * @return
 	 */
 	boolean isAlreadyImported(Package selectedPkg, PackageImport pi) {
-		for(PackageImport existingPI : selectedPkg.getPackageImports()) {
-			if((existingPI.getImportedPackage() == null) ||
-				(pi.getImportedPackage() == null)) {
+		for (PackageImport existingPI : selectedPkg.getPackageImports()) {
+			if ((existingPI.getImportedPackage() == null) ||
+					(pi.getImportedPackage() == null)) {
 				// import package are null (should not happen?!)
 				continue;
 			}
-			if((existingPI.getImportedPackage().getName() == null) ||
-				(pi.getImportedPackage().getName() == null)) {
+			if ((existingPI.getImportedPackage().getName() == null) ||
+					(pi.getImportedPackage().getName() == null)) {
 				// import package name not set (should not happen?!)
 				continue;
-			} else if(existingPI.getImportedPackage().getName().equals(pi.getImportedPackage().getName())) {
+			} else if (existingPI.getImportedPackage().getName().equals(pi.getImportedPackage().getName())) {
 				return true;
 			}
 		}
@@ -111,7 +111,7 @@ public class AddProfileAndModelLibsHandler {
 	 * {@inheritDoc}
 	 */
 	public Object addProfileAndImport(final Package selectedPkg) throws ExecutionException {
-		
+
 		final TransactionalEditingDomain domain;
 		try {
 			ServiceUtilsForActionHandlers serviceUtils = ServiceUtilsForActionHandlers.getInstance();
@@ -121,10 +121,11 @@ public class AddProfileAndModelLibsHandler {
 		}
 		CommandStack stack = domain.getCommandStack();
 		stack.execute(new RecordingCommand(domain, "Add C++ profile & ANSI-C library") { //$NON-NLS-1$
+			@Override
 			public void doExecute() {
-				// add primitive types			
+				// add primitive types
 				// create import package to primitiveType
-				PackageImport pi = getModelLibraryImportFromURI (URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), domain);
+				PackageImport pi = getModelLibraryImportFromURI(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), domain);
 				selectedPkg.getPackageImports().add(pi);
 				addCppProfile(selectedPkg, domain);
 			};
@@ -136,12 +137,12 @@ public class AddProfileAndModelLibsHandler {
 
 		// Retrieve C++ profile
 		Profile cppProfile =
-			(Profile)getContent(URI.createURI(CPP_PROFILE_URI), domain);
-		
+				(Profile) getContent(URI.createURI(CPP_PROFILE_URI), domain);
+
 		// Apply C++ profile to model
-		if(cppProfile instanceof Profile) {
+		if (cppProfile instanceof Profile) {
 			Profile profile = selectedPkg.getAppliedProfile(cppProfile.getQualifiedName());
-			if((profile == null) && (!cppProfile.getOwnedStereotypes().isEmpty())) {
+			if ((profile == null) && (!cppProfile.getOwnedStereotypes().isEmpty())) {
 				selectedPkg.applyProfile(cppProfile);
 			}
 		}

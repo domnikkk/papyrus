@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class AreThereAppliedProfilesFromWS extends PropertyTester {
 
 	/**
 	 * @see org.eclipse.core.expressions.IPropertyTester#test(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Object)
-	 * 
+	 *
 	 * @param receiver
 	 * @param property
 	 * @param args
@@ -48,26 +48,27 @@ public class AreThereAppliedProfilesFromWS extends PropertyTester {
 	 * @return
 	 */
 
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 
 		// Ensure Papyrus is the active editor
 
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
+		if ((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
 			return false;
 		}
 		Object currentValue = null;
-		if(ARE_THERE_APPLIED_PROFILES.equals(property)) {
+		if (ARE_THERE_APPLIED_PROFILES.equals(property)) {
 
-			ServicesRegistry registry = ((IMultiDiagramEditor)editor).getServicesRegistry();
+			ServicesRegistry registry = ((IMultiDiagramEditor) editor).getServicesRegistry();
 			UmlModel openedModel;
 			try {
-				openedModel = (UmlModel)ServiceUtils.getInstance().getModelSet(registry).getModel(UmlModel.MODEL_ID);
+				openedModel = (UmlModel) ServiceUtils.getInstance().getModelSet(registry).getModel(UmlModel.MODEL_ID);
 				EObject root = openedModel.lookupRoot();
 				Object[] profiles = ProfileUtil.getAppliedProfilesFromWS(root);
 
-				for(int i = 0; i < profiles.length; i++) {
-					if(profiles[i] instanceof Profile) {
+				for (int i = 0; i < profiles.length; i++) {
+					if (profiles[i] instanceof Profile) {
 						currentValue = true;
 						break;
 					}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -41,11 +41,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LayersPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LayerNamedStyle} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LayerNamedStyleItemProvider
-	extends NamedStyleItemProvider
-	implements
+		extends NamedStyleItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -55,6 +56,7 @@ public class LayerNamedStyleItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LayerNamedStyleItemProvider(AdapterFactory adapterFactory) {
@@ -65,6 +67,7 @@ public class LayerNamedStyleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,11 +80,11 @@ public class LayerNamedStyleItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,6 +99,7 @@ public class LayerNamedStyleItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,6 +114,7 @@ public class LayerNamedStyleItemProvider
 	 * This returns LayerNamedStyle.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,14 +126,15 @@ public class LayerNamedStyleItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LayerNamedStyle)object).getName();
+		String label = ((LayerNamedStyle) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_LayerNamedStyle_type") :
-			getString("_UI_LayerNamedStyle_type") + " " + label;
+				getString("_UI_LayerNamedStyle_type") :
+				getString("_UI_LayerNamedStyle_type") + " " + label;
 	}
 
 	/**
@@ -136,6 +142,7 @@ public class LayerNamedStyleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -143,9 +150,9 @@ public class LayerNamedStyleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LayerNamedStyle.class)) {
-			case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case LayersPackage.LAYER_NAMED_STYLE__LAYERS_STACK:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -155,23 +162,25 @@ public class LayerNamedStyleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 * 
+	 * @generated NOT
+	 *
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection/*<Object>*/ newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection/* <Object> */newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(LayersPackage.Literals.LAYER_NAMED_STYLE__LAYERS_STACK,
-				 LayersFactory.eINSTANCE.createLayersStack()));
+						LayersFactory.eINSTANCE.createLayersStack()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

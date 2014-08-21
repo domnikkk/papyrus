@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.editors;
 
@@ -59,16 +59,16 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 	@Override
 	public void attachingObject(CDOTransaction transaction, CDOObject object) {
 		// bug 404077: we don't need to refresh edit-parts for objects attached to the transaction
-		// because GMF will take care of refreshing edit-parts.  So, suppress the super behaviour
+		// because GMF will take care of refreshing edit-parts. So, suppress the super behaviour
 	}
 
 	@Override
 	public void handleViewInvalidationEvent(CDOViewInvalidationEvent event) {
-		if(UIUtil.ensureUIThread(this, event)) {
+		if (UIUtil.ensureUIThread(this, event)) {
 			// filter the event to cover only the objects that are views in or
 			// have views in my diagram
 			CDOViewInvalidationEvent filtered = filter(event);
-			if(filtered != null) {
+			if (filtered != null) {
 				super.handleViewInvalidationEvent(filtered);
 			}
 		}
@@ -76,11 +76,11 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 
 	@Override
 	public void handleTransactionConflictEvent(CDOTransactionConflictEvent event) {
-		if(UIUtil.ensureUIThread(this, event)) {
+		if (UIUtil.ensureUIThread(this, event)) {
 			// filter the event to cover only the objects that are views in or
 			// have views in my diagram
 			CDOTransactionConflictEvent filtered = filter(event);
-			if(filtered != null) {
+			if (filtered != null) {
 				super.handleTransactionConflictEvent(filtered);
 			}
 		}
@@ -99,8 +99,8 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 		filtered = filter(detached) || filtered;
 		filtered = filter(deltas.keySet()) || filtered;
 
-		if(filtered) {
-			if(dirty.isEmpty() && detached.isEmpty() && deltas.isEmpty()) {
+		if (filtered) {
+			if (dirty.isEmpty() && detached.isEmpty() && deltas.isEmpty()) {
 				result = null;
 			} else {
 				result = new CDOViewInvalidationEvent() {
@@ -153,13 +153,13 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 
 	@Override
 	public void modifyingObject(CDOTransaction transaction, final CDOObject object, CDOFeatureDelta featureDelta) {
-		if(object instanceof Resource) {
+		if (object instanceof Resource) {
 			// GMF doesn't need to refresh a resource
 			return;
 		}
 
 		// bug 404077: we don't need to refresh edit-parts for objects attached to the transaction
-		// because GMF will take care of refreshing edit-parts.  So, suppress the super behaviour
+		// because GMF will take care of refreshing edit-parts. So, suppress the super behaviour
 		// vis-a-vis refreshing the object and setting the editor dirty
 
 		RefreshAdapter.refreshLater(object, editor);
@@ -170,9 +170,9 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 		try {
 			super.handleEvent(event);
 		} finally {
-			if(CDOUtils.removeListenerFromDeactivatedLifecycle(this, event)) {
-				if(event.getSource() instanceof CDOTransaction) {
-					((CDOTransaction)event.getSource()).removeTransactionHandler(this);
+			if (CDOUtils.removeListenerFromDeactivatedLifecycle(this, event)) {
+				if (event.getSource() instanceof CDOTransaction) {
+					((CDOTransaction) event.getSource()).removeTransactionHandler(this);
 				}
 			}
 		}
@@ -198,7 +198,7 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 
 		static void refreshLater(Notifier notifier, IDawnEditor editor) {
 			// don't add another one to this object
-			if(EcoreUtil.getExistingAdapter(notifier, TYPE) == null) {
+			if (EcoreUtil.getExistingAdapter(notifier, TYPE) == null) {
 				notifier.eAdapters().add(new RefreshAdapter(editor));
 			}
 		}
@@ -208,7 +208,7 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 			// removal of adapters doesn't require refresh, especially if
 			// the adapter that is removed is the CDO legacy adapter! (which
 			// then results in issues)
-			if(notification.getEventType() != Notification.REMOVING_ADAPTER) {
+			if (notification.getEventType() != Notification.REMOVING_ADAPTER) {
 				post();
 				getTarget().eAdapters().remove(this);
 			}
@@ -216,8 +216,8 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 
 		private void post() {
 			// don't schedule redundant refreshes for this editor
-			if(UIUtil.ensureUIThread(this)) {
-				if(pending.putIfAbsent(editor, this) == this) {
+			if (UIUtil.ensureUIThread(this)) {
+				if (pending.putIfAbsent(editor, this) == this) {
 					run();
 				}
 			}
@@ -233,7 +233,7 @@ public class PapyrusGMFHandler extends DawnGMFHandler {
 			pending.remove(editor, this);
 
 			DiagramDocumentEditor diagramEditor = getDiagramEditor(editor);
-			if(diagramEditor != null) {
+			if (diagramEditor != null) {
 				DawnDiagramUpdater.refreshEditPart(diagramEditor.getDiagramEditPart(), diagramEditor);
 			}
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.customization.properties.storage.action;
 
@@ -85,12 +85,12 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 	@Override
 	public Context copy(Context source, String targetName, IProgressMonitor monitor) throws CoreException {
 		IInternalPapyrusRepository repository = selectRepository(source);
-		if(repository == null) {
+		if (repository == null) {
 			// user cancelled
 			return null;
 		}
 
-		CDOTransaction transaction = (CDOTransaction)repository.getCDOView(repository.createTransaction(new ResourceSetImpl()));
+		CDOTransaction transaction = (CDOTransaction) repository.getCDOView(repository.createTransaction(new ResourceSetImpl()));
 
 		SubMonitor sub = SubMonitor.convert(monitor);
 
@@ -101,7 +101,7 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			String folderPath = new Path(contextsFolder.getPath()).append(targetName).toString();
 			String resourcePath = new Path(folderPath).append(targetName).addFileExtension(CONTEXT_EXTENSION).toString();
 
-			if(transaction.hasResource(folderPath)) { // actually checks for any kind of resource node at that path
+			if (transaction.hasResource(folderPath)) { // actually checks for any kind of resource node at that path
 				throw new IOException(Messages.CDOContextCopyAction_2);
 			}
 
@@ -117,11 +117,11 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			CDOTextURIHandler.install(resourceSet);
 
 			// re-load the source context in the new resource set to scope the copy operation
-			Context sourceContext = (Context)EMFHelper.loadEMFModel(resourceSet, source.eResource().getURI());
-			IStatus copyResult = copyAll(sourceContext, targetResource, sub); //$NON-NLS-1$
+			Context sourceContext = (Context) EMFHelper.loadEMFModel(resourceSet, source.eResource().getURI());
+			IStatus copyResult = copyAll(sourceContext, targetResource, sub);
 
-			if(copyResult.isOK()) {
-				Context resultContext = (Context)EMFHelper.loadEMFModel(resourceSet, targetModelURI);
+			if (copyResult.isOK()) {
+				Context resultContext = (Context) EMFHelper.loadEMFModel(resourceSet, targetModelURI);
 				resultContext.setName(targetName);
 				resultContext.setPrototype(sourceContext);
 				resultContext.eResource().save(null);
@@ -133,8 +133,8 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 				repository.getCDOView(mainResourceSet).waitForUpdate(commitTime, 30000L);
 
 				// load the new instance in the shared resource set
-				result = (Context)EMFHelper.loadEMFModel(mainResourceSet, targetModelURI);
-			} else if(copyResult.getSeverity() != IStatus.CANCEL) {
+				result = (Context) EMFHelper.loadEMFModel(mainResourceSet, targetModelURI);
+			} else if (copyResult.getSeverity() != IStatus.CANCEL) {
 				throw new CoreException(copyResult);
 			}
 		} catch (Exception e) {
@@ -157,14 +157,14 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 		// if it is in a repository
 		IPapyrusRepository initialSelection = null;
 		URI uri = context.eResource().getURI();
-		if(CDOUtils.isCDOURI(uri)) {
+		if (CDOUtils.isCDOURI(uri)) {
 			initialSelection = mgr.getRepositoryForURI(uri);
 		}
 
 		// otherwise, look for the first open repository
-		if(initialSelection == null) {
-			for(IPapyrusRepository next : mgr.getRepositories()) {
-				if(next.isConnected()) {
+		if (initialSelection == null) {
+			for (IPapyrusRepository next : mgr.getRepositories()) {
+				if (next.isConnected()) {
 					initialSelection = next;
 					break;
 				}
@@ -173,7 +173,7 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 
 		result = initialSelection;
 
-		if(mgr.getRepositories().size() > 1) {
+		if (mgr.getRepositories().size() > 1) {
 			final IPapyrusRepository[] innerResult = { initialSelection };
 			Display.getDefault().syncExec(new Runnable() {
 
@@ -188,7 +188,7 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 						}
 					});
 
-					if(dlg.open() == Window.OK) {
+					if (dlg.open() == Window.OK) {
 						innerResult[0] = dlg.getSelectedRepository();
 					} else {
 						innerResult[0] = null;
@@ -199,7 +199,7 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			result = innerResult[0];
 		}
 
-		return (IInternalPapyrusRepository)result;
+		return (IInternalPapyrusRepository) result;
 	}
 
 	private IStatus copyAll(Context source, CDOTextResource target, IProgressMonitor monitor) {
@@ -220,10 +220,10 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			Resource sourceResource = source.eResource();
 			int resourcesToCopy = sourceResource.getResourceSet().getResources().size();
 			List<Context> contexts = new LinkedList<Context>();
-			for(Context context : PropertiesUtil.getDependencies(source)) {
-				if(isRelative(sourceResource, context.eResource())) {
+			for (Context context : PropertiesUtil.getDependencies(source)) {
+				if (isRelative(sourceResource, context.eResource())) {
 					contexts.add(context);
-					for(Tab tab : context.getTabs()) {
+					for (Tab tab : context.getTabs()) {
 						resourcesToCopy += tab.getSections().size();
 					}
 				}
@@ -236,21 +236,21 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 			monitor.worked(1);
 
 			// copy the dependent resources which are located in the same folder or in subfolders
-			for(Resource resource : sourceResource.getResourceSet().getResources()) {
-				if(monitor.isCanceled()) {
+			for (Resource resource : sourceResource.getResourceSet().getResources()) {
+				if (monitor.isCanceled()) {
 					return Status.CANCEL_STATUS;
 				}
-				if((resource != sourceResource) && isRelative(sourceResource, resource)) {
+				if ((resource != sourceResource) && isRelative(sourceResource, resource)) {
 					copy(resource, targetFolder, sourceResource, targetName);
 				}
 				monitor.worked(1);
 			}
 
 			// copy the XWT files (they haven't been loaded in the resource set)
-			for(Context context : contexts) {
-				for(Tab tab : context.getTabs()) {
-					for(Section section : tab.getSections()) {
-						if(monitor.isCanceled()) {
+			for (Context context : contexts) {
+				for (Tab tab : context.getTabs()) {
+					for (Section section : tab.getSections()) {
+						if (monitor.isCanceled()) {
 							return Status.CANCEL_STATUS;
 						}
 						copy(section.getSectionFile(), targetFolder, sourceResource);
@@ -270,14 +270,14 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 	}
 
 	protected void copy(String xwtFileName, CDOResourceFolder targetFolder, Resource sourceResource) throws IOException {
-		CDOTextResource target = ((CDOTransaction)targetFolder.cdoView()).createTextResource(new Path(targetFolder.getPath()).append(xwtFileName).toString());
+		CDOTextResource target = ((CDOTransaction) targetFolder.cdoView()).createTextResource(new Path(targetFolder.getPath()).append(xwtFileName).toString());
 		URI sourceURI = URI.createURI(xwtFileName).resolve(sourceResource.getURI());
 		copy(sourceResource.getResourceSet(), sourceURI, target);
 	}
 
 	protected void copy(ResourceSet sourceResourceSet, URI sourceURI, CDOTextResource target) throws IOException {
 		PropertiesURIHandler uriHandler = new PropertiesURIHandler();
-		if(uriHandler.canHandle(sourceURI)) {
+		if (uriHandler.canHandle(sourceURI)) {
 			sourceURI = uriHandler.getConvertedURI(sourceURI);
 		}
 
@@ -285,13 +285,13 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 
 		try {
 			input = sourceResourceSet.getURIConverter().createInputStream(sourceURI);
-			String encoding = (input instanceof URIConverter.Readable) ? ((URIConverter.Readable)input).getEncoding() : "UTF-8"; //$NON-NLS-1$
+			String encoding = (input instanceof URIConverter.Readable) ? ((URIConverter.Readable) input).getEncoding() : "UTF-8"; //$NON-NLS-1$
 			Reader contents = new InputStreamReader(input, encoding);
 			target.setContents(new CDOClob(contents));
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		} finally {
-			if(input != null) {
+			if (input != null) {
 				Closeables.closeQuietly(input);
 			}
 		}
@@ -299,14 +299,14 @@ public class CDOContextCopyAction extends AbstractCDOContextAction implements IC
 
 	private void copy(Resource resource, CDOResourceFolder folder, Resource base, String targetName) throws IOException {
 		URI relativeURI = resource.getURI().deresolve(base.getURI());
-		if(relativeURI.toString().equals("")) { //$NON-NLS-1$
+		if (relativeURI.toString().equals("")) { //$NON-NLS-1$
 			relativeURI = URI.createURI(targetName + ".ctx"); //$NON-NLS-1$
 		}
 
 		// append a dummy segment to ensure correct resolution (otherwise we will
 		// miss the last segment of the folder path)
 		URI uri = relativeURI.resolve(folder.getURI().appendSegment("dummy.ctx")); //$NON-NLS-1$
-		CDOTextResource target = ((CDOTransaction)folder.cdoView()).createTextResource(CDOURIUtil.extractResourcePath(uri));
+		CDOTextResource target = ((CDOTransaction) folder.cdoView()).createTextResource(CDOURIUtil.extractResourcePath(uri));
 		copy(resource.getResourceSet(), resource.getURI(), target);
 	}
 }

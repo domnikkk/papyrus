@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.*;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwArbiter;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBridge;
 import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.HwBus;
@@ -32,6 +31,7 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommunicationFactory {
@@ -39,16 +39,16 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static HwCommunicationFactory init() {
 		try {
-			HwCommunicationFactory theHwCommunicationFactory = (HwCommunicationFactory)EPackage.Registry.INSTANCE.getEFactory(HwCommunicationPackage.eNS_URI);
+			HwCommunicationFactory theHwCommunicationFactory = (HwCommunicationFactory) EPackage.Registry.INSTANCE.getEFactory(HwCommunicationPackage.eNS_URI);
 			if (theHwCommunicationFactory != null) {
 				return theHwCommunicationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new HwCommunicationFactoryImpl();
@@ -58,6 +58,7 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HwCommunicationFactoryImpl() {
@@ -67,27 +68,36 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HwCommunicationPackage.HW_COMMUNICATION_RESOURCE: return createHwCommunicationResource();
-			case HwCommunicationPackage.HW_ARBITER: return createHwArbiter();
-			case HwCommunicationPackage.HW_MEDIA: return createHwMedia();
-			case HwCommunicationPackage.HW_BUS: return createHwBus();
-			case HwCommunicationPackage.HW_BRIDGE: return createHwBridge();
-			case HwCommunicationPackage.HW_END_POINT: return createHwEndPoint();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case HwCommunicationPackage.HW_COMMUNICATION_RESOURCE:
+			return createHwCommunicationResource();
+		case HwCommunicationPackage.HW_ARBITER:
+			return createHwArbiter();
+		case HwCommunicationPackage.HW_MEDIA:
+			return createHwMedia();
+		case HwCommunicationPackage.HW_BUS:
+			return createHwBus();
+		case HwCommunicationPackage.HW_BRIDGE:
+			return createHwBridge();
+		case HwCommunicationPackage.HW_END_POINT:
+			return createHwEndPoint();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwCommunicationResource createHwCommunicationResource() {
 		HwCommunicationResourceImpl hwCommunicationResource = new HwCommunicationResourceImpl();
 		return hwCommunicationResource;
@@ -96,8 +106,10 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwArbiter createHwArbiter() {
 		HwArbiterImpl hwArbiter = new HwArbiterImpl();
 		return hwArbiter;
@@ -106,8 +118,10 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwMedia createHwMedia() {
 		HwMediaImpl hwMedia = new HwMediaImpl();
 		return hwMedia;
@@ -116,8 +130,10 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwBus createHwBus() {
 		HwBusImpl hwBus = new HwBusImpl();
 		return hwBus;
@@ -126,8 +142,10 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwBridge createHwBridge() {
 		HwBridgeImpl hwBridge = new HwBridgeImpl();
 		return hwBridge;
@@ -136,8 +154,10 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwEndPoint createHwEndPoint() {
 		HwEndPointImpl hwEndPoint = new HwEndPointImpl();
 		return hwEndPoint;
@@ -146,15 +166,18 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public HwCommunicationPackage getHwCommunicationPackage() {
-		return (HwCommunicationPackage)getEPackage();
+		return (HwCommunicationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -163,4 +186,4 @@ public class HwCommunicationFactoryImpl extends EFactoryImpl implements HwCommun
 		return HwCommunicationPackage.eINSTANCE;
 	}
 
-} //HwCommunicationFactoryImpl
+} // HwCommunicationFactoryImpl

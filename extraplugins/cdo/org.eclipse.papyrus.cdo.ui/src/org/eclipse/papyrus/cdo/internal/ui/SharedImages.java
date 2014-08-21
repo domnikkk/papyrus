@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,18 +18,18 @@ import org.eclipse.swt.widgets.Display;
 
 
 /**
- * This is the SharedImages type.  Enjoy.
+ * This is the SharedImages type. Enjoy.
  */
 public class SharedImages {
 	private static final ImageRegistry REGISTRY = new ImageRegistry(Display.getDefault());
-	
+
 	private SharedImages() {
 		super();
 	}
 
 	public static Image getImage(String key) {
 		Image result = REGISTRY.get(key);
-		
+
 		if (result == null) {
 			ImageDescriptor desc = Activator.getIcon(key);
 			if (desc != null) {
@@ -37,7 +37,7 @@ public class SharedImages {
 				result = REGISTRY.get(key);
 			}
 		}
-		
+
 		return result;
 	}
 }

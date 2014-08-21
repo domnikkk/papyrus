@@ -14,8 +14,8 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributeQuantificationconstraint#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributeQuantificationconstraint#getQuantification <em>Quantification</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributeQuantificationconstraint#getAttribute <em>Attribute</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributeQuantificationconstraint#getQuantification <em>Quantification</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,10 +29,10 @@ public interface AttributeQuantificationconstraint extends EAElement, BehaviorCo
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Attribute</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttributeQuantificationconstraint_Attribute()
 	 * @model ordered="false"
@@ -45,10 +45,10 @@ public interface AttributeQuantificationconstraint extends EAElement, BehaviorCo
 	 * The list contents are of type {@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.Quantification}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Quantification</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Quantification</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantification</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.AttributequantificationconstraintPackage#getAttributeQuantificationconstraint_Quantification()
 	 * @model ordered="false"

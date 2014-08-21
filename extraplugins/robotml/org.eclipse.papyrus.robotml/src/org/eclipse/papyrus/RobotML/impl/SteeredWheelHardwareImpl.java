@@ -20,6 +20,7 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SteeredWheelHardwareImpl() {
@@ -29,6 +30,7 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class SteeredWheelHardwareImpl extends LocomotionHardwareImpl implements 
 		return RobotMLPackage.Literals.STEERED_WHEEL_HARDWARE;
 	}
 
-} //SteeredWheelHardwareImpl
+} // SteeredWheelHardwareImpl

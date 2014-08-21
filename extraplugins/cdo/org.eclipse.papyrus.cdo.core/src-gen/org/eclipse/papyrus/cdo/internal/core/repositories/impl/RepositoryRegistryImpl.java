@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.cdo.internal.core.repositories.impl;
 
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.cdo.internal.core.repositories.RepositoryRegistry;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryRegistryImpl#getRepositories <em>Repositories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryRegistryImpl#getRepositories <em>Repositories</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getRepositories() <em>Repositories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepositories()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RepositoryRegistryImpl() {
@@ -66,6 +68,7 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,8 +79,10 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Repository> getRepositories() {
 		if (repositories == null) {
 			repositories = new EObjectContainmentEList<Repository>(Repository.class, this, RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES);
@@ -88,13 +93,14 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
-				return ((InternalEList<?>)getRepositories()).basicRemove(otherEnd, msgs);
+		case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
+			return ((InternalEList<?>) getRepositories()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -102,13 +108,14 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
-				return getRepositories();
+		case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
+			return getRepositories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,16 +123,17 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
-				getRepositories().clear();
-				getRepositories().addAll((Collection<? extends Repository>)newValue);
-				return;
+		case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
+			getRepositories().clear();
+			getRepositories().addAll((Collection<? extends Repository>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -133,14 +141,15 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
-				getRepositories().clear();
-				return;
+		case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
+			getRepositories().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -148,15 +157,16 @@ public class RepositoryRegistryImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
-				return repositories != null && !repositories.isEmpty();
+		case RepositoriesPackage.REPOSITORY_REGISTRY__REPOSITORIES:
+			return repositories != null && !repositories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RepositoryRegistryImpl
+} // RepositoryRegistryImpl

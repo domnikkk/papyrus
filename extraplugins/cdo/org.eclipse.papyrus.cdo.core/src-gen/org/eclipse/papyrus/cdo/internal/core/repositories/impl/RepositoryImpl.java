@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   CEA LIST - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.cdo.internal.core.repositories.impl;
 
@@ -29,10 +29,10 @@ import org.eclipse.papyrus.cdo.internal.core.repositories.Repository;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getURL <em>URL</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getUUID <em>UUID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getURL <em>URL</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.cdo.internal.core.repositories.impl.RepositoryImpl#getUUID <em>UUID</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getURL()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getURL()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The default value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUUID()
 	 * @generated
 	 * @ordered
@@ -113,6 +120,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	 * The cached value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUUID()
 	 * @generated
 	 * @ordered
@@ -122,6 +130,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RepositoryImpl() {
@@ -131,6 +140,7 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -141,8 +151,10 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -150,20 +162,25 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RepositoriesPackage.REPOSITORY__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getURL() {
 		return uRL;
 	}
@@ -171,20 +188,25 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setURL(String newURL) {
 		String oldURL = uRL;
 		uRL = newURL;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RepositoriesPackage.REPOSITORY__URL, oldURL, uRL));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -192,20 +214,25 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RepositoriesPackage.REPOSITORY__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getUUID() {
 		return uUID;
 	}
@@ -213,31 +240,35 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUUID(String newUUID) {
 		String oldUUID = uUID;
 		uUID = newUUID;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RepositoriesPackage.REPOSITORY__UUID, oldUUID, uUID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY__NAME:
-				return getName();
-			case RepositoriesPackage.REPOSITORY__URL:
-				return getURL();
-			case RepositoriesPackage.REPOSITORY__DESCRIPTION:
-				return getDescription();
-			case RepositoriesPackage.REPOSITORY__UUID:
-				return getUUID();
+		case RepositoriesPackage.REPOSITORY__NAME:
+			return getName();
+		case RepositoriesPackage.REPOSITORY__URL:
+			return getURL();
+		case RepositoriesPackage.REPOSITORY__DESCRIPTION:
+			return getDescription();
+		case RepositoriesPackage.REPOSITORY__UUID:
+			return getUUID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,23 +276,24 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY__NAME:
-				setName((String)newValue);
-				return;
-			case RepositoriesPackage.REPOSITORY__URL:
-				setURL((String)newValue);
-				return;
-			case RepositoriesPackage.REPOSITORY__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case RepositoriesPackage.REPOSITORY__UUID:
-				setUUID((String)newValue);
-				return;
+		case RepositoriesPackage.REPOSITORY__NAME:
+			setName((String) newValue);
+			return;
+		case RepositoriesPackage.REPOSITORY__URL:
+			setURL((String) newValue);
+			return;
+		case RepositoriesPackage.REPOSITORY__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case RepositoriesPackage.REPOSITORY__UUID:
+			setUUID((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -269,23 +301,24 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case RepositoriesPackage.REPOSITORY__URL:
-				setURL(URL_EDEFAULT);
-				return;
-			case RepositoriesPackage.REPOSITORY__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case RepositoriesPackage.REPOSITORY__UUID:
-				setUUID(UUID_EDEFAULT);
-				return;
+		case RepositoriesPackage.REPOSITORY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case RepositoriesPackage.REPOSITORY__URL:
+			setURL(URL_EDEFAULT);
+			return;
+		case RepositoriesPackage.REPOSITORY__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case RepositoriesPackage.REPOSITORY__UUID:
+			setUUID(UUID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,19 +326,20 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RepositoriesPackage.REPOSITORY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RepositoriesPackage.REPOSITORY__URL:
-				return URL_EDEFAULT == null ? uRL != null : !URL_EDEFAULT.equals(uRL);
-			case RepositoriesPackage.REPOSITORY__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case RepositoriesPackage.REPOSITORY__UUID:
-				return UUID_EDEFAULT == null ? uUID != null : !UUID_EDEFAULT.equals(uUID);
+		case RepositoriesPackage.REPOSITORY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RepositoriesPackage.REPOSITORY__URL:
+			return URL_EDEFAULT == null ? uRL != null : !URL_EDEFAULT.equals(uRL);
+		case RepositoriesPackage.REPOSITORY__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case RepositoriesPackage.REPOSITORY__UUID:
+			return UUID_EDEFAULT == null ? uUID != null : !UUID_EDEFAULT.equals(uUID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,11 +347,14 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
@@ -332,4 +369,4 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
 		return result.toString();
 	}
 
-} //RepositoryImpl
+} // RepositoryImpl

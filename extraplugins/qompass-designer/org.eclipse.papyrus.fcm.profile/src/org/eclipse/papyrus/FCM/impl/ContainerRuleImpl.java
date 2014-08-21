@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2013 CEA LIST
- * 
+ *
  * All rights reserved. This program and the accompanying materials are
  * made available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Ansgar Radermacher - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.FCM.impl;
 
@@ -38,9 +38,9 @@ import org.eclipse.papyrus.FCM.FCMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getForConfig <em>For Config</em>}</li>
- *   <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getForConfig <em>For Config</em>}</li>
+ * <li>{@link org.eclipse.papyrus.FCM.impl.ContainerRuleImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getForConfig() <em>For Config</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getForConfig()
 	 * @generated
 	 * @ordered
@@ -71,6 +73,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -81,6 +84,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ContainerRuleImpl() {
@@ -99,6 +104,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,15 +115,18 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FCMPackage.CONTAINER_RULE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -126,6 +135,7 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -135,20 +145,25 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.CONTAINER_RULE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ConfigOption> getForConfig() {
 		if (forConfig == null) {
 			forConfig = new EObjectResolvingEList<ConfigOption>(ConfigOption.class, this, FCMPackage.CONTAINER_RULE__FOR_CONFIG);
@@ -159,8 +174,10 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ContainerRuleKind getKind() {
 		return kind;
 	}
@@ -168,30 +185,36 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setKind(ContainerRuleKind newKind) {
 		ContainerRuleKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, FCMPackage.CONTAINER_RULE__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FCMPackage.CONTAINER_RULE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
-				return getForConfig();
-			case FCMPackage.CONTAINER_RULE__KIND:
-				return getKind();
+		case FCMPackage.CONTAINER_RULE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
+			return getForConfig();
+		case FCMPackage.CONTAINER_RULE__KIND:
+			return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,22 +222,23 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FCMPackage.CONTAINER_RULE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
-				getForConfig().clear();
-				getForConfig().addAll((Collection<? extends ConfigOption>)newValue);
-				return;
-			case FCMPackage.CONTAINER_RULE__KIND:
-				setKind((ContainerRuleKind)newValue);
-				return;
+		case FCMPackage.CONTAINER_RULE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
+			getForConfig().clear();
+			getForConfig().addAll((Collection<? extends ConfigOption>) newValue);
+			return;
+		case FCMPackage.CONTAINER_RULE__KIND:
+			setKind((ContainerRuleKind) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -222,20 +246,21 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FCMPackage.CONTAINER_RULE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
-				getForConfig().clear();
-				return;
-			case FCMPackage.CONTAINER_RULE__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
+		case FCMPackage.CONTAINER_RULE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
+			getForConfig().clear();
+			return;
+		case FCMPackage.CONTAINER_RULE__KIND:
+			setKind(KIND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,17 +268,18 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FCMPackage.CONTAINER_RULE__BASE_CLASS:
-				return base_Class != null;
-			case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
-				return forConfig != null && !forConfig.isEmpty();
-			case FCMPackage.CONTAINER_RULE__KIND:
-				return kind != KIND_EDEFAULT;
+		case FCMPackage.CONTAINER_RULE__BASE_CLASS:
+			return base_Class != null;
+		case FCMPackage.CONTAINER_RULE__FOR_CONFIG:
+			return forConfig != null && !forConfig.isEmpty();
+		case FCMPackage.CONTAINER_RULE__KIND:
+			return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,11 +287,14 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: "); //$NON-NLS-1$
@@ -274,4 +303,4 @@ public class ContainerRuleImpl extends EObjectImpl implements ContainerRule {
 		return result.toString();
 	}
 
-} //ContainerRuleImpl
+} // ContainerRuleImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.core.importer;
 
@@ -82,11 +82,11 @@ public class ModelTransferNode implements IModelTransferNode {
 
 	@Override
 	public String getName() {
-		if(name == null) {
+		if (name == null) {
 			URI uri = getPrimaryResourceURI();
 
 			String path = uri.path();
-			if(uri.isPlatformResource()) {
+			if (uri.isPlatformResource()) {
 				// trim the project segment
 				path = path.substring(("/" + uri.segment(0)).length()); //$NON-NLS-1$
 			} // else a file: URI's path does not include the device, so it's OK
@@ -115,7 +115,7 @@ public class ModelTransferNode implements IModelTransferNode {
 	public Collection<URI> getResourceURIs() {
 		ImmutableSet.Builder<URI> result = ImmutableSet.builder();
 
-		for(Resource next : components) {
+		for (Resource next : components) {
 			result.add(next.getURI());
 		}
 
@@ -143,7 +143,7 @@ public class ModelTransferNode implements IModelTransferNode {
 
 	@Override
 	public boolean equals(Object obj) {
-		return (obj instanceof IModelTransferNode) && getPrimaryResourceURI().equals(((IModelTransferNode)obj).getPrimaryResourceURI());
+		return (obj instanceof IModelTransferNode) && getPrimaryResourceURI().equals(((IModelTransferNode) obj).getPrimaryResourceURI());
 	}
 
 	@Override
@@ -153,8 +153,8 @@ public class ModelTransferNode implements IModelTransferNode {
 
 	void scanForComponents() {
 		Resource self = getPrimaryResource();
-		for(Resource next : DependencyAdapter.getDependencies(self)) {
-			if(DependencyAdapter.getDIResource(next) == self) {
+		for (Resource next : DependencyAdapter.getDependencies(self)) {
+			if (DependencyAdapter.getDIResource(next) == self) {
 				components.add(next);
 			}
 		}
@@ -167,12 +167,12 @@ public class ModelTransferNode implements IModelTransferNode {
 
 		URIConverter converter = resource.getResourceSet().getURIConverter();
 
-		for(Resource component : components) {
-			for(Resource xref : DependencyAdapter.getDependencies(component)) {
+		for (Resource component : components) {
+			for (Resource xref : DependencyAdapter.getDependencies(component)) {
 				URI primary = findPrimaryResource(xref.getURI(), converter);
-				if((primary != null) && converter.exists(primary, null)) {
+				if ((primary != null) && converter.exists(primary, null)) {
 					IModelTransferNode node = config.getNode(primary);
-					if((node != null) && !node.equals(this)) {
+					if ((node != null) && !node.equals(this)) {
 						dependencies.add(node);
 					}
 				}
@@ -184,7 +184,7 @@ public class ModelTransferNode implements IModelTransferNode {
 		URI result = null;
 
 		URI candidate = componentURI.trimFileExtension().appendFileExtension(DiModel.DI_FILE_EXTENSION);
-		if(converter.exists(candidate, null)) {
+		if (converter.exists(candidate, null)) {
 			result = candidate;
 		}
 
@@ -195,14 +195,14 @@ public class ModelTransferNode implements IModelTransferNode {
 	public boolean isModelParentUnit(IModelTransferNode other) {
 		boolean result = false;
 
-		out: for(URI childURI : getResourceURIs()) {
+		out: for (URI childURI : getResourceURIs()) {
 			Resource child = config.getResourceSet().getResource(childURI, false);
-			if(child != null) {
-				for(EObject root : child.getContents()) {
+			if (child != null) {
+				for (EObject root : child.getContents()) {
 					EObject container = root.eContainer();
-					if(container != null) {
+					if (container != null) {
 						URI uri = EcoreUtil.getURI(container).trimFragment();
-						if(other.getResourceURIs().contains(uri)) {
+						if (other.getResourceURIs().contains(uri)) {
 							// found the parent unit
 							result = true;
 							break out;
@@ -219,14 +219,14 @@ public class ModelTransferNode implements IModelTransferNode {
 	public boolean isModelSubUnit(IModelTransferNode other) {
 		boolean result = false;
 
-		out: for(URI uri : other.getResourceURIs()) {
+		out: for (URI uri : other.getResourceURIs()) {
 			Resource possibleChild = config.getResourceSet().getResource(uri, false);
-			if(possibleChild != null) {
-				for(EObject root : possibleChild.getContents()) {
+			if (possibleChild != null) {
+				for (EObject root : possibleChild.getContents()) {
 					EObject container = root.eContainer();
-					if(container != null) {
+					if (container != null) {
 						URI parentURI = EcoreUtil.getURI(container).trimFragment();
-						if(getResourceURIs().contains(parentURI)) {
+						if (getResourceURIs().contains(parentURI)) {
 							// found a child unit
 							result = true;
 							break out;

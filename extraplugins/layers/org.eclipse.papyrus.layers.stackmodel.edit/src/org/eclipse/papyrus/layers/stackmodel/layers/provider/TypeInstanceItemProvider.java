@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -26,18 +26,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.papyrus.layers.stackmodel.layers.StringToTypeInstanceMap;
 import org.eclipse.papyrus.layers.stackmodel.layers.impl.StringToTypeInstanceMapImpl;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TypeInstanceItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +47,7 @@ public class TypeInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TypeInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +58,7 @@ public class TypeInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +74,7 @@ public class TypeInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,24 +83,26 @@ public class TypeInstanceItemProvider
 	}
 
 	/**
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
 	protected String getInstancePropertyName(Object object) {
-		
+
 		Object parent = getParent(object);
-		if( parent instanceof StringToTypeInstanceMapImpl) {
-			return ((StringToTypeInstanceMapImpl)parent).getKey();
+		if (parent instanceof StringToTypeInstanceMapImpl) {
+			return ((StringToTypeInstanceMapImpl) parent).getKey();
 		}
-		
+
 		return "";
 	}
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +116,7 @@ public class TypeInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,6 +128,7 @@ public class TypeInstanceItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

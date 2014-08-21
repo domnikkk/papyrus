@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 
 public class FIFOGetNextEventStrategy extends GetNextEventStrategy {
 
+	@Override
 	public SignalInstance getNextEvent(ObjectActivation objectActivation) {
 		// Get the first event from the given event pool. The event is removed
 		// from the pool.

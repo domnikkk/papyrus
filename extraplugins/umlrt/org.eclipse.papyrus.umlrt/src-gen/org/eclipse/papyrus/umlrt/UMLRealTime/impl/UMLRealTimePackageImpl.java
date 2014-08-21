@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -42,12 +42,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass capsuleEClass = null;
@@ -55,6 +57,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass capsulePartEClass = null;
@@ -62,6 +65,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass protocolEClass = null;
@@ -69,6 +73,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass rtPortEClass = null;
@@ -76,6 +81,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass rtConnectorEClass = null;
@@ -83,6 +89,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass protocolContainerEClass = null;
@@ -90,6 +97,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass rtrExcludedElementEClass = null;
@@ -97,6 +105,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass rtMessageSetEClass = null;
@@ -104,6 +113,7 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum portRegistrationTypeEEnum = null;
@@ -111,20 +121,17 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum rtMessageKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.umlrt.UMLRealTime.UMLRealTimePackage#eNS_URI
 	 * @see #init()
@@ -137,27 +144,29 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link UMLRealTimePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link UMLRealTimePackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static UMLRealTimePackage init() {
-		if (isInited) return (UMLRealTimePackage)EPackage.Registry.INSTANCE.getEPackage(UMLRealTimePackage.eNS_URI);
+		if (isInited) {
+			return (UMLRealTimePackage) EPackage.Registry.INSTANCE.getEPackage(UMLRealTimePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		UMLRealTimePackageImpl theUMLRealTimePackage = (UMLRealTimePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UMLRealTimePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new UMLRealTimePackageImpl());
+		UMLRealTimePackageImpl theUMLRealTimePackage = (UMLRealTimePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UMLRealTimePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new UMLRealTimePackageImpl());
 
 		isInited = true;
 
@@ -172,17 +181,18 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theUMLRealTimePackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return UMLRealTimeValidator.INSTANCE;
-				 }
-			 });
+				(theUMLRealTimePackage,
+						new EValidator.Descriptor() {
+							@Override
+							public EValidator getEValidator() {
+								return UMLRealTimeValidator.INSTANCE;
+							}
+						});
 
 		// Mark meta-data to indicate it can't be changed
 		theUMLRealTimePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(UMLRealTimePackage.eNS_URI, theUMLRealTimePackage);
 		return theUMLRealTimePackage;
@@ -191,8 +201,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getCapsule() {
 		return capsuleEClass;
 	}
@@ -200,17 +212,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getCapsule_Base_Class() {
-		return (EReference)capsuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) capsuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Capsulesarealwaysactive__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(0);
 	}
@@ -218,8 +234,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__AcapsulecannothaveReceptionfeatures__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(1);
 	}
@@ -227,8 +245,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Acapsuleclasscanalwaysbesubclassed__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(2);
 	}
@@ -236,8 +256,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Acapsulecanhaveatmostonesuperclass__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(3);
 	}
@@ -245,8 +267,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Capsuleclassesarealwayssubstitutable__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(4);
 	}
@@ -254,8 +278,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Allattributesofacapsuleclasshaveexactlyonetype__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(5);
 	}
@@ -263,8 +289,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Privatevisibilityisnotsupportedoncapsulefeatures__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(6);
 	}
@@ -272,8 +300,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Acapsuleclasscannothavenestedclassifiers__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(7);
 	}
@@ -281,8 +311,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getCapsule__Alloperationsofacapsulearesequential__DiagnosticChain_Map() {
 		return capsuleEClass.getEOperations().get(8);
 	}
@@ -290,8 +322,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getCapsulePart() {
 		return capsulePartEClass;
 	}
@@ -299,17 +333,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getCapsulePart_Base_Property() {
-		return (EReference)capsulePartEClass.getEStructuralFeatures().get(0);
+		return (EReference) capsulePartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getProtocol() {
 		return protocolEClass;
 	}
@@ -317,17 +355,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getProtocol_Base_Collaboration() {
-		return (EReference)protocolEClass.getEStructuralFeatures().get(0);
+		return (EReference) protocolEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map() {
 		return protocolEClass.getEOperations().get(0);
 	}
@@ -335,8 +377,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRTPort() {
 		return rtPortEClass;
 	}
@@ -344,62 +388,76 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTPort_IsNotification() {
-		return (EAttribute)rtPortEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) rtPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTPort_IsPublish() {
-		return (EAttribute)rtPortEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) rtPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTPort_IsWired() {
-		return (EAttribute)rtPortEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) rtPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTPort_Registration() {
-		return (EAttribute)rtPortEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) rtPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTPort_RegistrationOverride() {
-		return (EAttribute)rtPortEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) rtPortEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRTPort_Base_Port() {
-		return (EReference)rtPortEClass.getEStructuralFeatures().get(5);
+		return (EReference) rtPortEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTPort__Awiredportcannotpublishitsname__DiagnosticChain_Map() {
 		return rtPortEClass.getEOperations().get(0);
 	}
@@ -407,8 +465,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTPort__Apublicportmustbedefinedasaserviceport__DiagnosticChain_Map() {
 		return rtPortEClass.getEOperations().get(1);
 	}
@@ -416,8 +476,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTPort__ASAPunwiredunpublishedmusthaveprotectedvisibility__DiagnosticChain_Map() {
 		return rtPortEClass.getEOperations().get(2);
 	}
@@ -425,8 +487,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTPort__AnSPPunwiredandpublishedmusthavepublicvisibility__DiagnosticChain_Map() {
 		return rtPortEClass.getEOperations().get(3);
 	}
@@ -434,8 +498,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRTConnector() {
 		return rtConnectorEClass;
 	}
@@ -443,17 +509,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRTConnector_Base_Connector() {
-		return (EReference)rtConnectorEClass.getEStructuralFeatures().get(0);
+		return (EReference) rtConnectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map() {
 		return rtConnectorEClass.getEOperations().get(0);
 	}
@@ -461,8 +531,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getProtocolContainer() {
 		return protocolContainerEClass;
 	}
@@ -470,17 +542,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getProtocolContainer_Base_Package() {
-		return (EReference)protocolContainerEClass.getEStructuralFeatures().get(0);
+		return (EReference) protocolContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRTRExcludedElement() {
 		return rtrExcludedElementEClass;
 	}
@@ -488,17 +564,21 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRTRExcludedElement_Base_RedefinableElement() {
-		return (EReference)rtrExcludedElementEClass.getEStructuralFeatures().get(0);
+		return (EReference) rtrExcludedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map() {
 		return rtrExcludedElementEClass.getEOperations().get(0);
 	}
@@ -506,8 +586,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRTMessageSet() {
 		return rtMessageSetEClass;
 	}
@@ -515,26 +597,32 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRTMessageSet_Base_Interface() {
-		return (EReference)rtMessageSetEClass.getEStructuralFeatures().get(0);
+		return (EReference) rtMessageSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRTMessageSet_RtMsgKind() {
-		return (EAttribute)rtMessageSetEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) rtMessageSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getPortRegistrationType() {
 		return portRegistrationTypeEEnum;
 	}
@@ -542,8 +630,10 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getRTMessageKind() {
 		return rtMessageKindEEnum;
 	}
@@ -551,28 +641,34 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public UMLRealTimeFactory getUMLRealTimeFactory() {
-		return (UMLRealTimeFactory)getEFactoryInstance();
+		return (UMLRealTimeFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -630,19 +726,23 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -651,8 +751,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -746,10 +846,12 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(capsulePartEClass, CapsulePart.class, "CapsulePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getCapsulePart_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, CapsulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getCapsulePart_Base_Property(), theUMLPackage.getProperty(), null,
+				"base_Property", null, 1, 1, CapsulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(protocolEClass, Protocol.class, "Protocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getProtocol_Base_Collaboration(), theUMLPackage.getCollaboration(), null, "base_Collaboration", null, 1, 1, Protocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getProtocol_Base_Collaboration(), theUMLPackage.getCollaboration(), null,
+				"base_Collaboration", null, 1, 1, Protocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Protocolscanhaveatmostonegeneralization", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
@@ -805,7 +907,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(rtConnectorEClass, RTConnector.class, "RTConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTConnector_Base_Connector(), theUMLPackage.getConnector(), null, "base_Connector", null, 1, 1, RTConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTConnector_Base_Connector(), theUMLPackage.getConnector(), null,
+				"base_Connector", null, 1, 1, RTConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "Onlybinaryconnectorsareallowed", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
@@ -817,10 +920,12 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(protocolContainerEClass, ProtocolContainer.class, "ProtocolContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getProtocolContainer_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, ProtocolContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getProtocolContainer_Base_Package(), theUMLPackage.getPackage(), null,
+				"base_Package", null, 1, 1, ProtocolContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(rtrExcludedElementEClass, RTRExcludedElement.class, "RTRExcludedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTRExcludedElement_Base_RedefinableElement(), theUMLPackage.getRedefinableElement(), null, "base_RedefinableElement", null, 1, 1, RTRExcludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTRExcludedElement_Base_RedefinableElement(), theUMLPackage.getRedefinableElement(), null,
+				"base_RedefinableElement", null, 1, 1, RTRExcludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ExclusioncanonlybeappliedtosomeUMLRTmodelelements", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
@@ -832,7 +937,8 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(rtMessageSetEClass, RTMessageSet.class, "RTMessageSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRTMessageSet_Base_Interface(), theUMLPackage.getInterface(), null, "base_Interface", null, 1, 1, RTMessageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getRTMessageSet_Base_Interface(), theUMLPackage.getInterface(), null,
+				"base_Interface", null, 1, 1, RTMessageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getRTMessageSet_RtMsgKind(), this.getRTMessageKind(), "rtMsgKind", "true", 1, 1, RTMessageSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Initialize enums and add enum literals
@@ -858,106 +964,75 @@ public class UMLRealTimePackageImpl extends EPackageImpl implements UMLRealTimeP
 	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$	
-		addAnnotation
-		  (getCapsule__Capsulesarealwaysactive__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Capsules are always active" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__AcapsulecannothaveReceptionfeatures__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A capsule cannot have Reception features" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Acapsuleclasscanalwaysbesubclassed__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A capsule class can always be subclassed" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Acapsulecanhaveatmostonesuperclass__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A capsule can have at most one superclass" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Capsuleclassesarealwayssubstitutable__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Capsule classes are always substitutable" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Allattributesofacapsuleclasshaveexactlyonetype__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "All attributes of a capsule class have exactly one type" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Privatevisibilityisnotsupportedoncapsulefeatures__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Private visibility is not supported on capsule features" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Acapsuleclasscannothavenestedclassifiers__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A capsule class cannot have nested classifiers" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getCapsule__Alloperationsofacapsulearesequential__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "All operations of a capsule are sequential" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Protocols can have at most one generalization" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTPort__Awiredportcannotpublishitsname__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A wired port cannot publish its name" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTPort__Apublicportmustbedefinedasaserviceport__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A public port must be defined as a service port" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTPort__ASAPunwiredunpublishedmusthaveprotectedvisibility__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "A SAP (unwired & unpublished) must have protected visibility " //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTPort__AnSPPunwiredandpublishedmusthavepublicvisibility__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "An SPP (unwired and published) must have public visibility" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Only binary connectors are allowed" //$NON-NLS-1$ //$NON-NLS-2$
-		   });	
-		addAnnotation
-		  (getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "originalName", "Exclusion can only be applied to some UML-RT model elements" //$NON-NLS-1$ //$NON-NLS-2$
-		   });
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(getCapsule__Capsulesarealwaysactive__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Capsules are always active" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__AcapsulecannothaveReceptionfeatures__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A capsule cannot have Reception features" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Acapsuleclasscanalwaysbesubclassed__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A capsule class can always be subclassed" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Acapsulecanhaveatmostonesuperclass__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A capsule can have at most one superclass" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Capsuleclassesarealwayssubstitutable__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Capsule classes are always substitutable" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Allattributesofacapsuleclasshaveexactlyonetype__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "All attributes of a capsule class have exactly one type" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Privatevisibilityisnotsupportedoncapsulefeatures__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Private visibility is not supported on capsule features" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Acapsuleclasscannothavenestedclassifiers__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A capsule class cannot have nested classifiers" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getCapsule__Alloperationsofacapsulearesequential__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "All operations of a capsule are sequential" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getProtocol__Protocolscanhaveatmostonegeneralization__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Protocols can have at most one generalization" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTPort__Awiredportcannotpublishitsname__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A wired port cannot publish its name" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTPort__Apublicportmustbedefinedasaserviceport__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A public port must be defined as a service port" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTPort__ASAPunwiredunpublishedmusthaveprotectedvisibility__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "A SAP (unwired & unpublished) must have protected visibility " //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTPort__AnSPPunwiredandpublishedmusthavepublicvisibility__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "An SPP (unwired and published) must have public visibility" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTConnector__Onlybinaryconnectorsareallowed__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Only binary connectors are allowed" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+		addAnnotation(getRTRExcludedElement__ExclusioncanonlybeappliedtosomeUMLRTmodelelements__DiagnosticChain_Map(),
+				source,
+				new String[] { "originalName", "Exclusion can only be applied to some UML-RT model elements" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
-} //UMLRealTimePackageImpl
+} // UMLRealTimePackageImpl

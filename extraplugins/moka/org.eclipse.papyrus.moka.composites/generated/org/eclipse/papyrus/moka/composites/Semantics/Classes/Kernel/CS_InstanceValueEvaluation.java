@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 
 public class CS_InstanceValueEvaluation extends InstanceValueEvaluation {
 
+	@Override
 	public Value evaluate() {
 		// If the instance specification is for an enumeration, then return the
 		// identified enumeration literal.
@@ -52,52 +53,52 @@ public class CS_InstanceValueEvaluation extends InstanceValueEvaluation {
 		// Set each feature of the created value to the result of evaluating the
 		// value specifications for the specified slot for the feature.
 		// Extends fUML semantics in the sense that when the instance specification
-		// is for an object which is not typed by a Behavior, A CS_Reference (to a 
+		// is for an object which is not typed by a Behavior, A CS_Reference (to a
 		// CS_Object) is produced instead of a Reference (to an Object)
 
 		// Debug.println("[evaluate] InstanceValueEvaluation...");
 
-		InstanceSpecification instance = ((InstanceValue)this.specification).getInstance();
+		InstanceSpecification instance = ((InstanceValue) this.specification).getInstance();
 		List<Classifier> types = instance.getClassifiers();
 		Classifier myType = types.get(0);
 
 		Debug.println("[evaluate] type = " + myType.getName());
 
 		Value value;
-		if(instance instanceof EnumerationLiteral) {
+		if (instance instanceof EnumerationLiteral) {
 			// Debug.println("[evaluate] Type is an enumeration.");
 			EnumerationValue enumerationValue = new EnumerationValue();
-			enumerationValue.type = (Enumeration)myType;
-			enumerationValue.literal = (EnumerationLiteral)instance;
+			enumerationValue.type = (Enumeration) myType;
+			enumerationValue.literal = (EnumerationLiteral) instance;
 			value = enumerationValue;
 		} else {
 			StructuredValue structuredValue = null;
 
-			if(myType instanceof DataType) {
+			if (myType instanceof DataType) {
 				// Debug.println("[evaluate] Type is a data type.");
 				DataValue dataValue = new DataValue();
-				dataValue.type = (DataType)myType;
+				dataValue.type = (DataType) myType;
 				structuredValue = dataValue;
 			} else {
 				Object_ object = null;
-				if(myType instanceof Behavior) {
+				if (myType instanceof Behavior) {
 					// Debug.println("[evaluate] Type is a behavior.");
-					object = this.locus.factory.createExecution((Behavior)myType, null);
+					object = this.locus.factory.createExecution((Behavior) myType, null);
 				} else {
 					// Debug.println("[evaluate] Type is a class.");
 					object = new CS_Object();
-					for(int i = 0; i < types.size(); i++) {
+					for (int i = 0; i < types.size(); i++) {
 						Classifier type = types.get(i);
-						object.types.add((Class)type);
+						object.types.add((Class) type);
 					}
 				}
 
 				this.locus.add(object);
 
 				Reference reference;
-				if(object instanceof CS_Object) {
+				if (object instanceof CS_Object) {
 					reference = new CS_Reference();
-					((CS_Reference)reference).compositeReferent = (CS_Object)object;
+					((CS_Reference) reference).compositeReferent = (CS_Object) object;
 				} else {
 					reference = new Reference();
 				}
@@ -111,7 +112,7 @@ public class CS_InstanceValueEvaluation extends InstanceValueEvaluation {
 			// " slot(s).");
 
 			List<Slot> instanceSlots = instance.getSlots();
-			for(int i = 0; i < instanceSlots.size(); i++) {
+			for (int i = 0; i < instanceSlots.size(); i++) {
 				Slot slot = instanceSlots.get(i);
 				List<Value> values = new ArrayList<Value>();
 
@@ -119,7 +120,7 @@ public class CS_InstanceValueEvaluation extends InstanceValueEvaluation {
 				// slot.definingFeature.name + ", " + slot.value.size() +
 				// " value(s).");
 				List<ValueSpecification> slotValues = slot.getValues();
-				for(int j = 0; j < slotValues.size(); j++) {
+				for (int j = 0; j < slotValues.size(); j++) {
 					ValueSpecification slotValue = slotValues.get(j);
 					// Debug.println("[evaluate] Value = " +
 					// slotValue.getClass().getName());

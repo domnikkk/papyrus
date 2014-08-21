@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -28,14 +28,15 @@ import org.eclipse.papyrus.qompass.designer.core.transformations.LazyCopier;
 public class FilterRuleApplication implements PreCopyListener {
 
 	public static FilterRuleApplication getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new FilterRuleApplication();
 		}
 		return instance;
 	}
 
+	@Override
 	public EObject preCopyEObject(LazyCopier copy, EObject sourceEObj) {
-		if(sourceEObj instanceof RuleApplication) {
+		if (sourceEObj instanceof RuleApplication) {
 			return null;
 		}
 		return sourceEObj;

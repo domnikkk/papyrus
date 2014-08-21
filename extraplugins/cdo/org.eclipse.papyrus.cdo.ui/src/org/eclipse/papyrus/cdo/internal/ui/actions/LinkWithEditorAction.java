@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,17 +32,18 @@ public class LinkWithEditorAction
 		this.part = part;
 		part.addPropertyListener(new IPropertyListener() {
 
+			@Override
 			public void propertyChanged(Object source, int propId) {
 				switch (propId) {
-					case ModelRepositoriesView.LINK_WITH_EDITOR_PROPERTY :
-						updateToggleState();
-						break;
+				case ModelRepositoriesView.LINK_WITH_EDITOR_PROPERTY:
+					updateToggleState();
+					break;
 				}
 			}
 		});
 
 		setImageDescriptor(Activator.getIcon(Activator.ICON_LINK_WITH_EDITOR));
-		
+
 		setChecked(part.isLinkWithEditor());
 	}
 

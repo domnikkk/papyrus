@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,15 +25,15 @@ import org.eclipse.papyrus.infra.core.markers.MarkerConstants;
 
 /**
  * Utilities for Markers (TODO: some of these are generic marker services (move to infra core markers) and not specific to tracepoints).
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class MarkerUtils {
 
 	public static URI getURI(IMarker marker) {
 		String uriOfMarkerStr = marker.getAttribute(MarkerConstants.uri, null);
-		if(uriOfMarkerStr != null) {
+		if (uriOfMarkerStr != null) {
 			return URI.createURI(uriOfMarkerStr);
 		}
 		return null;
@@ -41,7 +41,7 @@ public class MarkerUtils {
 
 	/**
 	 * return the EObject of a marker (provided that it is a marker with a URI)
-	 * 
+	 *
 	 * @param marker
 	 * @return the associated EObject
 	 */
@@ -51,16 +51,16 @@ public class MarkerUtils {
 
 	/**
 	 * return the EObject of a marker (provided that it is a marker with a URI)
-	 * 
+	 *
 	 * @param pResourceSet
-	 *        : the resourceSet into which the model associated with the eObject should
-	 *        be loaded
+	 *            : the resourceSet into which the model associated with the eObject should
+	 *            be loaded
 	 * @param marker
 	 * @return the associated EObject
 	 */
 	public static EObject getEObjectOfMarker(ResourceSet pResourceSet, IMarker marker) {
 		URI uriOfMarker = getURI(marker);
-		if(uriOfMarker != null) {
+		if (uriOfMarker != null) {
 			try {
 				pResourceSet.getResource(uriOfMarker.trimFragment(), true);
 				return pResourceSet.getEObject(uriOfMarker, true);

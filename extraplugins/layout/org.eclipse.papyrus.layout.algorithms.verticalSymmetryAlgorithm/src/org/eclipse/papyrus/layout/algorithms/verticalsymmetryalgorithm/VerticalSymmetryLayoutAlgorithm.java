@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,11 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.layout.algorithms.verticalsymmetryalgorithm;
 
-import org.eclipse.zest.layouts.LayoutStyles;
-import org.eclipse.zest.layouts.algorithms.AbstractLayoutAlgorithm;
-import org.eclipse.zest.layouts.dataStructures.InternalNode;
-import org.eclipse.zest.layouts.dataStructures.InternalRelationship;
-
 /**
  * The Class VerticalSymmetryLayoutAlgorithm.
  */
@@ -25,9 +20,9 @@ public class VerticalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 
 	/**
 	 * Instantiates a new vertical symmetry layout algorithm.
-	 * 
+	 *
 	 * @param styles
-	 *        the styles
+	 *            the styles
 	 */
 	public VerticalSymmetryLayoutAlgorithm(int styles) {
 		super(styles);
@@ -85,13 +80,13 @@ public class VerticalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 	 */
 	@Override
 	protected boolean isValidConfiguration(boolean asynchronous, boolean continuous) {
-		if(asynchronous && continuous) {
+		if (asynchronous && continuous) {
 			return false;
-		} else if(asynchronous && !continuous) {
+		} else if (asynchronous && !continuous) {
 			return true;
-		} else if(!asynchronous && continuous) {
+		} else if (!asynchronous && continuous) {
 			return false;
-		} else if(!asynchronous && !continuous) {
+		} else if (!asynchronous && !continuous) {
 			return true;
 		}
 		return false;
@@ -123,19 +118,19 @@ public class VerticalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 	protected void preLayoutAlgorithm(InternalNode[] entitiesToLayout, InternalRelationship[] relationshipsToConsider,
 			double x, double y, double width, double height) {
 		double middle = calculateMiddleArea(x, width);
-		for(InternalNode node : entitiesToLayout) {
+		for (InternalNode node : entitiesToLayout) {
 			node.setLocation((middle + (middle - node.getInternalX())) - node.getWidthInLayout(), node.getInternalY());
 		}
 	}
 
 	/**
 	 * Calculate middle area.
-	 * 
+	 *
 	 * @param x
-	 *        the x
+	 *            the x
 	 * @param width
-	 *        the width
-	 * 
+	 *            the width
+	 *
 	 * @return the double
 	 */
 	private double calculateMiddleArea(double x, double width) {

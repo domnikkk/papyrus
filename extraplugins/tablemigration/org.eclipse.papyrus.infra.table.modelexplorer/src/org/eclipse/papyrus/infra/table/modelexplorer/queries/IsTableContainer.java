@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.views.modelexplorer.NavigatorUtils;
 import org.eclipse.papyrus.views.modelexplorer.queries.AbstractEditorContainerQuery;
 
 /** Returns true if the element contains a Table */
-//FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
+// FIXME this query is declared using Element in the querySet -> change into EObject when the EMF-Facet bug will be corrected 365744
 public class IsTableContainer extends AbstractEditorContainerQuery implements IJavaModelQuery<EObject, Boolean> {
 
 	/**
@@ -33,7 +33,7 @@ public class IsTableContainer extends AbstractEditorContainerQuery implements IJ
 	 */
 	public Boolean evaluate(final EObject context, ParameterValueList parameterValues) throws ModelQueryExecutionException {
 		Iterator<EObject> diRoots = NavigatorUtils.getDiRoots(context);
-		if(evaluate(context, diRoots)) {
+		if (evaluate(context, diRoots)) {
 			return true;
 		}
 
@@ -42,16 +42,16 @@ public class IsTableContainer extends AbstractEditorContainerQuery implements IJ
 	}
 
 	private Boolean evaluate(EObject context, Iterator<EObject> searchIn) {
-		if(searchIn == null) {
+		if (searchIn == null) {
 			return false;
 		}
 
-		while(searchIn.hasNext()) {
+		while (searchIn.hasNext()) {
 			EObject root = searchIn.next();
-			if(root instanceof PapyrusTableInstance) {
-				PapyrusTableInstance tableInstance = (PapyrusTableInstance)root;
-				if(tableInstance.getTable() != null) {
-					if(EcoreUtil.equals(tableInstance.getTable().getContext(), context)) {
+			if (root instanceof PapyrusTableInstance) {
+				PapyrusTableInstance tableInstance = (PapyrusTableInstance) root;
+				if (tableInstance.getTable() != null) {
+					if (EcoreUtil.equals(tableInstance.getTable().getContext(), context)) {
 						return true;
 					}
 				}

@@ -18,8 +18,8 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OrderConstraintImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OrderConstraintImpl#getTarget <em>Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OrderConstraintImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.OrderConstraintImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OrderConstraintImpl() {
@@ -58,6 +61,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,15 +72,18 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getSource() {
 		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Event)eResolveProxy(oldSource);
+			InternalEObject oldSource = (InternalEObject) source;
+			source = (Event) eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE, oldSource, source));
+				}
 			}
 		}
 		return source;
@@ -85,6 +92,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetSource() {
@@ -94,27 +102,33 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSource(Event newSource) {
 		Event oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE, oldSource, source));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getTarget() {
 		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Event)eResolveProxy(oldTarget);
+			InternalEObject oldTarget = (InternalEObject) target;
+			target = (Event) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET, oldTarget, target));
+				}
 			}
 		}
 		return target;
@@ -123,6 +137,7 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetTarget() {
@@ -132,29 +147,37 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTarget(Event newTarget) {
 		Event oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET, oldTarget, target));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
+			if (resolve) {
+				return getSource();
+			}
+			return basicGetSource();
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
+			if (resolve) {
+				return getTarget();
+			}
+			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,17 +185,18 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
-				setSource((Event)newValue);
-				return;
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
-				setTarget((Event)newValue);
-				return;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
+			setSource((Event) newValue);
+			return;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
+			setTarget((Event) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,17 +204,18 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
-				setSource((Event)null);
-				return;
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
-				setTarget((Event)null);
-				return;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
+			setSource((Event) null);
+			return;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
+			setTarget((Event) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,17 +223,18 @@ public class OrderConstraintImpl extends TimingConstraintImpl implements OrderCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
-				return source != null;
-			case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
-				return target != null;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__SOURCE:
+			return source != null;
+		case TimingconstraintsPackage.ORDER_CONSTRAINT__TARGET:
+			return target != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OrderConstraintImpl
+} // OrderConstraintImpl

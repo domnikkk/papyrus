@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,12 @@ public class TraceMechanism {
 		EList<ITraceMechanism> mechanisms = new BasicEList<ITraceMechanism>();
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(ITRACE_MECHANISM_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 				final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-				if(obj instanceof ITraceMechanism) {
-					mechanisms.add((ITraceMechanism)obj);
+				if (obj instanceof ITraceMechanism) {
+					mechanisms.add((ITraceMechanism) obj);
 				}
 			} catch (CoreException exception) {
 				exception.printStackTrace();
@@ -55,21 +55,21 @@ public class TraceMechanism {
 	/**
 	 * get the ID of the default realization mechanism. In case of classes, need to store multiple mechanisms (how to trace states, how to trace
 	 * operations)
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getMechanismFromPreferences(TraceFeature feature) {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-		if(store != null) {
-			if(feature == TraceFeature.Class) {
+		if (store != null) {
+			if (feature == TraceFeature.Class) {
 				return TraceActions.getStringPrefix(TraceFeature.Port) + store.getInt(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_PORT) + "," + //$NON-NLS-1$
-					TraceActions.getStringPrefix(TraceFeature.State) + store.getInt(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM) + "," + //$NON-NLS-1$
-					TraceActions.getStringPrefix(TraceFeature.Operation) + store.getInt(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP);
+						TraceActions.getStringPrefix(TraceFeature.State) + store.getInt(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM) + "," + //$NON-NLS-1$
+						TraceActions.getStringPrefix(TraceFeature.Operation) + store.getInt(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP);
 			}
-			else if(feature == TraceFeature.State) {
+			else if (feature == TraceFeature.State) {
 				return store.getString(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM);
 			}
-			else if(feature == TraceFeature.Operation) {
+			else if (feature == TraceFeature.Operation) {
 				return store.getString(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP);
 			}
 		}
@@ -78,7 +78,7 @@ public class TraceMechanism {
 
 	/**
 	 * Convenience function. Return defaultTraceMechanisms in function of the element being traced.
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

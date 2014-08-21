@@ -27,6 +27,7 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements GeneratoroptionsmmFactory {
@@ -34,16 +35,16 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static GeneratoroptionsmmFactory init() {
 		try {
-			GeneratoroptionsmmFactory theGeneratoroptionsmmFactory = (GeneratoroptionsmmFactory)EPackage.Registry.INSTANCE.getEFactory(GeneratoroptionsmmPackage.eNS_URI);
+			GeneratoroptionsmmFactory theGeneratoroptionsmmFactory = (GeneratoroptionsmmFactory) EPackage.Registry.INSTANCE.getEFactory(GeneratoroptionsmmPackage.eNS_URI);
 			if (theGeneratoroptionsmmFactory != null) {
 				return theGeneratoroptionsmmFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GeneratoroptionsmmFactoryImpl();
@@ -53,6 +54,7 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GeneratoroptionsmmFactoryImpl() {
@@ -62,22 +64,26 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GeneratoroptionsmmPackage.OPTIONS: return createOptions();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case GeneratoroptionsmmPackage.OPTIONS:
+			return createOptions();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Options createOptions() {
 		OptionsImpl options = new OptionsImpl();
 		return options;
@@ -86,15 +92,18 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GeneratoroptionsmmPackage getGeneratoroptionsmmPackage() {
-		return (GeneratoroptionsmmPackage)getEPackage();
+		return (GeneratoroptionsmmPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -103,4 +112,4 @@ public class GeneratoroptionsmmFactoryImpl extends EFactoryImpl implements Gener
 		return GeneratoroptionsmmPackage.eINSTANCE;
 	}
 
-} //GeneratoroptionsmmFactoryImpl
+} // GeneratoroptionsmmFactoryImpl

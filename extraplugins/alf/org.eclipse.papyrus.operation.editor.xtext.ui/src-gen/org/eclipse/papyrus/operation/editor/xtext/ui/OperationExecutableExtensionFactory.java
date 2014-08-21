@@ -10,7 +10,7 @@ import com.google.inject.Injector;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class OperationExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -18,10 +18,10 @@ public class OperationExecutableExtensionFactory extends AbstractGuiceAwareExecu
 	protected Bundle getBundle() {
 		return org.eclipse.papyrus.operation.editor.xtext.ui.internal.OperationActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return org.eclipse.papyrus.operation.editor.xtext.ui.internal.OperationActivator.getInstance().getInjector("org.eclipse.papyrus.operation.editor.xtext.Operation");
 	}
-	
+
 }

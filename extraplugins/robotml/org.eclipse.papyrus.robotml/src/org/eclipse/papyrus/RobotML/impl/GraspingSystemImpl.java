@@ -20,6 +20,7 @@ public class GraspingSystemImpl extends ActuatorSystemImpl implements GraspingSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GraspingSystemImpl() {
@@ -29,6 +30,7 @@ public class GraspingSystemImpl extends ActuatorSystemImpl implements GraspingSy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class GraspingSystemImpl extends ActuatorSystemImpl implements GraspingSy
 		return RobotMLPackage.Literals.GRASPING_SYSTEM;
 	}
 
-} //GraspingSystemImpl
+} // GraspingSystemImpl

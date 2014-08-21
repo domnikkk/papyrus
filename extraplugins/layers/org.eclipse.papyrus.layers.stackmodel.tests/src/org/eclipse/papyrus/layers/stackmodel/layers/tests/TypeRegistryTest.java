@@ -13,6 +13,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeRegistry;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Type Registry</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TypeRegistryTest extends TestCase {
@@ -21,6 +22,7 @@ public class TypeRegistryTest extends TestCase {
 	 * The fixture for this Type Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TypeRegistry fixture = null;
@@ -28,6 +30,7 @@ public class TypeRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +41,7 @@ public class TypeRegistryTest extends TestCase {
 	 * Constructs a new Type Registry test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TypeRegistryTest(String name) {
@@ -48,6 +52,7 @@ public class TypeRegistryTest extends TestCase {
 	 * Sets the fixture for this Type Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(TypeRegistry fixture) {
@@ -58,6 +63,7 @@ public class TypeRegistryTest extends TestCase {
 	 * Returns the fixture for this Type Registry test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TypeRegistry getFixture() {
@@ -67,6 +73,7 @@ public class TypeRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +85,7 @@ public class TypeRegistryTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +94,4 @@ public class TypeRegistryTest extends TestCase {
 		setFixture(null);
 	}
 
-} //TypeRegistryTest
+} // TypeRegistryTest

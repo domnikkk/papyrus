@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,12 +20,14 @@ import org.eclipse.papyrus.adltool.designer.ArchitectureSnapshotDesigner;
 
 /**
  * this wizard is used to display feature from workspace and the platform
- *@deprecated
+ *
+ * @deprecated
  */
+@Deprecated
 public class FeatureArchitectureWizard extends PluginArchitectureWizard {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param onlyWorkspace
@@ -36,11 +38,11 @@ public class FeatureArchitectureWizard extends PluginArchitectureWizard {
 
 	@Override
 	public void addPages() {
-		ArrayList<Object> bundleList= new ArrayList<Object>();
-		if(onlyWorkspace){
+		ArrayList<Object> bundleList = new ArrayList<Object>();
+		if (onlyWorkspace) {
 			bundleList.addAll(ArchitectureSnapshotDesigner.getWorkspaceFeature());
 		}
-		else{
+		else {
 			bundleList.addAll(ArchitectureSnapshotDesigner.getFeature());
 		}
 		bundleSelectionPage = new BundleSelectionPage(bundleList);

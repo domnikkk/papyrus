@@ -81,10 +81,10 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Start.
 	 *
 	 * @param behavior
-	 *        the behavior
+	 *            the behavior
 	 */
 	protected void start(Behavior behavior) {
-		if(behavior != null) {
+		if (behavior != null) {
 			main = behavior;
 			// creates the locus, executor and execution factory
 			this.locus = new Locus();
@@ -113,7 +113,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Register semantic strategies.
 	 *
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 */
 	protected void registerSemanticStrategies(Locus locus) {
 		locus.factory.setStrategy(new FirstChoiceStrategy());
@@ -128,14 +128,14 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Register opaque behavior executions.
 	 *
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 */
 	protected void registerOpaqueBehaviorExecutions(Locus locus) {
 		// Load any OpaqueBehaviorExecution library contributing to the extension LIBRAY_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(LIBRAY_EXTENSION_POINT_ID);
 		try {
-			for(int i = 0; i < config.length; i++) {
+			for (int i = 0; i < config.length; i++) {
 				IConfigurationElement e = config[i];
 				final Object o = e.createExecutableExtension("class");
 				loadLibrary(o, locus, this.eObjectToExecute);
@@ -152,14 +152,14 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Register system services.
 	 *
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 */
 	protected void registerSystemServices(Locus locus) {
 		// Load any contribution to the extension SERVICES_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(SERVICES_EXTENSION_POINT_ID);
 		try {
-			for(int i = 0; i < config.length; i++) {
+			for (int i = 0; i < config.length; i++) {
 				IConfigurationElement e = config[i];
 				final Object o = e.createExecutableExtension("class");
 				loadServices(o, locus, this.eObjectToExecute);
@@ -176,20 +176,20 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Initialize built in primitive types.
 	 *
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 */
 	protected void initializeBuiltInPrimitiveTypes(Locus locus) {
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
-		for(IRegisteredLibrary l : libraries) {
-			if(l.getName().equals("UMLPrimitiveTypes")) {
+		for (IRegisteredLibrary l : libraries) {
+			if (l.getName().equals("UMLPrimitiveTypes")) {
 				URI libraryUri = l.getUri();
 				Resource libraryResource = resourceSet.getResource(libraryUri, true);
 				Iterator<EObject> libElementIterator = libraryResource.getAllContents();
-				while(libElementIterator.hasNext()) {
+				while (libElementIterator.hasNext()) {
 					EObject currentElement = libElementIterator.next();
-					if(currentElement instanceof PrimitiveType) {
-						locus.factory.addBuiltInType((Type)currentElement);
+					if (currentElement instanceof PrimitiveType) {
+						locus.factory.addBuiltInType((Type) currentElement);
 					}
 				}
 			}
@@ -201,11 +201,11 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Load library.
 	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 * @param context
-	 *        the context
+	 *            the context
 	 */
 	protected static void loadLibrary(final Object o, final Locus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
@@ -215,7 +215,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 			}
 
 			public void run() throws Exception {
-				((IOpaqueBehaviorExecutionRegistry)o).init(context).registerOpaqueBehaviorExecutions(locus);
+				((IOpaqueBehaviorExecutionRegistry) o).init(context).registerOpaqueBehaviorExecutions(locus);
 			}
 		};
 		SafeRunner.run(runnable);
@@ -226,11 +226,11 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * Load services.
 	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 * @param locus
-	 *        the locus
+	 *            the locus
 	 * @param context
-	 *        the context
+	 *            the context
 	 */
 	protected static void loadServices(final Object o, final Locus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
@@ -240,7 +240,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 			}
 
 			public void run() throws Exception {
-				((ISystemServicesRegistry)o).init(context).registerSystemServices(locus);
+				((ISystemServicesRegistry) o).init(context).registerSystemServices(locus);
 			}
 		};
 		SafeRunner.run(runnable);
@@ -258,7 +258,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 
 	/**
 	 * Returns the fUML locus associated with this engine
-	 * 
+	 *
 	 * @return the fUML locus associated with this engine
 	 */
 	public Locus getLocus() {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,11 +34,11 @@ public class CDOAwareProxyModificationTrackingAdapter extends ProxyModificationT
 	public boolean shouldSave(Resource resource) {
 		boolean result;
 
-		if(resource instanceof CDOResource) {
-			CDOView view = ((CDOResource)resource).cdoView();
-			if(view instanceof CDOTransaction) {
+		if (resource instanceof CDOResource) {
+			CDOView view = ((CDOResource) resource).cdoView();
+			if (view instanceof CDOTransaction) {
 				// Saving CDO resources is done by committing the transaction
-				result = ((CDOTransaction)view).isDirty();
+				result = ((CDOTransaction) view).isDirty();
 			} else {
 				// If there's no view or it's not a transaction, then saving is a non-starter
 				result = false;
@@ -56,7 +56,7 @@ public class CDOAwareProxyModificationTrackingAdapter extends ProxyModificationT
 
 		// Only for non-CDO resources do we care if the URI has changed or contents been added, because
 		// references within the repository use OIDs and are, therefore, not susceptible to URI changes
-		if(!(notifier instanceof CDOResource)) {
+		if (!(notifier instanceof CDOResource)) {
 			super.notifyChanged(msg);
 		}
 	}

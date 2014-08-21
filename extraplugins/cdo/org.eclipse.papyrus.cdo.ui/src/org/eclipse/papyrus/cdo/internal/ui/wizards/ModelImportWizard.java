@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429242
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.wizards;
 
@@ -96,13 +96,13 @@ public class ModelImportWizard extends Wizard implements IWorkbenchWizard {
 
 			@Override
 			public void run() {
-				for(IPapyrusFile next : getSelection()) {
+				for (IPapyrusFile next : getSelection()) {
 					importConfig.addModelToTransfer(URI.createPlatformResourceURI(next.getMainFile().getFullPath().toString(), true));
 				}
 
 				bus.post(importConfig);
 
-				if(repository != null) {
+				if (repository != null) {
 					bus.post(repository);
 				}
 			}
@@ -112,17 +112,17 @@ public class ModelImportWizard extends Wizard implements IWorkbenchWizard {
 	Iterable<IPapyrusFile> getSelection() {
 		List<IPapyrusFile> result = Lists.newArrayList();
 
-		if(selection != null) {
-			for(Object next : selection.toList()) {
+		if (selection != null) {
+			for (Object next : selection.toList()) {
 				IPapyrusFile file = null;
 
-				if(next instanceof IPapyrusFile) {
-					file = (IPapyrusFile)next;
-				} else if(next instanceof IAdaptable) {
-					file = (IPapyrusFile)((IAdaptable)next).getAdapter(IPapyrusFile.class);
+				if (next instanceof IPapyrusFile) {
+					file = (IPapyrusFile) next;
+				} else if (next instanceof IAdaptable) {
+					file = (IPapyrusFile) ((IAdaptable) next).getAdapter(IPapyrusFile.class);
 				}
 
-				if(file != null) {
+				if (file != null) {
 					result.add(file);
 				}
 			}
@@ -138,7 +138,7 @@ public class ModelImportWizard extends Wizard implements IWorkbenchWizard {
 		IModelImporter importer = IModelImporter.Factory.DEFAULT.create();
 		Diagnostic problems = importer.importModels(mappingsPage.getSelectedMapping());
 
-		if(problems.getSeverity() > Diagnostic.INFO) {
+		if (problems.getSeverity() > Diagnostic.INFO) {
 			StatusManager.getManager().handle(BasicDiagnostic.toIStatus(problems), StatusManager.BLOCK);
 		}
 
@@ -147,7 +147,7 @@ public class ModelImportWizard extends Wizard implements IWorkbenchWizard {
 
 	@Override
 	public void dispose() {
-		if(importConfig != null) {
+		if (importConfig != null) {
 			// it actually takes a while to dispose this, unloading all of the
 			// resources potentially covering all of the Papyrus models in the
 			// workspace in order to clean up the UML CacheAdapter

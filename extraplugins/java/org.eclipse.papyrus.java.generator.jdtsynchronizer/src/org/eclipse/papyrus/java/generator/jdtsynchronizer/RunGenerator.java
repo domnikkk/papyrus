@@ -10,7 +10,7 @@
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Initial API and implementation
  * 	Manuel Giles	 giles.manu@live.fr		 - Initial API and implementation
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Idea of the java generator project & help for the conception
  *
  *****************************************************************************/
 
@@ -18,7 +18,6 @@ package org.eclipse.papyrus.java.generator.jdtsynchronizer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -34,13 +33,10 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ExecutionContext;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
-import org.eclipse.m2m.qvt.oml.util.Log;
-import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.eclipse.papyrus.java.generator.jdtsynchronizer.impl.SynchJDTJavaModel;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.GeneratoroptionsmmFactory;
 import org.eclipse.papyrus.java.generator.metamodel.jdt.generatoroptionsmm.Options;
@@ -65,9 +61,9 @@ public class RunGenerator {
 
 	/**
 	 * Constructor of RunGenerator using .uml file
-	 * 
+	 *
 	 * @param UMLFileUrl
-	 *        the '.uml' file's url
+	 *            the '.uml' file's url
 	 * @throws FileNotFoundException
 	 */
 	public RunGenerator(String umlFileUrl) throws FileNotFoundException {
@@ -78,9 +74,9 @@ public class RunGenerator {
 
 	/**
 	 * Constructor of RunGenerator using EList<EObject> metamodel
-	 * 
+	 *
 	 * @param UMLFileUrl
-	 *        the '.uml' file's url
+	 *            the '.uml' file's url
 	 */
 	public RunGenerator(EList<EObject> inObjects) {
 		this.inObjects = inObjects;
@@ -88,32 +84,33 @@ public class RunGenerator {
 
 	/**
 	 * run code generation using QVTo transformation
-	 * 
+	 *
 	 * @throws JDTVisitorException
 	 */
 	public void runGeneration(GeneratorPreference preference) throws JDTVisitorException {
 		// Create an options model using the Eclipse Preferences
 		EList<EObject> inOptions = createOptionModelFromEclipsePreferences(preference);
-		
+
 		// Refer to an existing transformation via URI
 		final URI scriptUri =
 				URI.createURI("platform:/plugin/" + UmltojdtActivator.PLUGIN_ID + UmltojdtActivator.PATH_QVT_FILE);
 
 		List<EObject> outObjects = runTransformation(scriptUri, inObjects, inOptions);
 
-		if(outObjects.size() == 0) {
+		if (outObjects.size() == 0) {
 			throw new JDTVisitorException("No classes or packages produced from the transformation. Nothing is generated.");
 		}
 
-		if(outObjects.size() > 1) {
+		if (outObjects.size() > 1) {
 			System.err.println("Warning, JDT modele has more than one root. Found root:");
-			for(EObject el : outObjects)
-				System.err.println(((JDTJavaElement)el).getElementName());
+			for (EObject el : outObjects) {
+				System.err.println(((JDTJavaElement) el).getElementName());
+			}
 			System.err.println("-------");
 		}
 
-		//finally, we synchronize the JDT model with org.eclipse.jdt.core
-		if(outObjects.size() > 0) {
+		// finally, we synchronize the JDT model with org.eclipse.jdt.core
+		if (outObjects.size() > 0) {
 			/*
 			 * TODO : if metamodel have some root node, we make a loop
 			 * JDTJavaElement proj = (JDTJavaElement) outObjects.get(0);
@@ -121,9 +118,9 @@ public class RunGenerator {
 			 * JDTVisitor visitor = new SynchJDTJavaModel();
 			 * proj.accept(visitor);
 			 */
-			for(Object o : outObjects) {
-				if(o instanceof JDTJavaModel) {
-					JDTJavaElement proj = (JDTJavaElement)o;
+			for (Object o : outObjects) {
+				if (o instanceof JDTJavaModel) {
+					JDTJavaElement proj = (JDTJavaElement) o;
 					JDTVisitor visitor = new SynchJDTJavaModel(preference);
 					proj.accept(visitor);
 				}
@@ -133,42 +130,44 @@ public class RunGenerator {
 	}
 
 	/**
-	 * Create a new GeneratorOptions model and inject eclipse preferences on it. 
-	 * @param preference eclipse preferences
+	 * Create a new GeneratorOptions model and inject eclipse preferences on it.
+	 * 
+	 * @param preference
+	 *            eclipse preferences
 	 * @return a new instance of Options, where options.defaultSourceFolder have been initialized.
 	 */
 	private EList<EObject> createOptionModelFromEclipsePreferences(GeneratorPreference preference) {
 		GeneratoroptionsmmFactory optionsFactory = GeneratoroptionsmmFactory.eINSTANCE;
-		
+
 		// Create a new Options object and inject the default source folder name from Eclipse preferences
 		Options options = optionsFactory.createOptions();
 		options.setDefaultSourceFolder(preference.defaultSourceFolderName());
-		
+
 		// Add options to the model
 		EList<EObject> optionsContents = new BasicEList<EObject>(1);
 		optionsContents.add(options);
-		
+
 		return optionsContents;
 	}
 
 	/**
 	 * Run QVTo transformation using the scriptUri and the inObjects model
-	 * 
+	 *
 	 * @param scriptUri
-	 *        The script QVTo
+	 *            The script QVTo
 	 * @param inObjects
-	 *        The entry model
-	 * @param inOptions2 
+	 *            The entry model
+	 * @param inOptions2
 	 * @return The output model
 	 */
 	private List<EObject> runTransformation(URI scriptUri, EList<EObject> inObjects, EList<EObject> inOptions) {
-		// initialize the transformation		
-		//First, you need to instantiate a Registry:
+		// initialize the transformation
+		// First, you need to instantiate a Registry:
 		EPackage.Registry registry = new EPackageRegistryImpl(EPackage.Registry.INSTANCE);
 
-		//which is used to register the meta-models in E:\workspace\modelesUML\org.eclipse.papyrus.java.javagen.mmJDT\metaModel
+		// which is used to register the meta-models in E:\workspace\modelesUML\org.eclipse.papyrus.java.javagen.mmJDT\metaModel
 
-		JdtmmPackage mm1 = (JdtmmPackage)JdtmmPackage.eINSTANCE;
+		JdtmmPackage mm1 = JdtmmPackage.eINSTANCE;
 		registry.put(mm1.getNsURI(), mm1);
 
 		// class which allow to execute the transformation
@@ -184,20 +183,21 @@ public class RunGenerator {
 
 		// the errors
 		System.out.println(executionDiagnostic.getMessage());
-		for(Diagnostic d : executionDiagnostic.getChildren())
+		for (Diagnostic d : executionDiagnostic.getChildren()) {
 			System.out.println(d.getMessage());
+		}
 
 
-		// we take the out JDT model in a list		
+		// we take the out JDT model in a list
 		return output.getContents();
 	}
 
 
 	/**
 	 * Allow to charge the uml model in a list
-	 * 
+	 *
 	 * @param url
-	 *        the '.uml' file's url
+	 *            the '.uml' file's url
 	 * @return the charge model
 	 * @throws FileNotFoundException
 	 */
@@ -208,15 +208,16 @@ public class RunGenerator {
 		// charge the metamodel util for read the model
 		resourceSet.getPackageRegistry().put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
-		//Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap( ).put( "uml", new UMLResourceFactoryImpl());
+		// Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap( ).put( "uml", new UMLResourceFactoryImpl());
 
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 		URIConverter.URI_MAP.put(URI.createURI("pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml"), URI.createFileURI(System.getProperty("user.dir") + "/Model_Libs/UMLPrimitiveTypes.library.uml"));
 
 		// the '.uml' file's url
 		File file = new File(url);
-		if(!file.exists())
+		if (!file.exists()) {
 			throw new FileNotFoundException("File " + new File(url).getAbsolutePath() + " not found");
+		}
 		URI fileURI = URI.createFileURI(new File(url).getAbsolutePath());
 
 		// demand load the resource for this file.

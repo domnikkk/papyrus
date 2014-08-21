@@ -23,9 +23,9 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getMinimum <em>Minimum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getMaximum <em>Maximum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getEvent <em>Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getMinimum <em>Minimum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getMaximum <em>Maximum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.ArbitraryConstraintImpl#getEvent <em>Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getMinimum() <em>Minimum</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMinimum()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getMaximum() <em>Maximum</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaximum()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEvent()
 	 * @generated
 	 * @ordered
@@ -65,6 +68,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArbitraryConstraintImpl() {
@@ -74,6 +78,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -84,8 +89,10 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<TimingExpression> getMinimum() {
 		if (minimum == null) {
 			minimum = new EObjectResolvingEList<TimingExpression>(TimingExpression.class, this, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM);
@@ -96,8 +103,10 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<TimingExpression> getMaximum() {
 		if (maximum == null) {
 			maximum = new EObjectResolvingEList<TimingExpression>(TimingExpression.class, this, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM);
@@ -108,15 +117,18 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getEvent() {
 		if (event != null && event.eIsProxy()) {
-			InternalEObject oldEvent = (InternalEObject)event;
-			event = (Event)eResolveProxy(oldEvent);
+			InternalEObject oldEvent = (InternalEObject) event;
+			event = (Event) eResolveProxy(oldEvent);
 			if (event != oldEvent) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT, oldEvent, event));
+				}
 			}
 		}
 		return event;
@@ -125,6 +137,7 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetEvent() {
@@ -134,30 +147,36 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setEvent(Event newEvent) {
 		Event oldEvent = event;
 		event = newEvent;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT, oldEvent, event));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
-				return getMinimum();
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
-				return getMaximum();
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
-				if (resolve) return getEvent();
-				return basicGetEvent();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
+			return getMinimum();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
+			return getMaximum();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
+			if (resolve) {
+				return getEvent();
+			}
+			return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,23 +184,24 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
-				getMinimum().clear();
-				getMinimum().addAll((Collection<? extends TimingExpression>)newValue);
-				return;
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
-				getMaximum().clear();
-				getMaximum().addAll((Collection<? extends TimingExpression>)newValue);
-				return;
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
-				setEvent((Event)newValue);
-				return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
+			getMinimum().clear();
+			getMinimum().addAll((Collection<? extends TimingExpression>) newValue);
+			return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
+			getMaximum().clear();
+			getMaximum().addAll((Collection<? extends TimingExpression>) newValue);
+			return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
+			setEvent((Event) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -189,20 +209,21 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
-				getMinimum().clear();
-				return;
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
-				getMaximum().clear();
-				return;
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
-				setEvent((Event)null);
-				return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
+			getMinimum().clear();
+			return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
+			getMaximum().clear();
+			return;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
+			setEvent((Event) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,19 +231,20 @@ public class ArbitraryConstraintImpl extends TimingConstraintImpl implements Arb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
-				return minimum != null && !minimum.isEmpty();
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
-				return maximum != null && !maximum.isEmpty();
-			case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
-				return event != null;
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MINIMUM:
+			return minimum != null && !minimum.isEmpty();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__MAXIMUM:
+			return maximum != null && !maximum.isEmpty();
+		case TimingconstraintsPackage.ARBITRARY_CONSTRAINT__EVENT:
+			return event != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArbitraryConstraintImpl
+} // ArbitraryConstraintImpl

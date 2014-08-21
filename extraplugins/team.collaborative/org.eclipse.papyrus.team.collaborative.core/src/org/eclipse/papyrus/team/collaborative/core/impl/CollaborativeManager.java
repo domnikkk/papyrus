@@ -37,7 +37,7 @@ import org.eclipse.papyrus.team.collaborative.core.strategy.ILockingStrategy;
 /**
  * The Class CollaborativeManager.
  * This the default implementation of {@link ICollaborativeManager}
- * 
+ *
  * @author adaussy
  */
 public class CollaborativeManager implements ICollaborativeManager {
@@ -61,7 +61,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	/**
 	 * Returns the Singleton instance.
 	 * <p>
-	 * 
+	 *
 	 * @return The Singleton instance.
 	 */
 	public static ICollaborativeManager getInstance() {
@@ -93,10 +93,10 @@ public class CollaborativeManager implements ICollaborativeManager {
 		strategies = new HashMap<String, ILockingStrategy.Descriptor>();
 		factories = new ArrayList<CollaborativeManager.ParticipantFactoryWrapper>();
 		IConfigurationElement[] confs = Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, "collaborative");
-		for(IConfigurationElement conf : confs) {
-			if("LockingStrategy".equals(conf.getName())) {
+		for (IConfigurationElement conf : confs) {
+			if ("LockingStrategy".equals(conf.getName())) {
 				try {
-					ILockingStrategy strategy = (ILockingStrategy)conf.createExecutableExtension("impl");
+					ILockingStrategy strategy = (ILockingStrategy) conf.createExecutableExtension("impl");
 					String id = conf.getAttribute("id");
 					String name = conf.getAttribute("name");
 					strategies.put(id, new ILockingStrategy.Descriptor(strategy, name));
@@ -104,9 +104,9 @@ public class CollaborativeManager implements ICollaborativeManager {
 					e.printStackTrace();
 				}
 
-			} else if("ParticipantFactory".equals(conf.getName())) {
+			} else if ("ParticipantFactory".equals(conf.getName())) {
 				try {
-					ICollabFactory factory = (ICollabFactory)conf.createExecutableExtension("impl");
+					ICollabFactory factory = (ICollabFactory) conf.createExecutableExtension("impl");
 					String id = conf.getAttribute("id");
 					Integer priority = Integer.parseInt(conf.getAttribute("priority"));
 					factories.add(new ParticipantFactoryWrapper(factory, priority, id));
@@ -133,16 +133,16 @@ public class CollaborativeManager implements ICollaborativeManager {
 
 	/**
 	 * Gets the factory.
-	 * 
+	 *
 	 * @param objectToLock
-	 *        the object to lock
+	 *            the object to lock
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @return the factory
 	 */
 	protected ICollabFactory getFactory(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
-		for(ParticipantFactoryWrapper wrapper : factories) {
-			if(wrapper.factory.provide(objectToLock, resourceSet)) {
+		for (ParticipantFactoryWrapper wrapper : factories) {
+			if (wrapper.factory.provide(objectToLock, resourceSet)) {
 				return wrapper.factory;
 			}
 		}
@@ -157,7 +157,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	@Override
 	public ILocker getLocker(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
 		ICollabFactory factory = getFactory(objectToLock, resourceSet);
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 		return factory.createLocker(objectToLock, resourceSet);
@@ -171,7 +171,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	@Override
 	public IUnlocker getUnlocker(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
 		ICollabFactory factory = getFactory(objectToLock, resourceSet);
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 		return factory.createUnlocker(objectToLock, resourceSet);
@@ -185,7 +185,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	@Override
 	public IUpdater getUpdater(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
 		ICollabFactory factory = getFactory(objectToLock, resourceSet);
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 		return factory.createUpdater(objectToLock, resourceSet);
@@ -199,7 +199,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	@Override
 	public ICommitter getCommitter(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
 		ICollabFactory factory = getFactory(objectToLock, resourceSet);
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 		return factory.createCommitter(objectToLock, resourceSet);
@@ -213,7 +213,7 @@ public class CollaborativeManager implements ICollaborativeManager {
 	@Override
 	public IReverter getReverter(Set<IExtendedURI> objectToLock, ResourceSet resourceSet) {
 		ICollabFactory factory = getFactory(objectToLock, resourceSet);
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 		return factory.createReverter(objectToLock, resourceSet);
@@ -231,8 +231,8 @@ public class CollaborativeManager implements ICollaborativeManager {
 	 */
 	@Override
 	public boolean isCollab(Set<IExtendedURI> uris, ResourceSet resourceSet) {
-		for(ParticipantFactoryWrapper wrapper : factories) {
-			if(wrapper.factory.provide(uris, resourceSet)) {
+		for (ParticipantFactoryWrapper wrapper : factories) {
+			if (wrapper.factory.provide(uris, resourceSet)) {
 				return true;
 			}
 		}
@@ -255,13 +255,13 @@ public class CollaborativeManager implements ICollaborativeManager {
 
 		/**
 		 * Instantiates a new participant factory wrapper.
-		 * 
+		 *
 		 * @param factory
-		 *        the factory
+		 *            the factory
 		 * @param priority
-		 *        the priority
+		 *            the priority
 		 * @param id
-		 *        the id
+		 *            the id
 		 */
 		public ParticipantFactoryWrapper(ICollabFactory factory, Integer priority, String id) {
 			super();

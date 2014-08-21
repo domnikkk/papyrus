@@ -20,6 +20,7 @@ public class PilotedSystemImpl extends RobotImpl implements PilotedSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PilotedSystemImpl() {
@@ -29,6 +30,7 @@ public class PilotedSystemImpl extends RobotImpl implements PilotedSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class PilotedSystemImpl extends RobotImpl implements PilotedSystem {
 		return RobotMLPackage.Literals.PILOTED_SYSTEM;
 	}
 
-} //PilotedSystemImpl
+} // PilotedSystemImpl

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 Júlio Vilmar Gesser.
- * 
+ *
  * This file is part of Java 1.5 parser and Abstract Syntax Tree.
  *
  * Java 1.5 parser and Abstract Syntax Tree is free software: you can redistribute it and/or modify
@@ -48,8 +48,8 @@ public class LongLiteralExpr extends StringLiteralExpr {
 
 	public final boolean isMinValue() {
 		return value != null && //
-		value.length() == 20 && //
-		value.startsWith("9223372036854775808") && //
-		(value.charAt(19) == 'L' || value.charAt(19) == 'l');
+				value.length() == 20 && //
+				value.startsWith("9223372036854775808") && //
+				(value.charAt(19) == 'L' || value.charAt(19) == 'l');
 	}
 }

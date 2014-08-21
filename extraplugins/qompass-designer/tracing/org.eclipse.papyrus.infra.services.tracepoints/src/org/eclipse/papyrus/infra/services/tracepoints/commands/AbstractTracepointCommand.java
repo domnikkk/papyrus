@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.uml2.uml.State;
 /**
  * Action used for pasting either a model element or a shape (i.e. the model element represented
  * by the shape). Delegates to PasteShapeOrElementCommand
- * 
+ *
  * @author Ansgar Radermacher (CEA LIST)
  */
 abstract public class AbstractTracepointCommand extends AbstractTransactionalCommand {
@@ -49,15 +49,15 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 
 	/**
 	 * Creates a new ImportLibraryFromRepositoryCommand
-	 * 
+	 *
 	 * @param editingDomain
-	 *        editing domain that manages the changed objects
+	 *            editing domain that manages the changed objects
 	 * @param runnable
-	 *        process that executes the modifications
+	 *            process that executes the modifications
 	 * @param label
-	 *        the label of the command
+	 *            the label of the command
 	 * @param description
-	 *        description of the command
+	 *            description of the command
 	 */
 
 	public AbstractTracepointCommand(String label, TransactionalEditingDomain domain, EObject selectedElement) {
@@ -74,11 +74,11 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 
 	protected IMarker findMarker(String type) {
 
-		if(iresource != null) {
+		if (iresource != null) {
 			try {
-				for(IMarker marker : iresource.findMarkers(type, false, IResource.DEPTH_INFINITE)) {
+				for (IMarker marker : iresource.findMarkers(type, false, IResource.DEPTH_INFINITE)) {
 					String markerURI = marker.getAttribute(MarkerConstants.uri, ""); //$NON-NLS-1$
-					if((markerURI != null) && markerURI.equals(uri)) {
+					if ((markerURI != null) && markerURI.equals(uri)) {
 						return marker;
 					}
 				}
@@ -90,9 +90,9 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 
 	protected IMarker toggleMarker() {
 		try {
-			if(iresource != null) {
+			if (iresource != null) {
 				IMarker marker = findMarker(TracepointConstants.tpOrbpMarker);
-				if(marker == null) { // marker does not exist => create
+				if (marker == null) { // marker does not exist => create
 					marker = iresource.createMarker(TracepointConstants.tpOrbpMarker);
 					marker.setAttribute(MarkerConstants.uri, uri);
 					marker.setAttribute(TracepointConstants.isActive, true);
@@ -110,9 +110,9 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 
 	protected void toggleMarkerActivation() {
 		try {
-			if(iresource != null) {
+			if (iresource != null) {
 				IMarker marker = findMarker(TracepointConstants.tpOrbpMarker);
-				if(marker == null) { // marker does not exist => create
+				if (marker == null) { // marker does not exist => create
 					marker = iresource.createMarker(TracepointConstants.tpOrbpMarker);
 					marker.setAttribute(MarkerConstants.uri, uri);
 					marker.setAttribute(TracepointConstants.isActive, true);
@@ -120,20 +120,20 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 					// apply trace mechanism according to default in preferences
 					IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 					String id = null;
-					if(selectedElement instanceof Operation) {
+					if (selectedElement instanceof Operation) {
 						id = store.getDefaultString(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_OP);
 					}
-					else if(selectedElement instanceof Port) {
+					else if (selectedElement instanceof Port) {
 						id = store.getDefaultString(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_PORT);
 					}
-					else if(selectedElement instanceof State) {
+					else if (selectedElement instanceof State) {
 						id = store.getDefaultString(TPPreferenceConstants.P_TRACE_IMPLEMENTATION_SM);
 					}
-					if(id != null) {
+					if (id != null) {
 						EList<ITraceMechanism> mechanisms = TraceMechanism.getTraceMechanisms();
-						for(ITraceMechanism mechanism : mechanisms) {
-							for(String providedID : mechanism.getTraceMechanismIDs(selectedElement)) {
-								if(id.equals(providedID)) {
+						for (ITraceMechanism mechanism : mechanisms) {
+							for (String providedID : mechanism.getTraceMechanismIDs(selectedElement)) {
+								if (id.equals(providedID)) {
 									mechanism.applyTraceMechanism(selectedElement, id, 0);
 								}
 							}
@@ -147,7 +147,7 @@ abstract public class AbstractTracepointCommand extends AbstractTransactionalCom
 				}
 			}
 		} catch (CoreException ce) {
-			throw new RuntimeException (ce);
+			throw new RuntimeException(ce);
 		}
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getConvFactor <em>Conv Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getConvOffset <em>Conv Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getBaseUnit <em>Base Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getConvFactor <em>Conv Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getConvOffset <em>Conv Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getBaseUnit <em>Base Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.UnitImpl#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The default value of the '{@link #getConvFactor() <em>Conv Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConvFactor()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getConvFactor() <em>Conv Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConvFactor()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The default value of the '{@link #getConvOffset() <em>Conv Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConvOffset()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getConvOffset() <em>Conv Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConvOffset()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getBaseUnit() <em>Base Unit</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBaseUnit()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	 * The cached value of the '{@link #getBase_EnumerationLiteral() <em>Base Enumeration Literal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_EnumerationLiteral()
 	 * @generated
 	 * @ordered
@@ -102,6 +108,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UnitImpl() {
@@ -111,6 +118,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,8 +129,10 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getConvFactor() {
 		return convFactor;
 	}
@@ -130,20 +140,25 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setConvFactor(String newConvFactor) {
 		String oldConvFactor = convFactor;
 		convFactor = newConvFactor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.UNIT__CONV_FACTOR, oldConvFactor, convFactor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getConvOffset() {
 		return convOffset;
 	}
@@ -151,27 +166,33 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setConvOffset(String newConvOffset) {
 		String oldConvOffset = convOffset;
 		convOffset = newConvOffset;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.UNIT__CONV_OFFSET, oldConvOffset, convOffset));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Unit getBaseUnit() {
 		if (baseUnit != null && baseUnit.eIsProxy()) {
-			InternalEObject oldBaseUnit = (InternalEObject)baseUnit;
-			baseUnit = (Unit)eResolveProxy(oldBaseUnit);
+			InternalEObject oldBaseUnit = (InternalEObject) baseUnit;
+			baseUnit = (Unit) eResolveProxy(oldBaseUnit);
 			if (baseUnit != oldBaseUnit) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.UNIT__BASE_UNIT, oldBaseUnit, baseUnit));
+				}
 			}
 		}
 		return baseUnit;
@@ -180,6 +201,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Unit basicGetBaseUnit() {
@@ -189,27 +211,33 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBaseUnit(Unit newBaseUnit) {
 		Unit oldBaseUnit = baseUnit;
 		baseUnit = newBaseUnit;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.UNIT__BASE_UNIT, oldBaseUnit, baseUnit));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EnumerationLiteral getBase_EnumerationLiteral() {
 		if (base_EnumerationLiteral != null && base_EnumerationLiteral.eIsProxy()) {
-			InternalEObject oldBase_EnumerationLiteral = (InternalEObject)base_EnumerationLiteral;
-			base_EnumerationLiteral = (EnumerationLiteral)eResolveProxy(oldBase_EnumerationLiteral);
+			InternalEObject oldBase_EnumerationLiteral = (InternalEObject) base_EnumerationLiteral;
+			base_EnumerationLiteral = (EnumerationLiteral) eResolveProxy(oldBase_EnumerationLiteral);
 			if (base_EnumerationLiteral != oldBase_EnumerationLiteral) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL, oldBase_EnumerationLiteral, base_EnumerationLiteral));
+				}
 			}
 		}
 		return base_EnumerationLiteral;
@@ -218,6 +246,7 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationLiteral basicGetBase_EnumerationLiteral() {
@@ -227,33 +256,41 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_EnumerationLiteral(EnumerationLiteral newBase_EnumerationLiteral) {
 		EnumerationLiteral oldBase_EnumerationLiteral = base_EnumerationLiteral;
 		base_EnumerationLiteral = newBase_EnumerationLiteral;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL, oldBase_EnumerationLiteral, base_EnumerationLiteral));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NFPsPackage.UNIT__CONV_FACTOR:
-				return getConvFactor();
-			case NFPsPackage.UNIT__CONV_OFFSET:
-				return getConvOffset();
-			case NFPsPackage.UNIT__BASE_UNIT:
-				if (resolve) return getBaseUnit();
-				return basicGetBaseUnit();
-			case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
-				if (resolve) return getBase_EnumerationLiteral();
-				return basicGetBase_EnumerationLiteral();
+		case NFPsPackage.UNIT__CONV_FACTOR:
+			return getConvFactor();
+		case NFPsPackage.UNIT__CONV_OFFSET:
+			return getConvOffset();
+		case NFPsPackage.UNIT__BASE_UNIT:
+			if (resolve) {
+				return getBaseUnit();
+			}
+			return basicGetBaseUnit();
+		case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
+			if (resolve) {
+				return getBase_EnumerationLiteral();
+			}
+			return basicGetBase_EnumerationLiteral();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,23 +298,24 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NFPsPackage.UNIT__CONV_FACTOR:
-				setConvFactor((String)newValue);
-				return;
-			case NFPsPackage.UNIT__CONV_OFFSET:
-				setConvOffset((String)newValue);
-				return;
-			case NFPsPackage.UNIT__BASE_UNIT:
-				setBaseUnit((Unit)newValue);
-				return;
-			case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
-				setBase_EnumerationLiteral((EnumerationLiteral)newValue);
-				return;
+		case NFPsPackage.UNIT__CONV_FACTOR:
+			setConvFactor((String) newValue);
+			return;
+		case NFPsPackage.UNIT__CONV_OFFSET:
+			setConvOffset((String) newValue);
+			return;
+		case NFPsPackage.UNIT__BASE_UNIT:
+			setBaseUnit((Unit) newValue);
+			return;
+		case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
+			setBase_EnumerationLiteral((EnumerationLiteral) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -285,23 +323,24 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.UNIT__CONV_FACTOR:
-				setConvFactor(CONV_FACTOR_EDEFAULT);
-				return;
-			case NFPsPackage.UNIT__CONV_OFFSET:
-				setConvOffset(CONV_OFFSET_EDEFAULT);
-				return;
-			case NFPsPackage.UNIT__BASE_UNIT:
-				setBaseUnit((Unit)null);
-				return;
-			case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
-				setBase_EnumerationLiteral((EnumerationLiteral)null);
-				return;
+		case NFPsPackage.UNIT__CONV_FACTOR:
+			setConvFactor(CONV_FACTOR_EDEFAULT);
+			return;
+		case NFPsPackage.UNIT__CONV_OFFSET:
+			setConvOffset(CONV_OFFSET_EDEFAULT);
+			return;
+		case NFPsPackage.UNIT__BASE_UNIT:
+			setBaseUnit((Unit) null);
+			return;
+		case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
+			setBase_EnumerationLiteral((EnumerationLiteral) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -309,19 +348,20 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.UNIT__CONV_FACTOR:
-				return CONV_FACTOR_EDEFAULT == null ? convFactor != null : !CONV_FACTOR_EDEFAULT.equals(convFactor);
-			case NFPsPackage.UNIT__CONV_OFFSET:
-				return CONV_OFFSET_EDEFAULT == null ? convOffset != null : !CONV_OFFSET_EDEFAULT.equals(convOffset);
-			case NFPsPackage.UNIT__BASE_UNIT:
-				return baseUnit != null;
-			case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
-				return base_EnumerationLiteral != null;
+		case NFPsPackage.UNIT__CONV_FACTOR:
+			return CONV_FACTOR_EDEFAULT == null ? convFactor != null : !CONV_FACTOR_EDEFAULT.equals(convFactor);
+		case NFPsPackage.UNIT__CONV_OFFSET:
+			return CONV_OFFSET_EDEFAULT == null ? convOffset != null : !CONV_OFFSET_EDEFAULT.equals(convOffset);
+		case NFPsPackage.UNIT__BASE_UNIT:
+			return baseUnit != null;
+		case NFPsPackage.UNIT__BASE_ENUMERATION_LITERAL:
+			return base_EnumerationLiteral != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,11 +369,14 @@ public class UnitImpl extends EObjectImpl implements Unit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (convFactor: ");
@@ -344,4 +387,4 @@ public class UnitImpl extends EObjectImpl implements Unit {
 		return result.toString();
 	}
 
-} //UnitImpl
+} // UnitImpl

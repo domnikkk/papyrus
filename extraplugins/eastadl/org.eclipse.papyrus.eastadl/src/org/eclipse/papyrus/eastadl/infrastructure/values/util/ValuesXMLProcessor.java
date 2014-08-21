@@ -13,6 +13,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.values.ValuesPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ValuesXMLProcessor extends XMLProcessor {
@@ -21,17 +22,19 @@ public class ValuesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValuesXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		ValuesPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the ValuesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -44,4 +47,4 @@ public class ValuesXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //ValuesXMLProcessor
+} // ValuesXMLProcessor

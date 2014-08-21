@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,14 +46,15 @@ public abstract class Execution extends Object_ {
 		return;
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new execution that has the same behavior and parameterValues
 		// as this execution.
 		// Debug.println("[Copy] execution = " + this);
-		Execution newValue = (Execution)(super.copy());
+		Execution newValue = (Execution) (super.copy());
 		newValue.context = this.context;
 		List<ParameterValue> parameterValues = this.parameterValues;
-		for(int i = 0; i < parameterValues.size(); i++) {
+		for (int i = 0; i < parameterValues.size(); i++) {
 			ParameterValue parameterValue = parameterValues.get(i);
 			newValue.parameterValues.add(parameterValue.copy());
 		}
@@ -61,6 +62,7 @@ public abstract class Execution extends Object_ {
 		return newValue;
 	}
 
+	@Override
 	public abstract Value new_();
 
 	public void setParameterValue(ParameterValue parameterValue) {
@@ -71,7 +73,7 @@ public abstract class Execution extends Object_ {
 		// parameterValue.parameter.name + " with " +
 		// parameterValue.values.size() + " values");
 		ParameterValue existingParameterValue = this.getParameterValue(parameterValue.parameter);
-		if(existingParameterValue == null) {
+		if (existingParameterValue == null) {
 			this.parameterValues.add(parameterValue);
 		} else {
 			existingParameterValue.values = parameterValue.values;
@@ -81,9 +83,9 @@ public abstract class Execution extends Object_ {
 	public ParameterValue getReturnParameterValue() {
 		ParameterValue value = null;
 		int i = 0;
-		while(value == null && i < this.parameterValues.size()) {
+		while (value == null && i < this.parameterValues.size()) {
 			Parameter parameter = this.parameterValues.get(i).parameter;
-			if(parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
+			if (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 				value = this.parameterValues.get(i);
 			}
 			i++;
@@ -96,8 +98,8 @@ public abstract class Execution extends Object_ {
 		// parameter (if any).
 		ParameterValue parameterValue = null;
 		int i = 1;
-		while(parameterValue == null & i <= this.parameterValues.size()) {
-			if(this.parameterValues.get(i - 1).parameter == parameter) {
+		while (parameterValue == null & i <= this.parameterValues.size()) {
+			if (this.parameterValues.get(i - 1).parameter == parameter) {
 				parameterValue = this.parameterValues.get(i - 1);
 			}
 			i = i + 1;
@@ -110,10 +112,10 @@ public abstract class Execution extends Object_ {
 		// parameters.
 		List<ParameterValue> outputs = new ArrayList<ParameterValue>();
 		List<ParameterValue> parameterValues = this.parameterValues;
-		for(int i = 0; i < parameterValues.size(); i++) {
+		for (int i = 0; i < parameterValues.size(); i++) {
 			ParameterValue parameterValue = parameterValues.get(i);
 			Parameter parameter = parameterValue.parameter;
-			if((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
+			if ((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
 				outputs.add(parameterValue);
 			}
 		}
@@ -122,6 +124,6 @@ public abstract class Execution extends Object_ {
 
 	public Behavior getBehavior() {
 		// Get the behavior that is the type of this execution.
-		return (Behavior)(this.getTypes().get(0));
+		return (Behavior) (this.getTypes().get(0));
 	}
 }

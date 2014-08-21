@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,15 +34,15 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Instantiates a new export profiles user parameters.
-	 * 
+	 *
 	 * @param pluginName
-	 *        the plugin name
+	 *            the plugin name
 	 * @param pluginProvider
-	 *        the plugin provider
+	 *            the plugin provider
 	 * @param pluginVersion
-	 *        the plugin version
+	 *            the plugin version
 	 * @param execEnvironment
-	 *        the exec environment
+	 *            the exec environment
 	 */
 	public ExportProfilesUserParameters(String pluginName, String pluginProvider, String pluginVersion, String execEnvironment) {
 		this.pluginName = pluginName;
@@ -55,7 +55,7 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Gets the plugin name.
-	 * 
+	 *
 	 * @return the plugin name
 	 */
 	public String getPluginName() {
@@ -64,9 +64,9 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Sets the plugin name.
-	 * 
+	 *
 	 * @param pluginName
-	 *        the new plugin name
+	 *            the new plugin name
 	 */
 	public void setPluginName(String pluginName) {
 		this.pluginName = pluginName;
@@ -74,7 +74,7 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Gets the plugin provider.
-	 * 
+	 *
 	 * @return the plugin provider
 	 */
 	public String getPluginProvider() {
@@ -83,9 +83,9 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Sets the plugin provider.
-	 * 
+	 *
 	 * @param pluginProvider
-	 *        the new plugin provider
+	 *            the new plugin provider
 	 */
 	public void setPluginProvider(String pluginProvider) {
 		this.pluginProvider = pluginProvider;
@@ -93,7 +93,7 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Gets the plugin version.
-	 * 
+	 *
 	 * @return the plugin version
 	 */
 	public String getPluginVersion() {
@@ -102,9 +102,9 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Sets the plugin version.
-	 * 
+	 *
 	 * @param pluginVersion
-	 *        the new plugin version
+	 *            the new plugin version
 	 */
 	public void setPluginVersion(String pluginVersion) {
 		this.pluginVersion = pluginVersion;
@@ -112,7 +112,7 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Gets the plugin exec environment.
-	 * 
+	 *
 	 * @return the plugin exec environment
 	 */
 	public String getPluginExecEnvironment() {
@@ -121,9 +121,9 @@ public class ExportProfilesUserParameters {
 
 	/**
 	 * Sets the plugin exec environment.
-	 * 
+	 *
 	 * @param pluginExecEnvironment
-	 *        the new plugin exec environment
+	 *            the new plugin exec environment
 	 */
 	public void setPluginExecEnvironment(String pluginExecEnvironment) {
 		this.pluginExecEnvironment = pluginExecEnvironment;

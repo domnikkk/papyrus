@@ -33,10 +33,12 @@ public class ShowModelPartitionHandler extends AbstractModelExplorerHandler {
 	 * 
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		List<EObject> selection = getCurrentSelectionAdaptedToType(event, EObject.class);
-		PreviewDialog dialog = new PreviewDialog(Display.getDefault().getActiveShell(), new ExtensivePartitionNameLabelProvider( UIUtils.getModelExplorerLavelProvider()), "Model Partition", "The name of each partition appear between the [] before each element name");
-		if(selection != null && !selection.isEmpty()) {
+		PreviewDialog dialog = new PreviewDialog(Display.getDefault().getActiveShell(), new ExtensivePartitionNameLabelProvider(UIUtils.getModelExplorerLavelProvider()), "Model Partition",
+				"The name of each partition appear between the [] before each element name");
+		if (selection != null && !selection.isEmpty()) {
 			dialog.setObjectsToReveal(selection);
 		}
 		dialog.open();

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -34,11 +34,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.LineInstance;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.LineInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class LineInstanceItemProvider
-	extends TypeInstanceItemProvider
-	implements
+		extends TypeInstanceItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -48,6 +49,7 @@ public class LineInstanceItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LineInstanceItemProvider(AdapterFactory adapterFactory) {
@@ -58,6 +60,7 @@ public class LineInstanceItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,50 +78,53 @@ public class LineInstanceItemProvider
 	 * This adds a property descriptor for the Line Color feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLineColorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LineInstance_lineColor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LineInstance_lineColor_feature", "_UI_LineInstance_type"),
-				 LayersPackage.Literals.LINE_INSTANCE__LINE_COLOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_LineInstance_lineColor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_LineInstance_lineColor_feature", "_UI_LineInstance_type"),
+						LayersPackage.Literals.LINE_INSTANCE__LINE_COLOR,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Line With feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLineWithPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LineInstance_lineWith_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LineInstance_lineWith_feature", "_UI_LineInstance_type"),
-				 LayersPackage.Literals.LINE_INSTANCE__LINE_WITH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_LineInstance_lineWith_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_LineInstance_lineWith_feature", "_UI_LineInstance_type"),
+						LayersPackage.Literals.LINE_INSTANCE__LINE_WITH,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns LineInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,13 +136,14 @@ public class LineInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		LineInstance lineInstance = (LineInstance)object;
+		LineInstance lineInstance = (LineInstance) object;
 		String propertyName = getInstancePropertyName(object);
-		return  ("".equals(propertyName)?getString("_UI_LineInstance_type"):"'" + propertyName+"'") 
+		return ("".equals(propertyName) ? getString("_UI_LineInstance_type") : "'" + propertyName + "'")
 				+ " with=" + lineInstance.getLineWith()
 				+ ", color=" + lineInstance.getLineColor();
 	}
@@ -146,6 +153,7 @@ public class LineInstanceItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,10 +161,10 @@ public class LineInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LineInstance.class)) {
-			case LayersPackage.LINE_INSTANCE__LINE_COLOR:
-			case LayersPackage.LINE_INSTANCE__LINE_WITH:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case LayersPackage.LINE_INSTANCE__LINE_COLOR:
+		case LayersPackage.LINE_INSTANCE__LINE_WITH:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -166,6 +174,7 @@ public class LineInstanceItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,21 +59,26 @@ public interface IBundleDescriptionDesigner {
 	public final static String ECLIPSE_REGISTERBUDDY = "Eclipse-RegisterBuddy";
 
 	/**
-	 * 
+	 *
 	 * @param bundleProject
 	 * @param key
 	 * @return the value that correspond to the key
 	 */
-	public  String getBundleValue(Object bundleProject, String key);
+	public String getBundleValue(Object bundleProject, String key);
 
 	/**
 	 * fill properties of stereotypes from Meta-information of the JAVA bundle object
-	 * @param bundleComponent the UML representation of a bundle
-	 * @param bundleProject the JAVA bundle project
+	 * 
+	 * @param bundleComponent
+	 *            the UML representation of a bundle
+	 * @param bundleProject
+	 *            the JAVA bundle project
 	 */
 	public void fillPluginProperties(Component bundleComponent, Object bundleProject);
+
 	/**
 	 * get the symbolic name from the JAVA object that represent the bundle
+	 * 
 	 * @param bundleProject
 	 * @return the symbolic name
 	 */
@@ -81,21 +86,29 @@ public interface IBundleDescriptionDesigner {
 
 	/**
 	 * get the name from the JAVA object that represent the bundle
+	 * 
 	 * @param bundleProject
-	 * @return the  name
+	 * @return the name
 	 */
 	public String getName(Object bundleProject);
 
 	/**
 	 * create packages that are exported to other plugins
-	 * @param bundleComponent the UML representation of the bundle
-	 * @param bundleProject the bundle JAVA object
+	 * 
+	 * @param bundleComponent
+	 *            the UML representation of the bundle
+	 * @param bundleProject
+	 *            the bundle JAVA object
 	 */
 	public void fillExportedPackages(Component bundleComponent, Object bundleProject);
+
 	/**
 	 * return the list of referenced OSGI element from a bundle
-	 * @param bundleComponent the UML component that represent the bundle
-	 * @param bundleProject the java class that represent the bundle
+	 * 
+	 * @param bundleComponent
+	 *            the UML component that represent the bundle
+	 * @param bundleProject
+	 *            the java class that represent the bundle
 	 * @return the list of OSGI references
 	 */
 	public ArrayList<ReferencedOSGIElement> getRequiredBundle(Component bundleComponent, Object bundleProject);

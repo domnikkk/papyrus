@@ -20,8 +20,8 @@ import org.eclipse.papyrus.eastadl.structure.functionmodeling.FunctionPort;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.LogicalEventImpl#isIsExternVisible <em>Is Extern Visible</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.LogicalEventImpl#getVisibleThroughFunctionPort <em>Visible Through Function Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.LogicalEventImpl#isIsExternVisible <em>Is Extern Visible</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.annex.attributequantificationconstraint.impl.LogicalEventImpl#getVisibleThroughFunctionPort <em>Visible Through Function Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The default value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The cached value of the '{@link #isIsExternVisible() <em>Is Extern Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isIsExternVisible()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	 * The cached value of the '{@link #getVisibleThroughFunctionPort() <em>Visible Through Function Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVisibleThroughFunctionPort()
 	 * @generated
 	 * @ordered
@@ -61,6 +64,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LogicalEventImpl() {
@@ -70,6 +74,7 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,8 +85,10 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isIsExternVisible() {
 		return isExternVisible;
 	}
@@ -89,20 +96,25 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsExternVisible(boolean newIsExternVisible) {
 		boolean oldIsExternVisible = isExternVisible;
 		isExternVisible = newIsExternVisible;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE, oldIsExternVisible, isExternVisible));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionPort> getVisibleThroughFunctionPort() {
 		if (visibleThroughFunctionPort == null) {
 			visibleThroughFunctionPort = new EObjectResolvingEList<FunctionPort>(FunctionPort.class, this, AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT);
@@ -113,15 +125,16 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
-				return isIsExternVisible();
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
-				return getVisibleThroughFunctionPort();
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
+			return isIsExternVisible();
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
+			return getVisibleThroughFunctionPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,19 +142,20 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
-				setIsExternVisible((Boolean)newValue);
-				return;
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
-				getVisibleThroughFunctionPort().clear();
-				getVisibleThroughFunctionPort().addAll((Collection<? extends FunctionPort>)newValue);
-				return;
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
+			setIsExternVisible((Boolean) newValue);
+			return;
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
+			getVisibleThroughFunctionPort().clear();
+			getVisibleThroughFunctionPort().addAll((Collection<? extends FunctionPort>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -149,17 +163,18 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
-				setIsExternVisible(IS_EXTERN_VISIBLE_EDEFAULT);
-				return;
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
-				getVisibleThroughFunctionPort().clear();
-				return;
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
+			setIsExternVisible(IS_EXTERN_VISIBLE_EDEFAULT);
+			return;
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
+			getVisibleThroughFunctionPort().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -167,15 +182,16 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
-				return isExternVisible != IS_EXTERN_VISIBLE_EDEFAULT;
-			case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
-				return visibleThroughFunctionPort != null && !visibleThroughFunctionPort.isEmpty();
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__IS_EXTERN_VISIBLE:
+			return isExternVisible != IS_EXTERN_VISIBLE_EDEFAULT;
+		case AttributequantificationconstraintPackage.LOGICAL_EVENT__VISIBLE_THROUGH_FUNCTION_PORT:
+			return visibleThroughFunctionPort != null && !visibleThroughFunctionPort.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -183,11 +199,14 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isExternVisible: ");
@@ -196,4 +215,4 @@ public class LogicalEventImpl extends QuantificationImpl implements LogicalEvent
 		return result.toString();
 	}
 
-} //LogicalEventImpl
+} // LogicalEventImpl

@@ -22,55 +22,63 @@ import org.eclipse.uml2.uml.Type;
  */
 public class BooleanLiteralRuleImpl extends LiteralImpl implements BooleanLiteralRule
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected BooleanLiteralRuleImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected BooleanLiteralRuleImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return VSLPackage.Literals.BOOLEAN_LITERAL_RULE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return VSLPackage.Literals.BOOLEAN_LITERAL_RULE;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getFilteredParentRule(final EClass filter)
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EObject getFilteredParentRule(final EClass filter)
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type getExpectedType()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Type getExpectedType()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element getContextElement()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Element getContextElement()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this);
+	}
 
-} //BooleanLiteralRuleImpl
+} // BooleanLiteralRuleImpl

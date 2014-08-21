@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,11 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.layout.algorithms.horizontalsymmetryalgorithm;
 
-import org.eclipse.zest.layouts.LayoutStyles;
-import org.eclipse.zest.layouts.algorithms.AbstractLayoutAlgorithm;
-import org.eclipse.zest.layouts.dataStructures.InternalNode;
-import org.eclipse.zest.layouts.dataStructures.InternalRelationship;
-
 /**
  * The Class HorizontalSymmetryLayoutAlgorithm.
  */
@@ -25,9 +20,9 @@ public class HorizontalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 
 	/**
 	 * Instantiates a new horizontal symmetry layout algorithm.
-	 * 
+	 *
 	 * @param styles
-	 *        the styles
+	 *            the styles
 	 */
 	public HorizontalSymmetryLayoutAlgorithm(int styles) {
 		super(styles);
@@ -85,14 +80,15 @@ public class HorizontalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 	 */
 	@Override
 	protected boolean isValidConfiguration(boolean asynchronous, boolean continuous) {
-		if(asynchronous && continuous)
+		if (asynchronous && continuous) {
 			return false;
-		else if(asynchronous && !continuous)
+		} else if (asynchronous && !continuous) {
 			return true;
-		else if(!asynchronous && continuous)
+		} else if (!asynchronous && continuous) {
 			return false;
-		else if(!asynchronous && !continuous)
+		} else if (!asynchronous && !continuous) {
 			return true;
+		}
 
 		return false;
 	}
@@ -123,7 +119,7 @@ public class HorizontalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 	protected void preLayoutAlgorithm(InternalNode[] entitiesToLayout, InternalRelationship[] relationshipsToConsider,
 			double x, double y, double width, double height) {
 		double middle = calculateMiddleArea(y, height);
-		for(InternalNode node : entitiesToLayout) {
+		for (InternalNode node : entitiesToLayout) {
 			// node.setLocationInLayout(node.getXInLayout(),middle+(middle - node.getYInLayout()));
 			node.setLocation(node.getInternalX(), (middle + (middle - node.getInternalY())) - node.getHeightInLayout());
 			// node.setInternalLocation(node.getXInLayout(), middle+(middle - node.getYInLayout()));
@@ -132,12 +128,12 @@ public class HorizontalSymmetryLayoutAlgorithm extends AbstractLayoutAlgorithm {
 
 	/**
 	 * Calculate middle area.
-	 * 
+	 *
 	 * @param y
-	 *        the y
+	 *            the y
 	 * @param height
-	 *        the height
-	 * 
+	 *            the height
+	 *
 	 * @return the double
 	 */
 	private double calculateMiddleArea(double y, double height) {

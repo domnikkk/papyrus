@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.papyrus.umlrt.statemachine.UMLRealTimeStateMach.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UMLRealTimeStateMachFactory {
@@ -29,16 +30,16 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static UMLRealTimeStateMachFactory init() {
 		try {
-			UMLRealTimeStateMachFactory theUMLRealTimeStateMachFactory = (UMLRealTimeStateMachFactory)EPackage.Registry.INSTANCE.getEFactory(UMLRealTimeStateMachPackage.eNS_URI);
+			UMLRealTimeStateMachFactory theUMLRealTimeStateMachFactory = (UMLRealTimeStateMachFactory) EPackage.Registry.INSTANCE.getEFactory(UMLRealTimeStateMachPackage.eNS_URI);
 			if (theUMLRealTimeStateMachFactory != null) {
 				return theUMLRealTimeStateMachFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UMLRealTimeStateMachFactoryImpl();
@@ -48,6 +49,7 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UMLRealTimeStateMachFactoryImpl() {
@@ -57,26 +59,34 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case UMLRealTimeStateMachPackage.RT_STATE_MACHINE: return createRTStateMachine();
-			case UMLRealTimeStateMachPackage.RT_REGION: return createRTRegion();
-			case UMLRealTimeStateMachPackage.RT_STATE: return createRTState();
-			case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE: return createRTPseudostate();
-			case UMLRealTimeStateMachPackage.RT_TRIGGER: return createRTTrigger();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		case UMLRealTimeStateMachPackage.RT_STATE_MACHINE:
+			return createRTStateMachine();
+		case UMLRealTimeStateMachPackage.RT_REGION:
+			return createRTRegion();
+		case UMLRealTimeStateMachPackage.RT_STATE:
+			return createRTState();
+		case UMLRealTimeStateMachPackage.RT_PSEUDOSTATE:
+			return createRTPseudostate();
+		case UMLRealTimeStateMachPackage.RT_TRIGGER:
+			return createRTTrigger();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RTStateMachine createRTStateMachine() {
 		RTStateMachineImpl rtStateMachine = new RTStateMachineImpl();
 		return rtStateMachine;
@@ -85,8 +95,10 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RTRegion createRTRegion() {
 		RTRegionImpl rtRegion = new RTRegionImpl();
 		return rtRegion;
@@ -95,8 +107,10 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RTState createRTState() {
 		RTStateImpl rtState = new RTStateImpl();
 		return rtState;
@@ -105,8 +119,10 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RTPseudostate createRTPseudostate() {
 		RTPseudostateImpl rtPseudostate = new RTPseudostateImpl();
 		return rtPseudostate;
@@ -115,8 +131,10 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RTTrigger createRTTrigger() {
 		RTTriggerImpl rtTrigger = new RTTriggerImpl();
 		return rtTrigger;
@@ -125,15 +143,18 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public UMLRealTimeStateMachPackage getUMLRealTimeStateMachPackage() {
-		return (UMLRealTimeStateMachPackage)getEPackage();
+		return (UMLRealTimeStateMachPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -142,4 +163,4 @@ public class UMLRealTimeStateMachFactoryImpl extends EFactoryImpl implements UML
 		return UMLRealTimeStateMachPackage.eINSTANCE;
 	}
 
-} //UMLRealTimeStateMachFactoryImpl
+} // UMLRealTimeStateMachFactoryImpl

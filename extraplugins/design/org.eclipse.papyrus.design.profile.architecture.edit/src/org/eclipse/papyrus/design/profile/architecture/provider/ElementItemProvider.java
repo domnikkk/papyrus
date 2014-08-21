@@ -33,11 +33,12 @@ import org.eclipse.papyrus.design.profile.architecture.Element;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.design.profile.architecture.Element} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ElementItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class ElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ElementItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class ElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,58 +77,61 @@ public class ElementItemProvider
 	 * This adds a property descriptor for the Documentation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDocumentationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_documentation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_documentation_feature", "_UI_Element_type"),
-				 ArchitecturePackage.Literals.ELEMENT__DOCUMENTATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Element_documentation_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Element_documentation_feature", "_UI_Element_type"),
+						ArchitecturePackage.Literals.ELEMENT__DOCUMENTATION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_comment_feature", "_UI_Element_type"),
-				 ArchitecturePackage.Literals.ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Element_comment_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Element_comment_feature", "_UI_Element_type"),
+						ArchitecturePackage.Literals.ELEMENT__COMMENT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Element)object).getDocumentation();
+		String label = ((Element) object).getDocumentation();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Element_type") :
-			getString("_UI_Element_type") + " " + label;
+				getString("_UI_Element_type") :
+				getString("_UI_Element_type") + " " + label;
 	}
 
 	/**
@@ -133,6 +139,7 @@ public class ElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,10 +147,10 @@ public class ElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Element.class)) {
-			case ArchitecturePackage.ELEMENT__DOCUMENTATION:
-			case ArchitecturePackage.ELEMENT__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ArchitecturePackage.ELEMENT__DOCUMENTATION:
+		case ArchitecturePackage.ELEMENT__COMMENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -153,6 +160,7 @@ public class ElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,6 +172,7 @@ public class ElementItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

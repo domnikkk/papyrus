@@ -16,6 +16,7 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage
  * @generated
  */
@@ -24,6 +25,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static Geometry_datatypesPackage modelPackage;
@@ -32,6 +34,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Geometry_datatypesAdapterFactory() {
@@ -45,6 +48,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -54,7 +58,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -63,111 +67,135 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Geometry_datatypesSwitch<Adapter> modelSwitch =
-		new Geometry_datatypesSwitch<Adapter>() {
-			@Override
-			public Adapter casePoint(Point object) {
-				return createPointAdapter();
-			}
-			@Override
-			public Adapter casePoint32(Point32 object) {
-				return createPoint32Adapter();
-			}
-			@Override
-			public Adapter casePointStamped(PointStamped object) {
-				return createPointStampedAdapter();
-			}
-			@Override
-			public Adapter casePolygon(Polygon object) {
-				return createPolygonAdapter();
-			}
-			@Override
-			public Adapter casePolygonStamped(PolygonStamped object) {
-				return createPolygonStampedAdapter();
-			}
-			@Override
-			public Adapter caseVector3(Vector3 object) {
-				return createVector3Adapter();
-			}
-			@Override
-			public Adapter caseVector3Stamped(Vector3Stamped object) {
-				return createVector3StampedAdapter();
-			}
-			@Override
-			public Adapter caseQuaternion(Quaternion object) {
-				return createQuaternionAdapter();
-			}
-			@Override
-			public Adapter casePose(Pose object) {
-				return createPoseAdapter();
-			}
-			@Override
-			public Adapter casePoseStamped(PoseStamped object) {
-				return createPoseStampedAdapter();
-			}
-			@Override
-			public Adapter caseTwistWithCovariance(TwistWithCovariance object) {
-				return createTwistWithCovarianceAdapter();
-			}
-			@Override
-			public Adapter caseTwist(Twist object) {
-				return createTwistAdapter();
-			}
-			@Override
-			public Adapter caseTwistStamped(TwistStamped object) {
-				return createTwistStampedAdapter();
-			}
-			@Override
-			public Adapter casePoseWithCovariance(PoseWithCovariance object) {
-				return createPoseWithCovarianceAdapter();
-			}
-			@Override
-			public Adapter casePose2D(Pose2D object) {
-				return createPose2DAdapter();
-			}
-			@Override
-			public Adapter casePoseWithCovarianceStamped(PoseWithCovarianceStamped object) {
-				return createPoseWithCovarianceStampedAdapter();
-			}
-			@Override
-			public Adapter casePoseArray(PoseArray object) {
-				return createPoseArrayAdapter();
-			}
-			@Override
-			public Adapter caseQuaternionStamped(QuaternionStamped object) {
-				return createQuaternionStampedAdapter();
-			}
-			@Override
-			public Adapter caseTransform(Transform object) {
-				return createTransformAdapter();
-			}
-			@Override
-			public Adapter caseWrenchStamped(WrenchStamped object) {
-				return createWrenchStampedAdapter();
-			}
-			@Override
-			public Adapter caseWrench(Wrench object) {
-				return createWrenchAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new Geometry_datatypesSwitch<Adapter>() {
+				@Override
+				public Adapter casePoint(Point object) {
+					return createPointAdapter();
+				}
+
+				@Override
+				public Adapter casePoint32(Point32 object) {
+					return createPoint32Adapter();
+				}
+
+				@Override
+				public Adapter casePointStamped(PointStamped object) {
+					return createPointStampedAdapter();
+				}
+
+				@Override
+				public Adapter casePolygon(Polygon object) {
+					return createPolygonAdapter();
+				}
+
+				@Override
+				public Adapter casePolygonStamped(PolygonStamped object) {
+					return createPolygonStampedAdapter();
+				}
+
+				@Override
+				public Adapter caseVector3(Vector3 object) {
+					return createVector3Adapter();
+				}
+
+				@Override
+				public Adapter caseVector3Stamped(Vector3Stamped object) {
+					return createVector3StampedAdapter();
+				}
+
+				@Override
+				public Adapter caseQuaternion(Quaternion object) {
+					return createQuaternionAdapter();
+				}
+
+				@Override
+				public Adapter casePose(Pose object) {
+					return createPoseAdapter();
+				}
+
+				@Override
+				public Adapter casePoseStamped(PoseStamped object) {
+					return createPoseStampedAdapter();
+				}
+
+				@Override
+				public Adapter caseTwistWithCovariance(TwistWithCovariance object) {
+					return createTwistWithCovarianceAdapter();
+				}
+
+				@Override
+				public Adapter caseTwist(Twist object) {
+					return createTwistAdapter();
+				}
+
+				@Override
+				public Adapter caseTwistStamped(TwistStamped object) {
+					return createTwistStampedAdapter();
+				}
+
+				@Override
+				public Adapter casePoseWithCovariance(PoseWithCovariance object) {
+					return createPoseWithCovarianceAdapter();
+				}
+
+				@Override
+				public Adapter casePose2D(Pose2D object) {
+					return createPose2DAdapter();
+				}
+
+				@Override
+				public Adapter casePoseWithCovarianceStamped(PoseWithCovarianceStamped object) {
+					return createPoseWithCovarianceStampedAdapter();
+				}
+
+				@Override
+				public Adapter casePoseArray(PoseArray object) {
+					return createPoseArrayAdapter();
+				}
+
+				@Override
+				public Adapter caseQuaternionStamped(QuaternionStamped object) {
+					return createQuaternionStampedAdapter();
+				}
+
+				@Override
+				public Adapter caseTransform(Transform object) {
+					return createTransformAdapter();
+				}
+
+				@Override
+				public Adapter caseWrenchStamped(WrenchStamped object) {
+					return createWrenchStampedAdapter();
+				}
+
+				@Override
+				public Adapter caseWrench(Wrench object) {
+					return createWrenchAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -177,6 +205,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point
 	 * @generated
@@ -191,6 +220,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32
 	 * @generated
@@ -205,6 +235,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PointStamped
 	 * @generated
@@ -219,6 +250,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Polygon
 	 * @generated
@@ -233,6 +265,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PolygonStamped
 	 * @generated
@@ -247,6 +280,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3
 	 * @generated
@@ -261,6 +295,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Vector3Stamped
 	 * @generated
@@ -275,6 +310,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion
 	 * @generated
@@ -289,6 +325,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose
 	 * @generated
@@ -303,6 +340,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseStamped
 	 * @generated
@@ -317,6 +355,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.TwistWithCovariance
 	 * @generated
@@ -331,6 +370,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Twist
 	 * @generated
@@ -345,6 +385,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.TwistStamped
 	 * @generated
@@ -359,6 +400,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseWithCovariance
 	 * @generated
@@ -373,6 +415,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Pose2D
 	 * @generated
@@ -387,6 +430,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseWithCovarianceStamped
 	 * @generated
@@ -401,6 +445,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.PoseArray
 	 * @generated
@@ -415,6 +460,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.QuaternionStamped
 	 * @generated
@@ -429,6 +475,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Transform
 	 * @generated
@@ -443,6 +490,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.WrenchStamped
 	 * @generated
@@ -457,6 +505,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Wrench
 	 * @generated
@@ -470,6 +519,7 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -477,4 +527,4 @@ public class Geometry_datatypesAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //Geometry_datatypesAdapterFactory
+} // Geometry_datatypesAdapterFactory

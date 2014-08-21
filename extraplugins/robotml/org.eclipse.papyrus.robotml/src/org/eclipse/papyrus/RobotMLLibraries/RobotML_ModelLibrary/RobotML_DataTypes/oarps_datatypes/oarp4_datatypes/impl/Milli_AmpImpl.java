@@ -19,7 +19,7 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Milli_AmpImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Milli_AmpImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Milli_AmpImpl() {
@@ -58,6 +61,7 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,6 +72,7 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getValue() {
@@ -77,25 +82,28 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setValue(long newValue) {
 		long oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.MILLI_AMP__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
-				return getValue();
+		case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +111,15 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
-				setValue((Long)newValue);
-				return;
+		case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
+			setValue((Long) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +127,15 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +143,14 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
-				return value != VALUE_EDEFAULT;
+		case Oarp4_datatypesPackage.MILLI_AMP__VALUE:
+			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +158,14 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -160,4 +174,4 @@ public class Milli_AmpImpl extends MinimalEObjectImpl.Container implements Milli
 		return result.toString();
 	}
 
-} //Milli_AmpImpl
+} // Milli_AmpImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,14 +66,15 @@ class ItemProviderFilterRegistry {
 			this.labelProvider = labelProvider;
 		}
 
+		@Override
 		public boolean apply(Object input) {
 			boolean result = true;
 
-			if(!filters.isEmpty()) {
+			if (!filters.isEmpty()) {
 				labelWrapper.object = input;
 				labelWrapper.label = labelProvider.getText(input);
 
-				for(Iterator<Filter> iter = filters.values().iterator(); result && iter.hasNext();) {
+				for (Iterator<Filter> iter = filters.values().iterator(); result && iter.hasNext();) {
 					result = !iter.next().apply(labelWrapper);
 				}
 			}
@@ -118,6 +119,7 @@ class ItemProviderFilterRegistry {
 			this.pattern = Pattern.compile(pattern);
 		}
 
+		@Override
 		public boolean apply(LabelWrapper input) {
 			return (input.label != null) && pattern.matcher(input.label).find();
 		}
@@ -159,6 +161,7 @@ class ItemProviderFilterRegistry {
 			this.filter = filter;
 		}
 
+		@Override
 		public boolean apply(LabelWrapper input) {
 			try {
 				return enabled && filter.get().filter(input.object);
@@ -182,6 +185,7 @@ class ItemProviderFilterRegistry {
 			this.predicate = predicate;
 		}
 
+		@Override
 		public boolean apply(LabelWrapper input) {
 			try {
 				return enabled && predicate.get().apply(input.object);
@@ -231,31 +235,31 @@ class ItemProviderFilterRegistry {
 
 			final String name = config.getName();
 
-			if(E_ITEM_PROVIDER_FILTER.equals(name)) {
+			if (E_ITEM_PROVIDER_FILTER.equals(name)) {
 				String id = config.getAttribute(A_ID);
-				if(id == null) {
+				if (id == null) {
 					result = false;
 					logMissingAttribute(config, A_ID);
 					currentID = null;
 					currentConfig = null;
 				} else {
-					if(add) {
-						if(currentID != null) {
+					if (add) {
+						if (currentID != null) {
 							// haven't created the previous filter
 							logError(currentConfig, String.format("Missing specification of filter %s.", currentID)); //$NON-NLS-1$
 						}
 
 						currentID = id;
 						currentConfig = config;
-					} else if(id != null) {
+					} else if (id != null) {
 						removeFilter(id);
 					}
 				}
-			} else if(add) { // don't need to process deletion of filter specifications, only filters
-				if(currentID == null) {
+			} else if (add) { // don't need to process deletion of filter specifications, only filters
+				if (currentID == null) {
 					result = false;
 					logError(config, String.format("Too many filter specifications.")); //$NON-NLS-1$
-				} else if(filters.containsKey(currentID)) {
+				} else if (filters.containsKey(currentID)) {
 					result = false;
 					logError(config, String.format("Duplicate filter ID \"%s\".  The duplicate is ignored.", currentID)); //$NON-NLS-1$
 				} else {
@@ -275,11 +279,11 @@ class ItemProviderFilterRegistry {
 
 			final String name = config.getName();
 
-			if(E_LABEL_PATTERN.equals(name)) {
+			if (E_LABEL_PATTERN.equals(name)) {
 				result = createLabelPatternFilter(config);
-			} else if(E_ELEMENT_FILTER.equals(name)) {
+			} else if (E_ELEMENT_FILTER.equals(name)) {
 				result = createElementFilterFilter(config);
-			} else if(E_PREDICATE.equals(config)) {
+			} else if (E_PREDICATE.equals(config)) {
 				result = createPredicateFilter(config);
 			}
 
@@ -296,14 +300,14 @@ class ItemProviderFilterRegistry {
 			boolean result = true;
 
 			String pattern = config.getAttribute(A_PATTERN);
-			if(pattern == null) {
+			if (pattern == null) {
 				logMissingAttribute(config, A_PATTERN);
 				result = false;
 			} else {
 				Class<?> objectClass = null;
 				String className = config.getAttribute(A_OBJECT_CLASS);
 
-				if(className != null) {
+				if (className != null) {
 					String bundleID = config.getContributor().getName();
 
 					try {
@@ -315,14 +319,14 @@ class ItemProviderFilterRegistry {
 					}
 				}
 
-				if(result) {
+				if (result) {
 					try {
-						if(objectClass == null) {
+						if (objectClass == null) {
 							addFilter(new LabelPatternFilter(currentID, pattern));
 						} else {
 							boolean adapt = false;
 							String adaptAttr = config.getAttribute(A_ADAPT);
-							if(adaptAttr != null) {
+							if (adaptAttr != null) {
 								adapt = Boolean.parseBoolean(adaptAttr);
 							}
 
@@ -345,18 +349,18 @@ class ItemProviderFilterRegistry {
 			String className = config.getAttribute(A_CLASS);
 			String supplierClassName = config.getAttribute(A_SUPPLIER_CLASS);
 
-			if((className == null) && (supplierClassName == null)) {
+			if ((className == null) && (supplierClassName == null)) {
 				result = false;
 				logMissingAttribute(config, A_CLASS);
-			} else if(className != null) {
+			} else if (className != null) {
 				try {
 					Object extension = config.createExecutableExtension(A_CLASS);
-					if(!(extension instanceof IElementFilter)) {
+					if (!(extension instanceof IElementFilter)) {
 						result = false;
 						logError(config, String.format("Extension is not an IElementFilter: %s", extension.getClass().getName())); //$NON-NLS-1$
 					}
 
-					addFilter(new ElementFilterFilter(currentID, Suppliers.ofInstance((IElementFilter)extension)));
+					addFilter(new ElementFilterFilter(currentID, Suppliers.ofInstance((IElementFilter) extension)));
 				} catch (CoreException e) {
 					result = false;
 					Activator.log.error(e);
@@ -364,13 +368,13 @@ class ItemProviderFilterRegistry {
 			} else {
 				try {
 					Object extension = config.createExecutableExtension(A_CLASS);
-					if(!(extension instanceof Supplier<?>)) {
+					if (!(extension instanceof Supplier<?>)) {
 						result = false;
 						logError(config, String.format("Extension is not a Supplier<? extends IElementFilter>: %s", extension.getClass().getName())); //$NON-NLS-1$
 					}
 
 					@SuppressWarnings("unchecked")
-					Supplier<? extends IElementFilter> supplier = (Supplier<? extends IElementFilter>)extension;
+					Supplier<? extends IElementFilter> supplier = (Supplier<? extends IElementFilter>) extension;
 					addFilter(new ElementFilterFilter(currentID, Suppliers.memoize(supplier)));
 				} catch (CoreException e) {
 					result = false;
@@ -387,19 +391,19 @@ class ItemProviderFilterRegistry {
 			String className = config.getAttribute(A_CLASS);
 			String supplierClassName = config.getAttribute(A_SUPPLIER_CLASS);
 
-			if((className == null) && (supplierClassName == null)) {
+			if ((className == null) && (supplierClassName == null)) {
 				result = false;
 				logMissingAttribute(config, A_CLASS);
-			} else if(className != null) {
+			} else if (className != null) {
 				try {
 					Object extension = config.createExecutableExtension(A_CLASS);
-					if(!(extension instanceof Predicate<?>)) {
+					if (!(extension instanceof Predicate<?>)) {
 						result = false;
 						logError(config, String.format("Extension is not a Predicate<Object>: %s", extension.getClass().getName())); //$NON-NLS-1$
 					}
 
 					@SuppressWarnings("unchecked")
-					Predicate<Object> predicate = (Predicate<Object>)extension;
+					Predicate<Object> predicate = (Predicate<Object>) extension;
 					addFilter(new PredicateFilter(currentID, Suppliers.ofInstance(predicate)));
 				} catch (CoreException e) {
 					result = false;
@@ -408,13 +412,13 @@ class ItemProviderFilterRegistry {
 			} else {
 				try {
 					Object extension = config.createExecutableExtension(A_CLASS);
-					if(!(extension instanceof Supplier<?>)) {
+					if (!(extension instanceof Supplier<?>)) {
 						result = false;
 						logError(config, String.format("Extension is not a Supplier<? extends Predicate<Object>>: %s", extension.getClass().getName())); //$NON-NLS-1$
 					}
 
 					@SuppressWarnings("unchecked")
-					Supplier<? extends Predicate<Object>> supplier = (Supplier<? extends Predicate<Object>>)extension;
+					Supplier<? extends Predicate<Object>> supplier = (Supplier<? extends Predicate<Object>>) extension;
 					addFilter(new PredicateFilter(currentID, Suppliers.memoize(supplier)));
 				} catch (CoreException e) {
 					result = false;

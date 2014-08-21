@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * Possible values of eventKind.
- * 
- * Extension: 
+ *
+ * Extension:
  * Enumeration, no extension.
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionClientServerPortKind()
  * @model
  * @generated
@@ -41,6 +42,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Received Request</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RECEIVED_REQUEST_VALUE
 	 * @generated
 	 * @ordered
@@ -51,6 +53,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Sent Response</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SENT_RESPONSE_VALUE
 	 * @generated
 	 * @ordered
@@ -61,6 +64,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Sent Request</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SENT_REQUEST_VALUE
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Received Response</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RECEIVED_RESPONSE_VALUE
 	 * @generated
 	 * @ordered
@@ -81,10 +86,10 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Received Request</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Received Request</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Received Request</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RECEIVED_REQUEST
 	 * @model name="receivedRequest"
 	 * @generated
@@ -96,10 +101,10 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Sent Response</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Sent Response</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Sent Response</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SENT_RESPONSE
 	 * @model name="sentResponse"
 	 * @generated
@@ -111,10 +116,10 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Sent Request</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Sent Request</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Sent Request</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SENT_REQUEST
 	 * @model name="sentRequest"
 	 * @generated
@@ -126,10 +131,10 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * The '<em><b>Received Response</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Received Response</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Received Response</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #RECEIVED_RESPONSE
 	 * @model name="receivedResponse"
 	 * @generated
@@ -141,20 +146,22 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * An array of all the '<em><b>Event Function Client Server Port Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final EventFunctionClientServerPortKind[] VALUES_ARRAY =
-		new EventFunctionClientServerPortKind[] {
-			RECEIVED_REQUEST,
-			SENT_RESPONSE,
-			SENT_REQUEST,
-			RECEIVED_RESPONSE,
-		};
+			new EventFunctionClientServerPortKind[] {
+					RECEIVED_REQUEST,
+					SENT_RESPONSE,
+					SENT_REQUEST,
+					RECEIVED_RESPONSE,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Event Function Client Server Port Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<EventFunctionClientServerPortKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -163,14 +170,19 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * Returns the '<em><b>Event Function Client Server Port Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EventFunctionClientServerPortKind get(int value) {
 		switch (value) {
-			case RECEIVED_REQUEST_VALUE: return RECEIVED_REQUEST;
-			case SENT_RESPONSE_VALUE: return SENT_RESPONSE;
-			case SENT_REQUEST_VALUE: return SENT_REQUEST;
-			case RECEIVED_RESPONSE_VALUE: return RECEIVED_RESPONSE;
+		case RECEIVED_REQUEST_VALUE:
+			return RECEIVED_REQUEST;
+		case SENT_RESPONSE_VALUE:
+			return SENT_RESPONSE;
+		case SENT_REQUEST_VALUE:
+			return SENT_REQUEST;
+		case RECEIVED_RESPONSE_VALUE:
+			return RECEIVED_RESPONSE;
 		}
 		return null;
 	}
@@ -179,6 +191,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * Returns the '<em><b>Event Function Client Server Port Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EventFunctionClientServerPortKind get(String literal) {
@@ -195,6 +208,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * Returns the '<em><b>Event Function Client Server Port Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EventFunctionClientServerPortKind getByName(String name) {
@@ -210,6 +224,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -217,6 +232,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -224,6 +240,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -232,6 +249,7 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EventFunctionClientServerPortKind(int value, String name, String literal) {
@@ -243,39 +261,46 @@ public enum EventFunctionClientServerPortKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //EventFunctionClientServerPortKind
+
+} // EventFunctionClientServerPortKind

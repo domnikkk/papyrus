@@ -60,7 +60,7 @@ public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegi
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.ToUnlimitedNatural(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::ToUnlimitedNatural");
 			// ToInteger
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.ToInteger(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::ToInteger");
-			//  '/' is missing TODO
+			// '/' is missing TODO
 
 			// ////////////////////
 			// Unlimited natural functions
@@ -101,7 +101,7 @@ public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegi
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.boolean_.ToBoolean(), "FoundationalModelLibrary::PrimitiveBehaviors::BooleanFunctions::ToBoolean");
 
 			// ////////////////////
-			// Real functions			
+			// Real functions
 			// +
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.real.Add(), "FoundationalModelLibrary::PrimitiveBehaviors::RealFunctions::+");
 			// -
@@ -116,7 +116,7 @@ public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegi
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.real.GreaterOrEqual(), "FoundationalModelLibrary::PrimitiveBehaviors::RealFunctions::>=");
 			// <
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.real.Lower(), "FoundationalModelLibrary::PrimitiveBehaviors::RealFunctions::<");
-			// <= 
+			// <=
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.real.LowerOrEqual(), "FoundationalModelLibrary::PrimitiveBehaviors::RealFunctions::<=");
 			// Abs
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.real.Abs(), "FoundationalModelLibrary::PrimitiveBehaviors::RealFunctions::Abs");

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.GRMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl#getPacketSize <em>Packet Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl#getConnectedTo <em>Connected To</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl#getPacketSize <em>Packet Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwCommunication.impl.HwEndPointImpl#getConnectedTo <em>Connected To</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The default value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The cached value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPacketSize()
 	 * @generated
 	 * @ordered
@@ -65,6 +67,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	 * The cached value of the '{@link #getConnectedTo() <em>Connected To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConnectedTo()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwEndPointImpl() {
@@ -83,6 +87,7 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,8 +98,10 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPacketSize() {
 		return packetSize;
 	}
@@ -102,20 +109,25 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPacketSize(String newPacketSize) {
 		String oldPacketSize = packetSize;
 		packetSize = newPacketSize;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwCommunicationPackage.HW_END_POINT__PACKET_SIZE, oldPacketSize, packetSize));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HwMedia> getConnectedTo() {
 		if (connectedTo == null) {
 			connectedTo = new EObjectResolvingEList<HwMedia>(HwMedia.class, this, HwCommunicationPackage.HW_END_POINT__CONNECTED_TO);
@@ -126,15 +138,16 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
-				return getPacketSize();
-			case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
-				return getConnectedTo();
+		case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
+			return getPacketSize();
+		case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
+			return getConnectedTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,19 +155,20 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
-				setPacketSize((String)newValue);
-				return;
-			case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
-				getConnectedTo().clear();
-				getConnectedTo().addAll((Collection<? extends HwMedia>)newValue);
-				return;
+		case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
+			setPacketSize((String) newValue);
+			return;
+		case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
+			getConnectedTo().clear();
+			getConnectedTo().addAll((Collection<? extends HwMedia>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -162,17 +176,18 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
-				setPacketSize(PACKET_SIZE_EDEFAULT);
-				return;
-			case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
-				getConnectedTo().clear();
-				return;
+		case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
+			setPacketSize(PACKET_SIZE_EDEFAULT);
+			return;
+		case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
+			getConnectedTo().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,15 +195,16 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
-				return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
-			case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
-				return connectedTo != null && !connectedTo.isEmpty();
+		case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
+			return PACKET_SIZE_EDEFAULT == null ? packetSize != null : !PACKET_SIZE_EDEFAULT.equals(packetSize);
+		case HwCommunicationPackage.HW_END_POINT__CONNECTED_TO:
+			return connectedTo != null && !connectedTo.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -196,14 +212,17 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommunicationEndPoint.class) {
 			switch (derivedFeatureID) {
-				case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE: return GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE;
-				default: return -1;
+			case HwCommunicationPackage.HW_END_POINT__PACKET_SIZE:
+				return GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -212,14 +231,17 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommunicationEndPoint.class) {
 			switch (baseFeatureID) {
-				case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE: return HwCommunicationPackage.HW_END_POINT__PACKET_SIZE;
-				default: return -1;
+			case GRMPackage.COMMUNICATION_END_POINT__PACKET_SIZE:
+				return HwCommunicationPackage.HW_END_POINT__PACKET_SIZE;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -228,11 +250,14 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (packetSize: ");
@@ -241,4 +266,4 @@ public class HwEndPointImpl extends HwCommunicationResourceImpl implements HwEnd
 		return result.toString();
 	}
 
-} //HwEndPointImpl
+} // HwEndPointImpl

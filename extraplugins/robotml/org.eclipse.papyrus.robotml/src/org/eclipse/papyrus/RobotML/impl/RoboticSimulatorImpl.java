@@ -20,6 +20,7 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RoboticSimulatorImpl() {
@@ -29,6 +30,7 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class RoboticSimulatorImpl extends PlatformImpl implements RoboticSimulat
 		return RobotMLPackage.Literals.ROBOTIC_SIMULATOR;
 	}
 
-} //RoboticSimulatorImpl
+} // RoboticSimulatorImpl

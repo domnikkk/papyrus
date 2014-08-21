@@ -33,13 +33,13 @@ public class ActiveObjectControllerUIProxy extends Object_ {
 
 	/**
 	 * When a CallOperationAction is called, create a new RegisterExecution
-	 * 
+	 *
 	 */
 	@Override
 	public Execution dispatch(Operation operation) {
-		if(operation.getName().equals("register")) {
+		if (operation.getName().equals("register")) {
 			return new RegisterExecution(operation, this);
-		} 		
+		}
 		return null;
 	}
 
@@ -49,9 +49,10 @@ public class ActiveObjectControllerUIProxy extends Object_ {
 	 */
 	@Override
 	public void send(SignalInstance signalInstance) {
-		if(signalInstance instanceof TerminateSignalInstance) {
+		if (signalInstance instanceof TerminateSignalInstance) {
 			Display.getDefault().syncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					ActiveObjectControllerUI.terminate();
 				}

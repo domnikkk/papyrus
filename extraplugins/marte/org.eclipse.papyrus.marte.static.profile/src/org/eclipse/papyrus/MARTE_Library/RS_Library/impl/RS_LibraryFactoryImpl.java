@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.MARTE_Library.RS_Library.*;
 import org.eclipse.papyrus.MARTE_Library.RS_Library.RS_LibraryFactory;
 import org.eclipse.papyrus.MARTE_Library.RS_Library.RS_LibraryPackage;
 
@@ -27,6 +26,7 @@ import org.eclipse.papyrus.MARTE_Library.RS_Library.RS_LibraryPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFactory {
@@ -34,16 +34,16 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static RS_LibraryFactory init() {
 		try {
-			RS_LibraryFactory theRS_LibraryFactory = (RS_LibraryFactory)EPackage.Registry.INSTANCE.getEFactory(RS_LibraryPackage.eNS_URI);
+			RS_LibraryFactory theRS_LibraryFactory = (RS_LibraryFactory) EPackage.Registry.INSTANCE.getEFactory(RS_LibraryPackage.eNS_URI);
 			if (theRS_LibraryFactory != null) {
 				return theRS_LibraryFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RS_LibraryFactoryImpl();
@@ -53,6 +53,7 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RS_LibraryFactoryImpl() {
@@ -62,62 +63,67 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case RS_LibraryPackage.TILER_SPECIFICATION:
-				return createTilerSpecificationFromString(eDataType, initialValue);
-			case RS_LibraryPackage.SHAPE_SPECIFICATION:
-				return createShapeSpecificationFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RS_LibraryPackage.TILER_SPECIFICATION:
+			return createTilerSpecificationFromString(eDataType, initialValue);
+		case RS_LibraryPackage.SHAPE_SPECIFICATION:
+			return createShapeSpecificationFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case RS_LibraryPackage.TILER_SPECIFICATION:
-				return convertTilerSpecificationToString(eDataType, instanceValue);
-			case RS_LibraryPackage.SHAPE_SPECIFICATION:
-				return convertShapeSpecificationToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case RS_LibraryPackage.TILER_SPECIFICATION:
+			return convertTilerSpecificationToString(eDataType, instanceValue);
+		case RS_LibraryPackage.SHAPE_SPECIFICATION:
+			return convertShapeSpecificationToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String createTilerSpecificationFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertTilerSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -127,15 +133,17 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String createShapeSpecificationFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertShapeSpecificationToString(EDataType eDataType, Object instanceValue) {
@@ -145,15 +153,18 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RS_LibraryPackage getRS_LibraryPackage() {
-		return (RS_LibraryPackage)getEPackage();
+		return (RS_LibraryPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -162,4 +173,4 @@ public class RS_LibraryFactoryImpl extends EFactoryImpl implements RS_LibraryFac
 		return RS_LibraryPackage.eINSTANCE;
 	}
 
-} //RS_LibraryFactoryImpl
+} // RS_LibraryFactoryImpl

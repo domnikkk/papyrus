@@ -16,9 +16,9 @@ import org.eclipse.papyrus.cpp.codegen.Activator;
 
 /**
  * Utility class that returns the preference values
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class CppCodeGenUtils {
 
@@ -45,7 +45,7 @@ public class CppCodeGenUtils {
 	}
 
 	public static void initPreferenceStore() {
-		if(preferenceStore == null) {
+		if (preferenceStore == null) {
 			preferenceStore = Activator.getDefault().getPreferenceStore();
 		}
 	}

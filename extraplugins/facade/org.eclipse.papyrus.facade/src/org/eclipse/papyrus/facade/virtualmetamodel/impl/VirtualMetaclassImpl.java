@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,12 +44,12 @@ import org.eclipse.papyrus.facade.virtualmetamodel.VirtualmetamodelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#isAbstract <em>Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getParents <em>Parents</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#isStereotypeInterface <em>Stereotype Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#isAbstract <em>Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getAppliedStereotypes <em>Applied Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getOperations <em>Operations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getParents <em>Parents</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#getProperties <em>Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.facade.virtualmetamodel.impl.VirtualMetaclassImpl#isStereotypeInterface <em>Stereotype Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +60,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -70,6 +71,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isAbstract()
 	 * @generated
 	 * @ordered
@@ -80,6 +82,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getAppliedStereotypes() <em>Applied Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAppliedStereotypes()
 	 * @generated
 	 * @ordered
@@ -90,6 +93,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperations()
 	 * @generated
 	 * @ordered
@@ -100,6 +104,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getParents() <em>Parents</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getParents()
 	 * @generated
 	 * @ordered
@@ -110,6 +115,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -120,6 +126,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The default value of the '{@link #isStereotypeInterface() <em>Stereotype Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStereotypeInterface()
 	 * @generated
 	 * @ordered
@@ -130,6 +137,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	 * The cached value of the '{@link #isStereotypeInterface() <em>Stereotype Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStereotypeInterface()
 	 * @generated
 	 * @ordered
@@ -139,6 +147,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected VirtualMetaclassImpl() {
@@ -148,6 +157,7 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,8 +168,10 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isAbstract() {
 		return abstract_;
 	}
@@ -167,20 +179,25 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAbstract(boolean newAbstract) {
 		boolean oldAbstract = abstract_;
 		abstract_ = newAbstract;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT, oldAbstract, abstract_));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<BaseMetaclass> getAppliedStereotypes() {
 		if (appliedStereotypes == null) {
 			appliedStereotypes = new EObjectResolvingEList<BaseMetaclass>(BaseMetaclass.class, this, VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES);
@@ -191,8 +208,10 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<VirtualOperation> getOperations() {
 		if (operations == null) {
 			operations = new EObjectContainmentEList<VirtualOperation>(VirtualOperation.class, this, VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS);
@@ -203,8 +222,10 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<VirtualMetaclass> getParents() {
 		if (parents == null) {
 			parents = new EObjectResolvingEList<VirtualMetaclass>(VirtualMetaclass.class, this, VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS);
@@ -215,8 +236,10 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<VirtualProperty> getProperties() {
 		if (properties == null) {
 			properties = new EObjectContainmentWithInverseEList<VirtualProperty>(VirtualProperty.class, this, VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES, VirtualmetamodelPackage.VIRTUAL_PROPERTY__VIRTUAL_METACLASS);
@@ -227,8 +250,10 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isStereotypeInterface() {
 		return stereotypeInterface;
 	}
@@ -236,26 +261,30 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setStereotypeInterface(boolean newStereotypeInterface) {
 		boolean oldStereotypeInterface = stereotypeInterface;
 		stereotypeInterface = newStereotypeInterface;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE, oldStereotypeInterface, stereotypeInterface));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getProperties()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -263,15 +292,16 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+			return ((InternalEList<?>) getOperations()).basicRemove(otherEnd, msgs);
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			return ((InternalEList<?>) getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,23 +309,24 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
-				return isAbstract();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
-				return getAppliedStereotypes();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-				return getOperations();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
-				return getParents();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				return getProperties();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
-				return isStereotypeInterface();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
+			return isAbstract();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
+			return getAppliedStereotypes();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+			return getOperations();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
+			return getParents();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			return getProperties();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
+			return isStereotypeInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,34 +334,35 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
-				setAbstract((Boolean)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
-				getAppliedStereotypes().clear();
-				getAppliedStereotypes().addAll((Collection<? extends BaseMetaclass>)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-				getOperations().clear();
-				getOperations().addAll((Collection<? extends VirtualOperation>)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
-				getParents().clear();
-				getParents().addAll((Collection<? extends VirtualMetaclass>)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends VirtualProperty>)newValue);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
-				setStereotypeInterface((Boolean)newValue);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
+			setAbstract((Boolean) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
+			getAppliedStereotypes().clear();
+			getAppliedStereotypes().addAll((Collection<? extends BaseMetaclass>) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+			getOperations().clear();
+			getOperations().addAll((Collection<? extends VirtualOperation>) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
+			getParents().clear();
+			getParents().addAll((Collection<? extends VirtualMetaclass>) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			getProperties().clear();
+			getProperties().addAll((Collection<? extends VirtualProperty>) newValue);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
+			setStereotypeInterface((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -338,29 +370,30 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
-				setAbstract(ABSTRACT_EDEFAULT);
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
-				getAppliedStereotypes().clear();
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-				getOperations().clear();
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
-				getParents().clear();
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				getProperties().clear();
-				return;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
-				setStereotypeInterface(STEREOTYPE_INTERFACE_EDEFAULT);
-				return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
+			setAbstract(ABSTRACT_EDEFAULT);
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
+			getAppliedStereotypes().clear();
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+			getOperations().clear();
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
+			getParents().clear();
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			getProperties().clear();
+			return;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
+			setStereotypeInterface(STEREOTYPE_INTERFACE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -368,23 +401,24 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
-				return abstract_ != ABSTRACT_EDEFAULT;
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
-				return appliedStereotypes != null && !appliedStereotypes.isEmpty();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
-				return operations != null && !operations.isEmpty();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
-				return parents != null && !parents.isEmpty();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
-				return stereotypeInterface != STEREOTYPE_INTERFACE_EDEFAULT;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__ABSTRACT:
+			return abstract_ != ABSTRACT_EDEFAULT;
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__APPLIED_STEREOTYPES:
+			return appliedStereotypes != null && !appliedStereotypes.isEmpty();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__OPERATIONS:
+			return operations != null && !operations.isEmpty();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PARENTS:
+			return parents != null && !parents.isEmpty();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case VirtualmetamodelPackage.VIRTUAL_METACLASS__STEREOTYPE_INTERFACE:
+			return stereotypeInterface != STEREOTYPE_INTERFACE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -392,11 +426,14 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (abstract: ");
@@ -407,4 +444,4 @@ public class VirtualMetaclassImpl extends VirtualClassifierImpl implements Virtu
 		return result.toString();
 	}
 
-} //VirtualMetaclassImpl
+} // VirtualMetaclassImpl

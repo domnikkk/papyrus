@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl#getProperty <em>Property</em>}</li>
+ * <li>{@link org.eclipse.papyrus.marte.vsl.vSL.impl.PropertyCallExpressionImpl#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,175 +32,197 @@ import org.eclipse.uml2.uml.Type;
  */
 public class PropertyCallExpressionImpl extends SuffixExpressionImpl implements PropertyCallExpression
 {
-  /**
-   * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProperty()
-   * @generated
-   * @ordered
-   */
-  protected Property property;
+	/**
+	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property property;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PropertyCallExpressionImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected PropertyCallExpressionImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return VSLPackage.Literals.PROPERTY_CALL_EXPRESSION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return VSLPackage.Literals.PROPERTY_CALL_EXPRESSION;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Property getProperty()
-  {
-    if (property != null && property.eIsProxy())
-    {
-      InternalEObject oldProperty = (InternalEObject)property;
-      property = (Property)eResolveProxy(oldProperty);
-      if (property != oldProperty)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY, oldProperty, property));
-      }
-    }
-    return property;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Property getProperty()
+	{
+		if (property != null && property.eIsProxy())
+		{
+			InternalEObject oldProperty = (InternalEObject) property;
+			property = (Property) eResolveProxy(oldProperty);
+			if (property != oldProperty)
+			{
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY, oldProperty, property));
+				}
+			}
+		}
+		return property;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Property basicGetProperty()
-  {
-    return property;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Property basicGetProperty()
+	{
+		return property;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setProperty(Property newProperty)
-  {
-    Property oldProperty = property;
-    property = newProperty;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY, oldProperty, property));
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void setProperty(Property newProperty)
+	{
+		Property oldProperty = property;
+		property = newProperty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY, oldProperty, property));
+		}
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getFilteredParentRule(final EClass filter)
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EObject getFilteredParentRule(final EClass filter)
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getFilteredParentRule(this, filter);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type getExpectedType()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Type getExpectedType()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getExpectedType(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element getContextElement()
-  {
-    return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Element getContextElement()
+	{
+		return org.eclipse.papyrus.marte.vsl.extensions.VSLContextUtil.getContextElement(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
-        if (resolve) return getProperty();
-        return basicGetProperty();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+		case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
+			if (resolve) {
+				return getProperty();
+			}
+			return basicGetProperty();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
-        setProperty((Property)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+		case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
+			setProperty((Property) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
-        setProperty((Property)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+		case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
+			setProperty((Property) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
-        return property != null;
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+		case VSLPackage.PROPERTY_CALL_EXPRESSION__PROPERTY:
+			return property != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
-} //PropertyCallExpressionImpl
+} // PropertyCallExpressionImpl

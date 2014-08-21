@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -93,7 +93,7 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 
 	/**
 	 * @param style
-	 *        one of {@link SWT#OPEN} or {@link SWT#SAVE}
+	 *            one of {@link SWT#OPEN} or {@link SWT#SAVE}
 	 */
 	public BrowseRepositoryDialog(Shell parentShell, String title, String message, CDOView view, int style) {
 		this(parentShell, Messages.BrowseRepoDlg_windowTitle, title, message, view, style);
@@ -101,7 +101,7 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 
 	/**
 	 * @param style
-	 *        one of {@link SWT#OPEN} or {@link SWT#SAVE}
+	 *            one of {@link SWT#OPEN} or {@link SWT#SAVE}
 	 */
 	public BrowseRepositoryDialog(Shell parentShell, String windowTitle, String title, String message, CDOView view, int style) {
 		super(parentShell);
@@ -138,9 +138,9 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 	}
 
 	private void shellDisposed() {
-		if(viewerRefresh != null) {
-			for(IInternalPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
-				if(next.isConnected()) {
+		if (viewerRefresh != null) {
+			for (IInternalPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
+				if (next.isConnected()) {
 					next.getMasterView().removeListener(viewerRefresh);
 				}
 			}
@@ -179,12 +179,12 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 	private URI basicGetSelectedURI() {
 		URI result = null;
 
-		if(selection != null) {
+		if (selection != null) {
 			result = selection.getURI();
-			if(name != null) {
+			if (name != null) {
 				String resourceName = Strings.emptyToNull(name);
-				if(resourceName != null) {
-					if(!(selection instanceof CDOResourceFolder)) {
+				if (resourceName != null) {
+					if (!(selection instanceof CDOResourceFolder)) {
 						// append the name to the parent folder
 						result = result.trimSegments(1);
 					}
@@ -213,7 +213,7 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 		setTitle(title);
 		setMessage(message);
 
-		Composite main = (Composite)super.createDialogArea(parent);
+		Composite main = (Composite) super.createDialogArea(parent);
 		Composite result = new Composite(main, SWT.NONE);
 		result.setLayout(new GridLayout(isSaveStyle() ? 3 : 1, false));
 		result.setLayoutData(new GridData(GridData.FILL_BOTH));
@@ -226,13 +226,13 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 		tree.setLabelProvider(new DecoratingLabelProvider(itemProvider, PlatformUI.getWorkbench().getDecoratorManager().getLabelDecorator()));
 		tree.setSorter(itemProvider);
 		tree.setInput(PapyrusRepositoryManager.INSTANCE);
-		for(IInternalPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
-			if(next.isConnected()) {
+		for (IInternalPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
+			if (next.isConnected()) {
 				next.getMasterView().addListener(getViewerRefresh());
 			}
 		}
 
-		if(isSaveStyle()) {
+		if (isSaveStyle()) {
 			// don't need to create new folders when opening an existing resource
 			Composite actionButtons = new Composite(result, SWT.NONE);
 			actionButtons.setLayoutData(new GridData(SWT.RIGHT, SWT.TOP, false, false));
@@ -255,9 +255,9 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 			nameText.setLayoutData(gd);
 		}
 
-		if(getInitialURI() != null) {
+		if (getInitialURI() != null) {
 			initializeSelection();
-		} else if(getRepository() != null) {
+		} else if (getRepository() != null) {
 			selection = getRepository().getMasterView().getRootResource();
 		}
 
@@ -265,9 +265,9 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				IStructuredSelection sel = (IStructuredSelection)event.getSelection();
-				if(sel.isEmpty()) {
-					if(getRepository() != null) {
+				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
+				if (sel.isEmpty()) {
+					if (getRepository() != null) {
 						selection = getRepository().getMasterView().getRootResource();
 					} else {
 						selection = null;
@@ -280,7 +280,7 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 			}
 		});
 
-		if(nameText != null) {
+		if (nameText != null) {
 			nameText.addModifyListener(new ModifyListener() {
 
 				@Override
@@ -301,8 +301,8 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 			public boolean filter(Object element) {
 				boolean result = false;
 
-				if(element instanceof IPapyrusRepository) {
-					result = ((IPapyrusRepository)element).isConnected();
+				if (element instanceof IPapyrusRepository) {
+					result = ((IPapyrusRepository) element).isConnected();
 				}
 
 				return result;
@@ -315,25 +315,25 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 		CDOView view = getRepository().getMasterView();
 
 		String path = CDOURIUtil.extractResourcePath(uri);
-		if(view.hasResource(path)) {
+		if (view.hasResource(path)) {
 			selection = view.getResourceNode(path);
 			tree.setSelection(new StructuredSelection(selection));
 			tree.expandToLevel(selection, 1);
-			if(nameText != null) {
+			if (nameText != null) {
 				name = selection.getName();
 				nameText.setText(name);
 			}
-		} else if(uri.segmentCount() > 0) {
+		} else if (uri.segmentCount() > 0) {
 			// try the containing folder, then
 			URI parent = uri.trimSegments(1);
 			path = CDOURIUtil.extractResourcePath(parent);
-			if(view.hasResource(path)) {
+			if (view.hasResource(path)) {
 				// if the root resource, it is represented by the repository
 				selection = view.getResourceNode(path);
 				Object treeSelection = selection.isRoot() ? getRepository() : selection;
 				tree.setSelection(new StructuredSelection(treeSelection), true);
 				tree.expandToLevel(treeSelection, 1);
-				if(nameText != null) {
+				if (nameText != null) {
 					name = uri.lastSegment();
 					nameText.setText(name);
 				}
@@ -353,30 +353,30 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 		String info = null;
 		boolean disable = false;
 
-		if(name != null) {
-			if(!URI.validSegment(name)) {
+		if (name != null) {
+			if (!URI.validSegment(name)) {
 				error = Messages.BrowseRepoDlg_invalidURISeg;
 			}
 		}
 
-		if(error == null) {
-			if(selection == null) {
+		if (error == null) {
+			if (selection == null) {
 				disable = true;
 			} else {
 				String path = CDOURIUtil.extractResourcePath(basicGetSelectedURI());
 				CDOView view = selection.cdoView();
 
-				if(isOpenStyle() && !view.hasResource(path)) {
+				if (isOpenStyle() && !view.hasResource(path)) {
 					error = Messages.BrowseRepoDlg_noSuchResource;
-				} else if(isOpenStyle()) {
-					// then the resource exists.  Is it the kind we want?
+				} else if (isOpenStyle()) {
+					// then the resource exists. Is it the kind we want?
 					CDOResourceNode node = view.getResourceNode(path);
-					if(!getNodeTypeFilter().isInstance(node)) {
+					if (!getNodeTypeFilter().isInstance(node)) {
 						disable = true;
 						info = NLS.bind(Messages.BrowseRepoDlg_wrongSelection, getNodeType(getNodeTypeFilter()));
 					}
-				} else if(isSaveStyle() && view.hasResource(path)) {
-					if(isAllowOverwrite()) {
+				} else if (isSaveStyle() && view.hasResource(path)) {
+					if (isAllowOverwrite()) {
 						warning = Messages.BrowseRepoDlg_existsWarning;
 					} else {
 						error = Messages.BrowseRepoDlg_existsError;
@@ -386,11 +386,11 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 		}
 
 		getButton(IDialogConstants.OK_ID).setEnabled(!disable && (error == null));
-		if(error != null) {
+		if (error != null) {
 			setMessage(error, IMessageProvider.ERROR);
-		} else if(warning != null) {
+		} else if (warning != null) {
 			setMessage(warning, IMessageProvider.WARNING);
-		} else if(info != null) {
+		} else if (info != null) {
 			setMessage(info, IMessageProvider.INFORMATION);
 		} else {
 			setMessage(message);
@@ -400,8 +400,8 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 	private String getNodeType(EClass nodeClass) {
 		String result = Messages.BrowseRepoDlg_anyNode;
 
-		if(nodeClass.getEPackage() == EresourcePackage.eINSTANCE) {
-			switch(nodeClass.getClassifierID()) {
+		if (nodeClass.getEPackage() == EresourcePackage.eINSTANCE) {
+			switch (nodeClass.getClassifierID()) {
 			case EresourcePackage.CDO_RESOURCE:
 				result = Messages.BrowseRepoDlg_modelKind;
 				break;
@@ -427,14 +427,14 @@ public class BrowseRepositoryDialog extends TitleAreaDialog {
 	}
 
 	private IListener getViewerRefresh() {
-		if(viewerRefresh == null) {
+		if (viewerRefresh == null) {
 			viewerRefresh = new IListener() {
 
 				@Override
 				public void notifyEvent(IEvent event) {
-					if(event instanceof CDOViewInvalidationEvent) {
-						if((getContents() != null) && !getContents().isDisposed()) {
-							if(UIUtil.ensureUIThread(this, event)) {
+					if (event instanceof CDOViewInvalidationEvent) {
+						if ((getContents() != null) && !getContents().isDisposed()) {
+							if (UIUtil.ensureUIThread(this, event)) {
 								tree.refresh();
 							}
 						}

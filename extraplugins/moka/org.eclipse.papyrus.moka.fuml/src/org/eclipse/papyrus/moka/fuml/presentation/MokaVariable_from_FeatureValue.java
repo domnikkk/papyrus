@@ -28,22 +28,22 @@ public class MokaVariable_from_FeatureValue extends MokaVariable_for_fUML {
 		this.name = featureValue.feature.getName();
 	}
 
-	////////////////////////
+	// //////////////////////
 	// Presentation
-	////////////////////////
+	// //////////////////////
 
 	@Override
 	public Image getImage() {
 		return FUMLPresentationUtils.getImage(featureValue.feature);
 	}
 
-	////////////////////////
+	// //////////////////////
 	// Debug
-	////////////////////////
+	// //////////////////////
 
 	@Override
 	public IValue getValue() throws DebugException {
-		if(this.value == null) {
+		if (this.value == null) {
 			this.value = new MokaValue_from_FeatureValue(featureValue);
 		}
 		return this.value;

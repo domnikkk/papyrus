@@ -20,6 +20,7 @@ public abstract class BehaviorConstraintParameterImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BehaviorConstraintParameterImpl() {
@@ -29,6 +30,7 @@ public abstract class BehaviorConstraintParameterImpl extends MinimalEObjectImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public abstract class BehaviorConstraintParameterImpl extends MinimalEObjectImpl
 		return BehaviordescriptionPackage.Literals.BEHAVIOR_CONSTRAINT_PARAMETER;
 	}
 
-} //BehaviorConstraintParameterImpl
+} // BehaviorConstraintParameterImpl

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -49,7 +49,7 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check internal object initialization
 		assertNotNull("type registry created", registry.getTypeRegistry());
 		assertNotNull("properties created", registry.getProperties());
@@ -63,10 +63,10 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check init
-		assertTrue("property list size is correct", registry.getProperties().size()>0);
-		
+		assertTrue("property list size is correct", registry.getProperties().size() > 0);
+
 	}
 
 	/**
@@ -77,14 +77,14 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check init
-		assertTrue("property list size is correct", registry.getProperties().size()>0);
-		
+		assertTrue("property list size is correct", registry.getProperties().size() > 0);
+
 		// Check if default value is set for the first property
 		assertNotNull("property list size is correct", registry.getProperties().get(0).getDefaultValue());
-		
-		
+
+
 	}
 
 	/**
@@ -95,10 +95,10 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check internal object initialization
 		assertNotNull("properties list created", registry.getProperties());
-		assertTrue("properties created", registry.getProperties().size()>0);
+		assertTrue("properties created", registry.getProperties().size() > 0);
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check internal object initialization
 		assertSame("count is ok", registry.getProperties().size(), registry.getPropertiesCount());
 
@@ -117,7 +117,7 @@ public class PropertyRegistryImplTest {
 		Property property = LayersFactory.eINSTANCE.createProperty();
 		property.setName("prop1");
 		registry.getProperties().add(property);
-		
+
 		assertSame("count is ok", registry.getProperties().size(), registry.getPropertiesCount());
 	}
 
@@ -129,14 +129,15 @@ public class PropertyRegistryImplTest {
 		// Create registry
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
 		assertNotNull("registry created", registry);
-		
+
 		// check internal object initialization
 		assertNotNull("type registry created", registry.getTypeRegistry());
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.PropertyRegistryImpl#getPropertyIndex(java.lang.String)}.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testGetPropertyIndex() throws NotFoundException {
@@ -146,14 +147,15 @@ public class PropertyRegistryImplTest {
 		// test method
 		int index = 0;
 		Property property = registry.getProperties().get(index);
-		
-		assertEquals("index found", index, registry.getPropertyIndex(property.getName() ) );
-	
+
+		assertEquals("index found", index, registry.getPropertyIndex(property.getName()));
+
 	}
 
 	/**
 	 * Add a new Property and test if the index is correctly set.
-	 * @throws NotFoundException 
+	 * 
+	 * @throws NotFoundException
 	 */
 	@Test
 	public void testAddProperty() throws NotFoundException {
@@ -169,13 +171,13 @@ public class PropertyRegistryImplTest {
 
 		// Add property to registry
 		registry.addProperty(property);
-		
+
 		// Get the property
 		Property propFound = registry.getProperty(name);
-		assertSame( "property found", property, propFound);
-		
-		assertTrue("property index set", propFound.getIndex()>=0);
-		
+		assertSame("property found", property, propFound);
+
+		assertTrue("property index set", propFound.getIndex() >= 0);
+
 	}
 
 

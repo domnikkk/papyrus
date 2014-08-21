@@ -20,6 +20,7 @@ public class InertialNavigationSystemImpl extends GPSSystemImpl implements Inert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected InertialNavigationSystemImpl() {
@@ -29,6 +30,7 @@ public class InertialNavigationSystemImpl extends GPSSystemImpl implements Inert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class InertialNavigationSystemImpl extends GPSSystemImpl implements Inert
 		return RobotMLPackage.Literals.INERTIAL_NAVIGATION_SYSTEM;
 	}
 
-} //InertialNavigationSystemImpl
+} // InertialNavigationSystemImpl

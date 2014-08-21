@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431618
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.internal.ui.markers;
 
@@ -75,8 +75,8 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 			@Override
 			public void run() {
 				setResult(Lists.newArrayList(Iterators.transform( //
-				getProblems(resource, type, includeSubtypes), //
-					CDOPapyrusMarker.wrap(getProblemEditUtil(resource)))));
+						getProblems(resource, type, includeSubtypes), //
+						CDOPapyrusMarker.wrap(getProblemEditUtil(resource)))));
 			}
 		});
 	}
@@ -84,9 +84,9 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 	protected Iterator<? extends EProblem> getProblems(final Resource resource, final String type, boolean includeSubtypes) {
 		final Predicate<EProblem> filter;
 
-		if(type == null) {
+		if (type == null) {
 			filter = Predicates.alwaysTrue();
-		} else if(includeSubtypes) {
+		} else if (includeSubtypes) {
 			filter = new Predicate<EProblem>() {
 
 				@Override
@@ -134,7 +134,7 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 	protected void doCreateMarker(Resource resource, Diagnostic diagnostic) throws CoreException {
 		ProblemsManager mgr = getProblemsManager(resource);
 		EProblem problem = mgr.createProblem(diagnostic);
-		if(problem != null) {
+		if (problem != null) {
 			mgr.addProblem(problem);
 		}
 	}
@@ -144,10 +144,10 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 		super.batchCreated(resource);
 
 		ResourceSet rset = resource.getResourceSet();
-		if(rset instanceof ModelSet) {
+		if (rset instanceof ModelSet) {
 			// yield the resource set to any other threads that might
 			// be waiting to read it
-			((ModelSet)rset).getTransactionalEditingDomain().yield();
+			((ModelSet) rset).getTransactionalEditingDomain().yield();
 		}
 	}
 
@@ -196,12 +196,12 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 			@Override
 			public void run() {
 				ProblemsManager mgr = getProblemsManager(resource);
-				if(markerType == null) {
+				if (markerType == null) {
 					// efficiently remove all markers for the resource
 					mgr.purgeProblems(resource);
 				} else {
 					// tediously remove the matching markers
-					for(EProblem next : Lists.newArrayList(getProblems(resource, markerType, includeSubtypes))) {
+					for (EProblem next : Lists.newArrayList(getProblems(resource, markerType, includeSubtypes))) {
 						ProblemsManager.delete(next);
 					}
 				}
@@ -231,8 +231,8 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 		ProblemEditUtil result = defaultUtil;
 
 		ResourceSet rset = resource.getResourceSet();
-		if(rset instanceof ModelSet) {
-			AdapterFactory factory = ((AdapterFactoryEditingDomain)((ModelSet)rset).getTransactionalEditingDomain()).getAdapterFactory();
+		if (rset instanceof ModelSet) {
+			AdapterFactory factory = ((AdapterFactoryEditingDomain) ((ModelSet) rset).getTransactionalEditingDomain()).getAdapterFactory();
 			result = new ProblemEditUtil(factory);
 		}
 
@@ -245,9 +245,9 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 
 	static <X extends Throwable> void run(Resource context, Class<X> exceptionType, Runnable runnable) throws X {
 		ResourceSet rset = context.getResourceSet();
-		if(rset instanceof ModelSet) {
+		if (rset instanceof ModelSet) {
 			try {
-				((ModelSet)rset).getTransactionalEditingDomain().runExclusive(runnable);
+				((ModelSet) rset).getTransactionalEditingDomain().runExclusive(runnable);
 			} catch (WrappedException e) {
 				throw exceptionType.cast(e.exception());
 			} catch (InterruptedException e) {
@@ -262,9 +262,9 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 		T result;
 
 		ResourceSet rset = context.getResourceSet();
-		if(rset instanceof ModelSet) {
+		if (rset instanceof ModelSet) {
 			try {
-				result = TransactionUtil.runExclusive(((ModelSet)rset).getTransactionalEditingDomain(), runnable);
+				result = TransactionUtil.runExclusive(((ModelSet) rset).getTransactionalEditingDomain(), runnable);
 			} catch (WrappedException e) {
 				throw exceptionType.cast(e.exception());
 			} catch (InterruptedException e) {
@@ -311,12 +311,12 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 		protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 			ProblemsManager manager = getProblemsManager(context);
 			Collection<EProblem> problems = Lists.newArrayList(manager.getAllProblems(object));
-			if(problems.isEmpty()) {
+			if (problems.isEmpty()) {
 				// Nothing to do
 				return CommandResult.newOKCommandResult();
 			}
 
-			for(EProblem problem : problems) {
+			for (EProblem problem : problems) {
 				ProblemsManager.delete(problem);
 			}
 
@@ -328,7 +328,7 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 
 		@Override
 		protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(problemsForUndo == null) {
+			if (problemsForUndo == null) {
 				// Nothing to do
 				return CommandResult.newOKCommandResult();
 			}
@@ -338,10 +338,10 @@ public class CDOMarkerProvider extends AbstractMarkerProvider implements IMarker
 			problemsForUndo = null;
 
 			Resource resource = object.eResource();
-			if(resource != null) { // Should have been reattached by now
+			if (resource != null) { // Should have been reattached by now
 				context = resource;
 				ProblemsManager manager = getProblemsManager(resource);
-				for(EProblem problem : problems) {
+				for (EProblem problem : problems) {
 					problem.setElement(object);
 					manager.addProblem(problem);
 				}

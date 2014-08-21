@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ public class ToBoolean extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			String x = ((StringValue)inputParameters.get(0).values.get(0)).value;
+			String x = ((StringValue) inputParameters.get(0).values.get(0)).value;
 			BooleanValue result = new BooleanValue();
 			result.value = new Boolean(x);
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("Boolean"); // ADDED
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Boolean"); // ADDED
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

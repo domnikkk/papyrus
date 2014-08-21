@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.eastadl.timing.Event;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,10 +45,10 @@ public interface EventFunctionFlowPort extends Event, EAExpression {
 	 * Returns the value of the '<em><b>Port</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Port</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Port</em>' containment reference.
 	 * @see #setPort(EventFunctionFlowPortInstanceRef)
 	 * @see org.eclipse.papyrus.eastadl.timing.events.EventsPackage#getEventFunctionFlowPort_Port()
@@ -61,7 +61,9 @@ public interface EventFunctionFlowPort extends Event, EAExpression {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.events.EventFunctionFlowPort#getPort <em>Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Port</em>' containment reference.
 	 * @see #getPort()
 	 * @generated
 	 */

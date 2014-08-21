@@ -26,18 +26,19 @@ public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 		this.fUMLValue = value;
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Presentation
-	//////////////////////////////////
+	// ////////////////////////////////
 
+	@Override
 	public Image getImage() {
 		// not used for variables
 		return FUMLPresentationUtils.getImage(UMLPackage.eINSTANCE.getInstanceSpecification());
 	}
 
-	//////////////////////////////////
+	// ////////////////////////////////
 	// Debug
-	//////////////////////////////////
+	// ////////////////////////////////
 	@Override
 	public IValue getValue() throws DebugException {
 		return new MokaValue_from_Value(fUMLValue);

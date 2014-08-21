@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.TypedElement;
  * Check whether an element within a package template is referenced via a type from the outside, i.e. an element that is not
  * within this package template. This reference is only valid in the context of a template binding.
  * (within Qompass, binding is done implicitly via stereotypes - which was perhaps not the best way of doing it)
- * 
+ *
  * The rule has been made specific to Qompass by checking whether FCM is applied (check DerivedElement stereotype).
  *
  */
@@ -38,7 +38,7 @@ public class TemplateRefWithoutBinding extends AbstractModelConstraint {
 	@Override
 	public IStatus validate(IValidationContext ctx)
 	{
-		TypedElement te = (TypedElement)ctx.getTarget();
+		TypedElement te = (TypedElement) ctx.getTarget();
 		Type type = te.getType();
 		if (type != null) {
 			Element owner = type.getNearestPackage();
@@ -57,13 +57,15 @@ public class TemplateRefWithoutBinding extends AbstractModelConstraint {
 				owner = owner.getOwner();
 			}
 		}
-		
+
 		return ctx.createSuccessStatus();
 	}
-	
+
 	/**
-	 * @param pkg A UML package  
-	 * @param e an element that is eventually part of the package
+	 * @param pkg
+	 *            A UML package
+	 * @param e
+	 *            an element that is eventually part of the package
 	 * @return if passed element is part of the given package
 	 */
 	public boolean isWithin(Package pkg, Element e) {

@@ -19,6 +19,7 @@ public class EAExpressionImpl extends EAValueImpl implements EAExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EAExpressionImpl() {
@@ -28,6 +29,7 @@ public class EAExpressionImpl extends EAValueImpl implements EAExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -35,4 +37,4 @@ public class EAExpressionImpl extends EAValueImpl implements EAExpression {
 		return ValuesPackage.Literals.EA_EXPRESSION;
 	}
 
-} //EAExpressionImpl
+} // EAExpressionImpl

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.dd.dg.PathCommand;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.PathCommandImpl#isRelative <em>Is Relative</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class PathCommandImpl extends MinimalEObjectImpl.Container implements PathCommand {
@@ -37,7 +37,7 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * The default value of the '{@link #isRelative() <em>Is Relative</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Is Relative</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PathCommandImpl() {
@@ -65,7 +65,7 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,33 +75,36 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isRelative() {
 		return isRelative;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsRelative(boolean newIsRelative) {
 		boolean oldIsRelative = isRelative;
 		isRelative = newIsRelative;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.PATH_COMMAND__IS_RELATIVE, oldIsRelative, isRelative));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH_COMMAND__IS_RELATIVE:
 			return isRelative();
 		}
@@ -110,14 +113,14 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH_COMMAND__IS_RELATIVE:
-			setIsRelative((Boolean)newValue);
+			setIsRelative((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,12 +128,12 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH_COMMAND__IS_RELATIVE:
 			setIsRelative(IS_RELATIVE_EDEFAULT);
 			return;
@@ -140,12 +143,12 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.PATH_COMMAND__IS_RELATIVE:
 			return isRelative != IS_RELATIVE_EDEFAULT;
 		}
@@ -154,13 +157,14 @@ public abstract class PathCommandImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isRelative: ");
 		result.append(isRelative);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ public class Max extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			Integer x = ((UnlimitedNaturalValue)inputParameters.get(0).values.get(0)).value;
-			Integer y = ((UnlimitedNaturalValue)inputParameters.get(1).values.get(0)).value;
+			Integer x = ((UnlimitedNaturalValue) inputParameters.get(0).values.get(0)).value;
+			Integer y = ((UnlimitedNaturalValue) inputParameters.get(1).values.get(0)).value;
 			UnlimitedNaturalValue result = new UnlimitedNaturalValue();
 			result.value = (x < 0 || y < 0) ? -1 : Math.max(x, y);
-			result.type = (PrimitiveType)this.locus.factory.getBuiltInType("UnlimitedNatural");
+			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("UnlimitedNatural");
 			List<Value> outputs = new ArrayList<Value>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;

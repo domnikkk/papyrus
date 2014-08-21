@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2013 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,17 +35,17 @@ public class CreateCDOResourceHyperlinkCommand extends CreateEAnnotationCommand 
 
 	/**
 	 * Instantiates a new creates the hyper link command.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain in which to create the command
+	 *            the editing domain in which to create the command
 	 * @param object
-	 *        the object to which to attach the hyperlink
+	 *            the object to which to attach the hyperlink
 	 * @param tooltipText
-	 *        the hyperlink's user-friendly tooltip text
+	 *            the hyperlink's user-friendly tooltip text
 	 * @param resourceURI
-	 *        the URI of the resource that is the hyperlink target
+	 *            the URI of the resource that is the hyperlink target
 	 * @param isDefault
-	 *        to set this hyperlink as default
+	 *            to set this hyperlink as default
 	 */
 	public CreateCDOResourceHyperlinkCommand(TransactionalEditingDomain domain, EModelElement object, String tooltipText, URI resourceURI, boolean isDefault) {
 		super(domain, object, CDOHyperlinkConstants.HYPERLINK_ANNOTATION_SOURCE);

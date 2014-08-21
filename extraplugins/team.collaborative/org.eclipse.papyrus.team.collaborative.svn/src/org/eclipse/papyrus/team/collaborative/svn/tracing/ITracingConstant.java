@@ -15,7 +15,7 @@ import org.eclipse.papyrus.team.collaborative.svn.Activator;
 
 /**
  * Constant use to trace.
- * 
+ *
  * @author adaussy
  */
 public interface ITracingConstant {

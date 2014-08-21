@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ public class DataValue extends CompoundValue {
 	 */
 	public DataType type;
 
+	@Override
 	public List<Classifier> getTypes() {
 		// Return the single type of this data value.
 		List<Classifier> types = new ArrayList<Classifier>();
@@ -34,14 +35,16 @@ public class DataValue extends CompoundValue {
 		return types;
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new data value with the same type and feature values as this
 		// data value.
-		DataValue newValue = (DataValue)(super.copy());
+		DataValue newValue = (DataValue) (super.copy());
 		newValue.type = this.type;
 		return newValue;
 	}
 
+	@Override
 	public Value new_() {
 		// Create a new data value with no type or feature values.
 		return new DataValue();

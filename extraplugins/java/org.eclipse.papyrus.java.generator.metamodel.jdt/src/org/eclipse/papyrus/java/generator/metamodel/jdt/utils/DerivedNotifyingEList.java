@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,16 +30,16 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * A List derived from an original list.
- * 
+ *
  * <br>
  * Some code from org.eclipse.emf.common.util.AbstractEList
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  * @param E
- *        Expected type of this derived list's item. I.e. the type returned by this list get() method.
+ *            Expected type of this derived list's item. I.e. the type returned by this list get() method.
  * @param T
- *        Type of the original list elements'
+ *            Type of the original list elements'
  */
 public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList<E> implements EList<E>, NotifyingList<E> {
 
@@ -72,14 +72,14 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * Event receive when the backupList is changed.
-		 * 
+		 *
 		 * @param msg
 		 */
 		@Override
 		public void notifyChanged(Notification msg) {
 
 			// Retains only changes from the backuplist
-			if(msg.getNotifier() != backupList.getNotifier() || msg.getFeature() != backupList.getFeature()) {
+			if (msg.getNotifier() != backupList.getNotifier() || msg.getFeature() != backupList.getFeature()) {
 				return;
 			}
 
@@ -93,7 +93,7 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 	/**
 	 * Constructor.
 	 * The backupList is used as notifier. Feature is set to null and featureID to 0.
-	 * 
+	 *
 	 */
 	public DerivedNotifyingEList(NotifyingList<T> backupList) {
 
@@ -102,7 +102,7 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param backupList
 	 * @param notifier
 	 * @param feature
@@ -116,18 +116,18 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 	/**
 	 * Final Constructor. <br>
 	 * Feature and featureID should be different from the backupList.feature and backupList.featureID
-	 * 
+	 *
 	 * @param backupList
 	 * @param notifier
 	 * @param feature
-	 *        The feature in the notifier that represent this list.
+	 *            The feature in the notifier that represent this list.
 	 * @param featureID
-	 *        The feature ID
+	 *            The feature ID
 	 */
 	public DerivedNotifyingEList(NotifyingList<T> backupList, Object notifier, Object feature, int featureID) {
 
 		// Check values
-		if(feature == backupList.getFeature() || featureID == backupList.getFeatureID()) {
+		if (feature == backupList.getFeature() || featureID == backupList.getFeatureID()) {
 			throw new IllegalArgumentException("Feature and featureID should be different from the backupList.feature and backupList.featureID. ["
 					+ feature + "=="
 					+ backupList.getFeature() + " - "
@@ -148,47 +148,50 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 	 * Listen to changes in backupList.
 	 */
 	protected void attachListener() {
-		((Notifier)notifier).eAdapters().add(backupListChangeListener);
+		((Notifier) notifier).eAdapters().add(backupListChangeListener);
 	}
 
 	/**
 	 * @see org.eclipse.emf.common.notify.NotifyingList#getNotifier()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Object getNotifier() {
 		return notifier;
 	}
 
 	/**
 	 * @see org.eclipse.emf.common.notify.NotifyingList#getFeature()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Object getFeature() {
 		return feature;
 	}
 
 	/**
 	 * @see org.eclipse.emf.common.notify.NotifyingList#getFeatureID()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public int getFeatureID() {
 		return featureID;
 	}
 
 	/**
 	 * Creates a notification.
-	 * 
+	 *
 	 * @param eventType
-	 *        the type of change that has occurred.
+	 *            the type of change that has occurred.
 	 * @param oldObject
-	 *        the value of the notifier's feature before the change occurred.
+	 *            the value of the notifier's feature before the change occurred.
 	 * @param newObject
-	 *        the value of the notifier's feature after the change occurred.
+	 *            the value of the notifier's feature after the change occurred.
 	 * @param index
-	 *        the position at which the change occurred.
+	 *            the position at which the change occurred.
 	 * @return a new notification.
 	 */
 	protected NotificationImpl createNotification(Notification origNotification)
@@ -224,7 +227,7 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 	/**
 	 * Get the object at the specified index in the backup list.
 	 * Subclass should override in order to return the proper object.
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -232,28 +235,30 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 	/**
 	 * @see org.eclipse.emf.common.util.EList#move(int, java.lang.Object)
-	 * 
+	 *
 	 * @param newPosition
 	 * @param object
 	 */
+	@Override
 	public void move(int newPosition, E object) {
 		move(newPosition, indexOf(object));
 	}
 
 	/**
 	 * @see org.eclipse.emf.common.util.EList#move(int, int)
-	 * 
+	 *
 	 * @param newPosition
 	 * @param oldPosition
 	 * @return
 	 */
+	@Override
 	public E move(int newPosition, int oldPosition) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * @see java.util.AbstractCollection#size()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -263,7 +268,7 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 	/**
 	 * @see java.util.AbstractSequentialList#listIterator(int)
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -273,8 +278,8 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param <E>
 	 */
 	public class DerivedListIterator implements ListIterator<E> {
@@ -297,9 +302,9 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * Creates an instance advanced to the index.
-		 * 
+		 *
 		 * @param index
-		 *        the starting index.
+		 *            the starting index.
 		 */
 		public DerivedListIterator(int index)
 		{
@@ -308,9 +313,10 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * Returns whether there are more objects.
-		 * 
+		 *
 		 * @return whether there are more objects.
 		 */
+		@Override
 		public boolean hasNext()
 		{
 			return cursor != size();
@@ -319,11 +325,12 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 		/**
 		 * Returns the next object and advances the iterator.
 		 * This implementation delegates to {@link #doNext doNext}.
-		 * 
+		 *
 		 * @return the next object.
 		 * @exception NoSuchElementException
-		 *            if the iterator is done.
+		 *                if the iterator is done.
 		 */
+		@Override
 		public E next()
 		{
 			try
@@ -341,6 +348,7 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 		 * Returns whether there are more objects for {@link #previous}.
 		 * Returns whether there are more objects.
 		 */
+		@Override
 		public boolean hasPrevious()
 		{
 			return cursor != 0;
@@ -349,11 +357,12 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 		/**
 		 * Returns the previous object and advances the iterator.
 		 * This implementation delegates to {@link #doPrevious doPrevious}.
-		 * 
+		 *
 		 * @return the previous object.
 		 * @exception NoSuchElementException
-		 *            if the iterator is done.
+		 *                if the iterator is done.
 		 */
+		@Override
 		public E previous()
 		{
 			try
@@ -369,9 +378,10 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * Returns the index of the object that would be returned by calling {@link #next() next}.
-		 * 
+		 *
 		 * @return the index of the object that would be returned by calling <code>next</code>.
 		 */
+		@Override
 		public int nextIndex()
 		{
 			return cursor;
@@ -379,9 +389,10 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * Returns the index of the object that would be returned by calling {@link #previous previous}.
-		 * 
+		 *
 		 * @return the index of the object that would be returned by calling <code>previous</code>.
 		 */
+		@Override
 		public int previousIndex()
 		{
 			return cursor - 1;
@@ -390,14 +401,15 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 		/**
 		 * Sets the object at the index of the last call to {@link #next() next} or {@link #previous previous}.
 		 * This implementation delegates to {@link AbstractEList#set set}.
-		 * 
+		 *
 		 * @param object
-		 *        the object to set.
+		 *            the object to set.
 		 * @exception IllegalStateException
-		 *            if <code>next</code> or <code>previous</code> have not yet been called,
-		 *            or {@link #remove(Object) remove} or {@link #add add} have already been called
-		 *            after the last call to <code>next</code> or <code>previous</code>.
+		 *                if <code>next</code> or <code>previous</code> have not yet been called,
+		 *                or {@link #remove(Object) remove} or {@link #add add} have already been called
+		 *                after the last call to <code>next</code> or <code>previous</code>.
 		 */
+		@Override
 		public void set(E object)
 		{
 			throw new UnsupportedOperationException();
@@ -406,10 +418,11 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 		/**
 		 * Adds the object at the {@link #next() next} index and advances the iterator past it.
 		 * This implementation delegates to {@link #doAdd(Object) doAdd(E)}.
-		 * 
+		 *
 		 * @param object
-		 *        the object to add.
+		 *            the object to add.
 		 */
+		@Override
 		public void add(E object)
 		{
 			throw new UnsupportedOperationException();
@@ -417,8 +430,9 @@ public abstract class DerivedNotifyingEList<E, T> extends AbstractSequentialList
 
 		/**
 		 * @see java.util.ListIterator#remove()
-		 * 
+		 *
 		 */
+		@Override
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}

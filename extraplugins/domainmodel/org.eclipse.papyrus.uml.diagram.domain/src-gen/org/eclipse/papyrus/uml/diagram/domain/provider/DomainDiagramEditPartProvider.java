@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,11 +25,11 @@ public class DomainDiagramEditPartProvider extends AbstractEditPartProvider {
 
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is Domain Diagram
-			if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+			if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 				return true;
 			}
 		}
@@ -39,7 +39,7 @@ public class DomainDiagramEditPartProvider extends AbstractEditPartProvider {
 
 	@Override
 	protected Class<?> getDiagramEditPartClass(View view) {
-		if(ElementTypes.DIAGRAM_ID.equals(view.getType())) {
+		if (ElementTypes.DIAGRAM_ID.equals(view.getType())) {
 			return DomainDiagramEditPart.class;
 		}
 

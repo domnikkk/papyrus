@@ -21,13 +21,13 @@ import org.eclipse.papyrus.eastadl.timing.TimingDescription;
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.annex.temporalconstraint.TemporalconstraintPackage
  * @generated
  */
@@ -36,6 +36,7 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static TemporalconstraintPackage modelPackage;
@@ -44,6 +45,7 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TemporalconstraintSwitch() {
@@ -56,6 +58,7 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -69,66 +72,104 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TemporalconstraintPackage.TEMPORAL_CONSTRAINT: {
-				TemporalConstraint temporalConstraint = (TemporalConstraint)theEObject;
-				T result = caseTemporalConstraint(temporalConstraint);
-				if (result == null) result = caseEAElement(temporalConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case TemporalconstraintPackage.TEMPORAL_CONSTRAINT: {
+			TemporalConstraint temporalConstraint = (TemporalConstraint) theEObject;
+			T result = caseTemporalConstraint(temporalConstraint);
+			if (result == null) {
+				result = caseEAElement(temporalConstraint);
 			}
-			case TemporalconstraintPackage.LOGICAL_TIME_CONDITION: {
-				LogicalTimeCondition logicalTimeCondition = (LogicalTimeCondition)theEObject;
-				T result = caseLogicalTimeCondition(logicalTimeCondition);
-				if (result == null) result = caseEAElement(logicalTimeCondition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case TemporalconstraintPackage.TRANSITION: {
-				Transition transition = (Transition)theEObject;
-				T result = caseTransition(transition);
-				if (result == null) result = caseEAElement(transition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case TemporalconstraintPackage.LOGICAL_TIME_CONDITION: {
+			LogicalTimeCondition logicalTimeCondition = (LogicalTimeCondition) theEObject;
+			T result = caseLogicalTimeCondition(logicalTimeCondition);
+			if (result == null) {
+				result = caseEAElement(logicalTimeCondition);
 			}
-			case TemporalconstraintPackage.STATE: {
-				State state = (State)theEObject;
-				T result = caseState(state);
-				if (result == null) result = caseEAElement(state);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case TemporalconstraintPackage.STATE_EVENT: {
-				StateEvent stateEvent = (StateEvent)theEObject;
-				T result = caseStateEvent(stateEvent);
-				if (result == null) result = caseEvent(stateEvent);
-				if (result == null) result = caseTimingDescription(stateEvent);
-				if (result == null) result = caseEAElement(stateEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case TemporalconstraintPackage.TRANSITION: {
+			Transition transition = (Transition) theEObject;
+			T result = caseTransition(transition);
+			if (result == null) {
+				result = caseEAElement(transition);
 			}
-			case TemporalconstraintPackage.SYNCHRONOUSTRANSITION: {
-				Synchronoustransition synchronoustransition = (Synchronoustransition)theEObject;
-				T result = caseSynchronoustransition(synchronoustransition);
-				if (result == null) result = caseTransition(synchronoustransition);
-				if (result == null) result = caseEAElement(synchronoustransition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case TemporalconstraintPackage.TRANSITION_EVENT: {
-				TransitionEvent transitionEvent = (TransitionEvent)theEObject;
-				T result = caseTransitionEvent(transitionEvent);
-				if (result == null) result = caseEAElement(transitionEvent);
-				if (result == null) result = caseBehaviorConstraintParameter(transitionEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case TemporalconstraintPackage.STATE: {
+			State state = (State) theEObject;
+			T result = caseState(state);
+			if (result == null) {
+				result = caseEAElement(state);
 			}
-			default: return defaultCase(theEObject);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case TemporalconstraintPackage.STATE_EVENT: {
+			StateEvent stateEvent = (StateEvent) theEObject;
+			T result = caseStateEvent(stateEvent);
+			if (result == null) {
+				result = caseEvent(stateEvent);
+			}
+			if (result == null) {
+				result = caseTimingDescription(stateEvent);
+			}
+			if (result == null) {
+				result = caseEAElement(stateEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case TemporalconstraintPackage.SYNCHRONOUSTRANSITION: {
+			Synchronoustransition synchronoustransition = (Synchronoustransition) theEObject;
+			T result = caseSynchronoustransition(synchronoustransition);
+			if (result == null) {
+				result = caseTransition(synchronoustransition);
+			}
+			if (result == null) {
+				result = caseEAElement(synchronoustransition);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case TemporalconstraintPackage.TRANSITION_EVENT: {
+			TransitionEvent transitionEvent = (TransitionEvent) theEObject;
+			T result = caseTransitionEvent(transitionEvent);
+			if (result == null) {
+				result = caseEAElement(transitionEvent);
+			}
+			if (result == null) {
+				result = caseBehaviorConstraintParameter(transitionEvent);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -138,7 +179,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -153,7 +196,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Logical Time Condition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -168,7 +213,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -183,7 +230,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -198,7 +247,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>State Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -213,7 +264,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Synchronoustransition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -228,7 +281,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Transition Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -243,7 +298,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EA Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -258,7 +315,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -273,7 +332,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -288,7 +349,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Behavior Constraint Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -303,7 +366,9 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -313,4 +378,4 @@ public class TemporalconstraintSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //TemporalconstraintSwitch
+} // TemporalconstraintSwitch

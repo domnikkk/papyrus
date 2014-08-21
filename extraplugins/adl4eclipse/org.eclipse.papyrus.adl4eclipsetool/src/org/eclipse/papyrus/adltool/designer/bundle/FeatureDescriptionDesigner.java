@@ -15,8 +15,8 @@ import org.eclipse.uml2.uml.Component;
 public class FeatureDescriptionDesigner extends AbstractBundleDescriptionDesigner {
 
 	public String getSymbolicName(Object bundleProject) {
-		if(bundleProject instanceof IFeatureModel){
-			return	((IFeatureModel)bundleProject).getFeature().getId();
+		if (bundleProject instanceof IFeatureModel) {
+			return ((IFeatureModel) bundleProject).getFeature().getId();
 		}
 		return null;
 	}
@@ -26,7 +26,7 @@ public class FeatureDescriptionDesigner extends AbstractBundleDescriptionDesigne
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.adltool.designer.bundle.IBundleDescriptionDesigner#getRequiredBundle(org.eclipse.uml2.uml.Component, java.lang.Object)
 	 *
 	 * @param bundleComponent
@@ -34,31 +34,31 @@ public class FeatureDescriptionDesigner extends AbstractBundleDescriptionDesigne
 	 * @return the list of required Bundle
 	 */
 	public ArrayList<ReferencedOSGIElement> getRequiredBundle(Component bundleComponent, Object bundleProject) {
-		ArrayList<ReferencedOSGIElement> bundleListName=new ArrayList<ReferencedOSGIElement>();
-		if( bundleProject instanceof IFeatureModel){
-			IFeatureModel currentFeatureModel=(IFeatureModel)bundleProject;
-			IFeatureImport[] imports=currentFeatureModel.getFeature().getImports();
-			for(int i = 0; i < imports.length; i++) {
+		ArrayList<ReferencedOSGIElement> bundleListName = new ArrayList<ReferencedOSGIElement>();
+		if (bundleProject instanceof IFeatureModel) {
+			IFeatureModel currentFeatureModel = (IFeatureModel) bundleProject;
+			IFeatureImport[] imports = currentFeatureModel.getFeature().getImports();
+			for (int i = 0; i < imports.length; i++) {
 
-				ReferencedOSGIElement newRefElement= new ReferencedOSGIElement(null,imports[i].getId());
-				if( imports[i].getType()==1){
+				ReferencedOSGIElement newRefElement = new ReferencedOSGIElement(null, imports[i].getId());
+				if (imports[i].getType() == 1) {
 					newRefElement.setKindRef(ReferencedOSGIElement.FEATURE);
 				}
 				bundleListName.add(newRefElement);
 			}
 		}
 
-			return bundleListName;
-		}
-
-		@Override
-		public String getBundleValue(Object bundleProject, String key) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		public String getName(Object bundleProject) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		return bundleListName;
 	}
+
+	@Override
+	public String getBundleValue(Object bundleProject, String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getName(Object bundleProject) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

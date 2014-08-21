@@ -5,6 +5,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -38,28 +39,30 @@ public class QompassTraceMechanism implements ITraceMechanism {
 
 	public static final URI tracingURI = URI.createURI(EC3M_TRACING_URI);
 
+	@Override
 	public EList<String> getTraceMechanismIDs(EObject eObj) {
 		EList<String> ids = new BasicEList<String>();
 		// obtain list of all available container rules via Utils. Restrict to those doing tracing.
 		EList<ContainerRule> containerRules = getContainerRules(eObj);
-		for(ContainerRule containerRule : containerRules) {
-			if(isForTracing(containerRule)) {
+		for (ContainerRule containerRule : containerRules) {
+			if (isForTracing(containerRule)) {
 				Class clazz = containerRule.getBase_Class();
 				ids.add(clazz.getName());
 			}
 		}
-		if(ids.size() == 0) {
+		if (ids.size() == 0) {
 			ids.add("dummy qompass rule");
 		}
 		return ids;
 	}
 
+	@Override
 	public String getTraceMechanismDescription(EObject eObj, String id) {
 		EList<ContainerRule> containerRules = getContainerRules(eObj);
-		for(ContainerRule containerRule : containerRules) {
-			if(isForTracing(containerRule)) {
+		for (ContainerRule containerRule : containerRules) {
+			if (isForTracing(containerRule)) {
 				Class clazz = containerRule.getBase_Class();
-				if(clazz.getName().equals(id)) {
+				if (clazz.getName().equals(id)) {
 					return Description.getDescription(clazz);
 				}
 			}
@@ -70,26 +73,27 @@ public class QompassTraceMechanism implements ITraceMechanism {
 	/**
 	 * Apply the trace mechanism, i.e. set or unset the appropriate ContainerRule for tracing.
 	 * Currently handles trace on class.
-	 * 
+	 *
 	 * Basic idea: always apply same container rule. But container rule expansion is different in function of set tracepoints.
 	 * Need to unapply, if there is no longer a trace needing it.
 	 */
+	@Override
 	public boolean applyTraceMechanism(EObject eObj, String id, int traceOption) {
 		Class clazzContext = getClassContext(eObj);
-		if(clazzContext == null) {
+		if (clazzContext == null) {
 			return false;
 		}
 		EList<ContainerRule> containerRules = getContainerRules(eObj);
-		for(ContainerRule containerRule : containerRules) {
-			if(isForTracing(containerRule)) {
+		for (ContainerRule containerRule : containerRules) {
+			if (isForTracing(containerRule)) {
 				Class clazz = containerRule.getBase_Class();
 
-				if(clazz.getName().equals(id)) {
-					if(traceOption == TAOperation.OnlyCall.ordinal()) {
+				if (clazz.getName().equals(id)) {
+					if (traceOption == TAOperation.OnlyCall.ordinal()) {
 						// yes => what do we then (i.e. how is mapping done??)
 					}
 					RuleApplication ruleApplication = StereotypeUtil.applyApp(clazzContext, RuleApplication.class);
-					if((ruleApplication != null) && !ruleApplication.getContainerRule().contains(containerRule)) {
+					if ((ruleApplication != null) && !ruleApplication.getContainerRule().contains(containerRule)) {
 						ruleApplication.getContainerRule().add(containerRule);
 						return true;
 					}
@@ -102,9 +106,9 @@ public class QompassTraceMechanism implements ITraceMechanism {
 	// QompassTraceMechanism
 
 	public boolean isForTracing(ContainerRule rule) {
-		for(ConfigOption co : rule.getForConfig()) {
+		for (ConfigOption co : rule.getForConfig()) {
 			// TODO: not very clean to used fixed string
-			if(co.getBase_Class().getName().equals("Trace")) { //$NON-NLS-1$
+			if (co.getBase_Class().getName().equals("Trace")) { //$NON-NLS-1$
 				return true;
 			}
 		}
@@ -117,65 +121,66 @@ public class QompassTraceMechanism implements ITraceMechanism {
 	 * (1) A class, in this case it could be returned directly
 	 * (2) An operation. In this case, the owning class is returned (caveat: operation might belong to an interface)
 	 * (3) A property of the class (including ports).
-	 * 
+	 *
 	 * @param eObj
-	 *        see description above
+	 *            see description above
 	 * @return the class to a container rule may be applied
 	 */
 	public Class getClassContext(EObject eObj) {
-		if(eObj instanceof Class) {
-			return (Class)eObj;
-		} else if(eObj instanceof Operation) {
-			return ((Operation)eObj).getClass_();
-		} else if(eObj instanceof Property) {
-			return ((Property)eObj).getClass_();
+		if (eObj instanceof Class) {
+			return (Class) eObj;
+		} else if (eObj instanceof Operation) {
+			return ((Operation) eObj).getClass_();
+		} else if (eObj instanceof Property) {
+			return ((Property) eObj).getClass_();
 		} else {
 			return null;
 		}
 	}
 
 	public EList<ContainerRule> getContainerRules(EObject eObj) {
-		if(eObj == null) {
+		if (eObj == null) {
 			// load rules of registered Tracing model library
 			try {
 				ModelSet ms = ServiceUtilsForActionHandlers.getInstance().getModelSet();
 				Resource rs = ms.getResource(tracingURI, true);
 				EList<EObject> contents = rs.getContents();
-				if((contents.size() > 0) && (contents.get(0) instanceof Package)) {
-					return Utils.getAllRules((Package)contents.get(0));
+				if ((contents.size() > 0) && (contents.get(0) instanceof Package)) {
+					return Utils.getAllRules((Package) contents.get(0));
 				}
 			} catch (ServiceException e) {
-				Log.log(Status.ERROR, Log.TRAFO_CONTAINER, e.getMessage());
+				Log.log(IStatus.ERROR, Log.TRAFO_CONTAINER, e.getMessage());
 			}
 			return new BasicEList<ContainerRule>();
 		} else {
-			Package top = Utils.getTop((Element)eObj);
+			Package top = Utils.getTop((Element) eObj);
 			return Utils.getAllRules(top);
 		}
 	}
 
+	@Override
 	public boolean configureTraceMechanisms() {
 		String config = ""; //$NON-NLS-1$
 		// TODO: config is never evaluated
 		try {
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-			if(root != null) {
+			if (root != null) {
 				Object tracePoints[] = root.findMarkers(TracepointConstants.tpOrbpMarker, true, IResource.DEPTH_INFINITE);
-				for(Object tracePointObj : tracePoints) {
-					if(tracePointObj instanceof IMarker) {
-						IMarker tracePoint = (IMarker)tracePointObj;
+				for (Object tracePointObj : tracePoints) {
+					if (tracePointObj instanceof IMarker) {
+						IMarker tracePoint = (IMarker) tracePointObj;
 						EObject eobj = MarkerUtils.getEObjectOfMarker(tracePoint);
-						if(MarkerUtils.isActive(tracePoint)) {
-							if(eobj instanceof NamedElement) {
-								config += ((NamedElement)eobj).getQualifiedName();
+						if (MarkerUtils.isActive(tracePoint)) {
+							if (eobj instanceof NamedElement) {
+								config += ((NamedElement) eobj).getQualifiedName();
 							}
 						}
 					}
 				}
 			}
 		} catch (CoreException e) {
-			Log.log(Status.ERROR, Log.TRAFO_CONTAINER, e.getMessage());
+			Log.log(IStatus.ERROR, Log.TRAFO_CONTAINER, e.getMessage());
 		}
 		return true;
 	}

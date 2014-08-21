@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,12 @@ public class NewModelHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		setEnabled(event.getApplicationContext());
 
-		if(isEnabled()) {
+		if (isEnabled()) {
 			ISelection selection = HandlerUtil.getCurrentSelection(event);
-			if(selection instanceof IStructuredSelection) {
+			if (selection instanceof IStructuredSelection) {
 				InitModelWizard wizard = new InitModelWizard();
 
-				wizard.init(HandlerUtil.getActiveWorkbenchWindow(event).getWorkbench(), (IStructuredSelection)selection);
+				wizard.init(HandlerUtil.getActiveWorkbenchWindow(event).getWorkbench(), (IStructuredSelection) selection);
 
 				WizardDialog dlg = new WizardDialog(HandlerUtil.getActiveShell(event), wizard);
 				dlg.open();
@@ -56,7 +56,7 @@ public class NewModelHandler extends AbstractHandler {
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		Object variable = HandlerUtil.getVariable(evaluationContext, ISources.ACTIVE_CURRENT_SELECTION_NAME);
-		ISelection selection = variable instanceof ISelection ? (ISelection)variable : StructuredSelection.EMPTY;
+		ISelection selection = variable instanceof ISelection ? (ISelection) variable : StructuredSelection.EMPTY;
 		CDOObject cdoObject = CDOUtils.adapt(UIUtil.getElement(selection), CDOObject.class);
 
 		setBaseEnabled((cdoObject == null) || !CDOUtils.isReadOnly(cdoObject));

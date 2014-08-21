@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ public class NewRobotmlModelWizard extends CreateModelWizard {
 
 	/**
 	 * @see org.eclipse.papyrus.wizards.CreateModelWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
-	 * 
+	 *
 	 * @param workbench
 	 * @param selection
 	 */
@@ -52,7 +52,7 @@ public class NewRobotmlModelWizard extends CreateModelWizard {
 
 	@Override
 	protected String[] getDiagramCategoryIds() {
-		return new String[]{ CreateRobotmlModelCommand.COMMAND_ID };
+		return new String[] { CreateRobotmlModelCommand.COMMAND_ID };
 	}
 
 	/**

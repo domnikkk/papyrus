@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,6 @@ import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs;
-import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.*;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext;
 import org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommHost;
@@ -52,6 +51,7 @@ import org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SAMPackage
  * @generated
  */
@@ -60,6 +60,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static SAMPackage modelPackage;
@@ -68,6 +69,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SAMAdapterFactory() {
@@ -81,6 +83,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -90,7 +93,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -99,135 +102,165 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SAMSwitch<Adapter> modelSwitch =
-		new SAMSwitch<Adapter>() {
-			@Override
-			public Adapter caseSaAnalysisContext(SaAnalysisContext object) {
-				return createSaAnalysisContextAdapter();
-			}
-			@Override
-			public Adapter caseSaEndtoEndFlow(SaEndtoEndFlow object) {
-				return createSaEndtoEndFlowAdapter();
-			}
-			@Override
-			public Adapter caseSaCommStep(SaCommStep object) {
-				return createSaCommStepAdapter();
-			}
-			@Override
-			public Adapter caseSaStep(SaStep object) {
-				return createSaStepAdapter();
-			}
-			@Override
-			public Adapter caseSaSharedResource(SaSharedResource object) {
-				return createSaSharedResourceAdapter();
-			}
-			@Override
-			public Adapter caseSaSchedObs(SaSchedObs object) {
-				return createSaSchedObsAdapter();
-			}
-			@Override
-			public Adapter caseSaCommHost(SaCommHost object) {
-				return createSaCommHostAdapter();
-			}
-			@Override
-			public Adapter caseSaExecHost(SaExecHost object) {
-				return createSaExecHostAdapter();
-			}
-			@Override
-			public Adapter caseConfiguration(Configuration object) {
-				return createConfigurationAdapter();
-			}
-			@Override
-			public Adapter caseExpressionContext(ExpressionContext object) {
-				return createExpressionContextAdapter();
-			}
-			@Override
-			public Adapter caseGaAnalysisContext(GaAnalysisContext object) {
-				return createGaAnalysisContextAdapter();
-			}
-			@Override
-			public Adapter caseResourceUsage(ResourceUsage object) {
-				return createResourceUsageAdapter();
-			}
-			@Override
-			public Adapter caseTimedElement(TimedElement object) {
-				return createTimedElementAdapter();
-			}
-			@Override
-			public Adapter caseTimedProcessing(TimedProcessing object) {
-				return createTimedProcessingAdapter();
-			}
-			@Override
-			public Adapter caseGaScenario(GaScenario object) {
-				return createGaScenarioAdapter();
-			}
-			@Override
-			public Adapter caseGaStep(GaStep object) {
-				return createGaStepAdapter();
-			}
-			@Override
-			public Adapter caseGaCommStep(GaCommStep object) {
-				return createGaCommStepAdapter();
-			}
-			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
-			public Adapter caseMutualExclusionResource(MutualExclusionResource object) {
-				return createMutualExclusionResourceAdapter();
-			}
-			@Override
-			public Adapter caseNfpConstraint(NfpConstraint object) {
-				return createNfpConstraintAdapter();
-			}
-			@Override
-			public Adapter caseGaTimedObs(GaTimedObs object) {
-				return createGaTimedObsAdapter();
-			}
-			@Override
-			public Adapter caseProcessingResource(ProcessingResource object) {
-				return createProcessingResourceAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationMedia(CommunicationMedia object) {
-				return createCommunicationMediaAdapter();
-			}
-			@Override
-			public Adapter caseScheduler(Scheduler object) {
-				return createSchedulerAdapter();
-			}
-			@Override
-			public Adapter caseGaCommHost(GaCommHost object) {
-				return createGaCommHostAdapter();
-			}
-			@Override
-			public Adapter caseComputingResource(ComputingResource object) {
-				return createComputingResourceAdapter();
-			}
-			@Override
-			public Adapter caseGaExecHost(GaExecHost object) {
-				return createGaExecHostAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new SAMSwitch<Adapter>() {
+				@Override
+				public Adapter caseSaAnalysisContext(SaAnalysisContext object) {
+					return createSaAnalysisContextAdapter();
+				}
+
+				@Override
+				public Adapter caseSaEndtoEndFlow(SaEndtoEndFlow object) {
+					return createSaEndtoEndFlowAdapter();
+				}
+
+				@Override
+				public Adapter caseSaCommStep(SaCommStep object) {
+					return createSaCommStepAdapter();
+				}
+
+				@Override
+				public Adapter caseSaStep(SaStep object) {
+					return createSaStepAdapter();
+				}
+
+				@Override
+				public Adapter caseSaSharedResource(SaSharedResource object) {
+					return createSaSharedResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseSaSchedObs(SaSchedObs object) {
+					return createSaSchedObsAdapter();
+				}
+
+				@Override
+				public Adapter caseSaCommHost(SaCommHost object) {
+					return createSaCommHostAdapter();
+				}
+
+				@Override
+				public Adapter caseSaExecHost(SaExecHost object) {
+					return createSaExecHostAdapter();
+				}
+
+				@Override
+				public Adapter caseConfiguration(Configuration object) {
+					return createConfigurationAdapter();
+				}
+
+				@Override
+				public Adapter caseExpressionContext(ExpressionContext object) {
+					return createExpressionContextAdapter();
+				}
+
+				@Override
+				public Adapter caseGaAnalysisContext(GaAnalysisContext object) {
+					return createGaAnalysisContextAdapter();
+				}
+
+				@Override
+				public Adapter caseResourceUsage(ResourceUsage object) {
+					return createResourceUsageAdapter();
+				}
+
+				@Override
+				public Adapter caseTimedElement(TimedElement object) {
+					return createTimedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseTimedProcessing(TimedProcessing object) {
+					return createTimedProcessingAdapter();
+				}
+
+				@Override
+				public Adapter caseGaScenario(GaScenario object) {
+					return createGaScenarioAdapter();
+				}
+
+				@Override
+				public Adapter caseGaStep(GaStep object) {
+					return createGaStepAdapter();
+				}
+
+				@Override
+				public Adapter caseGaCommStep(GaCommStep object) {
+					return createGaCommStepAdapter();
+				}
+
+				@Override
+				public Adapter caseResource(Resource object) {
+					return createResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseMutualExclusionResource(MutualExclusionResource object) {
+					return createMutualExclusionResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseNfpConstraint(NfpConstraint object) {
+					return createNfpConstraintAdapter();
+				}
+
+				@Override
+				public Adapter caseGaTimedObs(GaTimedObs object) {
+					return createGaTimedObsAdapter();
+				}
+
+				@Override
+				public Adapter caseProcessingResource(ProcessingResource object) {
+					return createProcessingResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseCommunicationMedia(CommunicationMedia object) {
+					return createCommunicationMediaAdapter();
+				}
+
+				@Override
+				public Adapter caseScheduler(Scheduler object) {
+					return createSchedulerAdapter();
+				}
+
+				@Override
+				public Adapter caseGaCommHost(GaCommHost object) {
+					return createGaCommHostAdapter();
+				}
+
+				@Override
+				public Adapter caseComputingResource(ComputingResource object) {
+					return createComputingResourceAdapter();
+				}
+
+				@Override
+				public Adapter caseGaExecHost(GaExecHost object) {
+					return createGaExecHostAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -237,6 +270,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaAnalysisContext
 	 * @generated
@@ -251,6 +285,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaEndtoEndFlow
 	 * @generated
@@ -265,6 +300,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommStep
 	 * @generated
@@ -279,6 +315,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaStep
 	 * @generated
@@ -293,6 +330,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaSharedResource
 	 * @generated
@@ -307,6 +345,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaSchedObs
 	 * @generated
@@ -321,6 +360,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaCommHost
 	 * @generated
@@ -335,6 +375,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.SAM.SaExecHost
 	 * @generated
@@ -349,6 +390,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.CoreElements.Configuration
 	 * @generated
@@ -363,6 +405,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Annexes.VSL.Variables.ExpressionContext
 	 * @generated
@@ -377,6 +420,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaAnalysisContext
 	 * @generated
@@ -391,6 +435,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ResourceUsage
 	 * @generated
@@ -405,6 +450,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedElement
 	 * @generated
@@ -419,6 +465,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Time.TimedProcessing
 	 * @generated
@@ -433,6 +480,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaScenario
 	 * @generated
@@ -447,6 +495,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaStep
 	 * @generated
@@ -461,6 +510,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommStep
 	 * @generated
@@ -475,6 +525,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Resource
 	 * @generated
@@ -489,6 +540,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.MutualExclusionResource
 	 * @generated
@@ -503,6 +555,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint
 	 * @generated
@@ -517,6 +570,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaTimedObs
 	 * @generated
@@ -531,6 +585,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ProcessingResource
 	 * @generated
@@ -545,6 +600,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.CommunicationMedia
 	 * @generated
@@ -559,6 +615,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.Scheduler
 	 * @generated
@@ -573,6 +630,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaCommHost
 	 * @generated
@@ -587,6 +645,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.GRM.ComputingResource
 	 * @generated
@@ -601,6 +660,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.GaExecHost
 	 * @generated
@@ -614,6 +674,7 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -621,4 +682,4 @@ public class SAMAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //SAMAdapterFactory
+} // SAMAdapterFactory

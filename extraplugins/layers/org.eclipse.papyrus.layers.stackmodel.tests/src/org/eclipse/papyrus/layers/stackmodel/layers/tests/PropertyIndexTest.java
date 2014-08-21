@@ -13,6 +13,7 @@ import org.eclipse.papyrus.layers.stackmodel.layers.PropertyIndex;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Property Index</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertyIndexTest extends TestCase {
@@ -21,6 +22,7 @@ public class PropertyIndexTest extends TestCase {
 	 * The fixture for this Property Index test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyIndex fixture = null;
@@ -28,6 +30,7 @@ public class PropertyIndexTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +41,7 @@ public class PropertyIndexTest extends TestCase {
 	 * Constructs a new Property Index test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyIndexTest(String name) {
@@ -48,6 +52,7 @@ public class PropertyIndexTest extends TestCase {
 	 * Sets the fixture for this Property Index test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(PropertyIndex fixture) {
@@ -58,6 +63,7 @@ public class PropertyIndexTest extends TestCase {
 	 * Returns the fixture for this Property Index test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyIndex getFixture() {
@@ -67,6 +73,7 @@ public class PropertyIndexTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +85,7 @@ public class PropertyIndexTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +94,4 @@ public class PropertyIndexTest extends TestCase {
 		setFixture(null);
 	}
 
-} //PropertyIndexTest
+} // PropertyIndexTest

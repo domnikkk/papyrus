@@ -37,7 +37,7 @@ public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 	 * Gets the next event.
 	 *
 	 * @param eventPool
-	 *        the event pool
+	 *            the event pool
 	 * @return the next event
 	 */
 	public abstract SignalInstance getNextEvent(AsyncEventPool eventPool);

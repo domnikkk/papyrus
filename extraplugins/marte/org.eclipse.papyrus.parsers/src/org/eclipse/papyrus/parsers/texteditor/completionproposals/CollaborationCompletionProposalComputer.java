@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,23 +28,23 @@ import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * 
+ *
  */
 public class CollaborationCompletionProposalComputer implements ICompletionProposalComputer {
 
 	/**
-	 * 
+	 *
 	 */
 	private Element element;
 
 	/**
-	 * 
+	 *
 	 */
 	private static final String UNDEFINED_TYPE = "<Undefined>";
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the element
 	 */
 	public Element getElement() {
@@ -52,22 +52,22 @@ public class CollaborationCompletionProposalComputer implements ICompletionPropo
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param element
-	 *        the element to set
+	 *            the element to set
 	 */
 	public void setElement(Element element) {
 		this.element = element;
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -77,21 +77,21 @@ public class CollaborationCompletionProposalComputer implements ICompletionPropo
 		ICompletionProposal proposal = null;
 
 		// first, add <Undefined>
-		if(UNDEFINED_TYPE.startsWith(prefix)) {
+		if (UNDEFINED_TYPE.startsWith(prefix)) {
 			proposal = new CompletionProposal(UNDEFINED_TYPE, documentOffset - prefix.length(), prefix.length()
 					+ selectionRange, UNDEFINED_TYPE.length(), null, UNDEFINED_TYPE, null, "Undefined Type");
 			v.add(proposal);
 		}
 
-		if(element != null) {
+		if (element != null) {
 			// then, all accessible types, by alphabetic order...
 			Set<Collaboration> types = computeAccessibleCollaborationList(element);
 			// generate the list of types, in alphabetical order
 			Iterator<Collaboration> it = types.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Collaboration type = it.next();
 				String name = type.getName();
-				if(name.startsWith(prefix)) {
+				if (name.startsWith(prefix)) {
 					// create a completion processor for the type if prefix
 					// corresponds
 					proposal = new CompletionProposal(name, documentOffset - prefix.length(), prefix.length()
@@ -104,10 +104,10 @@ public class CollaborationCompletionProposalComputer implements ICompletionPropo
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param element
-	 * 
+	 *
 	 * @return
 	 */
 	public Set<Collaboration> computeAccessibleCollaborationList(Element element) {

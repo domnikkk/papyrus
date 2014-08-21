@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,12 +42,14 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExtensiondefinitionPackageImpl extends EPackageImpl implements ExtensiondefinitionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass extensionDefinitionEClass = null;
@@ -55,6 +57,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass baseMetaclassEClass = null;
@@ -62,6 +65,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass combinationEClass = null;
@@ -69,20 +73,17 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum extensionDefinitionKindEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.facade.extensiondefinition.ExtensiondefinitionPackage#eNS_URI
 	 * @see #init()
@@ -95,27 +96,31 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link ExtensiondefinitionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link ExtensiondefinitionPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ExtensiondefinitionPackage init() {
-		if (isInited) return (ExtensiondefinitionPackage)EPackage.Registry.INSTANCE.getEPackage(ExtensiondefinitionPackage.eNS_URI);
+		if (isInited) {
+			return (ExtensiondefinitionPackage) EPackage.Registry.INSTANCE.getEPackage(ExtensiondefinitionPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ExtensiondefinitionPackageImpl theExtensiondefinitionPackage = (ExtensiondefinitionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtensiondefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtensiondefinitionPackageImpl());
+		ExtensiondefinitionPackageImpl theExtensiondefinitionPackage = (ExtensiondefinitionPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtensiondefinitionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new ExtensiondefinitionPackageImpl());
 
 		isInited = true;
 
@@ -123,8 +128,9 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		FacadePackageImpl theFacadePackage = (FacadePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI) instanceof FacadePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI) : FacadePackage.eINSTANCE);
-		VirtualmetamodelPackageImpl theVirtualmetamodelPackage = (VirtualmetamodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VirtualmetamodelPackage.eNS_URI) instanceof VirtualmetamodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VirtualmetamodelPackage.eNS_URI) : VirtualmetamodelPackage.eINSTANCE);
+		FacadePackageImpl theFacadePackage = (FacadePackageImpl) (EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI) instanceof FacadePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI) : FacadePackage.eINSTANCE);
+		VirtualmetamodelPackageImpl theVirtualmetamodelPackage = (VirtualmetamodelPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(VirtualmetamodelPackage.eNS_URI) instanceof VirtualmetamodelPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(VirtualmetamodelPackage.eNS_URI) : VirtualmetamodelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExtensiondefinitionPackage.createPackageContents();
@@ -139,7 +145,7 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 		// Mark meta-data to indicate it can't be changed
 		theExtensiondefinitionPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ExtensiondefinitionPackage.eNS_URI, theExtensiondefinitionPackage);
 		return theExtensiondefinitionPackage;
@@ -148,8 +154,10 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getExtensionDefinition() {
 		return extensionDefinitionEClass;
 	}
@@ -157,53 +165,65 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getExtensionDefinition_Extension() {
-		return (EReference)extensionDefinitionEClass.getEStructuralFeatures().get(0);
+		return (EReference) extensionDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getExtensionDefinition_BaseMetaclasses() {
-		return (EReference)extensionDefinitionEClass.getEStructuralFeatures().get(1);
+		return (EReference) extensionDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getExtensionDefinition_Facade() {
-		return (EReference)extensionDefinitionEClass.getEStructuralFeatures().get(2);
+		return (EReference) extensionDefinitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getExtensionDefinition_Stereotype() {
-		return (EReference)extensionDefinitionEClass.getEStructuralFeatures().get(3);
+		return (EReference) extensionDefinitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExtensionDefinition_Kind() {
-		return (EAttribute)extensionDefinitionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) extensionDefinitionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getBaseMetaclass() {
 		return baseMetaclassEClass;
 	}
@@ -211,53 +231,65 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBaseMetaclass_IncompatibleStereotypes() {
-		return (EReference)baseMetaclassEClass.getEStructuralFeatures().get(0);
+		return (EReference) baseMetaclassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBaseMetaclass_Base() {
-		return (EReference)baseMetaclassEClass.getEStructuralFeatures().get(1);
+		return (EReference) baseMetaclassEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBaseMetaclass_ExtensionDefinition() {
-		return (EReference)baseMetaclassEClass.getEStructuralFeatures().get(2);
+		return (EReference) baseMetaclassEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getBaseMetaclass_CompatibleStereotypes() {
-		return (EReference)baseMetaclassEClass.getEStructuralFeatures().get(3);
+		return (EReference) baseMetaclassEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBaseMetaclass_Possible() {
-		return (EAttribute)baseMetaclassEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) baseMetaclassEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getCombination() {
 		return combinationEClass;
 	}
@@ -265,17 +297,21 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getCombination_Members() {
-		return (EReference)combinationEClass.getEStructuralFeatures().get(0);
+		return (EReference) combinationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getExtensionDefinitionKind() {
 		return extensionDefinitionKindEEnum;
 	}
@@ -283,28 +319,34 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ExtensiondefinitionFactory getExtensiondefinitionFactory() {
-		return (ExtensiondefinitionFactory)getEFactoryInstance();
+		return (ExtensiondefinitionFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -332,19 +374,23 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -353,8 +399,8 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		FacadePackage theFacadePackage = (FacadePackage)EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		FacadePackage theFacadePackage = (FacadePackage) EPackage.Registry.INSTANCE.getEPackage(FacadePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -364,17 +410,24 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(extensionDefinitionEClass, ExtensionDefinition.class, "ExtensionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtensionDefinition_Extension(), theUMLPackage.getExtension(), null, "extension", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtensionDefinition_BaseMetaclasses(), this.getBaseMetaclass(), this.getBaseMetaclass_ExtensionDefinition(), "baseMetaclasses", null, 0, -1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtensionDefinition_Facade(), theFacadePackage.getFacade(), theFacadePackage.getFacade_ExtensionDefinitions(), "facade", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtensionDefinition_Stereotype(), theUMLPackage.getStereotype(), null, "stereotype", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtensionDefinition_Extension(), theUMLPackage.getExtension(), null, "extension", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getExtensionDefinition_BaseMetaclasses(), this.getBaseMetaclass(), this.getBaseMetaclass_ExtensionDefinition(), "baseMetaclasses", null, 0, -1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtensionDefinition_Facade(), theFacadePackage.getFacade(), theFacadePackage.getFacade_ExtensionDefinitions(), "facade", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtensionDefinition_Stereotype(), theUMLPackage.getStereotype(), null, "stereotype", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtensionDefinition_Kind(), this.getExtensionDefinitionKind(), "kind", null, 1, 1, ExtensionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(baseMetaclassEClass, BaseMetaclass.class, "BaseMetaclass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBaseMetaclass_IncompatibleStereotypes(), this.getCombination(), null, "incompatibleStereotypes", null, 0, -1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBaseMetaclass_IncompatibleStereotypes(), this.getCombination(), null, "incompatibleStereotypes", null, 0, -1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBaseMetaclass_Base(), ecorePackage.getEObject(), null, "base", null, 1, 1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaseMetaclass_ExtensionDefinition(), this.getExtensionDefinition(), this.getExtensionDefinition_BaseMetaclasses(), "extensionDefinition", null, 1, 1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaseMetaclass_CompatibleStereotypes(), this.getCombination(), null, "compatibleStereotypes", null, 0, -1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBaseMetaclass_ExtensionDefinition(), this.getExtensionDefinition(), this.getExtensionDefinition_BaseMetaclasses(), "extensionDefinition", null, 1, 1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBaseMetaclass_CompatibleStereotypes(), this.getCombination(), null, "compatibleStereotypes", null, 0, -1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaseMetaclass_Possible(), ecorePackage.getEBoolean(), "possible", null, 1, 1, BaseMetaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(combinationEClass, Combination.class, "Combination", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -388,4 +441,4 @@ public class ExtensiondefinitionPackageImpl extends EPackageImpl implements Exte
 		addEEnumLiteral(extensionDefinitionKindEEnum, ExtensionDefinitionKind.FUSION);
 	}
 
-} //ExtensiondefinitionPackageImpl
+} // ExtensiondefinitionPackageImpl

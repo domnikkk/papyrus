@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ public class BooleanValue extends PrimitiveValue {
 		return this.value;
 	}
 
+	@Override
 	public ValueSpecification specify() {
 		// Return a literal boolean with the value of this boolean value.
 		LiteralBoolean literal = UMLFactory.eINSTANCE.createLiteralBoolean();
@@ -36,32 +37,36 @@ public class BooleanValue extends PrimitiveValue {
 		return literal;
 	}
 
+	@Override
 	public Boolean equals(Value otherValue) {
 		// Test if this boolean value is equal to the otherValue.
 		// To be equal, the otherValue must have the same value as this boolean
 		// value.
 		boolean isEqual = false;
-		if(otherValue instanceof BooleanValue) {
-			isEqual = ((BooleanValue)otherValue).value.equals(this.value); // CHANGED == to equals;
+		if (otherValue instanceof BooleanValue) {
+			isEqual = ((BooleanValue) otherValue).value.equals(this.value); // CHANGED == to equals;
 		}
 		return isEqual;
 	}
 
+	@Override
 	public Value copy() {
 		// Create a new boolean value with the same value as this boolean value.
-		BooleanValue newValue = (BooleanValue)(super.copy());
+		BooleanValue newValue = (BooleanValue) (super.copy());
 		newValue.value = this.value;
 		return newValue;
 	}
 
+	@Override
 	public Value new_() {
 		// Return a new boolean value with no value.
 		return new BooleanValue();
 	}
 
+	@Override
 	public String toString() {
 		String stringValue = "false";
-		if(this.value) {
+		if (this.value) {
 			stringValue = "true";
 		}
 		return stringValue;

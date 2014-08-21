@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getY <em>Y</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getZ <em>Z</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getW <em>W</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getZ <em>Z</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getW <em>W</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface Quaternion extends EObject {
 	 * Returns the value of the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>X</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>X</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getQuaternion_X()
@@ -44,7 +44,9 @@ public interface Quaternion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>X</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>X</em>' attribute.
 	 * @see #getX()
 	 * @generated
 	 */
@@ -54,10 +56,10 @@ public interface Quaternion extends EObject {
 	 * Returns the value of the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Y</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Y</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getQuaternion_Y()
@@ -70,7 +72,9 @@ public interface Quaternion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Y</em>' attribute.
 	 * @see #getY()
 	 * @generated
 	 */
@@ -80,10 +84,10 @@ public interface Quaternion extends EObject {
 	 * Returns the value of the '<em><b>Z</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Z</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Z</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Z</em>' attribute.
 	 * @see #setZ(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getQuaternion_Z()
@@ -96,7 +100,9 @@ public interface Quaternion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getZ <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Z</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Z</em>' attribute.
 	 * @see #getZ()
 	 * @generated
 	 */
@@ -106,10 +112,10 @@ public interface Quaternion extends EObject {
 	 * Returns the value of the '<em><b>W</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>W</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>W</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>W</em>' attribute.
 	 * @see #setW(double)
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#getQuaternion_W()
@@ -122,7 +128,9 @@ public interface Quaternion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Quaternion#getW <em>W</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>W</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>W</em>' attribute.
 	 * @see #getW()
 	 * @generated
 	 */

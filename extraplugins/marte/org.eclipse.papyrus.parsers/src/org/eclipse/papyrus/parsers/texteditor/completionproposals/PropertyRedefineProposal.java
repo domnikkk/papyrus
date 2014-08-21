@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) Remi.Schnekenburger@cea.fr - Initial API and implementation
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.parsers.texteditor.completionproposals;
 
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.Property;
 public class PropertyRedefineProposal implements ICompletionProposalComputer {
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param property
 	 */
 	public PropertyRedefineProposal(Property property) {
@@ -38,13 +38,13 @@ public class PropertyRedefineProposal implements ICompletionProposalComputer {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private Property property;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the property
 	 */
 	public Property getProperty() {
@@ -52,10 +52,10 @@ public class PropertyRedefineProposal implements ICompletionProposalComputer {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param property
-	 *        the property to set
+	 *            the property to set
 	 */
 	public void setProperty(Property property) {
 		this.property = property;
@@ -68,27 +68,27 @@ public class PropertyRedefineProposal implements ICompletionProposalComputer {
 	 * ICompletionProposalComputer#generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
 		Vector<ICompletionProposal> v = new Vector<ICompletionProposal>();
 
 		Iterator<Property> it = PropertyUtil.getRedefinableProperties(property).iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Property prop = it.next();
 			String name = prop.getName();
 
-			if(name.startsWith(prefix)) {
+			if (name.startsWith(prefix)) {
 				v
 						.add(new CompletionProposal(prop.getName(), documentOffset - prefix.length(), prefix.length()
-						+ selectionRange, prop.getName().length(), null, prop.getName(), null, prop
-						.getQualifiedName()));
+								+ selectionRange, prop.getName().length(), null, prop.getName(), null, prop
+								.getQualifiedName()));
 			}
 		}
 		return v;

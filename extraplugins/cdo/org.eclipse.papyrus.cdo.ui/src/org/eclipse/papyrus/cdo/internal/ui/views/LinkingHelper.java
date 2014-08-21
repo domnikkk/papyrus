@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,10 +67,10 @@ class LinkingHelper {
 	}
 
 	public void dispose() {
-		if(linkingPartListener != null) {
+		if (linkingPartListener != null) {
 			site.getPage().removePartListener(linkingPartListener);
 		}
-		if(linkingSelectionListener != null) {
+		if (linkingSelectionListener != null) {
 			viewer.removeSelectionChangedListener(linkingSelectionListener);
 		}
 	}
@@ -80,12 +80,12 @@ class LinkingHelper {
 	}
 
 	public void setLinkWithEditor(boolean link) {
-		if(link != linkWithEditor) {
+		if (link != linkWithEditor) {
 			this.linkWithEditor = link;
 
-			if(link) {
+			if (link) {
 				IWorkbenchPart active = site.getPage().getActivePart();
-				if((active != null) && (active.getSite() == site)) {
+				if ((active != null) && (active.getSite() == site)) {
 					// select the current model editor (if any)
 					selectEditor();
 				} else {
@@ -105,27 +105,27 @@ class LinkingHelper {
 		URI uri = null;
 
 		DIModel model = getDIModelFromSelection();
-		if(model != null) {
+		if (model != null) {
 			uri = model.getResource().getURI();
 		} else {
 			// just some other resource, then?
 			CDOResourceLeaf resource = getCDOResourceFromSelection();
-			if(resource != null) {
+			if (resource != null) {
 				uri = resource.getURI();
 			}
 		}
 
-		if(uri != null) {
-			for(IEditorReference next : site.getPage().getEditorReferences()) {
+		if (uri != null) {
+			for (IEditorReference next : site.getPage().getEditorReferences()) {
 				try {
 					IEditorInput input = next.getEditorInput();
 					URI editorURI = EditorUtils.getResourceURI(input);
-					if(editorURI == null) {
+					if (editorURI == null) {
 						// could be a CDO-ish editor
 						editorURI = getURIFromCDOInput(input);
 					}
 
-					if(Objects.equal(uri, editorURI)) {
+					if (Objects.equal(uri, editorURI)) {
 						site.getPage().activate(next.getPart(true));
 						break;
 					}
@@ -137,29 +137,29 @@ class LinkingHelper {
 	}
 
 	protected void handleEditor(IEditorPart activeEditor) {
-		if(activeEditor != null) {
+		if (activeEditor != null) {
 			IEditorInput input = activeEditor.getEditorInput();
-			if(input instanceof URIEditorInput) {
-				URI uri = ((URIEditorInput)input).getURI();
+			if (input instanceof URIEditorInput) {
+				URI uri = ((URIEditorInput) input).getURI();
 
 				DIModel selected = getDIModelFromSelection();
-				if((selected == null) || !selected.getResource().getURI().equals(uri)) {
+				if ((selected == null) || !selected.getResource().getURI().equals(uri)) {
 
 					// change the selection
 					DIModel model = findDIModel(uri);
-					if(model != null) {
+					if (model != null) {
 						viewer.setSelection(new StructuredSelection(model), true);
 					}
 				}
 			} else {
 				URI uri = getURIFromCDOInput(input);
 
-				if(uri != null) {
+				if (uri != null) {
 					CDOResourceLeaf selected = getCDOResourceFromSelection();
-					if((selected == null || !selected.getURI().equals(uri))) {
+					if ((selected == null || !selected.getURI().equals(uri))) {
 						// change the selected
 						CDOResourceLeaf resource = findCDOResource(uri);
-						if(resource != null) {
+						if (resource != null) {
 							viewer.setSelection(new StructuredSelection(resource), true);
 						}
 					}
@@ -171,8 +171,8 @@ class LinkingHelper {
 	private URI getURIFromCDOInput(IEditorInput input) {
 		URI result = null;
 
-		if(input instanceof CDOEditorInput) {
-			CDOEditorInput cdoInput = (CDOEditorInput)input;
+		if (input instanceof CDOEditorInput) {
+			CDOEditorInput cdoInput = (CDOEditorInput) input;
 
 			try {
 				CDOResourceNode node = cdoInput.getView().getResourceNode(cdoInput.getResourcePath());
@@ -180,8 +180,8 @@ class LinkingHelper {
 			} catch (Exception e) {
 				// normal case of no such resource in this view
 			}
-		} else if(input instanceof org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput) {
-			org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput cdoInput = (org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput)input;
+		} else if (input instanceof org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput) {
+			org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput cdoInput = (org.eclipse.emf.cdo.internal.ui.CDOLobEditorInput) input;
 			result = cdoInput.getResource().getURI();
 		}
 
@@ -189,7 +189,7 @@ class LinkingHelper {
 	}
 
 	protected DIModel getDIModelFromSelection() {
-		IStructuredSelection sel = (viewer == null) ? StructuredSelection.EMPTY : (IStructuredSelection)viewer.getSelection();
+		IStructuredSelection sel = (viewer == null) ? StructuredSelection.EMPTY : (IStructuredSelection) viewer.getSelection();
 
 		return sel.isEmpty() ? null : getDIModelFromSelection(sel.getFirstElement());
 	}
@@ -197,12 +197,12 @@ class LinkingHelper {
 	protected DIModel getDIModelFromSelection(Object selected) {
 		DIModel result = null;
 
-		if(selected instanceof DIModel) {
-			result = (DIModel)selected;
-		} else if(selected instanceof CDOResource) {
-			Object parent = ((ITreeContentProvider)viewer.getContentProvider()).getParent(selected);
-			if(parent instanceof DIModel) {
-				result = (DIModel)parent;
+		if (selected instanceof DIModel) {
+			result = (DIModel) selected;
+		} else if (selected instanceof CDOResource) {
+			Object parent = ((ITreeContentProvider) viewer.getContentProvider()).getParent(selected);
+			if (parent instanceof DIModel) {
+				result = (DIModel) parent;
 			}
 		}
 
@@ -213,7 +213,7 @@ class LinkingHelper {
 		DIModel result = null;
 
 		CDOResource res = CDOUtils.tryCast(findCDOResource(uri), CDOResource.class);
-		if((res != null) && res.isLoaded()) {
+		if ((res != null) && res.isLoaded()) {
 			result = DIModel.getInstance(res, true);
 		}
 
@@ -221,7 +221,7 @@ class LinkingHelper {
 	}
 
 	protected CDOResourceLeaf getCDOResourceFromSelection() {
-		IStructuredSelection sel = (viewer == null) ? StructuredSelection.EMPTY : (IStructuredSelection)viewer.getSelection();
+		IStructuredSelection sel = (viewer == null) ? StructuredSelection.EMPTY : (IStructuredSelection) viewer.getSelection();
 
 		return sel.isEmpty() ? null : getCDOResourceFromSelection(sel.getFirstElement());
 	}
@@ -234,10 +234,10 @@ class LinkingHelper {
 	protected CDOResourceLeaf findCDOResource(URI uri) {
 		CDOResourceLeaf result = null;
 
-		IInternalPapyrusRepository repo = (IInternalPapyrusRepository)repositoryManager.getRepositoryForURI(uri);
-		if(repo != null) {
+		IInternalPapyrusRepository repo = (IInternalPapyrusRepository) repositoryManager.getRepositoryForURI(uri);
+		if (repo != null) {
 			CDOView mainView = repo.getMasterView();
-			if((mainView != null) && !mainView.isClosed()) {
+			if ((mainView != null) && !mainView.isClosed()) {
 				try {
 					result = CDOUtils.tryCast(mainView.getResourceNode(CDOURIUtil.extractResourcePath(uri)), CDOResourceLeaf.class);
 				} catch (Exception e) {
@@ -250,13 +250,13 @@ class LinkingHelper {
 	}
 
 	private IPartListener getLinkingPartListener() {
-		if(linkingPartListener == null) {
+		if (linkingPartListener == null) {
 			linkingPartListener = new IPartListener() {
 
 				@Override
 				public void partActivated(IWorkbenchPart part) {
-					if(part instanceof IEditorPart) {
-						handleEditor((IEditorPart)part);
+					if (part instanceof IEditorPart) {
+						handleEditor((IEditorPart) part);
 					}
 				}
 
@@ -286,7 +286,7 @@ class LinkingHelper {
 	}
 
 	private ISelectionChangedListener getLinkingSelectionListener() {
-		if(linkingSelectionListener == null) {
+		if (linkingSelectionListener == null) {
 			linkingSelectionListener = new ISelectionChangedListener() {
 
 				@Override

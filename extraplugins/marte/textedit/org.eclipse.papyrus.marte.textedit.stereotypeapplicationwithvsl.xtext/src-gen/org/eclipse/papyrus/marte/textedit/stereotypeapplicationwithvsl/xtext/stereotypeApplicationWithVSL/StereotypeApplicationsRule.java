@@ -17,7 +17,7 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule#getStereotypeApplications <em>Stereotype Applications</em>}</li>
+ * <li>{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationsRule#getStereotypeApplications <em>Stereotype Applications</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,38 +27,40 @@ import org.eclipse.uml2.uml.Type;
  */
 public interface StereotypeApplicationsRule extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Stereotype Applications</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stereotype Applications</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stereotype Applications</em>' containment reference list.
-   * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#getStereotypeApplicationsRule_StereotypeApplications()
-   * @model containment="true"
-   * @generated
-   */
-  EList<StereotypeApplicationRule> getStereotypeApplications();
+	/**
+	 * Returns the value of the '<em><b>Stereotype Applications</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationRule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Stereotype Applications</em>' containment reference list isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Stereotype Applications</em>' containment reference list.
+	 * @see org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.StereotypeApplicationWithVSLPackage#getStereotypeApplicationsRule_StereotypeApplications()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<StereotypeApplicationRule> getStereotypeApplications();
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @model kind="operation"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;'"
-   * @generated
-   */
-  Type getExpectedType();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;'"
+	 * @generated
+	 */
+	Type getExpectedType();
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @model kind="operation"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;'"
-   * @generated
-   */
-  Element getContextElement();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;'"
+	 * @generated
+	 */
+	Element getContextElement();
 
 } // StereotypeApplicationsRule

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,8 +54,8 @@ public abstract class ExecutionFactory implements Cloneable {
 	 * specifications. Must include Integer, Boolean, String and
 	 * UnlimitedNatural.
 	 */
-	//FIXME: Sounds better to have a list of Type because built in types can only be classes  
-	//public List<PrimitiveType> builtInTypes = new ArrayList<PrimitiveType>();
+	// FIXME: Sounds better to have a list of Type because built in types can only be classes
+	// public List<PrimitiveType> builtInTypes = new ArrayList<PrimitiveType>();
 
 	public List<Type> builtInTypes;
 
@@ -79,15 +79,15 @@ public abstract class ExecutionFactory implements Cloneable {
 		// If the context is empty, the execution is assumed to provide its own
 		// context.
 		Execution execution;
-		if(behavior instanceof OpaqueBehavior) {
-			execution = this.instantiateOpaqueBehaviorExecution((OpaqueBehavior)behavior);
+		if (behavior instanceof OpaqueBehavior) {
+			execution = this.instantiateOpaqueBehaviorExecution((OpaqueBehavior) behavior);
 		} else {
-			execution = (Execution)this.instantiateVisitor(behavior);
+			execution = (Execution) this.instantiateVisitor(behavior);
 			execution.types.add(behavior);
 			execution.createFeatureValues();
 		}
 		this.locus.add(execution);
-		if(context == null) {
+		if (context == null) {
 			execution.context = execution;
 		} else {
 			execution.context = context;
@@ -98,7 +98,7 @@ public abstract class ExecutionFactory implements Cloneable {
 	public Evaluation createEvaluation(ValueSpecification specification) {
 		// Create an evaluation object for a given value specification.
 		// The evaluation will take place at the locus of the factory.
-		Evaluation evaluation = (Evaluation)this.instantiateVisitor(specification);
+		Evaluation evaluation = (Evaluation) this.instantiateVisitor(specification);
 		evaluation.specification = specification;
 		evaluation.locus = this.locus;
 		return evaluation;
@@ -111,16 +111,16 @@ public abstract class ExecutionFactory implements Cloneable {
 		// of the given opaque behavior.
 		OpaqueBehaviorExecution execution = null;
 		int i = 1;
-		while(execution == null & i <= this.primitiveBehaviorPrototypes.size()) {
+		while (execution == null & i <= this.primitiveBehaviorPrototypes.size()) {
 			// Debug.println("[instantiateOpaqueExecution] Checking " +
 			// this.primitiveBehaviorPrototypes.get(i).objectId() + "...");
 			OpaqueBehaviorExecution prototype = this.primitiveBehaviorPrototypes.get(i - 1);
-			if(prototype.getBehavior() == behavior) {
-				execution = (OpaqueBehaviorExecution)(prototype.copy());
+			if (prototype.getBehavior() == behavior) {
+				execution = (OpaqueBehaviorExecution) (prototype.copy());
 			}
 			i = i + 1;
 		}
-		if(execution == null) {
+		if (execution == null) {
 			Debug.println("[instantiateOpaqueExecution] No prototype execution found for " + behavior.getName() + ".");
 		}
 		return execution;
@@ -167,9 +167,9 @@ public abstract class ExecutionFactory implements Cloneable {
 		// Return the built-in type with the given name.
 		Type type = null;
 		int i = 1;
-		while(type == null & i <= this.builtInTypes.size()) {
+		while (type == null & i <= this.builtInTypes.size()) {
 			Type currentType = this.builtInTypes.get(i - 1);
-			if(currentType.getName().equals(name)) {
+			if (currentType.getName().equals(name)) {
 				type = currentType;
 			}
 			i = i + 1;
@@ -181,7 +181,7 @@ public abstract class ExecutionFactory implements Cloneable {
 		// Set the strategy for a semantic variation point. Any existing
 		// strategy for the same SVP is replaced.
 		int i = this.getStrategyIndex(strategy.getName());
-		if(i <= this.strategies.size()) {
+		if (i <= this.strategies.size()) {
 			this.strategies.remove(i - 1);
 		}
 		this.strategies.add(strategy);
@@ -191,7 +191,7 @@ public abstract class ExecutionFactory implements Cloneable {
 		// Get the strategy with the given name.
 		int i = this.getStrategyIndex(name);
 		SemanticStrategy strategy = null;
-		if(i <= this.strategies.size()) {
+		if (i <= this.strategies.size()) {
 			strategy = this.strategies.get(i - 1);
 		}
 		return strategy;
@@ -203,8 +203,8 @@ public abstract class ExecutionFactory implements Cloneable {
 		List<SemanticStrategy> strategies = this.strategies;
 		int i = 1;
 		boolean unmatched = true;
-		while(unmatched & (i <= strategies.size())) {
-			if(strategies.get(i - 1).getName().equals(name)) {
+		while (unmatched & (i <= strategies.size())) {
+			if (strategies.get(i - 1).getName().equals(name)) {
 				unmatched = false;
 			} else {
 				i = i + 1;
@@ -213,10 +213,11 @@ public abstract class ExecutionFactory implements Cloneable {
 		return i;
 	}
 
+	@Override
 	public ExecutionFactory clone() {
 		ExecutionFactory clone = null;
 		try {
-			clone = (ExecutionFactory)super.clone();
+			clone = (ExecutionFactory) super.clone();
 		} catch (CloneNotSupportedException e) {
 			Activator.log.error(e);
 		}

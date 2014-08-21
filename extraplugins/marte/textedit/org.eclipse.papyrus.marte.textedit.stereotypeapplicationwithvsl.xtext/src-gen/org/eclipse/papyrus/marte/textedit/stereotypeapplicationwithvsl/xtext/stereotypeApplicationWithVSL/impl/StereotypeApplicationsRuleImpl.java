@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl#getStereotypeApplications <em>Stereotype Applications</em>}</li>
+ * <li>{@link org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl.StereotypeApplicationsRuleImpl#getStereotypeApplications <em>Stereotype Applications</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,153 +38,167 @@ import org.eclipse.uml2.uml.Type;
  */
 public class StereotypeApplicationsRuleImpl extends MinimalEObjectImpl.Container implements StereotypeApplicationsRule
 {
-  /**
-   * The cached value of the '{@link #getStereotypeApplications() <em>Stereotype Applications</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStereotypeApplications()
-   * @generated
-   * @ordered
-   */
-  protected EList<StereotypeApplicationRule> stereotypeApplications;
+	/**
+	 * The cached value of the '{@link #getStereotypeApplications() <em>Stereotype Applications</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getStereotypeApplications()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<StereotypeApplicationRule> stereotypeApplications;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected StereotypeApplicationsRuleImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected StereotypeApplicationsRuleImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return StereotypeApplicationWithVSLPackage.Literals.STEREOTYPE_APPLICATIONS_RULE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return StereotypeApplicationWithVSLPackage.Literals.STEREOTYPE_APPLICATIONS_RULE;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<StereotypeApplicationRule> getStereotypeApplications()
-  {
-    if (stereotypeApplications == null)
-    {
-      stereotypeApplications = new EObjectContainmentEList<StereotypeApplicationRule>(StereotypeApplicationRule.class, this, StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS);
-    }
-    return stereotypeApplications;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EList<StereotypeApplicationRule> getStereotypeApplications()
+	{
+		if (stereotypeApplications == null)
+		{
+			stereotypeApplications = new EObjectContainmentEList<StereotypeApplicationRule>(StereotypeApplicationRule.class, this, StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS);
+		}
+		return stereotypeApplications;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type getExpectedType()
-  {
-    return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Type getExpectedType()
+	{
+		return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getExpectedType(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element getContextElement()
-  {
-    return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this) ;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Element getContextElement()
+	{
+		return org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation.ContextUtil.getContextElement(this);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
-        return ((InternalEList<?>)getStereotypeApplications()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+		case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
+			return ((InternalEList<?>) getStereotypeApplications()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
-        return getStereotypeApplications();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+		case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
+			return getStereotypeApplications();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
-        getStereotypeApplications().clear();
-        getStereotypeApplications().addAll((Collection<? extends StereotypeApplicationRule>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+		case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
+			getStereotypeApplications().clear();
+			getStereotypeApplications().addAll((Collection<? extends StereotypeApplicationRule>) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
-        getStereotypeApplications().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+		case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
+			getStereotypeApplications().clear();
+			return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
-        return stereotypeApplications != null && !stereotypeApplications.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+		case StereotypeApplicationWithVSLPackage.STEREOTYPE_APPLICATIONS_RULE__STEREOTYPE_APPLICATIONS:
+			return stereotypeApplications != null && !stereotypeApplications.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
-} //StereotypeApplicationsRuleImpl
+} // StereotypeApplicationsRuleImpl

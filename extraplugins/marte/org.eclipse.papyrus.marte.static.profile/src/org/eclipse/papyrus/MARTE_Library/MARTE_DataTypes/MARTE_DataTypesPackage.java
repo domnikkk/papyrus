@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,13 @@ import org.eclipse.emf.ecore.EPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.MARTE_DataTypesFactory
  * @model kind="package"
  * @generated
@@ -37,6 +38,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "MARTE_DataTypes";
@@ -45,6 +47,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http:///MARTE_Library/MARTE_DataTypes.ecore";
@@ -53,6 +56,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "MARTE_Library.MARTE_DataTypes";
@@ -61,6 +65,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	MARTE_DataTypesPackage eINSTANCE = org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl.init();
@@ -69,6 +74,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind <em>Transm Mode Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getTransmModeKind()
 	 * @generated
@@ -79,6 +85,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Integer Vector</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerVector()
 	 * @generated
@@ -89,6 +96,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Integer Matrix</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerMatrix()
 	 * @generated
@@ -99,6 +107,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>VSL Expression</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getVSL_Expression()
 	 * @generated
@@ -109,6 +118,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Integer Interval</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerInterval()
 	 * @generated
@@ -119,6 +129,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Utility Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getUtilityType()
 	 * @generated
@@ -129,6 +140,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Array</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getArray()
 	 * @generated
@@ -139,6 +151,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Realnterval</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealnterval()
 	 * @generated
@@ -149,6 +162,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Frequency Interval</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getNFP_FrequencyInterval()
 	 * @generated
@@ -159,6 +173,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Interval</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getInterval()
 	 * @generated
@@ -169,6 +184,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>NFP Natural Interval</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getNFP_NaturalInterval()
 	 * @generated
@@ -179,6 +195,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Real Vector</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealVector()
 	 * @generated
@@ -189,6 +206,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * The meta object id for the '<em>Real Matrix</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealMatrix()
 	 * @generated
@@ -200,6 +218,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind <em>Transm Mode Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Transm Mode Kind</em>'.
 	 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind
 	 * @generated
@@ -210,6 +229,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Integer Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Integer Vector</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -221,6 +241,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Integer Matrix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Integer Matrix</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -232,6 +253,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>VSL Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>VSL Expression</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -243,6 +265,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Integer Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Integer Interval</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -254,6 +277,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Utility Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Utility Type</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -265,6 +289,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Array</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -276,6 +301,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Realnterval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Realnterval</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -287,6 +313,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Frequency Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>NFP Frequency Interval</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -298,6 +325,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Interval</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -309,6 +337,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>NFP Natural Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>NFP Natural Interval</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -320,6 +349,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Real Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Real Vector</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -331,6 +361,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>Real Matrix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Real Matrix</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -342,6 +373,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -351,12 +383,13 @@ public interface MARTE_DataTypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -364,6 +397,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind <em>Transm Mode Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.TransmModeKind
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getTransmModeKind()
 		 * @generated
@@ -374,6 +408,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Integer Vector</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerVector()
 		 * @generated
@@ -384,6 +419,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Integer Matrix</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerMatrix()
 		 * @generated
@@ -394,6 +430,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>VSL Expression</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getVSL_Expression()
 		 * @generated
@@ -404,6 +441,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Integer Interval</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getIntegerInterval()
 		 * @generated
@@ -414,6 +452,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Utility Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getUtilityType()
 		 * @generated
@@ -424,6 +463,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Array</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getArray()
 		 * @generated
@@ -434,6 +474,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Realnterval</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealnterval()
 		 * @generated
@@ -444,6 +485,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Frequency Interval</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getNFP_FrequencyInterval()
 		 * @generated
@@ -454,6 +496,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Interval</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getInterval()
 		 * @generated
@@ -464,6 +507,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>NFP Natural Interval</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getNFP_NaturalInterval()
 		 * @generated
@@ -474,6 +518,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Real Vector</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealVector()
 		 * @generated
@@ -484,6 +529,7 @@ public interface MARTE_DataTypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Real Matrix</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.MARTE_Library.MARTE_DataTypes.impl.MARTE_DataTypesPackageImpl#getRealMatrix()
 		 * @generated
@@ -492,4 +538,4 @@ public interface MARTE_DataTypesPackage extends EPackage {
 
 	}
 
-} //MARTE_DataTypesPackage
+} // MARTE_DataTypesPackage

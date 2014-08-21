@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,6 +53,7 @@ public class PapyrusGMFEditorSupport
 
 	private static final Predicate<EStructuralFeature.Setting> IS_VIEW_REFERENCE = new Predicate<EStructuralFeature.Setting>() {
 
+		@Override
 		public boolean apply(EStructuralFeature.Setting input) {
 			return input.getEStructuralFeature() == NotationPackage.Literals.VIEW__ELEMENT;
 		}
@@ -60,6 +61,7 @@ public class PapyrusGMFEditorSupport
 
 	private static final Function<EStructuralFeature.Setting, View> OWNER_VIEW = new Function<EStructuralFeature.Setting, View>() {
 
+		@Override
 		public View apply(EStructuralFeature.Setting input) {
 			return (View) input.getEObject();
 		}
@@ -90,15 +92,15 @@ public class PapyrusGMFEditorSupport
 			// the super implementation locked the semantic element, so update
 			// its presentation
 			CDOObject cdo = CDOUtils
-				.getCDOObject(getSemanticElement((EditPart) objectToBeLocked));
+					.getCDOObject(getSemanticElement((EditPart) objectToBeLocked));
 			if (cdo != null) {
 				updateAppearance(cdo);
 			}
 		} else {
 			EObject element = EMFHelper.getEObject(objectToBeLocked);
 			CDOObject cdo = (element == null)
-				? null
-				: CDOUtils.getCDOObject(element);
+					? null
+					: CDOUtils.getCDOObject(element);
 
 			if (element != null) {
 				CDOUtils.lock(cdo);
@@ -122,18 +124,18 @@ public class PapyrusGMFEditorSupport
 	private void updateAppearance(CDOObject cdoObject) {
 		EObject element = CDOUtil.getEObject(cdoObject);
 		DawnElementStylizer stylizer = DawnElementStylizerRegistry.instance
-			.getStylizer(element);
+				.getStylizer(element);
 
 		if (stylizer != null) {
 			if (cdoObject.cdoConflict()) {
 				stylizer.setConflicted(element,
-					DawnAppearancer.TYPE_CONFLICT_REMOTELY_AND_LOCALLY_CHANGED);
+						DawnAppearancer.TYPE_CONFLICT_REMOTELY_AND_LOCALLY_CHANGED);
 			} else if (CDOUtils.isLocked(cdoObject, true)) {
 				stylizer.setLocked(element,
-					DawnAppearancer.TYPE_LOCKED_GLOBALLY);
+						DawnAppearancer.TYPE_LOCKED_GLOBALLY);
 			} else if (CDOUtils.isLocked(cdoObject, false)) {
 				stylizer
-					.setLocked(element, DawnAppearancer.TYPE_LOCKED_LOCALLY);
+						.setLocked(element, DawnAppearancer.TYPE_LOCKED_LOCALLY);
 			} else {
 				stylizer.setDefault(element);
 			}
@@ -148,15 +150,15 @@ public class PapyrusGMFEditorSupport
 			// the super implementation unlocked the semantic element, so update
 			// its presentation
 			CDOObject cdo = CDOUtils
-				.getCDOObject(getSemanticElement((EditPart) objectToBeUnlocked));
+					.getCDOObject(getSemanticElement((EditPart) objectToBeUnlocked));
 			if (cdo != null) {
 				updateAppearance(cdo);
 			}
 		} else {
 			EObject element = EMFHelper.getEObject(objectToBeUnlocked);
 			CDOObject cdo = (element == null)
-				? null
-				: CDOUtils.getCDOObject(element);
+					? null
+					: CDOUtils.getCDOObject(element);
 
 			if (element != null) {
 				CDOUtils.unlock(cdo);
@@ -232,12 +234,12 @@ public class PapyrusGMFEditorSupport
 		Iterable<View> result = Collections.emptyList();
 
 		ECrossReferenceAdapter xrefs = ECrossReferenceAdapter
-			.getCrossReferenceAdapter(element);
+				.getCrossReferenceAdapter(element);
 		if (xrefs != null) {
 			Collection<EStructuralFeature.Setting> settings = xrefs
-				.getNonNavigableInverseReferences(element);
+					.getNonNavigableInverseReferences(element);
 			result = Iterables.transform(
-				Iterables.filter(settings, IS_VIEW_REFERENCE), OWNER_VIEW);
+					Iterables.filter(settings, IS_VIEW_REFERENCE), OWNER_VIEW);
 		}
 
 		return result;

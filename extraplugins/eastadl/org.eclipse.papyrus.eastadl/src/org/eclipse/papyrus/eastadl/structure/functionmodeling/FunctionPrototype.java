@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,23 +28,23 @@ import org.eclipse.uml2.uml.Image;
  *
  * <!-- begin-model-doc -->
  * FunctionPrototype represents a reference to the occurrence of a FunctionType when it acts as a part.
- * 
+ *
  * The FunctionPrototype is typed by a FunctionType.
- * 
+ *
  * FunctionTrigger in the Behavior package is associated to a FunctionPrototype.
- * 
- * 
- * 
+ *
+ *
+ *
  * Semantics:
  * The FunctionPrototype represents an occurrence of the FunctionType that types it.
- * 
+ *
  * Notation:
  * Shall be shown in the same style as the class specified as type, however it shall be clear that this is a part.
- * 
+ *
  * Changes:
  * Renamed from ADLFunctionPart
- * 
- * Extension: 
+ *
+ * Extension:
  * To specialize SysML::BlockProperty, which extends Property
  * <!-- end-model-doc -->
  *
@@ -57,6 +57,7 @@ public interface FunctionPrototype extends EAElement, EAPrototype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

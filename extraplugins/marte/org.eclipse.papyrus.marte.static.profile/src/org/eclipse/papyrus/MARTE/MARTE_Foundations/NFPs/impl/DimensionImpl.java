@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,10 +34,10 @@ import org.eclipse.uml2.uml.Enumeration;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBaseDimension <em>Base Dimension</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBaseExponent <em>Base Exponent</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getSymbol <em>Symbol</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBaseDimension <em>Base Dimension</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBaseExponent <em>Base Exponent</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.DimensionImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBaseDimension() <em>Base Dimension</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBaseDimension()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBaseExponent() <em>Base Exponent</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBaseExponent()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 * The cached value of the '{@link #getBase_Enumeration() <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 * @ordered
@@ -97,6 +102,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DimensionImpl() {
@@ -106,6 +112,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,8 +123,10 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getSymbol() {
 		return symbol;
 	}
@@ -125,20 +134,25 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSymbol(String newSymbol) {
 		String oldSymbol = symbol;
 		symbol = newSymbol;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.DIMENSION__SYMBOL, oldSymbol, symbol));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Dimension> getBaseDimension() {
 		if (baseDimension == null) {
 			baseDimension = new EObjectResolvingEList<Dimension>(Dimension.class, this, NFPsPackage.DIMENSION__BASE_DIMENSION);
@@ -149,8 +163,10 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Integer> getBaseExponent() {
 		if (baseExponent == null) {
 			baseExponent = new EDataTypeEList<Integer>(int.class, this, NFPsPackage.DIMENSION__BASE_EXPONENT);
@@ -161,15 +177,18 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Enumeration getBase_Enumeration() {
 		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
-			InternalEObject oldBase_Enumeration = (InternalEObject)base_Enumeration;
-			base_Enumeration = (Enumeration)eResolveProxy(oldBase_Enumeration);
+			InternalEObject oldBase_Enumeration = (InternalEObject) base_Enumeration;
+			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
 			if (base_Enumeration != oldBase_Enumeration) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.DIMENSION__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
+				}
 			}
 		}
 		return base_Enumeration;
@@ -178,6 +197,7 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Enumeration basicGetBase_Enumeration() {
@@ -187,32 +207,38 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
 		Enumeration oldBase_Enumeration = base_Enumeration;
 		base_Enumeration = newBase_Enumeration;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.DIMENSION__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NFPsPackage.DIMENSION__SYMBOL:
-				return getSymbol();
-			case NFPsPackage.DIMENSION__BASE_DIMENSION:
-				return getBaseDimension();
-			case NFPsPackage.DIMENSION__BASE_EXPONENT:
-				return getBaseExponent();
-			case NFPsPackage.DIMENSION__BASE_ENUMERATION:
-				if (resolve) return getBase_Enumeration();
-				return basicGetBase_Enumeration();
+		case NFPsPackage.DIMENSION__SYMBOL:
+			return getSymbol();
+		case NFPsPackage.DIMENSION__BASE_DIMENSION:
+			return getBaseDimension();
+		case NFPsPackage.DIMENSION__BASE_EXPONENT:
+			return getBaseExponent();
+		case NFPsPackage.DIMENSION__BASE_ENUMERATION:
+			if (resolve) {
+				return getBase_Enumeration();
+			}
+			return basicGetBase_Enumeration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,26 +246,27 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NFPsPackage.DIMENSION__SYMBOL:
-				setSymbol((String)newValue);
-				return;
-			case NFPsPackage.DIMENSION__BASE_DIMENSION:
-				getBaseDimension().clear();
-				getBaseDimension().addAll((Collection<? extends Dimension>)newValue);
-				return;
-			case NFPsPackage.DIMENSION__BASE_EXPONENT:
-				getBaseExponent().clear();
-				getBaseExponent().addAll((Collection<? extends Integer>)newValue);
-				return;
-			case NFPsPackage.DIMENSION__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration)newValue);
-				return;
+		case NFPsPackage.DIMENSION__SYMBOL:
+			setSymbol((String) newValue);
+			return;
+		case NFPsPackage.DIMENSION__BASE_DIMENSION:
+			getBaseDimension().clear();
+			getBaseDimension().addAll((Collection<? extends Dimension>) newValue);
+			return;
+		case NFPsPackage.DIMENSION__BASE_EXPONENT:
+			getBaseExponent().clear();
+			getBaseExponent().addAll((Collection<? extends Integer>) newValue);
+			return;
+		case NFPsPackage.DIMENSION__BASE_ENUMERATION:
+			setBase_Enumeration((Enumeration) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,23 +274,24 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.DIMENSION__SYMBOL:
-				setSymbol(SYMBOL_EDEFAULT);
-				return;
-			case NFPsPackage.DIMENSION__BASE_DIMENSION:
-				getBaseDimension().clear();
-				return;
-			case NFPsPackage.DIMENSION__BASE_EXPONENT:
-				getBaseExponent().clear();
-				return;
-			case NFPsPackage.DIMENSION__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration)null);
-				return;
+		case NFPsPackage.DIMENSION__SYMBOL:
+			setSymbol(SYMBOL_EDEFAULT);
+			return;
+		case NFPsPackage.DIMENSION__BASE_DIMENSION:
+			getBaseDimension().clear();
+			return;
+		case NFPsPackage.DIMENSION__BASE_EXPONENT:
+			getBaseExponent().clear();
+			return;
+		case NFPsPackage.DIMENSION__BASE_ENUMERATION:
+			setBase_Enumeration((Enumeration) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,19 +299,20 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.DIMENSION__SYMBOL:
-				return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
-			case NFPsPackage.DIMENSION__BASE_DIMENSION:
-				return baseDimension != null && !baseDimension.isEmpty();
-			case NFPsPackage.DIMENSION__BASE_EXPONENT:
-				return baseExponent != null && !baseExponent.isEmpty();
-			case NFPsPackage.DIMENSION__BASE_ENUMERATION:
-				return base_Enumeration != null;
+		case NFPsPackage.DIMENSION__SYMBOL:
+			return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
+		case NFPsPackage.DIMENSION__BASE_DIMENSION:
+			return baseDimension != null && !baseDimension.isEmpty();
+		case NFPsPackage.DIMENSION__BASE_EXPONENT:
+			return baseExponent != null && !baseExponent.isEmpty();
+		case NFPsPackage.DIMENSION__BASE_ENUMERATION:
+			return base_Enumeration != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,11 +320,14 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (symbol: ");
@@ -306,4 +338,4 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 		return result.toString();
 	}
 
-} //DimensionImpl
+} // DimensionImpl

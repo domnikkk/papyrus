@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,31 +71,32 @@ public class RepositorySelectionBlock {
 		repoList.setLabelProvider(new RepositoryLabelProvider());
 		repoList.setInput(repoMan);
 
-		if(selectedRepository != null) {
+		if (selectedRepository != null) {
 			repoList.setSelection(new StructuredSelection(selectedRepository));
 			selected(selectedRepository);
 		}
 
 		repoList.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				IStructuredSelection sel = (IStructuredSelection)event.getSelection();
+				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
 
-				if(sel.isEmpty()) {
-					if(selectedRepository != null) {
+				if (sel.isEmpty()) {
+					if (selectedRepository != null) {
 						// veto empty selection
 						repoList.setSelection(new StructuredSelection(selectedRepository));
 					}
 				} else {
-					selected((IPapyrusRepository)sel.getFirstElement());
+					selected((IPapyrusRepository) sel.getFirstElement());
 				}
 			}
 		});
 
 		// initially select the first connected repo
-		for(IPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
+		for (IPapyrusRepository next : PapyrusRepositoryManager.INSTANCE.getRepositories()) {
 
-			if(next.isConnected()) {
+			if (next.isConnected()) {
 				selected(next);
 				repoList.setSelection(new StructuredSelection(next));
 				break;
@@ -110,7 +111,7 @@ public class RepositorySelectionBlock {
 	}
 
 	public void setEnabled(boolean enabled) {
-		if(repoList != null) {
+		if (repoList != null) {
 			repoList.getControl().setEnabled(enabled);
 		}
 	}
@@ -122,10 +123,11 @@ public class RepositorySelectionBlock {
 	void selected(final IPapyrusRepository repository) {
 		selectedRepository = repository;
 
-		if(!repository.isConnected()) {
+		if (!repository.isConnected()) {
 			try {
 				runnableContext.get().run(true, false, new IRunnableWithProgress() {
 
+					@Override
 					public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
 						SubMonitor sub = SubMonitor.convert(monitor, NLS.bind(Messages.RepositorySelectionBlock_0, repository.getName()), IProgressMonitor.UNKNOWN);
@@ -136,17 +138,18 @@ public class RepositorySelectionBlock {
 							// yes, it's a busy wait, but there's not much
 							// to be done about that.
 							final long deadline = System.currentTimeMillis() + 5000L;
-							while(!repository.isConnected()) {
+							while (!repository.isConnected()) {
 								Thread.sleep(250L);
-								if(System.currentTimeMillis() >= deadline) {
+								if (System.currentTimeMillis() >= deadline) {
 									break;
 								}
 							}
 
 							repoList.getControl().getDisplay().asyncExec(new Runnable() {
 
+								@Override
 								public void run() {
-									if(!repoList.getControl().isDisposed()) {
+									if (!repoList.getControl().isDisposed()) {
 										repoList.update(repository, null);
 										bus.post(repository);
 									}
@@ -168,7 +171,7 @@ public class RepositorySelectionBlock {
 	public void setSelectedRepository(IPapyrusRepository repository) {
 		this.selectedRepository = repository;
 
-		if(repoList != null) {
+		if (repoList != null) {
 			repoList.setSelection(new StructuredSelection(selectedRepository));
 			selected(selectedRepository);
 		}
@@ -184,14 +187,17 @@ public class RepositorySelectionBlock {
 
 	private static class RepositoryContentProvider implements IStructuredContentProvider {
 
+		@Override
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			viewer.refresh();
 		}
 
+		@Override
 		public Object[] getElements(Object inputElement) {
-			return ((IPapyrusRepositoryManager)inputElement).getRepositories().toArray();
+			return ((IPapyrusRepositoryManager) inputElement).getRepositories().toArray();
 		}
 
+		@Override
 		public void dispose() {
 			// pass
 		}
@@ -201,13 +207,13 @@ public class RepositorySelectionBlock {
 
 		@Override
 		public Image getImage(Object element) {
-			boolean open = ((IPapyrusRepository)element).isConnected();
+			boolean open = ((IPapyrusRepository) element).isConnected();
 			return SharedImages.getImage(open ? Activator.ICON_OPEN_REPOSITORY : Activator.ICON_CLOSED_REPOSITORY);
 		}
 
 		@Override
 		public String getText(Object element) {
-			return ((IPapyrusRepository)element).getName();
+			return ((IPapyrusRepository) element).getName();
 		}
 	}
 }

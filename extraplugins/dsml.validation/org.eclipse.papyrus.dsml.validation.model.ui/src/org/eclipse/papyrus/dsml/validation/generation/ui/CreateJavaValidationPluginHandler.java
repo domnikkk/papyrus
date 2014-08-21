@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * this handler launch the creation of the plugin to validate contraints of the profile
- * 
+ *
  */
 public class CreateJavaValidationPluginHandler extends AbstractHandler {
 
@@ -51,12 +51,12 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 
 	/**
 	 * <pre>
-	 * Get the selected element, the first selected element if several are selected or null 
-	 * if no selection or the selection is not an {@link EObject}. 
+	 * Get the selected element, the first selected element if several are selected or null
+	 * if no selection or the selection is not an {@link EObject}.
 	 * 
 	 * @return selected {@link EObject} or null
 	 * </pre>
-	 * 
+	 *
 	 */
 	protected EObject getSelectedElement() {
 		EObject eObject = null;
@@ -66,13 +66,13 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 		selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
 
 		// Get first element if the selection is an IStructuredSelection
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			selection = structuredSelection.getFirstElement();
 		}
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(selection != null) {
+		if (selection != null) {
 
 			eObject = EMFHelper.getEObject(selection);
 		}
@@ -81,9 +81,9 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
@@ -91,28 +91,28 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		EObject selection = getSelectedElement();
 
-		if(selection instanceof Profile) {
-			Profile profileSelection = (Profile)selection;
+		if (selection instanceof Profile) {
+			Profile profileSelection = (Profile) selection;
 
 			constraintsManager = new ConstraintManagerImpl(profileSelection);
 			boolean isOCLConstraint = false;
-			for(IConstraintProvider constraintProvider : constraintsManager.getConstraintsProviders()) {
-				for(IConstraintsCategory constraintCategory : constraintProvider.getConstraintsCategories()) {
-					for(IValidationRule constraint : constraintCategory.getConstraints()) {
-						//this is an OCL constraint?
-						if(Utils.hasSpecificationForOCL(constraint.getConstraint())) {
+			for (IConstraintProvider constraintProvider : constraintsManager.getConstraintsProviders()) {
+				for (IConstraintsCategory constraintCategory : constraintProvider.getConstraintsCategories()) {
+					for (IValidationRule constraint : constraintCategory.getConstraints()) {
+						// this is an OCL constraint?
+						if (Utils.hasSpecificationForOCL(constraint.getConstraint())) {
 							isOCLConstraint = true;
 						}
 					}
 				}
 			}
 			EPackage definition = null;
-			if(isOCLConstraint) {
+			if (isOCLConstraint) {
 				definition = profileSelection.getDefinition();
-				if(definition == null) {
+				if (definition == null) {
 					NotificationBuilder errorDialog = NotificationBuilder.createErrorPopup("The profile must be defined in order to generate OCL Constraints");
 					errorDialog.run();
-					//finish by displaying a message for the user to inform that it need to define it before to launch it.
+					// finish by displaying a message for the user to inform that it need to define it before to launch it.
 					return null;
 				}
 			}
@@ -120,25 +120,25 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 			URI uri = profileSelection.eResource().getURI();
 
 			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			if(uri.segmentCount() >= 2) {
+			if (uri.segmentCount() >= 2) {
 				existingProject = root.getProject(uri.segment(1));
 			}
 			int question = 0;
 			Shell shell = Display.getDefault().getActiveShell();
 			if ((existingProject != null) && existingProject.exists()) {
 				MessageDialog dialog = new MessageDialog(shell,
-					"Choose plugin generation", null,
-					"How should the plugin be generated?", MessageDialog.QUESTION,
-					new String[] {"Create a new plugin", "write to plugin hosting the model or profile"}, 1);
+						"Choose plugin generation", null,
+						"How should the plugin be generated?", MessageDialog.QUESTION,
+						new String[] { "Create a new plugin", "write to plugin hosting the model or profile" }, 1);
 				question = dialog.open();
 			}
-			
+
 			if (question == 1) {
-				
-				//generate java code
+
+				// generate java code
 				JavaContentGenerator generateAllJava = new JavaContentGenerator(existingProject, profileSelection);
 				generateAllJava.run();
-				//generate plugin + extension point
+				// generate plugin + extension point
 				try {
 					ValidationPluginGenerator.instance.generate(existingProject, constraintsManager, definition);
 				} catch (Exception e) {
@@ -156,7 +156,7 @@ public class CreateJavaValidationPluginHandler extends AbstractHandler {
 	@Override
 	public boolean isEnabled() {
 		EObject eObject = getSelectedElement();
-		if(eObject instanceof Profile) {
+		if (eObject instanceof Profile) {
 			return true;
 		}
 		return false;

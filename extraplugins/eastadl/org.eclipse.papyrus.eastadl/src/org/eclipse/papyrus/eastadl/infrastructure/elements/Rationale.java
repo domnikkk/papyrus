@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.Comment;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Rationale#getBase_Comment <em>Base Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Rationale#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface Rationale extends EObject {
 	 * Returns the value of the '<em><b>Base Comment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Comment</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Comment</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Comment</em>' reference.
 	 * @see #setBase_Comment(Comment)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.ElementsPackage#getRationale_Base_Comment()
@@ -57,7 +57,9 @@ public interface Rationale extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.elements.Rationale#getBase_Comment <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Comment</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Comment</em>' reference.
 	 * @see #getBase_Comment()
 	 * @generated
 	 */

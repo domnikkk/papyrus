@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,15 +27,15 @@ import org.eclipse.uml2.uml.TypedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature <em>Is Static Scheduling Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable <em>Is Preemptable</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers <em>Schedulers</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineElements <em>Deadline Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineTypeElements <em>Deadline Type Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getTimeSliceElements <em>Time Slice Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDelayServices <em>Delay Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getJoinServices <em>Join Services</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getYieldServices <em>Yield Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature <em>Is Static Scheduling Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable <em>Is Preemptable</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers <em>Schedulers</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineElements <em>Deadline Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDeadlineTypeElements <em>Deadline Type Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getTimeSliceElements <em>Time Slice Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getDelayServices <em>Delay Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getJoinServices <em>Join Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getYieldServices <em>Yield Services</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,10 +48,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Returns the value of the '<em><b>Is Static Scheduling Feature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Static Scheduling Feature</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Static Scheduling Feature</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Static Scheduling Feature</em>' attribute.
 	 * @see #setIsStaticSchedulingFeature(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_IsStaticSchedulingFeature()
@@ -64,7 +64,9 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsStaticSchedulingFeature <em>Is Static Scheduling Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Static Scheduling Feature</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Static Scheduling Feature</em>' attribute.
 	 * @see #isIsStaticSchedulingFeature()
 	 * @generated
 	 */
@@ -74,10 +76,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Returns the value of the '<em><b>Is Preemptable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Preemptable</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Preemptable</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Preemptable</em>' attribute.
 	 * @see #setIsPreemptable(boolean)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_IsPreemptable()
@@ -90,7 +92,9 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#isIsPreemptable <em>Is Preemptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Preemptable</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Preemptable</em>' attribute.
 	 * @see #isIsPreemptable()
 	 * @generated
 	 */
@@ -100,10 +104,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Returns the value of the '<em><b>Schedulers</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Schedulers</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Schedulers</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Schedulers</em>' reference.
 	 * @see #setSchedulers(NamedElement)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_Schedulers()
@@ -116,7 +120,9 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SwSchedulableResource#getSchedulers <em>Schedulers</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schedulers</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Schedulers</em>' reference.
 	 * @see #getSchedulers()
 	 * @generated
 	 */
@@ -127,10 +133,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.TypedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Deadline Elements</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Deadline Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Deadline Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DeadlineElements()
 	 * @model ordered="false"
@@ -143,10 +149,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.TypedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Deadline Type Elements</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Deadline Type Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Deadline Type Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DeadlineTypeElements()
 	 * @model ordered="false"
@@ -159,10 +165,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.TypedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Time Slice Elements</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Time Slice Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Time Slice Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_TimeSliceElements()
 	 * @model ordered="false"
@@ -175,10 +181,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.BehavioralFeature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Delay Services</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Delay Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Delay Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_DelayServices()
 	 * @model ordered="false"
@@ -191,10 +197,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.BehavioralFeature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Join Services</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Join Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Join Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_JoinServices()
 	 * @model ordered="false"
@@ -207,10 +213,10 @@ public interface SwSchedulableResource extends SwConcurrentResource, Schedulable
 	 * The list contents are of type {@link org.eclipse.uml2.uml.BehavioralFeature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Yield Services</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Yield Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Yield Services</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_DesignModel.SRM.SW_Concurrency.SW_ConcurrencyPackage#getSwSchedulableResource_YieldServices()
 	 * @model ordered="false"

@@ -66,62 +66,62 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 
 	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof Element) {
-			Element stereotypedElement = (Element)editedObject;
+		if (editedObject instanceof Element) {
+			Element stereotypedElement = (Element) editedObject;
 			String textToEdit = "";
 
-			for(Stereotype stereotype : stereotypedElement.getAppliedStereotypes()) {
+			for (Stereotype stereotype : stereotypedElement.getAppliedStereotypes()) {
 				textToEdit += "<<" + stereotype.getName() + ">>";
 				boolean first = true;
-				for(Property p : stereotype.getAllAttributes()) {
-					if(!(p.getName().startsWith("base_") || p.isDerived())) {
+				for (Property p : stereotype.getAllAttributes()) {
+					if (!(p.getName().startsWith("base_") || p.isDerived())) {
 						Object value = stereotypedElement.getValue(stereotype, p.getName());
-						if(value instanceof EnumerationLiteral) {
-							if(p.getType() instanceof Stereotype || p.getType() instanceof org.eclipse.uml2.uml.Class) {
-								value = VSLProposalUtils.getNameLabel((NamedElement)value);
+						if (value instanceof EnumerationLiteral) {
+							if (p.getType() instanceof Stereotype || p.getType() instanceof org.eclipse.uml2.uml.Class) {
+								value = VSLProposalUtils.getNameLabel((NamedElement) value);
 							} else {
-								value = ((NamedElement)value).getName();
+								value = ((NamedElement) value).getName();
 							}
-						} else if(value instanceof NamedElement) {
-							value = VSLProposalUtils.getNameLabel((NamedElement)value);
-						} else if(value instanceof EObject) {
-							Element stereoElement = UMLUtil.getBaseElement((EObject)value);
-							if(stereoElement != null && stereoElement instanceof NamedElement) {
-								value = VSLProposalUtils.getNameLabel(((NamedElement)stereoElement));
+						} else if (value instanceof NamedElement) {
+							value = VSLProposalUtils.getNameLabel((NamedElement) value);
+						} else if (value instanceof EObject) {
+							Element stereoElement = UMLUtil.getBaseElement((EObject) value);
+							if (stereoElement != null && stereoElement instanceof NamedElement) {
+								value = VSLProposalUtils.getNameLabel(((NamedElement) stereoElement));
 							} else {
 								// TODO ... Compute a label in case of Element without Name
 								value = "/* The referenced element is not a named element. You should edit this stereotype with the property view */";
 							}
-						} else if(value instanceof String) {
-							if((p.getType() instanceof PrimitiveType) && (p.getType().getName().equals("String"))) {
+						} else if (value instanceof String) {
+							if ((p.getType() instanceof PrimitiveType) && (p.getType().getName().equals("String"))) {
 								// quote strings
 								value = "\"" + value + "\"";
 							}
 						}
 
-						if(value != null && value instanceof List) {
-							List listOfValues = (List)value;
-							if(!listOfValues.isEmpty()) {
+						if (value != null && value instanceof List) {
+							List listOfValues = (List) value;
+							if (!listOfValues.isEmpty()) {
 								String collString = "{";
 								boolean nestedFirst = true;
-								for(Object o : listOfValues) {
-									if(!nestedFirst) {
+								for (Object o : listOfValues) {
+									if (!nestedFirst) {
 										collString += ", ";
 									} else {
 										nestedFirst = false;
 									}
-									if(o instanceof EnumerationLiteral) {
-										if(p.getType() instanceof Stereotype || p.getType() instanceof org.eclipse.uml2.uml.Class) {
-											value = VSLProposalUtils.getNameLabel((NamedElement)value);
+									if (o instanceof EnumerationLiteral) {
+										if (p.getType() instanceof Stereotype || p.getType() instanceof org.eclipse.uml2.uml.Class) {
+											value = VSLProposalUtils.getNameLabel((NamedElement) value);
 										} else {
-											value = ((NamedElement)value).getName();
+											value = ((NamedElement) value).getName();
 										}
-									} else if(o instanceof NamedElement) {
-										collString += VSLProposalUtils.getNameLabel((NamedElement)o);
-									} else if(o instanceof EObject) {
-										Element stereoElement = UMLUtil.getBaseElement((EObject)o);
-										if(stereoElement != null && stereoElement instanceof NamedElement) {
-											collString += VSLProposalUtils.getNameLabel((NamedElement)stereoElement);
+									} else if (o instanceof NamedElement) {
+										collString += VSLProposalUtils.getNameLabel((NamedElement) o);
+									} else if (o instanceof EObject) {
+										Element stereoElement = UMLUtil.getBaseElement((EObject) o);
+										if (stereoElement != null && stereoElement instanceof NamedElement) {
+											collString += VSLProposalUtils.getNameLabel((NamedElement) stereoElement);
 										} else {
 											// TODO ... Compute a label in case of Element without Name
 											collString += "/* The referenced element is not a named element. You should edit this stereotype with the property view */";
@@ -132,7 +132,7 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 									}
 								}
 								collString += "}";
-								if(first) {
+								if (first) {
 									textToEdit += "\n";
 									first = false;
 								} else {
@@ -140,8 +140,8 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 								}
 								textToEdit += p.getName() + " = " + collString;
 							}
-						} else if(value != null) {
-							if(first) {
+						} else if (value != null) {
+							if (first) {
 								textToEdit += "\n";
 								first = false;
 							} else {
@@ -182,22 +182,22 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
 
-			////////////////////////////////////////////////////////////
+			// //////////////////////////////////////////////////////////
 			// First delete any stereotype application associated with the stereotyped element
-			////////////////////////////////////////////////////////////
+			// //////////////////////////////////////////////////////////
 			List<Stereotype> appliedStereotypes = stereotypedElement.getAppliedStereotypes();
-			for(Stereotype s : appliedStereotypes) {
+			for (Stereotype s : appliedStereotypes) {
 				stereotypedElement.unapplyStereotype(s);
 			}
 
 
-			//////////////////////////////////////////////////////////////////////////////////////////////////
+			// ////////////////////////////////////////////////////////////////////////////////////////////////
 			// Then extract any relevant information from the StereotypeApplicationRules object, and update the stereotypedElement
-			//////////////////////////////////////////////////////////////////////////////////////////////////
-			for(StereotypeApplicationRule sApp : stereotypeApplicationsObject.getStereotypeApplications()) {
+			// ////////////////////////////////////////////////////////////////////////////////////////////////
+			for (StereotypeApplicationRule sApp : stereotypeApplicationsObject.getStereotypeApplications()) {
 				Stereotype stereotype = sApp.getStereotype();
 				stereotypedElement.applyStereotype(stereotype);
-				for(TagSpecificationRule tag : sApp.getTagSpecification()) {
+				for (TagSpecificationRule tag : sApp.getTagSpecification()) {
 					Property property = tag.getProperty();
 					Type type = property.getType();
 					ExpressionValueRule value = tag.getValue();
@@ -207,13 +207,13 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 					boolean shouldStoreObjectsAndNotStrings = (type instanceof Stereotype || type instanceof org.eclipse.uml2.uml.Class);
 					boolean propertyIsACollection = VSLJavaValidator.isACollection(value.getExpression()) != null;
 
-					if(!propertyIsACollection) {
-						if(!shouldStoreObjectsAndNotStrings) {
+					if (!propertyIsACollection) {
+						if (!shouldStoreObjectsAndNotStrings) {
 							valueRepresentation = VSLSerializationUtil.printExpression(value.getExpression());
-							if((type instanceof PrimitiveType) && (type.getName().equals("String")) && (valueRepresentation instanceof String)) {
+							if ((type instanceof PrimitiveType) && (type.getName().equals("String")) && (valueRepresentation instanceof String)) {
 								// unquote Strings, remove 1st and last character
-								String stringValue = (String)valueRepresentation;
-								if(stringValue.length() > 2) {
+								String stringValue = (String) valueRepresentation;
+								if (stringValue.length() > 2) {
 									valueRepresentation = stringValue.substring(1, stringValue.length() - 1);
 								} else {
 									valueRepresentation = "";
@@ -221,34 +221,34 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 							}
 						} else {
 							NameOrChoiceOrBehaviorCall nameRule = VSLSerializationUtil.extractNameReference(value.getExpression());
-							if(nameRule != null) {
-								if(!(property.getType() instanceof Stereotype)) {
+							if (nameRule != null) {
+								if (!(property.getType() instanceof Stereotype)) {
 									valueRepresentation = nameRule.getId();
 								} else {
-									valueRepresentation = nameRule.getId().getStereotypeApplication(((Stereotype)property.getType()));
+									valueRepresentation = nameRule.getId().getStereotypeApplication(((Stereotype) property.getType()));
 								}
 							}
 							// TODO: specific case of stereotype applications
 						}
 					} else {
 						// the property has an upper bound > 1
-						if(!shouldStoreObjectsAndNotStrings) {
+						if (!shouldStoreObjectsAndNotStrings) {
 							List<String> listOfValues = new ArrayList<String>();
 							CollectionOrTuple collection = VSLJavaValidator.isACollection(value.getExpression());
-							for(Expression e : collection.getListOfValues().getValues()) {
+							for (Expression e : collection.getListOfValues().getValues()) {
 								listOfValues.add(VSLSerializationUtil.printExpression(e));
 							}
 							valueRepresentation = listOfValues;
 						} else {
 							List<Object> listOfValues = new ArrayList<Object>();
 							CollectionOrTuple collection = VSLJavaValidator.isACollection(value.getExpression());
-							for(Expression e : collection.getListOfValues().getValues()) {
+							for (Expression e : collection.getListOfValues().getValues()) {
 								NameOrChoiceOrBehaviorCall nameRule = VSLSerializationUtil.extractNameReference(e);
-								if(nameRule != null) {
-									if(!(property.getType() instanceof Stereotype)) {
+								if (nameRule != null) {
+									if (!(property.getType() instanceof Stereotype)) {
 										listOfValues.add(nameRule.getId());
 									} else {
-										listOfValues.add(nameRule.getId().getStereotypeApplication(((Stereotype)property.getType())));
+										listOfValues.add(nameRule.getId().getStereotypeApplication(((Stereotype) property.getType())));
 									}
 								}
 								// TODO: specific case of stereotype applications
@@ -266,7 +266,7 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 		}
 
 		public UpdateStereotypeApplicationsCommand(Element stereotypedElement, StereotypeApplicationsRule stereotypeApplicationsObject) {
-			super((TransactionalEditingDomain)EMFHelper.resolveEditingDomain(stereotypedElement), "Stereotype Applications Update", getWorkspaceFiles(stereotypedElement));
+			super((TransactionalEditingDomain) EMFHelper.resolveEditingDomain(stereotypedElement), "Stereotype Applications Update", getWorkspaceFiles(stereotypedElement));
 			this.stereotypedElement = stereotypedElement;
 			this.stereotypeApplicationsObject = stereotypeApplicationsObject;
 		}
@@ -281,18 +281,18 @@ public class StereotypeApplicationPopupEditorConfigurationContribution extends D
 	protected ICommand getParseCommand(EObject modelObject, EObject xtextObject) {
 		// first: retrieves / determines if the xtextObject is a TransitionRule object
 		EObject modifiedObject = xtextObject;
-		if(!(modelObject instanceof Element)) {
+		if (!(modelObject instanceof Element)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		while(xtextObject != null && !(xtextObject instanceof StereotypeApplicationsRule)) {
+		while (xtextObject != null && !(xtextObject instanceof StereotypeApplicationsRule)) {
 			modifiedObject = modifiedObject.eContainer();
 		}
-		if(modifiedObject == null) {
+		if (modifiedObject == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		Element stereotypedElement = (Element)modelObject;
-		StereotypeApplicationsRule stereotypeApplicationsObject = (StereotypeApplicationsRule)xtextObject;
+		Element stereotypedElement = (Element) modelObject;
+		StereotypeApplicationsRule stereotypeApplicationsObject = (StereotypeApplicationsRule) xtextObject;
 
 		// Creates and executes the update command
 		UpdateStereotypeApplicationsCommand updateCommand = new UpdateStereotypeApplicationsCommand(stereotypedElement, stereotypeApplicationsObject);

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -29,7 +29,7 @@ import org.junit.Test;
 /**
  * Test methods declared in {@link AbstractLayer}.
  * Use a {@link Layer} for test.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -55,11 +55,11 @@ public class AbstractLayerImplWithApplicationTest {
 	@Test
 	public void testAbstractLayer() {
 		// Create objets to test
-		LayerImpl layer = (LayerImpl)LayersFactory.eINSTANCE.createLayer();
+		LayerImpl layer = (LayerImpl) LayersFactory.eINSTANCE.createLayer();
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		layer.setApplication(application);
 		PropertyRegistry propertyRegistry = application.getPropertyRegistry();
-		
+
 		// Add instances to the layer
 		int index = 1;
 		Property property1 = propertyRegistry.getProperties().get(index++);
@@ -69,34 +69,36 @@ public class AbstractLayerImplWithApplicationTest {
 		assertNotNull("PropertyValueMap exis", layer);
 
 	}
+
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.impl.AbstractLayerImpl#getAttachedProperties()}.
-	 * @throws LayersException 
+	 * 
+	 * @throws LayersException
 	 */
 	@Test
 	public void testGetAttachedProperties() throws LayersException {
 		// Create objects to test
-		LayerImpl layer = (LayerImpl)LayersFactory.eINSTANCE.createLayer();
+		LayerImpl layer = (LayerImpl) LayersFactory.eINSTANCE.createLayer();
 		LayersStackApplication application = LayersFactory.eINSTANCE.createLayersStackApplication();
 		layer.setApplication(application);
 		PropertyRegistry propertyRegistry = application.getPropertyRegistry();
-		
+
 		// Add instances to the layer
 		int index = 1;
 		Property property1 = propertyRegistry.getProperties().get(index++);
 		Property property2 = propertyRegistry.getProperties().get(index++);
-		
+
 		layer.addPropertyInstance(property1);
 		layer.addPropertyInstance(property2);
-		
-		// check if we can get the list 
+
+		// check if we can get the list
 		assertEquals("size is same as available properties", 2, layer.getAttachedProperties().size());
-		
+
 		// Check property order
-		assertTrue("property is found", layer.getAttachedProperties().contains(property1) );
-		assertTrue("property is found", layer.getAttachedProperties().contains(property2) );
-		
-		
+		assertTrue("property is found", layer.getAttachedProperties().contains(property1));
+		assertTrue("property is found", layer.getAttachedProperties().contains(property2));
+
+
 	}
 
 }

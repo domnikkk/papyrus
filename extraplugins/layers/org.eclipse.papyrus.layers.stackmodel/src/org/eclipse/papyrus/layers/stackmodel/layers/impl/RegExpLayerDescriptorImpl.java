@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -30,6 +30,7 @@ public class RegExpLayerDescriptorImpl extends LayerDescriptorImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegExpLayerDescriptorImpl() {
@@ -39,6 +40,7 @@ public class RegExpLayerDescriptorImpl extends LayerDescriptorImpl implements Re
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -46,4 +48,4 @@ public class RegExpLayerDescriptorImpl extends LayerDescriptorImpl implements Re
 		return LayersPackage.Literals.REG_EXP_LAYER_DESCRIPTOR;
 	}
 
-} //RegExpLayerDescriptorImpl
+} // RegExpLayerDescriptorImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,12 +28,12 @@ import org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMem
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getOrganization <em>Organization</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsSynchronous <em>Is Synchronous</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsStatic <em>Is Static</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsNonVolatile <em>Is Non Volatile</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getRepl_Policy <em>Repl Policy</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getWritePolicy <em>Write Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getOrganization <em>Organization</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsSynchronous <em>Is Synchronous</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsStatic <em>Is Static</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getIsNonVolatile <em>Is Non Volatile</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getRepl_Policy <em>Repl Policy</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_DesignModel.HRM.HwLogical.HwStorage.HwMemory.impl.HwRAMImpl#getWritePolicy <em>Write Policy</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getOrganization() <em>Organization</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrganization()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsSynchronous() <em>Is Synchronous</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsSynchronous()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsStatic()
 	 * @generated
 	 * @ordered
@@ -94,6 +99,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsStatic() <em>Is Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsStatic()
 	 * @generated
 	 * @ordered
@@ -104,6 +110,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getIsNonVolatile() <em>Is Non Volatile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsNonVolatile()
 	 * @generated
 	 * @ordered
@@ -114,6 +121,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getIsNonVolatile() <em>Is Non Volatile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIsNonVolatile()
 	 * @generated
 	 * @ordered
@@ -124,6 +132,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -134,6 +143,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getRepl_Policy() <em>Repl Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRepl_Policy()
 	 * @generated
 	 * @ordered
@@ -144,6 +154,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The default value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -154,6 +165,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	 * The cached value of the '{@link #getWritePolicy() <em>Write Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWritePolicy()
 	 * @generated
 	 * @ordered
@@ -163,6 +175,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HwRAMImpl() {
@@ -172,6 +185,7 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,8 +196,10 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getOrganization() {
 		return organization;
 	}
@@ -191,20 +207,25 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOrganization(String newOrganization) {
 		String oldOrganization = organization;
 		organization = newOrganization;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__ORGANIZATION, oldOrganization, organization));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getIsSynchronous() {
 		return isSynchronous;
 	}
@@ -212,20 +233,25 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsSynchronous(String newIsSynchronous) {
 		String oldIsSynchronous = isSynchronous;
 		isSynchronous = newIsSynchronous;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS, oldIsSynchronous, isSynchronous));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getIsStatic() {
 		return isStatic;
 	}
@@ -233,20 +259,25 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsStatic(String newIsStatic) {
 		String oldIsStatic = isStatic;
 		isStatic = newIsStatic;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__IS_STATIC, oldIsStatic, isStatic));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getIsNonVolatile() {
 		return isNonVolatile;
 	}
@@ -254,20 +285,25 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsNonVolatile(String newIsNonVolatile) {
 		String oldIsNonVolatile = isNonVolatile;
 		isNonVolatile = newIsNonVolatile;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__IS_NON_VOLATILE, oldIsNonVolatile, isNonVolatile));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Repl_Policy getRepl_Policy() {
 		return repl_Policy;
 	}
@@ -275,20 +311,25 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setRepl_Policy(Repl_Policy newRepl_Policy) {
 		Repl_Policy oldRepl_Policy = repl_Policy;
 		repl_Policy = newRepl_Policy == null ? REPL_POLICY_EDEFAULT : newRepl_Policy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__REPL_POLICY, oldRepl_Policy, repl_Policy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public WritePolicy getWritePolicy() {
 		return writePolicy;
 	}
@@ -296,35 +337,39 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWritePolicy(WritePolicy newWritePolicy) {
 		WritePolicy oldWritePolicy = writePolicy;
 		writePolicy = newWritePolicy == null ? WRITE_POLICY_EDEFAULT : newWritePolicy;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HwMemoryPackage.HW_RAM__WRITE_POLICY, oldWritePolicy, writePolicy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_RAM__ORGANIZATION:
-				return getOrganization();
-			case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
-				return getIsSynchronous();
-			case HwMemoryPackage.HW_RAM__IS_STATIC:
-				return getIsStatic();
-			case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
-				return getIsNonVolatile();
-			case HwMemoryPackage.HW_RAM__REPL_POLICY:
-				return getRepl_Policy();
-			case HwMemoryPackage.HW_RAM__WRITE_POLICY:
-				return getWritePolicy();
+		case HwMemoryPackage.HW_RAM__ORGANIZATION:
+			return getOrganization();
+		case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
+			return getIsSynchronous();
+		case HwMemoryPackage.HW_RAM__IS_STATIC:
+			return getIsStatic();
+		case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
+			return getIsNonVolatile();
+		case HwMemoryPackage.HW_RAM__REPL_POLICY:
+			return getRepl_Policy();
+		case HwMemoryPackage.HW_RAM__WRITE_POLICY:
+			return getWritePolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -332,29 +377,30 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_RAM__ORGANIZATION:
-				setOrganization((String)newValue);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
-				setIsSynchronous((String)newValue);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_STATIC:
-				setIsStatic((String)newValue);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
-				setIsNonVolatile((String)newValue);
-				return;
-			case HwMemoryPackage.HW_RAM__REPL_POLICY:
-				setRepl_Policy((Repl_Policy)newValue);
-				return;
-			case HwMemoryPackage.HW_RAM__WRITE_POLICY:
-				setWritePolicy((WritePolicy)newValue);
-				return;
+		case HwMemoryPackage.HW_RAM__ORGANIZATION:
+			setOrganization((String) newValue);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
+			setIsSynchronous((String) newValue);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_STATIC:
+			setIsStatic((String) newValue);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
+			setIsNonVolatile((String) newValue);
+			return;
+		case HwMemoryPackage.HW_RAM__REPL_POLICY:
+			setRepl_Policy((Repl_Policy) newValue);
+			return;
+		case HwMemoryPackage.HW_RAM__WRITE_POLICY:
+			setWritePolicy((WritePolicy) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -362,29 +408,30 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_RAM__ORGANIZATION:
-				setOrganization(ORGANIZATION_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
-				setIsSynchronous(IS_SYNCHRONOUS_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_STATIC:
-				setIsStatic(IS_STATIC_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
-				setIsNonVolatile(IS_NON_VOLATILE_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_RAM__REPL_POLICY:
-				setRepl_Policy(REPL_POLICY_EDEFAULT);
-				return;
-			case HwMemoryPackage.HW_RAM__WRITE_POLICY:
-				setWritePolicy(WRITE_POLICY_EDEFAULT);
-				return;
+		case HwMemoryPackage.HW_RAM__ORGANIZATION:
+			setOrganization(ORGANIZATION_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
+			setIsSynchronous(IS_SYNCHRONOUS_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_STATIC:
+			setIsStatic(IS_STATIC_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
+			setIsNonVolatile(IS_NON_VOLATILE_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_RAM__REPL_POLICY:
+			setRepl_Policy(REPL_POLICY_EDEFAULT);
+			return;
+		case HwMemoryPackage.HW_RAM__WRITE_POLICY:
+			setWritePolicy(WRITE_POLICY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -392,23 +439,24 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwMemoryPackage.HW_RAM__ORGANIZATION:
-				return ORGANIZATION_EDEFAULT == null ? organization != null : !ORGANIZATION_EDEFAULT.equals(organization);
-			case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
-				return IS_SYNCHRONOUS_EDEFAULT == null ? isSynchronous != null : !IS_SYNCHRONOUS_EDEFAULT.equals(isSynchronous);
-			case HwMemoryPackage.HW_RAM__IS_STATIC:
-				return IS_STATIC_EDEFAULT == null ? isStatic != null : !IS_STATIC_EDEFAULT.equals(isStatic);
-			case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
-				return IS_NON_VOLATILE_EDEFAULT == null ? isNonVolatile != null : !IS_NON_VOLATILE_EDEFAULT.equals(isNonVolatile);
-			case HwMemoryPackage.HW_RAM__REPL_POLICY:
-				return repl_Policy != REPL_POLICY_EDEFAULT;
-			case HwMemoryPackage.HW_RAM__WRITE_POLICY:
-				return writePolicy != WRITE_POLICY_EDEFAULT;
+		case HwMemoryPackage.HW_RAM__ORGANIZATION:
+			return ORGANIZATION_EDEFAULT == null ? organization != null : !ORGANIZATION_EDEFAULT.equals(organization);
+		case HwMemoryPackage.HW_RAM__IS_SYNCHRONOUS:
+			return IS_SYNCHRONOUS_EDEFAULT == null ? isSynchronous != null : !IS_SYNCHRONOUS_EDEFAULT.equals(isSynchronous);
+		case HwMemoryPackage.HW_RAM__IS_STATIC:
+			return IS_STATIC_EDEFAULT == null ? isStatic != null : !IS_STATIC_EDEFAULT.equals(isStatic);
+		case HwMemoryPackage.HW_RAM__IS_NON_VOLATILE:
+			return IS_NON_VOLATILE_EDEFAULT == null ? isNonVolatile != null : !IS_NON_VOLATILE_EDEFAULT.equals(isNonVolatile);
+		case HwMemoryPackage.HW_RAM__REPL_POLICY:
+			return repl_Policy != REPL_POLICY_EDEFAULT;
+		case HwMemoryPackage.HW_RAM__WRITE_POLICY:
+			return writePolicy != WRITE_POLICY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -416,11 +464,14 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (organization: ");
@@ -439,4 +490,4 @@ public class HwRAMImpl extends HwMemoryImpl implements HwRAM {
 		return result.toString();
 	}
 
-} //HwRAMImpl
+} // HwRAMImpl

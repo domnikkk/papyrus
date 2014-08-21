@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -32,11 +32,12 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TopLayerOperatorItemProvider
-	extends AbstractLayerOperatorItemProvider
-	implements
+		extends AbstractLayerOperatorItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -46,6 +47,7 @@ public class TopLayerOperatorItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TopLayerOperatorItemProvider(AdapterFactory adapterFactory) {
@@ -56,6 +58,7 @@ public class TopLayerOperatorItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,6 +74,7 @@ public class TopLayerOperatorItemProvider
 	 * This returns TopLayerOperator.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,14 +86,15 @@ public class TopLayerOperatorItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TopLayerOperator)object).getName();
+		String label = ((TopLayerOperator) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TopLayerOperator_type") :
-			getString("_UI_TopLayerOperator_type") + " " + label;
+				getString("_UI_TopLayerOperator_type") :
+				getString("_UI_TopLayerOperator_type") + " " + label;
 	}
 
 	/**
@@ -97,6 +102,7 @@ public class TopLayerOperatorItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,6 +116,7 @@ public class TopLayerOperatorItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 429826
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.cdo.core.resource;
 
@@ -39,10 +39,10 @@ public class CDOReadOnlyHandler extends AbstractReadOnlyHandler {
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
 		Optional<Boolean> result = Optional.absent();
 
-		if(axes.contains(ReadOnlyAxis.PERMISSION) && (uris.length > 0) && CDOUtils.isCDOEditingDomain(getEditingDomain())) {
-			for(int i = 0; !result.or(Boolean.FALSE) && (i < uris.length); i++) {
+		if (axes.contains(ReadOnlyAxis.PERMISSION) && (uris.length > 0) && CDOUtils.isCDOEditingDomain(getEditingDomain())) {
+			for (int i = 0; !result.or(Boolean.FALSE) && (i < uris.length); i++) {
 				// if it's a cdo:// URI, then I have a definitive answer
-				if(CDOUtils.isCDOURI(uris[i])) {
+				if (CDOUtils.isCDOURI(uris[i])) {
 					result = Optional.of(isReadOnly(uris[i]));
 				}
 			}
@@ -55,8 +55,8 @@ public class CDOReadOnlyHandler extends AbstractReadOnlyHandler {
 		boolean result = false;
 
 		Resource resource = getEditingDomain().getResourceSet().getResource(uri, false);
-		if(resource instanceof CDOObject) {
-			result = CDOUtils.isReadOnly((CDOObject)resource);
+		if (resource instanceof CDOObject) {
+			result = CDOUtils.isReadOnly((CDOObject) resource);
 		}
 
 		return result;
@@ -66,11 +66,11 @@ public class CDOReadOnlyHandler extends AbstractReadOnlyHandler {
 	public Optional<Boolean> isReadOnly(Set<ReadOnlyAxis> axes, EObject eObject) {
 		Optional<Boolean> result = Optional.absent();
 
-		if(axes.contains(ReadOnlyAxis.PERMISSION)) {
+		if (axes.contains(ReadOnlyAxis.PERMISSION)) {
 			Resource resource = eObject.eResource();
-			if((resource == null) || CDOUtils.isCDOURI(resource.getURI())) {
+			if ((resource == null) || CDOUtils.isCDOURI(resource.getURI())) {
 				CDOObject cdo = CDOUtils.getCDOObject(eObject);
-				if(cdo != null) {
+				if (cdo != null) {
 					// I have a definitive answer for CDO objects
 					result = Optional.of(CDOUtils.isReadOnly(cdo));
 				}

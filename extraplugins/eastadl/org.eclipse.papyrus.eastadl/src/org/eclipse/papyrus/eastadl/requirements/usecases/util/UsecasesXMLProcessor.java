@@ -13,6 +13,7 @@ import org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UsecasesXMLProcessor extends XMLProcessor {
@@ -21,17 +22,19 @@ public class UsecasesXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UsecasesXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		UsecasesPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the UsecasesResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -44,4 +47,4 @@ public class UsecasesXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //UsecasesXMLProcessor
+} // UsecasesXMLProcessor

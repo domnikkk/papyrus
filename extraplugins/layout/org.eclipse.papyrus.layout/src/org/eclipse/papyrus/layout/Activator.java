@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.layout;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -61,7 +62,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance.
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -70,10 +71,10 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns an image descriptor for the image file at the given plug-in relative path.
-	 * 
+	 *
 	 * @param path
-	 *        the path
-	 * 
+	 *            the path
+	 *
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
@@ -82,23 +83,23 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Log.
-	 * 
+	 *
 	 * @param string
-	 *        the string
+	 *            the string
 	 * @param e
-	 *        the e
+	 *            the e
 	 */
 	public void log(String string, Exception e) {
-		getLog().log(new Status(Status.ERROR, PLUGIN_ID, string, e));
+		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, string, e));
 	}
 
 	/**
 	 * Log.
-	 * 
+	 *
 	 * @param string
-	 *        the string
+	 *            the string
 	 * @param severity
-	 *        the severity
+	 *            the severity
 	 */
 	public void log(String string, int severity) {
 		getLog().log(new Status(severity, PLUGIN_ID, string));
@@ -106,11 +107,11 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Log.
-	 * 
+	 *
 	 * @param string
-	 *        the string
+	 *            the string
 	 */
 	public void log(String string) {
-		log(string, Status.WARNING);
+		log(string, IStatus.WARNING);
 	}
 }

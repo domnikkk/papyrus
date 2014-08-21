@@ -28,7 +28,7 @@ public class TerminateSignalInstance extends SignalInstance {
 	 * Instantiates a new terminate signal instance.
 	 */
 	public TerminateSignalInstance() {
-		if(terminateSignal == null) {
+		if (terminateSignal == null) {
 			terminateSignal = UMLFactory.eINSTANCE.createSignal();
 			terminateSignal.setName("TerminateSignal");
 		}

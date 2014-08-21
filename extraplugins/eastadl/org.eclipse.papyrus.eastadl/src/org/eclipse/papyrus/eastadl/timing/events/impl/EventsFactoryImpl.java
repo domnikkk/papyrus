@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,14 @@ import org.eclipse.papyrus.eastadl.timing.events.ModeEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -56,16 +58,16 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EventsFactory init() {
 		try {
-			EventsFactory theEventsFactory = (EventsFactory)EPackage.Registry.INSTANCE.getEFactory(EventsPackage.eNS_URI);
+			EventsFactory theEventsFactory = (EventsFactory) EPackage.Registry.INSTANCE.getEFactory(EventsPackage.eNS_URI);
 			if (theEventsFactory != null) {
 				return theEventsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new EventsFactoryImpl();
@@ -75,6 +77,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EventsFactoryImpl() {
@@ -84,6 +87,7 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertEventFunctionClientServerPortKindToString(EDataType eDataType, Object instanceValue) {
@@ -93,44 +97,56 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
-				return convertEventFunctionClientServerPortKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
+			return convertEventFunctionClientServerPortKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EventsPackage.EVENT_FUNCTION_FLOW_PORT: return createEventFunctionFlowPort();
-			case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT: return createEventFunctionClientServerPort();
-			case EventsPackage.EVENT_FUNCTION: return createEventFunction();
-			case EventsPackage.AUTOSAR_EVENT: return createAUTOSAREvent();
-			case EventsPackage.EVENT_FAULT_FAILURE: return createEventFaultFailure();
-			case EventsPackage.EVENT_FEATURE_FLAW: return createEventFeatureFlaw();
-			case EventsPackage.EXTERNAL_EVENT: return createExternalEvent();
-			case EventsPackage.MODE_EVENT: return createModeEvent();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case EventsPackage.EVENT_FUNCTION_FLOW_PORT:
+			return createEventFunctionFlowPort();
+		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT:
+			return createEventFunctionClientServerPort();
+		case EventsPackage.EVENT_FUNCTION:
+			return createEventFunction();
+		case EventsPackage.AUTOSAR_EVENT:
+			return createAUTOSAREvent();
+		case EventsPackage.EVENT_FAULT_FAILURE:
+			return createEventFaultFailure();
+		case EventsPackage.EVENT_FEATURE_FLAW:
+			return createEventFeatureFlaw();
+		case EventsPackage.EXTERNAL_EVENT:
+			return createExternalEvent();
+		case EventsPackage.MODE_EVENT:
+			return createModeEvent();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventFunction createEventFunction() {
 		EventFunctionImpl eventFunction = new EventFunctionImpl();
 		return eventFunction;
@@ -139,8 +155,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public AUTOSAREvent createAUTOSAREvent() {
 		AUTOSAREventImpl autosarEvent = new AUTOSAREventImpl();
 		return autosarEvent;
@@ -149,8 +167,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventFaultFailure createEventFaultFailure() {
 		EventFaultFailureImpl eventFaultFailure = new EventFaultFailureImpl();
 		return eventFaultFailure;
@@ -159,8 +179,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventFeatureFlaw createEventFeatureFlaw() {
 		EventFeatureFlawImpl eventFeatureFlaw = new EventFeatureFlawImpl();
 		return eventFeatureFlaw;
@@ -169,8 +191,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ExternalEvent createExternalEvent() {
 		ExternalEventImpl externalEvent = new ExternalEventImpl();
 		return externalEvent;
@@ -179,8 +203,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ModeEvent createModeEvent() {
 		ModeEventImpl modeEvent = new ModeEventImpl();
 		return modeEvent;
@@ -189,8 +215,10 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventFunctionClientServerPort createEventFunctionClientServerPort() {
 		EventFunctionClientServerPortImpl eventFunctionClientServerPort = new EventFunctionClientServerPortImpl();
 		return eventFunctionClientServerPort;
@@ -199,19 +227,24 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EventFunctionClientServerPortKind createEventFunctionClientServerPortKindFromString(EDataType eDataType, String initialValue) {
 		EventFunctionClientServerPortKind result = EventFunctionClientServerPortKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventFunctionFlowPort createEventFunctionFlowPort() {
 		EventFunctionFlowPortImpl eventFunctionFlowPort = new EventFunctionFlowPortImpl();
 		return eventFunctionFlowPort;
@@ -220,25 +253,28 @@ public class EventsFactoryImpl extends EFactoryImpl implements EventsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
-				return createEventFunctionClientServerPortKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case EventsPackage.EVENT_FUNCTION_CLIENT_SERVER_PORT_KIND:
+			return createEventFunctionClientServerPortKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EventsPackage getEventsPackage() {
-		return (EventsPackage)getEPackage();
+		return (EventsPackage) getEPackage();
 	}
 
-} //EventsFactoryImpl
+} // EventsFactoryImpl

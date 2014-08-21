@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,10 @@ import org.eclipse.uml2.uml.Abstraction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getKind <em>Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getNature <em>Nature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getBase_Abstraction <em>Base Abstraction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getImpliedConstraint <em>Implied Constraint</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getKind <em>Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getNature <em>Nature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getBase_Abstraction <em>Base Abstraction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getImpliedConstraint <em>Implied Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,10 +43,10 @@ public interface Allocate extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationKind
 	 * @see #setKind(AllocationKind)
@@ -60,7 +60,9 @@ public interface Allocate extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationKind
 	 * @see #getKind()
 	 * @generated
@@ -72,10 +74,10 @@ public interface Allocate extends EObject {
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationNature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nature</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nature</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationNature
 	 * @see #setNature(AllocationNature)
@@ -89,7 +91,9 @@ public interface Allocate extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getNature <em>Nature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nature</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nature</em>' attribute.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocationNature
 	 * @see #getNature()
 	 * @generated
@@ -100,10 +104,10 @@ public interface Allocate extends EObject {
 	 * Returns the value of the '<em><b>Base Abstraction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Abstraction</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Abstraction</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Abstraction</em>' reference.
 	 * @see #setBase_Abstraction(Abstraction)
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocate_Base_Abstraction()
@@ -116,7 +120,9 @@ public interface Allocate extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.Allocate#getBase_Abstraction <em>Base Abstraction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Abstraction</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Abstraction</em>' reference.
 	 * @see #getBase_Abstraction()
 	 * @generated
 	 */
@@ -127,10 +133,10 @@ public interface Allocate extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.NfpConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Implied Constraint</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Implied Constraint</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Implied Constraint</em>' reference list.
 	 * @see org.eclipse.papyrus.MARTE.MARTE_Foundations.Alloc.AllocPackage#getAllocate_ImpliedConstraint()
 	 * @model ordered="false"

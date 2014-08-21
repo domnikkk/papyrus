@@ -28,14 +28,14 @@ public class LanguageSupport {
 	{
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(ILANG_SUPPORT_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String extLanguage = configElement.getAttribute("language"); //$NON-NLS-1$
-				if(extLanguage.equals(language)) {
+				if (extLanguage.equals(language)) {
 					// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof ILangSupport) {
-						return (ILangSupport)obj;
+					if (obj instanceof ILangSupport) {
+						return (ILangSupport) obj;
 					}
 				}
 			} catch (CoreException exception) {

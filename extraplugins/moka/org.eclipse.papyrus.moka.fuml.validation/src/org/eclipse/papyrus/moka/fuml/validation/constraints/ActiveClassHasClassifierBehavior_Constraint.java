@@ -27,10 +27,10 @@ public class ActiveClassHasClassifierBehavior_Constraint extends AbstractModelCo
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-		Class clazz = (Class)ctx.getTarget();
+		Class clazz = (Class) ctx.getTarget();
 		if (clazz.isActive()) {
 			if (clazz.getClassifierBehavior() == null) {
-				return ctx.createFailureStatus("An active Class shall have a classifier behavior") ;
+				return ctx.createFailureStatus("An active Class shall have a classifier behavior");
 			}
 		}
 		return ctx.createSuccessStatus();

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
-	
+
 	/** Logging helper */
 	public static LogHelper log = new LogHelper();
 
@@ -36,15 +36,17 @@ public class Activator extends AbstractUIPlugin {
 		super();
 	}
 
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		
+
 		// register the log helper
 		log.setPlugin(plugin);
 
 	}
 
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		log = null;
 		plugin = null;

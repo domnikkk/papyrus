@@ -21,19 +21,20 @@ import org.eclipse.papyrus.design.profile.architecture.LayerDependency;
 import org.eclipse.papyrus.design.profile.architecture.Plugin;
 import org.eclipse.papyrus.design.profile.architecture.Project;
 import org.eclipse.papyrus.design.profile.architecture.ProjectDependency;
-import org.eclipse.papyrus.design.profile.architecture.PluginDependency;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ArchitecturePackageImpl extends EPackageImpl implements ArchitecturePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass layerEClass = null;
@@ -41,6 +42,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass elementEClass = null;
@@ -48,6 +50,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass layerDependencyEClass = null;
@@ -55,6 +58,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass pluginEClass = null;
@@ -62,6 +66,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass projectEClass = null;
@@ -69,20 +74,17 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass projectDependencyEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.design.profile.architecture.ArchitecturePackage#eNS_URI
 	 * @see #init()
@@ -95,27 +97,30 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link ArchitecturePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * <p>This method is used to initialize {@link ArchitecturePackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ArchitecturePackage init() {
-		if (isInited) return (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
+		if (isInited) {
+			return (ArchitecturePackage) EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArchitecturePackageImpl());
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArchitecturePackageImpl());
 
 		isInited = true;
 
@@ -131,7 +136,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		// Mark meta-data to indicate it can't be changed
 		theArchitecturePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ArchitecturePackage.eNS_URI, theArchitecturePackage);
 		return theArchitecturePackage;
@@ -140,8 +145,10 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getLayer() {
 		return layerEClass;
 	}
@@ -149,62 +156,76 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayer_Name() {
-		return (EAttribute)layerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) layerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayer_ParentFolder() {
-		return (EAttribute)layerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) layerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getLayer_Base_Package() {
-		return (EReference)layerEClass.getEStructuralFeatures().get(2);
+		return (EReference) layerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayer_IsDeprecated() {
-		return (EAttribute)layerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) layerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayer_DeprecatedComment() {
-		return (EAttribute)layerEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) layerEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayer_Referent() {
-		return (EAttribute)layerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) layerEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getElement() {
 		return elementEClass;
 	}
@@ -212,26 +233,32 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getElement_Documentation() {
-		return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) elementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getElement_Comment() {
-		return (EAttribute)elementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) elementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getLayerDependency() {
 		return layerDependencyEClass;
 	}
@@ -239,35 +266,43 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerDependency_IsDeprecated() {
-		return (EAttribute)layerDependencyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) layerDependencyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLayerDependency_DeprecatedComment() {
-		return (EAttribute)layerDependencyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) layerDependencyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getLayerDependency_Base_Dependency() {
-		return (EReference)layerDependencyEClass.getEStructuralFeatures().get(2);
+		return (EReference) layerDependencyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getPlugin() {
 		return pluginEClass;
 	}
@@ -275,8 +310,10 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getProject() {
 		return projectEClass;
 	}
@@ -284,71 +321,87 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_IsDeprecated() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_DeprecatedComment() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_Name() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_Referent() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_ParentFolder() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_OriginalParentFolder() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) projectEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getProject_Base_Package() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(6);
+		return (EReference) projectEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getProjectDependency() {
 		return projectDependencyEClass;
 	}
@@ -356,55 +409,67 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProjectDependency_DeprecatedComment() {
-		return (EAttribute)projectDependencyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) projectDependencyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProjectDependency_IsDeprecated() {
-		return (EAttribute)projectDependencyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) projectDependencyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getProjectDependency_Base_Dependency() {
-		return (EReference)projectDependencyEClass.getEStructuralFeatures().get(2);
+		return (EReference) projectDependencyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ArchitectureFactory getArchitectureFactory() {
-		return (ArchitectureFactory)getEFactoryInstance();
+		return (ArchitectureFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -445,19 +510,23 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -466,7 +535,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage) EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -496,7 +565,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		initEClass(layerDependencyEClass, LayerDependency.class, "LayerDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLayerDependency_IsDeprecated(), ecorePackage.getEBoolean(), "isDeprecated", null, 1, 1, LayerDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLayerDependency_DeprecatedComment(), ecorePackage.getEString(), "deprecatedComment", null, 1, 1, LayerDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLayerDependency_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 1, 1, LayerDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getLayerDependency_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 1, 1, LayerDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -512,10 +582,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		initEClass(projectDependencyEClass, ProjectDependency.class, "ProjectDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProjectDependency_DeprecatedComment(), ecorePackage.getEString(), "deprecatedComment", null, 1, 1, ProjectDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getProjectDependency_IsDeprecated(), ecorePackage.getEBoolean(), "isDeprecated", null, 1, 1, ProjectDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getProjectDependency_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 1, 1, ProjectDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getProjectDependency_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 1, 1, ProjectDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //ArchitecturePackageImpl
+} // ArchitecturePackageImpl

@@ -12,11 +12,11 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getFactor <em>Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getReference <em>Reference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getFactor <em>Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getSymbol <em>Symbol</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,10 +29,10 @@ public interface Unit extends EAPackageableElement {
 	 * Returns the value of the '<em><b>Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Factor</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Factor</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Factor</em>' attribute.
 	 * @see #setFactor(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getUnit_Factor()
@@ -45,7 +45,9 @@ public interface Unit extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getFactor <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Factor</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Factor</em>' attribute.
 	 * @see #getFactor()
 	 * @generated
 	 */
@@ -55,10 +57,10 @@ public interface Unit extends EAPackageableElement {
 	 * Returns the value of the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Offset</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Offset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Offset</em>' attribute.
 	 * @see #setOffset(Float)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getUnit_Offset()
@@ -71,7 +73,9 @@ public interface Unit extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Offset</em>' attribute.
 	 * @see #getOffset()
 	 * @generated
 	 */
@@ -81,10 +85,10 @@ public interface Unit extends EAPackageableElement {
 	 * Returns the value of the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Symbol</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Symbol</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Symbol</em>' attribute.
 	 * @see #setSymbol(String)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getUnit_Symbol()
@@ -97,7 +101,9 @@ public interface Unit extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getSymbol <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Symbol</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Symbol</em>' attribute.
 	 * @see #getSymbol()
 	 * @generated
 	 */
@@ -107,10 +113,10 @@ public interface Unit extends EAPackageableElement {
 	 * Returns the value of the '<em><b>Quantity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Quantity</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Quantity</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantity</em>' reference.
 	 * @see #setQuantity(Quantity)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getUnit_Quantity()
@@ -123,7 +129,9 @@ public interface Unit extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getQuantity <em>Quantity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Quantity</em>' reference.
 	 * @see #getQuantity()
 	 * @generated
 	 */
@@ -133,10 +141,10 @@ public interface Unit extends EAPackageableElement {
 	 * Returns the value of the '<em><b>Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reference</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(Unit)
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.datatypes.DatatypesPackage#getUnit_Reference()
@@ -149,7 +157,9 @@ public interface Unit extends EAPackageableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.infrastructure.datatypes.Unit#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
 	 * @generated
 	 */

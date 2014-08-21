@@ -17,7 +17,7 @@ public class TraceUtils {
 	public static IMarker[] getMarkersForEObject(EObject eObject, String markerType) {
 		Resource resource = eObject.eResource();
 		IFile file = WorkspaceSynchronizer.getFile(resource);
-		if(file != null) {
+		if (file != null) {
 			try {
 				return file.findMarkers(markerType, true, IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
@@ -28,16 +28,16 @@ public class TraceUtils {
 
 	public static boolean hasTrace(Element eObject) {
 		IMarker markers[] = getMarkersForEObject(eObject, TracepointConstants.tpOrbpMarker);
-		for(IMarker marker : markers) {
+		for (IMarker marker : markers) {
 			// explicitly pass resourceSet of eObject we want to compare. Otherwise, the marker utils would
 			// load resources into its own resource set (leading to non-comparable eObjects)
 			EObject eObjOfMarker = MarkerUtils.getEObjectOfMarker(eObject.eResource().getResourceSet(), marker);
-			if(eObjOfMarker == eObject) {
+			if (eObjOfMarker == eObject) {
 				return true;
 			}
 		}
-		// TODO: testing workaround (always return true for port based transformations) 
-		if(TransformationContext.getPort() != null) {
+		// TODO: testing workaround (always return true for port based transformations)
+		if (TransformationContext.getPort() != null) {
 			return true;
 		}
 		return false;

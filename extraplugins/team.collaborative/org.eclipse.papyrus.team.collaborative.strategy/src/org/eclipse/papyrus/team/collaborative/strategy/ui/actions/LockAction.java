@@ -14,11 +14,12 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.team.collaborative.core.ICollaborativeManager;
 import org.eclipse.papyrus.team.collaborative.core.IExtendedURI;
 import org.eclipse.papyrus.team.collaborative.core.participants.locker.ILocker;
@@ -44,9 +45,9 @@ public class LockAction extends Action {
 
 	/**
 	 * Instantiates a new lock action.
-	 * 
+	 *
 	 * @param strategy
-	 *        the strategy
+	 *            the strategy
 	 */
 	public LockAction(Descriptor strategy) {
 		super();
@@ -62,9 +63,9 @@ public class LockAction extends Action {
 	public void run() {
 		super.run();
 		Collection<EObject> selection = UIUtils.getSelection();
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			IStatus status = doLock(selection, strategy);
-			if(!status.isOK()) {
+			if (!status.isOK()) {
 				UIUtils.errorDialog(status, "Unable to lock");
 			}
 		}
@@ -74,17 +75,17 @@ public class LockAction extends Action {
 
 	/**
 	 * Do lock action
-	 * 
+	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 * @param strategy
-	 *        the strategy the selected {@link ILockingStrategy.Descriptor}
+	 *            the strategy the selected {@link ILockingStrategy.Descriptor}
 	 * @return the i status
 	 */
 	public static IStatus doLock(Collection<EObject> selection, ILockingStrategy.Descriptor strategy) {
 		EObject eObject = selection.iterator().next();
 		ResourceSet resourceSet = eObject.eResource().getResourceSet();
-		//Execute the strategy to define the functional object to lock
+		// Execute the strategy to define the functional object to lock
 		Set<IExtendedURI> objectToLock = strategy.getStrategy().getBusinessObject(selection);
 		return doSafeLock(resourceSet, objectToLock, true);
 	}
@@ -92,31 +93,31 @@ public class LockAction extends Action {
 
 	/**
 	 * Do lock action
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @param objectToLock
-	 *        the {@link IExtendedURI} about to be locked
+	 *            the {@link IExtendedURI} about to be locked
 	 * @param usePreview
-	 *        Set to true if the user has to be given preview
+	 *            Set to true if the user has to be given preview
 	 * @return the {@link IStatus} of the operation
 	 */
 	public static IStatus doSafeLock(ResourceSet resourceSet, Set<IExtendedURI> objectToLock, boolean usePreview) {
-		//Check that everything is up to date
+		// Check that everything is up to date
 		IUpdater updater = ICollaborativeManager.INSTANCE.getUpdater(objectToLock, resourceSet);
-		if(updater == null) {
+		if (updater == null) {
 			UIUtils.errorDialog(CollabStatus.createErrorStatus("Unable to find a updater"), "Unable to find a updater");
 			return CollabStatus.createErrorStatus("Unable to find a updater");
 		}
-		if(!updater.getExtendedSet().isEmpty()) {
-			if(MessageDialog.openConfirm(Display.getDefault().getActiveShell(), "Need update", "You need to update those elements in order to perform a lock")) {
+		if (!updater.getExtendedSet().isEmpty()) {
+			if (MessageDialog.openConfirm(Display.getDefault().getActiveShell(), "Need update", "You need to update those elements in order to perform a lock")) {
 				IStatus status = UpdateHandler.doUpdateFromUpdater(resourceSet, updater, true);
-				if(!status.isOK()) {
+				if (!status.isOK()) {
 					UIUtils.errorDialog(status, "Error");
 				}
 				resourceSet = UIUtils.getCurrentResourceSet();
 			} else {
-				return CollabStatus.CANCEL_STATUS;
+				return Status.CANCEL_STATUS;
 			}
 		}
 
@@ -126,23 +127,23 @@ public class LockAction extends Action {
 
 	protected static IStatus doUnlock(ResourceSet resourceSet, Set<IExtendedURI> objectToLock, boolean usePreview) {
 		ILocker locker = ICollaborativeManager.INSTANCE.getLocker(objectToLock, resourceSet);
-		if(locker == null) {
+		if (locker == null) {
 			UIUtils.errorDialog(CollabStatus.createErrorStatus("Unable to find a locker"), "Unable to lock");
 			return CollabStatus.createErrorStatus("Unable to find a locker");
 		}
 
 		Set<IExtendedURI> needsLock = locker.getExtendedSet();
-		if(usePreview) {
-			//Check if the lock can be taken
-			ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(needsLock),UIUtils.getModelExplorerLavelProvider());
+		if (usePreview) {
+			// Check if the lock can be taken
+			ExtensivePartitionNameLabelProvider labelProvider = new ExtensivePartitionNameLabelProvider(new MatchingURIObject(needsLock), UIUtils.getModelExplorerLavelProvider());
 			labelProvider.setColor(ICollabColors.LOCK_COLLOR);
 			PreviewDialog previewDialog = new PreviewDialog(Display.getDefault().getActiveShell(), labelProvider, "Lock Preview", "Element in orange will be locked");
 			Collection<EObject> objectsToReveal = UIUtils.getLeafSemanticElement(needsLock, resourceSet);
-			if(objectsToReveal != null && !objectsToReveal.isEmpty()) {
+			if (objectsToReveal != null && !objectsToReveal.isEmpty()) {
 				previewDialog.setObjectsToReveal(objectsToReveal);
 			}
-			if(previewDialog.open() != PreviewDialog.OK) {
-				return CollabStatus.CANCEL_STATUS;
+			if (previewDialog.open() != Window.OK) {
+				return Status.CANCEL_STATUS;
 			}
 		}
 		IStatus status = locker.lock();

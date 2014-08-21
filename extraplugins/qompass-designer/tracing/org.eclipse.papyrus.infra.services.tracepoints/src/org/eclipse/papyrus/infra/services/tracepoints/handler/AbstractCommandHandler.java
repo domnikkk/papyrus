@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,37 +33,37 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * <pre>
- * 
+ *
  * This abstract command handler manages:
  * - current selection in order to build a list of the selected {@link EObject}
  * - execute the command (returned by children) in Papyrus {@link TransactionalEditingDomain}
  * - calculate the command enablement and visibility regarding the command executability
  * (the command is now shown in menu if not executable).
- * 
+ *
  * </pre>
  */
 public abstract class AbstractCommandHandler extends AbstractHandler {
 
 	/**
 	 * <pre>
-	 * 
-	 * Returns the command to execute (to be implemented 
+	 *
+	 * Returns the command to execute (to be implemented
 	 * in children implementing this class)
 	 * 
 	 * @return the command to execute
-	 * 
+	 *
 	 * </pre>
 	 */
 	protected abstract Command getCommand();
 
 	/**
 	 * <pre>
-	 * Get the selected element, the first selected element if several are selected or null 
-	 * if no selection or the selection is not an {@link EObject}. 
+	 * Get the selected element, the first selected element if several are selected or null
+	 * if no selection or the selection is not an {@link EObject}.
 	 * 
 	 * @return selected {@link EObject} or null
 	 * </pre>
-	 * 
+	 *
 	 */
 	protected EObject getSelectedElement() {
 		EObject eObject = null;
@@ -73,16 +73,16 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 		selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
 
 		// Get first element if the selection is an IStructuredSelection
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			selection = structuredSelection.getFirstElement();
 		}
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(selection != null) {
+		if (selection != null) {
 			Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(selection);
-			if(businessObject instanceof EObject) {
-				eObject = (EObject)businessObject;
+			if (businessObject instanceof EObject) {
+				eObject = (EObject) businessObject;
 			}
 		}
 		return eObject;
@@ -98,7 +98,7 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	 * 
 	 * @return a list of currently selected {@link EObject}
 	 * </pre>
-	 * 
+	 *
 	 */
 	protected List<EObject> getSelectedElements() {
 
@@ -106,19 +106,19 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 
 		// Parse current selection
 		ISelection selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().getSelection();
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
-			for(Object current : structuredSelection.toArray()) {
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+			for (Object current : structuredSelection.toArray()) {
 				// Adapt current selection to EObject
-				if(current instanceof IAdaptable) {
-					selectedEObjects.add((EObject)((IAdaptable)current).getAdapter(EObject.class));
+				if (current instanceof IAdaptable) {
+					selectedEObjects.add((EObject) ((IAdaptable) current).getAdapter(EObject.class));
 				}
 			}
 		} else { // Not a IStructuredSelection
-			if(selection != null) {
+			if (selection != null) {
 				// Adapt current selection to EObject
-				if(selection instanceof IAdaptable) {
-					selectedEObjects.add((EObject)((IAdaptable)selection).getAdapter(EObject.class));
+				if (selection instanceof IAdaptable) {
+					selectedEObjects.add((EObject) ((IAdaptable) selection).getAdapter(EObject.class));
 				}
 			}
 		}
@@ -127,13 +127,14 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		try {
 			ServiceUtilsForHandlers util = ServiceUtilsForHandlers.getInstance();
@@ -154,7 +155,7 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true (visible) when the command can be executed.
 	 */
 	public boolean isVisible() {

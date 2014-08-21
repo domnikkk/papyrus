@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -22,8 +22,6 @@
  */
 package org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm;
 
-import org.eclipse.emf.common.util.EList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -33,11 +31,11 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getParameterOwner <em>Parameter Owner</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isFinal <em>Final</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isMultiValued <em>Is Multi Valued</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getReturnOwner <em>Return Owner</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getParameterOwner <em>Parameter Owner</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isFinal <em>Final</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isMultiValued <em>Is Multi Valued</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getReturnOwner <em>Return Owner</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +53,7 @@ public interface JDTParameter extends JDTMember {
 	 * If the meaning of the '<em>Parameter Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parameter Owner</em>' container reference.
 	 * @see #setParameterOwner(JDTMethod)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTParameter_ParameterOwner()
@@ -68,7 +67,9 @@ public interface JDTParameter extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getParameterOwner <em>Parameter Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameter Owner</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Parameter Owner</em>' container reference.
 	 * @see #getParameterOwner()
 	 * @generated
 	 */
@@ -82,6 +83,7 @@ public interface JDTParameter extends JDTMember {
 	 * If the meaning of the '<em>Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Final</em>' attribute.
 	 * @see #setFinal(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTParameter_Final()
@@ -94,7 +96,9 @@ public interface JDTParameter extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isFinal <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Final</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Final</em>' attribute.
 	 * @see #isFinal()
 	 * @generated
 	 */
@@ -108,6 +112,7 @@ public interface JDTParameter extends JDTMember {
 	 * If the meaning of the '<em>Is Multi Valued</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #setIsMultiValued(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTParameter_IsMultiValued()
@@ -120,7 +125,9 @@ public interface JDTParameter extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#isMultiValued <em>Is Multi Valued</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Multi Valued</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Multi Valued</em>' attribute.
 	 * @see #isMultiValued()
 	 * @generated
 	 */
@@ -133,6 +140,7 @@ public interface JDTParameter extends JDTMember {
 	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTParameter_Type()
@@ -145,7 +153,9 @@ public interface JDTParameter extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type</em>' reference.
 	 * @see #getType()
 	 * @generated
 	 */
@@ -159,6 +169,7 @@ public interface JDTParameter extends JDTMember {
 	 * If the meaning of the '<em>Return Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Return Owner</em>' container reference.
 	 * @see #setReturnOwner(JDTMethod)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTParameter_ReturnOwner()
@@ -172,7 +183,9 @@ public interface JDTParameter extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParameter#getReturnOwner <em>Return Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Owner</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Return Owner</em>' container reference.
 	 * @see #getReturnOwner()
 	 * @generated
 	 */

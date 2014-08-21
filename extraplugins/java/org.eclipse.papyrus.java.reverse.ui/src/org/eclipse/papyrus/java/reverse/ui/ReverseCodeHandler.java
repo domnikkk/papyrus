@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.java.reverse.ui;
 
@@ -10,6 +10,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -30,7 +31,7 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * @author dumoulin
- * 
+ *
  */
 public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
@@ -39,32 +40,34 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 	/**
 	 * Method called when button is pressed.
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// Try to find uml resource
 		final Resource umlResource;
 		try {
 			umlResource = getUmlResource();
-		} catch(NullPointerException e)  {
-			// No uml resource available. User must open a model. We open an error dialog with an explicit message to advice user. 
+		} catch (NullPointerException e) {
+			// No uml resource available. User must open a model. We open an error dialog with an explicit message to advice user.
 			Shell shell = HandlerUtil.getActiveShell(event);
-			Status errorStatus = new Status(Status.ERROR, Activator.PLUGIN_ID, Messages.ReverseCodeHandler_NoModelError_Title);
+			Status errorStatus = new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.ReverseCodeHandler_NoModelError_Title);
 			ErrorDialog.openError(shell, "", Messages.ReverseCodeHandler_NoModelError_Message, errorStatus);
-			
+
 			// Stop the reverse execution.
 			return null;
-		};
+		}
+		;
 
 		String modelUid = getModelUid(umlResource);
 		System.out.println("Model uid :" + modelUid);
-		
+
 		// Get reverse parameters from a dialog
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart().getSite().getShell();
-		//    	ReverseCodeDialog dialog = new ReverseCodeDialog(shell, DefaultGenerationPackageName, Arrays.asList("generated") );
+		// ReverseCodeDialog dialog = new ReverseCodeDialog(shell, DefaultGenerationPackageName, Arrays.asList("generated") );
 		final ReverseCodeDialog dialog = getDialog(shell, modelUid);
 
 		int res = dialog.open();
-		//    	System.out.println("dialog result =" + res);
-		if(res == Window.CANCEL) {
+		// System.out.println("dialog result =" + res);
+		if (res == Window.CANCEL) {
 			System.out.println("Canceled by user.");
 			return null;
 		}
@@ -78,7 +81,7 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 			e.printStackTrace();
 			throw new ExecutionException(e.getMessage());
 		}
-		
+
 		RecordingCommand command = new RecordingCommand(editingDomain, "Reverse Java Code") {
 
 			@Override
@@ -96,14 +99,14 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * Find the modelUid name contains into umlResource taken in parameter
-	 * 
+	 *
 	 * @param umlResource
 	 * @return the modelUid name
 	 */
 	private String getModelUid(Resource umlResource) {
 		// Try to compute a uid identifying the model. Used to store user settings.
 		String modelUid = umlResource.getURI().toPlatformString(true);
-		if(modelUid == null) {
+		if (modelUid == null) {
 			System.err.println("Can't compute relatif model uid. Use absolute one");
 			modelUid = umlResource.getURI().path();
 		}
@@ -126,7 +129,7 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * The dialog used for user.
-	 * 
+	 *
 	 * @param shell
 	 * @param modelUid
 	 * @return the dialog to show to user
@@ -137,15 +140,15 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * Find the name of the model provided by the dialog
-	 * 
+	 *
 	 * @param dialog
-	 *        opened dialog to user
+	 *            opened dialog to user
 	 * @return the name of the model. If the user has changed this name, return the name provided by the user; return the default model name
 	 *         otherwise.
 	 */
 	protected String getPackageName(ReverseCodeDialog dialog) {
 		String generationPackageName = dialog.getValue();
-		if(generationPackageName == null || generationPackageName.length() == 0) {
+		if (generationPackageName == null || generationPackageName.length() == 0) {
 			generationPackageName = DefaultGenerationModeleName;
 		}
 		return generationPackageName;
@@ -153,7 +156,7 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * Get the uml resource used by the model.
-	 * 
+	 *
 	 * @return the Uml Resource
 	 */
 	protected Resource getUmlResource() {
@@ -163,17 +166,17 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * Get the name of the root model.
-	 * 
+	 *
 	 * @return
 	 */
 	protected Package getRootPackage(Resource umlResource) {
-		Package rootPackage = (Package)umlResource.getContents().get(0);
+		Package rootPackage = (Package) umlResource.getContents().get(0);
 		return rootPackage;
 	}
 
 	/**
 	 * Get the current MultiDiagramEditor.
-	 * 
+	 *
 	 * @return
 	 */
 	protected IMultiDiagramEditor getMultiDiagramEditor() {
@@ -182,9 +185,9 @@ public class ReverseCodeHandler extends AbstractHandler implements IHandler {
 
 	/**
 	 * Get the main editing doamin.
-	 * 
+	 *
 	 * @return
-	 * @throws ServiceException 
+	 * @throws ServiceException
 	 */
 	protected TransactionalEditingDomain getEditingDomain() throws ServiceException {
 		return ServiceUtilsForActionHandlers.getInstance().getTransactionalEditingDomain();

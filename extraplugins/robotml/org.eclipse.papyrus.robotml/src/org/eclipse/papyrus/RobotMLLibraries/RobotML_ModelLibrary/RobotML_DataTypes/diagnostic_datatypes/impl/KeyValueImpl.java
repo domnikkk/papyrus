@@ -19,8 +19,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.KeyValueImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.KeyValueImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.KeyValueImpl#getKey <em>Key</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.KeyValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +31,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKey()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKey()
 	 * @generated
 	 * @ordered
@@ -51,6 +53,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -61,6 +64,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -70,6 +74,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected KeyValueImpl() {
@@ -79,6 +84,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,6 +95,7 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getKey() {
@@ -98,18 +105,21 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setKey(String newKey) {
 		String oldKey = key;
 		key = newKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Diagnostic_datatypesPackage.KEY_VALUE__KEY, oldKey, key));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getValue() {
@@ -119,27 +129,30 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Diagnostic_datatypesPackage.KEY_VALUE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
-				return getKey();
-			case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
-				return getValue();
+		case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
+			return getKey();
+		case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -147,17 +160,18 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
-				setKey((String)newValue);
-				return;
-			case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
-				setValue((String)newValue);
-				return;
+		case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
+			setKey((String) newValue);
+			return;
+		case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -165,17 +179,18 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
-				setKey(KEY_EDEFAULT);
-				return;
-			case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
+			setKey(KEY_EDEFAULT);
+			return;
+		case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -183,15 +198,16 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
-				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-			case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case Diagnostic_datatypesPackage.KEY_VALUE__KEY:
+			return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+		case Diagnostic_datatypesPackage.KEY_VALUE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -199,11 +215,14 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
@@ -214,4 +233,4 @@ public class KeyValueImpl extends MinimalEObjectImpl.Container implements KeyVal
 		return result.toString();
 	}
 
-} //KeyValueImpl
+} // KeyValueImpl

@@ -2,9 +2,9 @@ package org.eclipse.papyrus.qompass.designer.core.generate;
 
 /**
  * Constants for generation options (must be powers of 2)
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public interface GenerationOptions {
 

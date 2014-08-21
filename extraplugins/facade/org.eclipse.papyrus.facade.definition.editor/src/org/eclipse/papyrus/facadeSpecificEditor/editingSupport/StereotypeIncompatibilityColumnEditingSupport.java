@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,20 +51,20 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Change a compatibility between stereotype application to incompatible in the model
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combinaison
 	 */
 	protected void transformCompatibleIntoIncompatible(BaseMetaclass baseMetaclass, Combination combinaison) {
-		AddCommand command = new AddCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_IncompatibleStereotypes(), combinaison); //$NON-NLS-1$
+		AddCommand command = new AddCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_IncompatibleStereotypes(), combinaison);
 		editingDomain.getCommandStack().execute(command);
-		RemoveCommand removeCommand = new RemoveCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_CompatibleStereotypes(), combinaison); //$NON-NLS-1$
+		RemoveCommand removeCommand = new RemoveCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_CompatibleStereotypes(), combinaison);
 		editingDomain.getCommandStack().execute(removeCommand);
 	}
 
 	/**
 	 * Change a compatibility between stereotype application to incompatible in the model
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combinaison
 	 */
@@ -75,20 +75,20 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Change a compatibility between stereotype application to compatible in the model
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combinaison
 	 */
 	protected void transformImcompatibleIntoCompatible(BaseMetaclass baseMetaclass, Combination combinaison) {
-		RemoveCommand removeCommand = new RemoveCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_IncompatibleStereotypes(), combinaison); //$NON-NLS-1$
+		RemoveCommand removeCommand = new RemoveCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_IncompatibleStereotypes(), combinaison);
 		editingDomain.getCommandStack().execute(removeCommand);
-		AddCommand addCommand = new AddCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_CompatibleStereotypes(), combinaison); //$NON-NLS-1$
+		AddCommand addCommand = new AddCommand(editingDomain, baseMetaclass, ExtensiondefinitionPackage.eINSTANCE.getBaseMetaclass_CompatibleStereotypes(), combinaison);
 		editingDomain.getCommandStack().execute(addCommand);
 	}
 
 	/**
 	 * Change a compatibility between stereotype application to compatible in the model
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combinaison
 	 */
@@ -99,23 +99,23 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Used to propagate compatibilities and incompatibilities among stereotype applications
-	 * 
+	 *
 	 * @param combination
 	 * @param iAmNotARequired
 	 */
 	protected void proceedTheOtherWayCompatibleIntoIncompatible(Combination combination, boolean iAmNotARequired) {
 
-		for(BaseMetaclass meta : ((Combination)combination).getMembers()) {
+		for (BaseMetaclass meta : combination.getMembers()) {
 			// Build fake Combination that contain all the basemetaclass of the combinaison except the basemetaclass we are processing
 			Combination fakeCombination = ExtensiondefinitionFactory.eINSTANCE.createCombination();
-			for(BaseMetaclass metaFake : ((Combination)combination).getMembers()) {
-				if(meta != metaFake) {
+			for (BaseMetaclass metaFake : combination.getMembers()) {
+				if (meta != metaFake) {
 					fakeCombination.getMembers().add(metaFake);
 				}
 			}
 			// fake Combination + the general basemetaclass that own this combinaison
-			if(iAmNotARequired) {
-				BaseMetaclass containerBaseMetaClass = (BaseMetaclass)((Combination)combination).eContainer();
+			if (iAmNotARequired) {
+				BaseMetaclass containerBaseMetaClass = (BaseMetaclass) combination.eContainer();
 				BaseMetaclass general = containerBaseMetaClass;
 				fakeCombination.getMembers().add(general);
 			}
@@ -123,7 +123,7 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 			// if (!EditionUtils.containsOnlyRequired(fakeCombination)) {
 			// We go through the compatible combinaison of this basemeta and try to find the fake
 			Combination combinaison = EditionUtils.getCombinationThatMatch(meta.getCompatibleStereotypes(), fakeCombination);
-			if(combinaison != null) {
+			if (combinaison != null) {
 				transformAllCompatibleIntoIncompatible(meta, combinaison);
 			} else {
 				org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.StereotypeIncompatibilityColumnEditingSupport_0);
@@ -134,23 +134,23 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Used to propagate compatibilities and incompatibilities among stereotype applications
-	 * 
+	 *
 	 * @param combination
 	 * @param iAmNotARequired
 	 */
 	protected void proceedTheOtherWayImcompatibleIntoCompatible(Combination combination, boolean iAmNotARequired) {
-		for(BaseMetaclass meta : ((Combination)combination).getMembers()) {
+		for (BaseMetaclass meta : combination.getMembers()) {
 			// Build fake Combination that contain all the basemetaclass of the combinaison except the basemetaclass we are processing
 			Combination fakeCombination = ExtensiondefinitionFactory.eINSTANCE.createCombination();
-			for(BaseMetaclass metaFake : ((Combination)combination).getMembers()) {
-				if(meta != metaFake) {
+			for (BaseMetaclass metaFake : combination.getMembers()) {
+				if (meta != metaFake) {
 					fakeCombination.getMembers().add(metaFake);
 				}
 			}
 			// fake Combination + the basemetaclass that own this combinaison
-			if(iAmNotARequired) {
-				BaseMetaclass containerBaseMetaClass = (BaseMetaclass)((Combination)combination).eContainer();
-				//				BaseMetaclass general = findCorrespondingGeneral(containerBaseMetaClass);
+			if (iAmNotARequired) {
+				BaseMetaclass containerBaseMetaClass = (BaseMetaclass) combination.eContainer();
+				// BaseMetaclass general = findCorrespondingGeneral(containerBaseMetaClass);
 				BaseMetaclass general = containerBaseMetaClass;
 				fakeCombination.getMembers().add(general);
 			}
@@ -158,7 +158,7 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 			// if (!EditionUtils.containsOnlyRequired(fakeCombination)) {
 			// We go through the incompatible combinaison of this basemeta and try to find the fake
 			Combination combinaison = EditionUtils.getCombinationThatMatch(meta.getIncompatibleStereotypes(), fakeCombination);
-			if(combinaison != null) {
+			if (combinaison != null) {
 				transformAllImcompatibleIntoCompatible(meta, combinaison);
 			} else {
 				org.eclipse.papyrus.facadeSpecificEditor.FacadeDefinitionEditorActivator.log.info(Messages.StereotypeIncompatibilityColumnEditingSupport_1);
@@ -170,7 +170,7 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Set a combination of stereotype application to incompatible
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combination
 	 * @param bothWays
@@ -182,26 +182,26 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 
 	/**
 	 * Set a combination of stereotype application to compatible
-	 * 
+	 *
 	 * @param baseMetaclass
 	 * @param combination
 	 * @param bothWays
 	 */
 	protected void makeItCompatible(BaseMetaclass baseMetaclass, Combination combination, boolean bothWays) {
-		transformAllImcompatibleIntoCompatible(baseMetaclass, (Combination)combination);
+		transformAllImcompatibleIntoCompatible(baseMetaclass, combination);
 		proceedTheOtherWayImcompatibleIntoCompatible(combination, true);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#setValue(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @param value
 	 */
 	@Override
 	protected void setValue(final Object element, final Object value) {
-		if(element instanceof Combination) {
+		if (element instanceof Combination) {
 
 			ProgressMonitorDialog dialog = new ProgressMonitorDialog(Display.getCurrent().getActiveShell());
 			try {
@@ -211,17 +211,17 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 						monitor.beginTask(Messages.StereotypeIncompatibilityColumnEditingSupport_2, IProgressMonitor.UNKNOWN);
 
 						ISelection selection = FacadeSpecificEditor.getExtensionDefintionTreeViewer().getSelection();
-						if(selection instanceof IStructuredSelection) {
-							Object first = ((IStructuredSelection)selection).getFirstElement();
+						if (selection instanceof IStructuredSelection) {
+							Object first = ((IStructuredSelection) selection).getFirstElement();
 
-							if(first instanceof BaseMetaclass) {
-								BaseMetaclass baseMetaclass = (BaseMetaclass)first;
+							if (first instanceof BaseMetaclass) {
+								BaseMetaclass baseMetaclass = (BaseMetaclass) first;
 
-								if((Boolean)value == false) {
-									makeItImcompatible(baseMetaclass, (Combination)element, true);
+								if ((Boolean) value == false) {
+									makeItImcompatible(baseMetaclass, (Combination) element, true);
 								} else {
 									// Make it compatible
-									makeItCompatible(baseMetaclass, (Combination)element, true);
+									makeItCompatible(baseMetaclass, (Combination) element, true);
 
 								}
 
@@ -243,22 +243,22 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getValue(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	protected Object getValue(Object element) {
-		if(element instanceof Combination) {
+		if (element instanceof Combination) {
 			ISelection selection = FacadeSpecificEditor.getExtensionDefintionTreeViewer().getSelection();
-			if(selection instanceof IStructuredSelection) {
-				Object first = ((IStructuredSelection)selection).getFirstElement();
+			if (selection instanceof IStructuredSelection) {
+				Object first = ((IStructuredSelection) selection).getFirstElement();
 
-				if(first instanceof BaseMetaclass) {
-					EList<Combination> incompatibleStereotypes = ((BaseMetaclass)first).getIncompatibleStereotypes();
-					if(incompatibleStereotypes.contains(element)) {
+				if (first instanceof BaseMetaclass) {
+					EList<Combination> incompatibleStereotypes = ((BaseMetaclass) first).getIncompatibleStereotypes();
+					if (incompatibleStereotypes.contains(element)) {
 						return Boolean.valueOf(false);
 					} else {
 						return Boolean.valueOf(true);
@@ -271,9 +271,9 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#getCellEditor(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
@@ -283,9 +283,9 @@ public class StereotypeIncompatibilityColumnEditingSupport extends EditingSuppor
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.EditingSupport#canEdit(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * An editor to be used in multitabs editor. This editor extends the original UML Diagram.
- * 
+ *
  */
 public class DomainDiagramForMultiEditor extends DomainDiagramEditor {
 
@@ -51,10 +51,10 @@ public class DomainDiagramForMultiEditor extends DomainDiagramEditor {
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public DomainDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);

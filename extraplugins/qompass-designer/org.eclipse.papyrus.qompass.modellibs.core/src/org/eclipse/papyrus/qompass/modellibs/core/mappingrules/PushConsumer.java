@@ -1,19 +1,20 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
+ *  Ansgar Radermacher  ansgar.radermacher@cea.fr
  *
  *****************************************************************************/
 
 package org.eclipse.papyrus.qompass.modellibs.core.mappingrules;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.FCM.Port;
@@ -31,9 +32,9 @@ import org.eclipse.uml2.uml.Type;
 /**
  * Will generate a suitable called interface push consumer. The port is typed with a primitive type
  * or data type. The generated interface has a "push (data <Type>)" operation ).
- * 
+ *
  * The interface is identical to that of a PushProducer (and will be shared).
- * 
+ *
  * @author ansgar
  */
 public class PushConsumer implements IMappingRule {
@@ -41,62 +42,64 @@ public class PushConsumer implements IMappingRule {
 	public static String PUSH_I_PREFIX = "Push_"; //$NON-NLS-1$
 
 	public static String PUSH_OP_PREFIX = "push"; //$NON-NLS-1$
-	
+
 	public static String PUSH_OP_PARNAME = "data"; //$NON-NLS-1$
 
+	@Override
 	public boolean needsUpdate(Port p) {
 		Type type = p.getBase_Port().getType();
 
-		if((type instanceof PrimitiveType) || (type instanceof DataType) || (type instanceof Signal)) {
+		if ((type instanceof PrimitiveType) || (type instanceof DataType) || (type instanceof Signal)) {
 
 			Interface derivedInterface = MapUtil.getOrCreateDerivedInterfaceFP(p, PUSH_I_PREFIX, type, false);
 			if (derivedInterface == null) {
 				return true;
 			}
 			Operation derivedOperation = derivedInterface.getOperation(PUSH_OP_PREFIX, null, null);
-			if(derivedOperation == null) {
+			if (derivedOperation == null) {
 				return true;
 			}
 			EList<Parameter> parameters = derivedOperation.getOwnedParameters();
-			if(parameters.size() != 1) {
+			if (parameters.size() != 1) {
 				return true;
 			} else {
 				Parameter parameter = parameters.get(0);
-				if(!parameter.getName().equals(PUSH_OP_PARNAME)) {
+				if (!parameter.getName().equals(PUSH_OP_PARNAME)) {
 					return true;
 				}
-				if(parameter.getType() != type) {
+				if (parameter.getType() != type) {
 					return true;
 				}
 			}
 		}
 		return false;
 	}
-	
+
+	@Override
 	public Interface getProvided(Port p, boolean update) {
-		Log.log(Status.INFO, Log.CALC_PORTKIND,
-			p.getKind().getBase_Class().getName() + " => GetProvided on " + p.getBase_Port().getName());
+		Log.log(IStatus.INFO, Log.CALC_PORTKIND,
+				p.getKind().getBase_Class().getName() + " => GetProvided on " + p.getBase_Port().getName());
 		Type type = p.getBase_Port().getType();
 
-		if((type instanceof PrimitiveType) || (type instanceof DataType) || (type instanceof Signal)) {
+		if ((type instanceof PrimitiveType) || (type instanceof DataType) || (type instanceof Signal)) {
 
 			Interface derivedInterface = MapUtil.getOrCreateDerivedInterfaceFP(p, PUSH_I_PREFIX, type, update);
 			if (!update) {
 				return derivedInterface;
 			}
-			
-			if(derivedInterface == null) {
+
+			if (derivedInterface == null) {
 				// may happen, if within template (do not want creation of derived interfaces in template)
 				return null;
 			}
 
 			// check whether operation already exists. Create, if not
 			Operation derivedOperation = derivedInterface.getOperation(PUSH_OP_PREFIX, null, null);
-			if(derivedOperation == null) {
+			if (derivedOperation == null) {
 				derivedOperation = derivedInterface.createOwnedOperation(PUSH_OP_PREFIX, null, null);
 			}
 			EList<Parameter> parameters = derivedOperation.getOwnedParameters();
-			if(parameters.size() == 0) {
+			if (parameters.size() == 0) {
 				derivedOperation.createOwnedParameter(PUSH_OP_PARNAME, type);
 			} else {
 				parameters.get(0).setName(PUSH_OP_PARNAME);
@@ -108,6 +111,7 @@ public class PushConsumer implements IMappingRule {
 		}
 	}
 
+	@Override
 	public Interface getRequired(Port p, boolean update) {
 		return null;
 	}

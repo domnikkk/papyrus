@@ -19,11 +19,11 @@ import org.eclipse.papyrus.eastadl.timing.TimingExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getPeriod <em>Period</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getMinimum <em>Minimum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getJitter <em>Jitter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getEvent <em>Event</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getPeriod <em>Period</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getMinimum <em>Minimum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getJitter <em>Jitter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getEvent <em>Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public interface PatternConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The period specifies the time interval within the event occurs any number of times following a pattern.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Period</em>' reference.
 	 * @see #setPeriod(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPatternConstraint_Period()
@@ -51,7 +52,9 @@ public interface PatternConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getPeriod <em>Period</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Period</em>' reference.
 	 * @see #getPeriod()
 	 * @generated
 	 */
@@ -64,6 +67,7 @@ public interface PatternConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The minimum inter-arrival time specifies the minimal possible time interval between two consecutive occurrences of the event within the given period.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Minimum</em>' reference.
 	 * @see #setMinimum(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPatternConstraint_Minimum()
@@ -76,7 +80,9 @@ public interface PatternConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getMinimum <em>Minimum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Minimum</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Minimum</em>' reference.
 	 * @see #getMinimum()
 	 * @generated
 	 */
@@ -90,6 +96,7 @@ public interface PatternConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The set occurrence (1..n) specifies the offset for each occurrence of the event in the specified period. Each occurrence is specified from the beginning of the period
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Offset</em>' reference list.
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPatternConstraint_Offset()
 	 * @model required="true"
@@ -104,6 +111,7 @@ public interface PatternConstraint extends TimingConstraint {
 	 * <!-- begin-model-doc -->
 	 * The jitter specifies maximal possible time interval the occurrence of the events within the given period can vary (formerly: can be delayed).
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Jitter</em>' reference.
 	 * @see #setJitter(TimingExpression)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPatternConstraint_Jitter()
@@ -116,7 +124,9 @@ public interface PatternConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getJitter <em>Jitter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Jitter</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Jitter</em>' reference.
 	 * @see #getJitter()
 	 * @generated
 	 */
@@ -126,10 +136,10 @@ public interface PatternConstraint extends TimingConstraint {
 	 * Returns the value of the '<em><b>Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Event</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Event</em>' reference.
 	 * @see #setEvent(Event)
 	 * @see org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPackage#getPatternConstraint_Event()
@@ -142,7 +152,9 @@ public interface PatternConstraint extends TimingConstraint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.PatternConstraint#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Event</em>' reference.
 	 * @see #getEvent()
 	 * @generated
 	 */

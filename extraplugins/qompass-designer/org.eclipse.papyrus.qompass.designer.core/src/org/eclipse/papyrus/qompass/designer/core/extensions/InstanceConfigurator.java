@@ -34,18 +34,18 @@ public class InstanceConfigurator {
 	public static final String IINSTANCE_CONFIG_ID = Activator.PLUGIN_ID + ".instanceConfig"; //$NON-NLS-1$
 
 	public static boolean onNodeModel = false;
-	
+
 	/**
 	 * Configure an instance. The configurator is selected by means of a stereotype on the classifier of
-	 * the passed instance. 
-	 * 
+	 * the passed instance.
+	 *
 	 * @see org.eclipse.papyrus.qompass.designer.core.extensions.IInstanceConfigurator
 	 * @param instance
-	 *        the specification of instance that should be configured
+	 *            the specification of instance that should be configured
 	 * @param componentPart
-	 *        the part representing the instance (before container expansion)
+	 *            the part representing the instance (before container expansion)
 	 * @param port
-	 *        a port within the context of container
+	 *            a port within the context of container
 	 */
 	public static void configureInstance(InstanceSpecification instance, Property componentPart, InstanceSpecification parentInstance) {
 		Classifier component = DepUtils.getClassifier(instance);
@@ -55,16 +55,16 @@ public class InstanceConfigurator {
 
 	/**
 	 * Configure an instance. The configurator is selected by means of a stereotype on the passed container rule.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.qompass.designer.core.extensions.IInstanceConfigurator
 	 * @param rule
-	 * 		  the applied container rule
+	 *            the applied container rule
 	 * @param instance
-	 *        the specification of instance that should be configured
+	 *            the specification of instance that should be configured
 	 * @param componentPart
-	 *        the part representing the instance (before container expansion)
+	 *            the part representing the instance (before container expansion)
 	 * @param port
-	 *        a port within the context of container
+	 *            a port within the context of container
 	 */
 	public static void configureInstance(ContainerRule rule, InstanceSpecification instance, Property componentPart, InstanceSpecification parentInstance) {
 		UseInstanceConfigurator useInstanceConfigurator = UMLUtil.getStereotypeApplication(rule.getBase_Class(), UseInstanceConfigurator.class);
@@ -73,20 +73,20 @@ public class InstanceConfigurator {
 
 	/**
 	 * Configure an instance with a given configurator
-	 * 
+	 *
 	 * @param useInstanceConfigurator
 	 * @param instance
 	 * @param componentPart
 	 * @param containerContext
 	 */
 	public static void configureInstance(UseInstanceConfigurator useInstanceConfigurator, InstanceSpecification instance, Property componentPart, InstanceSpecification parentInstance) {
-		if(useInstanceConfigurator != null) {
+		if (useInstanceConfigurator != null) {
 			org.eclipse.papyrus.FCM.InstanceConfigurator instanceConfigurator = useInstanceConfigurator.getConfigurator();
 			if (instanceConfigurator.isOnNodeModel() == onNodeModel) {
-				if(instanceConfigurator != null) {
+				if (instanceConfigurator != null) {
 					String id = instanceConfigurator.getBase_Class().getName();
 					IInstanceConfigurator iConfigurator = getInstanceConfigurator(id);
-					if(iConfigurator != null) {
+					if (iConfigurator != null) {
 						iConfigurator.configureInstance(instance, componentPart, parentInstance);
 
 					}
@@ -98,18 +98,18 @@ public class InstanceConfigurator {
 	protected static IInstanceConfigurator getInstanceConfigurator(String iConfiguratorID) {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(IINSTANCE_CONFIG_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String iConfiguratorIDext = configElement.getAttribute("configuratorID"); //$NON-NLS-1$
-				if(iConfiguratorIDext == null) {
+				if (iConfiguratorIDext == null) {
 					throw new RuntimeException(String.format(
 							Messages.InstanceConfigurator_InvalidPluginExtension, iConfiguratorID));
 				}
-				if(iConfiguratorIDext.equals(iConfiguratorID)) {
+				if (iConfiguratorIDext.equals(iConfiguratorID)) {
 					// TODO: cache returned instance (avoid creating a new instance each time => more efficient, no need for static attributes)
 					final Object obj = configElement.createExecutableExtension("class"); //$NON-NLS-1$
-					if(obj instanceof IInstanceConfigurator) {
-						return (IInstanceConfigurator)obj;
+					if (obj instanceof IInstanceConfigurator) {
+						return (IInstanceConfigurator) obj;
 					}
 				}
 			} catch (CoreException exception) {

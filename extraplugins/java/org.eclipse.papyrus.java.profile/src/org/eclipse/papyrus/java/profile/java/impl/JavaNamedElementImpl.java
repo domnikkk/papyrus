@@ -23,11 +23,11 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#isGenerated <em>Is Generated</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getAuthor <em>Author</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#getComment <em>Comment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaNamedElementImpl#isGenerated <em>Is Generated</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -88,6 +93,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -98,6 +104,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -108,6 +115,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The default value of the '{@link #isGenerated() <em>Is Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -128,6 +137,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	 * The cached value of the '{@link #isGenerated() <em>Is Generated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isGenerated()
 	 * @generated
 	 * @ordered
@@ -137,6 +147,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JavaNamedElementImpl() {
@@ -146,6 +157,7 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,8 +168,10 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -165,20 +179,25 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NAMED_ELEMENT__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getAuthor() {
 		return author;
 	}
@@ -186,20 +205,25 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setAuthor(String newAuthor) {
 		String oldAuthor = author;
 		author = newAuthor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR, oldAuthor, author));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -207,20 +231,25 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NAMED_ELEMENT__VERSION, oldVersion, version));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getComment() {
 		return comment;
 	}
@@ -228,20 +257,25 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setComment(String newComment) {
 		String oldComment = comment;
 		comment = newComment;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NAMED_ELEMENT__COMMENT, oldComment, comment));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public boolean isGenerated() {
 		return isGenerated;
 	}
@@ -249,33 +283,37 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setIsGenerated(boolean newIsGenerated) {
 		boolean oldIsGenerated = isGenerated;
 		isGenerated = newIsGenerated;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED, oldIsGenerated, isGenerated));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
-				return getName();
-			case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
-				return getAuthor();
-			case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
-				return getVersion();
-			case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
-				return getComment();
-			case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
-				return isGenerated();
+		case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
+			return getName();
+		case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
+			return getAuthor();
+		case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
+			return getVersion();
+		case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
+			return getComment();
+		case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
+			return isGenerated();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -283,26 +321,27 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
-				setName((String)newValue);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
-				setAuthor((String)newValue);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
-				setVersion((String)newValue);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
-				setComment((String)newValue);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
-				setIsGenerated((Boolean)newValue);
-				return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
+			setName((String) newValue);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
+			setAuthor((String) newValue);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
+			setVersion((String) newValue);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
+			setComment((String) newValue);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
+			setIsGenerated((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -310,26 +349,27 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
-				setAuthor(AUTHOR_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
-				setIsGenerated(IS_GENERATED_EDEFAULT);
-				return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
+			setAuthor(AUTHOR_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
+			setVersion(VERSION_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
+			setComment(COMMENT_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
+			setIsGenerated(IS_GENERATED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -337,21 +377,22 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
-				return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
-			case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
-				return isGenerated != IS_GENERATED_EDEFAULT;
+		case JavaPackage.JAVA_NAMED_ELEMENT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case JavaPackage.JAVA_NAMED_ELEMENT__AUTHOR:
+			return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
+		case JavaPackage.JAVA_NAMED_ELEMENT__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		case JavaPackage.JAVA_NAMED_ELEMENT__COMMENT:
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+		case JavaPackage.JAVA_NAMED_ELEMENT__IS_GENERATED:
+			return isGenerated != IS_GENERATED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -359,11 +400,14 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -380,4 +424,4 @@ public abstract class JavaNamedElementImpl extends EObjectImpl implements JavaNa
 		return result.toString();
 	}
 
-} //JavaNamedElementImpl
+} // JavaNamedElementImpl

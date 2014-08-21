@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public abstract class AttributeMatchStrategy {
 	public static AttributeMatchStrategy create(QueryInfo info) {
 		AttributeMatchStrategy result;
 
-		if(info.isSearchAllStringAttributes()) {
+		if (info.isSearchAllStringAttributes()) {
 			result = new AnyStringAttribute(info);
 		} else {
 			result = new NameOnly(info);
@@ -68,7 +68,7 @@ public abstract class AttributeMatchStrategy {
 
 	protected void match(String value, EAttribute attribute, AbstractResultEntry parentMatch, EObject element, Collection<? super AttributeMatch> results) {
 		matcher.reset(value);
-		while(matcher.find()) {
+		while (matcher.find()) {
 			results.add(new AttributeMatch(parentMatch, matcher.start(), matcher.end() - matcher.start(), element, attribute, null));
 		}
 	}
@@ -85,9 +85,9 @@ public abstract class AttributeMatchStrategy {
 
 		@Override
 		public void apply(AbstractResultEntry parentMatch, EObject element, Collection<? super AttributeMatch> results) {
-			String name = (element instanceof NamedElement) ? ((NamedElement)element).getName() : null;
+			String name = (element instanceof NamedElement) ? ((NamedElement) element).getName() : null;
 
-			if(name != null) {
+			if (name != null) {
 				match(name, UMLPackage.Literals.NAMED_ELEMENT__NAME, parentMatch, element, results);
 			}
 		}
@@ -101,16 +101,16 @@ public abstract class AttributeMatchStrategy {
 
 		@Override
 		public void apply(AbstractResultEntry parentMatch, EObject element, Collection<? super AttributeMatch> results) {
-			for(EAttribute next : element.eClass().getEAllAttributes()) {
-				if(isString(next)) {
-					if(!next.isMany()) {
-						String value = (String)element.eGet(next);
-						if(value != null) {
+			for (EAttribute next : element.eClass().getEAllAttributes()) {
+				if (isString(next)) {
+					if (!next.isMany()) {
+						String value = (String) element.eGet(next);
+						if (value != null) {
 							match(value, next, parentMatch, element, results);
 						}
 					} else {
 						// FIXME: Using list's string representation as in core Papyrus, but it doesn't make sense
-						List<?> value = (List<?>)element.eGet(next);
+						List<?> value = (List<?>) element.eGet(next);
 						match(value.toString(), next, parentMatch, element, results);
 					}
 				}
@@ -136,29 +136,29 @@ public abstract class AttributeMatchStrategy {
 
 			apply(element.eClass(), parentMatch, element, results);
 
-			for(EClass next : element.eClass().getEAllSuperTypes()) {
+			for (EClass next : element.eClass().getEAllSuperTypes()) {
 				apply(next, parentMatch, element, results);
 			}
 		}
 
 		protected void apply(EClass eclass, AbstractResultEntry parentMatch, EObject element, Collection<? super AttributeMatch> results) {
-			if(this.attributes.containsKey(eclass)) {
+			if (this.attributes.containsKey(eclass)) {
 				Collection<EAttribute> attributes = this.attributes.get(eclass);
-				if(attributes.isEmpty()) {
+				if (attributes.isEmpty()) {
 					attributes = eclass.getEAllAttributes();
 				}
 
-				for(EAttribute next : attributes) {
+				for (EAttribute next : attributes) {
 					// don't repeat any attributes because of inheritance
-					if(seen.add(next)) {
-						if(!next.isMany()) {
+					if (seen.add(next)) {
+						if (!next.isMany()) {
 							Object value = element.eGet(next);
-							if(value != null) {
+							if (value != null) {
 								match(value.toString(), next, parentMatch, element, results);
 							}
 						} else {
 							// FIXME: Using list's string representation as in core Papyrus, but it doesn't make sense
-							List<?> value = (List<?>)element.eGet(next);
+							List<?> value = (List<?>) element.eGet(next);
 							match(value.toString(), next, parentMatch, element, results);
 						}
 					}

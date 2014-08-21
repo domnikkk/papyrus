@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,13 +46,13 @@ public class Resume_Event extends EventMessage {
 	 * resumeDetail provides additional details about the reason of this
 	 * resume event. The value of resumeDetail should be the same as in the
 	 * Resume_Request which preceded the creation of this Resume_Event.
-	 * 
+	 *
 	 * @param source
-	 *        The source for this Resume_Event
+	 *            The source for this Resume_Event
 	 * @param resumeDetail
-	 *        The reason/detail of this Resume_Event
+	 *            The reason/detail of this Resume_Event
 	 * @param threads
-	 *        The threads available at the execution engine when this message was sent
+	 *            The threads available at the execution engine when this message was sent
 	 */
 	public Resume_Event(IDebugElement source, int resumeDetail, MokaThread[] threads) {
 		this.source = source;
@@ -66,6 +66,7 @@ public class Resume_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#marshal()
 	 */
+	@Override
 	public String marshal() {
 		return Marshaller.getInstance().resume_event_marshal(this);
 	}
@@ -75,15 +76,17 @@ public class Resume_Event extends EventMessage {
 	 * 
 	 * @see org.eclipse.papyrus.moka.communication.event.EventMessage#getDebugEvent()
 	 */
+	@Override
 	public DebugEvent getDebugEvent() {
-		if(this.debugEvent == null)
+		if (this.debugEvent == null) {
 			this.debugEvent = new DebugEvent(source, eventKind, resumeDetail);
+		}
 		return this.debugEvent;
 	}
 
 	/**
 	 * Returns the threads available at the execution engine when this message was sent
-	 * 
+	 *
 	 * @return The threads available at the execution engine when this message was sent
 	 */
 	public MokaThread[] getThreads() {

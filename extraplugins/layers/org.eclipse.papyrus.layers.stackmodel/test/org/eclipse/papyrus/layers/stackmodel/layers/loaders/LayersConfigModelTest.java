@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -47,14 +47,14 @@ public class LayersConfigModelTest {
 	 */
 	@Test
 	public void testLayersConfigModel() {
-		// Create object		
+		// Create object
 		LayersConfigModel model = new LayersConfigModel();
-		
+
 		assertNotNull("object created", model);
 		// Check if resource and root folder are created
 		assertNotNull("resource created", model.getResource());
 		assertNotNull("root folder created", model.getRootFolder());
-		
+
 	}
 
 	/**
@@ -62,24 +62,24 @@ public class LayersConfigModelTest {
 	 */
 	@Test
 	public void testExternalInitialization() {
-		// Create object		
+		// Create object
 		LayersConfigModel model = new LayersConfigModel();
-		
+
 		initLayersConfigModel(model);
-		
+
 		// Do checking
-		assertTrue("Some def are set in root", model.getRootFolder().getFolderElements().size()>0);
+		assertTrue("Some def are set in root", model.getRootFolder().getFolderElements().size() > 0);
 	}
 
 	/**
 	 * Initialize the provided model with some defs for tests.
-	 * 
+	 *
 	 * @param model
 	 */
 	private void initLayersConfigModel(LayersConfigModel model) {
 		// Create model
 		Folder layeropFolder = createFolder(model.getRootFolder(), "layerOpDesc");
-		
+
 		createLayerOperatorConfig(layeropFolder, "StackedLayersOperatorA", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
 		createLayerOperatorConfig(layeropFolder, "StackedLayersOperatorB", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
 		createLayerOperatorConfig(layeropFolder, "StackedLayersOperatorC", LayersPackage.eINSTANCE.getStackedLayerOperatorDescriptor().getName());
@@ -91,11 +91,11 @@ public class LayersConfigModelTest {
 	 */
 	@Test
 	public void testInternalInitialization() {
-		// Create object		
+		// Create object
 		LayersConfigModel model = LayersConfigModel.getInstance();
-		
+
 		assertNotNull("object created", model);
-		assertTrue("Some def are set in root", model.getRootFolder().getFolderElements().size()>0);
+		assertTrue("Some def are set in root", model.getRootFolder().getFolderElements().size() > 0);
 	}
 
 	/**
@@ -103,12 +103,12 @@ public class LayersConfigModelTest {
 	 */
 	@Test
 	public void testGetResource() {
-		// Create object		
+		// Create object
 		LayersConfigModel model = new LayersConfigModel();
-		
+
 		assertNotNull("resource created", model.getResource());
-		
-		assertTrue("resource populated", model.getResource().getContents().size()>0);
+
+		assertTrue("resource populated", model.getResource().getContents().size() > 0);
 	}
 
 }

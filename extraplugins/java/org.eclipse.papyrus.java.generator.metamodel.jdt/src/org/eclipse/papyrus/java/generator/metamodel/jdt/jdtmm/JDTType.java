@@ -9,7 +9,7 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
  *****************************************************************************/
@@ -32,21 +32,21 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getMethods <em>Methods</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getFields <em>Fields</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getCompilationUnit <em>Compilation Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isClass <em>Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isInterface <em>Interface</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isEnum <em>Enum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isAbstract <em>Abstract</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isFinal <em>Final</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isStatic <em>Static</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getTypes <em>Types</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getOwner <em>Owner</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperInterfaces <em>Super Interfaces</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperClass <em>Super Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperInterfaceNames <em>Super Interface Names</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperClassName <em>Super Class Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getMethods <em>Methods</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getFields <em>Fields</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getCompilationUnit <em>Compilation Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isClass <em>Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isInterface <em>Interface</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isEnum <em>Enum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isAbstract <em>Abstract</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isFinal <em>Final</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isStatic <em>Static</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getTypes <em>Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperInterfaces <em>Super Interfaces</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperClass <em>Super Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperInterfaceNames <em>Super Interface Names</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperClassName <em>Super Class Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,7 +63,7 @@ public interface JDTType extends JDTMember {
 	 * <p>
 	 * This feature subsets the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -71,6 +71,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Methods</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Methods</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Methods()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTMethod#getOwner
@@ -85,7 +86,7 @@ public interface JDTType extends JDTMember {
 	 * <p>
 	 * This feature redefines the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -93,6 +94,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Compilation Unit</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Compilation Unit</em>' container reference.
 	 * @see #setCompilationUnit(JDTCompilationUnit)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_CompilationUnit()
@@ -106,7 +108,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getCompilationUnit <em>Compilation Unit</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Compilation Unit</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Compilation Unit</em>' container reference.
 	 * @see #getCompilationUnit()
 	 * @generated
 	 */
@@ -120,6 +124,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Class</em>' attribute.
 	 * @see #setClass_(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Class()
@@ -132,7 +137,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isClass <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Class</em>' attribute.
 	 * @see #isClass()
 	 * @generated
 	 */
@@ -146,6 +153,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Interface</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Interface</em>' attribute.
 	 * @see #setInterface(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Interface()
@@ -158,7 +166,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isInterface <em>Interface</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interface</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Interface</em>' attribute.
 	 * @see #isInterface()
 	 * @generated
 	 */
@@ -172,6 +182,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Enum</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Enum</em>' attribute.
 	 * @see #setEnum(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Enum()
@@ -184,7 +195,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isEnum <em>Enum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Enum</em>' attribute.
 	 * @see #isEnum()
 	 * @generated
 	 */
@@ -198,6 +211,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Abstract</em>' attribute.
 	 * @see #setAbstract(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Abstract()
@@ -210,7 +224,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isAbstract <em>Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Abstract</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Abstract</em>' attribute.
 	 * @see #isAbstract()
 	 * @generated
 	 */
@@ -224,6 +240,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Final</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Final</em>' attribute.
 	 * @see #setFinal(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Final()
@@ -236,7 +253,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isFinal <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Final</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Final</em>' attribute.
 	 * @see #isFinal()
 	 * @generated
 	 */
@@ -250,6 +269,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Static</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Static</em>' attribute.
 	 * @see #setStatic(boolean)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Static()
@@ -262,7 +282,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#isStatic <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Static</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Static</em>' attribute.
 	 * @see #isStatic()
 	 * @generated
 	 */
@@ -275,7 +297,7 @@ public interface JDTType extends JDTMember {
 	 * <p>
 	 * This feature subsets the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -283,6 +305,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Types</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Types</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Types()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getOwner
@@ -297,7 +320,7 @@ public interface JDTType extends JDTMember {
 	 * <p>
 	 * This feature redefines the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTJavaElement#getParent() <em>Parent</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -305,6 +328,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Owner()
@@ -318,7 +342,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owner</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
 	 * @generated
 	 */
@@ -332,6 +358,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Super Interfaces</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Super Interfaces</em>' reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_SuperInterfaces()
 	 * @model ordered="false"
@@ -346,6 +373,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Super Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Super Class</em>' reference.
 	 * @see #setSuperClass(JDTType)
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_SuperClass()
@@ -358,7 +386,9 @@ public interface JDTType extends JDTMember {
 	 * Sets the value of the '{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTType#getSuperClass <em>Super Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Super Class</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Super Class</em>' reference.
 	 * @see #getSuperClass()
 	 * @generated
 	 */
@@ -372,6 +402,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Super Interface Names</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Super Interface Names</em>' attribute list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_SuperInterfaceNames()
 	 * @model unique="false" dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -386,6 +417,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Super Class Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Super Class Name</em>' attribute.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_SuperClassName()
 	 * @model unique="false" dataType="org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.String" required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -400,7 +432,7 @@ public interface JDTType extends JDTMember {
 	 * <p>
 	 * This feature subsets the following features:
 	 * <ul>
-	 *   <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
+	 * <li>'{@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParent#getChildren() <em>Children</em>}'</li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -408,6 +440,7 @@ public interface JDTType extends JDTMember {
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage#getJDTType_Fields()
 	 * @see org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTField#getOwner

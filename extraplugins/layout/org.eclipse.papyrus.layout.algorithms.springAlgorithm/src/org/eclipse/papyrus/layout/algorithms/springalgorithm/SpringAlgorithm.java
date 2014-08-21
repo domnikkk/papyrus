@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,9 +14,6 @@
 package org.eclipse.papyrus.layout.algorithms.springalgorithm;
 
 import org.eclipse.papyrus.layout.managealgorithms.AlgorithmFactory;
-import org.eclipse.zest.layouts.LayoutStyles;
-import org.eclipse.zest.layouts.algorithms.AbstractLayoutAlgorithm;
-import org.eclipse.zest.layouts.algorithms.SpringLayoutAlgorithm;
 
 /**
  * The Class SpringAlgorithm.
@@ -28,6 +25,7 @@ public class SpringAlgorithm implements AlgorithmFactory {
 	 * 
 	 * @see org.eclipse.papyrus.layout.managealgorithms.AlgorithmFactory#createAlgorithm()
 	 */
+	@Override
 	public AbstractLayoutAlgorithm createAlgorithm() {
 		return new SpringLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 	}

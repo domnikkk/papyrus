@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,12 +33,14 @@ import org.eclipse.papyrus.eastadl.genericconstraints.TakeRateConstraint;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class GenericconstraintsFactoryImpl extends EFactoryImpl implements GenericconstraintsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -51,16 +53,16 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static GenericconstraintsFactory init() {
 		try {
-			GenericconstraintsFactory theGenericconstraintsFactory = (GenericconstraintsFactory)EPackage.Registry.INSTANCE.getEFactory(GenericconstraintsPackage.eNS_URI);
+			GenericconstraintsFactory theGenericconstraintsFactory = (GenericconstraintsFactory) EPackage.Registry.INSTANCE.getEFactory(GenericconstraintsPackage.eNS_URI);
 			if (theGenericconstraintsFactory != null) {
 				return theGenericconstraintsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GenericconstraintsFactoryImpl();
@@ -70,6 +72,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GenericconstraintsFactoryImpl() {
@@ -79,6 +82,7 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertGenericConstraintKindToString(EDataType eDataType, Object instanceValue) {
@@ -88,54 +92,62 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
-				return convertGenericConstraintKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
+			return convertGenericConstraintKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GenericconstraintsPackage.GENERIC_CONSTRAINT: return createGenericConstraint();
-			case GenericconstraintsPackage.GENERIC_CONSTRAINT_SET: return createGenericConstraintSet();
-			case GenericconstraintsPackage.TAKE_RATE_CONSTRAINT: return createTakeRateConstraint();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case GenericconstraintsPackage.GENERIC_CONSTRAINT:
+			return createGenericConstraint();
+		case GenericconstraintsPackage.GENERIC_CONSTRAINT_SET:
+			return createGenericConstraintSet();
+		case GenericconstraintsPackage.TAKE_RATE_CONSTRAINT:
+			return createTakeRateConstraint();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
-				return createGenericConstraintKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case GenericconstraintsPackage.GENERIC_CONSTRAINT_KIND:
+			return createGenericConstraintKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GenericConstraint createGenericConstraint() {
 		GenericConstraintImpl genericConstraint = new GenericConstraintImpl();
 		return genericConstraint;
@@ -144,19 +156,24 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GenericConstraintKind createGenericConstraintKindFromString(EDataType eDataType, String initialValue) {
 		GenericConstraintKind result = GenericConstraintKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GenericConstraintSet createGenericConstraintSet() {
 		GenericConstraintSetImpl genericConstraintSet = new GenericConstraintSetImpl();
 		return genericConstraintSet;
@@ -165,8 +182,10 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TakeRateConstraint createTakeRateConstraint() {
 		TakeRateConstraintImpl takeRateConstraint = new TakeRateConstraintImpl();
 		return takeRateConstraint;
@@ -175,10 +194,12 @@ public class GenericconstraintsFactoryImpl extends EFactoryImpl implements Gener
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public GenericconstraintsPackage getGenericconstraintsPackage() {
-		return (GenericconstraintsPackage)getEPackage();
+		return (GenericconstraintsPackage) getEPackage();
 	}
 
-} //GenericconstraintsFactoryImpl
+} // GenericconstraintsFactoryImpl

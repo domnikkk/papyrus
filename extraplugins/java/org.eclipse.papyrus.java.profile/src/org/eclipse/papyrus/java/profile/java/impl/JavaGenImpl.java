@@ -22,8 +22,8 @@ import org.eclipse.papyrus.java.profile.java.JavaPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl#getSrcName <em>Src Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl#getProjectName <em>Project Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl#getSrcName <em>Src Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.JavaGenImpl#getProjectName <em>Project Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The default value of the '{@link #getSrcName() <em>Src Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSrcName()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The cached value of the '{@link #getSrcName() <em>Src Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSrcName()
 	 * @generated
 	 * @ordered
@@ -54,6 +56,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The default value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProjectName()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	 * The cached value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProjectName()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JavaGenImpl() {
@@ -82,6 +87,7 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -92,8 +98,10 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getSrcName() {
 		return srcName;
 	}
@@ -101,20 +109,25 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSrcName(String newSrcName) {
 		String oldSrcName = srcName;
 		srcName = newSrcName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_GEN__SRC_NAME, oldSrcName, srcName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getProjectName() {
 		return projectName;
 	}
@@ -122,27 +135,31 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setProjectName(String newProjectName) {
 		String oldProjectName = projectName;
 		projectName = newProjectName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.JAVA_GEN__PROJECT_NAME, oldProjectName, projectName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JavaPackage.JAVA_GEN__SRC_NAME:
-				return getSrcName();
-			case JavaPackage.JAVA_GEN__PROJECT_NAME:
-				return getProjectName();
+		case JavaPackage.JAVA_GEN__SRC_NAME:
+			return getSrcName();
+		case JavaPackage.JAVA_GEN__PROJECT_NAME:
+			return getProjectName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,17 +167,18 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JavaPackage.JAVA_GEN__SRC_NAME:
-				setSrcName((String)newValue);
-				return;
-			case JavaPackage.JAVA_GEN__PROJECT_NAME:
-				setProjectName((String)newValue);
-				return;
+		case JavaPackage.JAVA_GEN__SRC_NAME:
+			setSrcName((String) newValue);
+			return;
+		case JavaPackage.JAVA_GEN__PROJECT_NAME:
+			setProjectName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,17 +186,18 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_GEN__SRC_NAME:
-				setSrcName(SRC_NAME_EDEFAULT);
-				return;
-			case JavaPackage.JAVA_GEN__PROJECT_NAME:
-				setProjectName(PROJECT_NAME_EDEFAULT);
-				return;
+		case JavaPackage.JAVA_GEN__SRC_NAME:
+			setSrcName(SRC_NAME_EDEFAULT);
+			return;
+		case JavaPackage.JAVA_GEN__PROJECT_NAME:
+			setProjectName(PROJECT_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -186,15 +205,16 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JavaPackage.JAVA_GEN__SRC_NAME:
-				return SRC_NAME_EDEFAULT == null ? srcName != null : !SRC_NAME_EDEFAULT.equals(srcName);
-			case JavaPackage.JAVA_GEN__PROJECT_NAME:
-				return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
+		case JavaPackage.JAVA_GEN__SRC_NAME:
+			return SRC_NAME_EDEFAULT == null ? srcName != null : !SRC_NAME_EDEFAULT.equals(srcName);
+		case JavaPackage.JAVA_GEN__PROJECT_NAME:
+			return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -202,11 +222,14 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (srcName: ");
@@ -217,4 +240,4 @@ public abstract class JavaGenImpl extends JavaNamedElementImpl implements JavaGe
 		return result.toString();
 	}
 
-} //JavaGenImpl
+} // JavaGenImpl

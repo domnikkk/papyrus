@@ -23,9 +23,9 @@ import org.eclipse.papyrus.java.profile.java.PrimitiveType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getImplementationClass <em>Implementation Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getBase_PrimitiveType <em>Base Primitive Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getCollectionImplementationClass <em>Collection Implementation Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getImplementationClass <em>Implementation Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getBase_PrimitiveType <em>Base Primitive Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.java.profile.java.impl.PrimitiveTypeImpl#getCollectionImplementationClass <em>Collection Implementation Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The default value of the '{@link #getImplementationClass() <em>Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getImplementationClass()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getImplementationClass() <em>Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getImplementationClass()
 	 * @generated
 	 * @ordered
@@ -56,6 +58,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getBase_PrimitiveType() <em>Base Primitive Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_PrimitiveType()
 	 * @generated
 	 * @ordered
@@ -66,6 +69,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The default value of the '{@link #getCollectionImplementationClass() <em>Collection Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCollectionImplementationClass()
 	 * @generated
 	 * @ordered
@@ -76,6 +80,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	 * The cached value of the '{@link #getCollectionImplementationClass() <em>Collection Implementation Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCollectionImplementationClass()
 	 * @generated
 	 * @ordered
@@ -85,6 +90,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PrimitiveTypeImpl() {
@@ -94,6 +100,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -104,8 +111,10 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getImplementationClass() {
 		return implementationClass;
 	}
@@ -113,27 +122,33 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setImplementationClass(String newImplementationClass) {
 		String oldImplementationClass = implementationClass;
 		implementationClass = newImplementationClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS, oldImplementationClass, implementationClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.PrimitiveType getBase_PrimitiveType() {
 		if (base_PrimitiveType != null && base_PrimitiveType.eIsProxy()) {
-			InternalEObject oldBase_PrimitiveType = (InternalEObject)base_PrimitiveType;
-			base_PrimitiveType = (org.eclipse.uml2.uml.PrimitiveType)eResolveProxy(oldBase_PrimitiveType);
+			InternalEObject oldBase_PrimitiveType = (InternalEObject) base_PrimitiveType;
+			base_PrimitiveType = (org.eclipse.uml2.uml.PrimitiveType) eResolveProxy(oldBase_PrimitiveType);
 			if (base_PrimitiveType != oldBase_PrimitiveType) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE, oldBase_PrimitiveType, base_PrimitiveType));
+				}
 			}
 		}
 		return base_PrimitiveType;
@@ -142,6 +157,7 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.PrimitiveType basicGetBase_PrimitiveType() {
@@ -151,20 +167,25 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_PrimitiveType(org.eclipse.uml2.uml.PrimitiveType newBase_PrimitiveType) {
 		org.eclipse.uml2.uml.PrimitiveType oldBase_PrimitiveType = base_PrimitiveType;
 		base_PrimitiveType = newBase_PrimitiveType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE, oldBase_PrimitiveType, base_PrimitiveType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getCollectionImplementationClass() {
 		return collectionImplementationClass;
 	}
@@ -172,30 +193,36 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setCollectionImplementationClass(String newCollectionImplementationClass) {
 		String oldCollectionImplementationClass = collectionImplementationClass;
 		collectionImplementationClass = newCollectionImplementationClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS, oldCollectionImplementationClass, collectionImplementationClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
-				return getImplementationClass();
-			case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
-				if (resolve) return getBase_PrimitiveType();
-				return basicGetBase_PrimitiveType();
-			case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
-				return getCollectionImplementationClass();
+		case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
+			return getImplementationClass();
+		case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
+			if (resolve) {
+				return getBase_PrimitiveType();
+			}
+			return basicGetBase_PrimitiveType();
+		case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
+			return getCollectionImplementationClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,20 +230,21 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
-				setImplementationClass((String)newValue);
-				return;
-			case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
-				setBase_PrimitiveType((org.eclipse.uml2.uml.PrimitiveType)newValue);
-				return;
-			case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
-				setCollectionImplementationClass((String)newValue);
-				return;
+		case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
+			setImplementationClass((String) newValue);
+			return;
+		case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
+			setBase_PrimitiveType((org.eclipse.uml2.uml.PrimitiveType) newValue);
+			return;
+		case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
+			setCollectionImplementationClass((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,20 +252,21 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
-				setImplementationClass(IMPLEMENTATION_CLASS_EDEFAULT);
-				return;
-			case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
-				setBase_PrimitiveType((org.eclipse.uml2.uml.PrimitiveType)null);
-				return;
-			case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
-				setCollectionImplementationClass(COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT);
-				return;
+		case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
+			setImplementationClass(IMPLEMENTATION_CLASS_EDEFAULT);
+			return;
+		case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
+			setBase_PrimitiveType((org.eclipse.uml2.uml.PrimitiveType) null);
+			return;
+		case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
+			setCollectionImplementationClass(COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -245,17 +274,18 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
-				return IMPLEMENTATION_CLASS_EDEFAULT == null ? implementationClass != null : !IMPLEMENTATION_CLASS_EDEFAULT.equals(implementationClass);
-			case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
-				return base_PrimitiveType != null;
-			case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
-				return COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT == null ? collectionImplementationClass != null : !COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT.equals(collectionImplementationClass);
+		case JavaPackage.PRIMITIVE_TYPE__IMPLEMENTATION_CLASS:
+			return IMPLEMENTATION_CLASS_EDEFAULT == null ? implementationClass != null : !IMPLEMENTATION_CLASS_EDEFAULT.equals(implementationClass);
+		case JavaPackage.PRIMITIVE_TYPE__BASE_PRIMITIVE_TYPE:
+			return base_PrimitiveType != null;
+		case JavaPackage.PRIMITIVE_TYPE__COLLECTION_IMPLEMENTATION_CLASS:
+			return COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT == null ? collectionImplementationClass != null : !COLLECTION_IMPLEMENTATION_CLASS_EDEFAULT.equals(collectionImplementationClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -263,11 +293,14 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (implementationClass: ");
@@ -278,4 +311,4 @@ public class PrimitiveTypeImpl extends JavaGenImpl implements PrimitiveType {
 		return result.toString();
 	}
 
-} //PrimitiveTypeImpl
+} // PrimitiveTypeImpl

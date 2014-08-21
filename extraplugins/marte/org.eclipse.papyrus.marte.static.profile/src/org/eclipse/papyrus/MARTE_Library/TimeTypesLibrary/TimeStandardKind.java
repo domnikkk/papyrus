@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Time Standard Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.MARTE_Library.TimeTypesLibrary.TimeTypesLibraryPackage#getTimeStandardKind()
  * @model
  * @generated
@@ -33,6 +34,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TAI</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TAI_VALUE
 	 * @generated
 	 * @ordered
@@ -43,6 +45,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UT0</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UT0_VALUE
 	 * @generated
 	 * @ordered
@@ -53,6 +56,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UT1</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UT1_VALUE
 	 * @generated
 	 * @ordered
@@ -63,6 +67,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UTC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UTC_VALUE
 	 * @generated
 	 * @ordered
@@ -73,6 +78,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>Local</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LOCAL_VALUE
 	 * @generated
 	 * @ordered
@@ -83,6 +89,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TT_VALUE
 	 * @generated
 	 * @ordered
@@ -93,6 +100,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TBD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TBD_VALUE
 	 * @generated
 	 * @ordered
@@ -103,6 +111,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TCG</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TCG_VALUE
 	 * @generated
 	 * @ordered
@@ -113,6 +122,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TCB</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TCB_VALUE
 	 * @generated
 	 * @ordered
@@ -123,6 +133,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>Sidereal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SIDEREAL_VALUE
 	 * @generated
 	 * @ordered
@@ -133,6 +144,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>GPS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GPS_VALUE
 	 * @generated
 	 * @ordered
@@ -143,10 +155,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TAI</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TAI</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>TAI</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TAI
 	 * @model
 	 * @generated
@@ -158,10 +170,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UT0</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UT0</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>UT0</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UT0
 	 * @model
 	 * @generated
@@ -173,10 +185,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UT1</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UT1</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>UT1</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UT1
 	 * @model
 	 * @generated
@@ -188,10 +200,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>UTC</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UTC</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>UTC</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UTC
 	 * @model
 	 * @generated
@@ -203,10 +215,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>Local</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Local</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Local</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LOCAL
 	 * @model name="Local"
 	 * @generated
@@ -218,10 +230,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>TT</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TT
 	 * @model
 	 * @generated
@@ -233,10 +245,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TBD</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TBD</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>TBD</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TBD
 	 * @model
 	 * @generated
@@ -248,10 +260,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TCG</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TCG</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>TCG</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TCG
 	 * @model
 	 * @generated
@@ -263,10 +275,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>TCB</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TCB</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>TCB</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TCB
 	 * @model
 	 * @generated
@@ -278,10 +290,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>Sidereal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Sidereal</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Sidereal</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SIDEREAL
 	 * @model name="Sidereal"
 	 * @generated
@@ -293,10 +305,10 @@ public enum TimeStandardKind implements Enumerator {
 	 * The '<em><b>GPS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>GPS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>GPS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #GPS
 	 * @model
 	 * @generated
@@ -308,27 +320,29 @@ public enum TimeStandardKind implements Enumerator {
 	 * An array of all the '<em><b>Time Standard Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static final TimeStandardKind[] VALUES_ARRAY =
-		new TimeStandardKind[] {
-			TAI,
-			UT0,
-			UT1,
-			UTC,
-			LOCAL,
-			TT,
-			TBD,
-			TCG,
-			TCB,
-			SIDEREAL,
-			GPS,
-		};
+			new TimeStandardKind[] {
+					TAI,
+					UT0,
+					UT1,
+					UTC,
+					LOCAL,
+					TT,
+					TBD,
+					TCG,
+					TCB,
+					SIDEREAL,
+					GPS,
+			};
 
 	/**
 	 * A public read-only list of all the '<em><b>Time Standard Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<TimeStandardKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -337,6 +351,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * Returns the '<em><b>Time Standard Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeStandardKind get(String literal) {
@@ -353,6 +368,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * Returns the '<em><b>Time Standard Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeStandardKind getByName(String name) {
@@ -369,21 +385,33 @@ public enum TimeStandardKind implements Enumerator {
 	 * Returns the '<em><b>Time Standard Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TimeStandardKind get(int value) {
 		switch (value) {
-			case TAI_VALUE: return TAI;
-			case UT0_VALUE: return UT0;
-			case UT1_VALUE: return UT1;
-			case UTC_VALUE: return UTC;
-			case LOCAL_VALUE: return LOCAL;
-			case TT_VALUE: return TT;
-			case TBD_VALUE: return TBD;
-			case TCG_VALUE: return TCG;
-			case TCB_VALUE: return TCB;
-			case SIDEREAL_VALUE: return SIDEREAL;
-			case GPS_VALUE: return GPS;
+		case TAI_VALUE:
+			return TAI;
+		case UT0_VALUE:
+			return UT0;
+		case UT1_VALUE:
+			return UT1;
+		case UTC_VALUE:
+			return UTC;
+		case LOCAL_VALUE:
+			return LOCAL;
+		case TT_VALUE:
+			return TT;
+		case TBD_VALUE:
+			return TBD;
+		case TCG_VALUE:
+			return TCG;
+		case TCB_VALUE:
+			return TCB;
+		case SIDEREAL_VALUE:
+			return SIDEREAL;
+		case GPS_VALUE:
+			return GPS;
 		}
 		return null;
 	}
@@ -391,6 +419,7 @@ public enum TimeStandardKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -398,6 +427,7 @@ public enum TimeStandardKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -405,6 +435,7 @@ public enum TimeStandardKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -413,6 +444,7 @@ public enum TimeStandardKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private TimeStandardKind(int value, String name, String literal) {
@@ -424,39 +456,46 @@ public enum TimeStandardKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //TimeStandardKind
+
+} // TimeStandardKind

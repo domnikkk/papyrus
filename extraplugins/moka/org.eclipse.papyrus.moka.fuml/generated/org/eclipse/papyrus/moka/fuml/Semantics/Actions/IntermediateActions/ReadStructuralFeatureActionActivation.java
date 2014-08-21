@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 
 public class ReadStructuralFeatureActionActivation extends StructuralFeatureActionActivation {
 
+	@Override
 	public void doAction() {
 		// Get the value of the object input pin.
 		// If the given feature is an association end, then get all values of
@@ -35,21 +36,21 @@ public class ReadStructuralFeatureActionActivation extends StructuralFeatureActi
 		// the values
 		// of the appropriate feature of the input value and place them on the
 		// result output pin.
-		ReadStructuralFeatureAction action = (ReadStructuralFeatureAction)(this.node);
+		ReadStructuralFeatureAction action = (ReadStructuralFeatureAction) (this.node);
 		StructuralFeature feature = action.getStructuralFeature();
 		Association association = this.getAssociation(feature);
 		Value value = this.takeTokens(action.getObject()).get(0);
 		List<Value> resultValues = new ArrayList<Value>();
-		if(association != null) {
+		if (association != null) {
 			List<Link> links = this.getMatchingLinks(association, feature, value);
-			for(int i = 0; i < links.size(); i++) {
+			for (int i = 0; i < links.size(); i++) {
 				Link link = links.get(i);
 				resultValues.add(link.getFeatureValue(feature).values.get(0));
 			}
-		} else if(value instanceof StructuredValue) {
+		} else if (value instanceof StructuredValue) {
 			// Debug.println("[ReadStructuralFeatureActionActivation] value = "
 			// + value +", structural feature = " + feature.name);
-			resultValues = ((StructuredValue)value).getFeatureValue(feature).getValues();
+			resultValues = ((StructuredValue) value).getFeatureValue(feature).getValues();
 		}
 		this.putTokens(action.getResult(), resultValues);
 	}

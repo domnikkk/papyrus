@@ -12,7 +12,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Actor#getBase_Actor <em>Base Actor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.requirements.usecases.Actor#getBase_Actor <em>Base Actor</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,10 +25,10 @@ public interface Actor extends TraceableSpecification {
 	 * Returns the value of the '<em><b>Base Actor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Actor</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Base Actor</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Actor</em>' reference.
 	 * @see #setBase_Actor(org.eclipse.uml2.uml.Actor)
 	 * @see org.eclipse.papyrus.eastadl.requirements.usecases.UsecasesPackage#getActor_Base_Actor()
@@ -41,7 +41,9 @@ public interface Actor extends TraceableSpecification {
 	 * Sets the value of the '{@link org.eclipse.papyrus.eastadl.requirements.usecases.Actor#getBase_Actor <em>Base Actor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Actor</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Actor</em>' reference.
 	 * @see #getBase_Actor()
 	 * @generated
 	 */

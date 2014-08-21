@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getValueAttrib <em>Value Attrib</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getUnitAttrib <em>Unit Attrib</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getExprAttrib <em>Expr Attrib</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getValueAttrib <em>Value Attrib</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getUnitAttrib <em>Unit Attrib</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_Foundations.NFPs.impl.NfpTypeImpl#getExprAttrib <em>Expr Attrib</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getValueAttrib() <em>Value Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValueAttrib()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getUnitAttrib() <em>Unit Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUnitAttrib()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	 * The cached value of the '{@link #getExprAttrib() <em>Expr Attrib</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExprAttrib()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NfpTypeImpl() {
@@ -80,6 +84,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,15 +95,18 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getValueAttrib() {
 		if (valueAttrib != null && valueAttrib.eIsProxy()) {
-			InternalEObject oldValueAttrib = (InternalEObject)valueAttrib;
-			valueAttrib = (Property)eResolveProxy(oldValueAttrib);
+			InternalEObject oldValueAttrib = (InternalEObject) valueAttrib;
+			valueAttrib = (Property) eResolveProxy(oldValueAttrib);
 			if (valueAttrib != oldValueAttrib) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.NFP_TYPE__VALUE_ATTRIB, oldValueAttrib, valueAttrib));
+				}
 			}
 		}
 		return valueAttrib;
@@ -107,6 +115,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetValueAttrib() {
@@ -116,27 +125,33 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValueAttrib(Property newValueAttrib) {
 		Property oldValueAttrib = valueAttrib;
 		valueAttrib = newValueAttrib;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.NFP_TYPE__VALUE_ATTRIB, oldValueAttrib, valueAttrib));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getUnitAttrib() {
 		if (unitAttrib != null && unitAttrib.eIsProxy()) {
-			InternalEObject oldUnitAttrib = (InternalEObject)unitAttrib;
-			unitAttrib = (Property)eResolveProxy(oldUnitAttrib);
+			InternalEObject oldUnitAttrib = (InternalEObject) unitAttrib;
+			unitAttrib = (Property) eResolveProxy(oldUnitAttrib);
 			if (unitAttrib != oldUnitAttrib) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.NFP_TYPE__UNIT_ATTRIB, oldUnitAttrib, unitAttrib));
+				}
 			}
 		}
 		return unitAttrib;
@@ -145,6 +160,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetUnitAttrib() {
@@ -154,27 +170,33 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUnitAttrib(Property newUnitAttrib) {
 		Property oldUnitAttrib = unitAttrib;
 		unitAttrib = newUnitAttrib;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.NFP_TYPE__UNIT_ATTRIB, oldUnitAttrib, unitAttrib));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Property getExprAttrib() {
 		if (exprAttrib != null && exprAttrib.eIsProxy()) {
-			InternalEObject oldExprAttrib = (InternalEObject)exprAttrib;
-			exprAttrib = (Property)eResolveProxy(oldExprAttrib);
+			InternalEObject oldExprAttrib = (InternalEObject) exprAttrib;
+			exprAttrib = (Property) eResolveProxy(oldExprAttrib);
 			if (exprAttrib != oldExprAttrib) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NFPsPackage.NFP_TYPE__EXPR_ATTRIB, oldExprAttrib, exprAttrib));
+				}
 			}
 		}
 		return exprAttrib;
@@ -183,6 +205,7 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetExprAttrib() {
@@ -192,32 +215,42 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setExprAttrib(Property newExprAttrib) {
 		Property oldExprAttrib = exprAttrib;
 		exprAttrib = newExprAttrib;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NFPsPackage.NFP_TYPE__EXPR_ATTRIB, oldExprAttrib, exprAttrib));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
-				if (resolve) return getValueAttrib();
-				return basicGetValueAttrib();
-			case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
-				if (resolve) return getUnitAttrib();
-				return basicGetUnitAttrib();
-			case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
-				if (resolve) return getExprAttrib();
-				return basicGetExprAttrib();
+		case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
+			if (resolve) {
+				return getValueAttrib();
+			}
+			return basicGetValueAttrib();
+		case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
+			if (resolve) {
+				return getUnitAttrib();
+			}
+			return basicGetUnitAttrib();
+		case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
+			if (resolve) {
+				return getExprAttrib();
+			}
+			return basicGetExprAttrib();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,20 +258,21 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
-				setValueAttrib((Property)newValue);
-				return;
-			case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
-				setUnitAttrib((Property)newValue);
-				return;
-			case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
-				setExprAttrib((Property)newValue);
-				return;
+		case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
+			setValueAttrib((Property) newValue);
+			return;
+		case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
+			setUnitAttrib((Property) newValue);
+			return;
+		case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
+			setExprAttrib((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -246,20 +280,21 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
-				setValueAttrib((Property)null);
-				return;
-			case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
-				setUnitAttrib((Property)null);
-				return;
-			case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
-				setExprAttrib((Property)null);
-				return;
+		case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
+			setValueAttrib((Property) null);
+			return;
+		case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
+			setUnitAttrib((Property) null);
+			return;
+		case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
+			setExprAttrib((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -267,19 +302,20 @@ public class NfpTypeImpl extends TupleTypeImpl implements NfpType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
-				return valueAttrib != null;
-			case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
-				return unitAttrib != null;
-			case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
-				return exprAttrib != null;
+		case NFPsPackage.NFP_TYPE__VALUE_ATTRIB:
+			return valueAttrib != null;
+		case NFPsPackage.NFP_TYPE__UNIT_ATTRIB:
+			return unitAttrib != null;
+		case NFPsPackage.NFP_TYPE__EXPR_ATTRIB:
+			return exprAttrib != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //NfpTypeImpl
+} // NfpTypeImpl

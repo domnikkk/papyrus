@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -51,14 +51,14 @@ public class PropertyIndexedListTest {
 	 */
 	@Test
 	public void testPropertyIndexedList() {
-		
+
 		// Create an object which already have a map
 		// Here, we use Layer
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
-		assertTrue("registry has proprties", registry.getProperties().size() >0);
-		
-		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject)layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
+		assertTrue("registry has proprties", registry.getProperties().size() > 0);
+
+		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject) layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
 		list.setPropertyList(registry.getProperties());
 	}
 
@@ -71,17 +71,18 @@ public class PropertyIndexedListTest {
 		// Here, we use Layer
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
-		assertTrue("registry has proprties", registry.getProperties().size() >0);
-		
-		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject)layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
+		assertTrue("registry has proprties", registry.getProperties().size() > 0);
+
+		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject) layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
 		list.setPropertyList(registry.getProperties());
-		
+
 		assertEquals("list size is correct", registry.getProperties().size(), list.size());
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.PropertyIndexedList#get(org.eclipse.papyrus.layers.stackmodel.layers.Property)}.
-	 * @throws BadStateException 
+	 * 
+	 * @throws BadStateException
 	 */
 	@Test
 	public void testGetProperty() throws BadStateException {
@@ -89,11 +90,11 @@ public class PropertyIndexedListTest {
 		// Here, we use Layer
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
-		assertTrue("registry has proprties", registry.getProperties().size() >0);
-		
-		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject)layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
+		assertTrue("registry has proprties", registry.getProperties().size() > 0);
+
+		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject) layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
 		list.setPropertyList(registry.getProperties());
-		
+
 		// Add an instnace in the map
 		Property property0 = registry.getProperties().get(0);
 		TypeInstance instance0 = property0.createInstance();
@@ -101,12 +102,13 @@ public class PropertyIndexedListTest {
 
 		// checks
 		assertEquals("list size is correct", registry.getProperties().size(), list.size());
-		
+
 	}
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.layers.stackmodel.layers.util.PropertyIndexedList#set(org.eclipse.papyrus.layers.stackmodel.layers.Property, java.lang.Object)}.
-	 * @throws BadStateException 
+	 * 
+	 * @throws BadStateException
 	 */
 	@Test
 	public void testSetPropertyT() throws BadStateException {
@@ -114,16 +116,16 @@ public class PropertyIndexedListTest {
 		// Here, we use Layer
 		Layer layer = LayersFactory.eINSTANCE.createLayer();
 		PropertyRegistry registry = LayersFactory.eINSTANCE.createPropertyRegistry();
-		assertTrue("registry has proprties", registry.getProperties().size() >0);
-		
-		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject)layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
+		assertTrue("registry has proprties", registry.getProperties().size() > 0);
+
+		PropertyIndexedList<TypeInstance> list = new PropertyIndexedList<TypeInstance>(layer.getPropertyValueMap(), TypeInstance.class, (InternalEObject) layer, 0, LayersPackage.ABSTRACT_LAYER__PROPERTY_VALUE_MAP, NullInstance.NULLINSTANCE);
 		list.setPropertyList(registry.getProperties());
-		
+
 		// Add an instnace in the map
 		Property property0 = registry.getProperties().get(0);
 		TypeInstance instance0 = property0.createInstance();
 		layer.getPropertyValueMap().put(property0.getName(), instance0);
-		
+
 		// Check that the instance is in the list
 		assertSame("value is in the list at right position", instance0, list.get(0));
 	}

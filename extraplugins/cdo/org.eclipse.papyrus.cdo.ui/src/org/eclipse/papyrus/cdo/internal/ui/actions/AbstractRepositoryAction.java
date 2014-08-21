@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public abstract class AbstractRepositoryAction
 	public AbstractRepositoryAction(String text, String sharedEnabledIcon,
 			String sharedDisabledIcon, IWorkbenchPart part) {
 		this(text, getSharedImage(part, sharedEnabledIcon), getSharedImage(
-			part, sharedDisabledIcon), part);
+				part, sharedDisabledIcon), part);
 	}
 
 	public AbstractRepositoryAction(String text, IWorkbenchPart part) {
@@ -51,8 +51,8 @@ public abstract class AbstractRepositoryAction
 
 	static ImageDescriptor getSharedImage(IWorkbenchPart part, String imageKey) {
 		return ImageDescriptor.createFromImage(part.getSite()
-			.getWorkbenchWindow().getWorkbench().getSharedImages()
-			.getImage(imageKey));
+				.getWorkbenchWindow().getWorkbench().getSharedImages()
+				.getImage(imageKey));
 	}
 
 	@Override
@@ -60,8 +60,8 @@ public abstract class AbstractRepositoryAction
 		boolean result = super.updateSelection(selection);
 
 		repository = Iterators.getNext(
-			Iterators.filter(selection.iterator(), IPapyrusRepository.class),
-			null);
+				Iterators.filter(selection.iterator(), IPapyrusRepository.class),
+				null);
 		result = result && (repository != null) && isEnabledFor(repository);
 
 		return result;

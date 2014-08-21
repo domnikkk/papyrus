@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ import java.util.Map;
 
 /**
  * Very simple message logging class
- * 
+ *
  * @author ansgar
- * 
+ *
  */
 public class Log {
 
@@ -54,7 +54,7 @@ public class Log {
 	static Map<Integer, String> moduleMap;
 
 	static String getModuleInfo(int moduleKind) {
-		if(moduleMap == null) {
+		if (moduleMap == null) {
 			moduleMap = new HashMap<Integer, String>();
 			moduleMap.put(TRAFO_CONNECTOR, "Trafo connector");
 			moduleMap.put(TRAFO_CONTAINER, "Trafo container");
@@ -72,10 +72,10 @@ public class Log {
 	}
 
 	public static void log(int msgKind, int moduleKind, String message) {
-		if(msgKind == ERROR_MSG) {
+		if (msgKind == ERROR_MSG) {
 			System.err.println(getModuleInfo(moduleKind) + message);
-		} else if(msgKind == INFO_MSG) {
-			if((moduleKind & moduleFilter) != 0) {
+		} else if (msgKind == INFO_MSG) {
+			if ((moduleKind & moduleFilter) != 0) {
 				System.out.println(getModuleInfo(moduleKind) + message);
 			}
 		}

@@ -20,6 +20,7 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ClosedLoopControlSystemImpl() {
@@ -29,6 +30,7 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ClosedLoopControlSystemImpl extends CyberPhysicalSystemImpl impleme
 		return RobotMLPackage.Literals.CLOSED_LOOP_CONTROL_SYSTEM;
 	}
 
-} //ClosedLoopControlSystemImpl
+} // ClosedLoopControlSystemImpl

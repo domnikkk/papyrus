@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,14 @@ import org.eclipse.papyrus.eastadl.annex.needs.VehicleSystem;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -56,16 +58,16 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static NeedsFactory init() {
 		try {
-			NeedsFactory theNeedsFactory = (NeedsFactory)EPackage.Registry.INSTANCE.getEFactory(NeedsPackage.eNS_URI);
+			NeedsFactory theNeedsFactory = (NeedsFactory) EPackage.Registry.INSTANCE.getEFactory(NeedsPackage.eNS_URI);
 			if (theNeedsFactory != null) {
 				return theNeedsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new NeedsFactoryImpl();
@@ -75,6 +77,7 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NeedsFactoryImpl() {
@@ -84,31 +87,44 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case NeedsPackage.STAKEHOLDER: return createStakeholder();
-			case NeedsPackage.STAKEHOLDER_NEED: return createStakeholderNeed();
-			case NeedsPackage.PROBLEM_STATEMENT: return createProblemStatement();
-			case NeedsPackage.PRODUCT_POSITIONING: return createProductPositioning();
-			case NeedsPackage.BUSINESS_OPPORTUNITY: return createBusinessOpportunity();
-			case NeedsPackage.MISSION: return createMission();
-			case NeedsPackage.VEHICLE_SYSTEM: return createVehicleSystem();
-			case NeedsPackage.ARCHITECTURE: return createArchitecture();
-			case NeedsPackage.ARCHITECTURAL_DESCRIPTION: return createArchitecturalDescription();
-			case NeedsPackage.ARCHITECTURAL_MODEL: return createArchitecturalModel();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case NeedsPackage.STAKEHOLDER:
+			return createStakeholder();
+		case NeedsPackage.STAKEHOLDER_NEED:
+			return createStakeholderNeed();
+		case NeedsPackage.PROBLEM_STATEMENT:
+			return createProblemStatement();
+		case NeedsPackage.PRODUCT_POSITIONING:
+			return createProductPositioning();
+		case NeedsPackage.BUSINESS_OPPORTUNITY:
+			return createBusinessOpportunity();
+		case NeedsPackage.MISSION:
+			return createMission();
+		case NeedsPackage.VEHICLE_SYSTEM:
+			return createVehicleSystem();
+		case NeedsPackage.ARCHITECTURE:
+			return createArchitecture();
+		case NeedsPackage.ARCHITECTURAL_DESCRIPTION:
+			return createArchitecturalDescription();
+		case NeedsPackage.ARCHITECTURAL_MODEL:
+			return createArchitecturalModel();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public BusinessOpportunity createBusinessOpportunity() {
 		BusinessOpportunityImpl businessOpportunity = new BusinessOpportunityImpl();
 		return businessOpportunity;
@@ -117,8 +133,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Mission createMission() {
 		MissionImpl mission = new MissionImpl();
 		return mission;
@@ -127,8 +145,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public VehicleSystem createVehicleSystem() {
 		VehicleSystemImpl vehicleSystem = new VehicleSystemImpl();
 		return vehicleSystem;
@@ -137,8 +157,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Architecture createArchitecture() {
 		ArchitectureImpl architecture = new ArchitectureImpl();
 		return architecture;
@@ -147,8 +169,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ArchitecturalDescription createArchitecturalDescription() {
 		ArchitecturalDescriptionImpl architecturalDescription = new ArchitecturalDescriptionImpl();
 		return architecturalDescription;
@@ -157,8 +181,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ArchitecturalModel createArchitecturalModel() {
 		ArchitecturalModelImpl architecturalModel = new ArchitecturalModelImpl();
 		return architecturalModel;
@@ -167,8 +193,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ProblemStatement createProblemStatement() {
 		ProblemStatementImpl problemStatement = new ProblemStatementImpl();
 		return problemStatement;
@@ -177,8 +205,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ProductPositioning createProductPositioning() {
 		ProductPositioningImpl productPositioning = new ProductPositioningImpl();
 		return productPositioning;
@@ -187,8 +217,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Stakeholder createStakeholder() {
 		StakeholderImpl stakeholder = new StakeholderImpl();
 		return stakeholder;
@@ -197,8 +229,10 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public StakeholderNeed createStakeholderNeed() {
 		StakeholderNeedImpl stakeholderNeed = new StakeholderNeedImpl();
 		return stakeholderNeed;
@@ -207,10 +241,12 @@ public class NeedsFactoryImpl extends EFactoryImpl implements NeedsFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public NeedsPackage getNeedsPackage() {
-		return (NeedsPackage)getEPackage();
+		return (NeedsPackage) getEPackage();
 	}
 
-} //NeedsFactoryImpl
+} // NeedsFactoryImpl

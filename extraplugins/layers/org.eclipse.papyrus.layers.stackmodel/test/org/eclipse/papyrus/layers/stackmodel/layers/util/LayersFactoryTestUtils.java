@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,19 +24,19 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TopLayerOperator;
 
 /**
  * Utilities to create Layers for tests
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class LayersFactoryTestUtils {
 
 	/**
-	 * Application object. 
+	 * Application object.
 	 */
 	protected LayersStackApplication application;
-	
+
 	protected Map<String, LayerExpression> createdLayers = new HashMap<String, LayerExpression>();
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -62,18 +62,20 @@ public class LayersFactoryTestUtils {
 
 	/**
 	 * Create a TopLayer
+	 * 
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer() {
 		// Create a TopLayer
 		TopLayerOperator layer = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layer.setApplication(application);
-		
+
 		return layer;
 	}
-	
+
 	/**
 	 * Create a TopLayer
+	 * 
 	 * @return
 	 */
 	public TopLayerOperator newTopLayer(String name) {
@@ -82,47 +84,51 @@ public class LayersFactoryTestUtils {
 		return layer;
 
 	}
-	
+
 	/**
 	 * Create a TopLayer
+	 * 
 	 * @return
 	 */
-	public TopLayerOperator newTopLayer(String name, LayerExpression ...exprs) {
+	public TopLayerOperator newTopLayer(String name, LayerExpression... exprs) {
 
 		TopLayerOperator layer = newTopLayer(exprs);
 		createdLayers.put(name, layer);
 		return layer;
 	}
-	
+
 	/**
 	 * Create a TopLayer
+	 * 
 	 * @return
 	 */
-	public TopLayerOperator newTopLayer(LayerExpression ...exprs) {
+	public TopLayerOperator newTopLayer(LayerExpression... exprs) {
 		// Create a TopLayer
 		TopLayerOperator layer = newTopLayer();
-		
-		for( LayerExpression l : exprs) {
+
+		for (LayerExpression l : exprs) {
 			layer.getLayers().add(l);
 		}
-		
+
 		return layer;
 	}
-	
+
 	/**
 	 * Create a Layer
+	 * 
 	 * @return
 	 */
 	public LayerExpression newLayer() {
 		// Create a TopLayer
 		LayerExpression layer = LayersFactory.eINSTANCE.createLayer();
 		layer.setApplication(application);
-		
+
 		return layer;
 	}
-	
+
 	/**
 	 * Create a TopLayer
+	 * 
 	 * @return
 	 */
 	public LayerExpression newLayer(String name) {
@@ -131,6 +137,6 @@ public class LayersFactoryTestUtils {
 		return layer;
 
 	}
-	
+
 
 }

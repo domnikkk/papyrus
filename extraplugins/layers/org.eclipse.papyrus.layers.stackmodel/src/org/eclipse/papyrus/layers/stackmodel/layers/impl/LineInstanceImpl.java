@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -26,8 +26,8 @@ import org.eclipse.papyrus.layers.stackmodel.layers.TypeInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl#getLineColor <em>Line Color</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl#getLineWith <em>Line With</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl#getLineColor <em>Line Color</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.impl.LineInstanceImpl#getLineWith <em>Line With</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The default value of the '{@link #getLineColor() <em>Line Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLineColor()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The cached value of the '{@link #getLineColor() <em>Line Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLineColor()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The default value of the '{@link #getLineWith() <em>Line With</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLineWith()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	 * The cached value of the '{@link #getLineWith() <em>Line With</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLineWith()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LineInstanceImpl() {
@@ -86,6 +91,7 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,8 +102,10 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getLineColor() {
 		return lineColor;
 	}
@@ -105,20 +113,25 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLineColor(int newLineColor) {
 		int oldLineColor = lineColor;
 		lineColor = newLineColor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.LINE_INSTANCE__LINE_COLOR, oldLineColor, lineColor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getLineWith() {
 		return lineWith;
 	}
@@ -126,27 +139,31 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLineWith(int newLineWith) {
 		int oldLineWith = lineWith;
 		lineWith = newLineWith;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersPackage.LINE_INSTANCE__LINE_WITH, oldLineWith, lineWith));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersPackage.LINE_INSTANCE__LINE_COLOR:
-				return getLineColor();
-			case LayersPackage.LINE_INSTANCE__LINE_WITH:
-				return getLineWith();
+		case LayersPackage.LINE_INSTANCE__LINE_COLOR:
+			return getLineColor();
+		case LayersPackage.LINE_INSTANCE__LINE_WITH:
+			return getLineWith();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,17 +171,18 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersPackage.LINE_INSTANCE__LINE_COLOR:
-				setLineColor((Integer)newValue);
-				return;
-			case LayersPackage.LINE_INSTANCE__LINE_WITH:
-				setLineWith((Integer)newValue);
-				return;
+		case LayersPackage.LINE_INSTANCE__LINE_COLOR:
+			setLineColor((Integer) newValue);
+			return;
+		case LayersPackage.LINE_INSTANCE__LINE_WITH:
+			setLineWith((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,17 +190,18 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LINE_INSTANCE__LINE_COLOR:
-				setLineColor(LINE_COLOR_EDEFAULT);
-				return;
-			case LayersPackage.LINE_INSTANCE__LINE_WITH:
-				setLineWith(LINE_WITH_EDEFAULT);
-				return;
+		case LayersPackage.LINE_INSTANCE__LINE_COLOR:
+			setLineColor(LINE_COLOR_EDEFAULT);
+			return;
+		case LayersPackage.LINE_INSTANCE__LINE_WITH:
+			setLineWith(LINE_WITH_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,15 +209,16 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersPackage.LINE_INSTANCE__LINE_COLOR:
-				return lineColor != LINE_COLOR_EDEFAULT;
-			case LayersPackage.LINE_INSTANCE__LINE_WITH:
-				return lineWith != LINE_WITH_EDEFAULT;
+		case LayersPackage.LINE_INSTANCE__LINE_COLOR:
+			return lineColor != LINE_COLOR_EDEFAULT;
+		case LayersPackage.LINE_INSTANCE__LINE_WITH:
+			return lineWith != LINE_WITH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,14 +226,16 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromString(String value) {
-		
-		if(value==null || value.length()==0) {
+
+		if (value == null || value.length() == 0) {
 			return;
 		}
-			
+
 		// The value should contains the 2 values, separated by comma
 		// "lineColor, lineWith"
 		String[] values = value.split(",");
@@ -224,19 +246,22 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 			// fail silently
 		}
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setValueFromInstance(TypeInstance value) {
-		
+
 		// Check if the value is of the right instance
-		if( ! getClass().isInstance(value) ) {
+		if (!getClass().isInstance(value)) {
 			return;
 		}
-		
-		LineInstance instance = (LineInstance)value;			
+
+		LineInstance instance = (LineInstance) value;
 		setLineColor(instance.getLineColor());
 		setLineWith(instance.getLineWith());
 	}
@@ -245,11 +270,14 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (lineColor: ");
@@ -260,4 +288,4 @@ public class LineInstanceImpl extends TypeInstanceImpl implements LineInstance {
 		return result.toString();
 	}
 
-} //LineInstanceImpl
+} // LineInstanceImpl

@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * Command which allow to display java elements into papyrus diagram.
  * The java element must exists into papyrus model (for example by using reverse plugin)
- * 
+ *
  * @author Jonathan Geoffroy
  *
  */
@@ -67,13 +67,13 @@ public class DisplayReverse {
 	 * Constructor.
 	 *
 	 * @param items
-	 *        items to display into papyrus diagram
+	 *            items to display into papyrus diagram
 	 * @param diagram
-	 *        container where to display items
+	 *            container where to display items
 	 * @param umlModel
-	 *        resource representing the papyrus uml model
+	 *            resource representing the papyrus uml model
 	 * @param model
-	 *        model to display into diagram. Null if user doesn't want to display any model
+	 *            model to display into diagram. Null if user doesn't want to display any model
 	 */
 	public DisplayReverse(List<IJavaElement> items, Diagram diagram, Resource umlModel, Model model) {
 		super();
@@ -84,15 +84,15 @@ public class DisplayReverse {
 		// Change uml model collection to improve search
 		umlModelNames = new HashMap<String, NamedElement>();
 		TreeIterator<EObject> tree = umlModel.getAllContents();
-		while(tree.hasNext()) {
-			for(EObject o : tree.next().eContents()) {
+		while (tree.hasNext()) {
+			for (EObject o : tree.next().eContents()) {
 				/*
 				 * Only add reversable elements.
 				 * The non Named element cannot been added into model (comments ...)
 				 */
-				if(o instanceof NamedElement) {
+				if (o instanceof NamedElement) {
 					// Add it into items to display
-					NamedElement e = (NamedElement)o;
+					NamedElement e = (NamedElement) o;
 					umlModelNames.put(e.getName(), e);
 				}
 			}
@@ -109,12 +109,12 @@ public class DisplayReverse {
 	 */
 	public void execute() throws JavaModelException {
 		// Display the model
-		if(model != null) {
+		if (model != null) {
 			display(model.getName(), MODEL_TYPE);
 		}
 
 		// Cross selection to display each selected item
-		for(IJavaElement item : items) {
+		for (IJavaElement item : items) {
 			scanJavaElement(item);
 		}
 	}
@@ -122,9 +122,9 @@ public class DisplayReverse {
 	/**
 	 * Scan a Compilation Unit item
 	 * Just display it
-	 * 
+	 *
 	 * @param item
-	 *        a selection compilation unit
+	 *            a selection compilation unit
 	 */
 	private void scanCU(ICompilationUnit item) {
 		String itemName = item.getElementName().substring(0, item.getElementName().length() - 5); // remove ".java" to the compilation unit name
@@ -134,9 +134,9 @@ public class DisplayReverse {
 	/**
 	 * Scan a package.
 	 * Display it and cross its childs to display all sub-packages (and recursively)
-	 * 
+	 *
 	 * @param item
-	 *        the package to scan
+	 *            the package to scan
 	 * @throws JavaModelException
 	 */
 	private void scanPackage(IPackageFragment item) throws JavaModelException {
@@ -146,19 +146,19 @@ public class DisplayReverse {
 
 	/**
 	 * scan and display a JavaElement by delegates to scan{typeOfJavaElement}
-	 * 
+	 *
 	 * @param item
-	 *        the item to display
+	 *            the item to display
 	 * @throws JavaModelException
 	 */
 	private void scanJavaElement(IJavaElement item) throws JavaModelException {
 		try {
-			switch(item.getElementType()) {
+			switch (item.getElementType()) {
 			case IJavaElement.PACKAGE_FRAGMENT:
-				scanPackage((IPackageFragment)item);
+				scanPackage((IPackageFragment) item);
 				break;
 			case IJavaElement.COMPILATION_UNIT:
-				scanCU((ICompilationUnit)item);
+				scanCU((ICompilationUnit) item);
 				break;
 			}
 		} catch (NullPointerException e) {
@@ -168,13 +168,13 @@ public class DisplayReverse {
 
 	/**
 	 * Display an element into papyrus diagram
-	 * 
+	 *
 	 * @param itemName
-	 *        the name of element to display
+	 *            the name of element to display
 	 */
 	private void display(String itemName, String type) {
 		EObject item = this.umlModelNames.get(itemName);
-		if(!diagram.getChildren().contains(item)) {
+		if (!diagram.getChildren().contains(item)) {
 			ViewService.createNode(diagram, item, type, new PreferencesHint("org.eclipse.papyrus.uml.diagram.clazz")); //$NON-NLS-1$
 		}
 	}

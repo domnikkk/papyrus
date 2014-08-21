@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,6 +44,7 @@ import org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecificatio
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrormodelPackage
  * @generated
  */
@@ -52,6 +53,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static ErrormodelPackage modelPackage;
@@ -60,88 +62,107 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ErrormodelSwitch<Adapter> modelSwitch =
-		new ErrormodelSwitch<Adapter>() {
-			@Override
-			public Adapter caseAnomaly(Anomaly object) {
-				return createAnomalyAdapter();
-			}
-			@Override
-			public Adapter caseErrorModelPrototype(ErrorModelPrototype object) {
-				return createErrorModelPrototypeAdapter();
-			}
-			@Override
-			public Adapter caseErrorModelType(ErrorModelType object) {
-				return createErrorModelTypeAdapter();
-			}
-			@Override
-			public Adapter caseFaultFailurePropagationLink(FaultFailurePropagationLink object) {
-				return createFaultFailurePropagationLinkAdapter();
-			}
-			@Override
-			public Adapter caseErrorBehavior(ErrorBehavior object) {
-				return createErrorBehaviorAdapter();
-			}
-			@Override
-			public Adapter caseInternalFaultPrototype(InternalFaultPrototype object) {
-				return createInternalFaultPrototypeAdapter();
-			}
-			@Override
-			public Adapter caseFailureOutPort(FailureOutPort object) {
-				return createFailureOutPortAdapter();
-			}
-			@Override
-			public Adapter caseFaultInPort(FaultInPort object) {
-				return createFaultInPortAdapter();
-			}
-			@Override
-			public Adapter caseProcessFaultPrototype(ProcessFaultPrototype object) {
-				return createProcessFaultPrototypeAdapter();
-			}
-			@Override
-			public Adapter caseFaultFailurePort(FaultFailurePort object) {
-				return createFaultFailurePortAdapter();
-			}
-			@Override
-			public Adapter caseEAElement(EAElement object) {
-				return createEAElementAdapter();
-			}
-			@Override
-			public Adapter caseEAPrototype(EAPrototype object) {
-				return createEAPrototypeAdapter();
-			}
-			@Override
-			public Adapter caseEAPackageableElement(EAPackageableElement object) {
-				return createEAPackageableElementAdapter();
-			}
-			@Override
-			public Adapter caseTraceableSpecification(TraceableSpecification object) {
-				return createTraceableSpecificationAdapter();
-			}
-			@Override
-			public Adapter caseEAType(EAType object) {
-				return createEATypeAdapter();
-			}
-			@Override
-			public Adapter caseEAConnector(EAConnector object) {
-				return createEAConnectorAdapter();
-			}
-			@Override
-			public Adapter caseEAPort(EAPort object) {
-				return createEAPortAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new ErrormodelSwitch<Adapter>() {
+				@Override
+				public Adapter caseAnomaly(Anomaly object) {
+					return createAnomalyAdapter();
+				}
+
+				@Override
+				public Adapter caseErrorModelPrototype(ErrorModelPrototype object) {
+					return createErrorModelPrototypeAdapter();
+				}
+
+				@Override
+				public Adapter caseErrorModelType(ErrorModelType object) {
+					return createErrorModelTypeAdapter();
+				}
+
+				@Override
+				public Adapter caseFaultFailurePropagationLink(FaultFailurePropagationLink object) {
+					return createFaultFailurePropagationLinkAdapter();
+				}
+
+				@Override
+				public Adapter caseErrorBehavior(ErrorBehavior object) {
+					return createErrorBehaviorAdapter();
+				}
+
+				@Override
+				public Adapter caseInternalFaultPrototype(InternalFaultPrototype object) {
+					return createInternalFaultPrototypeAdapter();
+				}
+
+				@Override
+				public Adapter caseFailureOutPort(FailureOutPort object) {
+					return createFailureOutPortAdapter();
+				}
+
+				@Override
+				public Adapter caseFaultInPort(FaultInPort object) {
+					return createFaultInPortAdapter();
+				}
+
+				@Override
+				public Adapter caseProcessFaultPrototype(ProcessFaultPrototype object) {
+					return createProcessFaultPrototypeAdapter();
+				}
+
+				@Override
+				public Adapter caseFaultFailurePort(FaultFailurePort object) {
+					return createFaultFailurePortAdapter();
+				}
+
+				@Override
+				public Adapter caseEAElement(EAElement object) {
+					return createEAElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPrototype(EAPrototype object) {
+					return createEAPrototypeAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPackageableElement(EAPackageableElement object) {
+					return createEAPackageableElementAdapter();
+				}
+
+				@Override
+				public Adapter caseTraceableSpecification(TraceableSpecification object) {
+					return createTraceableSpecificationAdapter();
+				}
+
+				@Override
+				public Adapter caseEAType(EAType object) {
+					return createEATypeAdapter();
+				}
+
+				@Override
+				public Adapter caseEAConnector(EAConnector object) {
+					return createEAConnectorAdapter();
+				}
+
+				@Override
+				public Adapter caseEAPort(EAPort object) {
+					return createEAPortAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ErrormodelAdapterFactory() {
@@ -154,13 +175,15 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -169,6 +192,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.Anomaly
 	 * @generated
@@ -182,6 +206,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -195,6 +220,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorBehavior
 	 * @generated
@@ -209,6 +235,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelPrototype
 	 * @generated
@@ -223,6 +250,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ErrorModelType
 	 * @generated
@@ -237,6 +265,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FailureOutPort
 	 * @generated
@@ -251,6 +280,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePort
 	 * @generated
@@ -265,6 +295,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultFailurePropagationLink
 	 * @generated
@@ -279,6 +310,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.FaultInPort
 	 * @generated
@@ -293,6 +325,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.InternalFaultPrototype
 	 * @generated
@@ -307,6 +340,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.dependability.errormodel.ProcessFaultPrototype
 	 * @generated
@@ -321,6 +355,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAElement
 	 * @generated
@@ -335,6 +370,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPrototype
 	 * @generated
@@ -349,6 +385,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPackageableElement
 	 * @generated
@@ -363,6 +400,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.TraceableSpecification
 	 * @generated
@@ -377,6 +415,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAType
 	 * @generated
@@ -391,6 +430,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAConnector
 	 * @generated
@@ -405,6 +445,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.eastadl.infrastructure.elements.EAPort
 	 * @generated
@@ -418,6 +459,7 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -427,9 +469,9 @@ public class ErrormodelAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
 
-} //ErrormodelAdapterFactory
+} // ErrormodelAdapterFactory

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ public class CDOTextDelegatingResourceFactory implements Factory {
 		this.registry = registry;
 	}
 
+	@Override
 	public Resource createResource(URI uri) {
 		Resource.Factory delegate = ResourceFactoryRegistryImpl.convert(registry.getExtensionToFactoryMap().get(uri.fileExtension()));
 		return (delegate != null) ? delegate.createResource(uri) : null;

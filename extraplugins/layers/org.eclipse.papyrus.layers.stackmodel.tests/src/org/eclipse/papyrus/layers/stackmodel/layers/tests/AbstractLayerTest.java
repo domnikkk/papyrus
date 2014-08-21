@@ -11,18 +11,19 @@ import org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties() <em>Attached Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties() <em>Attached Properties</em>}</li>
  * </ul>
  * </p>
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property Instance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Remove Property Instance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Instance</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String) <em>Get Property Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Remove Property Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String) <em>Get Property Instance</em>}</li>
  * </ul>
  * </p>
+ * 
  * @generated
  */
 public abstract class AbstractLayerTest extends LayerExpressionTest {
@@ -31,6 +32,7 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Constructs a new Abstract Layer test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractLayerTest(String name) {
@@ -41,17 +43,19 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Returns the fixture for this Abstract Layer test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected AbstractLayer getFixture() {
-		return (AbstractLayer)fixture;
+		return (AbstractLayer) fixture;
 	}
 
 	/**
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties() <em>Attached Properties</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getAttachedProperties()
 	 * @generated
 	 */
@@ -65,6 +69,7 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Add Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#addPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -78,6 +83,7 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Remove Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#removePropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -91,6 +97,7 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property) <em>Get Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(org.eclipse.papyrus.layers.stackmodel.layers.Property)
 	 * @generated
 	 */
@@ -104,6 +111,7 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 	 * Tests the '{@link org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String) <em>Get Property Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.AbstractLayer#getPropertyInstance(java.lang.String)
 	 * @generated
 	 */
@@ -113,4 +121,4 @@ public abstract class AbstractLayerTest extends LayerExpressionTest {
 		fail();
 	}
 
-} //AbstractLayerTest
+} // AbstractLayerTest

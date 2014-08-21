@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -24,8 +24,8 @@ import static org.eclipse.papyrus.layers.stackmodel.Activator.log;
  * Notifier/observers firing events concerning the structure of the tree of layers.
  * Obeserver should implements {@link ILayersTreeEventListener} and register themself to this
  * notifier.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
  *
  */
@@ -35,11 +35,12 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 	 * List of listener to notify.
 	 */
 	protected List<ILayersTreeEventListener> listeners = new ArrayList<ILayersTreeEventListener>();
-	
+
 	/**
 	 * Constructor.
 	 *
-	 * @param layersStack The observed {@link LayersStack}.
+	 * @param layersStack
+	 *            The observed {@link LayersStack}.
 	 */
 	public LayersTreeEventNotifier() {
 	}
@@ -48,32 +49,34 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 	 * Dispose this object.
 	 */
 	public void dispose() {
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 		listeners.clear();
 		listeners = null;
 	}
-	
+
 	/**
 	 * Return true if the object is disposed.
+	 * 
 	 * @return
 	 */
 	public boolean isDisposed() {
-		return listeners==null;
+		return listeners == null;
 	}
 
 	/**
 	 * Called when something happen on the tree.
+	 * 
 	 * @see org.eclipse.emf.ecore.util.EContentAdapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		if(log.isDebugEnabled()) {
-			log.debug(this.getClass().getSimpleName() + ".notifyChanged( " 
-	                   + notification.getFeature() + ")");
+		if (log.isDebugEnabled()) {
+			log.debug(this.getClass().getSimpleName() + ".notifyChanged( "
+					+ notification.getFeature() + ")");
 		}
 
 		// Self atttach
@@ -81,11 +84,11 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 
 		// Check layers modification
 		// There is two sources: LayerOperator::layers and LayersStack::layers
-		if( notification.getFeature() == LayersPackage.eINSTANCE.getLayerOperator_Layers() 
-				|| notification.getFeature() == LayersPackage.eINSTANCE.getLayersStack_Layers() ) {
+		if (notification.getFeature() == LayersPackage.eINSTANCE.getLayerOperator_Layers()
+				|| notification.getFeature() == LayersPackage.eINSTANCE.getLayersStack_Layers()) {
 			// LayerOperator::layers || LayersStack::layers
 			// check the event type.
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 				fireLayerSet(notification);
 				break;
@@ -102,12 +105,12 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 				fireLayerMoved(notification);
 				break;
 			}
-		} 
+		}
 	}
-	
+
 	/**
 	 * This Adapter is for {@link LayersTreeEventNotifier}.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#isAdapterForType(java.lang.Object)
 	 *
 	 * @param type
@@ -117,86 +120,87 @@ public class LayersTreeEventNotifier extends EContentAdapter {
 	public boolean isAdapterForType(Object type) {
 		return type == LayersTreeEventNotifier.class;
 	}
-	
+
 	/**
 	 * Add the specified listener to the list of listener.
 	 * Do not add it if the listener is already in the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addLayersModelEventListener(ILayersTreeEventListener listener) {
-		
-		if(listener == null ) {
+
+		if (listener == null) {
 			return;
 		}
-		
+
 		// Check if exist
-		if( listeners.contains(listener)) {
+		if (listeners.contains(listener)) {
 			return;
 		}
-		
+
 		listeners.add(listener);
 	}
-	
-	/** 
+
+	/**
 	 * Remove the specified listener from the list of listeners.
+	 * 
 	 * @param listener
 	 */
 	public void removeLayersModelEventListener(ILayersTreeEventListener listener) {
 
 		listeners.remove(listener);
 	}
-	
+
 	/**
 	 * Method called when a layer is added to one layer.
 	 * The event contains: the layer.
-	 * 
+	 *
 	 * @param notification
 	 */
-	public void fireLayerSet( Notification notification ) {
-		
-		for(ILayersTreeEventListener listener : listeners) {
+	public void fireLayerSet(Notification notification) {
+
+		for (ILayersTreeEventListener listener : listeners) {
 			listener.layerSet(notification);
 		}
 	}
-	
+
 	/**
 	 * Method called when a layer is added to one layer.
 	 * The event contains: the layer.
-	 * 
+	 *
 	 * @param notification
 	 */
-	public void fireLayerAdded( Notification notification ) {
-		
-		for(ILayersTreeEventListener listener : listeners) {
+	public void fireLayerAdded(Notification notification) {
+
+		for (ILayersTreeEventListener listener : listeners) {
 			listener.layerAdded(notification);
 		}
 	}
-	
+
 	/**
 	 * Method called when a layer is removed from one layer.
 	 * The event contains: the layer.
-	 * 
+	 *
 	 * @param notification
 	 */
-	public void fireLayerRemoved( Notification notification ) {
-		
-		for(ILayersTreeEventListener listener : listeners) {
+	public void fireLayerRemoved(Notification notification) {
+
+		for (ILayersTreeEventListener listener : listeners) {
 			listener.layerRemoved(notification);
 		}
 	}
-	
+
 	/**
 	 * Method called when a layer is moved in LayerStack.
 	 * The event contains: the layer.
-	 * 
+	 *
 	 * @param notification
 	 */
-	public void fireLayerMoved( Notification notification ) {
-		
-		for(ILayersTreeEventListener listener : listeners) {
+	public void fireLayerMoved(Notification notification) {
+
+		for (ILayersTreeEventListener listener : listeners) {
 			listener.layerMoved(notification);
 		}
 	}
-	
+
 }

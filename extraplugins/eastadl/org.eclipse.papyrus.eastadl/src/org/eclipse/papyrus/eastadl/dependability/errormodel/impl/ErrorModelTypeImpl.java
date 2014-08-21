@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,16 +53,16 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getBase_Class <em>Base Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getFaultFailureConnector <em>Fault Failure Connector</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getPart <em>Part</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getErrorBehaviorDescription <em>Error Behavior Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getFailure <em>Failure</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getExternalFault <em>External Fault</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getInternalFault <em>Internal Fault</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getProcessFault <em>Process Fault</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getHwTarget <em>Hw Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getFaultFailureConnector <em>Fault Failure Connector</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getPart <em>Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getErrorBehaviorDescription <em>Error Behavior Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getFailure <em>Failure</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getExternalFault <em>External Fault</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getInternalFault <em>Internal Fault</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getProcessFault <em>Process Fault</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getTarget <em>Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.dependability.errormodel.impl.ErrorModelTypeImpl#getHwTarget <em>Hw Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +74,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -83,7 +84,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -93,7 +94,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * The cached value of the '{@link #getHwTarget() <em>Hw Target</em>}' reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHwTarget()
 	 * @generated
 	 * @ordered
@@ -102,6 +103,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ErrorModelTypeImpl() {
@@ -110,63 +112,67 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR:
-				return getFaultFailureConnector();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__PART:
-				return getPart();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION:
-				return getErrorBehaviorDescription();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__FAILURE:
-				return getFailure();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__EXTERNAL_FAULT:
-				return getExternalFault();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__INTERNAL_FAULT:
-				return getInternalFault();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__PROCESS_FAULT:
-				return getProcessFault();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
-				return getTarget();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
-				return getHwTarget();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
+			if (resolve) {
+				return getBase_Class();
+			}
+			return basicGetBase_Class();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR:
+			return getFaultFailureConnector();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__PART:
+			return getPart();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION:
+			return getErrorBehaviorDescription();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__FAILURE:
+			return getFailure();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__EXTERNAL_FAULT:
+			return getExternalFault();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__INTERNAL_FAULT:
+			return getInternalFault();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__PROCESS_FAULT:
+			return getProcessFault();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
+			return getTarget();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
+			return getHwTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
-				return base_Class != null;
-			case ErrormodelPackage.ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR:
-				return !getFaultFailureConnector().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__PART:
-				return !getPart().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION:
-				return !getErrorBehaviorDescription().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__FAILURE:
-				return !getFailure().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__EXTERNAL_FAULT:
-				return !getExternalFault().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__INTERNAL_FAULT:
-				return !getInternalFault().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__PROCESS_FAULT:
-				return !getProcessFault().isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
-				return target != null && !target.isEmpty();
-			case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
-				return hwTarget != null && !hwTarget.isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
+			return base_Class != null;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__FAULT_FAILURE_CONNECTOR:
+			return !getFaultFailureConnector().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__PART:
+			return !getPart().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__ERROR_BEHAVIOR_DESCRIPTION:
+			return !getErrorBehaviorDescription().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__FAILURE:
+			return !getFailure().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__EXTERNAL_FAULT:
+			return !getExternalFault().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__INTERNAL_FAULT:
+			return !getInternalFault().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__PROCESS_FAULT:
+			return !getProcessFault().isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
+			return target != null && !target.isEmpty();
+		case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
+			return hwTarget != null && !hwTarget.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -174,14 +180,17 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EAType.class) {
 			switch (derivedFeatureID) {
-				case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS: return ElementsPackage.EA_TYPE__BASE_CLASS;
-				default: return -1;
+			case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
+				return ElementsPackage.EA_TYPE__BASE_CLASS;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -190,14 +199,17 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EAType.class) {
 			switch (baseFeatureID) {
-				case ElementsPackage.EA_TYPE__BASE_CLASS: return ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS;
-				default: return -1;
+			case ElementsPackage.EA_TYPE__BASE_CLASS:
+				return ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -205,29 +217,31 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
-				return;
-			case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
-				getTarget().clear();
-				getTarget().addAll((Collection<? extends FunctionType>)newValue);
-				return;
-			case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
-				getHwTarget().clear();
-				getHwTarget().addAll((Collection<? extends HardwareComponentType>)newValue);
-				return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
+			return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
+			getTarget().clear();
+			getTarget().addAll((Collection<? extends FunctionType>) newValue);
+			return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
+			getHwTarget().clear();
+			getHwTarget().addAll((Collection<? extends HardwareComponentType>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -238,15 +252,18 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -255,6 +272,7 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -264,54 +282,37 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
-				return;
-			case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
-				getTarget().clear();
-				return;
-			case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
-				getHwTarget().clear();
-				return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__BASE_CLASS:
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
+			return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__TARGET:
+			getTarget().clear();
+			return;
+		case ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET:
+			getHwTarget().clear();
+			return;
 		}
 		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EList<ErrorBehavior> getErrorBehaviorDescription() {
-		EList<ErrorBehavior> results = new BasicEList<ErrorBehavior>();
-		ErrorBehavior adlErrorBehavior = null;
-		if (getBase_NamedElement() != null) {
-			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
-			
-			while (it.hasNext()) {
-				Element element = it.next();
-				adlErrorBehavior = (ErrorBehavior )UMLUtil.getStereotypeApplication(element, ErrorBehavior.class);
-				if (adlErrorBehavior != null)
-					results.add(adlErrorBehavior);
-			}
-		}
-		
-		return new BasicInternalEList<ErrorBehavior>(ErrorBehavior.class, results.size(), results.toArray());
 	}
 
 	/**
@@ -319,20 +320,45 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 	 * 
 	 * @generated NOT
 	 */
+	@Override
+	public EList<ErrorBehavior> getErrorBehaviorDescription() {
+		EList<ErrorBehavior> results = new BasicEList<ErrorBehavior>();
+		ErrorBehavior adlErrorBehavior = null;
+		if (getBase_NamedElement() != null) {
+			Iterator<Element> it = getBase_NamedElement().getOwnedElements().iterator();
+
+			while (it.hasNext()) {
+				Element element = it.next();
+				adlErrorBehavior = UMLUtil.getStereotypeApplication(element, ErrorBehavior.class);
+				if (adlErrorBehavior != null) {
+					results.add(adlErrorBehavior);
+				}
+			}
+		}
+
+		return new BasicInternalEList<ErrorBehavior>(ErrorBehavior.class, results.size(), results.toArray());
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated NOT
+	 */
+	@Override
 	public EList<FaultInPort> getExternalFault() {
 		EList<FaultInPort> groupedPorts = new BasicEList<FaultInPort>();
 		FaultInPort currentFlowPort;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Ports
 			Iterator<Port> itDep = getBase_Class().getOwnedPorts().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Port currentPort = itDep.next();
 
 				// Test if currentPort is stereotyped FaultInPort
-				currentFlowPort = (FaultInPort)UMLUtil.getStereotypeApplication(currentPort, FaultInPort.class);
+				currentFlowPort = UMLUtil.getStereotypeApplication(currentPort, FaultInPort.class);
 
-				if(currentFlowPort != null) {
+				if (currentFlowPort != null) {
 					groupedPorts.add(currentFlowPort);
 				}
 			}
@@ -344,24 +370,25 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<FailureOutPort> getFailure() {
 		EList<FailureOutPort> groupedPorts = new BasicEList<FailureOutPort>();
 		FailureOutPort currentFlowPort;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Ports
 			Iterator<Port> itDep = getBase_Class().getOwnedPorts().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Port currentPort = itDep.next();
 
 				// Test if currentPort is stereotyped FailureOutputPort
-				
-				currentFlowPort = (FailureOutPort)UMLUtil.getStereotypeApplication(currentPort, FailureOutPort.class);
 
-				if(currentFlowPort != null) {
+				currentFlowPort = UMLUtil.getStereotypeApplication(currentPort, FailureOutPort.class);
+
+				if (currentFlowPort != null) {
 					groupedPorts.add(currentFlowPort);
 				}
 			}
@@ -373,25 +400,26 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<FaultFailurePropagationLink> getFaultFailureConnector() {
 		EList<FaultFailurePropagationLink> connectors = new BasicEList<FaultFailurePropagationLink>();
 		FaultFailurePropagationLink currentConnectorPrototype;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Connectors
 			Iterator<Connector> itDep = getBase_Class().getOwnedConnectors().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Connector currentConnector = itDep.next();
 
 				// Test if currentConnector is stereotyped FaultFailurePropagationLink
-				
-			  currentConnectorPrototype = (FaultFailurePropagationLink)UMLUtil.getStereotypeApplication(currentConnector,
+
+				currentConnectorPrototype = UMLUtil.getStereotypeApplication(currentConnector,
 						FaultFailurePropagationLink.class);
 
-				if(currentConnectorPrototype != null) {
+				if (currentConnectorPrototype != null) {
 					connectors.add(currentConnectorPrototype);
 				}
 			}
@@ -399,13 +427,15 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 		// Convert to InternalEList<?>
 		return new BasicInternalEList<FaultFailurePropagationLink>(FaultFailurePropagationLink.class,
-			connectors.size(), connectors.toArray());
+				connectors.size(), connectors.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<HardwareComponentType> getHwTarget() {
 		if (hwTarget == null) {
 			hwTarget = new EObjectResolvingEList<HardwareComponentType>(HardwareComponentType.class, this, ErrormodelPackage.ERROR_MODEL_TYPE__HW_TARGET);
@@ -415,25 +445,26 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<InternalFaultPrototype> getInternalFault() {
 		EList<InternalFaultPrototype> parts = new BasicEList<InternalFaultPrototype>();
 		InternalFaultPrototype currentFunctionPrototype;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Properties
 			Iterator<Property> itDep = getBase_Class().getAttributes().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Property currentProperty = itDep.next();
 
 				// Test if currentProperty is stereotyped InternalFaultPrototype
-				
-				currentFunctionPrototype = (InternalFaultPrototype)UMLUtil.getStereotypeApplication(currentProperty,
+
+				currentFunctionPrototype = UMLUtil.getStereotypeApplication(currentProperty,
 						InternalFaultPrototype.class);
-				
-				if(currentFunctionPrototype != null) {
+
+				if (currentFunctionPrototype != null) {
 					parts.add(currentFunctionPrototype);
 				}
 			}
@@ -441,31 +472,32 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 		// Convert to InternalEList<?>
 		return new BasicInternalEList<InternalFaultPrototype>(InternalFaultPrototype.class, parts.size(), parts
-			.toArray());
+				.toArray());
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<ErrorModelPrototype> getPart() {
 		EList<ErrorModelPrototype> parts = new BasicEList<ErrorModelPrototype>();
 		ErrorModelPrototype currentFunctionPrototype;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Properties
 			Iterator<Property> itDep = getBase_Class().getAttributes().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Property currentProperty = itDep.next();
 
 				// Test if currentProperty is stereotyped ErrorModelPrototype
-				
-				
-				currentFunctionPrototype = (ErrorModelPrototype)UMLUtil.getStereotypeApplication(currentProperty,
+
+
+				currentFunctionPrototype = UMLUtil.getStereotypeApplication(currentProperty,
 						ErrorModelPrototype.class);
 
-				if(currentFunctionPrototype != null) {
+				if (currentFunctionPrototype != null) {
 					parts.add(currentFunctionPrototype);
 				}
 			}
@@ -477,26 +509,27 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public EList<ProcessFaultPrototype> getProcessFault() {
 		EList<ProcessFaultPrototype> parts = new BasicEList<ProcessFaultPrototype>();
 		ProcessFaultPrototype currentFunctionPrototype;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			// Parse owned Properties
 			Iterator<Property> itDep = getBase_Class().getAttributes().iterator();
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Property currentProperty = itDep.next();
 
 				// Test if currentProperty is stereotyped ADLFunctionPrototype
-				currentFunctionPrototype = (ProcessFaultPrototype)UMLUtil.getStereotypeApplication(currentProperty,
-					ProcessFaultPrototype.class);
-				
-				
+				currentFunctionPrototype = UMLUtil.getStereotypeApplication(currentProperty,
+						ProcessFaultPrototype.class);
 
-				if(currentFunctionPrototype != null) {
+
+
+				if (currentFunctionPrototype != null) {
 					parts.add(currentFunctionPrototype);
 				}
 			}
@@ -508,8 +541,10 @@ public class ErrorModelTypeImpl extends TraceableSpecificationImpl implements Er
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FunctionType> getTarget() {
 		if (target == null) {
 			target = new EObjectResolvingEList<FunctionType>(FunctionType.class, this, ErrormodelPackage.ERROR_MODEL_TYPE__TARGET);

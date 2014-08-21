@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.umldi.UmlLabelKind;
  * <li>{@link org.eclipse.papyrus.umldi.impl.UmlLabelImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
@@ -40,7 +40,7 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlLabelImpl() {
@@ -71,7 +71,7 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,9 +82,10 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public UmlLabelKind getKind() {
 		return kind;
 	}
@@ -92,25 +93,27 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setKind(UmlLabelKind newKind) {
 		UmlLabelKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDIPackage.UML_LABEL__KIND, oldKind, kind));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case UMLDIPackage.UML_LABEL__KIND:
 			return getKind();
 		}
@@ -120,14 +123,14 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case UMLDIPackage.UML_LABEL__KIND:
-			setKind((UmlLabelKind)newValue);
+			setKind((UmlLabelKind) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,12 +139,12 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case UMLDIPackage.UML_LABEL__KIND:
 			setKind(KIND_EDEFAULT);
 			return;
@@ -152,12 +155,12 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case UMLDIPackage.UML_LABEL__KIND:
 			return kind != KIND_EDEFAULT;
 		}
@@ -167,17 +170,18 @@ public class UmlLabelImpl extends UmlShapeImpl implements UmlLabel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}
-} //UmlLabelImpl
+} // UmlLabelImpl

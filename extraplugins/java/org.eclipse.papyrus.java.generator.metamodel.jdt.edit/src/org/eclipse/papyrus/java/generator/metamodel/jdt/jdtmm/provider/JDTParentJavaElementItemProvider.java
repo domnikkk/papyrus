@@ -9,10 +9,10 @@
  *
  * Contributors:
  * 	Nicolas Deblock  nico.deblock@gmail.com  - Meta-model conception
- * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception 
+ * 	Cedric Dumoulin  Cedric.dumoulin@lifl.fr - Meta-model conception
  * 	Manuel Giles	 giles.manu@live.fr		 - Meta-model conception
  *
- *****************************************************************************/ 
+ *****************************************************************************/
 
 /**
  * <copyright>
@@ -46,11 +46,12 @@ import org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JdtmmPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.java.generator.metamodel.jdt.jdtmm.JDTParentJavaElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class JDTParentJavaElementItemProvider
-	extends JDTJavaElementItemProvider
-	implements
+		extends JDTJavaElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -60,6 +61,7 @@ public class JDTParentJavaElementItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public JDTParentJavaElementItemProvider(AdapterFactory adapterFactory) {
@@ -70,6 +72,7 @@ public class JDTParentJavaElementItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -87,58 +90,61 @@ public class JDTParentJavaElementItemProvider
 	 * This adds a property descriptor for the Flags feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addFlagsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTParent_flags_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTParent_flags_feature", "_UI_JDTParent_type"),
-				 JdtmmPackage.Literals.JDT_PARENT__FLAGS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTParent_flags_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTParent_flags_feature", "_UI_JDTParent_type"),
+						JdtmmPackage.Literals.JDT_PARENT__FLAGS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Children feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addChildrenPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_JDTParent_children_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JDTParent_children_feature", "_UI_JDTParent_type"),
-				 JdtmmPackage.Literals.JDT_PARENT__CHILDREN,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_JDTParent_children_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_JDTParent_children_feature", "_UI_JDTParent_type"),
+						JdtmmPackage.Literals.JDT_PARENT__CHILDREN,
+						false,
+						false,
+						false,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((JDTParentJavaElement)object).getElementName();
+		String label = ((JDTParentJavaElement) object).getElementName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_JDTParentJavaElement_type") :
-			getString("_UI_JDTParentJavaElement_type") + " " + label;
+				getString("_UI_JDTParentJavaElement_type") :
+				getString("_UI_JDTParentJavaElement_type") + " " + label;
 	}
 
 	/**
@@ -146,6 +152,7 @@ public class JDTParentJavaElementItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,9 +160,9 @@ public class JDTParentJavaElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JDTParentJavaElement.class)) {
-			case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case JdtmmPackage.JDT_PARENT_JAVA_ELEMENT__FLAGS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -165,6 +172,7 @@ public class JDTParentJavaElementItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

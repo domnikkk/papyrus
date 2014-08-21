@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,15 @@ public class EditorUtils {
 	/**
 	 * Returns the IEditorPart associated with the given model element.
 	 * If no IEditorPart is available in the workbench, a new one is created.
-	 * 
+	 *
 	 * @param modelElement
-	 *        The modelElement for which an IEditorPart is requested
+	 *            The modelElement for which an IEditorPart is requested
 	 * @return The IEditorPart associated with the given model element.
 	 */
 	public static IEditorPart getEditorPart(EObject modelElement) {
-		if(!modelElement.eIsProxy())
+		if (!modelElement.eIsProxy()) {
 			return getEditorPart(modelElement.eResource().getURI().toString());
+		}
 		IEditorPart part = null;
 		// Need to open a new editor
 		final FileEditorInput input = getFileEditorInput(modelElement);
@@ -61,9 +62,9 @@ public class EditorUtils {
 	/**
 	 * Returns the IEditorPart associated with the Resource depicted by the given resourceURI string.
 	 * If no IEditorPart is available in the workbench, a new one is created.
-	 * 
+	 *
 	 * @param resourceURI
-	 *        The string representation of the resource URI for which an IEditorPart is requested
+	 *            The string representation of the resource URI for which an IEditorPart is requested
 	 * @return The IEditorPart associated with the given resource URI.
 	 */
 	public static IEditorPart getEditorPart(String resourceURI) {
@@ -72,22 +73,23 @@ public class EditorUtils {
 		String resourceName = splitted[splitted.length - 1].replaceAll("\\.uml$", ".di");
 		IWorkbenchWindow[] windows = PlatformUI.getWorkbench().getWorkbenchWindows();
 		IEditorPart part = null;
-		for(int i = 0; i < windows.length && part == null; i++) {
+		for (int i = 0; i < windows.length && part == null; i++) {
 			IWorkbenchPage[] pages = windows[i].getPages();
-			for(int j = 0; j < pages.length && part == null; j++) {
+			for (int j = 0; j < pages.length && part == null; j++) {
 				IEditorReference[] editorReferences = pages[j].getEditorReferences();
-				for(int k = 0; k < editorReferences.length && part == null; k++) {
+				for (int k = 0; k < editorReferences.length && part == null; k++) {
 					IEditorReference ref = editorReferences[k];
 					IEditorPart cdd = ref.getEditor(true);
-					if(cdd instanceof IMultiDiagramEditor) {
+					if (cdd instanceof IMultiDiagramEditor) {
 						String cddName = cdd.getEditorInput().getName();
-						if(cddName.equals(resourceName))
+						if (cddName.equals(resourceName)) {
 							part = cdd;
+						}
 					}
 				}
 			}
 		}
-		if(part == null) {
+		if (part == null) {
 			// Need to open a new editor
 			final FileEditorInput input = getFileEditorInput(resourceURI);
 			OpenPapyrusEditorRunnable runnable = new OpenPapyrusEditorRunnable(input);
@@ -103,14 +105,14 @@ public class EditorUtils {
 	 * Returns a File Editor Input for the given model element.
 	 * This shall be understood as "The FileEditorInput which shall be used
 	 * to retrieve or construct the appropriate IEditorPart"
-	 * 
+	 *
 	 * @param modelElement
-	 *        The model element for which a File Editor Input is requested
+	 *            The model element for which a File Editor Input is requested
 	 * @return The FileEditorInput which shall be used to retrieve or construct the appropriate IEditorPart for editing this model element
 	 */
 	public static FileEditorInput getFileEditorInput(EObject modelElement) {
 		EObject resolvedElement = modelElement;
-		if(resolvedElement.eIsProxy()) {
+		if (resolvedElement.eIsProxy()) {
 			// Tries to resolve in a new resource set
 			resolvedElement = EcoreUtil.resolve(modelElement, new ResourceSetImpl());
 		}
@@ -119,18 +121,19 @@ public class EditorUtils {
 
 	/**
 	 * Returns a File Editor Input for the given resource URI string.
-	 * 
+	 *
 	 * @param resourceURI
-	 *        The string representing the resource URI for which a FileEditorInput is requested
+	 *            The string representing the resource URI for which a FileEditorInput is requested
 	 * @return a File Editor Input for the given resource URI string.
 	 */
 	public static FileEditorInput getFileEditorInput(String resourceURI) {
 		Resource newResource = new ResourceSetImpl().createResource(URI.createURI(resourceURI.replaceAll("\\.uml$", ".di")));
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot workspaceRoot = workspace.getRoot();
-		IFile modelElementIFile = (IFile)workspaceRoot.findMember(newResource.getURI().toPlatformString(true));
-		if(modelElementIFile == null)
+		IFile modelElementIFile = (IFile) workspaceRoot.findMember(newResource.getURI().toPlatformString(true));
+		if (modelElementIFile == null) {
 			return null;
+		}
 		return new FileEditorInput(modelElementIFile);
 	}
 

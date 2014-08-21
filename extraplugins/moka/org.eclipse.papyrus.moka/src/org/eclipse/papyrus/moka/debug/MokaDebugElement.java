@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/**
 	 * Constructs a new debug element contained in the given moka debug target.
-	 * 
+	 *
 	 * @param target
-	 *        Moka debug target
+	 *            Moka debug target
 	 */
 	public MokaDebugElement(MokaDebugTarget target) {
 		this.debugTarget = target;
@@ -79,8 +79,9 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 	 * 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
+	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if(adapter == IDebugElement.class) {
+		if (adapter == IDebugElement.class) {
 			return this;
 		}
 		return super.getAdapter(adapter);
@@ -88,9 +89,9 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/**
 	 * Convenience method for the setting the debug target of this debug element
-	 * 
+	 *
 	 * @param debugTarget
-	 *        The debug target for this debug element
+	 *            The debug target for this debug element
 	 */
 	public void setDebugTarget(MokaDebugTarget debugTarget) {
 		this.debugTarget = debugTarget;
@@ -98,7 +99,7 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/**
 	 * Convenience method for aborting execution
-	 * 
+	 *
 	 * @param message
 	 * @param e
 	 * @throws DebugException
@@ -109,12 +110,12 @@ public abstract class MokaDebugElement extends PlatformObject implements IDebugE
 
 	/**
 	 * Convenience method for firing a debug event to the debug plugin
-	 * 
+	 *
 	 * @param event
-	 *        the event to be fired
+	 *            the event to be fired
 	 */
 	protected void fireEvent(DebugEvent event) {
-		DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[]{ event });
+		DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[] { event });
 	}
 
 }

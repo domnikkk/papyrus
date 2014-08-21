@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ import org.eclipse.uml2.uml.Behavior;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl#getPop <em>Pop</em>}</li>
- *   <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl#getBase_Behavior <em>Base Behavior</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl#getPop <em>Pop</em>}</li>
+ * <li>{@link org.eclipse.papyrus.MARTE.MARTE_AnalysisModel.GQAM.impl.GaWorkloadGeneratorImpl#getBase_Behavior <em>Base Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	 * The default value of the '{@link #getPop() <em>Pop</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPop()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	 * The cached value of the '{@link #getPop() <em>Pop</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPop()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	 * The cached value of the '{@link #getBase_Behavior() <em>Base Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Behavior()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GaWorkloadGeneratorImpl() {
@@ -79,6 +83,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,8 +94,10 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPop() {
 		return pop;
 	}
@@ -98,27 +105,33 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPop(String newPop) {
 		String oldPop = pop;
 		pop = newPop;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_GENERATOR__POP, oldPop, pop));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Behavior getBase_Behavior() {
 		if (base_Behavior != null && base_Behavior.eIsProxy()) {
-			InternalEObject oldBase_Behavior = (InternalEObject)base_Behavior;
-			base_Behavior = (Behavior)eResolveProxy(oldBase_Behavior);
+			InternalEObject oldBase_Behavior = (InternalEObject) base_Behavior;
+			base_Behavior = (Behavior) eResolveProxy(oldBase_Behavior);
 			if (base_Behavior != oldBase_Behavior) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
+				}
 			}
 		}
 		return base_Behavior;
@@ -127,6 +140,7 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Behavior basicGetBase_Behavior() {
@@ -136,28 +150,34 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBase_Behavior(Behavior newBase_Behavior) {
 		Behavior oldBase_Behavior = base_Behavior;
 		base_Behavior = newBase_Behavior;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
-				return getPop();
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
-				if (resolve) return getBase_Behavior();
-				return basicGetBase_Behavior();
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
+			return getPop();
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
+			if (resolve) {
+				return getBase_Behavior();
+			}
+			return basicGetBase_Behavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,17 +185,18 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
-				setPop((String)newValue);
-				return;
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
-				setBase_Behavior((Behavior)newValue);
-				return;
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
+			setPop((String) newValue);
+			return;
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
+			setBase_Behavior((Behavior) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +204,18 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
-				setPop(POP_EDEFAULT);
-				return;
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
-				setBase_Behavior((Behavior)null);
-				return;
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
+			setPop(POP_EDEFAULT);
+			return;
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
+			setBase_Behavior((Behavior) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +223,16 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
-				return POP_EDEFAULT == null ? pop != null : !POP_EDEFAULT.equals(pop);
-			case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
-				return base_Behavior != null;
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__POP:
+			return POP_EDEFAULT == null ? pop != null : !POP_EDEFAULT.equals(pop);
+		case GQAMPackage.GA_WORKLOAD_GENERATOR__BASE_BEHAVIOR:
+			return base_Behavior != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +240,14 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (pop: ");
@@ -230,4 +256,4 @@ public class GaWorkloadGeneratorImpl extends EObjectImpl implements GaWorkloadGe
 		return result.toString();
 	}
 
-} //GaWorkloadGeneratorImpl
+} // GaWorkloadGeneratorImpl

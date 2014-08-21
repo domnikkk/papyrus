@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Generalization;
  * PostProcessor specific to integration with Papyrus.
  * Creates needed requirements between Diffs implying addition/deletion of Generalizations in a .uml model,
  * and Diffs implying addition/deletion of graphical nodes for inherited features.
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public class PapyrusPostProcessor implements IPostProcessor {
@@ -94,14 +94,13 @@ public class PapyrusPostProcessor implements IPostProcessor {
 	 * Generalization) are also merged
 	 * - When a merge implies addition of a node for an inherited feature, Diffs corresponding to addition of a Generalization (required for the
 	 * inheritance of this feature) are also merged
-	 * 
+	 *
 	 * It means that merging the deletion of a node for an inherited feature does not imply merging the deletion of a Generalization (required for
 	 * this inheritance), if any.
-	 * 
+	 *
 	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postComparison(org.eclipse.emf.compare.Comparison,
-	 *      org.eclipse.emf.common.util.Monitor)
+	 *
+	 * @see org.eclipse.emf.compare.postprocessor.IPostProcessor#postComparison(org.eclipse.emf.compare.Comparison, org.eclipse.emf.common.util.Monitor)
 	 */
 	@Override
 	public void postComparison(Comparison comparison, Monitor monitor) {
@@ -115,21 +114,21 @@ public class PapyrusPostProcessor implements IPostProcessor {
 	 * Adds additional requirements between Diffs classified by the given helper.
 	 * Requirements are added when required between Diffs implying addition/deletion of Generalizations in a .uml model,
 	 * and Diffs implying addition/deletion of graphical nodes for inherited features.
-	 * 
+	 *
 	 * @param helper
-	 *        A GeneralizationChangesHelper containing a pre-classification of Diffs
+	 *            A GeneralizationChangesHelper containing a pre-classification of Diffs
 	 */
 	protected void computeRequirements(GeneralizationChangesHelper helper) {
 		// Compute diff requirements related to additions of graphical nodes for inherited features
 		List<Class> classesWIthNodesForInheritedFeatures_ADDED = helper.getClassesWithInheritedPropertyNode(DifferenceKind.ADD);
-		for(Class c : classesWIthNodesForInheritedFeatures_ADDED) {
+		for (Class c : classesWIthNodesForInheritedFeatures_ADDED) {
 			Set<Feature> features = helper.getInheritedFeaturesWithNodeChange(c);
-			for(Feature f : features) {
-				for(Generalization generalization : helper.getGeneralizationPath(c, f)) {
+			for (Feature f : features) {
+				for (Generalization generalization : helper.getGeneralizationPath(c, f)) {
 					ReferenceChange generalizationAdded = helper.getGeneralizationChange(generalization);
-					if(generalizationAdded != null) {
+					if (generalizationAdded != null) {
 						NodeChange nodeAdded = helper.getFeatureNodeChange(f);
-						if(nodeAdded != null) {
+						if (nodeAdded != null) {
 							nodeAdded.getRequires().add(generalizationAdded);
 							generalizationAdded.getRequiredBy().add(nodeAdded);
 						}
@@ -140,14 +139,14 @@ public class PapyrusPostProcessor implements IPostProcessor {
 
 		// Compute diff requirements related to deletions of nodes for inherited features
 		List<Class> classesWIthNodesForInheritedFeatures_DELETED = helper.getClassesWithInheritedPropertyNode(DifferenceKind.DELETE);
-		for(Class c : classesWIthNodesForInheritedFeatures_DELETED) {
+		for (Class c : classesWIthNodesForInheritedFeatures_DELETED) {
 			Set<Feature> features = helper.getInheritedFeaturesWithNodeChange(c);
-			for(Feature f : features) {
-				for(Generalization generalization : helper.getGeneralizationPath(c, f)) {
+			for (Feature f : features) {
+				for (Generalization generalization : helper.getGeneralizationPath(c, f)) {
 					ReferenceChange generalizationDeleted = helper.getGeneralizationChange(generalization);
-					if(generalizationDeleted != null) {
+					if (generalizationDeleted != null) {
 						NodeChange nodeDeleted = helper.getFeatureNodeChange(f);
-						if(nodeDeleted != null) {
+						if (nodeDeleted != null) {
 							nodeDeleted.getRequiredBy().add(generalizationDeleted);
 							generalizationDeleted.getRequires().add(nodeDeleted);
 						}

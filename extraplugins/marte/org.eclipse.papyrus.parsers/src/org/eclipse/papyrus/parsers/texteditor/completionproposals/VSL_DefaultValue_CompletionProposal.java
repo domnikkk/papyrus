@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,8 +46,8 @@ public class VSL_DefaultValue_CompletionProposal implements ICompletionProposalC
 		ICompletionProposal proposal = null;
 
 		// adds all name (static strings...)
-		for(int i = 0; i < TVL_DefaultValue_Strings.length; i++) {
-			if(TVL_DefaultValue_Strings[i].startsWith(prefix)) {
+		for (int i = 0; i < TVL_DefaultValue_Strings.length; i++) {
+			if (TVL_DefaultValue_Strings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(TVL_DefaultValue_Strings[i], documentOffset - prefix.length(), prefix
 						.length()
 						+ selectionRange, TVL_DefaultValue_Strings[i].length(), null, TVL_DefaultValue_StringName[i],

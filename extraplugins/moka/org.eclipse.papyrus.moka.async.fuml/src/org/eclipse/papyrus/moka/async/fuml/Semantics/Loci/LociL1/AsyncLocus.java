@@ -30,14 +30,15 @@ public class AsyncLocus extends CS_Locus {
 	 * Instantiate method now create AsyncObject_ instead of Object_.
 	 *
 	 * @param type
-	 *        the type
+	 *            the type
 	 * @return the object_
 	 */
+	@Override
 	public Object_ instantiate(Class type) {
 		// Instantiate the given class at this locus.
 		Object_ object = null;
-		if(type instanceof Behavior) {
-			object = this.factory.createExecution((Behavior)type, null);
+		if (type instanceof Behavior) {
+			object = this.factory.createExecution((Behavior) type, null);
 		} else {
 			object = new AsyncObject_();
 			object.types.add(type);
@@ -54,7 +55,7 @@ public class AsyncLocus extends CS_Locus {
 	 */
 	@Override
 	public void remove(ExtensionalValue value) {
-		synchronized(this) {
+		synchronized (this) {
 			super.remove(value);
 		}
 	}

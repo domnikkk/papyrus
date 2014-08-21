@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,12 +48,12 @@ public class DirectionCompletionProposal implements ICompletionProposalComputer 
 	 * #generateCompletionProposals(int, int, java.lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param selectionRange
 	 * @param prefix
 	 * @param documentOffset
-	 * 
+	 *
 	 * @return
 	 */
 	public List<ICompletionProposal> generateCompletionProposals(int documentOffset, int selectionRange, String prefix) {
@@ -63,8 +63,8 @@ public class DirectionCompletionProposal implements ICompletionProposalComputer 
 		ICompletionProposal proposal = null;
 
 		// adds all standard multiplicities (static strings...)
-		for(int i = 0; i < directionStrings.length; i++) {
-			if(directionStrings[i].startsWith(prefix)) {
+		for (int i = 0; i < directionStrings.length; i++) {
+			if (directionStrings[i].startsWith(prefix)) {
 				proposal = new CompletionProposal(directionStrings[i], documentOffset - prefix.length(), prefix
 						.length()
 						+ selectionRange, directionStrings[i].length(), null, directionStringsName[i], null,

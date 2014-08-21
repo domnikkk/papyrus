@@ -18,10 +18,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.papyrus.team.collaborative.svn.tracing.ITracingConstant;
 import org.eclipse.papyrus.team.collaborative.svn.tracing.Tracer;
 import org.eclipse.papyrus.team.collaborative.svn.versioncontroller.SVNCommitter;
-import org.eclipse.team.svn.core.connector.SVNChangeStatus;
-import org.eclipse.team.svn.core.extension.CoreExtensionsManager;
-import org.eclipse.team.svn.core.extension.factory.ISVNConnectorFactory;
-import org.eclipse.team.svn.core.utility.SVNUtility;
 
 /**
  * The Class SVNUtils.
@@ -37,9 +33,9 @@ public class SVNUtils {
 
 	/**
 	 * Gets the resource SVN info.
-	 * 
+	 *
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @return the SVN info
 	 */
 	public static SVNChangeStatus getSVNInfo(IResource resource) {
@@ -50,35 +46,35 @@ public class SVNUtils {
 
 	/**
 	 * Add resources to the SVN repository.
-	 * 
+	 *
 	 * @param message
-	 *        Message for the Add operation
+	 *            Message for the Add operation
 	 * @param resources
-	 *        The resources to add
+	 *            The resources to add
 	 * @return the i status
 	 */
 	public static IStatus addToRepository(String message, Collection<? extends IResource> resources) {
 		IResource[] iResources = new IResource[resources.size()];
 		resources.toArray(iResources);
 		IStatus status = SVNCommitter.doCommit(message, true, resources);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			return status;
 		}
 
-		//Set need lock property
-		if(ITracingConstant.COMMIT_TRACING) {
+		// Set need lock property
+		if (ITracingConstant.COMMIT_TRACING) {
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.append("Set need lock property on: ").append("\n");
-			for(IResource r : iResources) {
+			for (IResource r : iResources) {
 				stringBuilder.append(r).append("\n");
 			}
 			Tracer.logInfo(stringBuilder.toString());
 		}
 		SetPropertyActionNow.doSetPropertyNow(iResources, SVN_NEEDS_LOCK, "*", "", false, true, 0, false, "*", false, null);
 
-		//Commit the property change
+		// Commit the property change
 		status = SVNCommitter.doCommit(message, true, resources);
-		if(!status.isOK()) {
+		if (!status.isOK()) {
 			return status;
 		}
 		return Status.OK_STATUS;
@@ -86,14 +82,14 @@ public class SVNUtils {
 
 	/**
 	 * Test if a {@link IResource}.
-	 * 
+	 *
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @return true, if is added to repository
 	 */
 	public static boolean isAddedToRepository(IResource resource) {
 		SVNChangeStatus svnInfo = getSVNInfo(resource);
-		if(svnInfo != null) {
+		if (svnInfo != null) {
 			String value = SVNUtility.getPropertyForNotConnected(resource, SVN_NEEDS_LOCK);
 			return value != null && !value.isEmpty();
 		}

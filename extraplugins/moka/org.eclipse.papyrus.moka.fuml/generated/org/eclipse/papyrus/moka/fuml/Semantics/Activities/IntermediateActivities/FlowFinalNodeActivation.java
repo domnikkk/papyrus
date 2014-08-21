@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,10 +19,11 @@ import org.eclipse.papyrus.moka.fuml.debug.Debug;
 
 public class FlowFinalNodeActivation extends ControlNodeActivation {
 
+	@Override
 	public void fire(List<Token> incomingTokens) {
 		// Consume all incoming tokens.
 		Debug.println("[fire] Flow final node " + this.node.getName() + "...");
-		for(int i = 0; i < incomingTokens.size(); i++) {
+		for (int i = 0; i < incomingTokens.size(); i++) {
 			Token token = incomingTokens.get(i);
 			token.withdraw();
 		}

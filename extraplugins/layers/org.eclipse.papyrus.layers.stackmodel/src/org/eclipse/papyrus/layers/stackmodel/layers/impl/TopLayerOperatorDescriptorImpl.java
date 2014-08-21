@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -33,6 +33,7 @@ public class TopLayerOperatorDescriptorImpl extends LayerOperatorDescriptorImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected TopLayerOperatorDescriptorImpl() {
@@ -45,16 +46,17 @@ public class TopLayerOperatorDescriptorImpl extends LayerOperatorDescriptorImpl 
 	 */
 	private void init() {
 		setName("TopLayerOperator");
-		
+
 	}
-	
+
 	/**
 	 * New instance creation counter.
 	 */
 	static int count = 0;
-	
+
 	/**
 	 * Create the requested {@link StackedLayerOperator} and init it.
+	 * 
 	 * @see org.eclipse.papyrus.layers.stackmodel.layers.impl.LayerOperatorDescriptorImpl#createLayerOperator()
 	 *
 	 * @return
@@ -66,13 +68,14 @@ public class TopLayerOperatorDescriptorImpl extends LayerOperatorDescriptorImpl 
 		TopLayerOperator layerOperator = LayersFactory.eINSTANCE.createTopLayerOperator();
 		layerOperator.setLayerOperatorDescriptor(this);
 		layerOperator.setName(getName() + count++);
-		
+
 		return layerOperator;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,4 +83,4 @@ public class TopLayerOperatorDescriptorImpl extends LayerOperatorDescriptorImpl 
 		return LayersPackage.Literals.TOP_LAYER_OPERATOR_DESCRIPTOR;
 	}
 
-} //TopLayerOperatorDescriptorImpl
+} // TopLayerOperatorDescriptorImpl

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.dd.dg.Matrix;
  * <li>{@link org.eclipse.papyrus.dd.dg.impl.MatrixImpl#getF <em>F</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class MatrixImpl extends TransformImpl implements Matrix {
@@ -41,7 +41,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getA() <em>A</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getA() <em>A</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getB() <em>B</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getB() <em>B</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getB()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getC() <em>C</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getC()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getC() <em>C</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getC()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getD() <em>D</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getD()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getD() <em>D</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getD()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getE() <em>E</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getE()
 	 * @generated
 	 * @ordered
@@ -131,7 +131,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getE() <em>E</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getE()
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The default value of the '{@link #getF() <em>F</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getF()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 	/**
 	 * The cached value of the '{@link #getF() <em>F</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getF()
 	 * @generated
 	 * @ordered
@@ -160,7 +160,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MatrixImpl() {
@@ -169,7 +169,7 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,138 +179,156 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getA() {
 		return a;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setA(double newA) {
 		double oldA = a;
 		a = newA;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__A, oldA, a));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getB() {
 		return b;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setB(double newB) {
 		double oldB = b;
 		b = newB;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__B, oldB, b));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getC() {
 		return c;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setC(double newC) {
 		double oldC = c;
 		c = newC;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__C, oldC, c));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getD() {
 		return d;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setD(double newD) {
 		double oldD = d;
 		d = newD;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__D, oldD, d));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getE() {
 		return e;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setE(double newE) {
 		double oldE = e;
 		e = newE;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__E, oldE, e));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public double getF() {
 		return f;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setF(double newF) {
 		double oldF = f;
 		f = newF;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DGPackage.MATRIX__F, oldF, f));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.MATRIX__A:
 			return getA();
 		case DGPackage.MATRIX__B:
@@ -329,29 +347,29 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.MATRIX__A:
-			setA((Double)newValue);
+			setA((Double) newValue);
 			return;
 		case DGPackage.MATRIX__B:
-			setB((Double)newValue);
+			setB((Double) newValue);
 			return;
 		case DGPackage.MATRIX__C:
-			setC((Double)newValue);
+			setC((Double) newValue);
 			return;
 		case DGPackage.MATRIX__D:
-			setD((Double)newValue);
+			setD((Double) newValue);
 			return;
 		case DGPackage.MATRIX__E:
-			setE((Double)newValue);
+			setE((Double) newValue);
 			return;
 		case DGPackage.MATRIX__F:
-			setF((Double)newValue);
+			setF((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,12 +377,12 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.MATRIX__A:
 			setA(A_EDEFAULT);
 			return;
@@ -389,12 +407,12 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DGPackage.MATRIX__A:
 			return a != A_EDEFAULT;
 		case DGPackage.MATRIX__B:
@@ -413,13 +431,14 @@ public class MatrixImpl extends TransformImpl implements Matrix {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (a: ");
 		result.append(a);

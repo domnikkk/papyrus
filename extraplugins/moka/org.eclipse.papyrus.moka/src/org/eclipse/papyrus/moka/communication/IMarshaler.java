@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ import org.eclipse.papyrus.moka.communication.request.ivariable.GetValue_Request
  */
 public interface IMarshaler {
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of a CREATE DebugEvent (emitted when the target program is ready to receive requests)
 	//
 	// ******************/
@@ -57,31 +57,31 @@ public interface IMarshaler {
 
 	public Start_Event start_event_unmarshal(String request);
 
-	//******************
-	// Marshalling / Unmarshalling of Request related to IBreakpointListener.breakpointAdded() and IBreakpointListener.breakpointChanged() 
+	// ******************
+	// Marshalling / Unmarshalling of Request related to IBreakpointListener.breakpointAdded() and IBreakpointListener.breakpointChanged()
 	//
 	// ******************/
 	public String addBreakpoint_request_marshal(AddBreakpoint_Request request);
 
 	public AddBreakpoint_Request addBreakpoint_request_unmarshal(String request);
 
-	//******************
-	// Marshalling / Unmarshalling of Request related to IBreakpointListener.breakpointRemoved() and IBreakpointListener.breakpointChanged() 
+	// ******************
+	// Marshalling / Unmarshalling of Request related to IBreakpointListener.breakpointRemoved() and IBreakpointListener.breakpointChanged()
 	//
 	// ******************/
 	public String removeBreakpoint_request_marshal(RemoveBreakpoint_Request request);
 
 	public RemoveBreakpoint_Request removeBreakpoint_request_unmarshal(String request);
 
-	//******************
-	// Marshalling / Unmarshalling of Request related to IDisconnect.disconnect() 
+	// ******************
+	// Marshalling / Unmarshalling of Request related to IDisconnect.disconnect()
 	//
 	// ******************/
 	public String disconnect_request_marshal(Disconnect_Request request);
 
 	public Disconnect_Request disconnect_request_unmarshal(String request);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Event related to ISuspendResume.resume()
 	//
 	// ******************/
@@ -93,7 +93,7 @@ public interface IMarshaler {
 
 	public Resume_Event resume_event_unmarshal(String event);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Event related to ISuspendResume.suspend()
 	//
 	// ******************/
@@ -105,7 +105,7 @@ public interface IMarshaler {
 
 	public Suspend_Event suspend_event_unmarshal(String event);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Event related to ITerminate.terminate()
 	//
 	// ******************/
@@ -117,7 +117,7 @@ public interface IMarshaler {
 
 	public Terminate_Event terminate_event_unmarshal(String event);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Reply related to IThread.getStackFrames()
 	//
 	// ******************/
@@ -129,7 +129,7 @@ public interface IMarshaler {
 
 	public GetStackFrames_Reply getStackFrames_reply_unmarshal(String reply);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Reply related to IStackFrame.getVariables()
 	//
 	// ******************/
@@ -142,7 +142,7 @@ public interface IMarshaler {
 	public GetVariables_Reply getVariables_reply_unmarshal(String reply);
 
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Reply related to IVariable.getValue()
 	//
 	// ******************/
@@ -154,7 +154,7 @@ public interface IMarshaler {
 
 	public GetValue_Reply getValue_reply_unmarshal(String reply);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Reply related to IVariable.getReferenceTypeName()
 	//
 	// ******************/
@@ -166,7 +166,7 @@ public interface IMarshaler {
 
 	public GetReferenceTypeName_Reply getReferenceTypeName_reply_unmarshal(String reply);
 
-	//******************
+	// ******************
 	// Marshalling / Unmarshalling of Request/Reply related to IValue.getValueString()
 	//
 	// ******************/

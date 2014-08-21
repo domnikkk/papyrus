@@ -13,14 +13,14 @@ public class RuleManagement {
 
 	/**
 	 * check whether a rule is active in a given configuration
-	 * 
+	 *
 	 * @param aRule
 	 * @return
 	 */
 	public static boolean isRuleActive(ContainerRule rule) {
-		if(m_config != null) {
-			for(ConfigOption option : m_config.getConfigOptions()) {
-				if(rule.getForConfig().contains(option)) {
+		if (m_config != null) {
+			for (ConfigOption option : m_config.getConfigOptions()) {
+				if (rule.getForConfig().contains(option)) {
 					return true;
 				}
 			}

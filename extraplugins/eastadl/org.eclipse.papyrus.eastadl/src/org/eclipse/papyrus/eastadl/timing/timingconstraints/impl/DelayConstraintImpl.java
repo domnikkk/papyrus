@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,10 @@ import org.eclipse.papyrus.eastadl.timing.timingconstraints.TimingconstraintsPac
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getLower <em>Lower</em>}</li>
- *   <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getUpper <em>Upper</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getTarget <em>Target</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getLower <em>Lower</em>}</li>
+ * <li>{@link org.eclipse.papyrus.eastadl.timing.timingconstraints.impl.DelayConstraintImpl#getUpper <em>Upper</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTarget()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	 * The cached value of the '{@link #getLower() <em>Lower</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLower()
 	 * @generated
 	 * @ordered
@@ -77,6 +80,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUpper()
 	 * @generated
 	 * @ordered
@@ -86,6 +90,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DelayConstraintImpl() {
@@ -95,23 +100,32 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
-				if (resolve) return getLower();
-				return basicGetLower();
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
-				if (resolve) return getUpper();
-				return basicGetUpper();
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
+			if (resolve) {
+				return getTarget();
+			}
+			return basicGetTarget();
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
+			if (resolve) {
+				return getSource();
+			}
+			return basicGetSource();
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
+			if (resolve) {
+				return getLower();
+			}
+			return basicGetLower();
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
+			if (resolve) {
+				return getUpper();
+			}
+			return basicGetUpper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,19 +133,20 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
-				return target != null;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
-				return source != null;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
-				return lower != null;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
-				return upper != null;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
+			return target != null;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
+			return source != null;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
+			return lower != null;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
+			return upper != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -139,23 +154,24 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
-				setTarget((Event)newValue);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
-				setSource((Event)newValue);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
-				setLower((TimingExpression)newValue);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
-				setUpper((TimingExpression)newValue);
-				return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
+			setTarget((Event) newValue);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
+			setSource((Event) newValue);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
+			setLower((TimingExpression) newValue);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
+			setUpper((TimingExpression) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,6 +179,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,15 +190,18 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getTarget() {
 		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Event)eResolveProxy(oldTarget);
+			InternalEObject oldTarget = (InternalEObject) target;
+			target = (Event) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET, oldTarget, target));
+				}
 			}
 		}
 		return target;
@@ -190,6 +210,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetTarget() {
@@ -199,27 +220,33 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTarget(Event newTarget) {
 		Event oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET, oldTarget, target));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Event getSource() {
 		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Event)eResolveProxy(oldSource);
+			InternalEObject oldSource = (InternalEObject) source;
+			source = (Event) eResolveProxy(oldSource);
 			if (source != oldSource) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE, oldSource, source));
+				}
 			}
 		}
 		return source;
@@ -228,6 +255,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Event basicGetSource() {
@@ -237,27 +265,33 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSource(Event newSource) {
 		Event oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE, oldSource, source));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getLower() {
 		if (lower != null && lower.eIsProxy()) {
-			InternalEObject oldLower = (InternalEObject)lower;
-			lower = (TimingExpression)eResolveProxy(oldLower);
+			InternalEObject oldLower = (InternalEObject) lower;
+			lower = (TimingExpression) eResolveProxy(oldLower);
 			if (lower != oldLower) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER, oldLower, lower));
+				}
 			}
 		}
 		return lower;
@@ -266,6 +300,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetLower() {
@@ -275,27 +310,33 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLower(TimingExpression newLower) {
 		TimingExpression oldLower = lower;
 		lower = newLower;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER, oldLower, lower));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public TimingExpression getUpper() {
 		if (upper != null && upper.eIsProxy()) {
-			InternalEObject oldUpper = (InternalEObject)upper;
-			upper = (TimingExpression)eResolveProxy(oldUpper);
+			InternalEObject oldUpper = (InternalEObject) upper;
+			upper = (TimingExpression) eResolveProxy(oldUpper);
 			if (upper != oldUpper) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER, oldUpper, upper));
+				}
 			}
 		}
 		return upper;
@@ -304,6 +345,7 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimingExpression basicGetUpper() {
@@ -313,37 +355,41 @@ public class DelayConstraintImpl extends TimingConstraintImpl implements DelayCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setUpper(TimingExpression newUpper) {
 		TimingExpression oldUpper = upper;
 		upper = newUpper;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER, oldUpper, upper));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
-				setTarget((Event)null);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
-				setSource((Event)null);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
-				setLower((TimingExpression)null);
-				return;
-			case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
-				setUpper((TimingExpression)null);
-				return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__TARGET:
+			setTarget((Event) null);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__SOURCE:
+			setSource((Event) null);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__LOWER:
+			setLower((TimingExpression) null);
+			return;
+		case TimingconstraintsPackage.DELAY_CONSTRAINT__UPPER:
+			setUpper((TimingExpression) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
-} //DelayConstraintImpl
+} // DelayConstraintImpl

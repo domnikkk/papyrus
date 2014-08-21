@@ -62,8 +62,8 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	@Override
 	public void setSelectedElement(Element newElement) {
 		super.setSelectedElement(newElement);
-		if(newElement instanceof PrimitiveType) {
-			this.selectedPType = (PrimitiveType)newElement;
+		if (newElement instanceof PrimitiveType) {
+			this.selectedPType = (PrimitiveType) newElement;
 		}
 		else {
 			throw new RuntimeException("bad selection: " + newElement + " should be an uml2 PrimitiveType");
@@ -75,23 +75,24 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#createContentHI()
 	 */
+	@Override
 	public Control createContent() {
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Create save reset buttons with superclass method
-		///////////////////////////////////////////////////////////////////////    	
+		// /////////////////////////////////////////////////////////////////////
 		createSaveResetButtons();
 
-		///////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////////////////////////////////////
 		// Type definition text area
-		///////////////////////////////////////////////////////////////////////		
+		// /////////////////////////////////////////////////////////////////////
 
 		typeDocument = createDocumentC();
 		typeGroup = createGroup(this, "Type definition", buttonSave, null, true, 0, 0, true);
 		// Use CDT CEditor coloration
 		typeViewer = createViewerC(typeDocument, typeGroup);
 
-		///////////////////////////////////////////////////////////////////////	
+		// /////////////////////////////////////////////////////////////////////
 
 		return this;
 	}
@@ -99,16 +100,18 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	/**
 	 * Saves the include declarations for a '<code>PrimitiveType</code>'
 	 */
+	@Override
 	public void save() {
-		if(selectedPType == null) {
+		if (selectedPType == null) {
 			/* Log.debug("saveBody : selectedOperation is null"); */
 		}
 		else {
 			CommandSupport.exec("C++ primitive type save", new Runnable() {
 
+				@Override
 				public void run()
 				{
-					if(typeDocument.get().equals("")) {
+					if (typeDocument.get().equals("")) {
 						StereotypeUtil.unapply(selectedPType, Typedef.class);
 					}
 					else {
@@ -128,7 +131,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	 */
 	@Override
 	protected void refreshPanel() {
-		if(selectedPType != null) {
+		if (selectedPType != null) {
 			Typedef cppType = UMLUtil.getStereotypeApplication(selectedPType, Typedef.class);
 			typeDocument.set(cppType != null ? cppType.getDefinition() : "");
 		}
@@ -139,6 +142,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	 * 
 	 * @see com.cea.accorduml.ui.views.panels.AccordUMLAbstractPanel#entryAction()
 	 */
+	@Override
 	public void entryAction() {
 		super.entryAction();
 		reset();
@@ -153,7 +157,7 @@ public class CppPrimitiveTypePanel extends CppAbstractPanel {
 	public boolean checkModifications() {
 		Typedef cppType = UMLUtil.getStereotypeApplication(selectedPType, Typedef.class);
 		String typeInModel = cppType != null ? cppType.getDefinition() : "";
-		if(!typeDocument.get().equals(typeInModel)) {
+		if (!typeDocument.get().equals(typeInModel)) {
 			return true;
 		}
 		return false;

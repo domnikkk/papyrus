@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,6 +70,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 		super("mappings", Messages.ModelExportMappingsPage_2, null, bus, MESSAGE); //$NON-NLS-1$
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 
@@ -90,7 +91,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 		mappingTable.setContentProvider(new MappingContentProvider());
 		mappingTable.setLabelProvider(new MappingLabelProvider());
 
-		if(exportConfig != null) {
+		if (exportConfig != null) {
 			mappingTable.setInput(exportConfig);
 		}
 
@@ -101,7 +102,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 	@Override
 	public void dispose() {
-		if(exportConfig != null) {
+		if (exportConfig != null) {
 			exportConfig.removeModelTransferListener(getImportConfigListener());
 		}
 
@@ -128,13 +129,13 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	public void setConfiguration(IModelTransferConfiguration config) {
 		this.exportConfig = config;
 
-		if(config != null) {
+		if (config != null) {
 			config.addModelTransferListener(getImportConfigListener());
 		}
 
 		setMapping(IModelExportMapping.Factory.DEFAULT.create(config));
 
-		if(mappingTable != null) {
+		if (mappingTable != null) {
 			mappingTable.setInput(config);
 		}
 
@@ -142,12 +143,12 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	}
 
 	private IModelTransferListener getImportConfigListener() {
-		if(exportConfigListener == null) {
+		if (exportConfigListener == null) {
 			exportConfigListener = new ModelTransferListenerAdapter() {
 
 				@Override
 				public void modelsToTransferChanged(IModelTransferConfiguration configuration) {
-					if((mappingTable != null) && !mappingTable.getControl().isDisposed()) {
+					if ((mappingTable != null) && !mappingTable.getControl().isDisposed()) {
 						mappingTable.refresh();
 					}
 
@@ -160,13 +161,13 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	}
 
 	private void setMapping(IModelExportMapping mapping) {
-		if(this.mapping != null) {
+		if (this.mapping != null) {
 			this.mapping.removeModelTransferMappingListener(getMappingListener());
 		}
 
 		this.mapping = mapping;
 
-		if(this.mapping != null) {
+		if (this.mapping != null) {
 			this.mapping.addModelTransferMappingListener(getMappingListener());
 			this.mapping.setRepository(repository);
 			initializeMappings();
@@ -174,10 +175,10 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	}
 
 	private void initializeMappings() {
-		if((initialDestination != null) && (mapping != null)) {
+		if ((initialDestination != null) && (mapping != null)) {
 			IPath basePath = initialDestination.getFullPath();
-			for(IModelTransferNode next : exportConfig.getModelsToTransfer()) {
-				if(mapping.getMapping(next) == null) {
+			for (IModelTransferNode next : exportConfig.getModelsToTransfer()) {
+				if (mapping.getMapping(next) == null) {
 					mapping.mapTo(next, basePath.append(next.getPrimaryResourceURI().lastSegment()));
 				}
 			}
@@ -185,13 +186,13 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	}
 
 	private IModelTransferMappingListener getMappingListener() {
-		if(mappingListener == null) {
+		if (mappingListener == null) {
 			mappingListener = new ModelTransferMappingListenerAdapter() {
 
 				@Override
 				public void modelTransferMappingChanged(IModelTransferNode node) {
 					IPath mapping = ModelExportMappingsPage.this.mapping.getMapping(node);
-					if((mapping != null) && (mappingTable != null)) {
+					if ((mapping != null) && (mappingTable != null)) {
 						mappingTable.refresh();
 					}
 				}
@@ -205,7 +206,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	public void setRepository(IPapyrusRepository repository) {
 		this.repository = repository;
 
-		if(mapping != null) {
+		if (mapping != null) {
 			mapping.setRepository(repository);
 		}
 
@@ -213,7 +214,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 	}
 
 	private boolean setMapping(IModelTransferNode node, IPath path) {
-		if((mapping != null) && (node != null)) {
+		if ((mapping != null) && (node != null)) {
 			mapping.mapTo(node, path);
 		}
 
@@ -228,14 +229,17 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 	private static class MappingContentProvider implements IStructuredContentProvider {
 
+		@Override
 		public Object[] getElements(Object inputElement) {
-			return ((IModelTransferConfiguration)inputElement).getModelsToTransfer().toArray();
+			return ((IModelTransferConfiguration) inputElement).getModelsToTransfer().toArray();
 		}
 
+		@Override
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			// pass
 		}
 
+		@Override
 		public void dispose() {
 			// pass
 		}
@@ -244,26 +248,28 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 	private class MappingLabelProvider extends ModelImportNodeLabelProvider implements ITableLabelProvider {
 
+		@Override
 		public Image getColumnImage(Object element, int columnIndex) {
 			return (columnIndex == 0) ? getImage(element) : null;
 		}
 
+		@Override
 		public String getColumnText(Object element, int columnIndex) {
 			String result = null;
 
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case 0: // Model
 				result = getText(element);
 				break;
 			case 1: // Path
-				if(mapping != null) {
-					IPath path = mapping.getMapping((IModelTransferNode)element);
-					if(path != null) {
+				if (mapping != null) {
+					IPath path = mapping.getMapping((IModelTransferNode) element);
+					if (path != null) {
 						result = path.toString();
 					}
 				}
 
-				if(result == null) {
+				if (result == null) {
 					result = ""; //$NON-NLS-1$
 				}
 				break;
@@ -287,8 +293,8 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 		@Override
 		protected CellEditor getCellEditor(Object element) {
-			if(editor == null) {
-				editor = new DialogCellEditor((Composite)getViewer().getControl()) {
+			if (editor == null) {
+				editor = new DialogCellEditor((Composite) getViewer().getControl()) {
 
 					@Override
 					protected Object openDialogBox(Control cellEditorWindow) {
@@ -298,7 +304,7 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 						Object[] result = (dlg.open() == Window.OK) ? dlg.getResult() : null;
 
-						return ((result == null) || (result.length == 0)) ? null : (IPath)result[0];
+						return ((result == null) || (result.length == 0)) ? null : (IPath) result[0];
 					}
 				};
 			}
@@ -312,23 +318,24 @@ public class ModelExportMappingsPage extends ModelImportWizardPage {
 
 		@Override
 		protected Object getValue(Object element) {
-			IPath path = mapping.getMapping((IModelTransferNode)element);
+			IPath path = mapping.getMapping((IModelTransferNode) element);
 			return (path == null) ? "" : path.removeLastSegments(1).toString(); //$NON-NLS-1$
 		}
 
 		@Override
 		protected void setValue(final Object element, Object value) {
 			// the 'value' will be a string if the user double-clicks without opening the dialog
-			IPath newPath = (value instanceof IPath) ? (IPath)value : null;
+			IPath newPath = (value instanceof IPath) ? (IPath) value : null;
 
-			if(newPath != null) {
-				String name = ((IModelTransferNode)element).getPrimaryResourceURI().lastSegment();
+			if (newPath != null) {
+				String name = ((IModelTransferNode) element).getPrimaryResourceURI().lastSegment();
 				newPath = newPath.append(name);
 
-				if(!setMapping((IModelTransferNode)element, newPath)) {
+				if (!setMapping((IModelTransferNode) element, newPath)) {
 					// continue editing
 					getViewer().getControl().getDisplay().asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
 							getViewer().editElement(element, columnIndex);
 						}

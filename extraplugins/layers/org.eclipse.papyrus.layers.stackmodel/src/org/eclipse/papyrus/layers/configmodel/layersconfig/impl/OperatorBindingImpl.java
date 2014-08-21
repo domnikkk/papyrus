@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Cedric Dumoulin - cedric.dumoulin@lifl.fr
  ******************************************************************************/
@@ -37,10 +37,10 @@ import org.eclipse.papyrus.layers.configmodel.layersconfig.PropertyId;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getOperator <em>Operator</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getLayerOperatorConfig <em>Layer Operator Config</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getPropertyId <em>Property Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getOperator <em>Operator</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getLayerOperatorConfig <em>Layer Operator Config</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getPropertyId <em>Property Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.layers.configmodel.layersconfig.impl.OperatorBindingImpl#getOwner <em>Owner</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getPropertyId() <em>Property Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPropertyId()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OperatorBindingImpl() {
@@ -79,6 +82,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -89,15 +93,18 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public OperatorConfig getOperator() {
 		if (operator != null && operator.eIsProxy()) {
-			InternalEObject oldOperator = (InternalEObject)operator;
-			operator = (OperatorConfig)eResolveProxy(oldOperator);
+			InternalEObject oldOperator = (InternalEObject) operator;
+			operator = (OperatorConfig) eResolveProxy(oldOperator);
 			if (operator != oldOperator) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersconfigPackage.OPERATOR_BINDING__OPERATOR, oldOperator, operator));
+				}
 			}
 		}
 		return operator;
@@ -106,6 +113,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public OperatorConfig basicGetOperator() {
@@ -115,47 +123,56 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOperator(OperatorConfig newOperator) {
 		OperatorConfig oldOperator = operator;
 		operator = newOperator;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.OPERATOR_BINDING__OPERATOR, oldOperator, operator));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public LayerOperatorConfig getLayerOperatorConfig() {
 		LayerOperatorConfig layerOperatorConfig = basicGetLayerOperatorConfig();
-		return layerOperatorConfig != null && layerOperatorConfig.eIsProxy() ? (LayerOperatorConfig)eResolveProxy((InternalEObject)layerOperatorConfig) : layerOperatorConfig;
+		return layerOperatorConfig != null && layerOperatorConfig.eIsProxy() ? (LayerOperatorConfig) eResolveProxy((InternalEObject) layerOperatorConfig) : layerOperatorConfig;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public LayerOperatorConfig basicGetLayerOperatorConfig() {
-		// 
+		//
 		return getOwner().getLayerOperatorConfig();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PropertyId getPropertyId() {
 		if (propertyId != null && propertyId.eIsProxy()) {
-			InternalEObject oldPropertyId = (InternalEObject)propertyId;
-			propertyId = (PropertyId)eResolveProxy(oldPropertyId);
+			InternalEObject oldPropertyId = (InternalEObject) propertyId;
+			propertyId = (PropertyId) eResolveProxy(oldPropertyId);
 			if (propertyId != oldPropertyId) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID, oldPropertyId, propertyId));
+				}
 			}
 		}
 		return propertyId;
@@ -164,6 +181,7 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyId basicGetPropertyId() {
@@ -173,68 +191,86 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPropertyId(PropertyId newPropertyId) {
 		PropertyId oldPropertyId = propertyId;
 		propertyId = newPropertyId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID, oldPropertyId, propertyId));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public LayerOperatorMultipleBinding getOwner() {
-		if (eContainerFeatureID() != LayersconfigPackage.OPERATOR_BINDING__OWNER) return null;
-		return (LayerOperatorMultipleBinding)eInternalContainer();
+		if (eContainerFeatureID() != LayersconfigPackage.OPERATOR_BINDING__OWNER) {
+			return null;
+		}
+		return (LayerOperatorMultipleBinding) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(LayerOperatorMultipleBinding newOwner, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwner, LayersconfigPackage.OPERATOR_BINDING__OWNER, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newOwner, LayersconfigPackage.OPERATOR_BINDING__OWNER, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setOwner(LayerOperatorMultipleBinding newOwner) {
 		if (newOwner != eInternalContainer() || (eContainerFeatureID() != LayersconfigPackage.OPERATOR_BINDING__OWNER && newOwner != null)) {
-			if (EcoreUtil.isAncestor(this, newOwner))
+			if (EcoreUtil.isAncestor(this, newOwner)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newOwner != null)
-				msgs = ((InternalEObject)newOwner).eInverseAdd(this, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS, LayerOperatorMultipleBinding.class, msgs);
+			}
+			if (newOwner != null) {
+				msgs = ((InternalEObject) newOwner).eInverseAdd(this, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS, LayerOperatorMultipleBinding.class, msgs);
+			}
 			msgs = basicSetOwner(newOwner, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, LayersconfigPackage.OPERATOR_BINDING__OWNER, newOwner, newOwner));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetOwner((LayerOperatorMultipleBinding)otherEnd, msgs);
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetOwner((LayerOperatorMultipleBinding) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -242,13 +278,14 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				return basicSetOwner(null, msgs);
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			return basicSetOwner(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -256,13 +293,14 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				return eInternalContainer().eInverseRemove(this, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS, LayerOperatorMultipleBinding.class, msgs);
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			return eInternalContainer().eInverseRemove(this, LayersconfigPackage.LAYER_OPERATOR_MULTIPLE_BINDING__BINDINGS, LayerOperatorMultipleBinding.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -270,22 +308,29 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
-				if (resolve) return getOperator();
-				return basicGetOperator();
-			case LayersconfigPackage.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG:
-				if (resolve) return getLayerOperatorConfig();
-				return basicGetLayerOperatorConfig();
-			case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
-				if (resolve) return getPropertyId();
-				return basicGetPropertyId();
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				return getOwner();
+		case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
+			if (resolve) {
+				return getOperator();
+			}
+			return basicGetOperator();
+		case LayersconfigPackage.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG:
+			if (resolve) {
+				return getLayerOperatorConfig();
+			}
+			return basicGetLayerOperatorConfig();
+		case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
+			if (resolve) {
+				return getPropertyId();
+			}
+			return basicGetPropertyId();
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			return getOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,20 +338,21 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
-				setOperator((OperatorConfig)newValue);
-				return;
-			case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
-				setPropertyId((PropertyId)newValue);
-				return;
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				setOwner((LayerOperatorMultipleBinding)newValue);
-				return;
+		case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
+			setOperator((OperatorConfig) newValue);
+			return;
+		case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
+			setPropertyId((PropertyId) newValue);
+			return;
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			setOwner((LayerOperatorMultipleBinding) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -314,20 +360,21 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
-				setOperator((OperatorConfig)null);
-				return;
-			case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
-				setPropertyId((PropertyId)null);
-				return;
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				setOwner((LayerOperatorMultipleBinding)null);
-				return;
+		case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
+			setOperator((OperatorConfig) null);
+			return;
+		case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
+			setPropertyId((PropertyId) null);
+			return;
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			setOwner((LayerOperatorMultipleBinding) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -335,21 +382,22 @@ public class OperatorBindingImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
-				return operator != null;
-			case LayersconfigPackage.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG:
-				return basicGetLayerOperatorConfig() != null;
-			case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
-				return propertyId != null;
-			case LayersconfigPackage.OPERATOR_BINDING__OWNER:
-				return getOwner() != null;
+		case LayersconfigPackage.OPERATOR_BINDING__OPERATOR:
+			return operator != null;
+		case LayersconfigPackage.OPERATOR_BINDING__LAYER_OPERATOR_CONFIG:
+			return basicGetLayerOperatorConfig() != null;
+		case LayersconfigPackage.OPERATOR_BINDING__PROPERTY_ID:
+			return propertyId != null;
+		case LayersconfigPackage.OPERATOR_BINDING__OWNER:
+			return getOwner() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OperatorBindingImpl
+} // OperatorBindingImpl

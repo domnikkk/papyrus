@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class GetTableIcon extends AbstractGetEditorIconQuery implements IJavaMod
 	 * {@inheritDoc}
 	 */
 	public String evaluate(final PapyrusTableInstance context, final ParameterValueList parameterValues) throws ModelQueryExecutionException {
-		
+
 		System.out.println("/org.eclipse.papyrus.infra.table.modelexplorer/icons/table.png");
 		return "/org.eclipse.papyrus.infra.table.modelexplorer/icons/table.png";// + getEditorRegistry(context).getEditorURLIcon(context); //$NON-NLS-1$
 	}
