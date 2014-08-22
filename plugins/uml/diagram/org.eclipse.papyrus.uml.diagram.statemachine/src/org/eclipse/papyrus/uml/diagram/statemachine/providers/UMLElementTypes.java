@@ -28,6 +28,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.DoActivityStateBehaviorStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
@@ -212,6 +213,11 @@ public class UMLElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ConstraintContext_8500 = getElementType("org.eclipse.papyrus.uml.diagram.statemachine.ConstraintContext_8500"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -272,6 +278,7 @@ public class UMLElementTypes {
 			elements.put(Generalization_19000, UMLPackage.eINSTANCE.getGeneralization());
 			elements.put(CommentAnnotatedElement_667, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 			elements.put(ConstraintConstrainedElement_670, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
+			elements.put(ConstraintContext_8500, UMLPackage.eINSTANCE.getConstraint_Context());
 		}
 		return elements.get(type);
 	}
@@ -315,6 +322,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Generalization_19000);
 			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_667);
 			KNOWN_ELEMENT_TYPES.add(ConstraintConstrainedElement_670);
+			KNOWN_ELEMENT_TYPES.add(ConstraintContext_8500);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -376,6 +384,8 @@ public class UMLElementTypes {
 			return CommentAnnotatedElement_667;
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
 			return ConstraintConstrainedElement_670;
+		case ContextLinkEditPart.VISUAL_ID:
+			return ConstraintContext_8500;
 		}
 		return null;
 	}

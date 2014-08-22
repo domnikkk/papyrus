@@ -36,6 +36,7 @@ import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConnectionPointRe
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConnectionPointReferenceStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintBodyEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ConstraintNameLabelEditPart;
+import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ContextLinkAppliedStereotypeEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.DoActivityStateBehaviorStateEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.EntryStateBehaviorEditPart;
 import org.eclipse.papyrus.uml.diagram.statemachine.edit.parts.ExitStateBehaviorEditPart;
@@ -672,6 +673,26 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser constraintContextName_8501Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintContextName_8501Parser() {
+		if(constraintContextName_8501Parser == null) {
+			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			parser.setViewPattern("<<{0}>>"); //$NON-NLS-1$
+			parser.setEditorPattern("<<{0}>>"); //$NON-NLS-1$
+			parser.setEditPattern("<<{0}>>"); //$NON-NLS-1$
+			constraintContextName_8501Parser = parser;
+		}
+		return constraintContextName_8501Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case StateMachineNameEditPart.VISUAL_ID:
@@ -748,6 +769,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getTransitionName_7003Parser();
 		case GeneralizationStereotypeEditPart.VISUAL_ID:
 			return getGeneralizationIsSubstitutable_19002Parser();
+		case ContextLinkAppliedStereotypeEditPart.VISUAL_ID:
+			return getConstraintContextName_8501Parser();
 		}
 		return null;
 	}

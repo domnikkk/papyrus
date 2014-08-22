@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.DuplicatePasteEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.policies.CustomRegionCompartmentCreationEditPolicy;
+import org.eclipse.papyrus.uml.diagram.statemachine.custom.policies.CustomRegionCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.policies.CustomRegionCompartmentXYLayoutEditPolicy;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.policies.CustomStateMachineDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.uml.diagram.statemachine.custom.policies.RemoveOrphanViewPolicy;
@@ -87,6 +88,7 @@ public class RegionCompartmentEditPart extends ShapeCompartmentEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CustomRegionCompartmentCreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new CustomStateMachineDiagramDragDropEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new CustomRegionCompartmentXYLayoutEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomRegionCompartmentItemSemanticEditPolicy());
 	}
 
 	/**

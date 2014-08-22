@@ -55,6 +55,7 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Vertex;
@@ -445,6 +446,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateConstraintContext_8500(Constraint source, Namespace target) {
+			if(source != null) {
+				if(source.getContext() != null) {
+					return false;
+				}
+			}
+			if(target != null && (target.getOwnedRules().contains(target))) {
+				return false;
+			}
+			return canExistConstraintContext_8500(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistTransition_7000(Region container, Transition linkInstance, Vertex source, Vertex target) {
 			return true;
 		}
@@ -467,6 +483,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistConstraintConstrainedElement_670(Constraint source, Element target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistConstraintContext_8500(Constraint source, Namespace target) {
 			return true;
 		}
 	}

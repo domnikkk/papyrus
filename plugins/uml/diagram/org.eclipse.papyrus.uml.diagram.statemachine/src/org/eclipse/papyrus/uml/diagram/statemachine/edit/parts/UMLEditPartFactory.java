@@ -162,6 +162,10 @@ public class UMLEditPartFactory implements EditPartFactory {
 				return new CommentAnnotatedElementEditPart(view);
 			case ConstraintConstrainedElementEditPart.VISUAL_ID:
 				return new ConstraintConstrainedElementEditPart(view);
+			case ContextLinkEditPart.VISUAL_ID:
+				return new ContextLinkEditPart(view);
+			case ContextLinkAppliedStereotypeEditPart.VISUAL_ID:
+				return new ContextLinkAppliedStereotypeEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);
