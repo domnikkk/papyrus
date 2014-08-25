@@ -31,6 +31,11 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.core.resource.AbstractReadOnlyHandler;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.team.core.RepositoryProvider;
+import org.eclipse.team.svn.core.IStateFilter;
+import org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage;
+import org.eclipse.team.svn.core.utility.FileUtility;
+import org.eclipse.team.svn.ui.SVNTeamModificationValidator;
+
 import com.google.common.base.Optional;
 import com.google.common.collect.Sets;
 
