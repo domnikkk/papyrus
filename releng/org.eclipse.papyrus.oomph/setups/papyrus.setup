@@ -86,15 +86,10 @@
     <requirement
         id="net.sf.eclipsecs.feature.group"
         optional="true"/>
-    <requirement
-        id="edu.umd.cs.findbugs.plugin.eclipse.feature.group"
-        optional="true"/>
     <repository
         url="http://update.eclemma.org/"/>
     <repository
         url="http://eclipse-cs.sourceforge.net/update/"/>
-    <repository
-        url="http://findbugs.cs.umd.edu/eclipse"/>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
